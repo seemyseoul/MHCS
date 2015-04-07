@@ -15,7 +15,7 @@ public class Configuration {
 		return modules;
 	}
 	
-	public void setModules(Modules[] m)
+	public void setModules(Module[] m)
 	{
 		modules = m;
 	}
@@ -29,6 +29,6 @@ public class Configuration {
 	 */
 	public Point[] getRoverPath(Module[] m)
 	{
-		
+		return null;
 	}
 }

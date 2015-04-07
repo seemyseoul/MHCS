@@ -1,6 +1,6 @@
 package mhcs.client;
 
-public class ConfigurationPage extends Page {
+public class ConfigurationsPage extends Page {
 
 
 }
