@@ -22,7 +22,6 @@ import com.google.gwt.user.client.ui.VerticalPanel;
  */
 public class MHCS_Project implements EntryPoint {
 
-
 	/**
 	 * This is the entry point method.
 	 */
