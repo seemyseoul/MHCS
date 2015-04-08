@@ -16,6 +16,9 @@ public class Module {
 		this.setCondition(condition);
 		this.setOrientation(orientation);
 	}
+	
+	public Module(){
+	}
 
 	public Point getCoordinates() {
 		return coordinates;
