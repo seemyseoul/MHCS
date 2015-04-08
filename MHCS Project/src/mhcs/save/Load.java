@@ -8,7 +8,7 @@ import com.google.gwt.storage.client.Storage;
 
 public class Load {
 	
-	public Module[] loadAll(){		
+	public static Module[] loadAll(){		
 		stockStore = Storage.getLocalStorageIfSupported();		
 		  if (stockStore != null){
 			  for (int i = 0; i < stockStore.getLength(); i++){
@@ -20,19 +20,19 @@ public class Load {
 				  int x = Integer.parseInt(stockStore.getItem("X"+key));
 				  int y = Integer.parseInt(stockStore.getItem("Y"+key));				  
 				  newModule.setCoordinates(new Point(x,y));
-				  if ((stockStore.getItem("CON"+key)) == "ture")
+				  if ((stockStore.getItem("CON"+key)) == "true")
 					  newModule.setCondition(true);
 				  else
 					  newModule.setCondition(false);				  
-				  moduleArray.
+				  moduleArray[moduleArray.length]= newModule; 
 			  }
-			  return newModule;
 		  }
+		  return moduleArray;
 	}
 	  
-	private Module[] moduleArray= null;
-	private Module newModule = null;
-	  private Storage stockStore = null;
+	private static Module[] moduleArray= null;
+	private static Module newModule = null;
+	private static Storage stockStore = null;
 	
 	
 	
