@@ -30,6 +30,7 @@ public class Page {
 	
 	public void show()
 	{
+		rp.clear();
 		rp.add(mainPanel);
 	}
 
