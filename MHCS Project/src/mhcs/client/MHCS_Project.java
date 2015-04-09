@@ -310,8 +310,8 @@ public class MHCS_Project implements EntryPoint {
 		
 		// Settings
 		{
-			String buttonHeight = "20px";
-			String buttonWidth = "40px";
+			String buttonHeight = "35px";
+			String buttonWidth = "130px";
 			
 			// Vertical Panel (holds all)
 			VerticalPanel sVertPanel = new VerticalPanel();
@@ -325,23 +325,34 @@ public class MHCS_Project implements EntryPoint {
 			users.addItem("Amanda Poston");
 			Button addUserButton = new Button();
 			Button removeUserButton = new Button();
+			addUserButton.setText("Add User");
+			removeUserButton.setText("Remove User");
+			addUserButton.setHeight(buttonHeight);
+			addUserButton.setWidth(buttonWidth);
+			removeUserButton.setHeight(buttonHeight);
+			removeUserButton.setWidth(buttonWidth);
 			sUserPanel.add(users);
 			sUserPanel.add(addUserButton);
 			sUserPanel.add(removeUserButton);
+			sUserPanel.setSpacing(10);
 			
 			HorizontalPanel sPassPanel = new HorizontalPanel();
 			CheckBox passwordEnable = new CheckBox();
 			passwordEnable.setText("Password Enabled");
+			passwordEnable.setHeight("20px");
 			Button changePasswordButton = new Button();
+			changePasswordButton.setText("Change Password");
 			changePasswordButton.setHeight(buttonHeight);
 			changePasswordButton.setWidth(buttonWidth);
 			sPassPanel.add(passwordEnable);
 			sPassPanel.add(changePasswordButton);
+			sPassPanel.setSpacing(10);
 			
 			// Inner vertical panel
 			VerticalPanel sPassVertPanel = new VerticalPanel();
 			HTML changePassword = new HTML("Change Password");
 			changePassword.setHeight("20px");
+			sPassVertPanel.setSpacing(5);
 			
 			// Inner horizontal panels
 			HorizontalPanel currentPassword = new HorizontalPanel();
@@ -349,26 +360,36 @@ public class MHCS_Project implements EntryPoint {
 			HTML cPass = new HTML("Current Password");
 			currentPassword.add(cPassword);
 			currentPassword.add(cPass);
+			currentPassword.setSpacing(10);
 			
 			HorizontalPanel newPassword = new HorizontalPanel();
 			PasswordTextBox nPassword = new PasswordTextBox();
 			HTML nPass = new HTML("New Password");
 			newPassword.add(nPassword);
 			newPassword.add(nPass);
+			newPassword.setSpacing(10);
 			
 			HorizontalPanel confirmPassword = new HorizontalPanel();
 			PasswordTextBox coPassword = new PasswordTextBox();
 			HTML coPass = new HTML("Current Password");
 			confirmPassword.add(coPassword);
 			confirmPassword.add(coPass);
+			confirmPassword.setSpacing(10);
 			
 			sPassVertPanel.add(changePassword);
 			sPassVertPanel.add(currentPassword);
 			sPassVertPanel.add(newPassword);
 			sPassVertPanel.add(confirmPassword);
+			sPassVertPanel.setSpacing(10);
+			sPassVertPanel.setBorderWidth(2);
 			
+			sVertPanel.add(sUserPanel);
+			sVertPanel.add(sPassPanel);
+			sVertPanel.add(sPassVertPanel);
+			sVertPanel.setSpacing(10);
+			sVertPanel.setBorderWidth(2);
 			
-			RootPanel.get().add(sPassVertPanel);			
+			RootPanel.get().add(sVertPanel);			
 			
 		} // Settings
 		
