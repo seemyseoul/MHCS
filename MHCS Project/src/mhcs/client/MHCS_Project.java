@@ -1,4 +1,4 @@
-package mhcs.client;
+package gui.client;
 
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.core.client.GWT;
@@ -31,7 +31,7 @@ import com.google.gwt.user.client.ui.VerticalPanel;
 /**
  * Entry point classes define <code>onModuleLoad()</code>.
  */
-public class MHCS_Project implements EntryPoint {
+public class MHCS_Local implements EntryPoint {
 	/**
 	 * The message displayed to the user when the server cannot be reached or
 	 * returns an error.
@@ -308,71 +308,69 @@ public class MHCS_Project implements EntryPoint {
 		    RootPanel.get().add(dock);
 		} // Modules
 		
-//		// Settings
-//		{
-//			String buttonHeight = "20px";
-//			String buttonWidth = "40px";
-//			
-//			// Vertical Panel (holds all)
-//			VerticalPanel sVertPanel = new VerticalPanel();
-//			
-//			// Horizontal Panels
-//			HorizontalPanel sUserPanel = new HorizontalPanel();
-//			ListBox users = new ListBox();
-//			users.addItem("Jesse Goebel");
-//			users.addItem("Jack McKeown");
-//			users.addItem("Brent Pavlovich");
-//			users.addItem("Amanda Poston");
-//			Button addUserButton = new Button();
-//			Button removeUserButton = new Button();
-//			sUserPanel.add(users);
-//			sUserPanel.add(addUserButton);
-//			sUserPanel.add(removeUserButton);
-//			
-//			HorizontalPanel sPassPanel = new HorizontalPanel();
-//			CheckBox passwordEnable = new CheckBox();
-//			passwordEnable.setText("Password Enabled");
-//			Button changePasswordButton = new Button();
-//			changePasswordButton.setHeight(buttonHeight);
-//			changePasswordButton.setWidth(buttonWidth);
-//			sPassPanel.addItem(passwordEnable);
-//			sPassPanel.addItem(changePasswordButton);
-//			
-//			// Inner vertical panel
-//			VerticalPanel sPassVertPanel = new VerticalPanel();
-//			HTML changePassword = new HTML("Change Password");
-//			changePassword.setHeight("20px");
-//			
-//			// Inner horizontal panels
-//			HorizontalPanel currentPassword = new HorizontalPanel();
-//			PasswordTextBox cPassword = new PasswordTextBox();
-//			HTML cPass = new HTML("Current Password");
-//			currentPassword.addItem(cPassword);
-//			currentPassword.addItem(cPass);
-//			
-//			HorizontalPanel newPassword = new HorizontalPanel();
-//			PasswordTextBox nPassword = new PasswordTextBox();
-//			HTML nPass = new HTML("New Password");
-//			newPassword.addItem(nPassword);
-//			newPassword.addItem(nPass);
-//			
-//			HorizontalPanel confirmPassword = new HorizontalPanel();
-//			PasswordTextBox coPassword = new PasswordTextBox();
-//			HTML coPass = new HTML("Current Password");
-//			confirmPassword.addItem(coPassword);
-//			confirmPassword.addItem(coPass);
-//			
-//			sPassVertPanel.addItem(changePassword);
-//			sPassVertPanel.addItem(currentPassword);
-//			sPassVertPanel.addItem(newPassword);
-//			sPassVertPanel.addItem(confirmPassword);
-//			
-//			
-//			RootPanel.get().add(sVertPanel);			
-//			
-//		} // Settings
-		
-		// DID IT WORK??
+		// Settings
+		{
+			String buttonHeight = "20px";
+			String buttonWidth = "40px";
+			
+			// Vertical Panel (holds all)
+			VerticalPanel sVertPanel = new VerticalPanel();
+			
+			// Horizontal Panels
+			HorizontalPanel sUserPanel = new HorizontalPanel();
+			ListBox users = new ListBox();
+			users.addItem("Jesse Goebel");
+			users.addItem("Jack McKeown");
+			users.addItem("Brent Pavlovich");
+			users.addItem("Amanda Poston");
+			Button addUserButton = new Button();
+			Button removeUserButton = new Button();
+			sUserPanel.add(users);
+			sUserPanel.add(addUserButton);
+			sUserPanel.add(removeUserButton);
+			
+			HorizontalPanel sPassPanel = new HorizontalPanel();
+			CheckBox passwordEnable = new CheckBox();
+			passwordEnable.setText("Password Enabled");
+			Button changePasswordButton = new Button();
+			changePasswordButton.setHeight(buttonHeight);
+			changePasswordButton.setWidth(buttonWidth);
+			sPassPanel.addItem(passwordEnable);
+			sPassPanel.addItem(changePasswordButton);
+			
+			// Inner vertical panel
+			VerticalPanel sPassVertPanel = new VerticalPanel();
+			HTML changePassword = new HTML("Change Password");
+			changePassword.setHeight("20px");
+			
+			// Inner horizontal panels
+			HorizontalPanel currentPassword = new HorizontalPanel();
+			PasswordTextBox cPassword = new PasswordTextBox();
+			HTML cPass = new HTML("Current Password");
+			currentPassword.addItem(cPassword);
+			currentPassword.addItem(cPass);
+			
+			HorizontalPanel newPassword = new HorizontalPanel();
+			PasswordTextBox nPassword = new PasswordTextBox();
+			HTML nPass = new HTML("New Password");
+			newPassword.addItem(nPassword);
+			newPassword.addItem(nPass);
+			
+			HorizontalPanel confirmPassword = new HorizontalPanel();
+			PasswordTextBox coPassword = new PasswordTextBox();
+			HTML coPass = new HTML("Current Password");
+			confirmPassword.addItem(coPassword);
+			confirmPassword.addItem(coPass);
+			
+			sPassVertPanel.addItem(changePassword);
+			sPassVertPanel.addItem(currentPassword);
+			sPassVertPanel.addItem(newPassword);
+			sPassVertPanel.addItem(confirmPassword);
+			
+			
+			RootPanel.get().add(sVertPanel);			
+			
+		} // Settings
 		
 	} // OnModuleLoad
 } // MHCS
