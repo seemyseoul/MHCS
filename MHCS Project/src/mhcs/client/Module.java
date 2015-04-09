@@ -2,20 +2,20 @@ package mhcs.client;
 
 import mhcs.storage.Load;
 
-
 public class Module {
-	
+
 	private int id, orientation;
 	private String type;
 	private Point landedCoordinates;
 	private Point configCoordinates;
 	private boolean condition;
 	private boolean inUse;
-	
-	
-	//takes in Type, ID, landedCoordinates, configCoordinates, Condition, Orientation, inUse
-	public Module(String type, int id, Point landedCoordinates,Point configCoordinates, boolean condition, int orientation, boolean inUse)
-	{
+
+	// takes in Type, ID, landedCoordinates, configCoordinates, Condition,
+	// Orientation, inUse
+	public Module(String type, int id, Point landedCoordinates,
+			Point configCoordinates, boolean condition, int orientation,
+			boolean inUse) {
 		this.setType(type);
 		this.setId(id);
 		this.setLandedCoordinates(landedCoordinates);
@@ -24,8 +24,8 @@ public class Module {
 		this.setOrientation(orientation);
 		this.setInUse(inUse);
 	}
-	
-	public Module(){
+
+	public Module() {
 		this.setInUse(false);
 		this.setType(null);
 		this.setId(0);
@@ -35,59 +35,57 @@ public class Module {
 		this.setOrientation(0);
 	}
 
-	public static Module getModuleAtCoordinates(Point p)
-	{
+	public static Module getModuleAtCoordinates(Point p) {
 		Load loader = new Load();
 		Module[] modules = loader.getModules();
-		for(Module m:modules)
-		{
-			if(m.isInUse() && m.configCoordinates.equals(p))
-			{
+		for (Module m : modules) {
+			if (m.isInUse() && m.configCoordinates.equals(p)) {
 				return m;
 			}
 		}
 		return null;
 	}
-	
-	
-	public boolean isNextTo(Module m)
-	{
+
+	public boolean isNextTo(Module m) {
 		int x1 = m.getConfigCoordinates().getX();
 		int x2 = getConfigCoordinates().getX();
 		int y1 = m.getConfigCoordinates().getY();
 		int y2 = getConfigCoordinates().getY();
-		if( x2-x1 == 1 || y2-y1 == 1) // modules are "horizontally next to" each other
+		if (x2 - x1 == 1 || y2 - y1 == 1) // modules are "horizontally next to"
+											// each other
 		{
-			
+
 		}
-		//modules are "vertically next to" each other
-		else if( (Math.abs(x2-x1) == 2 && y2 == y1 ) && getModuleAtCoordinates(new Point(Math.min(x2, x1)+1,y1)).getType().equals("plain") )
-		{
+		// modules are "vertically next to" each other
+		else if ((Math.abs(x2 - x1) == 2 && y2 == y1)
+				&& getModuleAtCoordinates(new Point(Math.min(x2, x1) + 1, y1))
+						.getType().equals("plain")) {
+			return true;
+		} else if ((Math.abs(y2 - y1) == 2 && x2 == x1)
+				&& getModuleAtCoordinates(new Point(Math.min(y2, y1) + 1, x1))
+						.getType().equals("plain")) {
+			return true;
+		} else if ((Math.abs(x2 - x1) == 2 && Math.abs(y2 - y1) == 1)
+				&& (getModuleAtCoordinates(
+						new Point(Math.min(x2, x1) + 1, Math.min(y2, y1)))
+						.getType().equals("plain"))
+				&& (getModuleAtCoordinates(
+						new Point(Math.min(x2, x1) + 1, Math.min(y2, y1) + 1))
+						.getType().equals("plain"))) {
+			return true;
+		} else if ((Math.abs(y2 - y1) == 2 && Math.abs(x2 - x1) == 1)
+				&& (getModuleAtCoordinates(
+						new Point(Math.min(y2, y1) + 1, Math.min(x2, x1)))
+						.getType().equals("plain"))
+				&& (getModuleAtCoordinates(
+						new Point(Math.min(y2, y1) + 1, Math.min(x2, x1) + 1))
+						.getType().equals("plain"))) {
 			return true;
 		}
-		else if( (Math.abs(y2-y1) == 2 && x2 == x1 ) && getModuleAtCoordinates(new Point(Math.min(y2, y1)+1,x1)).getType().equals("plain") )
-		{
-			return true;
-		}
-		else if( (Math.abs(x2-x1) == 2 && Math.abs(y2-y1) == 1 ) &&
-				 (getModuleAtCoordinates(new Point(Math.min(x2, x1)+1,Math.min(y2, y1))).getType().equals("plain")) &&
-				 (getModuleAtCoordinates(new Point(Math.min(x2, x1)+1,Math.min(y2, y1)+1)).getType().equals("plain")) )
-		{
-			return true;
-		}
-		else if( (Math.abs(y2-y1) == 2 && Math.abs(x2-x1) == 1 ) &&
-				 (getModuleAtCoordinates(new Point(Math.min(y2, y1)+1,Math.min(x2, x1))).getType().equals("plain")) &&
-				 (getModuleAtCoordinates(new Point(Math.min(y2, y1)+1,Math.min(x2, x1)+1)).getType().equals("plain")) )
-		{
-			return true;
-		}
-		
+
 		return false;
 	}
-	
-	
-	
-	
+
 	public int getId() {
 		return id;
 	}
@@ -95,19 +93,16 @@ public class Module {
 	public void setId(int id) {
 		this.id = id;
 	}
-	
-	public boolean hasSameIdAs(Module m)
-	{
+
+	public boolean hasSameIdAs(Module m) {
 		return getId() == m.getId();
 	}
-	
-	public boolean hasSameLandedCoordinatesAs(Module m)
-	{
+
+	public boolean hasSameLandedCoordinatesAs(Module m) {
 		return getLandedCoordinates().equals(m.getLandedCoordinates());
 	}
-	
-	public boolean hasSameConfigCoordinates(Module m)
-	{
+
+	public boolean hasSameConfigCoordinates(Module m) {
 		return getConfigCoordinates().equals(m.getConfigCoordinates());
 	}
 
@@ -158,6 +153,5 @@ public class Module {
 	public void setInUse(boolean inUse) {
 		this.inUse = inUse;
 	}
-	
-	
+
 }
