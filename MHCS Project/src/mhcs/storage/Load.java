@@ -25,9 +25,12 @@ public class Load {
 				  newModule.setId(Integer.parseInt(stockStore.getItem("ID"+key)));
 				  newModule.setOrientation(Integer.parseInt(stockStore.getItem("ORI"+key)));
 				  newModule.setType(stockStore.getItem("TYP"+key));
-				  int x = Integer.parseInt(stockStore.getItem("X"+key));
-				  int y = Integer.parseInt(stockStore.getItem("Y"+key));				  
-				  newModule.setCoordinates(new Point(x,y));
+				  int lx = Integer.parseInt(stockStore.getItem("LX"+key));
+				  int ly = Integer.parseInt(stockStore.getItem("LY"+key));				  								  				  
+				  newModule.setLandedCoordinates(new Point(lx,ly));
+				  int cx = Integer.parseInt(stockStore.getItem("CX"+key));
+				  int cy = Integer.parseInt(stockStore.getItem("CY"+key));				  								  				  
+				  newModule.setLandedCoordinates(new Point(cx,cy));				  
 				  if ((stockStore.getItem("CON"+key)) == "ture")
 					  newModule.setCondition(true);
 				  else
