@@ -1,7 +1,5 @@
 package mhcs.client;
 
-import mhcs.storage.Save;
-
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.dom.client.Style.Unit;
@@ -45,18 +43,90 @@ public class MHCS_Project implements EntryPoint {
 	/**
 	 * This is the entry point method.
 	 */
+	@SuppressWarnings("deprecation")
 	public void onModuleLoad() {
 		// Configurations
 		{
-			Save toSave = new Save();
-			toSave.saveOneModule(new Module("Air Lock", 12345, new Point(1, 3), new Point(0, 0), true, 1, false));
-
 			String buttonHeight = "50px";
 			String buttonWidth = "300px";
 
 			// West
 			// Add a list box with multiple selection enabled
 			final ListBox cListBox = new ListBox();
+			    cListBox.addItem("Tree Config 1");
+			    cListBox.addItem("Tree Config 2");
+			    cListBox.addItem("Tree Config 3");
+			    cListBox.addItem("Tree Config 4");
+			    cListBox.addItem("Tree Config 5");
+			    cListBox.addItem("Tree Config 6");
+			    cListBox.addItem("Tree Config 7");
+		    cListBox.setVisibleItemCount(10);
+		    cListBox.setHeight("700px");
+		    cListBox.setWidth("300px");
+		    
+		    // Center
+		    Image map = new Image("images/marsMap");
+		    map.setHeight("600px");
+		    map.setWidth("1000px");
+		    
+		    // East
+		    VerticalPanel verPanel = new VerticalPanel();
+		    
+		    CheckBox radAirLock = new CheckBox("Air Lock");				radAirLock.setText("Air Lock");
+		    CheckBox radPlain = new CheckBox("Plain");					radPlain.setText("Plain");
+		    CheckBox radDorm = new CheckBox("Dormitory");				radDorm.setText("Dormitory");
+		    CheckBox radSanitation = new CheckBox("Sanitation");		radSanitation.setText("Sanitation");
+		    CheckBox radFoodAndWater = new CheckBox("Food & Water");	radFoodAndWater.setText("Food & Water");
+		    CheckBox radGymAndRelax= new CheckBox("Gym & Relaxation");	radGymAndRelax.setText("Gym & Relaxation");
+		    CheckBox radCanteen = new CheckBox("Canteen");				radCanteen.setText("Canteen");
+		    CheckBox radPower = new CheckBox("Power");					radPower.setText("Power");
+		    CheckBox radControl = new CheckBox("Control");				radControl.setText("Control");
+		    CheckBox radMedical = new CheckBox("Medical");				radMedical.setText("Medical");
+		    RadioButton radAll = new RadioButton("Select All");			radAll.setText("Select All");
+		    RadioButton radNone = new RadioButton("Deselect All");		radNone.setText("Deselect All");
+		    
+		    // Add function here in Module Class for check boxes
+		    /* 
+		     * if (radAirLock.isChecked())
+		     * {
+		     * // show modules
+		     * } // if
+		    */
+			
+		    radAll.setName("MapModules");
+		    radNone.setName("MapModules");
+		    verPanel.add(radAirLock);
+		    verPanel.add(radPlain);
+		    verPanel.add(radDorm);
+		    verPanel.add(radSanitation);
+		    verPanel.add(radFoodAndWater);
+		    verPanel.add(radGymAndRelax);
+		    verPanel.add(radCanteen);
+		    verPanel.add(radPower);
+		    verPanel.add(radControl);
+		    verPanel.add(radMedical);
+		    verPanel.add(radAll);
+		    verPanel.add(radNone);
+		    verPanel.setHeight("700px");
+		    
+		    // 2nd South
+		    HorizontalPanel horPanel = new HorizontalPanel();
+		    Button roverPathButton = new Button();
+		    Button deleteConfigButton = new Button();
+		    Button buildConfigButton = new Button();
+		    roverPathButton.setHeight(buttonHeight);
+		    roverPathButton.setWidth(buttonWidth);
+		    deleteConfigButton.setHeight(buttonHeight);
+		    deleteConfigButton.setWidth(buttonWidth);
+		    buildConfigButton.setHeight(buttonHeight);
+		    buildConfigButton.setWidth(buttonWidth);
+		    roverPathButton.setText("Rover Path");
+		    deleteConfigButton.setText("Delete Configuration");
+		    buildConfigButton.setText("Build Configuration");
+		    horPanel.add(roverPathButton);
+		    horPanel.add(deleteConfigButton);
+		    horPanel.add(buildConfigButton);
+			
 			cListBox.addItem("Tree Config 1");
 			cListBox.addItem("Tree Config 2");
 			cListBox.addItem("Tree Config 3");
@@ -134,6 +204,24 @@ public class MHCS_Project implements EntryPoint {
 			horPanel.add(buildConfigButton);
 
 			// Create a Dock Panel
+		    DockPanel dock = new DockPanel();
+		    dock.setStyleName("DockPanel");
+		    dock.setSpacing(2);
+		    dock.setHorizontalAlignment(DockPanel.ALIGN_CENTER);
+		    dock.setBorderWidth(5);
+		    dock.setSize("1500px", "700px");
+	
+		    // Add to dock
+		    dock.add(new HTML("Configurations"), DockPanel.NORTH);
+		    dock.add(new HTML("Naples Spring 2015"), DockPanel.SOUTH);
+		    dock.add(verPanel, DockPanel.EAST);
+		    dock.add(cListBox, DockPanel.WEST);
+		    dock.add(new HTML("Map"), DockPanel.NORTH);
+		    dock.add(horPanel, DockPanel.SOUTH);
+		    dock.add(map, DockPanel.CENTER);
+	
+		    RootPanel.get().add(dock);
+
 			DockPanel dock = new DockPanel();
 			dock.setStyleName("DockPanel");
 			dock.setSpacing(2);
@@ -151,6 +239,7 @@ public class MHCS_Project implements EntryPoint {
 			dock.add(map, DockPanel.CENTER);
 
 			RootPanel.get().add(dock);
+
 		} // Configurations
 
 		// Modules
@@ -169,13 +258,13 @@ public class MHCS_Project implements EntryPoint {
 
 			// Add a list box with multiple selection enabled
 			final ListBox mListBox = new ListBox();
-			mListBox.addItem("Module 1");
-			mListBox.addItem("Module 2");
-			mListBox.addItem("Module 3");
-			mListBox.addItem("Module 4");
-			mListBox.addItem("Module 5");
-			mListBox.addItem("Module 6");
-			mListBox.addItem("Module 7");
+				mListBox.addItem("Module 1");
+				mListBox.addItem("Module 2");
+				mListBox.addItem("Module 3");
+				mListBox.addItem("Module 4");
+				mListBox.addItem("Module 5");
+				mListBox.addItem("Module 6");
+				mListBox.addItem("Module 7");
 			mListBox.setVisibleItemCount(10);
 			mListBox.setHeight("650px");
 			mListBox.setWidth("300px");
@@ -294,6 +383,24 @@ public class MHCS_Project implements EntryPoint {
 			mEastVerPanel.setSpacing(15);
 
 			// Create a Dock Panel
+		    DockPanel dock = new DockPanel();
+		    dock.setStyleName("DockPanel");
+		    dock.setSpacing(2);
+		    dock.setHorizontalAlignment(DockPanel.ALIGN_CENTER);
+		    dock.setBorderWidth(5);
+		    dock.setSize("1500px", "700px");
+	
+		    // Add to dock
+		    dock.add(new HTML("Modules"), DockPanel.NORTH);
+		    dock.add(new HTML("Naples Spring 2015"), DockPanel.SOUTH);
+		    dock.add(mEastVerPanel, DockPanel.EAST);
+		    dock.add(mWestVerPanel, DockPanel.WEST);
+		    dock.add(image, DockPanel.NORTH);
+		    dock.add(mSouthVerPanel, DockPanel.SOUTH);
+		    dock.add(mCenterVerPanel, DockPanel.CENTER);
+	
+		    RootPanel.get().add(dock);
+
 			DockPanel dock = new DockPanel();
 			dock.setStyleName("DockPanel");
 			dock.setSpacing(2);
