@@ -1,5 +1,7 @@
 package mhcs.client;
 
+import mhcs.storage.Load;
+
 
 public class Module {
 	
@@ -9,6 +11,7 @@ public class Module {
 	private Point configCoordinates;
 	private boolean condition;
 	private boolean inUse;
+	
 	
 	//takes in Type, ID, landedCoordinates, configCoordinates, Condition, Orientation, inUse
 	public Module(String type, int id, Point landedCoordinates,Point configCoordinates, boolean condition, int orientation, boolean inUse)
@@ -32,6 +35,44 @@ public class Module {
 		this.setOrientation(0);
 	}
 
+	public static Module getModuleAtCoordinates(Point p)
+	{
+		Load loader = new Load();
+		Module[] modules = loader.getModules();
+		for(Module m:modules)
+		{
+			if(m.isInUse() && m.configCoordinates.equals(p))
+			{
+				return m;
+			}
+		}
+		return null;
+	}
+	
+	
+	public boolean isNextTo(Module m)
+	{
+		int x1 = m.getConfigCoordinates().getX();
+		int x2 = getConfigCoordinates().getX();
+		int y1 = m.getConfigCoordinates().getY();
+		int y2 = getConfigCoordinates().getY();
+		if( (Math.abs(x2-x1) == 2 && y2 == y1) && getModuleAtCoordinates(new Point(Math.min(x2, x1)+1,y1)).getType().equals("plain") )
+		{
+			
+		}
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	public int getId() {
 		return id;
 	}
