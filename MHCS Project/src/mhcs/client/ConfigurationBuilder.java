@@ -54,8 +54,9 @@ public class ConfigurationBuilder {
 			}
 		}
 		return (numAirlock >= 1 && numControl >= 1 && numPower >= 1
-				&& numFoodWater >= 1 && numDormitory >= 1 && numCanteen >= 1
-				&& numSanitation >= 1 && numPlain >= 1);
+				&& numFoodWater >= 1 && numDormitory >= 1
+				&& numCanteen >= 1
+				&& numSanitation >= 1 && numPlain >= 3);
 	}
 
 	/**

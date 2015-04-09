@@ -1,5 +1,7 @@
 package mhcs.client;
 
+import mhcs.storage.Save;
+
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.dom.client.Style.Unit;
@@ -46,6 +48,9 @@ public class MHCS_Project implements EntryPoint {
 	public void onModuleLoad() {
 		// Configurations
 		{
+			Save toSave = new Save();
+			toSave.saveOneModule(new Module("Air Lock", 12345, new Point(1, 3), new Point(0, 0), true, 1, false));
+
 			String buttonHeight = "50px";
 			String buttonWidth = "300px";
 
