@@ -56,10 +56,33 @@ public class Module {
 		int x2 = getConfigCoordinates().getX();
 		int y1 = m.getConfigCoordinates().getY();
 		int y2 = getConfigCoordinates().getY();
-		if( (Math.abs(x2-x1) == 2 && y2 == y1) && getModuleAtCoordinates(new Point(Math.min(x2, x1)+1,y1)).getType().equals("plain") )
+		if( x2-x1 == 1 || y2-y1 == 1) // modules are "horizontally next to" each other
 		{
 			
 		}
+		//modules are "vertically next to" each other
+		else if( (Math.abs(x2-x1) == 2 && y2 == y1 ) && getModuleAtCoordinates(new Point(Math.min(x2, x1)+1,y1)).getType().equals("plain") )
+		{
+			return true;
+		}
+		else if( (Math.abs(y2-y1) == 2 && x2 == x1 ) && getModuleAtCoordinates(new Point(Math.min(y2, y1)+1,x1)).getType().equals("plain") )
+		{
+			return true;
+		}
+		else if( (Math.abs(x2-x1) == 2 && Math.abs(y2-y1) == 1 ) &&
+				 (getModuleAtCoordinates(new Point(Math.min(x2, x1)+1,Math.min(y2, y1))).getType().equals("plain")) &&
+				 (getModuleAtCoordinates(new Point(Math.min(x2, x1)+1,Math.min(y2, y1)+1)).getType().equals("plain")) )
+		{
+			return true;
+		}
+		else if( (Math.abs(y2-y1) == 2 && Math.abs(x2-x1) == 1 ) &&
+				 (getModuleAtCoordinates(new Point(Math.min(y2, y1)+1,Math.min(x2, x1))).getType().equals("plain")) &&
+				 (getModuleAtCoordinates(new Point(Math.min(y2, y1)+1,Math.min(x2, x1)+1)).getType().equals("plain")) )
+		{
+			return true;
+		}
+		
+		return false;
 	}
 	
 	
