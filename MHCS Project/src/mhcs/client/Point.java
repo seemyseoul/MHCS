@@ -1,6 +1,6 @@
 package mhcs.client;
 
-public class Point {
+public class Point{
 	
 	private int x,y;
 	public Point(int x, int y)
@@ -24,6 +24,11 @@ public class Point {
 
 	public void setX(int x) {
 		this.x = x;
+	}
+	
+	public boolean equals(Point p)
+	{
+		return (p.x == x && p.y == y);
 	}
 	
 }
