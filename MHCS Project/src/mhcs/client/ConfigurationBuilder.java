@@ -1,26 +1,10 @@
 package mhcs.client;
 
 import mhcs.storage.Load;
+import mhcs.storage.Save;
 
 
 public class ConfigurationBuilder {
-
-	private Module[] modules;
-	
-	public ConfigurationBuilder(Module[] m)
-	{
-		this.modules = m;
-	}
-	
-	public Module[] getModules()
-	{
-		return modules;
-	}
-	
-	public void setModules(Module[] m)
-	{
-		modules = m;
-	}
 	
 	public boolean minConfigPossible()
 	{
@@ -63,14 +47,20 @@ public class ConfigurationBuilder {
 				numSanitation >= 1 &&
 				numPlain >= 1);
 	}
+
+	/** This method will generate configurations and return an array of arrays of modules.
+	 * 
+	 * @return An array of configurations.  Each configuration is just an array of modules
+	 */
+	public Module[][] generateConfigurations()
+	{
+		
+	}
 	
 	
 	
 	/** this method returns the rover path as a Point[].
-	 *  It has to take in an array of the original modules
-	 *  so that it can compare unconfigured and configured module locations
-	 *  to generate the most efficient path.
-	 *
+	 * @param m is the array of modules that need to be placed.
 	 * @return Point[] path
 	 */
 	public Point[] getRoverPath(Module[] m)

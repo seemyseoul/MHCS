@@ -95,6 +95,21 @@ public class Module {
 	public void setId(int id) {
 		this.id = id;
 	}
+	
+	public boolean hasSameIdAs(Module m)
+	{
+		return getId() == m.getId();
+	}
+	
+	public boolean hasSameLandedCoordinatesAs(Module m)
+	{
+		return getLandedCoordinates().equals(m.getLandedCoordinates());
+	}
+	
+	public boolean hasSameConfigCoordinates(Module m)
+	{
+		return getConfigCoordinates().equals(m.getConfigCoordinates());
+	}
 
 	public int getOrientation() {
 		return orientation;
