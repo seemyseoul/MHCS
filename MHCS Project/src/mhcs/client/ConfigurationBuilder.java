@@ -8,8 +8,9 @@ import mhcs.storage.Save;
 public class ConfigurationBuilder {
 
 	/**
-	 * Check whether or not a minimum configuration is possible given the stored
-	 * modules.
+	 * Check whether or not a minimum
+	 * configuration is possible given the
+	 * stored modules.
 	 *
 	 * @return boolean value representing whether or not a minimum configuration
 	 *         can be found.
