@@ -9,6 +9,7 @@ import com.google.gwt.i18n.client.Constants;
 import com.google.gwt.safehtml.shared.SafeHtml;
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.Button;
+import com.google.gwt.user.client.ui.CheckBox;
 import com.google.gwt.user.client.ui.DockPanel;
 import com.google.gwt.user.client.ui.FlexTable;
 import com.google.gwt.user.client.ui.Grid;
@@ -17,6 +18,7 @@ import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.Image;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.ListBox;
+import com.google.gwt.user.client.ui.PasswordTextBox;
 import com.google.gwt.user.client.ui.RadioButton;
 import com.google.gwt.user.client.ui.RootPanel;
 import com.google.gwt.user.client.ui.ScrollPanel;
@@ -38,11 +40,6 @@ public class MHCS implements EntryPoint {
 			+ "attempting to contact the server. Please check your network "
 			+ "connection and try again.";
 
-	/**
-	 * Create a remote service proxy to talk to the server-side Greeting service.
-	 */
-	private final GreetingServiceAsync greetingService = GWT
-			.create(GreetingService.class);
 	/**
 	 * This is the entry point method.
 	 */
@@ -73,30 +70,32 @@ public class MHCS implements EntryPoint {
 		    
 		    // East
 		    VerticalPanel verPanel = new VerticalPanel();
-		    RadioButton radAirLock = new RadioButton("Air Lock");
-		    RadioButton radPlain = new RadioButton("Plain");
-		    RadioButton radDorm = new RadioButton("Dormitory");
-		    RadioButton radSanitation = new RadioButton("Sanitation");
-		    RadioButton radFoodAndWater = new RadioButton("Food & Water");
-		    RadioButton radGymAndRelax= new RadioButton("Gym & Relaxation");
-		    RadioButton radCanteen = new RadioButton("Canteen");
-		    RadioButton radPower = new RadioButton("Power");
-		    RadioButton radControl = new RadioButton("Control");
-		    RadioButton radMedical = new RadioButton("Medical");
+		    CheckBox radAirLock = new CheckBox("Air Lock");
+		    CheckBox radPlain = new CheckBox("Plain");
+		    CheckBox radDorm = new CheckBox("Dormitory");
+		    CheckBox radSanitation = new CheckBox("Sanitation");
+		    CheckBox radFoodAndWater = new CheckBox("Food & Water");
+		    CheckBox radGymAndRelax= new CheckBox("Gym & Relaxation");
+		    CheckBox radCanteen = new CheckBox("Canteen");
+		    CheckBox radPower = new CheckBox("Power");
+		    CheckBox radControl = new CheckBox("Control");
+		    CheckBox radMedical = new CheckBox("Medical");
 		    RadioButton radAll = new RadioButton("Select All");
 		    RadioButton radNone = new RadioButton("Deselect All");
-		    radAirLock.setName("MapModules");			radAirLock.setText("Air Lock");
-		    radPlain.setName("MapModules");				radPlain.setText("Plain");
-		    radDorm.setName("MapModules");				radDorm.setText("Dormitory");
-		    radSanitation.setName("MapModules");		radSanitation.setText("Sanitation");
-		    radFoodAndWater.setName("MapModules");		radFoodAndWater.setText("Food & Water");
-		    radGymAndRelax.setName("MapModules");		radGymAndRelax.setText("Gym & Relaxation");
-		    radCanteen.setName("MapModules");			radCanteen.setText("Canteen");
-		    radPower.setName("MapModules");				radPower.setText("Power");
-		    radControl.setName("MapModules");			radControl.setText("Control");
-		    radMedical.setName("MapModules");			radMedical.setText("Medical");
-		    radAll.setName("MapModules");				radAll.setText("Select All");
-		    radNone.setName("MapModules");				radNone.setText("Deselect All");
+		    radAirLock.setText("Air Lock");
+		    radPlain.setText("Plain");
+		    radDorm.setText("Dormitory");
+		    radSanitation.setText("Sanitation");
+		    radFoodAndWater.setText("Food & Water");
+		    radGymAndRelax.setText("Gym & Relaxation");
+		    radCanteen.setText("Canteen");
+		    radPower.setText("Power");
+		    radControl.setText("Control");
+			radMedical.setText("Medical");
+			radNone.setText("Deselect All");
+			radAll.setText("Select All");
+		    radAll.setName("MapModules");
+		    radNone.setName("MapModules");
 		    verPanel.add(radAirLock);
 		    verPanel.add(radPlain);
 		    verPanel.add(radDorm);
@@ -308,6 +307,70 @@ public class MHCS implements EntryPoint {
 	
 		    RootPanel.get().add(dock);
 		} // Modules
+		
+//		// Settings
+//		{
+//			String buttonHeight = "20px";
+//			String buttonWidth = "40px";
+//			
+//			// Vertical Panel (holds all)
+//			VerticalPanel sVertPanel = new VerticalPanel();
+//			
+//			// Horizontal Panels
+//			HorizontalPanel sUserPanel = new HorizontalPanel();
+//			ListBox users = new ListBox();
+//			users.addItem("Jesse Goebel");
+//			users.addItem("Jack McKeown");
+//			users.addItem("Brent Pavlovich");
+//			users.addItem("Amanda Poston");
+//			Button addUserButton = new Button();
+//			Button removeUserButton = new Button();
+//			sUserPanel.add(users);
+//			sUserPanel.add(addUserButton);
+//			sUserPanel.add(removeUserButton);
+//			
+//			HorizontalPanel sPassPanel = new HorizontalPanel();
+//			CheckBox passwordEnable = new CheckBox();
+//			passwordEnable.setText("Password Enabled");
+//			Button changePasswordButton = new Button();
+//			changePasswordButton.setHeight(buttonHeight);
+//			changePasswordButton.setWidth(buttonWidth);
+//			sPassPanel.addItem(passwordEnable);
+//			sPassPanel.addItem(changePasswordButton);
+//			
+//			// Inner vertical panel
+//			VerticalPanel sPassVertPanel = new VerticalPanel();
+//			HTML changePassword = new HTML("Change Password");
+//			changePassword.setHeight("20px");
+//			
+//			// Inner horizontal panels
+//			HorizontalPanel currentPassword = new HorizontalPanel();
+//			PasswordTextBox cPassword = new PasswordTextBox();
+//			HTML cPass = new HTML("Current Password");
+//			currentPassword.addItem(cPassword);
+//			currentPassword.addItem(cPass);
+//			
+//			HorizontalPanel newPassword = new HorizontalPanel();
+//			PasswordTextBox nPassword = new PasswordTextBox();
+//			HTML nPass = new HTML("New Password");
+//			newPassword.addItem(nPassword);
+//			newPassword.addItem(nPass);
+//			
+//			HorizontalPanel confirmPassword = new HorizontalPanel();
+//			PasswordTextBox coPassword = new PasswordTextBox();
+//			HTML coPass = new HTML("Current Password");
+//			confirmPassword.addItem(coPassword);
+//			confirmPassword.addItem(coPass);
+//			
+//			sPassVertPanel.addItem(changePassword);
+//			sPassVertPanel.addItem(currentPassword);
+//			sPassVertPanel.addItem(newPassword);
+//			sPassVertPanel.addItem(confirmPassword);
+//			
+//			
+//			RootPanel.get().add(sVertPanel);			
+//			
+//		} // Settings
 		
 	} // OnModuleLoad
 } // MHCS
