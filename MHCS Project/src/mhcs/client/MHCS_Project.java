@@ -335,8 +335,8 @@ public class MHCS_Project implements EntryPoint {
 			Button changePasswordButton = new Button();
 			changePasswordButton.setHeight(buttonHeight);
 			changePasswordButton.setWidth(buttonWidth);
-			sPassPanel.addItem(passwordEnable);
-			sPassPanel.addItem(changePasswordButton);
+			sPassPanel.add(passwordEnable);
+			sPassPanel.add(changePasswordButton);
 			
 			// Inner vertical panel
 			VerticalPanel sPassVertPanel = new VerticalPanel();
@@ -347,25 +347,25 @@ public class MHCS_Project implements EntryPoint {
 			HorizontalPanel currentPassword = new HorizontalPanel();
 			PasswordTextBox cPassword = new PasswordTextBox();
 			HTML cPass = new HTML("Current Password");
-			currentPassword.addItem(cPassword);
-			currentPassword.addItem(cPass);
+			currentPassword.add(cPassword);
+			currentPassword.add(cPass);
 			
 			HorizontalPanel newPassword = new HorizontalPanel();
 			PasswordTextBox nPassword = new PasswordTextBox();
 			HTML nPass = new HTML("New Password");
-			newPassword.addItem(nPassword);
-			newPassword.addItem(nPass);
+			newPassword.add(nPassword);
+			newPassword.add(nPass);
 			
 			HorizontalPanel confirmPassword = new HorizontalPanel();
 			PasswordTextBox coPassword = new PasswordTextBox();
 			HTML coPass = new HTML("Current Password");
-			confirmPassword.addItem(coPassword);
-			confirmPassword.addItem(coPass);
+			confirmPassword.add(coPassword);
+			confirmPassword.add(coPass);
 			
-			sPassVertPanel.addItem(changePassword);
-			sPassVertPanel.addItem(currentPassword);
-			sPassVertPanel.addItem(newPassword);
-			sPassVertPanel.addItem(confirmPassword);
+			sPassVertPanel.add(changePassword);
+			sPassVertPanel.add(currentPassword);
+			sPassVertPanel.add(newPassword);
+			sPassVertPanel.add(confirmPassword);
 			
 			
 			RootPanel.get().add(sVertPanel);			
