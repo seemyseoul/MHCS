@@ -368,7 +368,7 @@ public class MHCS_Project implements EntryPoint {
 			sPassVertPanel.add(confirmPassword);
 			
 			
-			RootPanel.get().add(sVertPanel);			
+			RootPanel.get().add(sPassVertPanel);			
 			
 		} // Settings
 		
