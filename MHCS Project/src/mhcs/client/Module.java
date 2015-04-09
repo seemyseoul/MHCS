@@ -5,27 +5,31 @@ public class Module {
 	
 	private int id, orientation;
 	private String type;
-	private Point coordinates;
+	private Point landedCoordinates;
+	private Point configCoordinates;
 	private boolean condition;
+	private boolean inUse;
 	
-	public Module(String type, int id, Point coordinates, boolean condition, int orientation)  //takes in Type, ID, Coordinates, Condition, Orientation 
+	//takes in Type, ID, landedCoordinates, configCoordinates, Condition, Orientation, inUse
+	public Module(String type, int id, Point landedCoordinates,Point configCoordinates, boolean condition, int orientation, boolean inUse)
 	{
 		this.setType(type);
 		this.setId(id);
-		this.setCoordinates(coordinates);
+		this.setLandedCoordinates(landedCoordinates);
+		this.setConfigCoordinates(configCoordinates);
 		this.setCondition(condition);
 		this.setOrientation(orientation);
+		this.setInUse(inUse);
 	}
 	
 	public Module(){
-	}
-
-	public Point getCoordinates() {
-		return coordinates;
-	}
-
-	public void setCoordinates(Point coordinates) {
-		this.coordinates = coordinates;
+		this.setInUse(false);
+		this.setType(null);
+		this.setId(0);
+		this.setLandedCoordinates(null);
+		this.setConfigCoordinates(null);
+		this.setCondition(false);
+		this.setOrientation(0);
 	}
 
 	public int getId() {
@@ -59,4 +63,30 @@ public class Module {
 	public void setCondition(boolean condition) {
 		this.condition = condition;
 	}
+
+	public Point getLandedCoordinates() {
+		return landedCoordinates;
+	}
+
+	public void setLandedCoordinates(Point landedCoordinates) {
+		this.landedCoordinates = landedCoordinates;
+	}
+
+	public Point getConfigCoordinates() {
+		return configCoordinates;
+	}
+
+	public void setConfigCoordinates(Point configCoordinates) {
+		this.configCoordinates = configCoordinates;
+	}
+
+	public boolean isInUse() {
+		return inUse;
+	}
+
+	public void setInUse(boolean inUse) {
+		this.inUse = inUse;
+	}
+	
+	
 }
