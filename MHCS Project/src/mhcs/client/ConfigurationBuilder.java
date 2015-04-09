@@ -54,7 +54,14 @@ public class ConfigurationBuilder {
 			if(m.getType().equals("plain"))
 				numPlain++;
 		}
-		return false;
+		return (numAirlock >= 1 &&
+				numControl >= 1 &&
+				numPower >= 1 &&
+				numFoodWater >= 1 &&
+				numDormitory >= 1 &&
+				numCanteen >= 1 &&
+				numSanitation >= 1 &&
+				numPlain >= 1);
 	}
 	
 	
