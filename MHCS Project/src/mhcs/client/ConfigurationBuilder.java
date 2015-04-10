@@ -1,6 +1,7 @@
 package mhcs.client;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 import mhcs.storage.Load;
 import mhcs.storage.Save;
@@ -87,17 +88,23 @@ public class ConfigurationBuilder {
 	 * @return an array of configurations.
 	 * Each configuration is just an array of modules.
 	 */
-	public Module[][] generateMinConfigurations()
+	public Module[] generateMinConfiguration()
 	{
-		
+		if (!minConfigPossible())
+		{
+			return null;
+		}
+		Load loader = new Load();
+		Module[] modules = loader.getModules();
+		Point centerOfMass = loader.getCenterOfMass();
+		Module[] plainModules = loader.getModulesOfType("plain");
 		
 	}
 
 	/**
 	 * this method returns the rover path as a Point[].
 	 * 
-	 * @param m
-	 *            is the array of modules that need to be placed.
+	 * @param m the array of modules that need to be placed.
 	 * @return Point[] path
 	 */
 	public Point[] getRoverPath(Module[] m) {
