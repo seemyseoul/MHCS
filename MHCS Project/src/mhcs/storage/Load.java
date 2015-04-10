@@ -108,7 +108,16 @@ public class Load {
 	public Module getModuleClosestTo(Point p,String type)
 	{
 		Module[] modules = getModulesOfType(type);
+		Module closestModule = modules[0];
 		
+		for(Module m : modules)
+		{
+			if(m.getLandedCoordinates().distanceTo(p) < closestModule.getLandedCoordinates().distanceTo(p))
+			{
+				closestModule = m;
+			}
+		}
+		return closestModule;
 	}
 	
 	private boolean passwordFlag = true;
