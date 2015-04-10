@@ -28,5 +28,10 @@ public class Point {
 	public boolean equals(Point p) {
 		return (p.x == x && p.y == y);
 	}
-
+	
+	public int distanceTo(Point p)
+	{
+		return (int) Math.sqrt( Math.pow(p.getX()-getX(),2) + Math.pow(p.getY()-getY(), 2) );
+	}
+	
 }

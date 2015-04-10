@@ -60,19 +60,37 @@ public class ConfigurationBuilder {
 	}
 
 	/**
-	 * This method will generate configurations and return an array of arrays of
-	 * modules.
-	 * 
-	 * @return An array of configurations. Each configuration is just an array
-	 *         of modules
+	 * This method will generate configurations
+	 * and return an array of arrays of modules.
+	 *
+	 * @return An array of configurations.
+	 * Each configuration is just an array of modules
 	 */
-	public Module[][] generateConfigurations() {
+	public final Module[][] generateConfigurations() {
 		Load loader = new Load();
 		Module[] moduleArray = loader.getModules();
 		ArrayList<Module> origModules = new ArrayList<Module>();
 		for (Module x : moduleArray) {
 			origModules.add(x);
 		}
+		/**
+		 * place plain modules.
+		 * fill in possible places with other modules.
+		 *
+		 *
+		 */
+		return null;
+	}
+
+	/** This method will return minimum configurations.
+	 *
+	 * @return an array of configurations.
+	 * Each configuration is just an array of modules.
+	 */
+	public Module[][] generateMinConfigurations()
+	{
+		
+		
 	}
 
 	/**

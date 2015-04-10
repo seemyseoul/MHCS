@@ -1,5 +1,9 @@
 package mhcs.storage;
 
+import java.util.ArrayList;
+
+import org.apache.commons.lang3.ArrayUtils;
+
 import mhcs.client.Module;
 import mhcs.client.Point;
 
@@ -42,7 +46,7 @@ public class Load {
 		}
 		return moduleArray;
 	}
-
+	
 	// Loads password and password flag
 	private void loadSettings() {
 		stockStore = Storage.getLocalStorageIfSupported();
@@ -66,7 +70,47 @@ public class Load {
 	public Module[] getModules() {
 		return moduleArray;
 	}
-
+	
+	public Module[] getModulesOfType(String type)
+	{
+		ArrayList<Module> list = new ArrayList<Module>();
+		for(Module m : getModules())
+		{
+			if(m.getType().equals(type))
+			{
+				list.add(m);
+			}
+		}
+		return (Module[]) list.toArray();
+	}
+	
+	public Point getCenterOfMass()
+	{
+		Module[] modules = getModules();
+		int sumX = 0;
+		int sumY = 0;
+		for(Module m : modules)
+		{
+			sumX += m.getLandedCoordinates().getX();
+			sumY += m.getLandedCoordinates().getY();
+		}
+		return new Point(sumX / modules.length, sumY / modules.length);
+	}
+	
+	
+	/**
+	 * This method returns the closest module of type "type"
+	 * to module m.
+	 * 
+	 * @param p Point to get closest module to.
+	 * @param type Type of modules to search for.
+	 */
+	public Module getModuleClosestTo(Point p,String type)
+	{
+		Module[] modules = getModulesOfType(type);
+		
+	}
+	
 	private boolean passwordFlag = true;
 	private String password = "Naples";
 	private Module moduleArray[] = null;
