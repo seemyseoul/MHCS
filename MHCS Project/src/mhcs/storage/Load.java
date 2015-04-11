@@ -83,40 +83,53 @@ public class Load {
 		}
 		return (Module[]) list.toArray();
 	}
+
+	public Module[] getUnusedModulesOfType(String type)
+	{
+		ArrayList<Module> list = new ArrayList<Module>();
+		for(Module m : getModules())
+		{
+			if(m.getType().equals(type) && !m.isInUse())
+			{
+				list.add(m);
+			}
+		}
+		return (Module[]) list.toArray();
+	}
 	
 	/**
 	 * gets the center of mass of the modules.
 	 * @return the center of mass.
 	 */
-	public Point getCenterOfMass()
+	public final Point getCenterOfMass()
 	{
 		Module[] modules = getModules();
 		int sumX = 0;
 		int sumY = 0;
-		for(Module m : modules)
+		for (Module m : modules)
 		{
 			sumX += m.getLandedCoordinates().getX();
 			sumY += m.getLandedCoordinates().getY();
 		}
 		return new Point(sumX / modules.length, sumY / modules.length);
 	}
-	
-	
+
 	/**
-	 * This method returns the closest module of type "type"
+	 * This method returns the closest UNUSED module of type "type"
 	 * to module m.
-	 * 
+	 *
 	 * @param p Point to get closest module to.
 	 * @param type Type of modules to search for.
+	 * @return module closest to point p.
 	 */
-	public Module getModuleClosestTo(Point p,String type)
+	public final Module getModuleClosestTo(final Point p, final String type)
 	{
-		Module[] modules = getModulesOfType(type);
+		Module[] modules = getUnusedModulesOfType(type);
 		Module closestModule = modules[0];
 		
-		for(Module m : modules)
+		for (Module m : modules)
 		{
-			if(m.getLandedCoordinates().distanceTo(p) < closestModule.getLandedCoordinates().distanceTo(p))
+			if (m.getLandedCoordinates().distanceTo(p) < closestModule.getLandedCoordinates().distanceTo(p))
 			{
 				closestModule = m;
 			}

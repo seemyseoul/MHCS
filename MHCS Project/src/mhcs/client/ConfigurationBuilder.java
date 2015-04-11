@@ -88,12 +88,12 @@ public class ConfigurationBuilder {
 		return null;
 	}
 
-	/** This method will return minimum configurations.
+	/** This method will return a minimum configuration.
 	 *
-	 * @return an array of configurations.
-	 * Each configuration is just an array of modules.
+	 * @return an array of modules with
+	 * configCoordinates set and InUse set to true.
 	 */
-	public final Module[][] generateMinConfiguration()
+	public final Module[] generateMinConfiguration()
 	{
 		if (!minConfigPossible())
 		{
@@ -103,9 +103,67 @@ public class ConfigurationBuilder {
 		Module[] modules = loader.getModules();
 		Point centerOfMass = loader.getCenterOfMass();
 
-		//TODO
+		/*
+		 * pretty good minimum config hardcoded...
+		 *
+		 *              Food    Dorm    Power
+		 *    Airlock   Plain   Plain   Plain   Sanitation
+		 *              Canteen         Control
+		 */
 
-		return null;
+		Module centerPlain = loader.getModuleClosestTo(centerOfMass, "plain");
+		centerPlain.setInUse(true);
+		centerPlain.setConfigCoordinates(centerOfMass);
+
+		Point rightPlainPos = new Point(centerOfMass.getX()+1,centerOfMass.getY());
+		Module rightPlain = loader.getModuleClosestTo(rightPlainPos, "plain");
+		rightPlain.setInUse(true);
+		rightPlain.setConfigCoordinates(rightPlainPos);
+
+		Point leftPlainPos = new Point(centerOfMass.getX()-1,centerOfMass.getY());
+		Module leftPlain = loader.getModuleClosestTo(leftPlainPos, "plain");
+		leftPlain.setInUse(true);
+		leftPlain.setConfigCoordinates(leftPlainPos);
+
+		Point airlockPos = new Point(leftPlainPos.getX()-1,leftPlainPos.getY());
+		Module airlock = loader.getModuleClosestTo(airlockPos, "airlock");
+		airlock.setInUse(true);
+		airlock.setConfigCoordinates(airlockPos);
+
+		Point foodWaterPos = new Point(leftPlainPos.getX(),leftPlainPos.getY()+1);
+		Module foodWater = loader.getModuleClosestTo(foodWaterPos, "foodWater");
+		foodWater.setInUse(true);
+		foodWater.setConfigCoordinates(foodWaterPos);
+
+		Point canteenPos = new Point(leftPlainPos.getX(),leftPlainPos.getY()-1);
+		Module canteen = loader.getModuleClosestTo(canteenPos, "canteen");
+		canteen.setInUse(true);
+		canteen.setConfigCoordinates(canteenPos);
+
+		Point dormPos = new Point(centerOfMass.getX(),centerOfMass.getY()+1);
+		Module dorm = loader.getModuleClosestTo(dormPos, "dormitory");
+		dorm.setInUse(true);
+		dorm.setConfigCoordinates(dormPos);
+
+		Point powerPos = new Point(rightPlainPos.getX(),rightPlainPos.getY()+1);
+		Module power = loader.getModuleClosestTo(powerPos, "power");
+		power.setInUse(true);
+		power.setConfigCoordinates(dormPos);
+
+		Point controlPos = new Point(rightPlainPos.getX(),rightPlainPos.getY()-1);
+		Module control = loader.getModuleClosestTo(controlPos, "control");
+		control.setInUse(true);
+		control.setConfigCoordinates(controlPos);
+
+		Point sanitationPos = new Point(rightPlainPos.getX()+1,rightPlainPos.getY());
+		Module sanitation = loader.getModuleClosestTo(sanitationPos, "sanitation");
+		sanitation.setInUse(true);
+		sanitation.setConfigCoordinates(sanitationPos);
+
+
+		return new Module[]{foodWater, dorm, power
+				, airlock, leftPlain, centerPlain, rightPlain
+				, sanitation, canteen, control};
 	}
 
 	/**
