@@ -6,6 +6,11 @@ import java.util.Arrays;
 import mhcs.storage.Load;
 import mhcs.storage.Save;
 
+/**
+ * Class designed to build configurations.
+ * @author Naples
+ *
+ */
 public class ConfigurationBuilder {
 
 	/**
@@ -13,8 +18,8 @@ public class ConfigurationBuilder {
 	 * configuration is possible given the
 	 * stored modules.
 	 *
-	 * @return boolean value representing whether or not a minimum configuration
-	 *         can be found.
+	 * @return boolean value representing
+	 * whether or not a minimum configuration can be found.
 	 */
 	public boolean minConfigPossible() {
 		Load loader = new Load();
@@ -88,7 +93,7 @@ public class ConfigurationBuilder {
 	 * @return an array of configurations.
 	 * Each configuration is just an array of modules.
 	 */
-	public Module[] generateMinConfiguration()
+	public final Module[] generateMinConfiguration()
 	{
 		if (!minConfigPossible())
 		{
@@ -98,20 +103,19 @@ public class ConfigurationBuilder {
 		Module[] modules = loader.getModules();
 		Point centerOfMass = loader.getCenterOfMass();
 		Module[] plainModules = loader.getModulesOfType("plain");
-		
+
 		//TODO
-		
-		
+
 		return null;
 	}
 
 	/**
 	 * this method returns the rover path as a Point[].
-	 * 
+	 *
 	 * @param m the array of modules that need to be placed.
 	 * @return Point[] path
 	 */
-	public Point[] getRoverPath(Module[] m) {
+	public final Point[] getRoverPath(final Module[] m) {
 		return null;
 	}
 }

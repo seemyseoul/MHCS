@@ -1,18 +1,39 @@
 package mhcs.client;
 
+/**
+ * This class defines a point in 2D space on
+ * the surface of Mars.
+ *
+ * @author Naples
+ *
+ */
 public class Point {
 
 	private int x, y;
 
-	public Point(int x, int y) {
-		this.x = x;
-		this.y = y;
+	/**
+	 * Self-explanatory constructor.
+	 *
+	 * @param xp x-coordinate within landing area.
+	 * @param yp y-coordinate within landing area.
+	 */
+	public Point(final int xp, final int yp) {
+		this.x = xp;
+		this.y = yp;
 	}
 
+	/**
+	 * gets the x value.
+	 * @return x The x-coordinate within landing area.
+	 */
 	public int getX() {
 		return x;
 	}
 
+	/**
+	 * gets the y value.
+	 * @return y The y-coordinate within landing area.
+	 */
 	public int getY() {
 		return y;
 	}
@@ -31,7 +52,8 @@ public class Point {
 	
 	public int distanceTo(Point p)
 	{
-		return (int) Math.sqrt( Math.pow(p.getX()-getX(),2) + Math.pow(p.getY()-getY(), 2) );
+		return (int) Math.sqrt(Math.pow(p.getX() - getX(), 2)
+				+ Math.pow(p.getY() - getY(), 2));
 	}
 	
 }
