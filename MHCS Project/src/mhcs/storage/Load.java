@@ -84,6 +84,10 @@ public class Load {
 		return (Module[]) list.toArray();
 	}
 	
+	/**
+	 * gets the center of mass of the modules.
+	 * @return the center of mass.
+	 */
 	public Point getCenterOfMass()
 	{
 		Module[] modules = getModules();

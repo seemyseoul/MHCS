@@ -93,7 +93,7 @@ public class ConfigurationBuilder {
 	 * @return an array of configurations.
 	 * Each configuration is just an array of modules.
 	 */
-	public final Module[] generateMinConfiguration()
+	public final Module[][] generateMinConfiguration()
 	{
 		if (!minConfigPossible())
 		{
@@ -102,7 +102,6 @@ public class ConfigurationBuilder {
 		Load loader = new Load();
 		Module[] modules = loader.getModules();
 		Point centerOfMass = loader.getCenterOfMass();
-		Module[] plainModules = loader.getModulesOfType("plain");
 
 		//TODO
 
