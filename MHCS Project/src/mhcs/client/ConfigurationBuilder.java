@@ -99,6 +99,10 @@ public class ConfigurationBuilder {
 		Point centerOfMass = loader.getCenterOfMass();
 		Module[] plainModules = loader.getModulesOfType("plain");
 		
+		//TODO
+		
+		
+		return null;
 	}
 
 	/**
