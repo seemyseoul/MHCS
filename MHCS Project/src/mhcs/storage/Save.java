@@ -19,6 +19,7 @@ public class Save {
 	public void saveModule(Module toSave) {
 		if (stockStore != null) {
 			stockStore.setItem(Integer.toString(intModCount),toSave.toString());
+			stockStore.setItem("intModCount", "intModCount");
 		} // if
 	} // saveModule
 			
