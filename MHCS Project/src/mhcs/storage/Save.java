@@ -9,7 +9,7 @@ public class Save {
 	public Save()
 	{
 		stockStore = Storage.getLocalStorageIfSupported();
-		intModCount = Integer.parseInt(stockStore.getItem("Module Count"));
+		intModCount = Integer.parseInt(stockStore.getItem("intModCount"));
 	}
 	
 	/**
@@ -19,7 +19,7 @@ public class Save {
 	public void saveModule(Module toSave) {
 		if (stockStore != null) {
 			stockStore.setItem(Integer.toString(intModCount),toSave.toString());
-			stockStore.setItem("intModCount", "intModCount");
+			stockStore.setItem("intModCount", Integer.toString(intModCount));
 		} // if
 	} // saveModule
 			
