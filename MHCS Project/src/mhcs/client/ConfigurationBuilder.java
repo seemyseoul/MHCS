@@ -66,13 +66,11 @@ public class ConfigurationBuilder {
 	}
 
 	/**
-	 * This method will generate configurations
-	 * and return an array of arrays of modules.
+	 * This method will generate configurations.
 	 *
-	 * @return An array of configurations.
-	 * Each configuration is just an array of modules
+	 * @return an array of Configurations.
 	 */
-	public final Module[][] generateConfigurations() {
+	public final Configuration[] generateConfigurations() {
 		Load loader = new Load();
 		Module[] moduleArray = loader.getModules();
 		ArrayList<Module> origModules = new ArrayList<Module>();
@@ -90,10 +88,9 @@ public class ConfigurationBuilder {
 
 	/** This method will return a minimum configuration.
 	 *
-	 * @return an array of modules with
-	 * configCoordinates set and InUse set to true.
+	 * @return preset minimum configuration.
 	 */
-	public final Module[] generateMinConfiguration()
+	public final Configuration generateMinConfiguration()
 	{
 		if (!minConfigPossible())
 		{

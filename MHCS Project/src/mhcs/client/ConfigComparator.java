@@ -4,34 +4,32 @@ import java.util.Comparator;
 
 /**
  * Comparator class for comparing two configurations.
+ *
  * @author user
  *
  */
-public class ConfigComparator implements Comparator<Module[]>{
+public class ConfigComparator implements Comparator<Configuration> {
 
 	@Override
-	public int compare(final Module[] m1, final Module[] m2) {
-		if (getConfigQuality(m1) < getConfigQuality(m2))
-		{
+	public int compare(final Configuration c1, final Configuration c2) {
+		if (getConfigQuality(c1) < getConfigQuality(c2)) {
 			return -1;
-		}
-		else if (getConfigQuality(m1) > getConfigQuality(m2))
-		{
+		} else if (getConfigQuality(c1) > getConfigQuality(c2)) {
 			return 0;
-		}
-		else
-		{
+		} else {
 			return 1;
 		}
 	}
-
-
-	public float getConfigQuality(Module[] modules)
-	{
-		return 0; //TODO
+	/**
+	 * Gets the configuration quality
+	 * on a scale from 0 to 1 as a floating point value.
+	 *
+	 * @param config
+	 * @return
+	 */
+	public final float getConfigQuality(final Configuration config) {
+		return 0; 
+		// TODO
 	}
 
 }
-
-
-

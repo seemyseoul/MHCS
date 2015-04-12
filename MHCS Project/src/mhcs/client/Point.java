@@ -23,10 +23,30 @@ public class Point {
 	}
 
 	/**
+	 * Constructor to create a point from the string in
+	 * HTML5 localStorage.
+	 * @param str
+	 */
+	public Point(String str)
+	{
+		this.x = Integer.parseInt(str.split(" ")[0]);
+		this.x = Integer.parseInt(str.split(" ")[1]);
+	}
+
+	/**
+	 * turn a point into a string.
+	 * @return the string version of the module.
+	 */
+	public final String toString()
+	{
+		return Integer.toString(x) + " " + Integer.toString(y);
+	}
+
+	/**
 	 * gets the x value.
 	 * @return x The x-coordinate within landing area.
 	 */
-	public int getX() {
+	public final int getX() {
 		return x;
 	}
 
@@ -34,7 +54,7 @@ public class Point {
 	 * gets the y value.
 	 * @return y The y-coordinate within landing area.
 	 */
-	public int getY() {
+	public final int getY() {
 		return y;
 	}
 
@@ -55,5 +75,6 @@ public class Point {
 		return (int) Math.sqrt(Math.pow(p.getX() - getX(), 2)
 				+ Math.pow(p.getY() - getY(), 2));
 	}
+	
 	
 }
