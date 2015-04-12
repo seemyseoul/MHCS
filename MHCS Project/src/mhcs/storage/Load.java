@@ -36,7 +36,7 @@ public class Load {
 				newModule.setLandedCoordinates(new Point(lx, ly));
 				int cx = Integer.parseInt(stockStore.getItem("CX" + key));
 				int cy = Integer.parseInt(stockStore.getItem("CY" + key));
-				newModule.setLandedCoordinates(new Point(cx, cy));
+				newModule.setConfigCoordinates(new Point(cx, cy));
 				if ((stockStore.getItem("CON" + key)) == "ture")
 					newModule.setCondition(true);
 				else

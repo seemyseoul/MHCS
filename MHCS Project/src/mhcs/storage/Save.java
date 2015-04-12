@@ -6,29 +6,39 @@ import com.google.gwt.storage.client.Storage;
 
 public class Save {
 
-	public void saveOneModule(Module toSave) {
+	public Save()
+	{
+		stockStore = Storage.getLocalStorageIfSupported();
+		intModCount = Integer.parseInt(stockStore.getItem("Module Count"));
+	}
+	
+	public void saveModule(Module toSave) {
 		stockStore = Storage.getLocalStorageIfSupported();
 		if (stockStore != null) {
 			int numStocks = stockStore.getLength();
-			stockStore.setItem("ID" + (numStocks / 9),
+			stockStore.setItem("ID" + intModCount,
 					Integer.toString(toSave.getId()));
-			stockStore.setItem("ORI" + (numStocks / 9),
+			stockStore.setItem("ORI" + intModCount,
 					Integer.toString(toSave.getOrientation()));
-			stockStore.setItem("TYP" + (numStocks / 9), toSave.getType());
-			stockStore.setItem("LX" + (numStocks / 9),
+			stockStore.setItem("TYP" + intModCount,
+					toSave.getType());
+			stockStore.setItem("LX" + intModCount,
 					Integer.toString(toSave.getLandedCoordinates().getX()));
-			stockStore.setItem("LY" + (numStocks / 9),
+			stockStore.setItem("LY" + intModCount,
 					Integer.toString(toSave.getLandedCoordinates().getY()));
-			stockStore.setItem("CX" + (numStocks / 9),
+			stockStore.setItem("CX" + intModCount,
 					Integer.toString(toSave.getConfigCoordinates().getX()));
-			stockStore.setItem("CY" + (numStocks / 9),
+			stockStore.setItem("CY" + intModCount,
 					Integer.toString(toSave.getConfigCoordinates().getY()));
-			stockStore.setItem("CON" + (numStocks / 9),
+			stockStore.setItem("CON" + intModCount,
 					String.valueOf(toSave.getCondition()));
-			stockStore.setItem("USE" + (numStocks / 9),
+			stockStore.setItem("USE" + intModCount,
 					String.valueOf(toSave.isInUse()));
-		}
-	}
+			
+			intModCount++;
+			stockStore.setItem("Module Count", Integer.toString(intModCount));
+		} // if
+	} // saveOneModule
 
 	/**
 	 * We need a function to save modules after we've edited them.
@@ -81,5 +91,6 @@ public class Save {
 	}
 
 	private Storage stockStore = null;
+	private int intModCount = 0;
 
 }
