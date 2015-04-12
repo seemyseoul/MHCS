@@ -12,40 +12,26 @@ import com.google.gwt.storage.client.Storage;
 public class Load {
 
 	public Load() {
+		stockStore = Storage.getLocalStorageIfSupported();
 		loadModules();
 		loadSettings();
+
 	}
 
 	// Returns null value if nothing saved
 	// Returns 0 if nothing saved
 	private Module[] loadModules() {
-		stockStore = Storage.getLocalStorageIfSupported();
 		Module newModule = new Module();
 		if (stockStore != null) {
 			moduleArray = new Module[stockStore.getLength()];
 			for (int i = 0; i < stockStore.getLength(); i++) {
-				newModule = new Module();
-				String key = stockStore.key(i);
-				newModule
-						.setId(Integer.parseInt(stockStore.getItem("ID" + key)));
-				newModule.setOrientation(Integer.parseInt(stockStore
-						.getItem("ORI" + key)));
-				newModule.setType(stockStore.getItem("TYP" + key));
-				int lx = Integer.parseInt(stockStore.getItem("LX" + key));
-				int ly = Integer.parseInt(stockStore.getItem("LY" + key));
-				newModule.setLandedCoordinates(new Point(lx, ly));
-				int cx = Integer.parseInt(stockStore.getItem("CX" + key));
-				int cy = Integer.parseInt(stockStore.getItem("CY" + key));
-				newModule.setConfigCoordinates(new Point(cx, cy));
-				if ((stockStore.getItem("CON" + key)) == "ture")
-					newModule.setCondition(true);
-				else
-					newModule.setCondition(false);
+				newModule = new Module(stockStore.getItem(key));
 				moduleArray[i] = newModule;
-			}
-		}
+			}//if
+		} //for
 		return moduleArray;
-	}
+	} //loadModules
+		
 	
 	// Loads password and password flag
 	private void loadSettings() {
@@ -136,6 +122,8 @@ public class Load {
 		}
 		return closestModule;
 	}
+	
+	private Storage stockStore = null;
 	
 	private boolean passwordFlag = true;
 	private String password = "Naples";
