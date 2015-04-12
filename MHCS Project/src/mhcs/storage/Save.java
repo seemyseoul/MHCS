@@ -40,26 +40,26 @@ public class Save {
 		stockStore = Storage.getLocalStorageIfSupported();
 		if (stockStore != null) {
 			int numStocks = stockStore.getLength();
-			for (int i=0;i<numStocks;i++)
+			for (int i = 0; i < (numStocks / 9); i++)
 			{
-				if (toSave.getId() == Integer.parseInt(stockStore.getItem("ID"+ (i/9))))
+				if (toSave.getId() == Integer.parseInt(stockStore.getItem("ID"+ i)))
 				{
-					stockStore.setItem("ID" + (i / 9),
+					stockStore.setItem("ID" + i,
 							Integer.toString(toSave.getId()));
-					stockStore.setItem("ORI" + (i / 9),
+					stockStore.setItem("ORI" + i,
 							Integer.toString(toSave.getOrientation()));
-					stockStore.setItem("TYP" + (i / 9), toSave.getType());
-					stockStore.setItem("LX" + (i / 9),
+					stockStore.setItem("TYP" + i, toSave.getType());
+					stockStore.setItem("LX" + i,
 							Integer.toString(toSave.getLandedCoordinates().getX()));
-					stockStore.setItem("LY" + (i / 9),
+					stockStore.setItem("LY" + i,
 							Integer.toString(toSave.getLandedCoordinates().getY()));
-					stockStore.setItem("CX" + (i / 9),
+					stockStore.setItem("CX" + i,
 							Integer.toString(toSave.getConfigCoordinates().getX()));
-					stockStore.setItem("CY" + (i / 9),
+					stockStore.setItem("CY" + i,
 							Integer.toString(toSave.getConfigCoordinates().getY()));
-					stockStore.setItem("CON" + (i / 9),
+					stockStore.setItem("CON" + i,
 							String.valueOf(toSave.getCondition()));
-					stockStore.setItem("USE" + (i / 9),
+					stockStore.setItem("USE" + i,
 							String.valueOf(toSave.isInUse()));
 				}
 			}

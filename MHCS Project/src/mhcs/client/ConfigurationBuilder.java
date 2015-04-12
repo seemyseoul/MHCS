@@ -100,6 +100,7 @@ public class ConfigurationBuilder {
 			return null;
 		}
 		Load loader = new Load();
+		Save saver = new Save();
 		Module[] modules = loader.getModules();
 		Point centerOfMass = loader.getCenterOfMass();
 
@@ -114,52 +115,75 @@ public class ConfigurationBuilder {
 		Module centerPlain = loader.getModuleClosestTo(centerOfMass, "plain");
 		centerPlain.setInUse(true);
 		centerPlain.setConfigCoordinates(centerOfMass);
-
+		saver.saveEditedModule(centerPlain);
+		
 		Point rightPlainPos = new Point(centerOfMass.getX()+1,centerOfMass.getY());
 		Module rightPlain = loader.getModuleClosestTo(rightPlainPos, "plain");
 		rightPlain.setInUse(true);
 		rightPlain.setConfigCoordinates(rightPlainPos);
+		saver.saveEditedModule(rightPlain);
 
 		Point leftPlainPos = new Point(centerOfMass.getX()-1,centerOfMass.getY());
 		Module leftPlain = loader.getModuleClosestTo(leftPlainPos, "plain");
 		leftPlain.setInUse(true);
 		leftPlain.setConfigCoordinates(leftPlainPos);
-
+		saver.saveEditedModule(leftPlain);
+		
 		Point airlockPos = new Point(leftPlainPos.getX()-1,leftPlainPos.getY());
 		Module airlock = loader.getModuleClosestTo(airlockPos, "airlock");
 		airlock.setInUse(true);
 		airlock.setConfigCoordinates(airlockPos);
+		saver.saveEditedModule(airlock);
 
 		Point foodWaterPos = new Point(leftPlainPos.getX(),leftPlainPos.getY()+1);
 		Module foodWater = loader.getModuleClosestTo(foodWaterPos, "foodWater");
 		foodWater.setInUse(true);
 		foodWater.setConfigCoordinates(foodWaterPos);
+		saver.saveEditedModule(foodWater);
 
 		Point canteenPos = new Point(leftPlainPos.getX(),leftPlainPos.getY()-1);
 		Module canteen = loader.getModuleClosestTo(canteenPos, "canteen");
 		canteen.setInUse(true);
 		canteen.setConfigCoordinates(canteenPos);
+		saver.saveEditedModule(canteen);
 
 		Point dormPos = new Point(centerOfMass.getX(),centerOfMass.getY()+1);
 		Module dorm = loader.getModuleClosestTo(dormPos, "dormitory");
 		dorm.setInUse(true);
 		dorm.setConfigCoordinates(dormPos);
+		saver.saveEditedModule(dorm);
 
 		Point powerPos = new Point(rightPlainPos.getX(),rightPlainPos.getY()+1);
 		Module power = loader.getModuleClosestTo(powerPos, "power");
 		power.setInUse(true);
-		power.setConfigCoordinates(dormPos);
+		power.setConfigCoordinates(powerPos);
+		saver.saveEditedModule(power);
 
 		Point controlPos = new Point(rightPlainPos.getX(),rightPlainPos.getY()-1);
 		Module control = loader.getModuleClosestTo(controlPos, "control");
 		control.setInUse(true);
 		control.setConfigCoordinates(controlPos);
+		saver.saveEditedModule(control);
 
 		Point sanitationPos = new Point(rightPlainPos.getX()+1,rightPlainPos.getY());
 		Module sanitation = loader.getModuleClosestTo(sanitationPos, "sanitation");
 		sanitation.setInUse(true);
 		sanitation.setConfigCoordinates(sanitationPos);
+		saver.saveEditedModule(sanitation);
 
+		
+		/* if we need to we can un-edit the modules by doing this:
+		 *
+		 * Module[] originalModules = loader.getModules();
+		 *
+		 *      *a bunch of stuff that saves edited modules*
+		 *
+		 * for(Module m : originalModules)
+		 * {
+		 * 		saver.saveEditedModule(m);
+		 * }
+		 *
+		 */
 
 		return new Module[]{foodWater, dorm, power
 				, airlock, leftPlain, centerPlain, rightPlain
