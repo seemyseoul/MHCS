@@ -43,27 +43,23 @@ public class Save {
 		stockStore.setItem("numOfConfigs", Integer.toString(toSave.size()));
 	} //saveModules	
 	
+	public void removeAllModules(){
+		for (int i = 0; i < Integer.parseInt(stockStore.getItem("numOfModules")); i++){
+			stockStore.removeItem("C" + Integer.toString(i));
+		} //for
+		stockStore.setItem("numOfModules", Integer.toString(0));			
+	}
+	
+	public void removeAllConfigurations(){
+		for (int i = 0; i < Integer.parseInt(stockStore.getItem("numOfConfigs")); i++){
+			stockStore.removeItem("C" + Integer.toString(i));
+		} //for
+		stockStore.setItem("numOfConfigs", Integer.toString(0));		
+	}
 	
 	
 	
-	
-	
-	
-	
-	
-	
-	
-			
-	/**
-	 * Saves the configuration (Configuration toSave).
-	 * @param toSave configuration to save into HTML5 storage.
-	 */
-	public void saveConfiguration(Configuration toSave) {
-		if (stockStore != null) {
-			stockStore.setItem(Integer.toString(intModCount),toSave.toString());
-		} // if
-	} // saveConfiguration
-	
+
 	
 	
 		
@@ -86,6 +82,7 @@ public class Save {
 			stockStore.removeItem("");
 		} // if
 	} // removeConfiguration	
+	
 	
 	private Storage stockStore = null;
 	private int intModCount = 0;

@@ -24,9 +24,45 @@ public class Data {
 		toSave.saveModules(moduleList);
 	}
 	
+	public void addConfiguraiton(Configuration toAdd){
+		configList.add(toAdd);
+		toSave.saveConfigurations(configList);
+	}
+	
 	
 	public void removeModule(Module toRemove){
+		moduleList.remove(findListNumber(toRemove));
+		toSave.removeAllModules();
+		toSave.saveModules(moduleList);
 	}
+	
+	public void removeConfiguration(Configuration toRemove){
+		configList.remove(findListNumber(toRemove));
+		toSave.removeAllConfigurations();
+		toSave.saveConfigurations(configList);
+	}
+	
+	
+	public void editModule(Module toEdit){
+		moduleList.remove(findListNumber(toEdit));
+		toSave.removeAllModules();
+		toSave.saveModules(moduleList);
+		moduleList.add(toEdit);
+		toSave.saveModules(moduleList);
+	}
+	
+	public void editConfiguration(Configuration toEdit){
+		configList.remove(findListNumber(toEdit));
+		toSave.removeAllConfigurations();
+		toSave.saveConfigurations(configList);
+		configList.add(toEdit);
+		toSave.saveConfigurations(configList);
+	}
+	
+	
+	
+	
+	
 	
 	public void updateFlag(boolean flag){
 		passwordFlag = flag;
@@ -42,16 +78,26 @@ public class Data {
 		configList.add(toAdd);
 		toSave.saveConfigurations(configList);
 	}
+
 	
 	
-	public void removeConfiguration(Configuration toRemove){
-		
+	private int findListNumber(Module module){
+		for(int i = 0; i < moduleList.size(); i++){
+			Module compare = moduleList.get(i);
+			if(module.getId() == compare.getId())
+				return i;
+		}
+		return -1;
 	}
 	
-	
-	
-	
-	
+	private int findListNumber(Configuration config){
+		for(int i = 0; i < configList.size(); i++){
+			Configuration compare = configList.get(i);
+			if(config.getId() == compare.getId())
+				return i;
+		}
+		return -1;
+	}	
 	
 	
 	
