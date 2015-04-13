@@ -1,6 +1,13 @@
 package mhcs.storage;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import mhcs.client.Configuration;
 import mhcs.client.Module;
+import mhcs.client.ModuleStatus;
+import mhcs.client.ModuleType;
+import mhcs.client.Point;
 
 import com.google.gwt.storage.client.Storage;
 
@@ -22,6 +29,42 @@ public class Save {
 			stockStore.setItem("intModCount", Integer.toString(intModCount));
 		} // if
 	} // saveModule
+	
+	
+	
+	public void saveKeys(List<Integer> keys){
+		String keyString = "";
+		for (int i = 0; i <= keys.size(); i++){
+			keyString += (Integer.toString(keys.get(i)) + ",");
+		} //for
+		keyString += ";";
+		stockStore.setItem("keyString", keyString);
+	} //saveKeys
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 			
 	/**
 	 * Saves the configuration (Configuration toSave).
@@ -44,6 +87,8 @@ public class Save {
 			stockStore.setItem("password", password);
 		} // if
 	} // saveSettings
+	
+	
 		
 	/**
 	 * Deletes the module (Module toRemove).

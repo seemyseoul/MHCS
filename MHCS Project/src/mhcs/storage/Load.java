@@ -1,10 +1,10 @@
 package mhcs.storage;
 
 import java.util.ArrayList;
-
-import org.apache.commons.lang3.ArrayUtils;
+import java.util.List;
 
 import mhcs.client.Module;
+import mhcs.client.ModuleStatus;
 import mhcs.client.ModuleType;
 import mhcs.client.Point;
 
@@ -14,26 +14,39 @@ public class Load {
 
 	public Load() {
 		stockStore = Storage.getLocalStorageIfSupported();
+		listOfKeys = loadKeys();
 		loadModules();
 		loadSettings();
-
 	}
 
 	// Returns null value if nothing saved
 	// Returns 0 if nothing saved
-	private Module[] loadModules() {
-		Module newModule = new Module();
+	private List<Module> loadModules() {
+		Module newModule = null;
+		List<Module> moduleList = new ArrayList<>();
 		if (stockStore != null) {
-			moduleArray = new Module[stockStore.getLength()];
-			for (int i = 0; i < stockStore.getLength(); i++) {
-				newModule = new Module(stockStore.getItem(key));  // needs fixing
-				moduleArray[i] = newModule;
-			}//if
-		} //for
-		return moduleArray;
-	} //loadModules
+			for (int i = 0; i < listOfKeys.size(); i++){
+				String stringModule = stockStore.getItem(Integer.toString(listOfKeys.get(i)));
+				newModule = new Module(stringModule);
+				moduleList.add(newModule);
+			} //for
+		} //if
+		return moduleList;
+		} //if
 		
 	
+	
+	private List<Integer> loadKeys(){
+		List<Integer> intKeys = new ArrayList<>();		
+		String keys = stockStore.getItem("keyString");
+		String[] keyList = keys.split(",");
+		for (int i = 0; keyList[i] != ";"; i++){
+			intKeys.add(Integer.parseInt(keyList[i]));
+		} //for
+		return intKeys;
+	} // loadKeys
+		
+
 	// Loads password and password flag
 	private void loadSettings() {
 		stockStore = Storage.getLocalStorageIfSupported();
@@ -125,9 +138,11 @@ public class Load {
 	}
 
 
+
 	
+	private List<Integer> listOfKeys = new ArrayList<>();
 	private boolean passwordFlag = true;
 	private String password = "Naples";
-	private Module moduleArray[] = null;
+	private List<Module> moduleList = null;
 	private Storage stockStore = null;
 }
