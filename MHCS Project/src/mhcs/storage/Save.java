@@ -19,34 +19,13 @@ public class Save {
 		intModCount = Integer.parseInt(stockStore.getItem("intModCount"));
 	}
 	
-	/**
-	 * Saves the module (Module toSave).
-	 * @param toSave module to save into HTML5 storage.
-	 */	
-	public void saveModule(Module toSave) {
-		if (stockStore != null) {
-			stockStore.setItem(Integer.toString(intModCount),toSave.toString());
-			stockStore.setItem("intModCount", Integer.toString(intModCount));
-		} // if
-	} // saveModule
 	
-	
-	
-	public void saveKeys(List<Integer> keys){
-		String keyString = "";
-		for (int i = 0; i <= keys.size(); i++){
-			keyString += (Integer.toString(keys.get(i)) + ",");
-		} //for
-		keyString += ";";
-		stockStore.setItem("keyString", keyString);
-	} //saveKeys
-	
-
-	
-	
-	
-	
-	
+	public void saveModules(List<Module> toSave){
+		for (int i = 0; i < toSave.size(); i++){
+			stockStore.setItem(Integer.toString(i), toSave.get(i).toString());
+		}
+		stockStore.setItem("numOfModules", Integer.toString(toSave.size()));
+	}
 	
 	
 	

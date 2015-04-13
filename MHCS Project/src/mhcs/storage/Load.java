@@ -19,8 +19,6 @@ public class Load {
 		loadSettings();
 	}
 
-	// Returns null value if nothing saved
-	// Returns 0 if nothing saved
 	private List<Module> loadModules() {
 		Module newModule = null;
 		List<Module> moduleList = new ArrayList<>();
@@ -34,8 +32,6 @@ public class Load {
 		return moduleList;
 		} //if
 		
-	
-	
 	private List<Integer> loadKeys(){
 		List<Integer> intKeys = new ArrayList<>();		
 		String keys = stockStore.getItem("keyString");
@@ -46,8 +42,6 @@ public class Load {
 		return intKeys;
 	} // loadKeys
 		
-
-	// Loads password and password flag
 	private void loadSettings() {
 		stockStore = Storage.getLocalStorageIfSupported();
 		if (stockStore != null) {
@@ -59,6 +53,11 @@ public class Load {
 		}
 	}
 
+	
+	
+	
+	
+	
 	public boolean getPasswordFlag() {
 		return passwordFlag;
 	}
@@ -70,6 +69,16 @@ public class Load {
 	public Module[] getModules() {
 		return moduleArray;
 	}
+	
+
+	public List<Module> getModuleList(){
+		return moduleList;
+	}
+
+	
+	
+	
+	
 	
 	public Module[] getModulesOfType(ModuleType type)
 	{
@@ -140,9 +149,13 @@ public class Load {
 
 
 	
+	
+	
+	
+	
 	private List<Integer> listOfKeys = new ArrayList<>();
 	private boolean passwordFlag = true;
 	private String password = "Naples";
-	private List<Module> moduleList = null;
+	private List<Module> moduleList = new ArrayList<>();
 	private Storage stockStore = null;
 }
