@@ -41,12 +41,26 @@ public final class Configuration {
 	}
 
 	/**
+	 * Construct an empty Configuration from an id.
+	 * @param id
+	 */
+	public Configuration(final int id)
+	{
+		this.id = id;
+	}
+
+	/**
+	 * empty constructor.
+	 */
+	public Configuration(){}
+	
+	/**
 	 * Constructor for creating a Configuration
 	 * from the string stored in HTML5 LocalStorage.
 	 *
 	 * @param configString
 	 */
-	private Configuration(String configString)
+	public Configuration(String configString)
 	{
 		String[] moduleStrings = configString.split(";");
 		this.id = Integer.parseInt(moduleStrings[0]);

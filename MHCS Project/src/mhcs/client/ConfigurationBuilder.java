@@ -109,82 +109,63 @@ public class ConfigurationBuilder {
 		 *              Canteen         Control
 		 */
 
-		Module centerPlain = loader.getModuleClosestTo(centerOfMass, "plain");
+		Module centerPlain = loader.getModuleClosestTo(centerOfMass, ModuleType.PLAIN);
 		centerPlain.setInUse(true);
-		centerPlain.setConfigCoordinates(centerOfMass);
-		saver.saveEditedModule(centerPlain);
+		centerPlain.setCoordinates(centerOfMass);
 		
 		Point rightPlainPos = new Point(centerOfMass.getX()+1,centerOfMass.getY());
-		Module rightPlain = loader.getModuleClosestTo(rightPlainPos, "plain");
+		Module rightPlain = loader.getModuleClosestTo(rightPlainPos, ModuleType.PLAIN);
 		rightPlain.setInUse(true);
-		rightPlain.setConfigCoordinates(rightPlainPos);
-		saver.saveEditedModule(rightPlain);
+		rightPlain.setCoordinates(rightPlainPos);
 
 		Point leftPlainPos = new Point(centerOfMass.getX()-1,centerOfMass.getY());
-		Module leftPlain = loader.getModuleClosestTo(leftPlainPos, "plain");
+		Module leftPlain = loader.getModuleClosestTo(leftPlainPos, ModuleType.PLAIN);
 		leftPlain.setInUse(true);
-		leftPlain.setConfigCoordinates(leftPlainPos);
-		saver.saveEditedModule(leftPlain);
+		leftPlain.setCoordinates(leftPlainPos);
 		
 		Point airlockPos = new Point(leftPlainPos.getX()-1,leftPlainPos.getY());
-		Module airlock = loader.getModuleClosestTo(airlockPos, "airlock");
+		Module airlock = loader.getModuleClosestTo(airlockPos, ModuleType.AIRLOCK);
 		airlock.setInUse(true);
-		airlock.setConfigCoordinates(airlockPos);
-		saver.saveEditedModule(airlock);
+		airlock.setCoordinates(airlockPos);
 
 		Point foodWaterPos = new Point(leftPlainPos.getX(),leftPlainPos.getY()+1);
-		Module foodWater = loader.getModuleClosestTo(foodWaterPos, "foodWater");
+		Module foodWater = loader.getModuleClosestTo(foodWaterPos, ModuleType.FOODWATERSTORAGE);
 		foodWater.setInUse(true);
-		foodWater.setConfigCoordinates(foodWaterPos);
-		saver.saveEditedModule(foodWater);
+		foodWater.setCoordinates(foodWaterPos);
 
 		Point canteenPos = new Point(leftPlainPos.getX(),leftPlainPos.getY()-1);
-		Module canteen = loader.getModuleClosestTo(canteenPos, "canteen");
+		Module canteen = loader.getModuleClosestTo(canteenPos, ModuleType.CANTEEN);
 		canteen.setInUse(true);
-		canteen.setConfigCoordinates(canteenPos);
-		saver.saveEditedModule(canteen);
+		canteen.setCoordinates(canteenPos);
 
 		Point dormPos = new Point(centerOfMass.getX(),centerOfMass.getY()+1);
-		Module dorm = loader.getModuleClosestTo(dormPos, "dormitory");
+		Module dorm = loader.getModuleClosestTo(dormPos, ModuleType.DORMITORY);
 		dorm.setInUse(true);
-		dorm.setConfigCoordinates(dormPos);
-		saver.saveEditedModule(dorm);
+		dorm.setCoordinates(dormPos);
 
 		Point powerPos = new Point(rightPlainPos.getX(),rightPlainPos.getY()+1);
-		Module power = loader.getModuleClosestTo(powerPos, "power");
+		Module power = loader.getModuleClosestTo(powerPos, ModuleType.POWER);
 		power.setInUse(true);
-		power.setConfigCoordinates(powerPos);
-		saver.saveEditedModule(power);
+		power.setCoordinates(powerPos);
 
 		Point controlPos = new Point(rightPlainPos.getX(),rightPlainPos.getY()-1);
-		Module control = loader.getModuleClosestTo(controlPos, "control");
+		Module control = loader.getModuleClosestTo(controlPos, ModuleType.CONTROL);
 		control.setInUse(true);
-		control.setConfigCoordinates(controlPos);
-		saver.saveEditedModule(control);
+		control.setCoordinates(controlPos);
 
 		Point sanitationPos = new Point(rightPlainPos.getX()+1,rightPlainPos.getY());
-		Module sanitation = loader.getModuleClosestTo(sanitationPos, "sanitation");
+		Module sanitation = loader.getModuleClosestTo(sanitationPos, ModuleType.SANITATION);
 		sanitation.setInUse(true);
-		sanitation.setConfigCoordinates(sanitationPos);
-		saver.saveEditedModule(sanitation);
+		sanitation.setCoordinates(sanitationPos);
 
 		
-		/* if we need to we can un-edit the modules by doing this:
-		 *
-		 * Module[] originalModules = loader.getModules();
-		 *
-		 *      *a bunch of stuff that saves edited modules*
-		 *
-		 * for(Module m : originalModules)
-		 * {
-		 * 		saver.saveEditedModule(m);
-		 * }
-		 *
-		 */
-
-		return new Module[]{foodWater, dorm, power
-				, airlock, leftPlain, centerPlain, rightPlain
-				, sanitation, canteen, control};
+		Configuration newConfiguration = new Configuration();
+		newConfiguration.setModules(new Module[]{
+				leftPlain, centerPlain, rightPlain,
+				airlock, foodWater, canteen,
+				dorm, power, control, sanitation
+		});
+		return newConfiguration;
 	}
 
 	/**
