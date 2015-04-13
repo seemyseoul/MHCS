@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import org.apache.commons.lang3.ArrayUtils;
 
 import mhcs.client.Module;
+import mhcs.client.ModuleType;
 import mhcs.client.Point;
 
 import com.google.gwt.storage.client.Storage;
@@ -25,7 +26,7 @@ public class Load {
 		if (stockStore != null) {
 			moduleArray = new Module[stockStore.getLength()];
 			for (int i = 0; i < stockStore.getLength(); i++) {
-				newModule = new Module(stockStore.getItem(key));
+				newModule = new Module(stockStore.getItem(key));  // needs fixing
 				moduleArray[i] = newModule;
 			}//if
 		} //for
@@ -57,12 +58,12 @@ public class Load {
 		return moduleArray;
 	}
 	
-	public Module[] getModulesOfType(String type)
+	public Module[] getModulesOfType(ModuleType type)
 	{
 		ArrayList<Module> list = new ArrayList<Module>();
-		for(Module m : getModules())
+		for (Module m : getModules())
 		{
-			if(m.getType().equals(type))
+			if (m.getType().equals(type))
 			{
 				list.add(m);
 			}
@@ -70,12 +71,12 @@ public class Load {
 		return (Module[]) list.toArray();
 	}
 
-	public Module[] getUnusedModulesOfType(String type)
+	public Module[] getUnusedModulesOfType(ModuleType type)
 	{
 		ArrayList<Module> list = new ArrayList<Module>();
-		for(Module m : getModules())
+		for (Module m : getModules())
 		{
-			if(m.getType().equals(type) && !m.isInUse())
+			if (m.getType().equals(type) && !m.isInUse())
 			{
 				list.add(m);
 			}
@@ -108,7 +109,7 @@ public class Load {
 	 * @param type Type of modules to search for.
 	 * @return module closest to point p.
 	 */
-	public final Module getModuleClosestTo(final Point p, final String type)
+	public final Module getModuleClosestTo(final Point p, ModuleType type)
 	{
 		Module[] modules = getUnusedModulesOfType(type);
 		Module closestModule = modules[0];
@@ -122,8 +123,8 @@ public class Load {
 		}
 		return closestModule;
 	}
-	
-	private Storage stockStore = null;
+
+
 	
 	private boolean passwordFlag = true;
 	private String password = "Naples";
