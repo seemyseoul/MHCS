@@ -7,6 +7,38 @@ package mhcs.client;
  */
 public final class Configuration {
 	private Module[] modules = null;
+	private int id = -1;
+
+	/**
+	 * Gets the modules that make up a configuration.
+	 * @return an array of Module.
+	 */
+	public Module[] getModules() {
+		return modules;
+	}
+	/**
+	 * Sets the modules of a configuration.
+	 * @param modules
+	 */
+	public void setModules(Module[] modules) {
+		this.modules = modules;
+	}
+
+	/**
+	 * Gets the ID of a configuration.
+	 * @return id number of the configuration.
+	 */
+	public int getId() {
+		return id;
+	}
+	
+	/**
+	 * Sets the configuration id.
+	 * @param id
+	 */
+	public void setId(int id) {
+		this.id = id;
+	}
 
 	/**
 	 * Constructor for creating a Configuration
@@ -17,8 +49,9 @@ public final class Configuration {
 	private Configuration(String configString)
 	{
 		String[] moduleStrings = configString.split(";");
+		this.id = Integer.parseInt(moduleStrings[0]);
 
-		for (int i = 0; i < moduleStrings.length; i++)
+		for (int i = 1; i < moduleStrings.length; i++)
 		{
 			modules[modules.length] = new Module(moduleStrings[i]);
 		}
@@ -32,7 +65,7 @@ public final class Configuration {
 	 */
 	public String toString()
 	{
-		String configString = "";
+		String configString = Integer.toString(id) + ";";
 		for (Module m : modules)
 		{
 			configString += m.toString();
