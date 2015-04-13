@@ -23,16 +23,25 @@ public class Save {
 	public void saveModules(List<Module> toSave){
 		for (int i = 0; i < toSave.size(); i++){
 			stockStore.setItem(Integer.toString(i), toSave.get(i).toString());
-		}
+		} //for
 		stockStore.setItem("numOfModules", Integer.toString(toSave.size()));
-	}
+	} //saveModules
 	
 	
+	public void saveSettings(final boolean flag, final String password) {
+		if (stockStore != null) {
+			stockStore.setItem("passwordflag", String.valueOf(flag));
+			stockStore.setItem("password", password);
+		} // if
+	} // saveSettings	
 	
 	
-	
-	
-	
+	public void saveConfigurations(List<Configuration> toSave){
+		for (int i = 0; i < toSave.size(); i++){
+			stockStore.setItem("C" + Integer.toString(i), toSave.get(i).toString());
+		} //for
+		stockStore.setItem("numOfConfigs", Integer.toString(toSave.size()));
+	} //saveModules	
 	
 	
 	
@@ -55,17 +64,6 @@ public class Save {
 		} // if
 	} // saveConfiguration
 	
-	/**
-	 * Saves the password settings (boolean enabled, String password).
-	 * @param flag boolean value for whether or not the password is enabled.
-	 * @param password the value to set the password as.
-	 */
-	public void saveSettings(final boolean flag, final String password) {
-		if (stockStore != null) {
-			stockStore.setItem("passwordflag", String.valueOf(flag));
-			stockStore.setItem("password", password);
-		} // if
-	} // saveSettings
 	
 	
 		

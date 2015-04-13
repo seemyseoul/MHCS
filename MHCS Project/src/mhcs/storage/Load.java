@@ -3,6 +3,7 @@ package mhcs.storage;
 import java.util.ArrayList;
 import java.util.List;
 
+import mhcs.client.Configuration;
 import mhcs.client.Module;
 import mhcs.client.ModuleStatus;
 import mhcs.client.ModuleType;
@@ -14,34 +15,19 @@ public class Load {
 
 	public Load() {
 		stockStore = Storage.getLocalStorageIfSupported();
-		listOfKeys = loadKeys();
 		loadModules();
 		loadSettings();
+		loadConfigurations();
 	}
 
-	private List<Module> loadModules() {
+	private void loadModules(){
 		Module newModule = null;
-		List<Module> moduleList = new ArrayList<>();
-		if (stockStore != null) {
-			for (int i = 0; i < listOfKeys.size(); i++){
-				String stringModule = stockStore.getItem(Integer.toString(listOfKeys.get(i)));
-				newModule = new Module(stringModule);
-				moduleList.add(newModule);
-			} //for
-		} //if
-		return moduleList;
-		} //if
-		
-	private List<Integer> loadKeys(){
-		List<Integer> intKeys = new ArrayList<>();		
-		String keys = stockStore.getItem("keyString");
-		String[] keyList = keys.split(",");
-		for (int i = 0; keyList[i] != ";"; i++){
-			intKeys.add(Integer.parseInt(keyList[i]));
-		} //for
-		return intKeys;
-	} // loadKeys
-		
+		for (int i = 0; i <= Integer.parseInt(stockStore.getItem("numOfModules")); i++){
+			newModule = new Module(stockStore.getItem(Integer.toString(i)));
+			moduleList.add(newModule);
+		}
+	}
+	
 	private void loadSettings() {
 		stockStore = Storage.getLocalStorageIfSupported();
 		if (stockStore != null) {
@@ -54,7 +40,13 @@ public class Load {
 	}
 
 	
-	
+	private void loadConfigurations(){
+		Configuration newConfig = null;
+		for (int i = 0; i <= Integer.parseInt(stockStore.getItem("numOfModules")); i++){
+			newConfig = new Configuration(stockStore.getItem("C" + Integer.toString(i)));
+			configurationList.add(newConfig);
+		}
+	}
 	
 	
 	
@@ -65,14 +57,13 @@ public class Load {
 	public String getPassword() {
 		return password;
 	}
-
-	public Module[] getModules() {
-		return moduleArray;
-	}
 	
-
 	public List<Module> getModuleList(){
 		return moduleList;
+	}
+	
+	public List<Configuration> getConfigurationList(){
+		return configurationList;
 	}
 
 	
@@ -149,13 +140,9 @@ public class Load {
 
 
 	
-	
-	
-	
-	
-	private List<Integer> listOfKeys = new ArrayList<>();
 	private boolean passwordFlag = true;
 	private String password = "Naples";
 	private List<Module> moduleList = new ArrayList<>();
+	private List<Configuration> configurationList = new ArrayList<>();
 	private Storage stockStore = null;
 }

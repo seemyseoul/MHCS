@@ -3,6 +3,7 @@ package mhcs.storage;
 import java.util.ArrayList;
 import java.util.List;
 
+import mhcs.client.Configuration;
 import mhcs.client.Module;
 
 public class Data {
@@ -11,11 +12,11 @@ public class Data {
 		toLoad = new Load();
 		toSave = new Save();
 		moduleList = toLoad.getModuleList();
+		configList = toLoad.getConfigurationList();
 		password = toLoad.getPassword();
 		passwordFlag = toLoad.getPasswordFlag();
+		
 	}
-	
-	
 	
 	
 	public void addModule(Module toAdd){
@@ -24,13 +25,28 @@ public class Data {
 	}
 	
 	
+	public void removeModule(Module toRemove){
+	}
+	
+	public void updateFlag(boolean flag){
+		passwordFlag = flag;
+		toSave.saveSettings(flag, password);
+	}
+	
+	public void updatePassword(String newPassword){
+		password = newPassword;
+		toSave.saveSettings(passwordFlag, newPassword);
+	}
+	
+	public void addConfiguration(Configuration toAdd){
+		configList.add(toAdd);
+		toSave.saveConfigurations(configList);
+	}
 	
 	
-	
-	
-	
-	
-	
+	public void removeConfiguration(Configuration toRemove){
+		
+	}
 	
 	
 	
@@ -85,6 +101,7 @@ public class Data {
 	private Load toLoad;
 	private Save toSave;
 	private List<Module> moduleList = new ArrayList<>();
-	private String password = "";
+	private List<Configuration> configList = new ArrayList<>();
+	private String password = "Naples";
 	private boolean passwordFlag = true; 
 }
