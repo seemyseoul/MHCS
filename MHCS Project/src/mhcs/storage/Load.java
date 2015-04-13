@@ -94,8 +94,8 @@ public class Load {
 		int sumY = 0;
 		for (Module m : modules)
 		{
-			sumX += m.getLandedCoordinates().getX();
-			sumY += m.getLandedCoordinates().getY();
+			sumX += m.getCoordinates().getX();
+			sumY += m.getCoordinates().getY();
 		}
 		return new Point(sumX / modules.length, sumY / modules.length);
 	}
@@ -115,7 +115,7 @@ public class Load {
 		
 		for (Module m : modules)
 		{
-			if (m.getLandedCoordinates().distanceTo(p) < closestModule.getLandedCoordinates().distanceTo(p))
+			if (m.getCoordinates().distanceTo(p) < closestModule.getCoordinates().distanceTo(p))
 			{
 				closestModule = m;
 			}
