@@ -5,6 +5,8 @@ import java.util.List;
 
 import mhcs.client.Configuration;
 import mhcs.client.Module;
+import mhcs.client.ModuleType;
+import mhcs.client.Point;
 
 public class Data {
 		
@@ -47,11 +49,6 @@ public class Data {
 		configList.add(toEdit);
 		toSave.saveConfigurations(configList);
 	}
-	
-	
-	
-	
-	
 	
 	public static void updateFlag(boolean flag){
 		passwordFlag = flag;
@@ -136,6 +133,95 @@ public class Data {
 
 
 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+	// THE NEXT FEW FUNCTIONS ARE
+	// JACK'S STUFF FOR GENERATING CONFIGURATIONS.
+	// feel free to use these functions, but please don't remove them...
+
+
+
+	public static List<Module> getModulesOfType(ModuleType type)
+	{
+		ArrayList<Module> list = new ArrayList<Module>();
+		for (Module m : Data.getModuleList())
+		{
+			if (m.getType().equals(type))
+			{
+				list.add(m);
+			}
+		}
+		return list;
+	}
+
+	public static List<Module> getUnusedModulesOfType(ModuleType type)
+	{
+		ArrayList<Module> list = new ArrayList<Module>();
+		for (Module m : Data.getModuleList())
+		{
+			if (m.getType().equals(type) && !m.isInUse())
+			{
+				list.add(m);
+			}
+		}
+		return list;
+	}
+	
+	/**
+	 * gets the center of mass of the modules.
+	 * @return the center of mass.
+	 */
+	public final static Point getCenterOfMass()
+	{
+		List<Module> modules = Data.getModuleList();
+		if (modules.isEmpty())
+		{
+			return null;
+		}
+		int sumX = 0;
+		int sumY = 0;
+		for (Module m : modules)
+		{
+			sumX += m.getCoordinates().getX();
+			sumY += m.getCoordinates().getY();
+		}
+		return new Point(sumX / modules.size(), sumY / modules.size());
+	}
+
+	/**
+	 * This method returns the closest UNUSED module of type "type"
+	 * to module m.
+	 *
+	 * @param p Point to get closest module to.
+	 * @param type Type of modules to search for.
+	 * @return module closest to point p.
+	 */
+	public final static Module getModuleClosestTo(final Point p, ModuleType type)
+	{
+		List<Module> modules = getUnusedModulesOfType(type);
+		Module closestModule = modules.get(0);
+		
+		for (Module m : modules)
+		{
+			if (m.getCoordinates().distanceTo(p) < closestModule.getCoordinates().distanceTo(p))
+			{
+				closestModule = m;
+			}
+		}
+		return closestModule;
+	}
 
 	private static Load toLoad = new Load();
 	private static Save toSave = new Save();

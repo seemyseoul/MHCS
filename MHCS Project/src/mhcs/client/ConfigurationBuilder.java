@@ -2,7 +2,9 @@ package mhcs.client;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
+import mhcs.storage.Data;
 import mhcs.storage.Load;
 import mhcs.storage.Save;
 
@@ -22,8 +24,9 @@ public class ConfigurationBuilder {
 	 * whether or not a minimum configuration can be found.
 	 */
 	public boolean minConfigPossible() {
-		Load loader = new Load();
-		Module[] modules = loader.getModules();
+//		Load loader = new Load();
+//		Module[] modules = loader.getModules();
+		Module[] modules = (Module[]) Data.getModuleList().toArray();
 		int numAirlock = 0; // 1
 		int numControl = 0; // 1
 		int numPower = 0; // 1
@@ -71,12 +74,14 @@ public class ConfigurationBuilder {
 	 * @return an array of Configurations.
 	 */
 	public final Configuration[] generateConfigurations() {
-		Load loader = new Load();
-		Module[] moduleArray = loader.getModules();
-		ArrayList<Module> origModules = new ArrayList<Module>();
-		for (Module x : moduleArray) {
-			origModules.add(x);
-		}
+//		Load loader = new Load();
+//		Module[] moduleArray = loader.getModules();
+//		ArrayList<Module> origModules = new ArrayList<Module>();
+//		for (Module x : moduleArray) {
+//			origModules.add(x);
+//		}
+		List<Module> origModules = Data.getModuleList();
+		
 		/**
 		 * place plain modules.
 		 * fill in possible places with other modules.
@@ -96,10 +101,9 @@ public class ConfigurationBuilder {
 		{
 			return null;
 		}
-		Load loader = new Load();
-		Save saver = new Save();
-		Module[] modules = loader.getModules();
-		Point centerOfMass = loader.getCenterOfMass();
+		
+		Module[] modules = (Module[]) Data.getModuleList().toArray();
+		Point centerOfMass = Data.getCenterOfMass();
 
 		/*
 		 * pretty good minimum config hardcoded...
@@ -109,52 +113,52 @@ public class ConfigurationBuilder {
 		 *              Canteen         Control
 		 */
 
-		Module centerPlain = loader.getModuleClosestTo(centerOfMass, ModuleType.PLAIN);
+		Module centerPlain = Data.getModuleClosestTo(centerOfMass, ModuleType.PLAIN);
 		centerPlain.setInUse(true);
 		centerPlain.setCoordinates(centerOfMass);
 		
 		Point rightPlainPos = new Point(centerOfMass.getX()+1,centerOfMass.getY());
-		Module rightPlain = loader.getModuleClosestTo(rightPlainPos, ModuleType.PLAIN);
+		Module rightPlain = Data.getModuleClosestTo(rightPlainPos, ModuleType.PLAIN);
 		rightPlain.setInUse(true);
 		rightPlain.setCoordinates(rightPlainPos);
 
 		Point leftPlainPos = new Point(centerOfMass.getX()-1,centerOfMass.getY());
-		Module leftPlain = loader.getModuleClosestTo(leftPlainPos, ModuleType.PLAIN);
+		Module leftPlain = Data.getModuleClosestTo(leftPlainPos, ModuleType.PLAIN);
 		leftPlain.setInUse(true);
 		leftPlain.setCoordinates(leftPlainPos);
 		
 		Point airlockPos = new Point(leftPlainPos.getX()-1,leftPlainPos.getY());
-		Module airlock = loader.getModuleClosestTo(airlockPos, ModuleType.AIRLOCK);
+		Module airlock = Data.getModuleClosestTo(airlockPos, ModuleType.AIRLOCK);
 		airlock.setInUse(true);
 		airlock.setCoordinates(airlockPos);
 
 		Point foodWaterPos = new Point(leftPlainPos.getX(),leftPlainPos.getY()+1);
-		Module foodWater = loader.getModuleClosestTo(foodWaterPos, ModuleType.FOODWATERSTORAGE);
+		Module foodWater = Data.getModuleClosestTo(foodWaterPos, ModuleType.FOODWATERSTORAGE);
 		foodWater.setInUse(true);
 		foodWater.setCoordinates(foodWaterPos);
 
 		Point canteenPos = new Point(leftPlainPos.getX(),leftPlainPos.getY()-1);
-		Module canteen = loader.getModuleClosestTo(canteenPos, ModuleType.CANTEEN);
+		Module canteen = Data.getModuleClosestTo(canteenPos, ModuleType.CANTEEN);
 		canteen.setInUse(true);
 		canteen.setCoordinates(canteenPos);
 
 		Point dormPos = new Point(centerOfMass.getX(),centerOfMass.getY()+1);
-		Module dorm = loader.getModuleClosestTo(dormPos, ModuleType.DORMITORY);
+		Module dorm = Data.getModuleClosestTo(dormPos, ModuleType.DORMITORY);
 		dorm.setInUse(true);
 		dorm.setCoordinates(dormPos);
 
 		Point powerPos = new Point(rightPlainPos.getX(),rightPlainPos.getY()+1);
-		Module power = loader.getModuleClosestTo(powerPos, ModuleType.POWER);
+		Module power = Data.getModuleClosestTo(powerPos, ModuleType.POWER);
 		power.setInUse(true);
 		power.setCoordinates(powerPos);
 
 		Point controlPos = new Point(rightPlainPos.getX(),rightPlainPos.getY()-1);
-		Module control = loader.getModuleClosestTo(controlPos, ModuleType.CONTROL);
+		Module control = Data.getModuleClosestTo(controlPos, ModuleType.CONTROL);
 		control.setInUse(true);
 		control.setCoordinates(controlPos);
 
 		Point sanitationPos = new Point(rightPlainPos.getX()+1,rightPlainPos.getY());
-		Module sanitation = loader.getModuleClosestTo(sanitationPos, ModuleType.SANITATION);
+		Module sanitation = Data.getModuleClosestTo(sanitationPos, ModuleType.SANITATION);
 		sanitation.setInUse(true);
 		sanitation.setCoordinates(sanitationPos);
 
