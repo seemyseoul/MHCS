@@ -93,10 +93,13 @@ public class Data {
 	
 
 	/**
-	 * @return the moduleList
+	 * @return the moduleList.
+	 * (It should return a copy as to not allow changes to be made accidentally)
 	 */
+	@SuppressWarnings("unchecked")
 	public static List<Module> getModuleList() {
-		return moduleList;
+		ArrayList<Module> moduleList1 = new ArrayList<Module>(moduleList);
+		return (List<Module>) moduleList1.clone();
 	}
 	/**
 	 * @param moduleList the moduleList to set
