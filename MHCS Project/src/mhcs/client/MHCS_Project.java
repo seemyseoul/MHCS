@@ -2,20 +2,25 @@ package mhcs.client;
 
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.dom.client.Style.Unit;
+import com.google.gwt.event.dom.client.ClickEvent;
+import com.google.gwt.event.dom.client.ClickHandler;
+import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.CheckBox;
 import com.google.gwt.user.client.ui.DockPanel;
-import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.HorizontalPanel;
+import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.Image;
 import com.google.gwt.user.client.ui.ListBox;
 import com.google.gwt.user.client.ui.PasswordTextBox;
 import com.google.gwt.user.client.ui.RadioButton;
 import com.google.gwt.user.client.ui.RootPanel;
+import com.google.gwt.user.client.ui.SimplePanel;
 import com.google.gwt.user.client.ui.TabLayoutPanel;
 import com.google.gwt.user.client.ui.TextArea;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.VerticalPanel;
+import com.google.gwt.user.client.ui.Widget;
 
 /**
  * Entry point classes define <code>onModuleLoad()</code>.
@@ -33,9 +38,9 @@ public class MHCS_Project implements EntryPoint {
   * This is the entry point method.
   */
   public void onModuleLoad() {
-//    TabLayoutPanel tabPanel = new TabLayoutPanel(2.5, Unit.EM);
-//    tabPanel.setAnimationDuration(1000);
-//    tabPanel.getElement().getStyle().setMarginBottom(10.0, Unit.PX);
+    TabLayoutPanel tabPanel = new TabLayoutPanel(2.5, Unit.EM);
+    tabPanel.setAnimationDuration(1000);
+    tabPanel.getElement().getStyle().setMarginBottom(10.0, Unit.PX);
 
     final String strDockPanelHeight = "700px";
     final String strDockPanelWidth = "1500px";
@@ -43,116 +48,10 @@ public class MHCS_Project implements EntryPoint {
     final int intPanelBorder = 2;
     final int intPanelSpacing = 5;
     final int intVerPanelSpacing = 10;
-
-  // Configurations
-
-    final String strConfigButtonHeight = "50px";
-    final String strConfigButtonWidth = "300px";
-    final String strConfigListBoxHeight = "700px";
-    final String strConfigListBoxWidth = "300px";
-    final String strConfigMapHeight = "600px";
-    final String strConfigMapWidth = "1000px";
-    final String strConfigVerPanelHeight = "700px";
-
-    // West
-    // Add a list box with multiple selection enabled
-    final ListBox configListBox = new ListBox();
-    configListBox.addItem("Tree Config 1");
-    configListBox.addItem("Tree Config 2");
-    configListBox.addItem("Tree Config 3");
-    configListBox.addItem("Tree Config 4");
-    configListBox.addItem("Tree Config 5");
-    configListBox.addItem("Tree Config 6");
-    configListBox.addItem("Tree Config 7");
-    configListBox.setVisibleItemCount(10);
-    configListBox.setHeight(strConfigListBoxHeight);
-    configListBox.setWidth(strConfigListBoxWidth);
-
-    // Center
-    Image map = new Image("images/marsMap");
-    map.setHeight(strConfigMapHeight);
-    map.setWidth(strConfigMapWidth);
-      
-    // East
-    final VerticalPanel configVerPanel = new VerticalPanel();
-    // Panel to be filled with loop based off modules array from Module class ?
-    final CheckBox radAirLock = new CheckBox("Air Lock");
-    final CheckBox radPlain = new CheckBox("Plain");
-    final CheckBox radDorm = new CheckBox("Dormitory");
-    final CheckBox radSanitation = new CheckBox("Sanitation");
-    final CheckBox radFoodAndWater = new CheckBox("Food & Water");
-    final CheckBox radGymAndRelax = new CheckBox("Gym & Relaxation");
-    final CheckBox radCanteen = new CheckBox("Canteen");
-    final CheckBox radPower = new CheckBox("Power");
-    final CheckBox radControl = new CheckBox("Control");
-    final CheckBox radMedical = new CheckBox("Medical");
-    final RadioButton radAll = new RadioButton("Select All");
-    final RadioButton radNone = new RadioButton("Deselect All");
-    radAirLock.setText("Air Lock");
-    radPlain.setText("Plain");
-    radDorm.setText("Dormitory");
-    radSanitation.setText("Sanitation");
-    radFoodAndWater.setText("Food & Water");
-    radGymAndRelax.setText("Gym & Relaxation");
-    radCanteen.setText("Canteen");
-    radPower.setText("Power");
-    radControl.setText("Control");
-    radMedical.setText("Medical");
-    radNone.setText("Deselect All");
-    radAll.setText("Select All");
-    radAll.setName("MapModules");
-    radNone.setName("MapModules");
-    configVerPanel.add(radAirLock);
-    configVerPanel.add(radPlain);
-    configVerPanel.add(radDorm);
-    configVerPanel.add(radSanitation);
-    configVerPanel.add(radFoodAndWater);
-    configVerPanel.add(radGymAndRelax);
-    configVerPanel.add(radCanteen);
-    configVerPanel.add(radPower);
-    configVerPanel.add(radControl);
-    configVerPanel.add(radMedical);
-    configVerPanel.add(radAll);
-    configVerPanel.add(radNone);
-    configVerPanel.setHeight(strConfigVerPanelHeight);
-      
-    // 2nd South
-    final HorizontalPanel configHorPanel = new HorizontalPanel();
-    final Button roverPathButton = new Button();
-    final Button deleteConfigButton = new Button();
-    final Button buildConfigButton = new Button();
-    roverPathButton.setHeight(strConfigButtonHeight);
-    roverPathButton.setWidth(strConfigButtonWidth);
-    deleteConfigButton.setHeight(strConfigButtonHeight);
-    deleteConfigButton.setWidth(strConfigButtonWidth);
-    buildConfigButton.setHeight(strConfigButtonHeight);
-    buildConfigButton.setWidth(strConfigButtonWidth);
-    roverPathButton.setText("Rover Path");
-    deleteConfigButton.setText("Delete Configuration");
-    buildConfigButton.setText("Build Configuration");
-    configHorPanel.add(roverPathButton);
-    configHorPanel.add(deleteConfigButton);
-    configHorPanel.add(buildConfigButton);
-
-    // Create ConfigurationDock Panel
-    DockPanel configDock = new DockPanel();
-    configDock.setSpacing(intPanelSpacing);
-    configDock.setHorizontalAlignment(DockPanel.ALIGN_CENTER);
-    configDock.setBorderWidth(intPanelBorder);
-    configDock.setSize(strDockPanelWidth, strDockPanelHeight);
-
-    // Add to dock
-    configDock.add(new HTML("Configurations"), DockPanel.NORTH);
-    configDock.add(new HTML(strDockPanelSouth), DockPanel.SOUTH);
-    configDock.add(configVerPanel, DockPanel.EAST);
-    configDock.add(configListBox, DockPanel.WEST);
-    configDock.add(new HTML("Map"), DockPanel.NORTH);
-    configDock.add(configHorPanel, DockPanel.SOUTH);
-    configDock.add(map, DockPanel.CENTER);
-
     
-
-  // Modules
+    /*
+     *  Modules
+     */
     final String strModulesListBoxHeight = "650px";
     final String strModulesListBoxWidth = "300px";
     final String strModulesButtonHeight = "50px";
@@ -164,26 +63,19 @@ public class MHCS_Project implements EntryPoint {
     final String strModulesImageHeight = "200px";
     final String strModulesImageWidth = "250px";
 
-    // West
-    // Inner Panels
+    /* West */
+    /* Inner Panels */
     final VerticalPanel modulesWestVerPanel = new VerticalPanel();
     final HorizontalPanel modulesWestHorPanel = new HorizontalPanel();
 
     // Add a list box with multiple selection enabled
-    // Will be populated via loop using Module array created in Module class
     final ListBox modulesListBox = new ListBox();
-    modulesListBox.addItem("Module 1");
-    modulesListBox.addItem("Module 2");
-    modulesListBox.addItem("Module 3");
-    modulesListBox.addItem("Module 4");
-    modulesListBox.addItem("Module 5");
-    modulesListBox.addItem("Module 6");
-    modulesListBox.addItem("Module 7");
+    //Module.populateListBox(arrModules);
     modulesListBox.setVisibleItemCount(10);
     modulesListBox.setHeight(strModulesListBoxHeight);
     modulesListBox.setWidth(strModulesListBoxWidth);
 
-    // Fill Horizontal Panel
+    /* Fill Horizontal Panel */
     final Button modulesAddButton = new Button();
     final Button modulesRemoveButton = new Button();
     modulesAddButton.setHeight(strModulesButtonHeight);
@@ -194,18 +86,20 @@ public class MHCS_Project implements EntryPoint {
     modulesRemoveButton.setText("REMOVE");
     modulesWestHorPanel.add(modulesAddButton);
     modulesWestHorPanel.add(modulesRemoveButton);
+    
+    modulesAddButton.addClickHandler(Handlers.addButton());
 
-    // Fill Vertical Panel
+    /* Fill Vertical Panel */
     modulesWestVerPanel.add(modulesListBox);
     modulesWestVerPanel.add(modulesWestHorPanel);
 
-    // North
+    /* North */
     // Image to be filled with function based on module
     final Image modulesImage = new Image("images/image");
     modulesImage.setHeight(strModulesImageHeight);
     modulesImage.setWidth(strModulesImageWidth);
 
-    // Center
+    /* Center */
     final VerticalPanel modulesCenterVerPanel = new VerticalPanel();
     final HTML moduleDetailsLabel = new HTML("Module Details");
     final TextArea moduleDetails = new TextArea();
@@ -214,7 +108,7 @@ public class MHCS_Project implements EntryPoint {
     modulesCenterVerPanel.add(moduleDetailsLabel);
     modulesCenterVerPanel.add(moduleDetails);
 
-    // South
+    /* South */
     final VerticalPanel modulesSouthVerPanel = new VerticalPanel();
     final HTML moduleRequirementsLabel = new HTML("Module Requirements");
     final TextArea moduleRequirements = new TextArea();
@@ -225,7 +119,7 @@ public class MHCS_Project implements EntryPoint {
     modulesSouthVerPanel.add(moduleRequirementsLabel);
     modulesSouthVerPanel.add(moduleRequirements);
 
-    // East
+    /* East */
     final VerticalPanel modulesEastVerPanel = new VerticalPanel();
 
     final HTML modulesLblId = new HTML("ID Number");
@@ -283,10 +177,12 @@ public class MHCS_Project implements EntryPoint {
     moduleCoordinates.add(xPanel);
     moduleCoordinates.add(yPanel);
 
-    Button saveButton = new Button();
-    saveButton.setHeight(strModulesButtonHeight);
-    saveButton.setWidth(strModulesEastPanelWidth);
-    saveButton.setText("SAVE");
+    Button modulesSaveButton = new Button();
+    modulesSaveButton.setHeight(strModulesButtonHeight);
+    modulesSaveButton.setWidth(strModulesEastPanelWidth);
+    modulesSaveButton.setText("SAVE");
+    
+    modulesSaveButton.addClickHandler(Handlers.saveButton());
 
     modulesEastVerPanel.add(modulesLblId);
     modulesEastVerPanel.add(modulesEastId);
@@ -297,17 +193,17 @@ public class MHCS_Project implements EntryPoint {
     modulesEastVerPanel.add(modulesLblOrientation);
     modulesEastVerPanel.add(modulesEastOrientation);
     modulesEastVerPanel.add(moduleCoordinates);
-    modulesEastVerPanel.add(saveButton);
+    modulesEastVerPanel.add(modulesSaveButton);
     modulesEastVerPanel.setSpacing(intVerPanelSpacing + 5);
 
-    // Create a Dock Panel
-    DockPanel modulesDock = new DockPanel();
+    /* Create a Dock Panel */
+    final DockPanel modulesDock = new DockPanel();
     modulesDock.setSpacing(intPanelSpacing);
     modulesDock.setHorizontalAlignment(DockPanel.ALIGN_CENTER);
     modulesDock.setBorderWidth(intPanelBorder);
     modulesDock.setSize(strDockPanelWidth, strDockPanelHeight);
 
-    // Add text all around
+    /* Add panels to Dock */
     modulesDock.add(new HTML("Modules"), DockPanel.NORTH);
     modulesDock.add(new HTML(strDockPanelSouth), DockPanel.SOUTH);
     modulesDock.add(modulesEastVerPanel, DockPanel.EAST);
@@ -315,9 +211,117 @@ public class MHCS_Project implements EntryPoint {
     modulesDock.add(modulesImage, DockPanel.NORTH);
     modulesDock.add(modulesSouthVerPanel, DockPanel.SOUTH);
     modulesDock.add(modulesCenterVerPanel, DockPanel.CENTER);
-    
 
-    // Settings
+    /* 
+     * Configurations 
+     */
+    final String strConfigButtonHeight = "50px";
+    final String strConfigButtonWidth = "300px";
+    final String strConfigListBoxHeight = "700px";
+    final String strConfigListBoxWidth = "300px";
+    final String strConfigMapHeight = "600px";
+    final String strConfigMapWidth = "1000px";
+    final String strConfigVerPanelHeight = "700px";
+
+    /* West */
+    // Add a list box with multiple selection enabled
+    final ListBox configListBox = new ListBox();
+    //Configurations.populateListBox(configListBox);
+    configListBox.setVisibleItemCount(10);
+    configListBox.setHeight(strConfigListBoxHeight);
+    configListBox.setWidth(strConfigListBoxWidth);
+
+    /* Center */
+    Image map = new Image("images/marsMap");
+    map.setHeight(strConfigMapHeight);
+    map.setWidth(strConfigMapWidth);
+      
+    /* East */
+    final VerticalPanel configVerPanel = new VerticalPanel();
+    // Panel to be filled with loop based off modules array from Module class ?
+//    for (int i=0; i<arrModuleNames; i++) {
+//      final CheckBox arrModuleNames[i] = new CheckBox (arrModuleStrings[i]);
+//      arrModuleNames[i].setText(arrModuleStrings[i]);
+//      configVerPanel.add(arrModuleNames[i]);
+//    } // for
+    final CheckBox radAirLock = new CheckBox("Air Lock");
+    final CheckBox radPlain = new CheckBox("Plain");
+    final CheckBox radDorm = new CheckBox("Dormitory");
+    final CheckBox radSanitation = new CheckBox("Sanitation");
+    final CheckBox radFoodAndWater = new CheckBox("Food & Water");
+    final CheckBox radGymAndRelax = new CheckBox("Gym & Relaxation");
+    final CheckBox radCanteen = new CheckBox("Canteen");
+    final CheckBox radPower = new CheckBox("Power");
+    final CheckBox radControl = new CheckBox("Control");
+    final CheckBox radMedical = new CheckBox("Medical");
+    final RadioButton radAll = new RadioButton("Select All");
+    final RadioButton radNone = new RadioButton("Deselect All");
+    radAirLock.setText("Air Lock");
+    radPlain.setText("Plain");
+    radDorm.setText("Dormitory");
+    radSanitation.setText("Sanitation");
+    radFoodAndWater.setText("Food & Water");
+    radGymAndRelax.setText("Gym & Relaxation");
+    radCanteen.setText("Canteen");
+    radPower.setText("Power");
+    radControl.setText("Control");
+    radMedical.setText("Medical");
+    radNone.setText("Deselect All");
+    radAll.setText("Select All");
+    radAll.setName("MapModules");
+    radNone.setName("MapModules");
+    configVerPanel.add(radAirLock);
+    configVerPanel.add(radPlain);
+    configVerPanel.add(radDorm);
+    configVerPanel.add(radSanitation);
+    configVerPanel.add(radFoodAndWater);
+    configVerPanel.add(radGymAndRelax);
+    configVerPanel.add(radCanteen);
+    configVerPanel.add(radPower);
+    configVerPanel.add(radControl);
+    configVerPanel.add(radMedical);
+    configVerPanel.add(radAll);
+    configVerPanel.add(radNone);
+    
+    configVerPanel.setHeight(strConfigVerPanelHeight);
+      
+    /* 2nd South */
+    final HorizontalPanel configHorPanel = new HorizontalPanel();
+    final Button roverPathButton = new Button();
+    final Button deleteConfigButton = new Button();
+    final Button buildConfigButton = new Button();
+    roverPathButton.setHeight(strConfigButtonHeight);
+    roverPathButton.setWidth(strConfigButtonWidth);
+    deleteConfigButton.setHeight(strConfigButtonHeight);
+    deleteConfigButton.setWidth(strConfigButtonWidth);
+    buildConfigButton.setHeight(strConfigButtonHeight);
+    buildConfigButton.setWidth(strConfigButtonWidth);
+    roverPathButton.setText("Rover Path");
+    deleteConfigButton.setText("Delete Configuration");
+    buildConfigButton.setText("Build Configuration");
+    configHorPanel.add(roverPathButton);
+    configHorPanel.add(deleteConfigButton);
+    configHorPanel.add(buildConfigButton);
+
+    /* Create ConfigurationDock Panel */
+    final DockPanel configDock = new DockPanel();
+    configDock.setSpacing(intPanelSpacing);
+    configDock.setHorizontalAlignment(DockPanel.ALIGN_CENTER);
+    configDock.setBorderWidth(intPanelBorder);
+    configDock.setSize(strDockPanelWidth, strDockPanelHeight);
+
+    /* Add to dock */
+    configDock.add(new HTML("Configurations"), DockPanel.NORTH);
+    configDock.add(new HTML(strDockPanelSouth), DockPanel.SOUTH);
+    configDock.add(configVerPanel, DockPanel.EAST);
+    configDock.add(configListBox, DockPanel.WEST);
+    configDock.add(new HTML("Map"), DockPanel.NORTH);
+    configDock.add(configHorPanel, DockPanel.SOUTH);
+    configDock.add(map, DockPanel.CENTER);
+
+    /* 
+     * Settings
+     */
     final String strSettingsButtonHeight = "35px";
     final String strSettingsButtonWidth = "130px";
     final String strSettingsPassEnableHeight = "20px";
@@ -325,17 +329,14 @@ public class MHCS_Project implements EntryPoint {
     final int intSettingsPanelSpacing = 10;
     final int intSettingsVerPanelSpaacing = 5;
     
-    // Vertical Panel (holds all)
+    /* Vertical Panel (holds all) */
     final VerticalPanel settingsVertPanel = new VerticalPanel();
 
-    // Horizontal Panels
+    /* Horizontal Panels */
     final HorizontalPanel settingsUserPanel = new HorizontalPanel();
-    // to be added using loop based off array from ...somewhere
     final ListBox users = new ListBox();
-    users.addItem("Jesse Goebel");
-    users.addItem("Jack McKeown");
-    users.addItem("Brent Pavlovich");
-    users.addItem("Amanda Poston");
+    // CLASS.populateUsers(users);
+    
     final Button addUserButton = new Button();
     final Button removeUserButton = new Button();
     addUserButton.setText("Add User");
@@ -353,7 +354,7 @@ public class MHCS_Project implements EntryPoint {
     final CheckBox passwordEnable = new CheckBox();
     passwordEnable.setText("Password Enabled");
     passwordEnable.setHeight(strSettingsPassEnableHeight);
-    Button changePasswordButton = new Button();
+    final Button changePasswordButton = new Button();
     changePasswordButton.setText("Change Password");
     changePasswordButton.setHeight(strSettingsButtonHeight);
     changePasswordButton.setWidth(strSettingsButtonWidth);
@@ -361,13 +362,13 @@ public class MHCS_Project implements EntryPoint {
     settingsPassPanel.add(changePasswordButton);
     settingsPassPanel.setSpacing(intSettingsPanelSpacing);
 
-    // Inner vertical panel
+    /* Inner vertical panel */
     final VerticalPanel settingsPassVertPanel = new VerticalPanel();
-    HTML changePassword = new HTML("Change Password");
+    final HTML changePassword = new HTML("Change Password");
     changePassword.setHeight(strSettingsChangePassHeight);
     settingsPassVertPanel.setSpacing(intSettingsVerPanelSpaacing);
 
-    // Inner horizontal panels
+    /* Inner horizontal panels */
     final HorizontalPanel currentPassword = new HorizontalPanel();
     final PasswordTextBox cPassword = new PasswordTextBox();
     final HTML cPass = new HTML("Current Password");
@@ -401,17 +402,25 @@ public class MHCS_Project implements EntryPoint {
     settingsVertPanel.add(settingsPassVertPanel);
     settingsVertPanel.setSpacing(intSettingsPanelSpacing);
     settingsVertPanel.setBorderWidth(intPanelBorder);
-
-
+    
+    
+    /* Weather Panel */
+    final SimplePanel weatherPanel = new SimplePanel();
+    final HTML weatherText = new HTML("Place holder for the weather");
+    weatherPanel.add(weatherText);
+    
     RootPanel.get().add(configDock);
     RootPanel.get().add(modulesDock);
     RootPanel.get().add(settingsVertPanel);
     
-  // Add tabs to layout
-//    tabPanel.add(configDock);
-//    tabPanel.add(modulesDock);
-//    tabPanel.add(settingsVertPanel);
+    /* Add tabs to layout */
+//    tabPanel.add(modulesDock, "Modules");
+//    tabPanel.add(configDock, "Configurations");
+//    tabPanel.add(settingsVertPanel, "Settings");
+//    tabPanel.add(weatherPanel, "Weather");
+//    tabPanel.add(new HTML("Logout"), "Logout");
+//    
+//    RootPanel.get().add(tabPanel);
 
-    
   } // OnModuleLoad
 } // MHCS
