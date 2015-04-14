@@ -106,6 +106,7 @@ public class Data {
 	 */
 	public static void setModuleList(List<Module> moduleListParam) {
 		moduleList = moduleListParam;
+		// THIS METHOD SHOULD ALSO UPDATE THE HTML5 LOCALSTORAGE.
 	}
 	/**
 	 * @return the password
