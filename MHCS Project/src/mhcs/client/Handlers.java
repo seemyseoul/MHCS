@@ -2,6 +2,7 @@ package mhcs.client;
 
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
+import com.google.gwt.user.client.ui.ListBox;
 
 public class Handlers {
 
@@ -63,6 +64,39 @@ public class Handlers {
   } // getModuleID
   
   public int getType() {
+    // get the type
+    return 0;
+  } // getType
+  
+  /**
+   * Returns condition of module.
+   * @return int
+   */
+  public int getCondition() {
+    // get the condition
+    String condition = "";
+    if (condition.equals("USABLE")) {
+      return 1;
+    } else if (condition.equals("USABLEAFTERREPAIR")) {
+      return 2;
+    } else if (condition.equals("BEYONDREPAIR")) {
+      return 3;
+    } else {
+      return 0;
+    }
+  } // getCondition
+  
+  /**
+   * Returns the orientation in int form.
+   * @param lb
+   * @return int
+   */
+  public int getOrientation(ListBox lb) {
+    int orientation = lb.getSelectedIndex();
+    return orientation;
+  } // getOrientation
+  
+  public Point getOrigin(TextBox x, TextBox y) {
 	  
   }
   
