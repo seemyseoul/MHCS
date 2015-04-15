@@ -161,21 +161,17 @@ public class Data {
 
 
 
-	public static List<Module> getModulesOfType(ModuleType type)
-	{
+	public static List<Module> getModulesOfType(ModuleType type) {
 		ArrayList<Module> list = new ArrayList<Module>();
-		for (Module m : Data.getModuleList())
-		{
-			if (m.getType().equals(type))
-			{
+		for (Module m : Data.getModuleList()) {
+			if (m.getType().equals(type)) {
 				list.add(m);
 			}
 		}
 		return list;
 	}
 
-	public static List<Module> getUnusedModulesOfType(ModuleType type)
-	{
+	public static List<Module> getUnusedModulesOfType(ModuleType type) {
 		ArrayList<Module> list = new ArrayList<Module>();
 		for (Module m : Data.getModuleList())
 		{
