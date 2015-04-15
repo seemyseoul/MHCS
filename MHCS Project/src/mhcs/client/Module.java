@@ -4,7 +4,8 @@ import mhcs.storage.Load;
 
 public class Module {
 
-  private int id, orientation;
+  private int id;
+  private int orientation;
   private ModuleType type;
   private Point coordinates;
   private ModuleStatus status;
@@ -192,27 +193,32 @@ public class Module {
     this.inUse = inUse;
   }
   
-  /**
-   * Enum to use in loops for GUI
-   * @author Amanda
-   *
-   */
-  public enum ModuleNames {
-    radAirLock,
-    radPlain,
-    radDorm,
-    radSanitation,
-    radFoodAndWater,
-    radGymAndRelax,
-    radCanteen,
-    radPower,
-    radControl,
-    radMedical,
-    radNone,
-    radAll
-  } // moduleNames
+//  /**
+//   * Enum to use in loops for GUI.
+//   * @author Amanda
+//   *
+//   */
+//  public static enum var {
+//    radAirLock,
+//    radPlain,
+//    radDorm,
+//    radSanitation,
+//    radFoodAndWater,
+//    radGymAndRelax,
+//    radCanteen,
+//    radPower,
+//    radControl,
+//    radMedical,
+//    radNone,
+//    radAll
+//  } // moduleNames
   
-  String[] moduleStrings = {"Air Lock", "Plain", "Dormitory",
+  static String [] moduleNames = {"radAirLock", "radPlain", "radDorm",
+      "radSanitation", "radFoodAndWater", "radGymAndRelax",
+      "radCanteen", "radPower", "radControl", "radMedical",
+      "radNone", "radAll"};
+  
+  static String[] moduleStrings = {"Air Lock", "Plain", "Dormitory",
       "Sanitation", "Food & Water", "Gym & Relaxation",
       "Canteen", "Power", "Control", "Medical", "Deselect All",
       "Select All", "MapModules", "MapModules"};

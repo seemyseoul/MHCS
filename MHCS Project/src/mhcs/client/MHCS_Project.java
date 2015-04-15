@@ -1,5 +1,6 @@
 package mhcs.client;
 
+import mhcs.client.Module.var;
 import mhcs.storage.Data;
 
 import com.google.gwt.core.client.EntryPoint;
@@ -132,8 +133,8 @@ public class MHCS_Project implements EntryPoint {
     final HTML modulesLblType = new HTML("Type");
     // Via loop based off module array
     final ListBox modulesEastType = new ListBox();
-    for (int i=0; i<Data.getModuleList().size(); i++){
-    	modulesEastType.addItem(Data.getModuleList().get(i).toString());
+    for (int i = 0; i < Data.getModuleList().size(); i++) {
+      modulesEastType.addItem(Data.getModuleList().get(i).toString());
     } //for
     modulesEastType.setVisibleItemCount(10);
     modulesEastType.setWidth(strModulesEastPanelWidth);
@@ -233,12 +234,7 @@ public class MHCS_Project implements EntryPoint {
       
     /* East */
     final VerticalPanel configVerPanel = new VerticalPanel();
-    // Panel to be filled with loop based off modules array from Module class ?
-//    for (int i=0; i<arrModuleNames; i++) {
-//      final CheckBox arrModuleNames[i] = new CheckBox (arrModuleStrings[i]);
-//      arrModuleNames[i].setText(arrModuleStrings[i]);
-//      configVerPanel.add(arrModuleNames[i]);
-//    } // for
+    
     final CheckBox radAirLock = new CheckBox("Air Lock");
     final CheckBox radPlain = new CheckBox("Plain");
     final CheckBox radDorm = new CheckBox("Dormitory");

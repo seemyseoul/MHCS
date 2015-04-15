@@ -62,14 +62,18 @@ public class Handlers {
     return 900;
   } // getModuleID
   
+  public int getType() {
+	  
+  }
+  
   /**
-   * Getter for Module InUse
+   * Getter for Module InUse.
    * @return boolean 
    */
   public boolean getModuleInUse() {
-	  boolean inUse = false;
-	  // access inUse
-	  return inUse;
+    boolean inUse = false;
+    // access inUse
+    return inUse;
   } //getModuleInUse
   
 } // Handlers
