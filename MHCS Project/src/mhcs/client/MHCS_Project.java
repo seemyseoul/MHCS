@@ -1,5 +1,7 @@
 package mhcs.client;
 
+import mhcs.storage.Data;
+
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.dom.client.Style.Unit;
 import com.google.gwt.event.dom.client.ClickEvent;
@@ -130,16 +132,9 @@ public class MHCS_Project implements EntryPoint {
     final HTML modulesLblType = new HTML("Type");
     // Via loop based off module array
     final ListBox modulesEastType = new ListBox();
-    modulesEastType.addItem("Air Lock");
-    modulesEastType.addItem("Plain");
-    modulesEastType.addItem("Dormitory");
-    modulesEastType.addItem("Sanitation");
-    modulesEastType.addItem("Food & Water");
-    modulesEastType.addItem("Gym & Relaxation");
-    modulesEastType.addItem("Canteen");
-    modulesEastType.addItem("Power");
-    modulesEastType.addItem("Control");
-    modulesEastType.addItem("Medical");
+    for (int i=0; i<Data.getModuleList().size(); i++){
+    	modulesEastType.addItem(Data.getModuleList().get(i).toString());
+    } //for
     modulesEastType.setVisibleItemCount(10);
     modulesEastType.setWidth(strModulesEastPanelWidth);
 
