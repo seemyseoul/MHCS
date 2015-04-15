@@ -1,6 +1,7 @@
 package mhcs.client;
 
 import mhcs.storage.Data;
+
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.dom.client.Style.Unit;
 import com.google.gwt.user.client.ui.Button;
@@ -12,6 +13,7 @@ import com.google.gwt.user.client.ui.Image;
 import com.google.gwt.user.client.ui.ListBox;
 import com.google.gwt.user.client.ui.PasswordTextBox;
 import com.google.gwt.user.client.ui.RadioButton;
+import com.google.gwt.user.client.ui.RootLayoutPanel;
 import com.google.gwt.user.client.ui.RootPanel;
 import com.google.gwt.user.client.ui.SimplePanel;
 import com.google.gwt.user.client.ui.TabLayoutPanel;
@@ -127,8 +129,8 @@ public class MHCS_Project implements EntryPoint {
     final HTML modulesLblType = new HTML("Type");
     // Via loop based off module array
     final ListBox modulesEastType = new ListBox();
-    for (int i = 0; i < Data.getModuleList().size(); i++) {
-      modulesEastType.addItem(Data.getModuleList().get(i).toString());
+    for (int i = 0; i < Module.moduleStrings.length; i++) {
+      modulesEastType.addItem(Module.moduleStrings[i]);
     } //for
     modulesEastType.setVisibleItemCount(10);
     modulesEastType.setWidth(strModulesEastPanelWidth);
@@ -228,7 +230,7 @@ public class MHCS_Project implements EntryPoint {
       
     /* East */
     final VerticalPanel configVerPanel = new VerticalPanel();
-    
+
     final CheckBox radAirLock = new CheckBox("Air Lock");
     final CheckBox radPlain = new CheckBox("Plain");
     final CheckBox radDorm = new CheckBox("Dormitory");
@@ -394,18 +396,18 @@ public class MHCS_Project implements EntryPoint {
     final HTML weatherText = new HTML("Place holder for the weather");
     weatherPanel.add(weatherText);
     
-    RootPanel.get().add(configDock);
-    RootPanel.get().add(modulesDock);
-    RootPanel.get().add(settingsVertPanel);
+//    RootPanel.get().add(configDock);
+//    RootPanel.get().add(modulesDock);
+//    RootPanel.get().add(settingsVertPanel);
     
     /* Add tabs to layout */
-//    tabPanel.add(modulesDock, "Modules");
-//    tabPanel.add(configDock, "Configurations");
-//    tabPanel.add(settingsVertPanel, "Settings");
-//    tabPanel.add(weatherPanel, "Weather");
-//    tabPanel.add(new HTML("Logout"), "Logout");
-//    
-//    RootPanel.get().add(tabPanel);
+    tabPanel.add(modulesDock, "Modules");
+    tabPanel.add(configDock, "Configurations");
+    tabPanel.add(settingsVertPanel, "Settings");
+    tabPanel.add(weatherPanel, "Weather");
+    tabPanel.add(new HTML("Logout"), "Logout");
+    
+    RootLayoutPanel.get().add(tabPanel);
 
   } // OnModuleLoad
 } // MHCS

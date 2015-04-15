@@ -96,4 +96,14 @@ public final class Configuration {
 	{
 		modules[modules.length] = m;
 	}
+	
+  static String [] configCheckBoxVars = {"radAirLock", "radPlain", "radDorm",
+      "radSanitation", "radFoodAndWater", "radGymAndRelax",
+      "radCanteen", "radPower", "radControl", "radMedical",
+      "radNone", "radAll"};
+	
+  static String[] configCheckBoxes = {"Air Lock", "Plain", "Dormitory",
+      "Sanitation", "Food & Water", "Gym & Relaxation",
+      "Canteen", "Power", "Control", "Medical", "Select All",
+      "Delect All"};
 }

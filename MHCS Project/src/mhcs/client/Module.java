@@ -213,15 +213,9 @@ public class Module {
 //    radAll
 //  } // moduleNames
   
-  static String [] moduleNames = {"radAirLock", "radPlain", "radDorm",
-      "radSanitation", "radFoodAndWater", "radGymAndRelax",
-      "radCanteen", "radPower", "radControl", "radMedical",
-      "radNone", "radAll"};
-  
   static String[] moduleStrings = {"Air Lock", "Plain", "Dormitory",
       "Sanitation", "Food & Water", "Gym & Relaxation",
-      "Canteen", "Power", "Control", "Medical", "Deselect All",
-      "Select All", "MapModules", "MapModules"};
+      "Canteen", "Power", "Control", "Medical"};
   
 
 } // class Module
