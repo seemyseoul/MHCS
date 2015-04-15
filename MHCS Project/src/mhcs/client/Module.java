@@ -5,7 +5,7 @@ import mhcs.storage.Load;
 /**
  * This class defines a Module on Mars.
  * 
- * @author Naples
+ * @author Naples1
  *
  */
 public class Module {
