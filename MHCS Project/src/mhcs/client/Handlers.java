@@ -96,10 +96,6 @@ public class Handlers {
     return orientation;
   } // getOrientation
   
-  public Point getOrigin(TextBox x, TextBox y) {
-	  
-  }
-  
   /**
    * Getter for Module InUse.
    * @return boolean 
