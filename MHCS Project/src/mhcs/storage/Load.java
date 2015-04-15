@@ -20,14 +20,15 @@ public class Load {
 		loadConfigurations();
 	}
 
-	private void loadModules(){
+	private void loadModules() {
 		Module newModule = null;
-		for (int i = 0; i <= Integer.parseInt(stockStore.getItem("numOfModules")); i++){
+		for (int i = 0; i <= Integer.parseInt(stockStore
+				.getItem("numOfModules")); i++) {
 			newModule = new Module(stockStore.getItem(Integer.toString(i)));
 			moduleList.add(newModule);
 		}
 	}
-	
+
 	private void loadSettings() {
 		stockStore = Storage.getLocalStorageIfSupported();
 		if (stockStore != null) {
@@ -39,17 +40,16 @@ public class Load {
 		}
 	}
 
-	
-	private void loadConfigurations(){
+	private void loadConfigurations() {
 		Configuration newConfig = null;
-		for (int i = 0; i <= Integer.parseInt(stockStore.getItem("numOfModules")); i++){
-			newConfig = new Configuration(stockStore.getItem("C" + Integer.toString(i)));
+		for (int i = 0; i <= Integer.parseInt(stockStore
+				.getItem("numOfModules")); i++) {
+			newConfig = new Configuration(stockStore.getItem("C"
+					+ Integer.toString(i)));
 			configurationList.add(newConfig);
 		}
 	}
-	
-	
-	
+
 	public boolean getPasswordFlag() {
 		return passwordFlag;
 	}
@@ -57,17 +57,15 @@ public class Load {
 	public String getPassword() {
 		return password;
 	}
-	
-	public List<Module> getModuleList(){
+
+	public List<Module> getModuleList() {
 		return moduleList;
 	}
-	
-	public List<Configuration> getConfigurationList(){
+
+	public List<Configuration> getConfigurationList() {
 		return configurationList;
 	}
 
-
-	
 	private boolean passwordFlag = true;
 	private String password = "Naples";
 	private List<Module> moduleList = new ArrayList<>();
