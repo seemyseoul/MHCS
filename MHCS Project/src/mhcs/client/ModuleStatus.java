@@ -10,8 +10,9 @@ public enum ModuleStatus {
 	USABLE, USABLEAFTERREPAIR, BEYONDREPAIR;
 
 	/**
-	 * This method allows for canonical translation from the html5 stored
-	 * string to ModuleStatus.
+	 * This method allows for canonical translation from the html5 stored string
+	 * to ModuleStatus.
+	 * 
 	 * @param str
 	 * @return ModuleStatus object.
 	 */

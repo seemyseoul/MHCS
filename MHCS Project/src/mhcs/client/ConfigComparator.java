@@ -20,15 +20,16 @@ public class ConfigComparator implements Comparator<Configuration> {
 			return 1;
 		}
 	}
+
 	/**
-	 * Gets the configuration quality
-	 * on a scale from 0 to 1 as a floating point value.
+	 * Gets the configuration quality on a scale from 0 to 1 as a floating point
+	 * value.
 	 *
 	 * @param config
 	 * @return
 	 */
 	public final float getConfigQuality(final Configuration config) {
-		return 0; 
+		return 0;
 		// TODO
 	}
 
