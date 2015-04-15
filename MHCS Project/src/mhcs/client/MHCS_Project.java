@@ -41,7 +41,7 @@ public class MHCS_Project implements EntryPoint {
     tabPanel.setAnimationDuration(1000);
     tabPanel.getElement().getStyle().setMarginBottom(10.0, Unit.PX);
 
-    final String strDockPanelHeight = "700px";
+    final String strDockPanelHeight = "600px";
     final String strDockPanelWidth = "1500px";
     final String strDockPanelSouth = "Naples Spring 2015";
     final int intPanelBorder = 2;
@@ -51,13 +51,13 @@ public class MHCS_Project implements EntryPoint {
     /*
      *  Modules
      */
-    final String strModulesListBoxHeight = "650px";
+    final String strModulesListBoxHeight = "600px";
     final String strModulesListBoxWidth = "300px";
     final String strModulesButtonHeight = "50px";
     final String strModulesButtonWidth = "150px";
     final String strModulesEastPanelWidth = "300px";
     final String strModulesEastPanelWidthHalf = "140px";
-    final String strModulesCenterHeight = "200px";
+    final String strModulesCenterHeight = "175px";
     final String strModulesCenterWidth = "800px";
     final String strModulesImageHeight = "200px";
     final String strModulesImageWidth = "250px";
@@ -186,7 +186,7 @@ public class MHCS_Project implements EntryPoint {
     modulesEastVerPanel.add(modulesEastOrientation);
     modulesEastVerPanel.add(moduleCoordinates);
     modulesEastVerPanel.add(modulesSaveButton);
-    modulesEastVerPanel.setSpacing(intVerPanelSpacing + 5);
+    modulesEastVerPanel.setSpacing(intVerPanelSpacing + 2);
 
     /* Create a Dock Panel */
     final DockPanel modulesDock = new DockPanel();
@@ -209,11 +209,11 @@ public class MHCS_Project implements EntryPoint {
      */
     final String strConfigButtonHeight = "50px";
     final String strConfigButtonWidth = "300px";
-    final String strConfigListBoxHeight = "700px";
+    final String strConfigListBoxHeight = "650px";
     final String strConfigListBoxWidth = "300px";
-    final String strConfigMapHeight = "600px";
+    final String strConfigMapHeight = "560px";
     final String strConfigMapWidth = "1000px";
-    final String strConfigVerPanelHeight = "700px";
+    final String strConfigVerPanelHeight = "600px";
 
     /* West */
     // Add a list box with multiple selection enabled
