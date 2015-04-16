@@ -201,8 +201,28 @@ public class View implements EntryPoint {
     modulesSaveButton.setWidth(strModulesEastPanelWidth);
     modulesSaveButton.setText("SAVE");
     
-    modulesSaveButton.addClickHandler(Handlers.saveButton());
+    //modulesSaveButton.addClickHandler(Handlers.saveButton());
 
+    modulesSaveButton.addClickHandler(new ClickHandler(){
+		@Override
+		public void onClick(ClickEvent event) {
+			ModuleType type;
+			int id;
+			Point coordinates;
+			ModuleStatus status;
+			int orientation;
+			boolean inUse;
+			
+			type = ModuleType.getTypeFromUserString(modulesEastType.getItemText(modulesEastType.getSelectedIndex()));
+			id = Integer.parseInt(modulesEastId.getText());
+		    coordinates = new Point(Integer.parseInt(xTextBox.getText()),Integer.parseInt(yTextBox.getText()));
+		    status = ModuleStatus.getStatusFromUserString(modulesEastCondition.getItemText(modulesEastCondition.getSelectedIndex()));
+		    orientation = modulesEastOrientation.getSelectedIndex();
+			inUse = false;
+			Data.addModule(new Module(type,id,coordinates,status,orientation,inUse));
+		}
+    });
+    
     modulesEastVerPanel.add(modulesLblId);
     modulesEastVerPanel.add(modulesEastId);
     modulesEastVerPanel.add(modulesLblType);
