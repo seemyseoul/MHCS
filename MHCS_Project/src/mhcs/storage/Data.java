@@ -5,6 +5,7 @@ import java.util.List;
 
 import mhcs.client.Configuration;
 import mhcs.client.Module;
+import mhcs.client.ModuleStatus;
 import mhcs.client.ModuleType;
 import mhcs.client.Point;
 
@@ -20,6 +21,12 @@ public class Data {
 		toSave.saveConfigurations(configList);
 	}
 
+	public static void removeModuleFromId(int id) //SUPER HACKY
+	{
+		Module m = new Module(ModuleType.PLAIN,id,new Point(0,0),ModuleStatus.BEYONDREPAIR,2,true);
+		removeModule(m);
+	}
+	
 	public static void removeModule(Module toRemove) {
 		moduleList.remove(findListNumber(toRemove));
 		toSave.removeAllModules();
