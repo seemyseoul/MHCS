@@ -148,6 +148,14 @@ public class View implements EntryPoint {
     modulesListBox.setHeight(strModulesListBoxHeight);
     modulesListBox.setWidth(strModulesListBoxWidth);
 
+    modulesListBox.clear();
+	for (Module m : Data.getModuleList())
+	{
+		modulesListBox.addItem("Module #" + m.getId());
+	}
+    
+    
+    
     /* Fill Horizontal Panel */
     final Button modulesAddButton = new Button();
     final Button modulesRemoveButton = new Button();
@@ -266,7 +274,8 @@ public class View implements EntryPoint {
 		    status = ModuleStatus.getStatusFromUserString(modulesEastCondition.getItemText(modulesEastCondition.getSelectedIndex()));
 		    orientation = modulesEastOrientation.getSelectedIndex();
 			inUse = false;
-			Data.addModule(new Module(type,id,coordinates,status,orientation,inUse));
+			
+			Data.saveModule(new Module(type,id,coordinates,status,orientation,inUse));
 			
 			modulesListBox.clear();
 			for (Module m : Data.getModuleList())

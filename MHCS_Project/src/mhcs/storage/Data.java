@@ -40,6 +40,19 @@ public class Data {
 		toSave.saveModules(moduleList);
 	}
 
+	public static void saveModule(Module toSave)
+	{
+		for (Module m : getModuleList())
+		{
+			if(m.getId() == toSave.getId())
+			{
+				editModule(toSave);
+				return;
+			}
+		}
+		addModule(toSave);
+	}
+	
 	public static void editConfiguration(Configuration toEdit) {
 		configList.remove(findListNumber(toEdit));
 		toSave.removeAllConfigurations();
