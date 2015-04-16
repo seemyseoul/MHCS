@@ -165,6 +165,19 @@ public class View implements EntryPoint {
     modulesRemoveButton.setWidth(strModulesButtonWidth);
     modulesAddButton.setText("ADD");
     modulesRemoveButton.setText("REMOVE");
+    
+    modulesRemoveButton.addClickHandler(new ClickHandler(){
+
+		@Override
+		public void onClick(ClickEvent event) {
+			String moduleString = modulesListBox.getItemText(modulesListBox.getSelectedIndex());
+			moduleString = moduleString.substring(8);
+			Data.removeModuleFromId(Integer.parseInt(moduleString));
+			modulesListBox.removeItem(modulesListBox.getSelectedIndex());
+		}
+    	
+    });
+    
     modulesWestHorPanel.add(modulesAddButton);
     modulesWestHorPanel.add(modulesRemoveButton);
     
@@ -193,7 +206,7 @@ public class View implements EntryPoint {
     final VerticalPanel modulesSouthVerPanel = new VerticalPanel();
     final HTML moduleRequirementsLabel = new HTML("Module Requirements");
     final TextArea moduleRequirements = new TextArea();
-    moduleRequirements.setText("Blah blah bleh bleh blehblah");
+    moduleRequirements.setText("module requirements module requirements module requirements");
     moduleRequirements.setReadOnly(true);
     moduleRequirements.setHeight(strModulesCenterHeight);
     moduleRequirements.setWidth(strModulesCenterWidth);
