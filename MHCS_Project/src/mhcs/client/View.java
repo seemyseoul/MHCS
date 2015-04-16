@@ -85,7 +85,7 @@ public class View implements EntryPoint {
                         details, HasHorizontalAlignment.ALIGN_CENTER);
 
                     // Add an image to the dialog
-                    Image image = new Image("images/image");
+                    Image image = new Image("images/passwordError");
                     dialogContents.add(image);
                     dialogContents.setCellHorizontalAlignment(
                         image, HasHorizontalAlignment.ALIGN_CENTER);
