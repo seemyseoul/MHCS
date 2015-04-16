@@ -105,7 +105,9 @@ public class ConfigurationBuilder {
 		/*
 		 * pretty good minimum config hardcoded...
 		 * 
-		 * Food Dorm Power Airlock Plain Plain Plain Sanitation Canteen Control
+		 * 			Food	Dorm	Power 
+		 * Airlock Plain 	Plain 	Plain 	Sanitation
+		 * 		   Canteen 			Control
 		 */
 
 		Module centerPlain = Data.getModuleClosestTo(centerOfMass,
