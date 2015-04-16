@@ -18,11 +18,16 @@ import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.CheckBox;
+import com.google.gwt.user.client.ui.ComplexPanel;
 import com.google.gwt.user.client.ui.DockPanel;
+import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.Image;
+import com.google.gwt.user.client.ui.Label;
+import com.google.gwt.user.client.ui.LayoutPanel;
 import com.google.gwt.user.client.ui.ListBox;
+import com.google.gwt.user.client.ui.Panel;
 import com.google.gwt.user.client.ui.PasswordTextBox;
 import com.google.gwt.user.client.ui.RadioButton;
 import com.google.gwt.user.client.ui.RootLayoutPanel;
@@ -52,10 +57,35 @@ public class MHCS_Project implements EntryPoint {
 	 */
 	public void onModuleLoad() {
 		
-		
-		TabLayoutPanel tabPanel = new TabLayoutPanel(2.5, Unit.EM);
+		final TabLayoutPanel tabPanel = new TabLayoutPanel(2.5, Unit.EM);
 		tabPanel.setAnimationDuration(1000);
 		tabPanel.getElement().getStyle().setMarginBottom(10.0, Unit.PX);
+		
+		
+//		Panel loginPanel = new FlowPanel();
+//		loginPanel.setHeight("1500px");
+//		final TextBox userNameEntry = new TextBox();
+//		final TextBox passwordEntry = new PasswordTextBox();
+//		Button submitButton = new Button("Log In");
+//		loginPanel.add(new Label("username:"));
+//		loginPanel.add(userNameEntry);
+//		loginPanel.add(new Label("password:"));
+//		loginPanel.add(passwordEntry);
+//		loginPanel.add(submitButton);
+//		submitButton.addClickHandler(new ClickHandler(){
+//
+//			@Override
+//			public void onClick(ClickEvent event) {
+//				if(passwordEntry.getText().equals("password"))
+//				{
+//					RootLayoutPanel.get().clear();
+//					RootLayoutPanel.get().add(tabPanel);
+//				}
+//			}
+//
+//		});
+		
+		
 
 		final String strDockPanelHeight = "700px";
 		final String strDockPanelWidth = "1500px";
@@ -443,6 +473,8 @@ public class MHCS_Project implements EntryPoint {
 		tabPanel.add(new HTML("Logout"), "Logout");
 
 		RootLayoutPanel.get().add(tabPanel);
-
+		//RootLayoutPanel.get().add(loginPanel);
+		
+		
 	} // OnModuleLoad
 } // MHCS
