@@ -220,6 +220,12 @@ public class View implements EntryPoint {
 		    orientation = modulesEastOrientation.getSelectedIndex();
 			inUse = false;
 			Data.addModule(new Module(type,id,coordinates,status,orientation,inUse));
+			
+			modulesListBox.clear();
+			for (Module m : Data.getModuleList())
+			{
+				modulesListBox.addItem("Module #" + m.getId());
+			}
 		}
     });
     
