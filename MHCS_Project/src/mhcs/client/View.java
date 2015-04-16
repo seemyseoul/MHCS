@@ -67,7 +67,7 @@ public class View implements EntryPoint {
                     RootLayoutPanel.get().clear();
                     RootLayoutPanel.get().add(tabPanel);
                 } // if
-                else
+                else if (!passwordEntry.getText().equals("guest"))
                 {
                 	// Create a dialog box and set the caption text
                     final DialogBox dialogBox = new DialogBox();
@@ -79,7 +79,7 @@ public class View implements EntryPoint {
                     dialogBox.setWidget(dialogContents);
 
                     // Add some text to the top of the dialog
-                    HTML details = new HTML("You hae entered an incorrect password.");
+                    HTML details = new HTML("You have entered an incorrect password.");
                     dialogContents.add(details);
                     dialogContents.setCellHorizontalAlignment(
                         details, HasHorizontalAlignment.ALIGN_CENTER);
