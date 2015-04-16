@@ -67,7 +67,7 @@ public class View implements EntryPoint {
                     RootLayoutPanel.get().clear();
                     RootLayoutPanel.get().add(tabPanel);
                 } // if
-                else if (!passwordEntry.getText().equals("guest"))
+                else
                 {
                 	// Create a dialog box and set the caption text
                     final DialogBox dialogBox = new DialogBox();
@@ -102,11 +102,15 @@ public class View implements EntryPoint {
                       dialogContents.setCellHorizontalAlignment(
                           closeButton, HasHorizontalAlignment.ALIGN_LEFT);
 
-                    } else {
+                    } // if 
+                    else {
                       dialogContents.setCellHorizontalAlignment(
                           closeButton, HasHorizontalAlignment.ALIGN_RIGHT);
-                    }
+                    } // else
+                    
+                    dialogBox.show();
                 }  // else
+                
             } // onCLick
 
         });
