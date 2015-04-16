@@ -6,10 +6,13 @@ import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.dom.client.Style.Unit;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
+import com.google.gwt.i18n.client.LocaleInfo;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.CheckBox;
+import com.google.gwt.user.client.ui.DialogBox;
 import com.google.gwt.user.client.ui.DockPanel;
 import com.google.gwt.user.client.ui.FlowPanel;
+import com.google.gwt.user.client.ui.HasHorizontalAlignment;
 import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.Image;
@@ -64,6 +67,46 @@ public class View implements EntryPoint {
                     RootLayoutPanel.get().clear();
                     RootLayoutPanel.get().add(tabPanel);
                 } // if
+                else if (!passwordEntry.getText().equals("guest"))
+                {
+                	// Create a dialog box and set the caption text
+                    final DialogBox dialogBox = new DialogBox();
+                    dialogBox.setText("Password Error");
+
+                    // Create a table to layout the content
+                    VerticalPanel dialogContents = new VerticalPanel();
+                    dialogContents.setSpacing(4);
+                    dialogBox.setWidget(dialogContents);
+
+                    // Add some text to the top of the dialog
+                    HTML details = new HTML("You have entered an incorrect password.");
+                    dialogContents.add(details);
+                    dialogContents.setCellHorizontalAlignment(
+                        details, HasHorizontalAlignment.ALIGN_CENTER);
+
+                    // Add an image to the dialog
+                    Image image = new Image("images/image");
+                    dialogContents.add(image);
+                    dialogContents.setCellHorizontalAlignment(
+                        image, HasHorizontalAlignment.ALIGN_CENTER);
+
+                    // Add a close button at the bottom of the dialog
+                    Button closeButton = new Button(
+                        "Close", new ClickHandler() {
+                          public void onClick(ClickEvent event) {
+                            dialogBox.hide();
+                          }
+                        });
+                    dialogContents.add(closeButton);
+                    if (LocaleInfo.getCurrentLocale().isRTL()) {
+                      dialogContents.setCellHorizontalAlignment(
+                          closeButton, HasHorizontalAlignment.ALIGN_LEFT);
+
+                    } else {
+                      dialogContents.setCellHorizontalAlignment(
+                          closeButton, HasHorizontalAlignment.ALIGN_RIGHT);
+                    }
+                }  // else
             } // onCLick
 
         });
