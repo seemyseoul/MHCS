@@ -4,6 +4,8 @@ import mhcs.storage.Data;
 
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.dom.client.Style.Unit;
+import com.google.gwt.event.dom.client.ChangeEvent;
+import com.google.gwt.event.dom.client.ChangeHandler;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.i18n.client.LocaleInfo;
@@ -154,7 +156,27 @@ public class View implements EntryPoint {
 		modulesListBox.addItem("Module #" + m.getId());
 	}
     
-    
+	modulesListBox.addChangeHandler(new ChangeHandler(){
+
+		@Override
+		public void onChange(ChangeEvent event) {
+			String moduleString = modulesListBox.getItemText(modulesListBox.getSelectedIndex());
+			moduleString = moduleString.substring(8);
+			Module module = null;
+			for (Module m : Data.getModuleList())
+			{
+				if (m.getId() == Integer.parseInt(moduleString))
+				{
+					module = m;
+				}
+			}
+			if (module != null)
+			{
+				modulesEastType
+			}
+		}
+		
+	});
     
     /* Fill Horizontal Panel */
     final Button modulesAddButton = new Button();
