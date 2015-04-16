@@ -47,17 +47,17 @@ public class MHCS_Project implements EntryPoint {
 		Module example = new Module(ModuleType.PLAIN,3,new Point(3,5),ModuleStatus.USABLE,2,false);
 		ArrayList<Module> exampleList = new ArrayList<Module>();
 		exampleList.add(example);
-//		
-////		Data.addModule(example);
-//		
-//		Save saver = new Save();
-//		saver.saveModules(exampleList);
 		
-		Storage stockStore = Storage.getLocalStorageIfSupported();
-		for (int i = 0; i < exampleList.size(); i++) {
-			stockStore.setItem(Integer.toString(i), exampleList.get(i).toString());
-		} // for
-		stockStore.setItem("numOfModules", Integer.toString(exampleList.size()));
+//		Data.addModule(example);
+		
+		Save saver = new Save();
+		saver.saveModules(exampleList);
+		
+//		Storage stockStore = Storage.getLocalStorageIfSupported();
+//		for (int i = 0; i < exampleList.size(); i++) {
+//			stockStore.setItem(Integer.toString(i), exampleList.get(i).toString());
+//		} // for
+//		stockStore.setItem("numOfModules", Integer.toString(exampleList.size()));
 		
 		
 		TabLayoutPanel tabPanel = new TabLayoutPanel(2.5, Unit.EM);
