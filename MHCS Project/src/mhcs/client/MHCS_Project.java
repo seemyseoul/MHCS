@@ -1,10 +1,17 @@
 package mhcs.client;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import mhcs.storage.Data;
 import mhcs.storage.Load;
 import mhcs.storage.Save;
+
+import mhcs.client.Module;
+import mhcs.client.Configuration;
+import mhcs.client.ModuleStatus;
+import mhcs.client.ModuleType;
+import mhcs.client.Point;
 
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.dom.client.Style.Unit;
@@ -48,10 +55,10 @@ public class MHCS_Project implements EntryPoint {
 		ArrayList<Module> exampleList = new ArrayList<Module>();
 		exampleList.add(example);
 		
-//		Data.addModule(example);
+		Data.addModule(example);
 		
-		Save saver = new Save();
-		saver.saveModules(exampleList);
+//		Save saver = new Save();
+//		saver.saveModules(exampleList);
 		
 //		Storage stockStore = Storage.getLocalStorageIfSupported();
 //		for (int i = 0; i < exampleList.size(); i++) {

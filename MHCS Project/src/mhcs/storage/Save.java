@@ -1,13 +1,11 @@
 package mhcs.storage;
 
-import java.util.ArrayList;
+
 import java.util.List;
 
 import mhcs.client.Configuration;
 import mhcs.client.Module;
-import mhcs.client.ModuleStatus;
-import mhcs.client.ModuleType;
-import mhcs.client.Point;
+
 
 import com.google.gwt.storage.client.Storage;
 
@@ -15,14 +13,16 @@ public class Save {
 
 	public Save() {
 		stockStore = Storage.getLocalStorageIfSupported();
+		if (stockStore.getItem("intModCount") != null){
 		intModCount = Integer.parseInt(stockStore.getItem("intModCount"));
+		}
 	}
 
 	public void saveModules(List<Module> toSave) {
 		for (int i = 0; i < toSave.size(); i++) {
 			stockStore.setItem(Integer.toString(i), toSave.get(i).toString());
 		} // for
-		stockStore.setItem("numOfModules", Integer.toString(toSave.size()));
+		stockStore.setItem("intModCount", Integer.toString(toSave.size()));
 	} // saveModules
 
 	public void saveSettings(final boolean flag, final String password) {
@@ -37,23 +37,23 @@ public class Save {
 			stockStore.setItem("C" + Integer.toString(i), toSave.get(i)
 					.toString());
 		} // for
-		stockStore.setItem("numOfConfigs", Integer.toString(toSave.size()));
+		stockStore.setItem("intConfigCount", Integer.toString(toSave.size()));
 	} // saveModules
 
 	public void removeAllModules() {
 		for (int i = 0; i < Integer
-				.parseInt(stockStore.getItem("numOfModules")); i++) {
+				.parseInt(stockStore.getItem("intModCount")); i++) {
 			stockStore.removeItem("C" + Integer.toString(i));
 		} // for
-		stockStore.setItem("numOfModules", Integer.toString(0));
+		stockStore.setItem("intModCount", Integer.toString(0));
 	}
 
 	public void removeAllConfigurations() {
 		for (int i = 0; i < Integer
-				.parseInt(stockStore.getItem("numOfConfigs")); i++) {
+				.parseInt(stockStore.getItem("intConfigCount")); i++) {
 			stockStore.removeItem("C" + Integer.toString(i));
 		} // for
-		stockStore.setItem("numOfConfigs", Integer.toString(0));
+		stockStore.setItem("intConfigCount", Integer.toString(0));
 	}
 
 	/**
@@ -82,5 +82,6 @@ public class Save {
 
 	private Storage stockStore = null;
 	private int intModCount = 0;
+	private int intConfigCount = 0;
 
 } // Save

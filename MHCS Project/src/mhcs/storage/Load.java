@@ -22,10 +22,12 @@ public class Load {
 
 	private void loadModules() {
 		Module newModule = null;
-		for (int i = 0; i <= Integer.parseInt(stockStore
-				.getItem("numOfModules")); i++) {
+		if (stockStore.getItem("intModCount") != null){		
+		for (int i = 0; i < Integer.parseInt(stockStore
+				.getItem("intModCount")); i++) {
 			newModule = new Module(stockStore.getItem(Integer.toString(i)));
 			moduleList.add(newModule);
+		}
 		}
 	}
 
@@ -42,11 +44,13 @@ public class Load {
 
 	private void loadConfigurations() {
 		Configuration newConfig = null;
+		if (stockStore.getItem("intConfigCount") != null){			
 		for (int i = 0; i <= Integer.parseInt(stockStore
-				.getItem("numOfModules")); i++) {
+				.getItem("intConfigCount")); i++) {
 			newConfig = new Configuration(stockStore.getItem("C"
 					+ Integer.toString(i)));
 			configurationList.add(newConfig);
+			}
 		}
 	}
 
