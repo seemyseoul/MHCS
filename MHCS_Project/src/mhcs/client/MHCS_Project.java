@@ -6,7 +6,6 @@ import java.util.List;
 import mhcs.storage.Data;
 import mhcs.storage.Load;
 import mhcs.storage.Save;
-
 import mhcs.client.Module;
 import mhcs.client.Configuration;
 import mhcs.client.ModuleStatus;
@@ -15,6 +14,8 @@ import mhcs.client.Point;
 
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.dom.client.Style.Unit;
+import com.google.gwt.event.dom.client.ClickEvent;
+import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.CheckBox;
 import com.google.gwt.user.client.ui.DockPanel;
@@ -50,21 +51,6 @@ public class MHCS_Project implements EntryPoint {
 	 * This is the entry point method.
 	 */
 	public void onModuleLoad() {
-		
-		Module example = new Module(ModuleType.PLAIN,3,new Point(3,5),ModuleStatus.USABLE,2,false);
-		ArrayList<Module> exampleList = new ArrayList<Module>();
-		exampleList.add(example);
-		
-		Data.addModule(example);
-		
-//		Save saver = new Save();
-//		saver.saveModules(exampleList);
-		
-//		Storage stockStore = Storage.getLocalStorageIfSupported();
-//		for (int i = 0; i < exampleList.size(); i++) {
-//			stockStore.setItem(Integer.toString(i), exampleList.get(i).toString());
-//		} // for
-//		stockStore.setItem("numOfModules", Integer.toString(exampleList.size()));
 		
 		
 		TabLayoutPanel tabPanel = new TabLayoutPanel(2.5, Unit.EM);
@@ -204,8 +190,28 @@ public class MHCS_Project implements EntryPoint {
 		modulesSaveButton.setWidth(strModulesEastPanelWidth);
 		modulesSaveButton.setText("SAVE");
 
-		modulesSaveButton.addClickHandler(Handlers.saveButton());
-
+		//modulesSaveButton.addClickHandler(Handlers.saveButton());
+		modulesSaveButton.addClickHandler(new ClickHandler(){
+			@Override
+			public void onClick(ClickEvent event) {
+				ModuleType type;
+				int id;
+				Point coordinates;
+				ModuleStatus status;
+				int orientation;
+				boolean inUse;
+				
+				type = ModuleType.getTypeFromUserString(modulesEastType.getItemText(modulesEastType.getSelectedIndex()));
+				id = Integer.parseInt(modulesEastId.getText());
+			    coordinates = new Point(Integer.parseInt(xTextBox.getText()),Integer.parseInt(yTextBox.getText()));
+			    status = ModuleStatus.getStatusFromUserString(modulesEastCondition.getItemText(modulesEastCondition.getSelectedIndex()));
+			    orientation = modulesEastOrientation.getSelectedIndex();
+				inUse = false;
+				Data.addModule(new Module(type,id,coordinates,status,orientation,inUse));
+			}
+		});
+		
+		
 		modulesEastVerPanel.add(modulesLblId);
 		modulesEastVerPanel.add(modulesEastId);
 		modulesEastVerPanel.add(modulesLblType);

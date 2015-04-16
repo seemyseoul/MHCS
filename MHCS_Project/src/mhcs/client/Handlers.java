@@ -4,6 +4,8 @@ import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.user.client.ui.ListBox;
 
+import mhcs.client.MHCS_Project;
+
 public class Handlers {
 
 	/**
@@ -40,12 +42,13 @@ public class Handlers {
 		ClickHandler save = new ClickHandler() {
 			public void onClick(ClickEvent event) {
 				// need to implement getters and setters for each
-				// varModule.setId(getModuleID();
-				// varModule.setInUse(getModuleInUse());
-				// varModule.setType(getModuleType);
-				// varModule.setStatus(getModuleStatus);
-				// varModule.setOrientation(getModuleOrientation);
-				// varModule.setCoordinates(getModuleLandedCoordinates);
+//				 varModule.setId(getModuleID());
+//				 varModule.setId(modulesEastOrientation.getSelectedIndex());
+//				 varModule.setInUse(getModuleInUse());
+//				 varModule.setType(getModuleType());
+//				 varModule.setStatus(getModuleStatus());
+//				 varModule.setOrientation(getModuleOrientation());
+//				 varModule.setCoordinates(getModuleLandedCoordinates());
 
 			} // onClick
 		}; // ClickHandler

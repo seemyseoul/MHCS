@@ -41,4 +41,35 @@ public enum ModuleType {
 			return null;
 		}
 	}
+	
+	/**
+	 * Gets a ModuleType object from a user friendly string.
+	 * @param str
+	 * @return
+	 */
+	public static ModuleType getTypeFromUserString(final String str) {
+		if (str.equals("Air Lock")) {
+			return AIRLOCK;
+		} else if (str.equals("Food & Water")) {
+			return FOODWATERSTORAGE;
+		} else if (str.equals("Power")) {
+			return POWER;
+		} else if (str.equals("Control")) {
+			return CONTROL;
+		} else if (str.equals("Canteen")) {
+			return CANTEEN;
+		} else if (str.equals("Plain")) {
+			return PLAIN;
+		} else if (str.equals("Dormitory")) {
+			return DORMITORY;
+		} else if (str.equals("Sanitation")) {
+			return SANITATION;
+		} else if (str.equals("Gym & Relaxation")) {
+			return GYMRELAXATION;
+		} else if (str.equals("Medical")) {
+			return MEDICAL;
+		} else {
+			return null;
+		}
+	}
 }

@@ -27,5 +27,24 @@ public enum ModuleStatus {
 			return null;
 		}
 	}
+	
+	/**
+	 * This method allows for canonical translation from the user friendly string
+	 * to ModuleStatus.
+	 * 
+	 * @param str
+	 * @return ModuleStatus object.
+	 */
+	public static ModuleStatus getStatusFromUserString(String str) {
+		if (str.equals("Usable")) {
+			return USABLE;
+		} else if (str.equals("Damaged")) {
+			return USABLEAFTERREPAIR;
+		} else if (str.equals("Unusable")) {
+			return BEYONDREPAIR;
+		} else {
+			return null;
+		}
+	}
 
 }
