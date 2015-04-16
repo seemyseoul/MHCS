@@ -46,7 +46,7 @@ public class MHCS_Project implements EntryPoint {
 		
 		Module example = new Module(ModuleType.PLAIN,3,new Point(3,5),ModuleStatus.USABLE,2,false);
 		ArrayList<Module> exampleList = new ArrayList<Module>();
-//		exampleList.add(example);
+		exampleList.add(example);
 //		
 ////		Data.addModule(example);
 //		
