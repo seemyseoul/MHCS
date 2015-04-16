@@ -48,85 +48,88 @@ public class View implements EntryPoint {
   */
   public void onModuleLoad() {
     final TabLayoutPanel tabPanel = new TabLayoutPanel(2.5, Unit.EM);
-    tabPanel.setAnimationDuration(1000);
-    tabPanel.getElement().getStyle().setMarginBottom(10.0, Unit.PX);
-
-    Panel loginPanel = new FlowPanel();
-        loginPanel.setHeight("1500px");
-        final TextBox userNameEntry = new TextBox();
-        final TextBox passwordEntry = new PasswordTextBox();
-        Button submitButton = new Button("Log In");
-        loginPanel.add(new Label("username:"));
-        loginPanel.add(userNameEntry);
-        loginPanel.add(new Label("password:"));
-        loginPanel.add(passwordEntry);
-        loginPanel.add(submitButton);
-        submitButton.addClickHandler(new ClickHandler(){
-            @Override
-            public void onClick(ClickEvent event) {
-                if(passwordEntry.getText().equals("guest"))
-                {
-                    RootLayoutPanel.get().clear();
-                    RootLayoutPanel.get().add(tabPanel);
-                } // if
-                else
-                {
-                	// Create a dialog box and set the caption text
-                    final DialogBox dialogBox = new DialogBox();
-                    dialogBox.setText("Password Error");
-
-                    // Create a table to layout the content
-                    VerticalPanel dialogContents = new VerticalPanel();
-                    dialogContents.setSpacing(4);
-                    dialogBox.setWidget(dialogContents);
-
-                    // Add some text to the top of the dialog
-                    HTML details = new HTML("You have entered an incorrect password.");
-                    dialogContents.add(details);
-                    dialogContents.setCellHorizontalAlignment(
-                        details, HasHorizontalAlignment.ALIGN_CENTER);
-
-                    // Add an image to the dialog
-                    Image image = new Image("images/passwordError");
-                    dialogContents.add(image);
-                    dialogContents.setCellHorizontalAlignment(
-                        image, HasHorizontalAlignment.ALIGN_CENTER);
-
-                    // Add a close button at the bottom of the dialog
-                    Button closeButton = new Button(
-                        "Close", new ClickHandler() {
-                          public void onClick(ClickEvent event) {
-                            dialogBox.hide();
-                          }
-                        });
-                    dialogContents.add(closeButton);
-                    if (LocaleInfo.getCurrentLocale().isRTL()) {
-                      dialogContents.setCellHorizontalAlignment(
-                          closeButton, HasHorizontalAlignment.ALIGN_LEFT);
-
-                    } // if 
-                    else {
-                      dialogContents.setCellHorizontalAlignment(
-                          closeButton, HasHorizontalAlignment.ALIGN_RIGHT);
-                    } // else
-                    
-                    dialogBox.show();
-                }  // else
-                
-            } // onCLick
-
-        });
-
+    final Panel loginPanel = new FlowPanel();
+    final DockPanel modulesDock = new DockPanel();
+    final DockPanel configDock = new DockPanel();
+    final HorizontalPanel modulesWestHorPanel = new HorizontalPanel();
+    final HorizontalPanel moduleCoordinates = new HorizontalPanel();
+    final HorizontalPanel configHorPanel = new HorizontalPanel();
+    final HorizontalPanel settingsUserPanel = new HorizontalPanel();
+    final HorizontalPanel settingsPassPanel = new HorizontalPanel();
+    final HorizontalPanel currentPassword = new HorizontalPanel();
+    final HorizontalPanel newPassword = new HorizontalPanel();
+    final HorizontalPanel confirmPassword = new HorizontalPanel();
+    final SimplePanel weatherPanel = new SimplePanel();
+    final VerticalPanel settingsPassVertPanel = new VerticalPanel();
+    final VerticalPanel modulesWestVerPanel = new VerticalPanel();
+    final VerticalPanel modulesCenterVerPanel = new VerticalPanel();
+    final VerticalPanel modulesSouthVerPanel = new VerticalPanel();
+    final VerticalPanel modulesEastVerPanel = new VerticalPanel();
+    final VerticalPanel xPanel = new VerticalPanel();
+    final VerticalPanel yPanel = new VerticalPanel();
+    final VerticalPanel configVerPanel = new VerticalPanel();
+    final VerticalPanel settingsVertPanel = new VerticalPanel();
+    
+    final Button submitButton = new Button("Log In");
+    final Button modulesAddButton = new Button();
+    final Button modulesRemoveButton = new Button();
+    final Button roverPathButton = new Button();
+    final Button deleteConfigButton = new Button();
+    final Button buildConfigButton = new Button();
+    final Button addUserButton = new Button();
+    final Button removeUserButton = new Button();
+    final Button changePasswordButton = new Button();
+    final CheckBox radAirLock = new CheckBox("Air Lock");
+    final CheckBox radPlain = new CheckBox("Plain");
+    final CheckBox radDorm = new CheckBox("Dormitory");
+    final CheckBox radSanitation = new CheckBox("Sanitation");
+    final CheckBox radFoodAndWater = new CheckBox("Food & Water");
+    final CheckBox radGymAndRelax = new CheckBox("Gym & Relaxation");
+    final CheckBox radCanteen = new CheckBox("Canteen");
+    final CheckBox radPower = new CheckBox("Power");
+    final CheckBox radControl = new CheckBox("Control");
+    final CheckBox radMedical = new CheckBox("Medical");
+    final CheckBox passwordEnable = new CheckBox();
+    final HTML moduleDetailsLabel = new HTML("Module Details");
+    final HTML moduleRequirementsLabel = new HTML("Module Requirements");
+    final HTML modulesLblId = new HTML("ID Number");
+    final HTML modulesLblType = new HTML("Type");
+    final HTML modulesLblCondition = new HTML("Condition");
+    final HTML modulesLblOrientation = new HTML("Orientation");
+    final HTML xCoordinate = new HTML("X-Coordinate");
+    final HTML yCoordinate = new HTML("Y-Coordinate");
+    final HTML changePassword = new HTML("Change Password");
+    final HTML cPass = new HTML("Current Password");
+    final HTML nPass = new HTML("New Password");
+    final HTML coPass = new HTML("Current Password");
+    final HTML weatherText = new HTML("Place holder for the weather");
+    final Image modulesImage = new Image("images/image");
+    final Image map = new Image("images/marsMap");
+    final ListBox modulesListBox = new ListBox();
+    final ListBox modulesEastType = new ListBox();
+    final ListBox modulesEastCondition = new ListBox();
+    final ListBox modulesEastOrientation = new ListBox();
+    final ListBox configListBox = new ListBox();
+    final ListBox users = new ListBox();
+    final PasswordTextBox cPassword = new PasswordTextBox();
+    final PasswordTextBox nPassword = new PasswordTextBox();
+    final PasswordTextBox coPassword = new PasswordTextBox();
+    final RadioButton radAll = new RadioButton("Select All");
+    final RadioButton radNone = new RadioButton("Deselect All");
+    final TextArea moduleDetails = new TextArea();
+    final TextArea moduleRequirements = new TextArea();
+    final TextBox userNameEntry = new TextBox();
+    final TextBox passwordEntry = new PasswordTextBox();
+    final TextBox modulesEastId = new TextBox();
+    final TextBox xTextBox = new TextBox();
+    final TextBox yTextBox = new TextBox();
+    
     final String strDockPanelHeight = "600px";
     final String strDockPanelWidth = "1500px";
     final String strDockPanelSouth = "Naples Spring 2015";
     final int intPanelBorder = 2;
     final int intPanelSpacing = 5;
     final int intVerPanelSpacing = 10;
-    
-    /*
-     *  Modules
-     */
     final String strModulesListBoxHeight = "600px";
     final String strModulesListBoxWidth = "300px";
     final String strModulesButtonHeight = "50px";
@@ -137,14 +140,92 @@ public class View implements EntryPoint {
     final String strModulesCenterWidth = "800px";
     final String strModulesImageHeight = "200px";
     final String strModulesImageWidth = "250px";
+    final String strConfigButtonHeight = "50px";
+    final String strConfigButtonWidth = "300px";
+    final String strConfigListBoxHeight = "650px";
+    final String strConfigListBoxWidth = "300px";
+    final String strConfigMapHeight = "560px";
+    final String strConfigMapWidth = "1000px";
+    final String strConfigVerPanelHeight = "600px";
+    final String strSettingsButtonHeight = "35px";
+    final String strSettingsButtonWidth = "130px";
+    final String strSettingsPassEnableHeight = "20px";
+    final String strSettingsChangePassHeight = "20px";
+    final int intSettingsPanelSpacing = 10;
+    final int intSettingsVerPanelSpaacing = 5;
+    
+    tabPanel.setAnimationDuration(1000);
+    tabPanel.getElement().getStyle().setMarginBottom(10.0, Unit.PX);
 
+    loginPanel.setHeight("1500px");
+    loginPanel.add(new Label("username:"));
+    loginPanel.add(userNameEntry);
+    loginPanel.add(new Label("password:"));
+    loginPanel.add(passwordEntry);
+    loginPanel.add(submitButton);
+    submitButton.addClickHandler(new ClickHandler(){
+        @Override
+        public void onClick(ClickEvent event) {
+            if(passwordEntry.getText().equals("guest"))
+            {
+                RootLayoutPanel.get().clear();
+                RootLayoutPanel.get().add(tabPanel);
+            } // if
+            else
+            {
+            	// Create a dialog box and set the caption text
+                final DialogBox dialogBox = new DialogBox();
+                dialogBox.setText("Password Error");
+
+                // Create a table to layout the content
+                VerticalPanel dialogContents = new VerticalPanel();
+                dialogContents.setSpacing(4);
+                dialogBox.setWidget(dialogContents);
+
+                // Add some text to the top of the dialog
+                HTML details = new HTML("You have entered an incorrect password.");
+                dialogContents.add(details);
+                dialogContents.setCellHorizontalAlignment(
+                    details, HasHorizontalAlignment.ALIGN_CENTER);
+
+                // Add an image to the dialog
+                Image image = new Image("images/passwordError");
+                dialogContents.add(image);
+                dialogContents.setCellHorizontalAlignment(
+                    image, HasHorizontalAlignment.ALIGN_CENTER);
+
+                // Add a close button at the bottom of the dialog
+                Button closeButton = new Button(
+                    "Close", new ClickHandler() {
+                      public void onClick(ClickEvent event) {
+                        dialogBox.hide();
+                      }
+                    });
+                dialogContents.add(closeButton);
+                if (LocaleInfo.getCurrentLocale().isRTL()) {
+                  dialogContents.setCellHorizontalAlignment(
+                      closeButton, HasHorizontalAlignment.ALIGN_LEFT);
+
+                } // if 
+                else {
+                  dialogContents.setCellHorizontalAlignment(
+                      closeButton, HasHorizontalAlignment.ALIGN_RIGHT);
+                } // else
+                
+                dialogBox.center();
+                dialogBox.show();
+            }  // else
+            
+        } // onCLick
+
+    });
+    
+    /*
+     *  Modules
+     */
     /* West */
     /* Inner Panels */
-    final VerticalPanel modulesWestVerPanel = new VerticalPanel();
-    final HorizontalPanel modulesWestHorPanel = new HorizontalPanel();
-
     // Add a list box with multiple selection enabled
-    final ListBox modulesListBox = new ListBox();
     //Module.populateListBox(arrModules);
     modulesListBox.setVisibleItemCount(10);
     modulesListBox.setHeight(strModulesListBoxHeight);
@@ -179,8 +260,6 @@ public class View implements EntryPoint {
 	});
     
     /* Fill Horizontal Panel */
-    final Button modulesAddButton = new Button();
-    final Button modulesRemoveButton = new Button();
     modulesAddButton.setHeight(strModulesButtonHeight);
     modulesAddButton.setWidth(strModulesButtonWidth);
     modulesRemoveButton.setHeight(strModulesButtonHeight);
@@ -211,23 +290,16 @@ public class View implements EntryPoint {
 
     /* North */
     // Image to be filled with function based on module
-    final Image modulesImage = new Image("images/image");
     modulesImage.setHeight(strModulesImageHeight);
     modulesImage.setWidth(strModulesImageWidth);
 
     /* Center */
-    final VerticalPanel modulesCenterVerPanel = new VerticalPanel();
-    final HTML moduleDetailsLabel = new HTML("Module Details");
-    final TextArea moduleDetails = new TextArea();
     moduleDetails.setHeight(strModulesCenterHeight);
     moduleDetails.setWidth(strModulesCenterWidth);
     modulesCenterVerPanel.add(moduleDetailsLabel);
     modulesCenterVerPanel.add(moduleDetails);
 
     /* South */
-    final VerticalPanel modulesSouthVerPanel = new VerticalPanel();
-    final HTML moduleRequirementsLabel = new HTML("Module Requirements");
-    final TextArea moduleRequirements = new TextArea();
     moduleRequirements.setText("module requirements module requirements module requirements");
     moduleRequirements.setReadOnly(true);
     moduleRequirements.setHeight(strModulesCenterHeight);
@@ -236,24 +308,15 @@ public class View implements EntryPoint {
     modulesSouthVerPanel.add(moduleRequirements);
 
     /* East */
-    final VerticalPanel modulesEastVerPanel = new VerticalPanel();
-
-    final HTML modulesLblId = new HTML("ID Number");
-
-    final TextBox modulesEastId = new TextBox();
     modulesEastId.setWidth(strModulesEastPanelWidth);
 
-    final HTML modulesLblType = new HTML("Type");
     // Via loop based off module array
-    final ListBox modulesEastType = new ListBox();
     for (int i = 0; i < Module.moduleStrings.length; i++) {
       modulesEastType.addItem(Module.moduleStrings[i]);
     } //for
     modulesEastType.setVisibleItemCount(10);
     modulesEastType.setWidth(strModulesEastPanelWidth);
 
-    final HTML modulesLblCondition = new HTML("Condition");
-    final ListBox modulesEastCondition = new ListBox();
     // entered via loop based off array
     modulesEastCondition.addItem("Usable");
     modulesEastCondition.addItem("Damaged");
@@ -261,8 +324,6 @@ public class View implements EntryPoint {
     modulesEastCondition.setVisibleItemCount(3);
     modulesEastCondition.setWidth(strModulesEastPanelWidth);
 
-    final HTML modulesLblOrientation = new HTML("Orientation");
-    final ListBox modulesEastOrientation = new ListBox();
     // entered via loop based off array
     modulesEastOrientation.addItem("0 turns");
     modulesEastOrientation.addItem("1 turns");
@@ -270,13 +331,6 @@ public class View implements EntryPoint {
     modulesEastOrientation.setVisibleItemCount(3);
     modulesEastOrientation.setWidth(strModulesEastPanelWidth);
 
-    final HorizontalPanel moduleCoordinates = new HorizontalPanel();
-    final VerticalPanel xPanel = new VerticalPanel();
-    final VerticalPanel yPanel = new VerticalPanel();
-    final HTML xCoordinate = new HTML("X-Coordinate");
-    final HTML yCoordinate = new HTML("Y-Coordinate");
-    final TextBox xTextBox = new TextBox();
-    final TextBox yTextBox = new TextBox();
     xTextBox.setWidth(strModulesEastPanelWidthHalf);
     yTextBox.setWidth(strModulesEastPanelWidthHalf);
     xPanel.add(xCoordinate);
@@ -333,7 +387,6 @@ public class View implements EntryPoint {
     modulesEastVerPanel.setSpacing(intVerPanelSpacing + 2);
 
     /* Create a Dock Panel */
-    final DockPanel modulesDock = new DockPanel();
     modulesDock.setSpacing(intPanelSpacing);
     modulesDock.setHorizontalAlignment(DockPanel.ALIGN_CENTER);
     modulesDock.setBorderWidth(intPanelBorder);
@@ -351,42 +404,18 @@ public class View implements EntryPoint {
     /* 
      * Configurations 
      */
-    final String strConfigButtonHeight = "50px";
-    final String strConfigButtonWidth = "300px";
-    final String strConfigListBoxHeight = "650px";
-    final String strConfigListBoxWidth = "300px";
-    final String strConfigMapHeight = "560px";
-    final String strConfigMapWidth = "1000px";
-    final String strConfigVerPanelHeight = "600px";
-
     /* West */
     // Add a list box with multiple selection enabled
-    final ListBox configListBox = new ListBox();
     //Configurations.populateListBox(configListBox);
     configListBox.setVisibleItemCount(10);
     configListBox.setHeight(strConfigListBoxHeight);
     configListBox.setWidth(strConfigListBoxWidth);
 
     /* Center */
-    Image map = new Image("images/marsMap");
     map.setHeight(strConfigMapHeight);
     map.setWidth(strConfigMapWidth);
       
     /* East */
-    final VerticalPanel configVerPanel = new VerticalPanel();
-
-    final CheckBox radAirLock = new CheckBox("Air Lock");
-    final CheckBox radPlain = new CheckBox("Plain");
-    final CheckBox radDorm = new CheckBox("Dormitory");
-    final CheckBox radSanitation = new CheckBox("Sanitation");
-    final CheckBox radFoodAndWater = new CheckBox("Food & Water");
-    final CheckBox radGymAndRelax = new CheckBox("Gym & Relaxation");
-    final CheckBox radCanteen = new CheckBox("Canteen");
-    final CheckBox radPower = new CheckBox("Power");
-    final CheckBox radControl = new CheckBox("Control");
-    final CheckBox radMedical = new CheckBox("Medical");
-    final RadioButton radAll = new RadioButton("Select All");
-    final RadioButton radNone = new RadioButton("Deselect All");
     radAirLock.setText("Air Lock");
     radPlain.setText("Plain");
     radDorm.setText("Dormitory");
@@ -417,10 +446,6 @@ public class View implements EntryPoint {
     configVerPanel.setHeight(strConfigVerPanelHeight);
       
     /* 2nd South */
-    final HorizontalPanel configHorPanel = new HorizontalPanel();
-    final Button roverPathButton = new Button();
-    final Button deleteConfigButton = new Button();
-    final Button buildConfigButton = new Button();
     roverPathButton.setHeight(strConfigButtonHeight);
     roverPathButton.setWidth(strConfigButtonWidth);
     deleteConfigButton.setHeight(strConfigButtonHeight);
@@ -435,7 +460,6 @@ public class View implements EntryPoint {
     configHorPanel.add(buildConfigButton);
 
     /* Create ConfigurationDock Panel */
-    final DockPanel configDock = new DockPanel();
     configDock.setSpacing(intPanelSpacing);
     configDock.setHorizontalAlignment(DockPanel.ALIGN_CENTER);
     configDock.setBorderWidth(intPanelBorder);
@@ -452,24 +476,9 @@ public class View implements EntryPoint {
 
     /* 
      * Settings
-     */
-    final String strSettingsButtonHeight = "35px";
-    final String strSettingsButtonWidth = "130px";
-    final String strSettingsPassEnableHeight = "20px";
-    final String strSettingsChangePassHeight = "20px";
-    final int intSettingsPanelSpacing = 10;
-    final int intSettingsVerPanelSpaacing = 5;
-    
+     */    
     /* Vertical Panel (holds all) */
-    final VerticalPanel settingsVertPanel = new VerticalPanel();
-
     /* Horizontal Panels */
-    final HorizontalPanel settingsUserPanel = new HorizontalPanel();
-    final ListBox users = new ListBox();
-    // CLASS.populateUsers(users);
-    
-    final Button addUserButton = new Button();
-    final Button removeUserButton = new Button();
     addUserButton.setText("Add User");
     removeUserButton.setText("Remove User");
     addUserButton.setHeight(strSettingsButtonHeight);
@@ -481,11 +490,8 @@ public class View implements EntryPoint {
     settingsUserPanel.add(removeUserButton);
     settingsUserPanel.setSpacing(intSettingsPanelSpacing);
 
-    final HorizontalPanel settingsPassPanel = new HorizontalPanel();
-    final CheckBox passwordEnable = new CheckBox();
     passwordEnable.setText("Password Enabled");
     passwordEnable.setHeight(strSettingsPassEnableHeight);
-    final Button changePasswordButton = new Button();
     changePasswordButton.setText("Change Password");
     changePasswordButton.setHeight(strSettingsButtonHeight);
     changePasswordButton.setWidth(strSettingsButtonWidth);
@@ -494,29 +500,18 @@ public class View implements EntryPoint {
     settingsPassPanel.setSpacing(intSettingsPanelSpacing);
 
     /* Inner vertical panel */
-    final VerticalPanel settingsPassVertPanel = new VerticalPanel();
-    final HTML changePassword = new HTML("Change Password");
     changePassword.setHeight(strSettingsChangePassHeight);
     settingsPassVertPanel.setSpacing(intSettingsVerPanelSpaacing);
 
     /* Inner horizontal panels */
-    final HorizontalPanel currentPassword = new HorizontalPanel();
-    final PasswordTextBox cPassword = new PasswordTextBox();
-    final HTML cPass = new HTML("Current Password");
     currentPassword.add(cPassword);
     currentPassword.add(cPass);
     currentPassword.setSpacing(intSettingsPanelSpacing);
 
-    final HorizontalPanel newPassword = new HorizontalPanel();
-    final PasswordTextBox nPassword = new PasswordTextBox();
-    final HTML nPass = new HTML("New Password");
     newPassword.add(nPassword);
     newPassword.add(nPass);
     newPassword.setSpacing(intSettingsPanelSpacing);
 
-    final HorizontalPanel confirmPassword = new HorizontalPanel();
-    final PasswordTextBox coPassword = new PasswordTextBox();
-    final HTML coPass = new HTML("Current Password");
     confirmPassword.add(coPassword);
     confirmPassword.add(coPass);
     confirmPassword.setSpacing(intSettingsPanelSpacing);
@@ -536,8 +531,6 @@ public class View implements EntryPoint {
     
     
     /* Weather Panel */
-    final SimplePanel weatherPanel = new SimplePanel();
-    final HTML weatherText = new HTML("Place holder for the weather");
     weatherPanel.add(weatherText);
     
 //    RootPanel.get().add(configDock);
