@@ -1,6 +1,10 @@
 package mhcs.client;
 
+import java.util.ArrayList;
+
 import mhcs.storage.Data;
+import mhcs.storage.Load;
+import mhcs.storage.Save;
 
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.dom.client.Style.Unit;
@@ -20,6 +24,8 @@ import com.google.gwt.user.client.ui.TabLayoutPanel;
 import com.google.gwt.user.client.ui.TextArea;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.VerticalPanel;
+import com.google.gwt.storage.client.Storage;
+
 
 /**
  * Entry point classes define <code>onModuleLoad()</code>.
@@ -37,6 +43,23 @@ public class MHCS_Project implements EntryPoint {
 	 * This is the entry point method.
 	 */
 	public void onModuleLoad() {
+		
+		Module example = new Module(ModuleType.PLAIN,3,new Point(3,5),ModuleStatus.USABLE,2,false);
+		ArrayList<Module> exampleList = new ArrayList<Module>();
+//		exampleList.add(example);
+//		
+////		Data.addModule(example);
+//		
+//		Save saver = new Save();
+//		saver.saveModules(exampleList);
+		
+		Storage stockStore = Storage.getLocalStorageIfSupported();
+		for (int i = 0; i < exampleList.size(); i++) {
+			stockStore.setItem(Integer.toString(i), exampleList.get(i).toString());
+		} // for
+		stockStore.setItem("numOfModules", Integer.toString(exampleList.size()));
+		
+		
 		TabLayoutPanel tabPanel = new TabLayoutPanel(2.5, Unit.EM);
 		tabPanel.setAnimationDuration(1000);
 		tabPanel.getElement().getStyle().setMarginBottom(10.0, Unit.PX);
