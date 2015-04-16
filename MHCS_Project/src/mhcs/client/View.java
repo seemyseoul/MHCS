@@ -42,7 +42,7 @@ public class View implements EntryPoint {
   * This is the entry point method.
   */
   public void onModuleLoad() {
-    TabLayoutPanel tabPanel = new TabLayoutPanel(2.5, Unit.EM);
+    final TabLayoutPanel tabPanel = new TabLayoutPanel(2.5, Unit.EM);
     tabPanel.setAnimationDuration(1000);
     tabPanel.getElement().getStyle().setMarginBottom(10.0, Unit.PX);
 
