@@ -43,7 +43,7 @@ import com.google.gwt.storage.client.Storage;
 /**
  * Entry point classes define <code>onModuleLoad()</code>.
  */
-public class MHCS_Project implements EntryPoint {
+public class View implements EntryPoint {
 	/**
 	 * The message displayed to the user when the server cannot be reached or
 	 * returns an error.

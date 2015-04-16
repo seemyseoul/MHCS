@@ -4,7 +4,7 @@ import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.user.client.ui.ListBox;
 
-import mhcs.client.MHCS_Project;
+import mhcs.client.View;
 
 public class Handlers {
 
