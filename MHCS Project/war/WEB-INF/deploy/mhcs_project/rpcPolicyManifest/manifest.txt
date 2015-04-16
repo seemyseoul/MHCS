@@ -1,2 +1,0 @@
-# Module mhcs_project
-# RPC service class, partial path of RPC policy file
