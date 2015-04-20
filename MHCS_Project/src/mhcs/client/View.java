@@ -1,5 +1,7 @@
 package mhcs.client;
 
+import java.util.Arrays;
+
 import mhcs.storage.Data;
 
 import com.google.gwt.core.client.EntryPoint;
@@ -253,7 +255,25 @@ public class View implements EntryPoint {
 			}
 			if (module != null)
 			{
-				modulesEastType
+				// Set id
+				modulesEastId.setValue(Integer.toString(module.getId()));
+				// Set type
+				modulesEastType.setSelectedIndex(
+					Arrays.asList(Module.moduleStrings)
+					.indexOf(module.getType().toUserString())
+				);
+				// Set Condition
+				String[] conditionStrings = { "Usable","Damaged","Unusable" };
+				modulesEastCondition.setSelectedIndex(
+					Arrays.asList(conditionStrings)
+					.indexOf(module.getStatus().toUserString())
+				);
+				// Set orientation
+				modulesEastOrientation.setSelectedIndex(module.getOrientation());
+				// Set X-Coordinate
+				xTextBox.setValue(Integer.toString(module.getCoordinates().getX()));
+				// Set Y-Coordinate
+				yTextBox.setValue(Integer.toString(module.getCoordinates().getY()));
 			}
 		}
 		

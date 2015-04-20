@@ -72,4 +72,52 @@ public enum ModuleType {
 			return null;
 		}
 	}
+	
+	public String toUserString()
+	{
+		if (this.equals(AIRLOCK))
+		{
+			return "Air Lock";
+		}
+		else if (this.equals(FOODWATERSTORAGE))
+		{
+			return "Food & Water";
+		}
+		else if (this.equals(POWER))
+		{
+			return "Power";
+		}
+		else if (this.equals(CONTROL))
+		{
+			return "Control";
+		}
+		else if (this.equals(CANTEEN))
+		{
+			return "Canteen";
+		}
+		else if (this.equals(PLAIN))
+		{
+			return "Plain";
+		}
+		else if (this.equals(DORMITORY))
+		{
+			return "Dormitory";
+		}
+		else if (this.equals(SANITATION))
+		{
+			return "Sanitation";
+		}
+		else if (this.equals(GYMRELAXATION))
+		{
+			return "Gym & Relaxation";
+		}
+		else if (this.equals(MEDICAL))
+		{
+			return "Medical";
+		}
+		else
+		{
+			return null;
+		}
+	}
 }

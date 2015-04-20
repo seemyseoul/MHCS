@@ -46,5 +46,25 @@ public enum ModuleStatus {
 			return null;
 		}
 	}
+	
+	public String toUserString()
+	{
+		if (this.equals(USABLE))
+		{
+			return "Usable";
+		}
+		else if (this.equals(USABLEAFTERREPAIR))
+		{
+			return "Damaged";
+		}
+		else if (this.equals(BEYONDREPAIR))
+		{
+			return "Unusable";
+		}
+		else
+		{
+			return null;
+		}
+	}
 
 }
