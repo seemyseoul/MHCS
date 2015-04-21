@@ -127,35 +127,26 @@ public class View implements EntryPoint {
     final TextBox xTextBox = new TextBox();
     final TextBox yTextBox = new TextBox();
     
-    final String strDockPanelHeight = "600px";
     final String strDockPanelWidth = "1500px";
     final String strDockPanelSouth = "Naples Spring 2015";
     final int intPanelBorder = 2;
-    final int intPanelSpacing = 5;
-    final int intVerPanelSpacing = 10;
-    final String strModulesListBoxHeight = "600px";
-    final String strModulesListBoxWidth = "300px";
-    final String strModulesButtonHeight = "50px";
-    final String strModulesButtonWidth = "150px";
-    final String strModulesEastPanelWidth = "300px";
+    final int intPanelSpacing0 = 5;
+    final int intPanelSpacing1 = 10;
+    final String strSettingsHeight = "20px";
+    final String strSettingsButtonHeight = "35px";
+    final String strButtonHeight = "50px";
+    final String strSettingsButtonWidth = "130px";
     final String strModulesEastPanelWidthHalf = "140px";
+    final String strModulesButtonWidth = "150px";
     final String strModulesCenterHeight = "175px";
-    final String strModulesCenterWidth = "800px";
     final String strModulesImageHeight = "200px";
     final String strModulesImageWidth = "250px";
-    final String strConfigButtonHeight = "50px";
-    final String strConfigButtonWidth = "300px";
-    final String strConfigListBoxHeight = "650px";
-    final String strConfigListBoxWidth = "300px";
+    final String strWidth = "300px";
     final String strConfigMapHeight = "560px";
+    final String strHeight = "600px";
+    final String strConfigListBoxHeight = "650px";
+    final String strModulesCenterWidth = "800px";
     final String strConfigMapWidth = "1000px";
-    final String strConfigVerPanelHeight = "600px";
-    final String strSettingsButtonHeight = "35px";
-    final String strSettingsButtonWidth = "130px";
-    final String strSettingsPassEnableHeight = "20px";
-    final String strSettingsChangePassHeight = "20px";
-    final int intSettingsPanelSpacing = 10;
-    final int intSettingsVerPanelSpaacing = 5;
 
     final Map mapDisplay = new Map(50,100);    
     
@@ -233,8 +224,8 @@ public class View implements EntryPoint {
     // Add a list box with multiple selection enabled
     //Module.populateListBox(arrModules);
     modulesListBox.setVisibleItemCount(10);
-    modulesListBox.setHeight(strModulesListBoxHeight);
-    modulesListBox.setWidth(strModulesListBoxWidth);
+    modulesListBox.setHeight(strHeight);
+    modulesListBox.setWidth(strWidth);
 
     modulesListBox.clear();
 	for (Module m : Model.getModuleList())
@@ -283,9 +274,9 @@ public class View implements EntryPoint {
 	});
     
     /* Fill Horizontal Panel */
-    modulesAddButton.setHeight(strModulesButtonHeight);
+    modulesAddButton.setHeight(strButtonHeight);
     modulesAddButton.setWidth(strModulesButtonWidth);
-    modulesRemoveButton.setHeight(strModulesButtonHeight);
+    modulesRemoveButton.setHeight(strButtonHeight);
     modulesRemoveButton.setWidth(strModulesButtonWidth);
     modulesAddButton.setText("ADD");
     modulesRemoveButton.setText("REMOVE");
@@ -331,7 +322,7 @@ public class View implements EntryPoint {
     modulesSouthVerPanel.add(moduleRequirements);
 
     /* East */
-    modulesEastId.setWidth(strModulesEastPanelWidth);
+    modulesEastId.setWidth(strWidth);
 
     // Via loop based off module array
     for (int i = 0; i < Module.moduleStrings.length; i++) {
@@ -339,7 +330,7 @@ public class View implements EntryPoint {
     } //for
     modulesEastType.setVisibleItemCount(10);
     modulesEastType.setEnabled(false);
-    modulesEastType.setWidth(strModulesEastPanelWidth);
+    modulesEastType.setWidth(strWidth);
     Controller.setType(modulesEastId, modulesEastType);
     
     // entered via loop based off array
@@ -347,14 +338,14 @@ public class View implements EntryPoint {
     modulesEastCondition.addItem("Damaged");
     modulesEastCondition.addItem("Unusable");
     modulesEastCondition.setVisibleItemCount(3);
-    modulesEastCondition.setWidth(strModulesEastPanelWidth);
+    modulesEastCondition.setWidth(strWidth);
 
     // entered via loop based off array
     modulesEastOrientation.addItem("0 turns");
     modulesEastOrientation.addItem("1 turns");
     modulesEastOrientation.addItem("2 turns");
     modulesEastOrientation.setVisibleItemCount(3);
-    modulesEastOrientation.setWidth(strModulesEastPanelWidth);
+    modulesEastOrientation.setWidth(strWidth);
 
     xTextBox.setWidth(strModulesEastPanelWidthHalf);
     yTextBox.setWidth(strModulesEastPanelWidthHalf);
@@ -366,8 +357,8 @@ public class View implements EntryPoint {
     moduleCoordinates.add(yPanel);
 
     Button modulesSaveButton = new Button();
-    modulesSaveButton.setHeight(strModulesButtonHeight);
-    modulesSaveButton.setWidth(strModulesEastPanelWidth);
+    modulesSaveButton.setHeight(strButtonHeight);
+    modulesSaveButton.setWidth(strWidth);
     modulesSaveButton.setText("SAVE");
     
     //modulesSaveButton.addClickHandler(Handlers.saveButton());
@@ -409,13 +400,13 @@ public class View implements EntryPoint {
     modulesEastVerPanel.add(modulesEastOrientation);
     modulesEastVerPanel.add(moduleCoordinates);
     modulesEastVerPanel.add(modulesSaveButton);
-    modulesEastVerPanel.setSpacing(intVerPanelSpacing + 2);
+    modulesEastVerPanel.setSpacing(intPanelSpacing1 + 2);
 
     /* Create a Dock Panel */
-    modulesDock.setSpacing(intPanelSpacing);
+    modulesDock.setSpacing(intPanelSpacing0);
     modulesDock.setHorizontalAlignment(DockPanel.ALIGN_CENTER);
     modulesDock.setBorderWidth(intPanelBorder);
-    modulesDock.setSize(strDockPanelWidth, strDockPanelHeight);
+    modulesDock.setSize(strDockPanelWidth, strHeight);
 
     /* Add panels to Dock */
     modulesDock.add(new HTML("Modules"), DockPanel.NORTH);
@@ -434,7 +425,7 @@ public class View implements EntryPoint {
     //Configurations.populateListBox(configListBox);
     configListBox.setVisibleItemCount(10);
     configListBox.setHeight(strConfigListBoxHeight);
-    configListBox.setWidth(strConfigListBoxWidth);
+    configListBox.setWidth(strWidth);
 
     /* Center */
     map.setHeight(strConfigMapHeight);
@@ -468,15 +459,15 @@ public class View implements EntryPoint {
     configVerPanel.add(radAll);
     configVerPanel.add(radNone);
     
-    configVerPanel.setHeight(strConfigVerPanelHeight);
+    configVerPanel.setHeight(strHeight);
       
     /* 2nd South */
-    roverPathButton.setHeight(strConfigButtonHeight);
-    roverPathButton.setWidth(strConfigButtonWidth);
-    deleteConfigButton.setHeight(strConfigButtonHeight);
-    deleteConfigButton.setWidth(strConfigButtonWidth);
-    buildConfigButton.setHeight(strConfigButtonHeight);
-    buildConfigButton.setWidth(strConfigButtonWidth);
+    roverPathButton.setHeight(strButtonHeight);
+    roverPathButton.setWidth(strWidth);
+    deleteConfigButton.setHeight(strButtonHeight);
+    deleteConfigButton.setWidth(strWidth);
+    buildConfigButton.setHeight(strButtonHeight);
+    buildConfigButton.setWidth(strWidth);
     roverPathButton.setText("Rover Path");
     deleteConfigButton.setText("Delete Configuration");
     buildConfigButton.setText("Build Configuration");
@@ -485,10 +476,10 @@ public class View implements EntryPoint {
     configHorPanel.add(buildConfigButton);
 
     /* Create ConfigurationDock Panel */
-    configDock.setSpacing(intPanelSpacing);
+    configDock.setSpacing(intPanelSpacing0);
     configDock.setHorizontalAlignment(DockPanel.ALIGN_CENTER);
     configDock.setBorderWidth(intPanelBorder);
-    configDock.setSize(strDockPanelWidth, strDockPanelHeight);
+    configDock.setSize(strDockPanelWidth, strHeight);
 
     /* Add to dock */
     configDock.add(new HTML("Configurations"), DockPanel.NORTH);
@@ -515,45 +506,45 @@ public class View implements EntryPoint {
     settingsUserPanel.add(users);
     settingsUserPanel.add(addUserButton);
     settingsUserPanel.add(removeUserButton);
-    settingsUserPanel.setSpacing(intSettingsPanelSpacing);
+    settingsUserPanel.setSpacing(intPanelSpacing1);
 
     passwordEnable.setText("Password Enabled");
-    passwordEnable.setHeight(strSettingsPassEnableHeight);
+    passwordEnable.setHeight(strSettingsHeight);
     changePasswordButton.setText("Change Password");
     changePasswordButton.setHeight(strSettingsButtonHeight);
     changePasswordButton.setWidth(strSettingsButtonWidth);
     settingsPassPanel.add(passwordEnable);
     settingsPassPanel.add(changePasswordButton);
-    settingsPassPanel.setSpacing(intSettingsPanelSpacing);
+    settingsPassPanel.setSpacing(intPanelSpacing1);
 
     /* Inner vertical panel */
-    changePassword.setHeight(strSettingsChangePassHeight);
-    settingsPassVertPanel.setSpacing(intSettingsVerPanelSpaacing);
+    changePassword.setHeight(strSettingsHeight);
+    settingsPassVertPanel.setSpacing(intPanelSpacing0);
 
     /* Inner horizontal panels */
     currentPassword.add(cPassword);
     currentPassword.add(cPass);
-    currentPassword.setSpacing(intSettingsPanelSpacing);
+    currentPassword.setSpacing(intPanelSpacing1);
 
     newPassword.add(nPassword);
     newPassword.add(nPass);
-    newPassword.setSpacing(intSettingsPanelSpacing);
+    newPassword.setSpacing(intPanelSpacing1);
 
     confirmPassword.add(coPassword);
     confirmPassword.add(coPass);
-    confirmPassword.setSpacing(intSettingsPanelSpacing);
+    confirmPassword.setSpacing(intPanelSpacing1);
 
     settingsPassVertPanel.add(changePassword);
     settingsPassVertPanel.add(currentPassword);
     settingsPassVertPanel.add(newPassword);
     settingsPassVertPanel.add(confirmPassword);
-    settingsPassVertPanel.setSpacing(intPanelSpacing);
+    settingsPassVertPanel.setSpacing(intPanelSpacing0);
     settingsPassVertPanel.setBorderWidth(intPanelBorder);
 
     settingsVertPanel.add(settingsUserPanel);
     settingsVertPanel.add(settingsPassPanel);
     settingsVertPanel.add(settingsPassVertPanel);
-    settingsVertPanel.setSpacing(intSettingsPanelSpacing);
+    settingsVertPanel.setSpacing(intPanelSpacing1);
     settingsVertPanel.setBorderWidth(intPanelBorder);
     
     
