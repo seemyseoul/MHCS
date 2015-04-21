@@ -134,7 +134,7 @@ public class View implements EntryPoint {
     final int intPanelSpacing1 = 10;
     final String strSettingsHeight = "20px";
     final String strSettingsButtonHeight = "35px";
-    final String strButtonHeight = "50px";
+    final String strButtonHeight = "50px"; 
     final String strSettingsButtonWidth = "130px";
     final String strModulesEastPanelWidthHalf = "140px";
     final String strModulesButtonWidth = "150px";
