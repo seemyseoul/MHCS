@@ -157,7 +157,7 @@ public class View implements EntryPoint {
     final int intSettingsPanelSpacing = 10;
     final int intSettingsVerPanelSpaacing = 5;
 
-    final Map mapDisplay = new Map();    
+    final Map mapDisplay = new Map(50,100);    
     
     tabPanel.setAnimationDuration(1000);
     tabPanel.getElement().getStyle().setMarginBottom(10.0, Unit.PX);
