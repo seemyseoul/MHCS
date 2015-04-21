@@ -12,25 +12,31 @@ import com.google.gwt.user.client.ui.Image;
 import com.google.gwt.user.client.ui.LayoutPanel;
 import com.google.gwt.user.client.ui.ScrollPanel;
 import com.google.gwt.user.client.ui.SplitLayoutPanel;
+import com.google.gwt.user.client.ui.Widget;
 
-public class Map extends Grid{
-	
-	
-	public static final int fifty = 50;
-	public static final int one00 = 100;
-	
+public class Map{
+
 	/**
 	 * Number of rows in the grid
 	 */
-    private static int gRow = fifty;
+    private int gRow;
 	
     /**
 	 * Number of columns in the grid
 	 */
-    private static int gCol = one00;
+    private int gCol;
 	
-    
     /**
+     * underlying Grid object.
+     */
+    private Grid grid;
+    
+    
+    public Grid getGrid() {
+		return grid;
+	}
+
+	/**
      * The module array list to save the local storage data
      */
     private List<Module> modList;
@@ -43,15 +49,17 @@ public class Map extends Grid{
      * Places Modules on the grid
      */
     public Map(int x, int y){
-    	super(x,y);
-    	this.setStyleName("background");
-    	this.setCellSpacing(0);
-    	this.setCellPadding(0);
+    	gRow = y;
+    	gCol = x;
+    	grid = new Grid(gRow,gCol);
+    	grid.setStyleName("background");
+    	grid.setCellSpacing(0);
+    	grid.setCellPadding(0);
     	
     	for (int row = 0; row < gRow; ++row) {
     		    for (int col = 0; col < gCol; ++col) {
-    				this.getCellFormatter().addStyleName(row, col, "tableCell");
-    				this.getCellFormatter().addStyleName(row, col, "td");
+    				grid.getCellFormatter().addStyleName(row, col, "tableCell");
+    				grid.getCellFormatter().addStyleName(row, col, "td");
     		    }
     	 }
     }
@@ -62,10 +70,10 @@ public class Map extends Grid{
     		Point coordinate = this.modList.get(i).getCoordinates();
     		int x = coordinate.getX();
     		int y = coordinate.getY();
-    		String URL = "https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=0CAcQjRw&url=http%3A%2F%2Fhd4desktop.com%2F28658-chimera-spaceship-hd-wallpaper%2F&ei=WXk2VfbtMMGMsAXq2IGICw&bvm=bv.91071109,d.b2w&psig=AFQjCNE9SMiGdcpBuTKDN0WUg7qW9TNHwQ&ust=1429719772846750";
+    		String URL = "http://icons.iconarchive.com/icons/mazenl77/I-like-buttons-3a/512/Cute-Ball-Go-icon.png";
 //    		String URL = this.modList.get(i).getImageURL();
     		Image image = new Image(URL);
-    		this.setWidget(gRow - y ,x - 1, image);
+    		grid.setWidget(gRow - y ,x - 1, image);
     	}
     }
 }
