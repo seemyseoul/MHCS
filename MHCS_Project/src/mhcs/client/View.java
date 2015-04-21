@@ -148,7 +148,7 @@ public class View implements EntryPoint {
     final String strModulesCenterWidth = "800px";
     final String strConfigMapWidth = "1000px";
 
-    final Map mapDisplay = new Map(50,100);    
+    final Map mapDisplay = new Map(100,50);    
     
     tabPanel.setAnimationDuration(1000);
     tabPanel.getElement().getStyle().setMarginBottom(10.0, Unit.PX);
@@ -486,7 +486,7 @@ public class View implements EntryPoint {
     configDock.add(new HTML(strDockPanelSouth), DockPanel.SOUTH);
     configDock.add(configVerPanel, DockPanel.EAST);
     configDock.add(configListBox, DockPanel.WEST);
-    configDock.add(mapDisplay, DockPanel.CENTER);
+    configDock.add(mapDisplay.getGrid(), DockPanel.CENTER);
     configDock.add(new HTML("Map"), DockPanel.NORTH);
     configDock.add(configHorPanel, DockPanel.SOUTH);
     mapDisplay.updateGrid();

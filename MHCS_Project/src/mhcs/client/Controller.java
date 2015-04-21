@@ -20,7 +20,15 @@ public class Controller {
 	
 	public static void setType(TextBox id, ListBox type) {
 		String modId = id.getText();
-		int intModId = Integer.parseInt(modId);
+		int intModId;
+		if(!modId.equals(""))
+		{
+			intModId = Integer.parseInt(modId);
+		}
+		else
+		{
+			return;
+		}
 		if (0 < intModId && intModId < 41) {
 			type.setItemSelected(0, true);
 		} // if

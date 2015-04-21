@@ -48,9 +48,9 @@ public class Map{
      * Configures the grid
      * Places Modules on the grid
      */
-    public Map(int x, int y){
-    	gRow = y;
-    	gCol = x;
+    public Map(int w, int h){
+    	gRow = h;
+    	gCol = w;
     	grid = new Grid(gRow,gCol);
     	grid.setStyleName("background");
     	grid.setCellSpacing(0);
