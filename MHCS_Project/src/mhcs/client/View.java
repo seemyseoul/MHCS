@@ -495,10 +495,11 @@ public class View implements EntryPoint {
     configDock.add(new HTML(strDockPanelSouth), DockPanel.SOUTH);
     configDock.add(configVerPanel, DockPanel.EAST);
     configDock.add(configListBox, DockPanel.WEST);
-//    configDock.add(mapDisplay, DockPanel.CENTER);
+    configDock.add(mapDisplay, DockPanel.CENTER);
     configDock.add(new HTML("Map"), DockPanel.NORTH);
     configDock.add(configHorPanel, DockPanel.SOUTH);
-    configDock.add(map, DockPanel.CENTER);
+    mapDisplay.updateGrid();
+    //    configDock.add(map, DockPanel.CENTER);
 
     /* 
      * Settings
