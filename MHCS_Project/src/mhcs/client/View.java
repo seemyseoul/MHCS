@@ -2,6 +2,7 @@ package mhcs.client;
 
 import java.util.Arrays;
 
+import mhcs.client.Map;
 import mhcs.storage.Data;
 
 import com.google.gwt.core.client.EntryPoint;
@@ -155,6 +156,8 @@ public class View implements EntryPoint {
     final String strSettingsChangePassHeight = "20px";
     final int intSettingsPanelSpacing = 10;
     final int intSettingsVerPanelSpaacing = 5;
+
+    final Map mapDisplay = new Map();    
     
     tabPanel.setAnimationDuration(1000);
     tabPanel.getElement().getStyle().setMarginBottom(10.0, Unit.PX);
@@ -490,6 +493,7 @@ public class View implements EntryPoint {
     configDock.add(new HTML(strDockPanelSouth), DockPanel.SOUTH);
     configDock.add(configVerPanel, DockPanel.EAST);
     configDock.add(configListBox, DockPanel.WEST);
+//    configDock.add(mapDisplay, DockPanel.CENTER);
     configDock.add(new HTML("Map"), DockPanel.NORTH);
     configDock.add(configHorPanel, DockPanel.SOUTH);
     configDock.add(map, DockPanel.CENTER);
