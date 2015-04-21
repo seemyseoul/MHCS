@@ -1,5 +1,11 @@
 /** Add css rules here for your application. */
 
+.tableCell img
+{
+	width: 50px;
+	height: 50px;
+}
+
 
 /** Example rules used by the template application (remove for your app) */
 h1 {

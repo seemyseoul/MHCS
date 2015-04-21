@@ -73,7 +73,7 @@ public class Map{
     		String URL = "http://icons.iconarchive.com/icons/mazenl77/I-like-buttons-3a/512/Cute-Ball-Go-icon.png";
 //    		String URL = this.modList.get(i).getImageURL();
     		Image image = new Image(URL);
-    		grid.setWidget(gRow - y ,x - 1, image);
+    		grid.setWidget(y+1,x+1, image);
     	}
     }
 }
