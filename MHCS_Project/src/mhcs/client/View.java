@@ -339,9 +339,9 @@ public class View implements EntryPoint {
     } //for
     modulesEastType.setVisibleItemCount(10);
     modulesEastType.setEnabled(false);
-    
     modulesEastType.setWidth(strModulesEastPanelWidth);
-
+    Controller.setType(modulesEastId, modulesEastType);
+    
     // entered via loop based off array
     modulesEastCondition.addItem("Usable");
     modulesEastCondition.addItem("Damaged");

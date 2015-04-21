@@ -1,6 +1,16 @@
 package mhcs.client;
 
+import com.google.gwt.event.dom.client.ClickEvent;
+import com.google.gwt.event.dom.client.ClickHandler;
+import com.google.gwt.i18n.client.LocaleInfo;
+import com.google.gwt.user.client.ui.Button;
+import com.google.gwt.user.client.ui.DialogBox;
+import com.google.gwt.user.client.ui.HTML;
+import com.google.gwt.user.client.ui.HasHorizontalAlignment;
+import com.google.gwt.user.client.ui.Image;
+import com.google.gwt.user.client.ui.ListBox;
 import com.google.gwt.user.client.ui.TextBox;
+import com.google.gwt.user.client.ui.VerticalPanel;
 
 public class Controller {
 	/**
@@ -8,22 +18,82 @@ public class Controller {
 	 */
 	public Controller() {}
 	
-	public void setType(TextBox id) {
+	public static void setType(TextBox id, ListBox type) {
 		String modId = id.getText();
 		int intModId = Integer.parseInt(modId);
 		if (0 < intModId && intModId < 41) {
-			id.setValue("Air Lock");
+			type.setItemSelected(0, true);
 		} // if
 		else if (60 < intModId && intModId < 81) {
-			id.setValue("Dormitory");
+			type.setItemSelected(1, true);
 		} // if
 		else if (90 < intModId && intModId < 101) {
-			id.setValue("Sanitation");
+			type.setItemSelected(2, true);
 		} // if
 		else if (110 < intModId && intModId < 121) {
-			id.setValue("Dormitory");
+			type.setItemSelected(3, true);
 		} // if
-		
+		else if (130 < intModId && intModId < 135) {
+			type.setItemSelected(4, true);
+		} // if
+		else if (140 < intModId && intModId < 145) {
+			type.setItemSelected(5, true);
+		} // if
+		else if (150 < intModId && intModId < 155) {
+			type.setItemSelected(6, true);
+		} // if
+		else if (160 < intModId && intModId < 165) {
+			type.setItemSelected(7, true);
+		} // if
+		else if (170 < intModId && intModId < 175) {
+			type.setItemSelected(8, true);
+		} // if
+		else if (180 < intModId && intModId < 185) {
+			type.setItemSelected(9, true);
+		} // if
+		else {
+			final DialogBox typeDialogBox = new DialogBox();
+            typeDialogBox.setText("ID Error");
+
+            // Create a table to layout the content
+            VerticalPanel dialogContents = new VerticalPanel();
+            dialogContents.setSpacing(4);
+            typeDialogBox.setWidget(dialogContents);
+
+            // Add some text to the top of the dialog
+            HTML details = new HTML("You have entered an incorrect Module ID.");
+            dialogContents.add(details);
+            dialogContents.setCellHorizontalAlignment(
+                details, HasHorizontalAlignment.ALIGN_CENTER);
+
+            // Add an image to the dialog
+            Image image = new Image("images/error");
+            dialogContents.add(image);
+            dialogContents.setCellHorizontalAlignment(
+                image, HasHorizontalAlignment.ALIGN_CENTER);
+
+            // Add a close button at the bottom of the dialog
+            Button closeButton = new Button(
+                "Close", new ClickHandler() {
+                  public void onClick(ClickEvent event) {
+                    typeDialogBox.hide();
+                  }
+                });
+            dialogContents.add(closeButton);
+            if (LocaleInfo.getCurrentLocale().isRTL()) {
+              dialogContents.setCellHorizontalAlignment(
+                  closeButton, HasHorizontalAlignment.ALIGN_LEFT);
+
+            } // if 
+            else {
+              dialogContents.setCellHorizontalAlignment(
+                  closeButton, HasHorizontalAlignment.ALIGN_RIGHT);
+            } // else
+            
+            typeDialogBox.center();
+            typeDialogBox.show();
+
+		} //else
 		
 	} // setType
 	
