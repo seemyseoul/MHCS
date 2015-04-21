@@ -3,7 +3,7 @@ package mhcs.client;
 import java.util.Arrays;
 
 import mhcs.client.Map;
-import mhcs.storage.Data;
+import mhcs.storage.Model;
 
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.dom.client.Style.Unit;
@@ -237,7 +237,7 @@ public class View implements EntryPoint {
     modulesListBox.setWidth(strModulesListBoxWidth);
 
     modulesListBox.clear();
-	for (Module m : Data.getModuleList())
+	for (Module m : Model.getModuleList())
 	{
 		modulesListBox.addItem("Module #" + m.getId());
 	}
@@ -249,7 +249,7 @@ public class View implements EntryPoint {
 			String moduleString = modulesListBox.getItemText(modulesListBox.getSelectedIndex());
 			moduleString = moduleString.substring(8);
 			Module module = null;
-			for (Module m : Data.getModuleList())
+			for (Module m : Model.getModuleList())
 			{
 				if (m.getId() == Integer.parseInt(moduleString))
 				{
@@ -296,7 +296,7 @@ public class View implements EntryPoint {
 		public void onClick(ClickEvent event) {
 			String moduleString = modulesListBox.getItemText(modulesListBox.getSelectedIndex());
 			moduleString = moduleString.substring(8);
-			Data.removeModuleFromId(Integer.parseInt(moduleString));
+			Model.removeModuleFromId(Integer.parseInt(moduleString));
 			modulesListBox.removeItem(modulesListBox.getSelectedIndex());
 		}
     	
@@ -338,6 +338,8 @@ public class View implements EntryPoint {
       modulesEastType.addItem(Module.moduleStrings[i]);
     } //for
     modulesEastType.setVisibleItemCount(10);
+    modulesEastType.setEnabled(false);
+    
     modulesEastType.setWidth(strModulesEastPanelWidth);
 
     // entered via loop based off array
@@ -387,10 +389,10 @@ public class View implements EntryPoint {
 		    orientation = modulesEastOrientation.getSelectedIndex();
 			inUse = false;
 			
-			Data.saveModule(new Module(type,id,coordinates,status,orientation,inUse));
+			Model.saveModule(new Module(type,id,coordinates,status,orientation,inUse));
 			
 			modulesListBox.clear();
-			for (Module m : Data.getModuleList())
+			for (Module m : Model.getModuleList())
 			{
 				modulesListBox.addItem("Module #" + m.getId());
 			}

@@ -9,7 +9,7 @@ import mhcs.client.ModuleStatus;
 import mhcs.client.ModuleType;
 import mhcs.client.Point;
 
-public class Data {
+public class Model {
 
 	public static void addModule(Module toAdd) {
 		moduleList.add(toAdd);
@@ -171,7 +171,7 @@ public class Data {
 	
 	public static List<Module> getModulesOfType(ModuleType type) {
 		ArrayList<Module> list = new ArrayList<Module>();
-		for (Module m : Data.getModuleList()) {
+		for (Module m : Model.getModuleList()) {
 			if (m.getType().equals(type)) {
 				list.add(m);
 			}
@@ -181,7 +181,7 @@ public class Data {
 
 	public static List<Module> getUnusedModulesOfType(ModuleType type) {
 		ArrayList<Module> list = new ArrayList<Module>();
-		for (Module m : Data.getModuleList()) {
+		for (Module m : Model.getModuleList()) {
 			if (m.getType().equals(type) && !m.isInUse()) {
 				list.add(m);
 			}
@@ -195,7 +195,7 @@ public class Data {
 	 * @return the center of mass.
 	 */
 	public final static Point getCenterOfMass() {
-		List<Module> modules = Data.getModuleList();
+		List<Module> modules = Model.getModuleList();
 		if (modules.isEmpty()) {
 			return null;
 		}

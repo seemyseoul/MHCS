@@ -2,7 +2,7 @@ package mhcs.client;
 
 import java.util.List;
 
-import mhcs.storage.Data;
+import mhcs.storage.Model;
 
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
@@ -110,7 +110,7 @@ public class Map extends LayoutPanel{
     }
     
     public void updateGrid(){
-    	this.modList = Data.getModuleList();
+    	this.modList = Model.getModuleList();
     	for (int i = 0; i < this.modList.size(); ++i){
     		Point coordinate = this.modList.get(i).getCoordinates();
     		int x = coordinate.getX();

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import mhcs.storage.Data;
+import mhcs.storage.Model;
 import mhcs.storage.Load;
 import mhcs.storage.Save;
 
@@ -26,7 +26,7 @@ public class ConfigurationBuilder {
 	public boolean minConfigPossible() {
 		// Load loader = new Load();
 		// Module[] modules = loader.getModules();
-		Module[] modules = (Module[]) Data.getModuleList().toArray();
+		Module[] modules = (Module[]) Model.getModuleList().toArray();
 		int numAirlock = 0; // 1
 		int numControl = 0; // 1
 		int numPower = 0; // 1
@@ -79,7 +79,7 @@ public class ConfigurationBuilder {
 		// for (Module x : moduleArray) {
 		// origModules.add(x);
 		// }
-		List<Module> origModules = Data.getModuleList();
+		List<Module> origModules = Model.getModuleList();
 
 		/**
 		 * place plain modules. fill in possible places with other modules.
@@ -99,8 +99,8 @@ public class ConfigurationBuilder {
 			return null;
 		}
 
-		Module[] modules = (Module[]) Data.getModuleList().toArray();
-		Point centerOfMass = Data.getCenterOfMass();
+		Module[] modules = (Module[]) Model.getModuleList().toArray();
+		Point centerOfMass = Model.getCenterOfMass();
 
 		/*
 		 * pretty good minimum config hardcoded...
@@ -110,67 +110,67 @@ public class ConfigurationBuilder {
 		 * 		   Canteen 			Control
 		 */
 
-		Module centerPlain = Data.getModuleClosestTo(centerOfMass,
+		Module centerPlain = Model.getModuleClosestTo(centerOfMass,
 				ModuleType.PLAIN);
 		centerPlain.setInUse(true);
 		centerPlain.setCoordinates(centerOfMass);
 
 		Point rightPlainPos = new Point(centerOfMass.getX() + 1,
 				centerOfMass.getY());
-		Module rightPlain = Data.getModuleClosestTo(rightPlainPos,
+		Module rightPlain = Model.getModuleClosestTo(rightPlainPos,
 				ModuleType.PLAIN);
 		rightPlain.setInUse(true);
 		rightPlain.setCoordinates(rightPlainPos);
 
 		Point leftPlainPos = new Point(centerOfMass.getX() - 1,
 				centerOfMass.getY());
-		Module leftPlain = Data.getModuleClosestTo(leftPlainPos,
+		Module leftPlain = Model.getModuleClosestTo(leftPlainPos,
 				ModuleType.PLAIN);
 		leftPlain.setInUse(true);
 		leftPlain.setCoordinates(leftPlainPos);
 
 		Point airlockPos = new Point(leftPlainPos.getX() - 1,
 				leftPlainPos.getY());
-		Module airlock = Data
+		Module airlock = Model
 				.getModuleClosestTo(airlockPos, ModuleType.AIRLOCK);
 		airlock.setInUse(true);
 		airlock.setCoordinates(airlockPos);
 
 		Point foodWaterPos = new Point(leftPlainPos.getX(),
 				leftPlainPos.getY() + 1);
-		Module foodWater = Data.getModuleClosestTo(foodWaterPos,
+		Module foodWater = Model.getModuleClosestTo(foodWaterPos,
 				ModuleType.FOODWATERSTORAGE);
 		foodWater.setInUse(true);
 		foodWater.setCoordinates(foodWaterPos);
 
 		Point canteenPos = new Point(leftPlainPos.getX(),
 				leftPlainPos.getY() - 1);
-		Module canteen = Data
+		Module canteen = Model
 				.getModuleClosestTo(canteenPos, ModuleType.CANTEEN);
 		canteen.setInUse(true);
 		canteen.setCoordinates(canteenPos);
 
 		Point dormPos = new Point(centerOfMass.getX(), centerOfMass.getY() + 1);
-		Module dorm = Data.getModuleClosestTo(dormPos, ModuleType.DORMITORY);
+		Module dorm = Model.getModuleClosestTo(dormPos, ModuleType.DORMITORY);
 		dorm.setInUse(true);
 		dorm.setCoordinates(dormPos);
 
 		Point powerPos = new Point(rightPlainPos.getX(),
 				rightPlainPos.getY() + 1);
-		Module power = Data.getModuleClosestTo(powerPos, ModuleType.POWER);
+		Module power = Model.getModuleClosestTo(powerPos, ModuleType.POWER);
 		power.setInUse(true);
 		power.setCoordinates(powerPos);
 
 		Point controlPos = new Point(rightPlainPos.getX(),
 				rightPlainPos.getY() - 1);
-		Module control = Data
+		Module control = Model
 				.getModuleClosestTo(controlPos, ModuleType.CONTROL);
 		control.setInUse(true);
 		control.setCoordinates(controlPos);
 
 		Point sanitationPos = new Point(rightPlainPos.getX() + 1,
 				rightPlainPos.getY());
-		Module sanitation = Data.getModuleClosestTo(sanitationPos,
+		Module sanitation = Model.getModuleClosestTo(sanitationPos,
 				ModuleType.SANITATION);
 		sanitation.setInUse(true);
 		sanitation.setCoordinates(sanitationPos);
