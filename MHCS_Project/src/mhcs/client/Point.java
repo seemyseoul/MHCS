@@ -30,7 +30,7 @@ public class Point {
 	 */
 	public Point(String str) {
 		this.x = Integer.parseInt(str.split(" ")[0]);
-		this.x = Integer.parseInt(str.split(" ")[1]);
+		this.y = Integer.parseInt(str.split(" ")[1]);
 	}
 
 	/**
