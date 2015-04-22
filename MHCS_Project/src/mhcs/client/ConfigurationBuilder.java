@@ -70,25 +70,68 @@ public class ConfigurationBuilder {
 	/**
 	 * This method will generate configurations.
 	 *
-	 * @return an array of Configurations.
+	 * @return an array of ALL Configurations.
 	 */
-	public final Configuration[] generateConfigurations() {
-		// Load loader = new Load();
-		// Module[] moduleArray = loader.getModules();
-		// ArrayList<Module> origModules = new ArrayList<Module>();
-		// for (Module x : moduleArray) {
-		// origModules.add(x);
-		// }
-		List<Module> origModules = Model.getModuleList();
-
-		/**
-		 * place plain modules. fill in possible places with other modules.
-		 *
-		 *
-		 */
-		return null;
+	public final List<Configuration> generateConfigurations() {
+		List<Configuration> hConfigs = generateHConfigurations();
+		List<Configuration> plusConfigs = generatePlusConfigurations();
+		List<Configuration> lConfigs = generateLConfigurations();
+		
+		List<Configuration> configurations = new ArrayList<Configuration>();
+		for (Configuration c : hConfigs) {
+			configurations.add(c);
+		}
+		for (Configuration c : plusConfigs) {
+			configurations.add(c);
+		}
+		for (Configuration c : lConfigs) {
+			configurations.add(c);
+		}
+		
+		return configurations;
 	}
 
+	
+	public final List<Configuration> generateHConfigurations()
+	{
+		ArrayList<Configuration> configs = new ArrayList<Configuration>();
+		
+		return configs;
+	}
+	
+	public final List<Configuration> generatePlusConfigurations()
+	{
+		ArrayList<Configuration> configs = new ArrayList<Configuration>();
+		
+		return configs;
+	}
+	
+	public final List<Configuration> generateLConfigurations()
+	{
+		ArrayList<Configuration> configs = new ArrayList<Configuration>();
+		
+		return configs;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	/**
 	 * This method will return a minimum configuration.
 	 *
@@ -176,20 +219,21 @@ public class ConfigurationBuilder {
 		sanitation.setCoordinates(sanitationPos);
 
 		Configuration newConfiguration = new Configuration();
-		newConfiguration.setModules(new Module[] { leftPlain, centerPlain,
-				rightPlain, airlock, foodWater, canteen, dorm, power, control,
-				sanitation });
+		List<Module> moduleList = new ArrayList<Module>();
+	
+		moduleList.add(leftPlain);
+		moduleList.add(centerPlain);
+		moduleList.add(rightPlain);
+		moduleList.add(airlock);
+		moduleList.add(foodWater);
+		moduleList.add(canteen);
+		moduleList.add(dorm);
+		moduleList.add(power);
+		moduleList.add(control);
+		moduleList.add(sanitation);
+		
+		newConfiguration.setModules(moduleList);
 		return newConfiguration;
 	}
 
-	/**
-	 * this method returns the rover path as a Point[].
-	 *
-	 * @param m
-	 *            the array of modules that need to be placed.
-	 * @return Point[] path
-	 */
-	public final Point[] getRoverPath(final Module[] m) {
-		return null;
-	}
 }

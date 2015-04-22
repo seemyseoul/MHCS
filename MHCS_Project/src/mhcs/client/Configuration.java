@@ -1,5 +1,8 @@
 package mhcs.client;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * This class defines a configuration as an array of modules.
  * 
@@ -7,7 +10,7 @@ package mhcs.client;
  *
  */
 public final class Configuration {
-	private Module[] modules = null;
+	private List<Module> modules = new ArrayList<Module>();
 	private int id = -1;
 
 	/**
@@ -15,7 +18,7 @@ public final class Configuration {
 	 * 
 	 * @return an array of Module.
 	 */
-	public Module[] getModules() {
+	public List<Module> getModules() {
 		return modules;
 	}
 
@@ -24,7 +27,7 @@ public final class Configuration {
 	 * 
 	 * @param modules
 	 */
-	public void setModules(Module[] modules) {
+	public void setModules(List<Module> modules) {
 		this.modules = modules;
 	}
 
@@ -72,7 +75,7 @@ public final class Configuration {
 		this.id = Integer.parseInt(moduleStrings[0]);
 
 		for (int i = 1; i < moduleStrings.length; i++) {
-			modules[modules.length] = new Module(moduleStrings[i]);
+			modules.add(new Module(moduleStrings[i]));
 		}
 	}
 
@@ -97,7 +100,18 @@ public final class Configuration {
 	 * @param m
 	 */
 	public void addModule(final Module m) {
-		modules[modules.length] = m;
+		modules.add(m);
+	}
+	
+	/**
+	 * this method returns the rover path as a Point[].
+	 *
+	 * @param m
+	 *            the array of modules that need to be placed.
+	 * @return Point[] path
+	 */
+	public final Point[] getRoverPath(final Module[] m) {
+		return null;
 	}
 
 	static String[] configCheckBoxVars = { "radAirLock", "radPlain", "radDorm",
