@@ -169,6 +169,11 @@ public class Model {
 	// JACK'S STUFF FOR GENERATING CONFIGURATIONS.
 	// feel free to use these functions, but please don't remove them...
 	
+	/**
+	 * gets a List of modules of type "type".
+	 * @param type
+	 * @return List<Module> a list of modules of type "type"
+	 */
 	public static List<Module> getModulesOfType(ModuleType type) {
 		ArrayList<Module> list = new ArrayList<Module>();
 		for (Module m : Model.getModuleList()) {
@@ -179,6 +184,11 @@ public class Model {
 		return list;
 	}
 
+	/**
+	 * gets a List of unused modules of type "type".
+	 * @param type
+	 * @return List<Module> list of unused modules of type "type"
+	 */
 	public static List<Module> getUnusedModulesOfType(ModuleType type) {
 		ArrayList<Module> list = new ArrayList<Module>();
 		for (Module m : Model.getModuleList()) {

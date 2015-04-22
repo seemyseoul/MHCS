@@ -95,7 +95,7 @@ public class ConfigurationBuilder {
 	public final List<Configuration> generateHConfigurations()
 	{
 		ArrayList<Configuration> configs = new ArrayList<Configuration>();
-		
+		Module center 
 		return configs;
 	}
 	
