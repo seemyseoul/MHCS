@@ -20,9 +20,16 @@ import com.google.gwt.user.client.ui.VerticalPanel;
 public class TestCases {
 
 	public TestCases(){
+		
+	}
+	
+	
+	
+	public void TestCaseChoice(int choice){
 	
 		String proxy ="http://www.d.umn.edu/~abrooks/Proxy.php?url=";
-		String url = proxy+"http://www.d.umn.edu/~abrooks/SomeTests.php?q=1";
+//		String url = proxy+"http://www.d.umn.edu/~abrooks/SomeTests.php?q=1";
+		String url = "http://www.d.umn.edu/~abrooks/SomeTests.php?q=" + Integer.toString(choice);		
 		url = URL.encode(url);
 	
 		RequestBuilder builder = new RequestBuilder(RequestBuilder.GET, url);

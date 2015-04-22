@@ -115,6 +115,7 @@ public class View implements EntryPoint {
     final ListBox modulesEastOrientation = new ListBox();
     final ListBox configListBox = new ListBox();
     final ListBox users = new ListBox();
+    final ListBox testCases = new ListBox();
     final PasswordTextBox cPassword = new PasswordTextBox();
     final PasswordTextBox nPassword = new PasswordTextBox();
     final PasswordTextBox coPassword = new PasswordTextBox();
@@ -510,6 +511,21 @@ public class View implements EntryPoint {
     settingsUserPanel.add(addUserButton);
     settingsUserPanel.add(removeUserButton);
     settingsUserPanel.setSpacing(intPanelSpacing1);
+    
+    testCases.addItem("No Test Case Selected");
+    testCases.addItem("Test Case 1");
+    testCases.addItem("Test Case 2");
+    testCases.addItem("Test Case 3");
+    testCases.addItem("Test Case 4");
+    testCases.addItem("Test Case 5");
+    testCases.addItem("Test Case 6");
+    testCases.addItem("Test Case 7");
+    testCases.addItem("Test Case 8");
+    testCases.addItem("Test Case 9");
+    testCases.addItem("Test Case 10");  
+    testCases.setVisibleItemCount(1);
+    testCases.setWidth(strWidth); 
+    //Add Listener???
 
     passwordEnable.setText("Password Enabled");
     passwordEnable.setHeight(strSettingsHeight);
@@ -544,6 +560,7 @@ public class View implements EntryPoint {
     settingsPassVertPanel.setSpacing(intPanelSpacing0);
     settingsPassVertPanel.setBorderWidth(intPanelBorder);
 
+    settingsVertPanel.add(testCases);
     settingsVertPanel.add(settingsUserPanel);
     settingsVertPanel.add(settingsPassPanel);
     settingsVertPanel.add(settingsPassVertPanel);
