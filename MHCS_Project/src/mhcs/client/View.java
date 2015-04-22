@@ -570,6 +570,10 @@ public class View implements EntryPoint {
     
     /* Weather Panel */
     weatherPanel.add(weatherText);
+    Weather weather = new Weather();
+    weather.requestData(weather.strURL);
+    weatherPanel.add(new Label("Current temp: \t" + weather.strTemp + " Celsius"));
+    weatherPanel.add(new Label("Current visibility: \t" + weather.strVisibility + " km"));
     
 //    RootPanel.get().add(configDock);
 //    RootPanel.get().add(modulesDock);

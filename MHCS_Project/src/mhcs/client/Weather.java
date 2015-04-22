@@ -13,8 +13,10 @@ import com.google.gwt.user.client.Window;
 
 public class Weather {
 
-  int intHttpOk = 200; // response code for HTTP OK
-  String strObservation;
+  private int intHttpOk = 200; // response code for HTTP OK
+  public String strTemp;
+  public String strVisibility;
+  public String strURL = "http://api.wunderground.com/api/1e7eb561fe2a38df/conditions/q/CA/San_Francisco.json";
   
   /**
    * Updates weather information
@@ -25,7 +27,14 @@ public class Weather {
     JSONObject jA =
             (JSONObject)JSONParser.parseLenient(sAll);
     JSONValue jTry = jA.get("current_observation");
-    String sTry = jTry.toString();
+    
+    JSONObject jB =
+            (JSONObject)JSONParser.parseLenient(jTry.toString());
+    JSONValue temp = jB.get("temp_c");
+    JSONValue visibility = jB.get("visibility_km");
+    
+    strTemp = temp.toString();
+    strVisibility = visibility.toString();
   }
   
   /**
