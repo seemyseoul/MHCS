@@ -1,5 +1,7 @@
 package mhcs.client;
 
+import mhcs.storage.Model;
+
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.i18n.client.LocaleInfo;
@@ -18,6 +20,12 @@ public class Controller {
 	 */
 	public Controller() {}
 	
+	/**
+	 * Function to fill in Type of module based on input ID
+	 * from user.
+	 * @param id
+	 * @param type
+	 */
 	public static void setType(TextBox id, ListBox type) {
 		String modId = id.getText();
 		int intModId;
@@ -104,5 +112,48 @@ public class Controller {
 		} //else
 		
 	} // setType
+	
+	public static void setRequirements(Module m) {
+		
+	} // setRequirements
+	
+	static Module varModule = new Module();
+	
+	/**
+	 * Click handler for modules tab add button
+	 * 
+	 * @param module
+	 *            of type Module
+	 * @return add ClickHandler
+	 */
+	public static ClickHandler addButton() {
+		ClickHandler add = new ClickHandler() {
+			public void onClick(ClickEvent event) {
+				varModule = new Module();
+			} // onClick
+		}; // ClickHandler
+
+		return add;
+	} // addButtom
+	
+	/**
+	 * Click handler for modules tab add button
+	 * 
+	 * @param module
+	 *            of type Module
+	 * @return add ClickHandler
+	 */
+	public static ClickHandler removeButton(ListBox modulesListBox) {
+		ClickHandler add = new ClickHandler() {
+			public void onClick(ClickEvent event) {
+				String moduleString = modulesListBox.getItemText(modulesListBox.getSelectedIndex());
+				moduleString = moduleString.substring(8);
+				Model.removeModuleFromId(Integer.parseInt(moduleString));
+				modulesListBox.removeItem(modulesListBox.getSelectedIndex());
+			} // onClick
+		}; // ClickHandler
+
+		return add;
+	} // addButtom
 	
 } // Controller
