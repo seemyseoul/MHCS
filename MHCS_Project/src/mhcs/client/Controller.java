@@ -1,6 +1,7 @@
 package mhcs.client;
 
 import mhcs.storage.Model;
+import mhcs.storage.TestCases;
 
 import com.google.gwt.event.dom.client.ChangeEvent;
 import com.google.gwt.event.dom.client.ChangeHandler;
@@ -163,6 +164,7 @@ public class Controller {
 		return new ChangeHandler() {
 			public void onChange(ChangeEvent event) {
 				int testNum = lb.getSelectedIndex();
+				TestCases.TestCaseChoice(testNum);
 			}
 		};
 	}
