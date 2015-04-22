@@ -142,7 +142,7 @@ public class Controller {
 	 * @param module
 	 *            of type Module
 	 * @return add ClickHandler
-	 */
+	 */ 
 	public static ClickHandler removeButton(ListBox modulesListBox) {
 		ClickHandler add = new ClickHandler() {
 			public void onClick(ClickEvent event) { 
