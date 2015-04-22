@@ -143,7 +143,7 @@ public class Controller {
 	 *            of type Module
 	 * @return add ClickHandler
 	 */ 
-	public static ClickHandler removeButton(ListBox modulesListBox) {
+	public static ClickHandler removeButton(final ListBox modulesListBox) {
 		ClickHandler add = new ClickHandler() {
 			public void onClick(ClickEvent event) { 
 				String moduleString = modulesListBox.getItemText(modulesListBox.getSelectedIndex());

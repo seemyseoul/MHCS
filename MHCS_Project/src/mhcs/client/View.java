@@ -300,7 +300,7 @@ public class View implements EntryPoint {
     modulesWestHorPanel.add(modulesAddButton);
     modulesWestHorPanel.add(modulesRemoveButton);
     
-    modulesAddButton.addClickHandler(Handlers.addButton());
+//    modulesAddButton.addClickHandler(Handlers.addButton());
 
     /* Fill Vertical Panel */
     modulesWestVerPanel.add(modulesListBox);
@@ -569,11 +569,11 @@ public class View implements EntryPoint {
     
     
     /* Weather Panel */
-    weatherPanel.add(weatherText);
-    Weather weather = new Weather();
-    weather.requestData(weather.strURL);
-    weatherPanel.add(new Label("Current temp: \t" + weather.strTemp + " Celsius"));
-    weatherPanel.add(new Label("Current visibility: \t" + weather.strVisibility + " km"));
+//    weatherPanel.add(weatherText);
+//    Weather weather = new Weather();
+//    weather.requestData(weather.strURL);
+//    weatherPanel.add(new Label("Current temp: \t" + weather.strTemp + " Celsius"));
+//    weatherPanel.add(new Label("Current visibility: \t" + weather.strVisibility + " km"));
     
 //    RootPanel.get().add(configDock);
 //    RootPanel.get().add(modulesDock);

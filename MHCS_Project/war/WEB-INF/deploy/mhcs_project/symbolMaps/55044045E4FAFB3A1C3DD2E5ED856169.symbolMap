@@ -834,9 +834,8 @@ Ljava_util_InternalJsStringMap$InternalJsStringMapWithKeysWorkaround_2_classLit,
 Ljava_util_InternalJsStringMap_2_classLit,com.google.gwt.lang.ClassLiteralHolder::Ljava_util_InternalJsStringMap_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Ljava_util_InternalJsStringMap_2_classLit,com/google/gwt/emul/java/util/InternalJsStringMap.java,37,-1
 Ljava_util_Map$Entry_2_classLit,com.google.gwt.lang.ClassLiteralHolder::Ljava_util_Map$Entry_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Ljava_util_Map$Entry_2_classLit,com/google/gwt/emul/java/util/Map.java,29,-1
 Ljava_util_NoSuchElementException_2_classLit,com.google.gwt.lang.ClassLiteralHolder::Ljava_util_NoSuchElementException_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Ljava_util_NoSuchElementException_2_classLit,com/google/gwt/emul/java/util/NoSuchElementException.java,23,-1
-Lmhcs_client_Configuration_2_classLit,com.google.gwt.lang.ClassLiteralHolder::Lmhcs_client_Configuration_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lmhcs_client_Configuration_2_classLit,mhcs/client/Configuration.java,9,-1
-Lmhcs_client_Controller$1_2_classLit,com.google.gwt.lang.ClassLiteralHolder::Lmhcs_client_Controller$1_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lmhcs_client_Controller$1_2_classLit,mhcs/client/Controller.java,85,-1
-Lmhcs_client_Handlers$1_2_classLit,com.google.gwt.lang.ClassLiteralHolder::Lmhcs_client_Handlers$1_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lmhcs_client_Handlers$1_2_classLit,mhcs/client/Handlers.java,27,-1
+Lmhcs_client_Configuration_2_classLit,com.google.gwt.lang.ClassLiteralHolder::Lmhcs_client_Configuration_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lmhcs_client_Configuration_2_classLit,mhcs/client/Configuration.java,12,-1
+Lmhcs_client_Controller$1_2_classLit,com.google.gwt.lang.ClassLiteralHolder::Lmhcs_client_Controller$1_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lmhcs_client_Controller$1_2_classLit,mhcs/client/Controller.java,93,-1
 Lmhcs_client_Map_2_classLit,com.google.gwt.lang.ClassLiteralHolder::Lmhcs_client_Map_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lmhcs_client_Map_2_classLit,mhcs/client/Map.java,17,-1
 Lmhcs_client_ModuleStatus_2_classLit,com.google.gwt.lang.ClassLiteralHolder::Lmhcs_client_ModuleStatus_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lmhcs_client_ModuleStatus_2_classLit,mhcs/client/ModuleStatus.java,9,-1
 Lmhcs_client_ModuleType_2_classLit,com.google.gwt.lang.ClassLiteralHolder::Lmhcs_client_ModuleType_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lmhcs_client_ModuleType_2_classLit,mhcs/client/ModuleType.java,9,-1
@@ -1226,10 +1225,8 @@ DecoratedPopupPanel,,com.google.gwt.user.client.ui.DecoratedPopupPanel,,com/goog
 decPanel,com.google.gwt.user.client.ui.DecoratedPopupPanel::decPanel,com.google.gwt.user.client.ui.DecoratedPopupPanel,decPanel,com/google/gwt/user/client/ui/DecoratedPopupPanel.java,83,-1
 doAttachChildren_1,com.google.gwt.user.client.ui.DecoratedPopupPanel::doAttachChildren()V,com.google.gwt.user.client.ui.DecoratedPopupPanel,doAttachChildren,com/google/gwt/user/client/ui/DecoratedPopupPanel.java,165,0
 doDetachChildren_1,com.google.gwt.user.client.ui.DecoratedPopupPanel::doDetachChildren()V,com.google.gwt.user.client.ui.DecoratedPopupPanel,doDetachChildren,com/google/gwt/user/client/ui/DecoratedPopupPanel.java,171,0
-getWidget_0,com.google.gwt.user.client.ui.DecoratedPopupPanel::getWidget()Lcom/google/gwt/user/client/ui/Widget;,com.google.gwt.user.client.ui.DecoratedPopupPanel,getWidget,com/google/gwt/user/client/ui/DecoratedPopupPanel.java,144,0
 iterator_2,com.google.gwt.user.client.ui.DecoratedPopupPanel::iterator()Ljava/util/Iterator;,com.google.gwt.user.client.ui.DecoratedPopupPanel,iterator,com/google/gwt/user/client/ui/DecoratedPopupPanel.java,149,0
 remove_4,com.google.gwt.user.client.ui.DecoratedPopupPanel::remove(Lcom/google/gwt/user/client/ui/Widget;)Z,com.google.gwt.user.client.ui.DecoratedPopupPanel,remove,com/google/gwt/user/client/ui/DecoratedPopupPanel.java,154,0
-setWidget_1,com.google.gwt.user.client.ui.DecoratedPopupPanel::setWidget(Lcom/google/gwt/user/client/ui/Widget;)V,com.google.gwt.user.client.ui.DecoratedPopupPanel,setWidget,com/google/gwt/user/client/ui/DecoratedPopupPanel.java,159,0
 DecoratorPanel,,com.google.gwt.user.client.ui.DecoratorPanel,,com/google/gwt/user/client/ui/DecoratorPanel.java,84,-1
 $getCellElement,com.google.gwt.user.client.ui.DecoratorPanel::$getCellElement(Lcom/google/gwt/user/client/ui/DecoratorPanel;II)Lcom/google/gwt/user/client/Element;,com.google.gwt.user.client.ui.DecoratorPanel,$getCellElement,com/google/gwt/user/client/ui/DecoratorPanel.java,192,0
 DecoratorPanel,com.google.gwt.user.client.ui.DecoratorPanel::DecoratorPanel([Ljava/lang/String;I) <init>,com.google.gwt.user.client.ui.DecoratorPanel,DecoratorPanel,com/google/gwt/user/client/ui/DecoratorPanel.java,162,0
@@ -1277,7 +1274,7 @@ element,com.google.gwt.user.client.ui.DirectionalTextHelper::element,com.google.
 initialElementDir,com.google.gwt.user.client.ui.DirectionalTextHelper::initialElementDir,com.google.gwt.user.client.ui.DirectionalTextHelper,initialElementDir,com/google/gwt/user/client/ui/DirectionalTextHelper.java,53,-1
 textDir,com.google.gwt.user.client.ui.DirectionalTextHelper::textDir,com.google.gwt.user.client.ui.DirectionalTextHelper,textDir,com/google/gwt/user/client/ui/DirectionalTextHelper.java,90,-1
 DockPanel,,com.google.gwt.user.client.ui.DockPanel,,com/google/gwt/user/client/ui/DockPanel.java,50,-1
-$add_2,com.google.gwt.user.client.ui.DockPanel::$add(Lcom/google/gwt/user/client/ui/DockPanel;Lcom/google/gwt/user/client/ui/Widget;Lcom/google/gwt/user/client/ui/DockPanel$DockLayoutConstant;)V,com.google.gwt.user.client.ui.DockPanel,$add,com/google/gwt/user/client/ui/DockPanel.java,167,0
+$add_1,com.google.gwt.user.client.ui.DockPanel::$add(Lcom/google/gwt/user/client/ui/DockPanel;Lcom/google/gwt/user/client/ui/Widget;Lcom/google/gwt/user/client/ui/DockPanel$DockLayoutConstant;)V,com.google.gwt.user.client.ui.DockPanel,$add,com/google/gwt/user/client/ui/DockPanel.java,167,0
 $clinit_DockPanel,com.google.gwt.user.client.ui.DockPanel::$clinit()V,com.google.gwt.user.client.ui.DockPanel,$clinit,com/google/gwt/user/client/ui/DockPanel.java,50,0
 $realizeTable,com.google.gwt.user.client.ui.DockPanel::$realizeTable(Lcom/google/gwt/user/client/ui/DockPanel;)V,com.google.gwt.user.client.ui.DockPanel,$realizeTable,com/google/gwt/user/client/ui/DockPanel.java,349,0
 $setCellHorizontalAlignment_1,com.google.gwt.user.client.ui.DockPanel::$setCellHorizontalAlignment(Lcom/google/gwt/user/client/ui/DockPanel;Lcom/google/gwt/user/client/ui/Widget;Lcom/google/gwt/user/client/ui/HasHorizontalAlignment$HorizontalAlignmentConstant;)V,com.google.gwt.user.client.ui.DockPanel,$setCellHorizontalAlignment,com/google/gwt/user/client/ui/DockPanel.java,254,0
@@ -1312,7 +1309,7 @@ DockPanel$TmpRow,com.google.gwt.user.client.ui.DockPanel$TmpRow::DockPanel$TmpRo
 center,com.google.gwt.user.client.ui.DockPanel$TmpRow::center,com.google.gwt.user.client.ui.DockPanel$TmpRow,center,com/google/gwt/user/client/ui/DockPanel.java,78,-1
 tr,com.google.gwt.user.client.ui.DockPanel$TmpRow::tr,com.google.gwt.user.client.ui.DockPanel$TmpRow,tr,com/google/gwt/user/client/ui/DockPanel.java,79,-1
 FlowPanel,,com.google.gwt.user.client.ui.FlowPanel,,com/google/gwt/user/client/ui/FlowPanel.java,29,-1
-$add_3,com.google.gwt.user.client.ui.FlowPanel::$add(Lcom/google/gwt/user/client/ui/FlowPanel;Lcom/google/gwt/user/client/ui/Widget;)V,com.google.gwt.user.client.ui.FlowPanel,$add,com/google/gwt/user/client/ui/FlowPanel.java,50,0
+$add_2,com.google.gwt.user.client.ui.FlowPanel::$add(Lcom/google/gwt/user/client/ui/FlowPanel;Lcom/google/gwt/user/client/ui/Widget;)V,com.google.gwt.user.client.ui.FlowPanel,$add,com/google/gwt/user/client/ui/FlowPanel.java,50,0
 $insert_2,com.google.gwt.user.client.ui.FlowPanel::$insert(Lcom/google/gwt/user/client/ui/FlowPanel;Lcom/google/gwt/user/client/ui/Widget;I)V,com.google.gwt.user.client.ui.FlowPanel,$insert,com/google/gwt/user/client/ui/FlowPanel.java,77,0
 FlowPanel,com.google.gwt.user.client.ui.FlowPanel::FlowPanel() <init>,com.google.gwt.user.client.ui.FlowPanel,FlowPanel,com/google/gwt/user/client/ui/FlowPanel.java,33,0
 FocusWidget,,com.google.gwt.user.client.ui.FocusWidget,,com/google/gwt/user/client/ui/FocusWidget.java,88,-1
@@ -1391,7 +1388,7 @@ HasVerticalAlignment$VerticalAlignmentConstant,,com.google.gwt.user.client.ui.Ha
 HasVerticalAlignment$VerticalAlignmentConstant,com.google.gwt.user.client.ui.HasVerticalAlignment$VerticalAlignmentConstant::HasVerticalAlignment$VerticalAlignmentConstant(Ljava/lang/String;) <init>,com.google.gwt.user.client.ui.HasVerticalAlignment$VerticalAlignmentConstant,HasVerticalAlignment$VerticalAlignmentConstant,com/google/gwt/user/client/ui/HasVerticalAlignment.java,47,0
 verticalAlignString,com.google.gwt.user.client.ui.HasVerticalAlignment$VerticalAlignmentConstant::verticalAlignString,com.google.gwt.user.client.ui.HasVerticalAlignment$VerticalAlignmentConstant,verticalAlignString,com/google/gwt/user/client/ui/HasVerticalAlignment.java,45,-1
 HorizontalPanel,,com.google.gwt.user.client.ui.HorizontalPanel,,com/google/gwt/user/client/ui/HorizontalPanel.java,28,-1
-$add_4,com.google.gwt.user.client.ui.HorizontalPanel::$add(Lcom/google/gwt/user/client/ui/HorizontalPanel;Lcom/google/gwt/user/client/ui/Widget;)V,com.google.gwt.user.client.ui.HorizontalPanel,$add,com/google/gwt/user/client/ui/HorizontalPanel.java,46,0
+$add_3,com.google.gwt.user.client.ui.HorizontalPanel::$add(Lcom/google/gwt/user/client/ui/HorizontalPanel;Lcom/google/gwt/user/client/ui/Widget;)V,com.google.gwt.user.client.ui.HorizontalPanel,$add,com/google/gwt/user/client/ui/HorizontalPanel.java,46,0
 HorizontalPanel,com.google.gwt.user.client.ui.HorizontalPanel::HorizontalPanel() <init>,com.google.gwt.user.client.ui.HorizontalPanel,HorizontalPanel,com/google/gwt/user/client/ui/HorizontalPanel.java,37,0
 horzAlign,com.google.gwt.user.client.ui.HorizontalPanel::horzAlign,com.google.gwt.user.client.ui.HorizontalPanel,horzAlign,com/google/gwt/user/client/ui/HorizontalPanel.java,31,-1
 remove_8,com.google.gwt.user.client.ui.HorizontalPanel::remove(Lcom/google/gwt/user/client/ui/Widget;)Z,com.google.gwt.user.client.ui.HorizontalPanel,remove,com/google/gwt/user/client/ui/HorizontalPanel.java,81,0
@@ -1439,7 +1436,7 @@ $onAnimationComplete,com.google.gwt.user.client.ui.LayoutCommand$1::$onAnimation
 LayoutCommand$1,com.google.gwt.user.client.ui.LayoutCommand$1::LayoutCommand$1(Lcom/google/gwt/user/client/ui/LayoutCommand;) <init>,com.google.gwt.user.client.ui.LayoutCommand$1,LayoutCommand$1,com/google/gwt/user/client/ui/LayoutCommand.java,66,0
 this$01,com.google.gwt.user.client.ui.LayoutCommand$1::this$01,com.google.gwt.user.client.ui.LayoutCommand$1,this$01,com/google/gwt/user/client/ui/LayoutCommand.java,66,-1
 LayoutPanel,,com.google.gwt.user.client.ui.LayoutPanel,,com/google/gwt/user/client/ui/LayoutPanel.java,105,-1
-$add_5,com.google.gwt.user.client.ui.LayoutPanel::$add(Lcom/google/gwt/user/client/ui/LayoutPanel;Lcom/google/gwt/user/client/ui/Widget;)V,com.google.gwt.user.client.ui.LayoutPanel,$add,com/google/gwt/user/client/ui/LayoutPanel.java,133,0
+$add_4,com.google.gwt.user.client.ui.LayoutPanel::$add(Lcom/google/gwt/user/client/ui/LayoutPanel;Lcom/google/gwt/user/client/ui/Widget;)V,com.google.gwt.user.client.ui.LayoutPanel,$add,com/google/gwt/user/client/ui/LayoutPanel.java,133,0
 $insert_3,com.google.gwt.user.client.ui.LayoutPanel::$insert(Lcom/google/gwt/user/client/ui/LayoutPanel;Lcom/google/gwt/user/client/ui/Widget;I)V,com.google.gwt.user.client.ui.LayoutPanel,$insert,com/google/gwt/user/client/ui/LayoutPanel.java,186,0
 $onResize,com.google.gwt.user.client.ui.LayoutPanel::$onResize(Lcom/google/gwt/user/client/ui/LayoutPanel;)V,com.google.gwt.user.client.ui.LayoutPanel,$onResize,com/google/gwt/user/client/ui/LayoutPanel.java,204,0
 $setWidgetLeftRight,com.google.gwt.user.client.ui.LayoutPanel::$setWidgetLeftRight(Lcom/google/gwt/user/client/ui/LayoutPanel;Lcom/google/gwt/user/client/ui/Widget;DLcom/google/gwt/dom/client/Style$Unit;DLcom/google/gwt/dom/client/Style$Unit;)V,com.google.gwt.user.client.ui.LayoutPanel,$setWidgetLeftRight,com/google/gwt/user/client/ui/LayoutPanel.java,268,0
@@ -1504,7 +1501,6 @@ previewAllNativeEvents,com.google.gwt.user.client.ui.PopupPanel::previewAllNativ
 resizeAnimation,com.google.gwt.user.client.ui.PopupPanel::resizeAnimation,com.google.gwt.user.client.ui.PopupPanel,resizeAnimation,com/google/gwt/user/client/ui/PopupPanel.java,426,-1
 setHeight_0,com.google.gwt.user.client.ui.PopupPanel::setHeight(Ljava/lang/String;)V,com.google.gwt.user.client.ui.PopupPanel,setHeight,com/google/gwt/user/client/ui/PopupPanel.java,847,0
 setVisible_1,com.google.gwt.user.client.ui.PopupPanel::setVisible(Z)V,com.google.gwt.user.client.ui.PopupPanel,setVisible,com/google/gwt/user/client/ui/PopupPanel.java,947,0
-setWidget_0,com.google.gwt.user.client.ui.PopupPanel::setWidget(Lcom/google/gwt/user/client/ui/Widget;)V,com.google.gwt.user.client.ui.PopupPanel,setWidget,com/google/gwt/user/client/ui/PopupPanel.java,962,0
 setWidth_0,com.google.gwt.user.client.ui.PopupPanel::setWidth(Ljava/lang/String;)V,com.google.gwt.user.client.ui.PopupPanel,setWidth,com/google/gwt/user/client/ui/PopupPanel.java,982,0
 showing,com.google.gwt.user.client.ui.PopupPanel::showing,com.google.gwt.user.client.ui.PopupPanel,showing,com/google/gwt/user/client/ui/PopupPanel.java,393,-1
 topPosition,com.google.gwt.user.client.ui.PopupPanel::topPosition,com.google.gwt.user.client.ui.PopupPanel,topPosition,com/google/gwt/user/client/ui/PopupPanel.java,429,-1
@@ -1580,16 +1576,13 @@ RootPanel$2,com.google.gwt.user.client.ui.RootPanel$2::RootPanel$2() <init>,com.
 RootPanel$DefaultRootPanel,,com.google.gwt.user.client.ui.RootPanel$DefaultRootPanel,,com/google/gwt/user/client/ui/RootPanel.java,49,-1
 RootPanel$DefaultRootPanel,com.google.gwt.user.client.ui.RootPanel$DefaultRootPanel::RootPanel$DefaultRootPanel() <init>,com.google.gwt.user.client.ui.RootPanel$DefaultRootPanel,RootPanel$DefaultRootPanel,com/google/gwt/user/client/ui/RootPanel.java,51,0
 SimplePanel,,com.google.gwt.user.client.ui.SimplePanel,,com/google/gwt/user/client/ui/SimplePanel.java,27,-1
-$add_1,com.google.gwt.user.client.ui.SimplePanel::$add(Lcom/google/gwt/user/client/ui/SimplePanel;Lcom/google/gwt/user/client/ui/Widget;)V,com.google.gwt.user.client.ui.SimplePanel,$add,com/google/gwt/user/client/ui/SimplePanel.java,64,0
 $remove_3,com.google.gwt.user.client.ui.SimplePanel::$remove(Lcom/google/gwt/user/client/ui/SimplePanel;Lcom/google/gwt/user/client/ui/Widget;)Z,com.google.gwt.user.client.ui.SimplePanel,$remove,com/google/gwt/user/client/ui/SimplePanel.java,109,0
 $setWidget,com.google.gwt.user.client.ui.SimplePanel::$setWidget(Lcom/google/gwt/user/client/ui/SimplePanel;Lcom/google/gwt/user/client/ui/Widget;)V,com.google.gwt.user.client.ui.SimplePanel,$setWidget,com/google/gwt/user/client/ui/SimplePanel.java,137,0
 SimplePanel,com.google.gwt.user.client.ui.SimplePanel::SimplePanel() <init>,com.google.gwt.user.client.ui.SimplePanel,SimplePanel,com/google/gwt/user/client/ui/SimplePanel.java,34,0
 SimplePanel_0,com.google.gwt.user.client.ui.SimplePanel::SimplePanel(Lcom/google/gwt/dom/client/Element;) <init>,com.google.gwt.user.client.ui.SimplePanel,SimplePanel,com/google/gwt/user/client/ui/SimplePanel.java,54,0
 getContainerElement,com.google.gwt.user.client.ui.SimplePanel::getContainerElement()Lcom/google/gwt/user/client/Element;,com.google.gwt.user.client.ui.SimplePanel,getContainerElement,com/google/gwt/user/client/ui/SimplePanel.java,175,0
-getWidget,com.google.gwt.user.client.ui.SimplePanel::getWidget()Lcom/google/gwt/user/client/ui/Widget;,com.google.gwt.user.client.ui.SimplePanel,getWidget,com/google/gwt/user/client/ui/SimplePanel.java,77,0
 iterator_1,com.google.gwt.user.client.ui.SimplePanel::iterator()Ljava/util/Iterator;,com.google.gwt.user.client.ui.SimplePanel,iterator,com/google/gwt/user/client/ui/SimplePanel.java,81,0
 remove_3,com.google.gwt.user.client.ui.SimplePanel::remove(Lcom/google/gwt/user/client/ui/Widget;)Z,com.google.gwt.user.client.ui.SimplePanel,remove,com/google/gwt/user/client/ui/SimplePanel.java,109,0
-setWidget,com.google.gwt.user.client.ui.SimplePanel::setWidget(Lcom/google/gwt/user/client/ui/Widget;)V,com.google.gwt.user.client.ui.SimplePanel,setWidget,com/google/gwt/user/client/ui/SimplePanel.java,137,0
 widget,com.google.gwt.user.client.ui.SimplePanel::widget,com.google.gwt.user.client.ui.SimplePanel,widget,com/google/gwt/user/client/ui/SimplePanel.java,29,-1
 SimplePanel$1,,com.google.gwt.user.client.ui.SimplePanel$1,,com/google/gwt/user/client/ui/SimplePanel.java,84,-1
 $next_0,com.google.gwt.user.client.ui.SimplePanel$1::$next(Lcom/google/gwt/user/client/ui/SimplePanel$1;)Lcom/google/gwt/user/client/ui/Widget;,com.google.gwt.user.client.ui.SimplePanel$1,$next,com/google/gwt/user/client/ui/SimplePanel.java,92,0
@@ -1601,7 +1594,7 @@ remove_10,com.google.gwt.user.client.ui.SimplePanel$1::remove()V,com.google.gwt.
 returned,com.google.gwt.user.client.ui.SimplePanel$1::returned,com.google.gwt.user.client.ui.SimplePanel$1,returned,com/google/gwt/user/client/ui/SimplePanel.java,86,-1
 this$01,com.google.gwt.user.client.ui.SimplePanel$1::this$01,com.google.gwt.user.client.ui.SimplePanel$1,this$01,com/google/gwt/user/client/ui/SimplePanel.java,84,-1
 TabLayoutPanel,,com.google.gwt.user.client.ui.TabLayoutPanel,,com/google/gwt/user/client/ui/TabLayoutPanel.java,97,-1
-$add_6,com.google.gwt.user.client.ui.TabLayoutPanel::$add(Lcom/google/gwt/user/client/ui/TabLayoutPanel;Lcom/google/gwt/user/client/ui/Widget;Ljava/lang/String;)V,com.google.gwt.user.client.ui.TabLayoutPanel,$add,com/google/gwt/user/client/ui/TabLayoutPanel.java,293,0
+$add_5,com.google.gwt.user.client.ui.TabLayoutPanel::$add(Lcom/google/gwt/user/client/ui/TabLayoutPanel;Lcom/google/gwt/user/client/ui/Widget;Ljava/lang/String;)V,com.google.gwt.user.client.ui.TabLayoutPanel,$add,com/google/gwt/user/client/ui/TabLayoutPanel.java,293,0
 $insert_4,com.google.gwt.user.client.ui.TabLayoutPanel::$insert(Lcom/google/gwt/user/client/ui/TabLayoutPanel;Lcom/google/gwt/user/client/ui/Widget;Lcom/google/gwt/user/client/ui/TabLayoutPanel$Tab;I)V,com.google.gwt.user.client.ui.TabLayoutPanel,$insert,com/google/gwt/user/client/ui/TabLayoutPanel.java,723,0
 $insert_5,com.google.gwt.user.client.ui.TabLayoutPanel::$insert(Lcom/google/gwt/user/client/ui/TabLayoutPanel;Lcom/google/gwt/user/client/ui/Widget;Ljava/lang/String;ZI)V,com.google.gwt.user.client.ui.TabLayoutPanel,$insert,com/google/gwt/user/client/ui/TabLayoutPanel.java,496,0
 $remove_5,com.google.gwt.user.client.ui.TabLayoutPanel::$remove(Lcom/google/gwt/user/client/ui/TabLayoutPanel;I)Z,com.google.gwt.user.client.ui.TabLayoutPanel,$remove,com/google/gwt/user/client/ui/TabLayoutPanel.java,544,0
@@ -1622,13 +1615,11 @@ this$01,com.google.gwt.user.client.ui.TabLayoutPanel$1::this$01,com.google.gwt.u
 val$child2,com.google.gwt.user.client.ui.TabLayoutPanel$1::val$child2,com.google.gwt.user.client.ui.TabLayoutPanel$1,val$child2,com/google/gwt/user/client/ui/TabLayoutPanel.java,740,-1
 TabLayoutPanel$Tab,,com.google.gwt.user.client.ui.TabLayoutPanel$Tab,,com/google/gwt/user/client/ui/TabLayoutPanel.java,101,-1
 $setSelected,com.google.gwt.user.client.ui.TabLayoutPanel$Tab::$setSelected(Lcom/google/gwt/user/client/ui/TabLayoutPanel$Tab;Z)V,com.google.gwt.user.client.ui.TabLayoutPanel$Tab,$setSelected,com/google/gwt/user/client/ui/TabLayoutPanel.java,139,0
-$setWidget_2,com.google.gwt.user.client.ui.TabLayoutPanel$Tab::$setWidget(Lcom/google/gwt/user/client/ui/TabLayoutPanel$Tab;Lcom/google/gwt/user/client/ui/Widget;)V,com.google.gwt.user.client.ui.TabLayoutPanel$Tab,$setWidget,com/google/gwt/user/client/ui/TabLayoutPanel.java,148,0
 TabLayoutPanel$Tab,com.google.gwt.user.client.ui.TabLayoutPanel$Tab::TabLayoutPanel$Tab(Lcom/google/gwt/user/client/ui/TabLayoutPanel;Lcom/google/gwt/user/client/ui/Widget;) <init>,com.google.gwt.user.client.ui.TabLayoutPanel$Tab,TabLayoutPanel$Tab,com/google/gwt/user/client/ui/TabLayoutPanel.java,105,0
 getContainerElement_2,com.google.gwt.user.client.ui.TabLayoutPanel$Tab::getContainerElement()Lcom/google/gwt/user/client/Element;,com.google.gwt.user.client.ui.TabLayoutPanel$Tab,getContainerElement,com/google/gwt/user/client/ui/TabLayoutPanel.java,155,0
 inner,com.google.gwt.user.client.ui.TabLayoutPanel$Tab::inner,com.google.gwt.user.client.ui.TabLayoutPanel$Tab,inner,com/google/gwt/user/client/ui/TabLayoutPanel.java,102,-1
 remove_12,com.google.gwt.user.client.ui.TabLayoutPanel$Tab::remove(Lcom/google/gwt/user/client/ui/Widget;)Z,com.google.gwt.user.client.ui.TabLayoutPanel$Tab,remove,com/google/gwt/user/client/ui/TabLayoutPanel.java,121,0
 replacingWidget,com.google.gwt.user.client.ui.TabLayoutPanel$Tab::replacingWidget,com.google.gwt.user.client.ui.TabLayoutPanel$Tab,replacingWidget,com/google/gwt/user/client/ui/TabLayoutPanel.java,103,-1
-setWidget_2,com.google.gwt.user.client.ui.TabLayoutPanel$Tab::setWidget(Lcom/google/gwt/user/client/ui/Widget;)V,com.google.gwt.user.client.ui.TabLayoutPanel$Tab,setWidget,com/google/gwt/user/client/ui/TabLayoutPanel.java,148,0
 this$01,com.google.gwt.user.client.ui.TabLayoutPanel$Tab::this$01,com.google.gwt.user.client.ui.TabLayoutPanel$Tab,this$01,com/google/gwt/user/client/ui/TabLayoutPanel.java,101,-1
 TabLayoutPanel$TabbedDeckLayoutPanel,,com.google.gwt.user.client.ui.TabLayoutPanel$TabbedDeckLayoutPanel,,com/google/gwt/user/client/ui/TabLayoutPanel.java,173,-1
 TabLayoutPanel$TabbedDeckLayoutPanel,com.google.gwt.user.client.ui.TabLayoutPanel$TabbedDeckLayoutPanel::TabLayoutPanel$TabbedDeckLayoutPanel(Lcom/google/gwt/user/client/ui/TabLayoutPanel;) <init>,com.google.gwt.user.client.ui.TabLayoutPanel$TabbedDeckLayoutPanel,TabLayoutPanel$TabbedDeckLayoutPanel,com/google/gwt/user/client/ui/TabLayoutPanel.java,173,0
@@ -1685,7 +1676,7 @@ ValueBoxBase$TextAlignment$3,com.google.gwt.user.client.ui.ValueBoxBase$TextAlig
 ValueBoxBase$TextAlignment$4,,com.google.gwt.user.client.ui.ValueBoxBase$TextAlignment$4,,com/google/gwt/user/client/ui/ValueBoxBase.java,74,-1
 ValueBoxBase$TextAlignment$4,com.google.gwt.user.client.ui.ValueBoxBase$TextAlignment$4::ValueBoxBase$TextAlignment$4(Ljava/lang/String;I) <init>,com.google.gwt.user.client.ui.ValueBoxBase$TextAlignment$4,ValueBoxBase$TextAlignment$4,com/google/gwt/user/client/ui/ValueBoxBase.java,74,0
 VerticalPanel,,com.google.gwt.user.client.ui.VerticalPanel,,com/google/gwt/user/client/ui/VerticalPanel.java,28,-1
-$add_7,com.google.gwt.user.client.ui.VerticalPanel::$add(Lcom/google/gwt/user/client/ui/VerticalPanel;Lcom/google/gwt/user/client/ui/Widget;)V,com.google.gwt.user.client.ui.VerticalPanel,$add,com/google/gwt/user/client/ui/VerticalPanel.java,43,0
+$add_6,com.google.gwt.user.client.ui.VerticalPanel::$add(Lcom/google/gwt/user/client/ui/VerticalPanel;Lcom/google/gwt/user/client/ui/Widget;)V,com.google.gwt.user.client.ui.VerticalPanel,$add,com/google/gwt/user/client/ui/VerticalPanel.java,43,0
 VerticalPanel,com.google.gwt.user.client.ui.VerticalPanel::VerticalPanel() <init>,com.google.gwt.user.client.ui.VerticalPanel,VerticalPanel,com/google/gwt/user/client/ui/VerticalPanel.java,37,0
 horzAlign,com.google.gwt.user.client.ui.VerticalPanel::horzAlign,com.google.gwt.user.client.ui.VerticalPanel,horzAlign,com/google/gwt/user/client/ui/VerticalPanel.java,31,-1
 remove_14,com.google.gwt.user.client.ui.VerticalPanel::remove(Lcom/google/gwt/user/client/ui/Widget;)Z,com.google.gwt.user.client.ui.VerticalPanel,remove,com/google/gwt/user/client/ui/VerticalPanel.java,83,0
@@ -1716,7 +1707,7 @@ onUnload,com.google.gwt.user.client.ui.Widget::onUnload()V,com.google.gwt.user.c
 parent_0,com.google.gwt.user.client.ui.Widget::parent,com.google.gwt.user.client.ui.Widget,parent,com/google/gwt/user/client/ui/Widget.java,59,-1
 sinkEvents,com.google.gwt.user.client.ui.Widget::sinkEvents(I)V,com.google.gwt.user.client.ui.Widget,sinkEvents,com/google/gwt/user/client/ui/Widget.java,239,0
 WidgetCollection,,com.google.gwt.user.client.ui.WidgetCollection,,com/google/gwt/user/client/ui/WidgetCollection.java,34,-1
-$add_8,com.google.gwt.user.client.ui.WidgetCollection::$add(Lcom/google/gwt/user/client/ui/WidgetCollection;Lcom/google/gwt/user/client/ui/Widget;)V,com.google.gwt.user.client.ui.WidgetCollection,$add,com/google/gwt/user/client/ui/WidgetCollection.java,89,0
+$add_7,com.google.gwt.user.client.ui.WidgetCollection::$add(Lcom/google/gwt/user/client/ui/WidgetCollection;Lcom/google/gwt/user/client/ui/Widget;)V,com.google.gwt.user.client.ui.WidgetCollection,$add,com/google/gwt/user/client/ui/WidgetCollection.java,89,0
 $get_0,com.google.gwt.user.client.ui.WidgetCollection::$get(Lcom/google/gwt/user/client/ui/WidgetCollection;I)Lcom/google/gwt/user/client/ui/Widget;,com.google.gwt.user.client.ui.WidgetCollection,$get,com/google/gwt/user/client/ui/WidgetCollection.java,110,0
 $indexOf,com.google.gwt.user.client.ui.WidgetCollection::$indexOf(Lcom/google/gwt/user/client/ui/WidgetCollection;Lcom/google/gwt/user/client/ui/Widget;)I,com.google.gwt.user.client.ui.WidgetCollection,$indexOf,com/google/gwt/user/client/ui/WidgetCollection.java,125,0
 $insert_6,com.google.gwt.user.client.ui.WidgetCollection::$insert(Lcom/google/gwt/user/client/ui/WidgetCollection;Lcom/google/gwt/user/client/ui/Widget;I)V,com.google.gwt.user.client.ui.WidgetCollection,$insert,com/google/gwt/user/client/ui/WidgetCollection.java,143,0
@@ -2037,8 +2028,8 @@ equals_5,java.util.AbstractSet::equals(Ljava/lang/Object;)Z,java.util.AbstractSe
 hashCode_7,java.util.AbstractSet::hashCode()I,java.util.AbstractSet,hashCode,com/google/gwt/emul/java/util/AbstractSet.java,48,0
 ArrayList,,java.util.ArrayList,,com/google/gwt/emul/java/util/ArrayList.java,45,-1
 $$init,java.util.ArrayList::$$init(Ljava/util/ArrayList;)V,java.util.ArrayList,$$init,com/google/gwt/emul/java/util/ArrayList.java,45,0
-$add_9,java.util.ArrayList::$add(Ljava/util/ArrayList;ILjava/lang/Object;)V,java.util.ArrayList,$add,com/google/gwt/emul/java/util/ArrayList.java,93,0
-$add_10,java.util.ArrayList::$add(Ljava/util/ArrayList;Ljava/lang/Object;)Z,java.util.ArrayList,$add,com/google/gwt/emul/java/util/ArrayList.java,87,0
+$add_8,java.util.ArrayList::$add(Ljava/util/ArrayList;ILjava/lang/Object;)V,java.util.ArrayList,$add,com/google/gwt/emul/java/util/ArrayList.java,93,0
+$add_9,java.util.ArrayList::$add(Ljava/util/ArrayList;Ljava/lang/Object;)Z,java.util.ArrayList,$add,com/google/gwt/emul/java/util/ArrayList.java,87,0
 $get_2,java.util.ArrayList::$get(Ljava/util/ArrayList;I)Ljava/lang/Object;,java.util.ArrayList,$get,com/google/gwt/emul/java/util/ArrayList.java,140,0
 $indexOf_1,java.util.ArrayList::$indexOf(Ljava/util/ArrayList;Ljava/lang/Object;I)I,java.util.ArrayList,$indexOf,com/google/gwt/emul/java/util/ArrayList.java,227,0
 $insertAt,java.util.ArrayList::$insertAt(Ljava/util/ArrayList;I[Ljava/lang/Object;)V,java.util.ArrayList,$insertAt,com/google/gwt/emul/java/util/ArrayList.java,57,0
@@ -2096,7 +2087,7 @@ $equals_0,java.util.HashMap::$equals(Ljava/util/HashMap;Ljava/lang/Object;Ljava/
 $getHashCode,java.util.HashMap::$getHashCode(Ljava/util/HashMap;Ljava/lang/Object;)I,java.util.HashMap,$getHashCode,com/google/gwt/emul/java/util/HashMap.java,72,0
 HashMap,java.util.HashMap::HashMap() <init>,java.util.HashMap,HashMap,com/google/gwt/emul/java/util/HashMap.java,47,0
 HashSet,,java.util.HashSet,,com/google/gwt/emul/java/util/HashSet.java,27,-1
-$add_11,java.util.HashSet::$add(Ljava/util/HashSet;Ljava/lang/Object;)Z,java.util.HashSet,$add,com/google/gwt/emul/java/util/HashSet.java,67,0
+$add_10,java.util.HashSet::$add(Ljava/util/HashSet;Ljava/lang/Object;)Z,java.util.HashSet,$add,com/google/gwt/emul/java/util/HashSet.java,67,0
 $contains_0,java.util.HashSet::$contains(Ljava/util/HashSet;Ljava/lang/Object;)Z,java.util.HashSet,$contains,com/google/gwt/emul/java/util/HashSet.java,82,0
 $remove_14,java.util.HashSet::$remove(Ljava/util/HashSet;Ljava/lang/Object;)Z,java.util.HashSet,$remove,com/google/gwt/emul/java/util/HashSet.java,97,0
 HashSet,java.util.HashSet::HashSet() <init>,java.util.HashSet,HashSet,com/google/gwt/emul/java/util/HashSet.java,39,0
@@ -2207,20 +2198,17 @@ NoSuchElementException,,java.util.NoSuchElementException,,com/google/gwt/emul/ja
 NoSuchElementException,java.util.NoSuchElementException::NoSuchElementException() <init>,java.util.NoSuchElementException,NoSuchElementException,com/google/gwt/emul/java/util/NoSuchElementException.java,25,0
 equals_9,java.util.Objects::equals(Ljava/lang/Object;Ljava/lang/Object;)Z,java.util.Objects,equals,com/google/gwt/emul/java/util/Objects.java,83,0
 hashCode_13,java.util.Objects::hashCode(Ljava/lang/Object;)I,java.util.Objects,hashCode,com/google/gwt/emul/java/util/Objects.java,87,0
-Configuration,,mhcs.client.Configuration,,mhcs/client/Configuration.java,9,-1
-Configuration,mhcs.client.Configuration::Configuration(Ljava/lang/String;) <init>,mhcs.client.Configuration,Configuration,mhcs/client/Configuration.java,70,0
-id_0,mhcs.client.Configuration::id,mhcs.client.Configuration,id,mhcs/client/Configuration.java,11,-1
-toString_15,mhcs.client.Configuration::toString()Ljava/lang/String;,mhcs.client.Configuration,toString,mhcs/client/Configuration.java,85,0
-setType,mhcs.client.Controller::setType(Lcom/google/gwt/user/client/ui/TextBox;Lcom/google/gwt/user/client/ui/ListBox;)V,mhcs.client.Controller,setType,mhcs/client/Controller.java,21,0
-Controller$1,,mhcs.client.Controller$1,,mhcs/client/Controller.java,85,-1
-Controller$1,mhcs.client.Controller$1::Controller$1() <init>,mhcs.client.Controller$1,Controller$1,mhcs/client/Controller.java,85,0
-onClick_0,mhcs.client.Controller$1::onClick(Lcom/google/gwt/event/dom/client/ClickEvent;)V,mhcs.client.Controller$1,onClick,mhcs/client/Controller.java,86,0
-val$typeDialogBox1,mhcs.client.Controller$1::val$typeDialogBox1,mhcs.client.Controller$1,val$typeDialogBox1,mhcs/client/Controller.java,85,-1
-$clinit_Handlers,mhcs.client.Handlers::$clinit()V,mhcs.client.Handlers,$clinit,mhcs/client/Handlers.java,9,0
-varModule,mhcs.client.Handlers::varModule,mhcs.client.Handlers,varModule,mhcs/client/Handlers.java,17,-1
-Handlers$1,,mhcs.client.Handlers$1,,mhcs/client/Handlers.java,27,-1
-Handlers$1,mhcs.client.Handlers$1::Handlers$1() <init>,mhcs.client.Handlers$1,Handlers$1,mhcs/client/Handlers.java,27,0
-onClick_1,mhcs.client.Handlers$1::onClick(Lcom/google/gwt/event/dom/client/ClickEvent;)V,mhcs.client.Handlers$1,onClick,mhcs/client/Handlers.java,28,0
+Configuration,,mhcs.client.Configuration,,mhcs/client/Configuration.java,12,-1
+Configuration,mhcs.client.Configuration::Configuration(Ljava/lang/String;) <init>,mhcs.client.Configuration,Configuration,mhcs/client/Configuration.java,73,0
+id_0,mhcs.client.Configuration::id,mhcs.client.Configuration,id,mhcs/client/Configuration.java,14,-1
+modules,mhcs.client.Configuration::modules,mhcs.client.Configuration,modules,mhcs/client/Configuration.java,13,-1
+toString_15,mhcs.client.Configuration::toString()Ljava/lang/String;,mhcs.client.Configuration,toString,mhcs/client/Configuration.java,88,0
+$clinit_Controller,mhcs.client.Controller::$clinit()V,mhcs.client.Controller,$clinit,mhcs/client/Controller.java,17,0
+setType,mhcs.client.Controller::setType(Lcom/google/gwt/user/client/ui/TextBox;Lcom/google/gwt/user/client/ui/ListBox;)V,mhcs.client.Controller,setType,mhcs/client/Controller.java,29,0
+Controller$1,,mhcs.client.Controller$1,,mhcs/client/Controller.java,93,-1
+Controller$1,mhcs.client.Controller$1::Controller$1() <init>,mhcs.client.Controller$1,Controller$1,mhcs/client/Controller.java,93,0
+onClick_0,mhcs.client.Controller$1::onClick(Lcom/google/gwt/event/dom/client/ClickEvent;)V,mhcs.client.Controller$1,onClick,mhcs/client/Controller.java,94,0
+val$typeDialogBox1,mhcs.client.Controller$1::val$typeDialogBox1,mhcs.client.Controller$1,val$typeDialogBox1,mhcs/client/Controller.java,93,-1
 Map,,mhcs.client.Map,,mhcs/client/Map.java,17,-1
 $updateGrid,mhcs.client.Map::$updateGrid(Lmhcs/client/Map;)V,mhcs.client.Map,$updateGrid,mhcs/client/Map.java,67,0
 Map_0,mhcs.client.Map::Map(II) <init>,mhcs.client.Map,Map,mhcs/client/Map.java,51,0
@@ -2283,12 +2271,12 @@ y_0,mhcs.client.Point::y,mhcs.client.Point,y,mhcs/client/Point.java,11,-1
 $onModuleLoad_0,mhcs.client.View::$onModuleLoad(Lmhcs/client/View;)V,mhcs.client.View,$onModuleLoad,mhcs/client/View.java,53,0
 View$1,,mhcs.client.View$1,,mhcs/client/View.java,166,-1
 View$1,mhcs.client.View$1::View$1(Lmhcs/client/View;) <init>,mhcs.client.View$1,View$1,mhcs/client/View.java,166,0
-onClick_2,mhcs.client.View$1::onClick(Lcom/google/gwt/event/dom/client/ClickEvent;)V,mhcs.client.View$1,onClick,mhcs/client/View.java,168,0
+onClick_1,mhcs.client.View$1::onClick(Lcom/google/gwt/event/dom/client/ClickEvent;)V,mhcs.client.View$1,onClick,mhcs/client/View.java,168,0
 val$passwordEntry2,mhcs.client.View$1::val$passwordEntry2,mhcs.client.View$1,val$passwordEntry2,mhcs/client/View.java,166,-1
 val$tabPanel3,mhcs.client.View$1::val$tabPanel3,mhcs.client.View$1,val$tabPanel3,mhcs/client/View.java,166,-1
 View$1$1,,mhcs.client.View$1$1,,mhcs/client/View.java,199,-1
 View$1$1,mhcs.client.View$1$1::View$1$1(Lmhcs/client/View$1;) <init>,mhcs.client.View$1$1,View$1$1,mhcs/client/View.java,199,0
-onClick_3,mhcs.client.View$1$1::onClick(Lcom/google/gwt/event/dom/client/ClickEvent;)V,mhcs.client.View$1$1,onClick,mhcs/client/View.java,200,0
+onClick_2,mhcs.client.View$1$1::onClick(Lcom/google/gwt/event/dom/client/ClickEvent;)V,mhcs.client.View$1$1,onClick,mhcs/client/View.java,200,0
 val$dialogBox2,mhcs.client.View$1$1::val$dialogBox2,mhcs.client.View$1$1,val$dialogBox2,mhcs/client/View.java,199,-1
 View$2,,mhcs.client.View$2,,mhcs/client/View.java,240,-1
 $onChange,mhcs.client.View$2::$onChange(Lmhcs/client/View$2;Lcom/google/gwt/event/dom/client/ChangeEvent;)V,mhcs.client.View$2,$onChange,mhcs/client/View.java,243,0
@@ -2302,11 +2290,11 @@ val$xTextBox7,mhcs.client.View$2::val$xTextBox7,mhcs.client.View$2,val$xTextBox7
 val$yTextBox8,mhcs.client.View$2::val$yTextBox8,mhcs.client.View$2,val$yTextBox8,mhcs/client/View.java,240,-1
 View$3,,mhcs.client.View$3,,mhcs/client/View.java,288,-1
 View$3,mhcs.client.View$3::View$3(Lmhcs/client/View;) <init>,mhcs.client.View$3,View$3,mhcs/client/View.java,288,0
-onClick_4,mhcs.client.View$3::onClick(Lcom/google/gwt/event/dom/client/ClickEvent;)V,mhcs.client.View$3,onClick,mhcs/client/View.java,291,0
+onClick_3,mhcs.client.View$3::onClick(Lcom/google/gwt/event/dom/client/ClickEvent;)V,mhcs.client.View$3,onClick,mhcs/client/View.java,291,0
 val$modulesListBox2,mhcs.client.View$3::val$modulesListBox2,mhcs.client.View$3,val$modulesListBox2,mhcs/client/View.java,288,-1
 View$4,,mhcs.client.View$4,,mhcs/client/View.java,370,-1
 View$4,mhcs.client.View$4::View$4(Lmhcs/client/View;) <init>,mhcs.client.View$4,View$4,mhcs/client/View.java,370,0
-onClick_5,mhcs.client.View$4::onClick(Lcom/google/gwt/event/dom/client/ClickEvent;)V,mhcs.client.View$4,onClick,mhcs/client/View.java,372,0
+onClick_4,mhcs.client.View$4::onClick(Lcom/google/gwt/event/dom/client/ClickEvent;)V,mhcs.client.View$4,onClick,mhcs/client/View.java,372,0
 val$modulesEastCondition6,mhcs.client.View$4::val$modulesEastCondition6,mhcs.client.View$4,val$modulesEastCondition6,mhcs/client/View.java,370,-1
 val$modulesEastId3,mhcs.client.View$4::val$modulesEastId3,mhcs.client.View$4,val$modulesEastId3,mhcs/client/View.java,370,-1
 val$modulesEastOrientation7,mhcs.client.View$4::val$modulesEastOrientation7,mhcs.client.View$4,val$modulesEastOrientation7,mhcs/client/View.java,370,-1
@@ -2325,11 +2313,11 @@ stockStore,mhcs.storage.Load::stockStore,mhcs.storage.Load,stockStore,mhcs/stora
 $clinit_Model,mhcs.storage.Model::$clinit()V,mhcs.storage.Model,$clinit,mhcs/storage/Model.java,12,0
 findListNumber,mhcs.storage.Model::findListNumber(Lmhcs/client/Module;)I,mhcs.storage.Model,findListNumber,mhcs/storage/Model.java,86,0
 getModuleList,mhcs.storage.Model::getModuleList()Ljava/util/List;,mhcs.storage.Model,getModuleList,mhcs/storage/Model.java,114,0
-moduleList,mhcs.storage.Model::moduleList,mhcs.storage.Model,moduleList,mhcs/storage/Model.java,235,-1
+moduleList,mhcs.storage.Model::moduleList,mhcs.storage.Model,moduleList,mhcs/storage/Model.java,245,-1
 removeModuleFromId,mhcs.storage.Model::removeModuleFromId(I)V,mhcs.storage.Model,removeModuleFromId,mhcs/storage/Model.java,24,0
 saveModule,mhcs.storage.Model::saveModule(Lmhcs/client/Module;)V,mhcs.storage.Model,saveModule,mhcs/storage/Model.java,50,0
-toLoad,mhcs.storage.Model::toLoad,mhcs.storage.Model,toLoad,mhcs/storage/Model.java,233,-1
-toSave_0,mhcs.storage.Model::toSave,mhcs.storage.Model,toSave,mhcs/storage/Model.java,234,-1
+toLoad,mhcs.storage.Model::toLoad,mhcs.storage.Model,toLoad,mhcs/storage/Model.java,243,-1
+toSave_0,mhcs.storage.Model::toSave,mhcs.storage.Model,toSave,mhcs/storage/Model.java,244,-1
 Save,,mhcs.storage.Save,,mhcs/storage/Save.java,12,-1
 $removeAllModules,mhcs.storage.Save::$removeAllModules(Lmhcs/storage/Save;)V,mhcs.storage.Save,$removeAllModules,mhcs/storage/Save.java,43,0
 $saveModules,mhcs.storage.Save::$saveModules(Lmhcs/storage/Save;Ljava/util/List;)V,mhcs.storage.Save,$saveModules,mhcs/storage/Save.java,21,0
