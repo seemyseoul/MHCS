@@ -4,6 +4,7 @@ import java.util.Arrays;
 
 import mhcs.client.Map;
 import mhcs.storage.Model;
+import mhcs.storage.TestCases;
 
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.dom.client.Style.Unit;
@@ -147,6 +148,8 @@ public class View implements EntryPoint {
     final String strConfigListBoxHeight = "650px";
     final String strModulesCenterWidth = "800px";
     final String strConfigMapWidth = "1000px";
+    
+    final TestCases test = new TestCases();
 
     final Map mapDisplay = new Map(100,50);    
     
