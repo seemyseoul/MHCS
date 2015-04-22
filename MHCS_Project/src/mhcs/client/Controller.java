@@ -2,6 +2,8 @@ package mhcs.client;
 
 import mhcs.storage.Model;
 
+import com.google.gwt.event.dom.client.ChangeEvent;
+import com.google.gwt.event.dom.client.ChangeHandler;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.i18n.client.LocaleInfo;
@@ -155,5 +157,15 @@ public class Controller {
 
 		return add;
 	} // addButtom
+	
+	
+	public static ChangeHandler testCases(final ListBox lb){
+		return new ChangeHandler() {
+			public void onChange(ChangeEvent event) {
+				int testNum = lb.getSelectedIndex();
+			}
+		};
+	}
+	
 	
 } // Controller

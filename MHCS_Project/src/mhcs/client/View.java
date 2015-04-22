@@ -525,7 +525,7 @@ public class View implements EntryPoint {
     testCases.addItem("Test Case 10");  
     testCases.setVisibleItemCount(1);
     testCases.setWidth(strWidth); 
-    //Add Listener???
+    
 
     passwordEnable.setText("Password Enabled");
     passwordEnable.setHeight(strSettingsHeight);
