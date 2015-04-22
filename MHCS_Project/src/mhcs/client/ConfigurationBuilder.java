@@ -91,14 +91,23 @@ public class ConfigurationBuilder {
 		return configurations;
 	}
 
-	
+	/**
+	 * Generates configurations in an H-Shape
+	 * @return List<Configuration> list of configurations with an H-shape
+	 */
 	public final List<Configuration> generateHConfigurations()
 	{
 		ArrayList<Configuration> configs = new ArrayList<Configuration>();
-		Module center 
+		Module center = Model.getModuleClosestTo(Model.getCenterOfMass(),ModuleType.PLAIN);
+		
+		
 		return configs;
 	}
 	
+	/**
+	 * Generates configurations in a Plus shape
+	 * @return List<Configuration> list of configurations with a plus shape
+	 */
 	public final List<Configuration> generatePlusConfigurations()
 	{
 		ArrayList<Configuration> configs = new ArrayList<Configuration>();
@@ -106,6 +115,10 @@ public class ConfigurationBuilder {
 		return configs;
 	}
 	
+	/**
+	 * Generates configurations in a L-shape
+	 * @return List<Configuration> list of configurations with an L-shape
+	 */
 	public final List<Configuration> generateLConfigurations()
 	{
 		ArrayList<Configuration> configs = new ArrayList<Configuration>();
