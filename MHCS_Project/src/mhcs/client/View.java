@@ -126,7 +126,7 @@ public class View implements EntryPoint {
     final TextArea moduleDetails = new TextArea();
     final TextArea moduleRequirements = new TextArea();
     final TextBox userNameEntry = new TextBox();
-    final TextBox passwordEntry = new PasswordTextBox();
+    final PasswordTextBox passwordEntry = new PasswordTextBox();
     final TextBox modulesEastId = new TextBox();
     final TextBox xTextBox = new TextBox();
     final TextBox yTextBox = new TextBox();
