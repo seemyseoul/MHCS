@@ -99,7 +99,14 @@ public class ConfigurationBuilder {
 	{
 		ArrayList<Configuration> configs = new ArrayList<Configuration>();
 		Module center = Model.getModuleClosestTo(Model.getCenterOfMass(),ModuleType.PLAIN);
+		center.setInUse(true);
 		
+		int numPlainModules = Model.getUnusedModulesOfType(ModuleType.PLAIN).size();
+		
+		for (int i=0;i<(numPlainModules / 3);i++)
+		{
+			
+		}
 		
 		return configs;
 	}

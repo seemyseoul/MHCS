@@ -12,12 +12,13 @@ import mhcs.client.Point;
 public class Model {
 
 	public static void addModule(Module toAdd) {
-		moduleList.add(toAdd);
+		moduleList.add(toAdd.clone());
 		toSave.saveModules(moduleList);
 	}
 
+	
 	public static void addConfiguraiton(Configuration toAdd) {
-		configList.add(toAdd);
+		configList.add(toAdd.clone());
 		toSave.saveConfigurations(configList);
 	}
 
@@ -25,6 +26,18 @@ public class Model {
 	{
 		Module m = new Module(ModuleType.PLAIN,id,new Point(0,0),ModuleStatus.BEYONDREPAIR,2,true);
 		removeModule(m);
+	}
+	
+	public static Module getModuleFromId(int id)
+	{
+		for (Module m : moduleList)
+		{
+			if(m.getId() == id)
+			{
+				return m.clone();
+			}
+		}
+		return null;
 	}
 	
 	public static void removeModule(Module toRemove) {
@@ -47,17 +60,30 @@ public class Model {
 		toSave.saveModules(moduleList);
 	}
 
-	public static void saveModule(Module toSave)
+	public static boolean saveModule(Module toSave)
 	{
 		for (Module m : getModuleList())
 		{
 			if(m.getId() == toSave.getId())
 			{
 				editModule(toSave);
-				return;
+				if(getModuleFromId(toSave.getId()) != null)
+				{
+					return true;
+				}
+				else{
+					return false;
+				}
 			}
 		}
 		addModule(toSave);
+		if(getModuleFromId(toSave.getId()) != null)
+		{
+			return true;
+		}
+		else{
+			return false;
+		}
 	}
 	
 	public static void editConfiguration(Configuration toEdit) {
@@ -229,6 +255,10 @@ public class Model {
 	 */
 	public final static Module getModuleClosestTo(final Point p, ModuleType type) {
 		List<Module> modules = getUnusedModulesOfType(type);
+		if(modules.size() == 0)
+		{
+			return null;
+		}
 		Module closestModule = modules.get(0);
 
 		for (Module m : modules) {

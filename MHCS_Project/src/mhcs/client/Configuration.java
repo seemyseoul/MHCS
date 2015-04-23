@@ -9,10 +9,17 @@ import java.util.List;
  * @author user
  *
  */
-public final class Configuration {
+public final class Configuration implements Cloneable{
 	private List<Module> modules = new ArrayList<Module>();
 	private int id = -1;
 
+	public Configuration clone()
+	{
+		return new Configuration(this.toString());
+	}
+	
+	
+	
 	/**
 	 * Gets the modules that make up a configuration.
 	 * 

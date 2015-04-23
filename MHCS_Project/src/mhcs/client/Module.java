@@ -8,7 +8,7 @@ import mhcs.storage.Load;
  * @author Naples1
  *
  */
-public class Module {
+public class Module implements Cloneable {
 
 	private int id;
 	private int orientation;
@@ -17,6 +17,11 @@ public class Module {
 	private ModuleStatus status;
 	private boolean inUse;
 
+	public Module clone()
+	{
+		return new Module(this.toString());
+	}
+	
 	/**
 	 * This constructor creates a Module based on the string taken in from HTML5
 	 * Storage.
