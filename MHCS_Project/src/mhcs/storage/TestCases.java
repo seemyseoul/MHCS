@@ -25,11 +25,10 @@ public class TestCases {
 	
 	
 	
-	public void TestCaseChoice(int choice){
+	public static void TestCaseChoice(int choice){
 	
 		String proxy ="http://www.d.umn.edu/~abrooks/Proxy.php?url=";
-//		String url = proxy+"http://www.d.umn.edu/~abrooks/SomeTests.php?q=1";
-		String url = "http://www.d.umn.edu/~abrooks/SomeTests.php?q=" + Integer.toString(choice);		
+		String url = proxy+"http://www.d.umn.edu/~abrooks/SomeTests.php?q=" + Integer.toString(choice);		
 		url = URL.encode(url);
 	
 		RequestBuilder builder = new RequestBuilder(RequestBuilder.GET, url);
@@ -56,7 +55,7 @@ public class TestCases {
 	} // Close Constructor
 		
 		
-	public void update(String rt){
+	public static void update(String rt){
 			Window.alert(rt);
 		}
 	
