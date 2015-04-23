@@ -247,6 +247,7 @@ public class View implements EntryPoint {
 	for (Module m : Model.getModuleList())
 	{
 		modulesListBox.addItem("Module #" + m.getId());
+		successSound.play(); 
 	}
     
 	modulesListBox.addChangeHandler(new ChangeHandler(){
@@ -397,7 +398,9 @@ public class View implements EntryPoint {
 			inUse = false;
 			
 			if(Model.saveModule(new Module(type,id,coordinates,status,orientation,inUse))) {
-                successSound.play(); 
+                /* 
+                 * Add pop up for minimum config
+                 */
 			} // if
 			else {
 				errorSound.play();
