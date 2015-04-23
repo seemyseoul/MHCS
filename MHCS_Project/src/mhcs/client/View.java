@@ -137,7 +137,6 @@ public class View implements EntryPoint {
     final int intPanelSpacing0 = 5;
     final int intPanelSpacing1 = 10;
     final String strSettingsHeight = "20px";
-    final String strSettingsButtonHeight = "35px";
     final String strButtonHeight = "50px"; 
     final String strSettingsButtonWidth = "130px";
     final String strModulesEastPanelWidthHalf = "140px";
@@ -171,66 +170,8 @@ public class View implements EntryPoint {
     loginPanel.add(new Label("Password:"));
     loginPanel.add(passwordEntry);
     loginPanel.add(submitButton);
-    submitButton.addClickHandler(new ClickHandler(){
-        @Override
-        public void onClick(ClickEvent event) {
-            if(passwordEntry.getText().equals("guest"))
-            {
-                RootLayoutPanel.get().clear();
-                RootLayoutPanel.get().add(tabPanel);
-            } // if
-            else
-            {
-            	// Create a dialog box and set the caption text
-                final DialogBox dialogBox = new DialogBox();
-                dialogBox.setText("Login Error");
-
-                // Create a table to layout the content
-                VerticalPanel dialogContents = new VerticalPanel();
-                dialogContents.setSpacing(4);
-                dialogBox.setWidget(dialogContents);
-
-                // Add some text to the top of the dialog
-                HTML details = new HTML("You have entered an incorrect username and/or password.");
-                dialogContents.add(details);
-                dialogContents.setCellHorizontalAlignment(
-                    details, HasHorizontalAlignment.ALIGN_CENTER);
-
-                // Add an image to the dialog
-                Image image = new Image("images/error");
-                image.setHeight(strSettingsButtonWidth);
-                image.setWidth(strModulesButtonWidth);
-                dialogContents.add(image);
-                dialogContents.setCellHorizontalAlignment(
-                    image, HasHorizontalAlignment.ALIGN_CENTER);
-
-                // Add a close button at the bottom of the dialog
-                Button closeButton = new Button(
-                    "Close", new ClickHandler() {
-                      public void onClick(ClickEvent event) {
-                        dialogBox.hide();
-                      }
-                    });
-                dialogContents.add(closeButton);
-                if (LocaleInfo.getCurrentLocale().isRTL()) {
-                  dialogContents.setCellHorizontalAlignment(
-                      closeButton, HasHorizontalAlignment.ALIGN_LEFT);
-
-                } // if 
-                else {
-                  dialogContents.setCellHorizontalAlignment(
-                      closeButton, HasHorizontalAlignment.ALIGN_RIGHT);
-                } // else
-                
-                dialogBox.center();
-                dialogBox.show();
-                errorSound.play(); 
-                
-            }  // else
-            
-        } // onCLick
-
-    });
+    submitButton.addClickHandler(Controller.submitHandler(passwordEntry,
+    		tabPanel, strSettingsButtonWidth, strModulesButtonWidth, errorSound));
     
     /*
      *  Modules
@@ -249,45 +190,9 @@ public class View implements EntryPoint {
 		modulesListBox.addItem("Module #" + m.getId()); 
 	}
     
-	modulesListBox.addChangeHandler(new ChangeHandler(){
-
-		@Override
-		public void onChange(ChangeEvent event) {
-			String moduleString = modulesListBox.getItemText(modulesListBox.getSelectedIndex());
-			moduleString = moduleString.substring(8);
-			Module module = null;
-			for (Module m : Model.getModuleList())
-			{
-				if (m.getId() == Integer.parseInt(moduleString))
-				{
-					module = m;
-				}
-			}
-			if (module != null)
-			{
-				// Set id
-				modulesEastId.setValue(Integer.toString(module.getId()));
-				// Set type
-				modulesEastType.setSelectedIndex(
-					Arrays.asList(Module.moduleStrings)
-					.indexOf(module.getType().toUserString())
-				);
-				// Set Condition
-				String[] conditionStrings = { "Usable","Damaged","Unusable" };
-				modulesEastCondition.setSelectedIndex(
-					Arrays.asList(conditionStrings)
-					.indexOf(module.getStatus().toUserString())
-				);
-				// Set orientation
-				modulesEastOrientation.setSelectedIndex(module.getOrientation());
-				// Set X-Coordinate
-				xTextBox.setValue(Integer.toString(module.getCoordinates().getX()));
-				// Set Y-Coordinate
-				yTextBox.setValue(Integer.toString(module.getCoordinates().getY()));
-			}
-		}
-		
-	});
+	modulesListBox.addChangeHandler(Controller.changeHandler(modulesListBox,
+			modulesEastId, modulesEastType, modulesEastCondition,
+			modulesEastOrientation, xTextBox, yTextBox));
     
     /* Fill Horizontal Panel */
     modulesAddButton.setHeight(strButtonHeight);
@@ -297,17 +202,7 @@ public class View implements EntryPoint {
     modulesAddButton.setText("ADD");
     modulesRemoveButton.setText("REMOVE");
     
-    modulesRemoveButton.addClickHandler(new ClickHandler(){
-
-		@Override
-		public void onClick(ClickEvent event) {
-			String moduleString = modulesListBox.getItemText(modulesListBox.getSelectedIndex());
-			moduleString = moduleString.substring(8);
-			Model.removeModuleFromId(Integer.parseInt(moduleString));
-			modulesListBox.removeItem(modulesListBox.getSelectedIndex());
-		}
-    	
-    });
+    modulesRemoveButton.addClickHandler(Controller.removeButton(modulesListBox));
     
     modulesWestHorPanel.add(modulesAddButton);
     modulesWestHorPanel.add(modulesRemoveButton);
@@ -523,9 +418,9 @@ public class View implements EntryPoint {
     /* Horizontal Panels */
     addUserButton.setText("Add User");
     removeUserButton.setText("Remove User");
-    addUserButton.setHeight(strSettingsButtonHeight);
+    addUserButton.setHeight(strSettingsHeight);
     addUserButton.setWidth(strSettingsButtonWidth);
-    removeUserButton.setHeight(strSettingsButtonHeight);
+    removeUserButton.setHeight(strSettingsHeight);
     removeUserButton.setWidth(strSettingsButtonWidth);
     settingsUserPanel.add(users);
     settingsUserPanel.add(addUserButton);
@@ -550,7 +445,7 @@ public class View implements EntryPoint {
     passwordEnable.setText("Password Enabled");
     passwordEnable.setHeight(strSettingsHeight);
     changePasswordButton.setText("Change Password");
-    changePasswordButton.setHeight(strSettingsButtonHeight);
+    changePasswordButton.setHeight(strSettingsHeight);
     changePasswordButton.setWidth(strSettingsButtonWidth);
     settingsPassPanel.add(passwordEnable);
     settingsPassPanel.add(changePasswordButton);

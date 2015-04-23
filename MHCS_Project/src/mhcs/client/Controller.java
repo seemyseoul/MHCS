@@ -1,5 +1,7 @@
 package mhcs.client;
 
+import java.util.Arrays;
+
 import mhcs.storage.Model;
 import mhcs.storage.TestCases;
 
@@ -8,12 +10,16 @@ import com.google.gwt.event.dom.client.ChangeHandler;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.i18n.client.LocaleInfo;
+import com.google.gwt.media.client.Audio;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.DialogBox;
 import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.HasHorizontalAlignment;
 import com.google.gwt.user.client.ui.Image;
 import com.google.gwt.user.client.ui.ListBox;
+import com.google.gwt.user.client.ui.PasswordTextBox;
+import com.google.gwt.user.client.ui.RootLayoutPanel;
+import com.google.gwt.user.client.ui.TabLayoutPanel;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.VerticalPanel;
 
@@ -137,17 +143,16 @@ public class Controller {
 		}; // ClickHandler
 
 		return add;
-	} // addButtom
+	} // addButton
 	
 	/**
-	 * Click handler for modules tab add button
+	 * Click handler for modules tab remove button
 	 * 
-	 * @param module
-	 *            of type Module
+	 * @param ListBox
 	 * @return add ClickHandler
 	 */ 
 	public static ClickHandler removeButton(final ListBox modulesListBox) {
-		ClickHandler add = new ClickHandler() {
+		ClickHandler remove = new ClickHandler() {
 			public void onClick(ClickEvent event) { 
 				String moduleString = modulesListBox.getItemText(modulesListBox.getSelectedIndex());
 				moduleString = moduleString.substring(8);
@@ -156,8 +161,115 @@ public class Controller {
 			} // onClick
 		}; // ClickHandler
 
-		return add;
+		return remove;
 	} // addButtom
+	
+	public static ChangeHandler changeHandler(ListBox modulesListBox, TextBox modulesEastId,
+			ListBox modulesEastType, ListBox modulesEastCondition, ListBox modulesEastOrientation,
+			TextBox xTextBox, TextBox yTextBox) {
+		ChangeHandler change = new ChangeHandler(){
+			public void onChange(ChangeEvent event) {
+				String moduleString = modulesListBox.getItemText(modulesListBox.getSelectedIndex());
+				moduleString = moduleString.substring(8);
+				Module module = null;
+				for (Module m : Model.getModuleList())
+				{
+					if (m.getId() == Integer.parseInt(moduleString))
+					{
+						module = m;
+					}
+				}
+				if (module != null)
+				{
+					// Set id
+					modulesEastId.setValue(Integer.toString(module.getId()));
+					// Set type
+					modulesEastType.setSelectedIndex(
+						Arrays.asList(Module.moduleStrings)
+						.indexOf(module.getType().toUserString())
+					);
+					// Set Condition
+					String[] conditionStrings = { "Usable","Damaged","Unusable" };
+					modulesEastCondition.setSelectedIndex(
+						Arrays.asList(conditionStrings)
+						.indexOf(module.getStatus().toUserString())
+					);
+					// Set orientation
+					modulesEastOrientation.setSelectedIndex(module.getOrientation());
+					// Set X-Coordinate
+					xTextBox.setValue(Integer.toString(module.getCoordinates().getX()));
+					// Set Y-Coordinate
+					yTextBox.setValue(Integer.toString(module.getCoordinates().getY()));
+				} // if
+			} // onChange
+			
+		};
+		
+		return change;
+	} // changeHandler
+	
+	public static ClickHandler submitHandler (PasswordTextBox passwordEntry, TabLayoutPanel tabPanel,
+			String strSettingsButtonWidth, String strModulesButtonWidth, Audio errorSound) {
+		ClickHandler submit = new ClickHandler(){
+	        @Override
+	        public void onClick(ClickEvent event) {
+	            if(passwordEntry.getText().equals("guest"))
+	            {
+	                RootLayoutPanel.get().clear();
+	                RootLayoutPanel.get().add(tabPanel);
+	            } // if
+	            else
+	            {
+	            	// Create a dialog box and set the caption text
+	                final DialogBox dialogBox = new DialogBox();
+	                dialogBox.setText("Login Error");
+
+	                // Create a table to layout the content
+	                VerticalPanel dialogContents = new VerticalPanel();
+	                dialogContents.setSpacing(4);
+	                dialogBox.setWidget(dialogContents);
+
+	                // Add some text to the top of the dialog
+	                HTML details = new HTML("You have entered an incorrect username and/or password.");
+	                dialogContents.add(details);
+	                dialogContents.setCellHorizontalAlignment(
+	                    details, HasHorizontalAlignment.ALIGN_CENTER);
+
+	                // Add an image to the dialog
+	                Image image = new Image("images/error");
+	                image.setHeight(strSettingsButtonWidth);
+	                image.setWidth(strModulesButtonWidth);
+	                dialogContents.add(image);
+	                dialogContents.setCellHorizontalAlignment(
+	                    image, HasHorizontalAlignment.ALIGN_CENTER);
+
+	                // Add a close button at the bottom of the dialog
+	                Button closeButton = new Button(
+	                    "Close", new ClickHandler() {
+	                      public void onClick(ClickEvent event) {
+	                        dialogBox.hide();
+	                      }
+	                    });
+	                dialogContents.add(closeButton);
+	                if (LocaleInfo.getCurrentLocale().isRTL()) {
+	                  dialogContents.setCellHorizontalAlignment(
+	                      closeButton, HasHorizontalAlignment.ALIGN_LEFT);
+
+	                } // if 
+	                else {
+	                  dialogContents.setCellHorizontalAlignment(
+	                      closeButton, HasHorizontalAlignment.ALIGN_RIGHT);
+	                } // else
+	                
+	                dialogBox.center();
+	                dialogBox.show();
+	                errorSound.play(); 
+	            }  // else
+	        } // onCLick
+	    };
+	    
+	    return submit;
+	} // submitHandler
 	
 	
 	public static ChangeHandler testCases(final ListBox lb){
