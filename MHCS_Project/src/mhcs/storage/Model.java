@@ -148,6 +148,24 @@ public class Model {
 		ArrayList<Module> moduleList1 = new ArrayList<Module>(moduleList);
 		return (List<Module>) moduleList1.clone();
 	}
+	
+	/**
+	 * Returns the list of unused modules.
+	 * 
+	 * @return the moduleList. (It should return a copy as to not allow changes
+	 *         to be made accidentally)
+	 */
+	@SuppressWarnings("unchecked")
+	public static List<Module> getUnusedModuleList() {
+		ArrayList<Module> moduleList1 = new ArrayList<Module>(moduleList);
+		for (Module m : moduleList1)
+		{
+			if (m.isInUse()){
+				moduleList1.remove(m);
+			}
+		}
+		return moduleList1;
+	}
 
 	/**
 	 * Returns the module list.
@@ -262,6 +280,30 @@ public class Model {
 	 */
 	public final static Module getModuleClosestTo(final Point p, ModuleType type) {
 		List<Module> modules = getUnusedModulesOfType(type);
+		if(modules.size() == 0)
+		{
+			return null;
+		}
+		Module closestModule = modules.get(0);
+
+		for (Module m : modules) {
+			if (m.getCoordinates().distanceTo(p) < closestModule
+					.getCoordinates().distanceTo(p)) {
+				closestModule = m;
+			}
+		}
+		return closestModule;
+	}
+	
+	/**
+	 * This method returns the closest UNUSED module of any type to module m.
+	 *
+	 * @param p
+	 *            Point to get closest module to.
+	 * @return module closest to point p.
+	 */
+	public final static Module getModuleClosestTo(final Point p) {
+		List<Module> modules = getUnusedModuleList();
 		if(modules.size() == 0)
 		{
 			return null;

@@ -105,7 +105,7 @@ public class ConfigurationBuilder {
 		Point center = centerModule.getCoordinates();
 		for (int i=0;i<(numPlainModules / 3);i++)
 		{
-			center.getX()+
+			//
 		}
 		
 		return configs;
