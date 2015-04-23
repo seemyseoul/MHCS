@@ -153,9 +153,9 @@ public class View implements EntryPoint {
     final String strConfigMapWidth = "1000px";
     
     /* Create sounds */
-    Audio successSound = Audio.createIfSupported();
+    final Audio successSound = Audio.createIfSupported();
     successSound.setSrc("sounds/success");
-    Audio errorSound = Audio.createIfSupported();
+    final Audio errorSound = Audio.createIfSupported();
     errorSound.setSrc("sounds/error");
     
     final TestCases test = new TestCases();
