@@ -293,9 +293,10 @@ public class View implements EntryPoint {
 			
 			if(Model.saveModule(new Module(type,id,coordinates,status,orientation,inUse))) {
 				successSound.play();
-				/* 
-                 * Add pop up for minimum config
-                 */
+				if (ConfigurationBuilder.minConfigPossible())
+				{
+					// popup here
+				}
 			} // if
 			else {
 				errorSound.play();

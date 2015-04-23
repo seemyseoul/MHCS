@@ -23,7 +23,7 @@ public class ConfigurationBuilder {
 	 * @return boolean value representing whether or not a minimum configuration
 	 *         can be found.
 	 */
-	public boolean minConfigPossible() {
+	public static boolean minConfigPossible() {
 		// Load loader = new Load();
 		// Module[] modules = loader.getModules();
 		Module[] modules = (Module[]) Model.getModuleList().toArray();
@@ -98,14 +98,14 @@ public class ConfigurationBuilder {
 	public final List<Configuration> generateHConfigurations()
 	{
 		ArrayList<Configuration> configs = new ArrayList<Configuration>();
-		Module center = Model.getModuleClosestTo(Model.getCenterOfMass(),ModuleType.PLAIN);
-		center.setInUse(true);
+		Module centerModule = Model.getModuleClosestTo(Model.getCenterOfMass(),ModuleType.PLAIN);
+		centerModule.setInUse(true);
 		
 		int numPlainModules = Model.getUnusedModulesOfType(ModuleType.PLAIN).size();
-		
+		Point center = centerModule.getCoordinates();
 		for (int i=0;i<(numPlainModules / 3);i++)
 		{
-			
+			center.getX()+
 		}
 		
 		return configs;
