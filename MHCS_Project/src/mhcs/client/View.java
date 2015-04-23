@@ -220,7 +220,7 @@ public class View implements EntryPoint {
                 /* Create error sound */
                 Audio errorSound = Audio.createIfSupported();
                 errorSound.setSrc("sounds/error");
-                errorSound.play();
+                errorSound.play(); 
                 
             }  // else
             
