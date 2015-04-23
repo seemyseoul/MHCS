@@ -156,6 +156,8 @@ public class View implements EntryPoint {
     successSound.setSrc("sounds/success");
     final Audio errorSound = Audio.createIfSupported();
     errorSound.setSrc("sounds/error");
+    final Audio minConfigSound = Audio.createIfSupported();
+    minConfigSound.setSrc("sounds/minConfig");
     
     final TestCases test = new TestCases();
 
@@ -294,8 +296,51 @@ public class View implements EntryPoint {
 			if(Model.saveModule(new Module(type,id,coordinates,status,orientation,inUse))) {
 				successSound.play();
 				if(ConfigurationBuilder.minConfigPossible()){
-					
-				}
+					// Create a dialog box and set the caption text
+	                final DialogBox minConfigAlert = new DialogBox();
+	                minConfigAlert.setText("Minimum Configuration Available");
+
+	                // Create a table to layout the content
+	                VerticalPanel dialogContents = new VerticalPanel();
+	                dialogContents.setSpacing(4);
+	                minConfigAlert.setWidget(dialogContents);
+
+	                // Add some text to the top of the dialog
+	                HTML details = new HTML("Go to Configurations tab to view the minimum configuration available.");
+	                dialogContents.add(details);
+	                dialogContents.setCellHorizontalAlignment(
+	                    details, HasHorizontalAlignment.ALIGN_CENTER);
+
+	                // Add an image to the dialog
+	                Image image = new Image("images/yay");
+	                image.setHeight(strSettingsButtonWidth);
+	                image.setWidth(strModulesButtonWidth);
+	                dialogContents.add(image);
+	                dialogContents.setCellHorizontalAlignment(
+	                    image, HasHorizontalAlignment.ALIGN_CENTER);
+
+	                // Add a close button at the bottom of the dialog
+	                Button closeButton = new Button(
+	                    "Close", new ClickHandler() {
+	                      public void onClick(ClickEvent event) {
+	                    	  minConfigAlert.hide();
+	                      }
+	                    });
+	                dialogContents.add(closeButton);
+	                if (LocaleInfo.getCurrentLocale().isRTL()) {
+	                  dialogContents.setCellHorizontalAlignment(
+	                      closeButton, HasHorizontalAlignment.ALIGN_LEFT);
+
+	                } // if 
+	                else {
+	                  dialogContents.setCellHorizontalAlignment(
+	                      closeButton, HasHorizontalAlignment.ALIGN_RIGHT);
+	                } // else
+	                
+	                minConfigAlert.center();
+	                minConfigAlert.show();
+	                minConfigSound.play();
+	            } // if
 			} // if
 			else {
 				errorSound.play();
