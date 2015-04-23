@@ -7,12 +7,14 @@ import mhcs.storage.Model;
 import mhcs.storage.TestCases;
 
 import com.google.gwt.core.client.EntryPoint;
+import com.google.gwt.dom.client.AudioElement;
 import com.google.gwt.dom.client.Style.Unit;
 import com.google.gwt.event.dom.client.ChangeEvent;
 import com.google.gwt.event.dom.client.ChangeHandler;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.i18n.client.LocaleInfo;
+import com.google.gwt.media.client.Audio;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.CheckBox;
 import com.google.gwt.user.client.ui.DialogBox;
@@ -129,7 +131,7 @@ public class View implements EntryPoint {
     final TextBox xTextBox = new TextBox();
     final TextBox yTextBox = new TextBox();
     
-    final String strDockPanelWidth = "1500px";
+    final String strWidth1 = "1500px";
     final String strDockPanelSouth = "Naples Spring 2015";
     final int intPanelBorder = 2;
     final int intPanelSpacing0 = 5;
@@ -157,10 +159,10 @@ public class View implements EntryPoint {
     tabPanel.setAnimationDuration(1000);
     tabPanel.getElement().getStyle().setMarginBottom(10.0, Unit.PX);
 
-    loginPanel.setHeight("1500px");
-    loginPanel.add(new Label("username:"));
+    loginPanel.setHeight(strWidth1);
+    loginPanel.add(new Label("Username:"));
     loginPanel.add(userNameEntry);
-    loginPanel.add(new Label("password:"));
+    loginPanel.add(new Label("Password:"));
     loginPanel.add(passwordEntry);
     loginPanel.add(submitButton);
     submitButton.addClickHandler(new ClickHandler(){
@@ -175,7 +177,7 @@ public class View implements EntryPoint {
             {
             	// Create a dialog box and set the caption text
                 final DialogBox dialogBox = new DialogBox();
-                dialogBox.setText("Password Error");
+                dialogBox.setText("Login Error");
 
                 // Create a table to layout the content
                 VerticalPanel dialogContents = new VerticalPanel();
@@ -183,13 +185,13 @@ public class View implements EntryPoint {
                 dialogBox.setWidget(dialogContents);
 
                 // Add some text to the top of the dialog
-                HTML details = new HTML("You have entered an incorrect password.");
+                HTML details = new HTML("You have entered an incorrect username and/or password.");
                 dialogContents.add(details);
                 dialogContents.setCellHorizontalAlignment(
                     details, HasHorizontalAlignment.ALIGN_CENTER);
 
                 // Add an image to the dialog
-                Image image = new Image("images/passwordError");
+                Image image = new Image("images/error");
                 dialogContents.add(image);
                 dialogContents.setCellHorizontalAlignment(
                     image, HasHorizontalAlignment.ALIGN_CENTER);
@@ -214,6 +216,12 @@ public class View implements EntryPoint {
                 
                 dialogBox.center();
                 dialogBox.show();
+                
+                /* Create error sound */
+                Audio errorSound = Audio.createIfSupported();
+                errorSound.setSrc("sounds/error");
+                errorSound.play();
+                
             }  // else
             
         } // onCLick
@@ -410,7 +418,7 @@ public class View implements EntryPoint {
     modulesDock.setSpacing(intPanelSpacing0);
     modulesDock.setHorizontalAlignment(DockPanel.ALIGN_CENTER);
     modulesDock.setBorderWidth(intPanelBorder);
-    modulesDock.setSize(strDockPanelWidth, strHeight);
+    modulesDock.setSize(strWidth1, strHeight);
 
     /* Add panels to Dock */
     modulesDock.add(new HTML("Modules"), DockPanel.NORTH);
@@ -483,7 +491,7 @@ public class View implements EntryPoint {
     configDock.setSpacing(intPanelSpacing0);
     configDock.setHorizontalAlignment(DockPanel.ALIGN_CENTER);
     configDock.setBorderWidth(intPanelBorder);
-    configDock.setSize(strDockPanelWidth, strHeight);
+    configDock.setSize(strWidth1, strHeight);
 
     /* Add to dock */
     configDock.add(new HTML("Configurations"), DockPanel.NORTH);
