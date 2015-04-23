@@ -105,7 +105,16 @@ public class ConfigurationBuilder {
 		Point center = centerModule.getCoordinates();
 		for (int i=0;i<(numPlainModules / 3);i++)
 		{
-			//
+			Module closestRightPlain = Model.getModuleClosestTo(new Point(center.getX()+i,center.getY()),ModuleType.PLAIN);
+			if (closestRightPlain != null)
+			{
+				closestRightPlain.setCoordinates(new Point(center.getX()+i,center.getY()));
+			}
+			Module closestLeftPlain = Model.getModuleClosestTo(new Point(center.getX()-i,center.getY()),ModuleType.PLAIN);
+			if (closestLeftPlain != null)
+			{
+				closestLeftPlain.setCoordinates(new Point(center.getX()-i,center.getY()));
+			}
 		}
 		
 		return configs;
