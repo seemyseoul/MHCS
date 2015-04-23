@@ -57,6 +57,10 @@ public class TestCases {
 		
 	public static void update(String rt){
 			Window.alert(rt);
+			
+			
+			
+			
 		}
 	
 	

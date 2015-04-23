@@ -831,7 +831,7 @@ Ljava_util_InternalJsStringMap_2_classLit,com.google.gwt.lang.ClassLiteralHolder
 Ljava_util_Map$Entry_2_classLit,com.google.gwt.lang.ClassLiteralHolder::Ljava_util_Map$Entry_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Ljava_util_Map$Entry_2_classLit,com/google/gwt/emul/java/util/Map.java,29,-1
 Ljava_util_NoSuchElementException_2_classLit,com.google.gwt.lang.ClassLiteralHolder::Ljava_util_NoSuchElementException_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Ljava_util_NoSuchElementException_2_classLit,com/google/gwt/emul/java/util/NoSuchElementException.java,23,-1
 Lmhcs_client_Configuration_2_classLit,com.google.gwt.lang.ClassLiteralHolder::Lmhcs_client_Configuration_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lmhcs_client_Configuration_2_classLit,mhcs/client/Configuration.java,12,-1
-Lmhcs_client_Controller$1_2_classLit,com.google.gwt.lang.ClassLiteralHolder::Lmhcs_client_Controller$1_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lmhcs_client_Controller$1_2_classLit,mhcs/client/Controller.java,93,-1
+Lmhcs_client_Controller$1_2_classLit,com.google.gwt.lang.ClassLiteralHolder::Lmhcs_client_Controller$1_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lmhcs_client_Controller$1_2_classLit,mhcs/client/Controller.java,96,-1
 Lmhcs_client_Map_2_classLit,com.google.gwt.lang.ClassLiteralHolder::Lmhcs_client_Map_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lmhcs_client_Map_2_classLit,mhcs/client/Map.java,17,-1
 Lmhcs_client_ModuleStatus_2_classLit,com.google.gwt.lang.ClassLiteralHolder::Lmhcs_client_ModuleStatus_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lmhcs_client_ModuleStatus_2_classLit,mhcs/client/ModuleStatus.java,9,-1
 Lmhcs_client_ModuleType_2_classLit,com.google.gwt.lang.ClassLiteralHolder::Lmhcs_client_ModuleType_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lmhcs_client_ModuleType_2_classLit,mhcs/client/ModuleType.java,9,-1
@@ -2193,12 +2193,12 @@ Configuration,mhcs.client.Configuration::Configuration(Ljava/lang/String;) <init
 id_0,mhcs.client.Configuration::id,mhcs.client.Configuration,id,mhcs/client/Configuration.java,14,-1
 modules,mhcs.client.Configuration::modules,mhcs.client.Configuration,modules,mhcs/client/Configuration.java,13,-1
 toString_15,mhcs.client.Configuration::toString()Ljava/lang/String;,mhcs.client.Configuration,toString,mhcs/client/Configuration.java,88,0
-$clinit_Controller,mhcs.client.Controller::$clinit()V,mhcs.client.Controller,$clinit,mhcs/client/Controller.java,17,0
-setType,mhcs.client.Controller::setType(Lcom/google/gwt/user/client/ui/TextBox;Lcom/google/gwt/user/client/ui/ListBox;)V,mhcs.client.Controller,setType,mhcs/client/Controller.java,29,0
-Controller$1,,mhcs.client.Controller$1,,mhcs/client/Controller.java,93,-1
-Controller$1,mhcs.client.Controller$1::Controller$1() <init>,mhcs.client.Controller$1,Controller$1,mhcs/client/Controller.java,93,0
-onClick_0,mhcs.client.Controller$1::onClick(Lcom/google/gwt/event/dom/client/ClickEvent;)V,mhcs.client.Controller$1,onClick,mhcs/client/Controller.java,94,0
-val$typeDialogBox1,mhcs.client.Controller$1::val$typeDialogBox1,mhcs.client.Controller$1,val$typeDialogBox1,mhcs/client/Controller.java,93,-1
+$clinit_Controller,mhcs.client.Controller::$clinit()V,mhcs.client.Controller,$clinit,mhcs/client/Controller.java,20,0
+setType,mhcs.client.Controller::setType(Lcom/google/gwt/user/client/ui/TextBox;Lcom/google/gwt/user/client/ui/ListBox;)V,mhcs.client.Controller,setType,mhcs/client/Controller.java,32,0
+Controller$1,,mhcs.client.Controller$1,,mhcs/client/Controller.java,96,-1
+Controller$1,mhcs.client.Controller$1::Controller$1() <init>,mhcs.client.Controller$1,Controller$1,mhcs/client/Controller.java,96,0
+onClick_0,mhcs.client.Controller$1::onClick(Lcom/google/gwt/event/dom/client/ClickEvent;)V,mhcs.client.Controller$1,onClick,mhcs/client/Controller.java,97,0
+val$typeDialogBox1,mhcs.client.Controller$1::val$typeDialogBox1,mhcs.client.Controller$1,val$typeDialogBox1,mhcs/client/Controller.java,96,-1
 Map,,mhcs.client.Map,,mhcs/client/Map.java,17,-1
 $updateGrid,mhcs.client.Map::$updateGrid(Lmhcs/client/Map;)V,mhcs.client.Map,$updateGrid,mhcs/client/Map.java,67,0
 Map_0,mhcs.client.Map::Map(II) <init>,mhcs.client.Map,Map,mhcs/client/Map.java,51,0

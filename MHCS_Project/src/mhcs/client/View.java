@@ -533,7 +533,7 @@ public class View implements EntryPoint {
     testCases.addItem("Test Case 10");  
     testCases.setVisibleItemCount(1);
     testCases.setWidth(strWidth); 
-    
+    testCases.addChangeHandler(Controller.testCases(testCases));    
 
     passwordEnable.setText("Password Enabled");
     passwordEnable.setHeight(strSettingsHeight);
