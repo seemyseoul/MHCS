@@ -160,7 +160,7 @@ public class Controller {
 		}; // ClickHandler
 	} // addButtom
 	
-	public static ChangeHandler changeHandler(final ListBox modulesListBox, final TextBox modulesEastId,
+	public static ChangeHandler modulesListBoxHandler(final ListBox modulesListBox, final TextBox modulesEastId,
 			final ListBox modulesEastType, final ListBox modulesEastCondition, final ListBox modulesEastOrientation,
 			final TextBox xTextBox, final TextBox yTextBox) {
 		return new ChangeHandler(){
