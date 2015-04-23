@@ -263,7 +263,7 @@ public class Controller {
 	                
 	                dialogBox.center();
 	                dialogBox.show();
-	                errorSound.play(); 
+	                errorSound.play();
 	            }  // else
 	        } // onCLick
 	    };

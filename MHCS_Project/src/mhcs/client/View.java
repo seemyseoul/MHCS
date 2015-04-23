@@ -293,10 +293,9 @@ public class View implements EntryPoint {
 			
 			if(Model.saveModule(new Module(type,id,coordinates,status,orientation,inUse))) {
 				successSound.play();
-				if (ConfigurationBuilder.minConfigPossible())
-				{
-					// popup here
-				}
+				/* 
+                 * Add pop up for minimum config
+                 */
 			} // if
 			else {
 				errorSound.play();
@@ -506,4 +505,4 @@ public class View implements EntryPoint {
     RootLayoutPanel.get().add(loginPanel);
 
   } // OnModuleLoad
-} // MHCS
+} // View
