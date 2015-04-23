@@ -1,5 +1,7 @@
 package mhcs.storage;
 
+import mhcs.client.Module;
+
 import com.google.gwt.http.client.Request;
 import com.google.gwt.http.client.RequestBuilder;
 import com.google.gwt.http.client.RequestCallback;
@@ -43,7 +45,7 @@ public class TestCases {
 						update(rt); //METHOD CALL TO DO SOMETHING WITH RESPONSE TEXT
 					} 
 					else {
-						Window.alert("Couldn't retrieve JSON (" + response.getStatusText()+ ")");
+						Window.alert("Couldn't retrieve JSON (" + response.getStatusCode()+ ")");
 					}
 				}
 			});
@@ -57,6 +59,13 @@ public class TestCases {
 		
 	public static void update(String rt){
 			Window.alert(rt);
+			
+
+			
+			
+			
+			
+			Module tempModule = new Module();
 			
 			
 			

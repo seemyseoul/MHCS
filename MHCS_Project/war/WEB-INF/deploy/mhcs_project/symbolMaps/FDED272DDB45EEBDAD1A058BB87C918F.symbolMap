@@ -1,5 +1,5 @@
-# { 1 }
-# { 'user.agent' : 'ie9' }
+# { 2 }
+# { 'user.agent' : 'ie10' }
 # jsName, jsniIdent, className, memberName, sourceUri, sourceLine, fragmentNumber
 Animation,,com.google.gwt.animation.client.Animation,,com/google/gwt/animation/client/Animation.java,27,-1
 $cancel,com.google.gwt.animation.client.Animation::$cancel(Lcom/google/gwt/animation/client/Animation;)V,com.google.gwt.animation.client.Animation,$cancel,com/google/gwt/animation/client/Animation.java,105,0
@@ -150,11 +150,14 @@ $clinit_StackTraceCreator$CollectorModern,com.google.gwt.core.client.impl.StackT
 collect_0,com.google.gwt.core.client.impl.StackTraceCreator$CollectorModern::collect(Ljava/lang/Object;Ljava/lang/Object;)V,com.google.gwt.core.client.impl.StackTraceCreator$CollectorModern,collect,com/google/gwt/core/client/impl/StackTraceCreator.java,172,0
 StackTraceCreator$CollectorModernNoSourceMap,,com.google.gwt.core.client.impl.StackTraceCreator$CollectorModernNoSourceMap,,com/google/gwt/core/client/impl/StackTraceCreator.java,306,-1
 StackTraceCreator$CollectorModernNoSourceMap,com.google.gwt.core.client.impl.StackTraceCreator$CollectorModernNoSourceMap::StackTraceCreator$CollectorModernNoSourceMap() <init>,com.google.gwt.core.client.impl.StackTraceCreator$CollectorModernNoSourceMap,StackTraceCreator$CollectorModernNoSourceMap,com/google/gwt/core/client/impl/StackTraceCreator.java,306,0
+checkCriticalArgument,com.google.gwt.core.shared.impl.InternalPreconditions::checkCriticalArgument(ZLjava/lang/Object;)V,com.google.gwt.core.shared.impl.InternalPreconditions,checkCriticalArgument,com/google/gwt/core/shared/impl/InternalPreconditions.java,103,0
 checkCriticalElement,com.google.gwt.core.shared.impl.InternalPreconditions::checkCriticalElement(Z)V,com.google.gwt.core.shared.impl.InternalPreconditions,checkCriticalElement,com/google/gwt/core/shared/impl/InternalPreconditions.java,57,0
 checkElementIndex,com.google.gwt.core.shared.impl.InternalPreconditions::checkElementIndex(II)V,com.google.gwt.core.shared.impl.InternalPreconditions,checkElementIndex,com/google/gwt/core/shared/impl/InternalPreconditions.java,177,0
 checkNotNull,com.google.gwt.core.shared.impl.InternalPreconditions::checkNotNull(Ljava/lang/Object;)Ljava/lang/Object;,com.google.gwt.core.shared.impl.InternalPreconditions,checkNotNull,com/google/gwt/core/shared/impl/InternalPreconditions.java,148,0
 checkPositionIndex,com.google.gwt.core.shared.impl.InternalPreconditions::checkPositionIndex(II)V,com.google.gwt.core.shared.impl.InternalPreconditions,checkPositionIndex,com/google/gwt/core/shared/impl/InternalPreconditions.java,187,0
 checkState,com.google.gwt.core.shared.impl.InternalPreconditions::checkState(Z)V,com.google.gwt.core.shared.impl.InternalPreconditions,checkState,com/google/gwt/core/shared/impl/InternalPreconditions.java,129,0
+checkState_0,com.google.gwt.core.shared.impl.InternalPreconditions::checkState(ZLjava/lang/Object;)V,com.google.gwt.core.shared.impl.InternalPreconditions,checkState,com/google/gwt/core/shared/impl/InternalPreconditions.java,139,0
+AudioElement,,com.google.gwt.dom.client.AudioElement,,com/google/gwt/dom/client/AudioElement.java,30,-1
 BodyElement,,com.google.gwt.dom.client.BodyElement,,com/google/gwt/dom/client/BodyElement.java,27,-1
 ButtonElement,,com.google.gwt.dom.client.ButtonElement,,com/google/gwt/dom/client/ButtonElement.java,26,-1
 $createInputElement,com.google.gwt.dom.client.DOMImpl::$createInputElement(Lcom/google/gwt/dom/client/DOMImpl;Lcom/google/gwt/dom/client/Document;Ljava/lang/String;)Lcom/google/gwt/dom/client/InputElement;,com.google.gwt.dom.client.DOMImpl,$createInputElement,com/google/gwt/dom/client/DOMImpl.java,61,0
@@ -210,6 +213,7 @@ indexOfName,com.google.gwt.dom.client.Element::indexOfName(Ljava/lang/String;Lja
 is_0,com.google.gwt.dom.client.Element::is(Lcom/google/gwt/core/client/JavaScriptObject;)Z,com.google.gwt.dom.client.Element,is,com/google/gwt/dom/client/Element.java,76,0
 trimClassName,com.google.gwt.dom.client.Element::trimClassName(Ljava/lang/String;)Ljava/lang/String;,com.google.gwt.dom.client.Element,trimClassName,com/google/gwt/dom/client/Element.java,602,0
 EventTarget,,com.google.gwt.dom.client.EventTarget,,com/google/gwt/dom/client/EventTarget.java,35,-1
+HeadElement,,com.google.gwt.dom.client.HeadElement,,com/google/gwt/dom/client/HeadElement.java,26,-1
 ImageElement,,com.google.gwt.dom.client.ImageElement,,com/google/gwt/dom/client/ImageElement.java,26,-1
 $setSrc,com.google.gwt.dom.client.ImageElement::$setSrc(Lcom/google/gwt/dom/client/ImageElement;Ljava/lang/String;)V,com.google.gwt.dom.client.ImageElement,$setSrc,com/google/gwt/dom/client/ImageElement.java,154,0
 InputElement,,com.google.gwt.dom.client.InputElement,,com/google/gwt/dom/client/InputElement.java,31,-1
@@ -221,9 +225,11 @@ $setDefaultChecked,com.google.gwt.dom.client.InputElement::$setDefaultChecked(Lc
 $setDisabled,com.google.gwt.dom.client.InputElement::$setDisabled(Lcom/google/gwt/dom/client/InputElement;Z)V,com.google.gwt.dom.client.InputElement,$setDisabled,com/google/gwt/dom/client/InputElement.java,334,0
 LabelElement,,com.google.gwt.dom.client.LabelElement,,com/google/gwt/dom/client/LabelElement.java,26,-1
 $setHtmlFor,com.google.gwt.dom.client.LabelElement::$setHtmlFor(Lcom/google/gwt/dom/client/LabelElement;Ljava/lang/String;)V,com.google.gwt.dom.client.LabelElement,$setHtmlFor,com/google/gwt/dom/client/LabelElement.java,115,0
+MediaElement,,com.google.gwt.dom.client.MediaElement,,com/google/gwt/dom/client/MediaElement.java,26,-1
 NativeEvent,,com.google.gwt.dom.client.NativeEvent,,com/google/gwt/dom/client/NativeEvent.java,24,-1
 Node,,com.google.gwt.dom.client.Node,,com/google/gwt/dom/client/Node.java,26,-1
 $appendChild,com.google.gwt.dom.client.Node::$appendChild(Lcom/google/gwt/dom/client/Node;Lcom/google/gwt/dom/client/Node;)Lcom/google/gwt/dom/client/Node;,com.google.gwt.dom.client.Node,$appendChild,com/google/gwt/dom/client/Node.java,77,0
+$insertBefore,com.google.gwt.dom.client.Node::$insertBefore(Lcom/google/gwt/dom/client/Node;Lcom/google/gwt/dom/client/Node;Lcom/google/gwt/dom/client/Node;)Lcom/google/gwt/dom/client/Node;,com.google.gwt.dom.client.Node,$insertBefore,com/google/gwt/dom/client/Node.java,255,0
 $removeChild,com.google.gwt.dom.client.Node::$removeChild(Lcom/google/gwt/dom/client/Node;Lcom/google/gwt/dom/client/Node;)Lcom/google/gwt/dom/client/Node;,com.google.gwt.dom.client.Node,$removeChild,com/google/gwt/dom/client/Node.java,290,0
 $removeFromParent,com.google.gwt.dom.client.Node::$removeFromParent(Lcom/google/gwt/dom/client/Node;)V,com.google.gwt.dom.client.Node,$removeFromParent,com/google/gwt/dom/client/Node.java,306,0
 $replaceChild,com.google.gwt.dom.client.Node::$replaceChild(Lcom/google/gwt/dom/client/Node;Lcom/google/gwt/dom/client/Node;Lcom/google/gwt/dom/client/Node;)Lcom/google/gwt/dom/client/Node;,com.google.gwt.dom.client.Node,$replaceChild,com/google/gwt/dom/client/Node.java,321,0
@@ -402,15 +408,15 @@ toInjectAtStart,com.google.gwt.dom.client.StyleInjector::toInjectAtStart,com.goo
 StyleInjector$1,,com.google.gwt.dom.client.StyleInjector$1,,com/google/gwt/dom/client/StyleInjector.java,211,-1
 StyleInjector$1,com.google.gwt.dom.client.StyleInjector$1::StyleInjector$1() <init>,com.google.gwt.dom.client.StyleInjector$1,StyleInjector$1,com/google/gwt/dom/client/StyleInjector.java,211,0
 execute_3,com.google.gwt.dom.client.StyleInjector$1::execute()V,com.google.gwt.dom.client.StyleInjector$1,execute,com/google/gwt/dom/client/StyleInjector.java,212,0
+StyleInjector$StyleInjectorImpl,,com.google.gwt.dom.client.StyleInjector$StyleInjectorImpl,,com/google/gwt/dom/client/StyleInjector.java,46,-1
 $clinit_StyleInjector$StyleInjectorImpl,com.google.gwt.dom.client.StyleInjector$StyleInjectorImpl::$clinit()V,com.google.gwt.dom.client.StyleInjector$StyleInjectorImpl,$clinit,com/google/gwt/dom/client/StyleInjector.java,46,0
-$appendToStyleSheet,com.google.gwt.dom.client.StyleInjector$StyleInjectorImplIE::$appendToStyleSheet(Lcom/google/gwt/dom/client/StyleInjector$StyleInjectorImplIE;ILjava/lang/String;Z)Lcom/google/gwt/dom/client/StyleElement;,com.google.gwt.dom.client.StyleInjector$StyleInjectorImplIE,$appendToStyleSheet,com/google/gwt/dom/client/StyleInjector.java,186,0
-$clinit_StyleInjector$StyleInjectorImplIE,com.google.gwt.dom.client.StyleInjector$StyleInjectorImplIE::$clinit()V,com.google.gwt.dom.client.StyleInjector$StyleInjectorImplIE,$clinit,com/google/gwt/dom/client/StyleInjector.java,94,0
-$createNewStyleSheet,com.google.gwt.dom.client.StyleInjector$StyleInjectorImplIE::$createNewStyleSheet(Lcom/google/gwt/dom/client/StyleInjector$StyleInjectorImplIE;Ljava/lang/String;)Lcom/google/gwt/dom/client/StyleElement;,com.google.gwt.dom.client.StyleInjector$StyleInjectorImplIE,$createNewStyleSheet,com/google/gwt/dom/client/StyleInjector.java,200,0
-$injectStyleSheet,com.google.gwt.dom.client.StyleInjector$StyleInjectorImplIE::$injectStyleSheet(Lcom/google/gwt/dom/client/StyleInjector$StyleInjectorImplIE;Ljava/lang/String;)Lcom/google/gwt/dom/client/StyleElement;,com.google.gwt.dom.client.StyleInjector$StyleInjectorImplIE,$injectStyleSheet,com/google/gwt/dom/client/StyleInjector.java,124,0
-$injectStyleSheetAtEnd,com.google.gwt.dom.client.StyleInjector$StyleInjectorImplIE::$injectStyleSheetAtEnd(Lcom/google/gwt/dom/client/StyleInjector$StyleInjectorImplIE;Ljava/lang/String;)Lcom/google/gwt/dom/client/StyleElement;,com.google.gwt.dom.client.StyleInjector$StyleInjectorImplIE,$injectStyleSheetAtEnd,com/google/gwt/dom/client/StyleInjector.java,164,0
-$injectStyleSheetAtStart,com.google.gwt.dom.client.StyleInjector$StyleInjectorImplIE::$injectStyleSheetAtStart(Lcom/google/gwt/dom/client/StyleInjector$StyleInjectorImplIE;Ljava/lang/String;)Lcom/google/gwt/dom/client/StyleElement;,com.google.gwt.dom.client.StyleInjector$StyleInjectorImplIE,$injectStyleSheetAtStart,com/google/gwt/dom/client/StyleInjector.java,174,0
-getDocumentStyleCount,com.google.gwt.dom.client.StyleInjector$StyleInjectorImplIE::getDocumentStyleCount()I,com.google.gwt.dom.client.StyleInjector$StyleInjectorImplIE,getDocumentStyleCount,com/google/gwt/dom/client/StyleInjector.java,107,0
-styleSheetLengths,com.google.gwt.dom.client.StyleInjector$StyleInjectorImplIE::styleSheetLengths,com.google.gwt.dom.client.StyleInjector$StyleInjectorImplIE,styleSheetLengths,com/google/gwt/dom/client/StyleInjector.java,105,-1
+$createElement,com.google.gwt.dom.client.StyleInjector$StyleInjectorImpl::$createElement(Lcom/google/gwt/dom/client/StyleInjector$StyleInjectorImpl;Ljava/lang/String;)Lcom/google/gwt/dom/client/StyleElement;,com.google.gwt.dom.client.StyleInjector$StyleInjectorImpl,$createElement,com/google/gwt/dom/client/StyleInjector.java,71,0
+$getHead,com.google.gwt.dom.client.StyleInjector$StyleInjectorImpl::$getHead(Lcom/google/gwt/dom/client/StyleInjector$StyleInjectorImpl;)Lcom/google/gwt/dom/client/HeadElement;,com.google.gwt.dom.client.StyleInjector$StyleInjectorImpl,$getHead,com/google/gwt/dom/client/StyleInjector.java,78,0
+$injectStyleSheet,com.google.gwt.dom.client.StyleInjector$StyleInjectorImpl::$injectStyleSheet(Lcom/google/gwt/dom/client/StyleInjector$StyleInjectorImpl;Ljava/lang/String;)Lcom/google/gwt/dom/client/StyleElement;,com.google.gwt.dom.client.StyleInjector$StyleInjectorImpl,$injectStyleSheet,com/google/gwt/dom/client/StyleInjector.java,51,0
+$injectStyleSheetAtStart,com.google.gwt.dom.client.StyleInjector$StyleInjectorImpl::$injectStyleSheetAtStart(Lcom/google/gwt/dom/client/StyleInjector$StyleInjectorImpl;Ljava/lang/String;)Lcom/google/gwt/dom/client/StyleElement;,com.google.gwt.dom.client.StyleInjector$StyleInjectorImpl,$injectStyleSheetAtStart,com/google/gwt/dom/client/StyleInjector.java,61,0
+IMPL,com.google.gwt.dom.client.StyleInjector$StyleInjectorImpl::IMPL,com.google.gwt.dom.client.StyleInjector$StyleInjectorImpl,IMPL,com/google/gwt/dom/client/StyleInjector.java,47,-1
+StyleInjector$StyleInjectorImpl,com.google.gwt.dom.client.StyleInjector$StyleInjectorImpl::StyleInjector$StyleInjectorImpl() <init>,com.google.gwt.dom.client.StyleInjector$StyleInjectorImpl,StyleInjector$StyleInjectorImpl,com/google/gwt/dom/client/StyleInjector.java,46,0
+head,com.google.gwt.dom.client.StyleInjector$StyleInjectorImpl::head,com.google.gwt.dom.client.StyleInjector$StyleInjectorImpl,head,com/google/gwt/dom/client/StyleInjector.java,49,-1
 TableCellElement,,com.google.gwt.dom.client.TableCellElement,,com/google/gwt/dom/client/TableCellElement.java,26,-1
 TableColElement,,com.google.gwt.dom.client.TableColElement,,com/google/gwt/dom/client/TableColElement.java,26,-1
 TableElement,,com.google.gwt.dom.client.TableElement,,com/google/gwt/dom/client/TableElement.java,30,-1
@@ -530,6 +536,49 @@ LegacyHandlerWrapper,com.google.gwt.event.shared.LegacyHandlerWrapper::LegacyHan
 real,com.google.gwt.event.shared.LegacyHandlerWrapper::real,com.google.gwt.event.shared.LegacyHandlerWrapper,real,com/google/gwt/event/shared/LegacyHandlerWrapper.java,23,-1
 UmbrellaException,,com.google.gwt.event.shared.UmbrellaException,,com/google/gwt/event/shared/UmbrellaException.java,24,-1
 UmbrellaException_0,com.google.gwt.event.shared.UmbrellaException::UmbrellaException(Ljava/util/Set;) <init>,com.google.gwt.event.shared.UmbrellaException,UmbrellaException,com/google/gwt/event/shared/UmbrellaException.java,25,0
+Request,,com.google.gwt.http.client.Request,,com/google/gwt/http/client/Request.java,33,-1
+$cancel_1,com.google.gwt.http.client.Request::$cancel(Lcom/google/gwt/http/client/Request;)V,com.google.gwt.http.client.Request,$cancel,com/google/gwt/http/client/Request.java,174,0
+$fireOnResponseReceived,com.google.gwt.http.client.Request::$fireOnResponseReceived(Lcom/google/gwt/http/client/Request;Lcom/google/gwt/http/client/RequestCallback;)V,com.google.gwt.http.client.Request,$fireOnResponseReceived,com/google/gwt/http/client/Request.java,233,0
+$fireOnTimeout,com.google.gwt.http.client.Request::$fireOnTimeout(Lcom/google/gwt/http/client/Request;)V,com.google.gwt.http.client.Request,$fireOnTimeout,com/google/gwt/http/client/Request.java,256,0
+Request,com.google.gwt.http.client.Request::Request(Lcom/google/gwt/xhr/client/XMLHttpRequest;ILcom/google/gwt/http/client/RequestCallback;) <init>,com.google.gwt.http.client.Request,Request,com/google/gwt/http/client/Request.java,148,0
+timeoutMillis,com.google.gwt.http.client.Request::timeoutMillis,com.google.gwt.http.client.Request,timeoutMillis,com/google/gwt/http/client/Request.java,108,-1
+timer,com.google.gwt.http.client.Request::timer,com.google.gwt.http.client.Request,timer,com/google/gwt/http/client/Request.java,114,-1
+xmlHttpRequest,com.google.gwt.http.client.Request::xmlHttpRequest,com.google.gwt.http.client.Request,xmlHttpRequest,com/google/gwt/http/client/Request.java,126,-1
+Request$1,,com.google.gwt.http.client.Request$1,,com/google/gwt/http/client/Request.java,114,-1
+Request$1,com.google.gwt.http.client.Request$1::Request$1(Lcom/google/gwt/http/client/Request;) <init>,com.google.gwt.http.client.Request$1,Request$1,com/google/gwt/http/client/Request.java,114,0
+run_0,com.google.gwt.http.client.Request$1::run()V,com.google.gwt.http.client.Request$1,run,com/google/gwt/http/client/Request.java,116,0
+this$01,com.google.gwt.http.client.Request$1::this$01,com.google.gwt.http.client.Request$1,this$01,com/google/gwt/http/client/Request.java,114,-1
+RequestBuilder,,com.google.gwt.http.client.RequestBuilder,,com/google/gwt/http/client/RequestBuilder.java,35,-1
+$clinit_RequestBuilder,com.google.gwt.http.client.RequestBuilder::$clinit()V,com.google.gwt.http.client.RequestBuilder,$clinit,com/google/gwt/http/client/RequestBuilder.java,35,0
+$doSend,com.google.gwt.http.client.RequestBuilder::$doSend(Lcom/google/gwt/http/client/RequestBuilder;Ljava/lang/String;Lcom/google/gwt/http/client/RequestCallback;)Lcom/google/gwt/http/client/Request;,com.google.gwt.http.client.RequestBuilder,$doSend,com/google/gwt/http/client/RequestBuilder.java,381,0
+$sendRequest,com.google.gwt.http.client.RequestBuilder::$sendRequest(Lcom/google/gwt/http/client/RequestBuilder;Ljava/lang/String;Lcom/google/gwt/http/client/RequestCallback;)Lcom/google/gwt/http/client/Request;,com.google.gwt.http.client.RequestBuilder,$sendRequest,com/google/gwt/http/client/RequestBuilder.java,258,0
+GET,com.google.gwt.http.client.RequestBuilder::GET,com.google.gwt.http.client.RequestBuilder,GET,com/google/gwt/http/client/RequestBuilder.java,60,-1
+RequestBuilder,com.google.gwt.http.client.RequestBuilder::RequestBuilder(Lcom/google/gwt/http/client/RequestBuilder$Method;Ljava/lang/String;) <init>,com.google.gwt.http.client.RequestBuilder,RequestBuilder,com/google/gwt/http/client/RequestBuilder.java,135,0
+RequestBuilder_0,com.google.gwt.http.client.RequestBuilder::RequestBuilder(Ljava/lang/String;Ljava/lang/String;) <init>,com.google.gwt.http.client.RequestBuilder,RequestBuilder,com/google/gwt/http/client/RequestBuilder.java,151,0
+httpMethod,com.google.gwt.http.client.RequestBuilder::httpMethod,com.google.gwt.http.client.RequestBuilder,httpMethod,com/google/gwt/http/client/RequestBuilder.java,91,-1
+includeCredentials,com.google.gwt.http.client.RequestBuilder::includeCredentials,com.google.gwt.http.client.RequestBuilder,includeCredentials,com/google/gwt/http/client/RequestBuilder.java,96,-1
+timeoutMillis,com.google.gwt.http.client.RequestBuilder::timeoutMillis,com.google.gwt.http.client.RequestBuilder,timeoutMillis,com/google/gwt/http/client/RequestBuilder.java,111,-1
+url_0,com.google.gwt.http.client.RequestBuilder::url,com.google.gwt.http.client.RequestBuilder,url,com/google/gwt/http/client/RequestBuilder.java,116,-1
+RequestBuilder$1,,com.google.gwt.http.client.RequestBuilder$1,,com/google/gwt/http/client/RequestBuilder.java,408,-1
+RequestBuilder$1,com.google.gwt.http.client.RequestBuilder$1::RequestBuilder$1(Lcom/google/gwt/http/client/RequestBuilder;) <init>,com.google.gwt.http.client.RequestBuilder$1,RequestBuilder$1,com/google/gwt/http/client/RequestBuilder.java,408,0
+onReadyStateChange,com.google.gwt.http.client.RequestBuilder$1::onReadyStateChange(Lcom/google/gwt/xhr/client/XMLHttpRequest;)V,com.google.gwt.http.client.RequestBuilder$1,onReadyStateChange,com/google/gwt/http/client/RequestBuilder.java,409,0
+val$request2,com.google.gwt.http.client.RequestBuilder$1::val$request2,com.google.gwt.http.client.RequestBuilder$1,val$request2,com/google/gwt/http/client/RequestBuilder.java,408,-1
+RequestBuilder$Method,,com.google.gwt.http.client.RequestBuilder$Method,,com/google/gwt/http/client/RequestBuilder.java,39,-1
+RequestBuilder$Method,com.google.gwt.http.client.RequestBuilder$Method::RequestBuilder$Method(Ljava/lang/String;) <init>,com.google.gwt.http.client.RequestBuilder$Method,RequestBuilder$Method,com/google/gwt/http/client/RequestBuilder.java,42,0
+name_0,com.google.gwt.http.client.RequestBuilder$Method::name,com.google.gwt.http.client.RequestBuilder$Method,name,com/google/gwt/http/client/RequestBuilder.java,40,-1
+toString_5,com.google.gwt.http.client.RequestBuilder$Method::toString()Ljava/lang/String;,com.google.gwt.http.client.RequestBuilder$Method,toString,com/google/gwt/http/client/RequestBuilder.java,47,0
+RequestException,,com.google.gwt.http.client.RequestException,,com/google/gwt/http/client/RequestException.java,27,-1
+RequestException,com.google.gwt.http.client.RequestException::RequestException(Ljava/lang/String;) <init>,com.google.gwt.http.client.RequestException,RequestException,com/google/gwt/http/client/RequestException.java,33,0
+RequestPermissionException,,com.google.gwt.http.client.RequestPermissionException,,com/google/gwt/http/client/RequestPermissionException.java,37,-1
+RequestPermissionException,com.google.gwt.http.client.RequestPermissionException::RequestPermissionException(Ljava/lang/String;) <init>,com.google.gwt.http.client.RequestPermissionException,RequestPermissionException,com/google/gwt/http/client/RequestPermissionException.java,49,0
+RequestTimeoutException,,com.google.gwt.http.client.RequestTimeoutException,,com/google/gwt/http/client/RequestTimeoutException.java,27,-1
+RequestTimeoutException,com.google.gwt.http.client.RequestTimeoutException::RequestTimeoutException(Lcom/google/gwt/http/client/Request;I) <init>,com.google.gwt.http.client.RequestTimeoutException,RequestTimeoutException,com/google/gwt/http/client/RequestTimeoutException.java,48,0
+Response,,com.google.gwt.http.client.Response,,com/google/gwt/http/client/Response.java,27,-1
+ResponseImpl,,com.google.gwt.http.client.ResponseImpl,,com/google/gwt/http/client/ResponseImpl.java,26,-1
+ResponseImpl,com.google.gwt.http.client.ResponseImpl::ResponseImpl(Lcom/google/gwt/xhr/client/XMLHttpRequest;) <init>,com.google.gwt.http.client.ResponseImpl,ResponseImpl,com/google/gwt/http/client/ResponseImpl.java,30,0
+xmlHttpRequest,com.google.gwt.http.client.ResponseImpl::xmlHttpRequest,com.google.gwt.http.client.ResponseImpl,xmlHttpRequest,com/google/gwt/http/client/ResponseImpl.java,28,-1
+throwIfEmptyOrNull,com.google.gwt.http.client.StringValidator::throwIfEmptyOrNull(Ljava/lang/String;Ljava/lang/String;)V,com.google.gwt.http.client.StringValidator,throwIfEmptyOrNull,com/google/gwt/http/client/StringValidator.java,45,0
+throwIfNull,com.google.gwt.http.client.StringValidator::throwIfNull(Ljava/lang/String;Ljava/lang/Object;)V,com.google.gwt.http.client.StringValidator,throwIfNull,com/google/gwt/http/client/StringValidator.java,64,0
 getDirectionOnElement,com.google.gwt.i18n.client.BidiUtils::getDirectionOnElement(Lcom/google/gwt/dom/client/Element;)Lcom/google/gwt/i18n/client/HasDirection$Direction;,com.google.gwt.i18n.client.BidiUtils,getDirectionOnElement,com/google/gwt/i18n/client/BidiUtils.java,51,0
 setDirectionOnElement,com.google.gwt.i18n.client.BidiUtils::setDirectionOnElement(Lcom/google/gwt/dom/client/Element;Lcom/google/gwt/i18n/client/HasDirection$Direction;)V,com.google.gwt.i18n.client.BidiUtils,setDirectionOnElement,com/google/gwt/i18n/client/BidiUtils.java,71,0
 HasDirection$Direction,,com.google.gwt.i18n.client.HasDirection$Direction,,com/google/gwt/i18n/client/HasDirection.java,34,-1
@@ -560,7 +609,6 @@ maskUndefined,com.google.gwt.lang.Cast::maskUndefined(Ljava/lang/Object;)Ljava/l
 round_int,com.google.gwt.lang.Cast::round_int(D)I,com.google.gwt.lang.Cast,round_int,com/google/gwt/dev/jjs/intrinsic/com/google/gwt/lang/Cast.java,260,0
 stringCastMap,com.google.gwt.lang.Cast::stringCastMap,com.google.gwt.lang.Cast,stringCastMap,com/google/gwt/dev/jjs/intrinsic/com/google/gwt/lang/Cast.java,38,-1
 throwClassCastExceptionUnlessNull,com.google.gwt.lang.Cast::throwClassCastExceptionUnlessNull(Ljava/lang/Object;)Ljava/lang/Object;,com.google.gwt.lang.Cast,throwClassCastExceptionUnlessNull,com/google/gwt/dev/jjs/intrinsic/com/google/gwt/lang/Cast.java,277,0
-I_classLit,com.google.gwt.lang.ClassLiteralHolder::I_classLit,com.google.gwt.lang.ClassLiteralHolder,I_classLit,Unknown,0,-1
 Lcom_google_gwt_animation_client_Animation$1_2_classLit,com.google.gwt.lang.ClassLiteralHolder::Lcom_google_gwt_animation_client_Animation$1_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lcom_google_gwt_animation_client_Animation$1_2_classLit,com/google/gwt/animation/client/Animation.java,29,-1
 Lcom_google_gwt_animation_client_AnimationScheduler$AnimationHandle_2_classLit,com.google.gwt.lang.ClassLiteralHolder::Lcom_google_gwt_animation_client_AnimationScheduler$AnimationHandle_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lcom_google_gwt_animation_client_AnimationScheduler$AnimationHandle_2_classLit,com/google/gwt/animation/client/AnimationScheduler.java,57,-1
 Lcom_google_gwt_animation_client_AnimationSchedulerImplStandard$1_2_classLit,com.google.gwt.lang.ClassLiteralHolder::Lcom_google_gwt_animation_client_AnimationSchedulerImplStandard$1_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lcom_google_gwt_animation_client_AnimationSchedulerImplStandard$1_2_classLit,com/google/gwt/animation/client/AnimationSchedulerImplStandard.java,29,-1
@@ -632,6 +680,7 @@ Lcom_google_gwt_dom_client_Style$Visibility$1_2_classLit,com.google.gwt.lang.Cla
 Lcom_google_gwt_dom_client_Style$Visibility$2_2_classLit,com.google.gwt.lang.ClassLiteralHolder::Lcom_google_gwt_dom_client_Style$Visibility$2_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lcom_google_gwt_dom_client_Style$Visibility$2_2_classLit,com/google/gwt/dom/client/Style.java,926,-1
 Lcom_google_gwt_dom_client_Style$Visibility_2_classLit,com.google.gwt.lang.ClassLiteralHolder::Lcom_google_gwt_dom_client_Style$Visibility_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lcom_google_gwt_dom_client_Style$Visibility_2_classLit,com/google/gwt/dom/client/Style.java,919,-1
 Lcom_google_gwt_dom_client_StyleInjector$1_2_classLit,com.google.gwt.lang.ClassLiteralHolder::Lcom_google_gwt_dom_client_StyleInjector$1_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lcom_google_gwt_dom_client_StyleInjector$1_2_classLit,com/google/gwt/dom/client/StyleInjector.java,211,-1
+Lcom_google_gwt_dom_client_StyleInjector$StyleInjectorImpl_2_classLit,com.google.gwt.lang.ClassLiteralHolder::Lcom_google_gwt_dom_client_StyleInjector$StyleInjectorImpl_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lcom_google_gwt_dom_client_StyleInjector$StyleInjectorImpl_2_classLit,com/google/gwt/dom/client/StyleInjector.java,46,-1
 Lcom_google_gwt_event_dom_client_ChangeEvent_2_classLit,com.google.gwt.lang.ClassLiteralHolder::Lcom_google_gwt_event_dom_client_ChangeEvent_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lcom_google_gwt_event_dom_client_ChangeEvent_2_classLit,com/google/gwt/event/dom/client/ChangeEvent.java,23,-1
 Lcom_google_gwt_event_dom_client_ClickEvent_2_classLit,com.google.gwt.lang.ClassLiteralHolder::Lcom_google_gwt_event_dom_client_ClickEvent_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lcom_google_gwt_event_dom_client_ClickEvent_2_classLit,com/google/gwt/event/dom/client/ClickEvent.java,23,-1
 Lcom_google_gwt_event_dom_client_DomEvent$Type_2_classLit,com.google.gwt.lang.ClassLiteralHolder::Lcom_google_gwt_event_dom_client_DomEvent$Type_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lcom_google_gwt_event_dom_client_DomEvent$Type_2_classLit,com/google/gwt/event/dom/client/DomEvent.java,44,-1
@@ -653,6 +702,16 @@ Lcom_google_gwt_event_shared_HandlerManager$Bus_2_classLit,com.google.gwt.lang.C
 Lcom_google_gwt_event_shared_HandlerManager_2_classLit,com.google.gwt.lang.ClassLiteralHolder::Lcom_google_gwt_event_shared_HandlerManager_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lcom_google_gwt_event_shared_HandlerManager_2_classLit,com/google/gwt/event/shared/HandlerManager.java,32,-1
 Lcom_google_gwt_event_shared_LegacyHandlerWrapper_2_classLit,com.google.gwt.lang.ClassLiteralHolder::Lcom_google_gwt_event_shared_LegacyHandlerWrapper_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lcom_google_gwt_event_shared_LegacyHandlerWrapper_2_classLit,com/google/gwt/event/shared/LegacyHandlerWrapper.java,22,-1
 Lcom_google_gwt_event_shared_UmbrellaException_2_classLit,com.google.gwt.lang.ClassLiteralHolder::Lcom_google_gwt_event_shared_UmbrellaException_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lcom_google_gwt_event_shared_UmbrellaException_2_classLit,com/google/gwt/event/shared/UmbrellaException.java,24,-1
+Lcom_google_gwt_http_client_Request$1_2_classLit,com.google.gwt.lang.ClassLiteralHolder::Lcom_google_gwt_http_client_Request$1_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lcom_google_gwt_http_client_Request$1_2_classLit,com/google/gwt/http/client/Request.java,114,-1
+Lcom_google_gwt_http_client_RequestBuilder$1_2_classLit,com.google.gwt.lang.ClassLiteralHolder::Lcom_google_gwt_http_client_RequestBuilder$1_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lcom_google_gwt_http_client_RequestBuilder$1_2_classLit,com/google/gwt/http/client/RequestBuilder.java,408,-1
+Lcom_google_gwt_http_client_RequestBuilder$Method_2_classLit,com.google.gwt.lang.ClassLiteralHolder::Lcom_google_gwt_http_client_RequestBuilder$Method_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lcom_google_gwt_http_client_RequestBuilder$Method_2_classLit,com/google/gwt/http/client/RequestBuilder.java,39,-1
+Lcom_google_gwt_http_client_RequestBuilder_2_classLit,com.google.gwt.lang.ClassLiteralHolder::Lcom_google_gwt_http_client_RequestBuilder_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lcom_google_gwt_http_client_RequestBuilder_2_classLit,com/google/gwt/http/client/RequestBuilder.java,35,-1
+Lcom_google_gwt_http_client_RequestException_2_classLit,com.google.gwt.lang.ClassLiteralHolder::Lcom_google_gwt_http_client_RequestException_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lcom_google_gwt_http_client_RequestException_2_classLit,com/google/gwt/http/client/RequestException.java,27,-1
+Lcom_google_gwt_http_client_RequestPermissionException_2_classLit,com.google.gwt.lang.ClassLiteralHolder::Lcom_google_gwt_http_client_RequestPermissionException_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lcom_google_gwt_http_client_RequestPermissionException_2_classLit,com/google/gwt/http/client/RequestPermissionException.java,37,-1
+Lcom_google_gwt_http_client_RequestTimeoutException_2_classLit,com.google.gwt.lang.ClassLiteralHolder::Lcom_google_gwt_http_client_RequestTimeoutException_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lcom_google_gwt_http_client_RequestTimeoutException_2_classLit,com/google/gwt/http/client/RequestTimeoutException.java,27,-1
+Lcom_google_gwt_http_client_Request_2_classLit,com.google.gwt.lang.ClassLiteralHolder::Lcom_google_gwt_http_client_Request_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lcom_google_gwt_http_client_Request_2_classLit,com/google/gwt/http/client/Request.java,33,-1
+Lcom_google_gwt_http_client_ResponseImpl_2_classLit,com.google.gwt.lang.ClassLiteralHolder::Lcom_google_gwt_http_client_ResponseImpl_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lcom_google_gwt_http_client_ResponseImpl_2_classLit,com/google/gwt/http/client/ResponseImpl.java,26,-1
+Lcom_google_gwt_http_client_Response_2_classLit,com.google.gwt.lang.ClassLiteralHolder::Lcom_google_gwt_http_client_Response_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lcom_google_gwt_http_client_Response_2_classLit,com/google/gwt/http/client/Response.java,27,-1
 Lcom_google_gwt_i18n_client_HasDirection$Direction_2_classLit,com.google.gwt.lang.ClassLiteralHolder::Lcom_google_gwt_i18n_client_HasDirection$Direction_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lcom_google_gwt_i18n_client_HasDirection$Direction_2_classLit,com/google/gwt/i18n/client/HasDirection.java,34,-1
 Lcom_google_gwt_lang_CollapsedPropertyHolder_2_classLit,com.google.gwt.lang.ClassLiteralHolder::Lcom_google_gwt_lang_CollapsedPropertyHolder_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lcom_google_gwt_lang_CollapsedPropertyHolder_2_classLit,com/google/gwt/dev/jjs/intrinsic/com/google/gwt/lang/CollapsedPropertyHolder.java,22,-1
 Lcom_google_gwt_lang_JavaClassHierarchySetupUtil_2_classLit,com.google.gwt.lang.ClassLiteralHolder::Lcom_google_gwt_lang_JavaClassHierarchySetupUtil_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lcom_google_gwt_lang_JavaClassHierarchySetupUtil_2_classLit,com/google/gwt/dev/jjs/intrinsic/com/google/gwt/lang/JavaClassHierarchySetupUtil.java,24,-1
@@ -660,11 +719,14 @@ Lcom_google_gwt_lang_LongLibBase$LongEmul_2_classLit,com.google.gwt.lang.ClassLi
 Lcom_google_gwt_lang_ModuleUtils_2_classLit,com.google.gwt.lang.ClassLiteralHolder::Lcom_google_gwt_lang_ModuleUtils_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lcom_google_gwt_lang_ModuleUtils_2_classLit,com/google/gwt/dev/jjs/intrinsic/com/google/gwt/lang/ModuleUtils.java,25,-1
 Lcom_google_gwt_layout_client_Layout$1_2_classLit,com.google.gwt.lang.ClassLiteralHolder::Lcom_google_gwt_layout_client_Layout$1_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lcom_google_gwt_layout_client_Layout$1_2_classLit,com/google/gwt/layout/client/Layout.java,531,-1
 Lcom_google_gwt_layout_client_Layout$Layer_2_classLit,com.google.gwt.lang.ClassLiteralHolder::Lcom_google_gwt_layout_client_Layout$Layer_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lcom_google_gwt_layout_client_Layout$Layer_2_classLit,com/google/gwt/layout/client/Layout.java,145,-1
-Lcom_google_gwt_layout_client_LayoutImplIE8_2_classLit,com.google.gwt.lang.ClassLiteralHolder::Lcom_google_gwt_layout_client_LayoutImplIE8_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lcom_google_gwt_layout_client_LayoutImplIE8_2_classLit,com/google/gwt/layout/client/LayoutImplIE8.java,33,-1
 Lcom_google_gwt_layout_client_LayoutImpl_2_classLit,com.google.gwt.lang.ClassLiteralHolder::Lcom_google_gwt_layout_client_LayoutImpl_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lcom_google_gwt_layout_client_LayoutImpl_2_classLit,com/google/gwt/layout/client/LayoutImpl.java,42,-1
 Lcom_google_gwt_layout_client_Layout_2_classLit,com.google.gwt.lang.ClassLiteralHolder::Lcom_google_gwt_layout_client_Layout_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lcom_google_gwt_layout_client_Layout_2_classLit,com/google/gwt/layout/client/Layout.java,78,-1
-Lcom_google_gwt_resources_client_CommonResources_1Bundle_1ie9_1default_1InlineClientBundleGenerator$1_2_classLit,com.google.gwt.lang.ClassLiteralHolder::Lcom_google_gwt_resources_client_CommonResources_1Bundle_1ie9_1default_1InlineClientBundleGenerator$1_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lcom_google_gwt_resources_client_CommonResources_1Bundle_1ie9_1default_1InlineClientBundleGenerator$1_2_classLit,gen/com/google/gwt/resources/client/CommonResources_Bundle_ie9_default_InlineClientBundleGenerator.java,9,-1
-Lcom_google_gwt_resources_client_CommonResources_1Bundle_1ie9_1default_1InlineClientBundleGenerator_2_classLit,com.google.gwt.lang.ClassLiteralHolder::Lcom_google_gwt_resources_client_CommonResources_1Bundle_1ie9_1default_1InlineClientBundleGenerator_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lcom_google_gwt_resources_client_CommonResources_1Bundle_1ie9_1default_1InlineClientBundleGenerator_2_classLit,gen/com/google/gwt/resources/client/CommonResources_Bundle_ie9_default_InlineClientBundleGenerator.java,6,-1
+Lcom_google_gwt_media_client_Audio$AudioElementSupportDetectedMaybe_2_classLit,com.google.gwt.lang.ClassLiteralHolder::Lcom_google_gwt_media_client_Audio$AudioElementSupportDetectedMaybe_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lcom_google_gwt_media_client_Audio$AudioElementSupportDetectedMaybe_2_classLit,com/google/gwt/media/client/Audio.java,40,-1
+Lcom_google_gwt_media_client_Audio$AudioElementSupportDetector_2_classLit,com.google.gwt.lang.ClassLiteralHolder::Lcom_google_gwt_media_client_Audio$AudioElementSupportDetector_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lcom_google_gwt_media_client_Audio$AudioElementSupportDetector_2_classLit,com/google/gwt/media/client/Audio.java,75,-1
+Lcom_google_gwt_media_client_Audio_2_classLit,com.google.gwt.lang.ClassLiteralHolder::Lcom_google_gwt_media_client_Audio_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lcom_google_gwt_media_client_Audio_2_classLit,com/google/gwt/media/client/Audio.java,35,-1
+Lcom_google_gwt_media_client_MediaBase_2_classLit,com.google.gwt.lang.ClassLiteralHolder::Lcom_google_gwt_media_client_MediaBase_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lcom_google_gwt_media_client_MediaBase_2_classLit,com/google/gwt/media/client/MediaBase.java,44,-1
+Lcom_google_gwt_resources_client_CommonResources_1Bundle_1ie10_1default_1InlineClientBundleGenerator$1_2_classLit,com.google.gwt.lang.ClassLiteralHolder::Lcom_google_gwt_resources_client_CommonResources_1Bundle_1ie10_1default_1InlineClientBundleGenerator$1_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lcom_google_gwt_resources_client_CommonResources_1Bundle_1ie10_1default_1InlineClientBundleGenerator$1_2_classLit,gen/com/google/gwt/resources/client/CommonResources_Bundle_ie10_default_InlineClientBundleGenerator.java,9,-1
+Lcom_google_gwt_resources_client_CommonResources_1Bundle_1ie10_1default_1InlineClientBundleGenerator_2_classLit,com.google.gwt.lang.ClassLiteralHolder::Lcom_google_gwt_resources_client_CommonResources_1Bundle_1ie10_1default_1InlineClientBundleGenerator_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lcom_google_gwt_resources_client_CommonResources_1Bundle_1ie10_1default_1InlineClientBundleGenerator_2_classLit,gen/com/google/gwt/resources/client/CommonResources_Bundle_ie10_default_InlineClientBundleGenerator.java,6,-1
 Lcom_google_gwt_safehtml_shared_SafeUriString_2_classLit,com.google.gwt.lang.ClassLiteralHolder::Lcom_google_gwt_safehtml_shared_SafeUriString_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lcom_google_gwt_safehtml_shared_SafeUriString_2_classLit,com/google/gwt/safehtml/shared/SafeUriString.java,28,-1
 Lcom_google_gwt_storage_client_Storage_2_classLit,com.google.gwt.lang.ClassLiteralHolder::Lcom_google_gwt_storage_client_Storage_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lcom_google_gwt_storage_client_Storage_2_classLit,com/google/gwt/storage/client/Storage.java,66,-1
 Lcom_google_gwt_text_shared_AbstractRenderer_2_classLit,com.google.gwt.lang.ClassLiteralHolder::Lcom_google_gwt_text_shared_AbstractRenderer_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lcom_google_gwt_text_shared_AbstractRenderer_2_classLit,com/google/gwt/text/shared/AbstractRenderer.java,26,-1
@@ -831,18 +893,20 @@ Ljava_util_Map$Entry_2_classLit,com.google.gwt.lang.ClassLiteralHolder::Ljava_ut
 Ljava_util_NoSuchElementException_2_classLit,com.google.gwt.lang.ClassLiteralHolder::Ljava_util_NoSuchElementException_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Ljava_util_NoSuchElementException_2_classLit,com/google/gwt/emul/java/util/NoSuchElementException.java,23,-1
 Lmhcs_client_Configuration_2_classLit,com.google.gwt.lang.ClassLiteralHolder::Lmhcs_client_Configuration_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lmhcs_client_Configuration_2_classLit,mhcs/client/Configuration.java,12,-1
 Lmhcs_client_Controller$1_2_classLit,com.google.gwt.lang.ClassLiteralHolder::Lmhcs_client_Controller$1_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lmhcs_client_Controller$1_2_classLit,mhcs/client/Controller.java,96,-1
+Lmhcs_client_Controller$4_2_classLit,com.google.gwt.lang.ClassLiteralHolder::Lmhcs_client_Controller$4_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lmhcs_client_Controller$4_2_classLit,mhcs/client/Controller.java,164,-1
 Lmhcs_client_Map_2_classLit,com.google.gwt.lang.ClassLiteralHolder::Lmhcs_client_Map_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lmhcs_client_Map_2_classLit,mhcs/client/Map.java,17,-1
 Lmhcs_client_ModuleStatus_2_classLit,com.google.gwt.lang.ClassLiteralHolder::Lmhcs_client_ModuleStatus_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lmhcs_client_ModuleStatus_2_classLit,mhcs/client/ModuleStatus.java,9,-1
 Lmhcs_client_ModuleType_2_classLit,com.google.gwt.lang.ClassLiteralHolder::Lmhcs_client_ModuleType_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lmhcs_client_ModuleType_2_classLit,mhcs/client/ModuleType.java,9,-1
 Lmhcs_client_Module_2_classLit,com.google.gwt.lang.ClassLiteralHolder::Lmhcs_client_Module_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lmhcs_client_Module_2_classLit,mhcs/client/Module.java,11,-1
 Lmhcs_client_Point_2_classLit,com.google.gwt.lang.ClassLiteralHolder::Lmhcs_client_Point_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lmhcs_client_Point_2_classLit,mhcs/client/Point.java,9,-1
-Lmhcs_client_View$1$1_2_classLit,com.google.gwt.lang.ClassLiteralHolder::Lmhcs_client_View$1$1_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lmhcs_client_View$1$1_2_classLit,mhcs/client/View.java,199,-1
-Lmhcs_client_View$1_2_classLit,com.google.gwt.lang.ClassLiteralHolder::Lmhcs_client_View$1_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lmhcs_client_View$1_2_classLit,mhcs/client/View.java,166,-1
-Lmhcs_client_View$2_2_classLit,com.google.gwt.lang.ClassLiteralHolder::Lmhcs_client_View$2_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lmhcs_client_View$2_2_classLit,mhcs/client/View.java,240,-1
-Lmhcs_client_View$3_2_classLit,com.google.gwt.lang.ClassLiteralHolder::Lmhcs_client_View$3_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lmhcs_client_View$3_2_classLit,mhcs/client/View.java,288,-1
-Lmhcs_client_View$4_2_classLit,com.google.gwt.lang.ClassLiteralHolder::Lmhcs_client_View$4_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lmhcs_client_View$4_2_classLit,mhcs/client/View.java,370,-1
+Lmhcs_client_View$1$1_2_classLit,com.google.gwt.lang.ClassLiteralHolder::Lmhcs_client_View$1$1_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lmhcs_client_View$1$1_2_classLit,mhcs/client/View.java,201,-1
+Lmhcs_client_View$1_2_classLit,com.google.gwt.lang.ClassLiteralHolder::Lmhcs_client_View$1_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lmhcs_client_View$1_2_classLit,mhcs/client/View.java,168,-1
+Lmhcs_client_View$2_2_classLit,com.google.gwt.lang.ClassLiteralHolder::Lmhcs_client_View$2_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lmhcs_client_View$2_2_classLit,mhcs/client/View.java,248,-1
+Lmhcs_client_View$3_2_classLit,com.google.gwt.lang.ClassLiteralHolder::Lmhcs_client_View$3_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lmhcs_client_View$3_2_classLit,mhcs/client/View.java,296,-1
+Lmhcs_client_View$4_2_classLit,com.google.gwt.lang.ClassLiteralHolder::Lmhcs_client_View$4_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lmhcs_client_View$4_2_classLit,mhcs/client/View.java,378,-1
 Lmhcs_storage_Load_2_classLit,com.google.gwt.lang.ClassLiteralHolder::Lmhcs_storage_Load_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lmhcs_storage_Load_2_classLit,mhcs/storage/Load.java,14,-1
 Lmhcs_storage_Save_2_classLit,com.google.gwt.lang.ClassLiteralHolder::Lmhcs_storage_Save_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lmhcs_storage_Save_2_classLit,mhcs/storage/Save.java,12,-1
+Lmhcs_storage_TestCases$1_2_classLit,com.google.gwt.lang.ClassLiteralHolder::Lmhcs_storage_TestCases$1_2_classLit,com.google.gwt.lang.ClassLiteralHolder,Lmhcs_storage_TestCases$1_2_classLit,mhcs/storage/TestCases.java,36,-1
 CollapsedPropertyHolder,,com.google.gwt.lang.CollapsedPropertyHolder,,com/google/gwt/dev/jjs/intrinsic/com/google/gwt/lang/CollapsedPropertyHolder.java,22,-1
 permutationId,com.google.gwt.lang.CollapsedPropertyHolder::permutationId,com.google.gwt.lang.CollapsedPropertyHolder,permutationId,com/google/gwt/dev/jjs/intrinsic/com/google/gwt/lang/CollapsedPropertyHolder.java,27,-1
 cacheJavaScriptException,com.google.gwt.lang.Exceptions::cacheJavaScriptException(Ljava/lang/Object;Lcom/google/gwt/core/client/JavaScriptException;)V,com.google.gwt.lang.Exceptions,cacheJavaScriptException,com/google/gwt/dev/jjs/intrinsic/com/google/gwt/lang/Exceptions.java,57,0
@@ -953,27 +1017,30 @@ $clinit_LayoutImpl,com.google.gwt.layout.client.LayoutImpl::$clinit()V,com.googl
 $fillParent,com.google.gwt.layout.client.LayoutImpl::$fillParent(Lcom/google/gwt/layout/client/LayoutImpl;Lcom/google/gwt/dom/client/Element;)V,com.google.gwt.layout.client.LayoutImpl,$fillParent,com/google/gwt/layout/client/LayoutImpl.java,94,0
 $getUnitSizeInPixels,com.google.gwt.layout.client.LayoutImpl::$getUnitSizeInPixels(Lcom/google/gwt/layout/client/LayoutImpl;Lcom/google/gwt/dom/client/Element;Lcom/google/gwt/dom/client/Style$Unit;Z)D,com.google.gwt.layout.client.LayoutImpl,$getUnitSizeInPixels,com/google/gwt/layout/client/LayoutImpl.java,109,0
 $initParent,com.google.gwt.layout.client.LayoutImpl::$initParent(Lcom/google/gwt/layout/client/LayoutImpl;Lcom/google/gwt/dom/client/Element;)V,com.google.gwt.layout.client.LayoutImpl,$initParent,com/google/gwt/layout/client/LayoutImpl.java,139,0
+$layout_0,com.google.gwt.layout.client.LayoutImpl::$layout(Lcom/google/gwt/layout/client/LayoutImpl;Lcom/google/gwt/layout/client/Layout$Layer;)V,com.google.gwt.layout.client.LayoutImpl,$layout,com/google/gwt/layout/client/LayoutImpl.java,144,0
 $removeChild_1,com.google.gwt.layout.client.LayoutImpl::$removeChild(Lcom/google/gwt/layout/client/LayoutImpl;Lcom/google/gwt/dom/client/Element;Lcom/google/gwt/dom/client/Element;)V,com.google.gwt.layout.client.LayoutImpl,$removeChild,com/google/gwt/layout/client/LayoutImpl.java,208,0
+LayoutImpl,com.google.gwt.layout.client.LayoutImpl::LayoutImpl() <init>,com.google.gwt.layout.client.LayoutImpl,LayoutImpl,com/google/gwt/layout/client/LayoutImpl.java,42,0
 createRuler,com.google.gwt.layout.client.LayoutImpl::createRuler(Lcom/google/gwt/dom/client/Style$Unit;Lcom/google/gwt/dom/client/Style$Unit;)Lcom/google/gwt/dom/client/DivElement;,com.google.gwt.layout.client.LayoutImpl,createRuler,com/google/gwt/layout/client/LayoutImpl.java,51,0
 fixedRuler,com.google.gwt.layout.client.LayoutImpl::fixedRuler,com.google.gwt.layout.client.LayoutImpl,fixedRuler,com/google/gwt/layout/client/LayoutImpl.java,44,-1
 relativeRuler,com.google.gwt.layout.client.LayoutImpl::relativeRuler,com.google.gwt.layout.client.LayoutImpl,relativeRuler,com/google/gwt/layout/client/LayoutImpl.java,73,-1
-LayoutImplIE8,,com.google.gwt.layout.client.LayoutImplIE8,,com/google/gwt/layout/client/LayoutImplIE8.java,33,-1
-$layout_0,com.google.gwt.layout.client.LayoutImplIE8::$layout(Lcom/google/gwt/layout/client/LayoutImplIE8;Lcom/google/gwt/layout/client/Layout$Layer;)V,com.google.gwt.layout.client.LayoutImplIE8,$layout,com/google/gwt/layout/client/LayoutImplIE8.java,45,0
-$removeLayerRefs,com.google.gwt.layout.client.LayoutImplIE8::$removeLayerRefs(Lcom/google/gwt/layout/client/LayoutImplIE8;Lcom/google/gwt/dom/client/Element;)V,com.google.gwt.layout.client.LayoutImplIE8,$removeLayerRefs,com/google/gwt/layout/client/LayoutImplIE8.java,134,0
-$setValue,com.google.gwt.layout.client.LayoutImplIE8::$setValue(Lcom/google/gwt/layout/client/LayoutImplIE8;Lcom/google/gwt/layout/client/Layout$Layer;Ljava/lang/String;DLcom/google/gwt/dom/client/Style$Unit;ZZ)V,com.google.gwt.layout.client.LayoutImplIE8,$setValue,com/google/gwt/layout/client/LayoutImplIE8.java,143,0
-$updateVisibility,com.google.gwt.layout.client.LayoutImplIE8::$updateVisibility(Lcom/google/gwt/layout/client/LayoutImplIE8;Lcom/google/gwt/dom/client/Element;)V,com.google.gwt.layout.client.LayoutImplIE8,$updateVisibility,com/google/gwt/layout/client/LayoutImplIE8.java,168,0
-LayoutImplIE8,com.google.gwt.layout.client.LayoutImplIE8::LayoutImplIE8() <init>,com.google.gwt.layout.client.LayoutImplIE8,LayoutImplIE8,com/google/gwt/layout/client/LayoutImplIE8.java,33,0
-setLayer,com.google.gwt.layout.client.LayoutImplIE8::setLayer(Lcom/google/gwt/dom/client/Element;Lcom/google/gwt/layout/client/Layout$Layer;)V,com.google.gwt.layout.client.LayoutImplIE8,setLayer,com/google/gwt/layout/client/LayoutImplIE8.java,39,0
+Audio,,com.google.gwt.media.client.Audio,,com/google/gwt/media/client/Audio.java,35,-1
+Audio_0,com.google.gwt.media.client.Audio::Audio(Lcom/google/gwt/dom/client/AudioElement;) <init>,com.google.gwt.media.client.Audio,Audio,com/google/gwt/media/client/Audio.java,142,0
+createIfSupported,com.google.gwt.media.client.Audio::createIfSupported()Lcom/google/gwt/media/client/Audio;,com.google.gwt.media.client.Audio,createIfSupported,com/google/gwt/media/client/Audio.java,106,0
+detector,com.google.gwt.media.client.Audio::detector,com.google.gwt.media.client.Audio,detector,com/google/gwt/media/client/Audio.java,99,-1
+Audio$AudioElementSupportDetectedMaybe,,com.google.gwt.media.client.Audio$AudioElementSupportDetectedMaybe,,com/google/gwt/media/client/Audio.java,40,-1
+Audio$AudioElementSupportDetectedMaybe,com.google.gwt.media.client.Audio$AudioElementSupportDetectedMaybe::Audio$AudioElementSupportDetectedMaybe() <init>,com.google.gwt.media.client.Audio$AudioElementSupportDetectedMaybe,Audio$AudioElementSupportDetectedMaybe,com/google/gwt/media/client/Audio.java,40,0
+Audio$AudioElementSupportDetector,,com.google.gwt.media.client.Audio$AudioElementSupportDetector,,com/google/gwt/media/client/Audio.java,75,-1
+MediaBase,,com.google.gwt.media.client.MediaBase,,com/google/gwt/media/client/MediaBase.java,44,-1
 RegExp,,com.google.gwt.regexp.shared.RegExp,,com/google/gwt/regexp/super/com/google/gwt/regexp/shared/RegExp.java,24,-1
 instance_0,com.google.gwt.resources.client.CommonResources::instance,com.google.gwt.resources.client.CommonResources,instance,com/google/gwt/resources/client/CommonResources.java,48,-1
-CommonResources_Bundle_ie9_default_InlineClientBundleGenerator,,com.google.gwt.resources.client.CommonResources_Bundle_ie9_default_InlineClientBundleGenerator,,gen/com/google/gwt/resources/client/CommonResources_Bundle_ie9_default_InlineClientBundleGenerator.java,6,-1
-CommonResources_Bundle_ie9_default_InlineClientBundleGenerator,com.google.gwt.resources.client.CommonResources_Bundle_ie9_default_InlineClientBundleGenerator::CommonResources_Bundle_ie9_default_InlineClientBundleGenerator() <init>,com.google.gwt.resources.client.CommonResources_Bundle_ie9_default_InlineClientBundleGenerator,CommonResources_Bundle_ie9_default_InlineClientBundleGenerator,gen/com/google/gwt/resources/client/CommonResources_Bundle_ie9_default_InlineClientBundleGenerator.java,6,0
-inlineBlockStyle,com.google.gwt.resources.client.CommonResources_Bundle_ie9_default_InlineClientBundleGenerator::inlineBlockStyle,com.google.gwt.resources.client.CommonResources_Bundle_ie9_default_InlineClientBundleGenerator,inlineBlockStyle,gen/com/google/gwt/resources/client/CommonResources_Bundle_ie9_default_InlineClientBundleGenerator.java,43,-1
-CommonResources_Bundle_ie9_default_InlineClientBundleGenerator$1,,com.google.gwt.resources.client.CommonResources_Bundle_ie9_default_InlineClientBundleGenerator$1,,gen/com/google/gwt/resources/client/CommonResources_Bundle_ie9_default_InlineClientBundleGenerator.java,9,-1
-$ensureInjected,com.google.gwt.resources.client.CommonResources_Bundle_ie9_default_InlineClientBundleGenerator$1::$ensureInjected(Lcom/google/gwt/resources/client/CommonResources_Bundle_ie9_default_InlineClientBundleGenerator$1;)Z,com.google.gwt.resources.client.CommonResources_Bundle_ie9_default_InlineClientBundleGenerator$1,$ensureInjected,gen/com/google/gwt/resources/client/CommonResources_Bundle_ie9_default_InlineClientBundleGenerator.java,11,0
-CommonResources_Bundle_ie9_default_InlineClientBundleGenerator$1,com.google.gwt.resources.client.CommonResources_Bundle_ie9_default_InlineClientBundleGenerator$1::CommonResources_Bundle_ie9_default_InlineClientBundleGenerator$1(Lcom/google/gwt/resources/client/CommonResources_Bundle_ie9_default_InlineClientBundleGenerator;) <init>,com.google.gwt.resources.client.CommonResources_Bundle_ie9_default_InlineClientBundleGenerator$1,CommonResources_Bundle_ie9_default_InlineClientBundleGenerator$1,gen/com/google/gwt/resources/client/CommonResources_Bundle_ie9_default_InlineClientBundleGenerator.java,9,0
-injected,com.google.gwt.resources.client.CommonResources_Bundle_ie9_default_InlineClientBundleGenerator$1::injected,com.google.gwt.resources.client.CommonResources_Bundle_ie9_default_InlineClientBundleGenerator$1,injected,gen/com/google/gwt/resources/client/CommonResources_Bundle_ie9_default_InlineClientBundleGenerator.java,10,-1
-$clinit_CommonResources_Bundle_ie9_default_InlineClientBundleGenerator$inlineBlockStyleInitializer,com.google.gwt.resources.client.CommonResources_Bundle_ie9_default_InlineClientBundleGenerator$inlineBlockStyleInitializer::$clinit()V,com.google.gwt.resources.client.CommonResources_Bundle_ie9_default_InlineClientBundleGenerator$inlineBlockStyleInitializer,$clinit,gen/com/google/gwt/resources/client/CommonResources_Bundle_ie9_default_InlineClientBundleGenerator.java,31,0
+CommonResources_Bundle_ie10_default_InlineClientBundleGenerator,,com.google.gwt.resources.client.CommonResources_Bundle_ie10_default_InlineClientBundleGenerator,,gen/com/google/gwt/resources/client/CommonResources_Bundle_ie10_default_InlineClientBundleGenerator.java,6,-1
+CommonResources_Bundle_ie10_default_InlineClientBundleGenerator,com.google.gwt.resources.client.CommonResources_Bundle_ie10_default_InlineClientBundleGenerator::CommonResources_Bundle_ie10_default_InlineClientBundleGenerator() <init>,com.google.gwt.resources.client.CommonResources_Bundle_ie10_default_InlineClientBundleGenerator,CommonResources_Bundle_ie10_default_InlineClientBundleGenerator,gen/com/google/gwt/resources/client/CommonResources_Bundle_ie10_default_InlineClientBundleGenerator.java,6,0
+inlineBlockStyle,com.google.gwt.resources.client.CommonResources_Bundle_ie10_default_InlineClientBundleGenerator::inlineBlockStyle,com.google.gwt.resources.client.CommonResources_Bundle_ie10_default_InlineClientBundleGenerator,inlineBlockStyle,gen/com/google/gwt/resources/client/CommonResources_Bundle_ie10_default_InlineClientBundleGenerator.java,43,-1
+CommonResources_Bundle_ie10_default_InlineClientBundleGenerator$1,,com.google.gwt.resources.client.CommonResources_Bundle_ie10_default_InlineClientBundleGenerator$1,,gen/com/google/gwt/resources/client/CommonResources_Bundle_ie10_default_InlineClientBundleGenerator.java,9,-1
+$ensureInjected,com.google.gwt.resources.client.CommonResources_Bundle_ie10_default_InlineClientBundleGenerator$1::$ensureInjected(Lcom/google/gwt/resources/client/CommonResources_Bundle_ie10_default_InlineClientBundleGenerator$1;)Z,com.google.gwt.resources.client.CommonResources_Bundle_ie10_default_InlineClientBundleGenerator$1,$ensureInjected,gen/com/google/gwt/resources/client/CommonResources_Bundle_ie10_default_InlineClientBundleGenerator.java,11,0
+CommonResources_Bundle_ie10_default_InlineClientBundleGenerator$1,com.google.gwt.resources.client.CommonResources_Bundle_ie10_default_InlineClientBundleGenerator$1::CommonResources_Bundle_ie10_default_InlineClientBundleGenerator$1(Lcom/google/gwt/resources/client/CommonResources_Bundle_ie10_default_InlineClientBundleGenerator;) <init>,com.google.gwt.resources.client.CommonResources_Bundle_ie10_default_InlineClientBundleGenerator$1,CommonResources_Bundle_ie10_default_InlineClientBundleGenerator$1,gen/com/google/gwt/resources/client/CommonResources_Bundle_ie10_default_InlineClientBundleGenerator.java,9,0
+injected,com.google.gwt.resources.client.CommonResources_Bundle_ie10_default_InlineClientBundleGenerator$1::injected,com.google.gwt.resources.client.CommonResources_Bundle_ie10_default_InlineClientBundleGenerator$1,injected,gen/com/google/gwt/resources/client/CommonResources_Bundle_ie10_default_InlineClientBundleGenerator.java,10,-1
+$clinit_CommonResources_Bundle_ie10_default_InlineClientBundleGenerator$inlineBlockStyleInitializer,com.google.gwt.resources.client.CommonResources_Bundle_ie10_default_InlineClientBundleGenerator$inlineBlockStyleInitializer::$clinit()V,com.google.gwt.resources.client.CommonResources_Bundle_ie10_default_InlineClientBundleGenerator$inlineBlockStyleInitializer,$clinit,gen/com/google/gwt/resources/client/CommonResources_Bundle_ie10_default_InlineClientBundleGenerator.java,31,0
 SafeUriString,,com.google.gwt.safehtml.shared.SafeUriString,,com/google/gwt/safehtml/shared/SafeUriString.java,28,-1
 SafeUriString,com.google.gwt.safehtml.shared.SafeUriString::SafeUriString(Ljava/lang/String;) <init>,com.google.gwt.safehtml.shared.SafeUriString,SafeUriString,com/google/gwt/safehtml/shared/SafeUriString.java,39,0
 equals_1,com.google.gwt.safehtml.shared.SafeUriString::equals(Ljava/lang/Object;)Z,com.google.gwt.safehtml.shared.SafeUriString,equals,com/google/gwt/safehtml/shared/SafeUriString.java,64,0
@@ -1042,7 +1109,7 @@ token,com.google.gwt.user.client.History::token,com.google.gwt.user.client.Histo
 History$HistoryEventSource,,com.google.gwt.user.client.History$HistoryEventSource,,com/google/gwt/user/client/History.java,62,-1
 $addValueChangeHandler,com.google.gwt.user.client.History$HistoryEventSource::$addValueChangeHandler(Lcom/google/gwt/user/client/History$HistoryEventSource;Lcom/google/gwt/event/logical/shared/ValueChangeHandler;)Lcom/google/gwt/event/shared/HandlerRegistration;,com.google.gwt.user.client.History$HistoryEventSource,$addValueChangeHandler,com/google/gwt/user/client/History.java,72,0
 History$HistoryEventSource,com.google.gwt.user.client.History$HistoryEventSource::History$HistoryEventSource() <init>,com.google.gwt.user.client.History$HistoryEventSource,History$HistoryEventSource,com/google/gwt/user/client/History.java,62,0
-fireEvent_0,com.google.gwt.user.client.History$HistoryEventSource::fireEvent(Lcom/google/gwt/event/shared/GwtEvent;)V,com.google.gwt.user.client.History$HistoryEventSource,fireEvent,com/google/gwt/user/client/History.java,67,0
+fireEvent_1,com.google.gwt.user.client.History$HistoryEventSource::fireEvent(Lcom/google/gwt/event/shared/GwtEvent;)V,com.google.gwt.user.client.History$HistoryEventSource,fireEvent,com/google/gwt/user/client/History.java,67,0
 handlers,com.google.gwt.user.client.History$HistoryEventSource::handlers,com.google.gwt.user.client.History$HistoryEventSource,handlers,com/google/gwt/user/client/History.java,64,-1
 History$HistoryImpl,,com.google.gwt.user.client.History$HistoryImpl,,com/google/gwt/user/client/History.java,89,-1
 $decodeHistoryToken,com.google.gwt.user.client.History$HistoryImpl::$decodeHistoryToken(Lcom/google/gwt/user/client/History$HistoryImpl;Ljava/lang/String;)Ljava/lang/String;,com.google.gwt.user.client.History$HistoryImpl,$decodeHistoryToken,com/google/gwt/user/client/History.java,112,0
@@ -1062,6 +1129,7 @@ timerId,com.google.gwt.user.client.Timer::timerId,com.google.gwt.user.client.Tim
 addCloseHandler,com.google.gwt.user.client.Window::addCloseHandler(Lcom/google/gwt/event/logical/shared/CloseHandler;)Lcom/google/gwt/event/shared/HandlerRegistration;,com.google.gwt.user.client.Window,addCloseHandler,com/google/gwt/user/client/Window.java,522,0
 addHandler,com.google.gwt.user.client.Window::addHandler(Lcom/google/gwt/event/shared/GwtEvent$Type;Lcom/google/gwt/event/shared/EventHandler;)Lcom/google/gwt/event/shared/HandlerRegistration;,com.google.gwt.user.client.Window,addHandler,com/google/gwt/user/client/Window.java,890,0
 addResizeHandler,com.google.gwt.user.client.Window::addResizeHandler(Lcom/google/gwt/event/logical/shared/ResizeHandler;)Lcom/google/gwt/event/shared/HandlerRegistration;,com.google.gwt.user.client.Window,addResizeHandler,com/google/gwt/user/client/Window.java,533,0
+alert_0,com.google.gwt.user.client.Window::alert(Ljava/lang/String;)V,com.google.gwt.user.client.Window,alert,com/google/gwt/user/client/Window.java,604,0
 closeHandlersInitialized,com.google.gwt.user.client.Window::closeHandlersInitialized,com.google.gwt.user.client.Window,closeHandlersInitialized,com/google/gwt/user/client/Window.java,508,-1
 handlers_1,com.google.gwt.user.client.Window::handlers,com.google.gwt.user.client.Window,handlers,com/google/gwt/user/client/Window.java,507,-1
 lastResizeHeight,com.google.gwt.user.client.Window::lastResizeHeight,com.google.gwt.user.client.Window,lastResizeHeight,com/google/gwt/user/client/Window.java,512,-1
@@ -1091,9 +1159,9 @@ $getChild,com.google.gwt.user.client.impl.DOMImplStandard::$getChild(Lcom/google
 $getChildCount,com.google.gwt.user.client.impl.DOMImplStandard::$getChildCount(Lcom/google/gwt/user/client/impl/DOMImplStandard;Lcom/google/gwt/dom/client/Element;)I,com.google.gwt.user.client.impl.DOMImplStandard,$getChildCount,com/google/gwt/user/client/impl/DOMImplStandard.java,152,0
 $initEventSystem,com.google.gwt.user.client.impl.DOMImplStandard::$initEventSystem(Lcom/google/gwt/user/client/impl/DOMImplStandard;)V,com.google.gwt.user.client.impl.DOMImplStandard,$initEventSystem,com/google/gwt/user/client/impl/DOMImplStandard.java,222,0
 $insertChild,com.google.gwt.user.client.impl.DOMImplStandard::$insertChild(Lcom/google/gwt/user/client/impl/DOMImplStandard;Lcom/google/gwt/dom/client/Element;Lcom/google/gwt/dom/client/Element;I)V,com.google.gwt.user.client.impl.DOMImplStandard,$insertChild,com/google/gwt/user/client/impl/DOMImplStandard.java,178,0
-$sinkBitlessEvent,com.google.gwt.user.client.impl.DOMImplStandard::$sinkBitlessEvent(Lcom/google/gwt/user/client/impl/DOMImplStandard;Lcom/google/gwt/dom/client/Element;Ljava/lang/String;)V,com.google.gwt.user.client.impl.DOMImplStandard,$sinkBitlessEvent,com/google/gwt/user/client/impl/DOMImplStandard.java,209,0
+$sinkBitlessEvent_0,com.google.gwt.user.client.impl.DOMImplStandard::$sinkBitlessEvent(Lcom/google/gwt/user/client/impl/DOMImplStandard;Lcom/google/gwt/dom/client/Element;Ljava/lang/String;)V,com.google.gwt.user.client.impl.DOMImplStandard,$sinkBitlessEvent,com/google/gwt/user/client/impl/DOMImplStandard.java,209,0
 $sinkBitlessEventImpl,com.google.gwt.user.client.impl.DOMImplStandard::$sinkBitlessEventImpl(Lcom/google/gwt/user/client/impl/DOMImplStandard;Lcom/google/gwt/dom/client/Element;Ljava/lang/String;)V,com.google.gwt.user.client.impl.DOMImplStandard,$sinkBitlessEventImpl,com/google/gwt/user/client/impl/DOMImplStandard.java,244,0
-$sinkEvents,com.google.gwt.user.client.impl.DOMImplStandard::$sinkEvents(Lcom/google/gwt/user/client/impl/DOMImplStandard;Lcom/google/gwt/dom/client/Element;I)V,com.google.gwt.user.client.impl.DOMImplStandard,$sinkEvents,com/google/gwt/user/client/impl/DOMImplStandard.java,215,0
+$sinkEvents_0,com.google.gwt.user.client.impl.DOMImplStandard::$sinkEvents(Lcom/google/gwt/user/client/impl/DOMImplStandard;Lcom/google/gwt/dom/client/Element;I)V,com.google.gwt.user.client.impl.DOMImplStandard,$sinkEvents,com/google/gwt/user/client/impl/DOMImplStandard.java,215,0
 $sinkEventsImpl,com.google.gwt.user.client.impl.DOMImplStandard::$sinkEventsImpl(Lcom/google/gwt/user/client/impl/DOMImplStandard;Lcom/google/gwt/dom/client/Element;I)V,com.google.gwt.user.client.impl.DOMImplStandard,$sinkEventsImpl,com/google/gwt/user/client/impl/DOMImplStandard.java,251,0
 bitlessEventDispatchers,com.google.gwt.user.client.impl.DOMImplStandard::bitlessEventDispatchers,com.google.gwt.user.client.impl.DOMImplStandard,bitlessEventDispatchers,com/google/gwt/user/client/impl/DOMImplStandard.java,100,-1
 captureElem,com.google.gwt.user.client.impl.DOMImplStandard::captureElem,com.google.gwt.user.client.impl.DOMImplStandard,captureElem,com/google/gwt/user/client/impl/DOMImplStandard.java,98,-1
@@ -1161,7 +1229,7 @@ body_0,com.google.gwt.user.client.ui.CellPanel::body,com.google.gwt.user.client.
 table,com.google.gwt.user.client.ui.CellPanel::table,com.google.gwt.user.client.ui.CellPanel,table,com/google/gwt/user/client/ui/CellPanel.java,71,-1
 CheckBox,,com.google.gwt.user.client.ui.CheckBox,,com/google/gwt/user/client/ui/CheckBox.java,69,-1
 $replaceInputElement,com.google.gwt.user.client.ui.CheckBox::$replaceInputElement(Lcom/google/gwt/user/client/ui/CheckBox;Lcom/google/gwt/user/client/Element;)V,com.google.gwt.user.client.ui.CheckBox,$replaceInputElement,com/google/gwt/user/client/ui/CheckBox.java,539,0
-$setValue_0,com.google.gwt.user.client.ui.CheckBox::$setValue(Lcom/google/gwt/user/client/ui/CheckBox;Ljava/lang/Boolean;Z)V,com.google.gwt.user.client.ui.CheckBox,$setValue,com/google/gwt/user/client/ui/CheckBox.java,440,0
+$setValue,com.google.gwt.user.client.ui.CheckBox::$setValue(Lcom/google/gwt/user/client/ui/CheckBox;Ljava/lang/Boolean;Z)V,com.google.gwt.user.client.ui.CheckBox,$setValue,com/google/gwt/user/client/ui/CheckBox.java,440,0
 CheckBox,com.google.gwt.user.client.ui.CheckBox::CheckBox() <init>,com.google.gwt.user.client.ui.CheckBox,CheckBox,com/google/gwt/user/client/ui/CheckBox.java,85,0
 CheckBox_0,com.google.gwt.user.client.ui.CheckBox::CheckBox(Lcom/google/gwt/dom/client/Element;) <init>,com.google.gwt.user.client.ui.CheckBox,CheckBox,com/google/gwt/user/client/ui/CheckBox.java,176,0
 CheckBox_1,com.google.gwt.user.client.ui.CheckBox::CheckBox(Ljava/lang/String;) <init>,com.google.gwt.user.client.ui.CheckBox,CheckBox,com/google/gwt/user/client/ui/CheckBox.java,130,0
@@ -1184,7 +1252,7 @@ $insert,com.google.gwt.user.client.ui.ComplexPanel::$insert(Lcom/google/gwt/user
 $remove,com.google.gwt.user.client.ui.ComplexPanel::$remove(Lcom/google/gwt/user/client/ui/ComplexPanel;I)Z,com.google.gwt.user.client.ui.ComplexPanel,$remove,com/google/gwt/user/client/ui/ComplexPanel.java,55,0
 $remove_0,com.google.gwt.user.client.ui.ComplexPanel::$remove(Lcom/google/gwt/user/client/ui/ComplexPanel;Lcom/google/gwt/user/client/ui/Widget;)Z,com.google.gwt.user.client.ui.ComplexPanel,$remove,com/google/gwt/user/client/ui/ComplexPanel.java,60,0
 ComplexPanel,com.google.gwt.user.client.ui.ComplexPanel::ComplexPanel() <init>,com.google.gwt.user.client.ui.ComplexPanel,ComplexPanel,com/google/gwt/user/client/ui/ComplexPanel.java,26,0
-children_0,com.google.gwt.user.client.ui.ComplexPanel::children,com.google.gwt.user.client.ui.ComplexPanel,children,com/google/gwt/user/client/ui/ComplexPanel.java,28,-1
+children,com.google.gwt.user.client.ui.ComplexPanel::children,com.google.gwt.user.client.ui.ComplexPanel,children,com/google/gwt/user/client/ui/ComplexPanel.java,28,-1
 iterator_0,com.google.gwt.user.client.ui.ComplexPanel::iterator()Ljava/util/Iterator;,com.google.gwt.user.client.ui.ComplexPanel,iterator,com/google/gwt/user/client/ui/ComplexPanel.java,51,0
 remove_0,com.google.gwt.user.client.ui.ComplexPanel::remove(Lcom/google/gwt/user/client/ui/Widget;)Z,com.google.gwt.user.client.ui.ComplexPanel,remove,com/google/gwt/user/client/ui/ComplexPanel.java,60,0
 Composite,,com.google.gwt.user.client.ui.Composite,,com/google/gwt/user/client/ui/Composite.java,42,-1
@@ -1375,7 +1443,6 @@ $resizeColumnGroup,com.google.gwt.user.client.ui.HTMLTable$ColumnFormatter::$res
 HTMLTable$ColumnFormatter,com.google.gwt.user.client.ui.HTMLTable$ColumnFormatter::HTMLTable$ColumnFormatter(Lcom/google/gwt/user/client/ui/HTMLTable;) <init>,com.google.gwt.user.client.ui.HTMLTable$ColumnFormatter,HTMLTable$ColumnFormatter,com/google/gwt/user/client/ui/HTMLTable.java,449,0
 columnGroup,com.google.gwt.user.client.ui.HTMLTable$ColumnFormatter::columnGroup,com.google.gwt.user.client.ui.HTMLTable$ColumnFormatter,columnGroup,com/google/gwt/user/client/ui/HTMLTable.java,450,-1
 this$01,com.google.gwt.user.client.ui.HTMLTable$ColumnFormatter::this$01,com.google.gwt.user.client.ui.HTMLTable$ColumnFormatter,this$01,com/google/gwt/user/client/ui/HTMLTable.java,449,-1
-$getCells,com.google.gwt.user.client.ui.HTMLTable$HTMLTableIEImpl::$getCells(Lcom/google/gwt/user/client/ui/HTMLTable$HTMLTableIEImpl;Lcom/google/gwt/dom/client/Element;)Lcom/google/gwt/core/client/JsArray;,com.google.gwt.user.client.ui.HTMLTable$HTMLTableIEImpl,$getCells,com/google/gwt/user/client/ui/HTMLTable.java,108,0
 $getRow,com.google.gwt.user.client.ui.HTMLTable$RowFormatter::$getRow(Lcom/google/gwt/user/client/ui/HTMLTable$RowFormatter;Lcom/google/gwt/dom/client/Element;I)Lcom/google/gwt/user/client/Element;,com.google.gwt.user.client.ui.HTMLTable$RowFormatter,$getRow,com/google/gwt/user/client/ui/HTMLTable.java,729,0
 $getRow_0,com.google.gwt.user.client.ui.HTMLTable$RowFormatter::$getRow(Lcom/google/gwt/user/client/ui/HTMLTable$RowFormatter;Lcom/google/gwt/user/client/Element;I)Lcom/google/gwt/user/client/Element;,com.google.gwt.user.client.ui.HTMLTable$RowFormatter,$getRow,com/google/gwt/user/client/ui/HTMLTable.java,737,0
 $clinit_HasHorizontalAlignment,com.google.gwt.user.client.ui.HasHorizontalAlignment::$clinit()V,com.google.gwt.user.client.ui.HasHorizontalAlignment,$clinit,com/google/gwt/user/client/ui/HasHorizontalAlignment.java,44,0
@@ -1444,7 +1511,6 @@ this$01,com.google.gwt.user.client.ui.LayoutCommand$1::this$01,com.google.gwt.us
 LayoutPanel,,com.google.gwt.user.client.ui.LayoutPanel,,com/google/gwt/user/client/ui/LayoutPanel.java,105,-1
 $add_4,com.google.gwt.user.client.ui.LayoutPanel::$add(Lcom/google/gwt/user/client/ui/LayoutPanel;Lcom/google/gwt/user/client/ui/Widget;)V,com.google.gwt.user.client.ui.LayoutPanel,$add,com/google/gwt/user/client/ui/LayoutPanel.java,133,0
 $insert_3,com.google.gwt.user.client.ui.LayoutPanel::$insert(Lcom/google/gwt/user/client/ui/LayoutPanel;Lcom/google/gwt/user/client/ui/Widget;I)V,com.google.gwt.user.client.ui.LayoutPanel,$insert,com/google/gwt/user/client/ui/LayoutPanel.java,186,0
-$onDetach_0,com.google.gwt.user.client.ui.LayoutPanel::$onDetach(Lcom/google/gwt/user/client/ui/LayoutPanel;)V,com.google.gwt.user.client.ui.LayoutPanel,$onDetach,com/google/gwt/user/client/ui/LayoutPanel.java,423,0
 $onResize,com.google.gwt.user.client.ui.LayoutPanel::$onResize(Lcom/google/gwt/user/client/ui/LayoutPanel;)V,com.google.gwt.user.client.ui.LayoutPanel,$onResize,com/google/gwt/user/client/ui/LayoutPanel.java,204,0
 $setWidgetLeftRight,com.google.gwt.user.client.ui.LayoutPanel::$setWidgetLeftRight(Lcom/google/gwt/user/client/ui/LayoutPanel;Lcom/google/gwt/user/client/ui/Widget;DLcom/google/gwt/dom/client/Style$Unit;DLcom/google/gwt/dom/client/Style$Unit;)V,com.google.gwt.user.client.ui.LayoutPanel,$setWidgetLeftRight,com/google/gwt/user/client/ui/LayoutPanel.java,268,0
 $setWidgetTopBottom,com.google.gwt.user.client.ui.LayoutPanel::$setWidgetTopBottom(Lcom/google/gwt/user/client/ui/LayoutPanel;Lcom/google/gwt/user/client/ui/Widget;DLcom/google/gwt/dom/client/Style$Unit;DLcom/google/gwt/dom/client/Style$Unit;)V,com.google.gwt.user.client.ui.LayoutPanel,$setWidgetTopBottom,com/google/gwt/user/client/ui/LayoutPanel.java,346,0
@@ -1540,7 +1606,7 @@ showTimer,com.google.gwt.user.client.ui.PopupPanel$ResizeAnimation::showTimer,co
 showing,com.google.gwt.user.client.ui.PopupPanel$ResizeAnimation::showing,com.google.gwt.user.client.ui.PopupPanel$ResizeAnimation,showing,com/google/gwt/user/client/ui/PopupPanel.java,150,-1
 PopupPanel$ResizeAnimation$1,,com.google.gwt.user.client.ui.PopupPanel$ResizeAnimation$1,,com/google/gwt/user/client/ui/PopupPanel.java,226,-1
 PopupPanel$ResizeAnimation$1,com.google.gwt.user.client.ui.PopupPanel$ResizeAnimation$1::PopupPanel$ResizeAnimation$1(Lcom/google/gwt/user/client/ui/PopupPanel$ResizeAnimation;) <init>,com.google.gwt.user.client.ui.PopupPanel$ResizeAnimation$1,PopupPanel$ResizeAnimation$1,com/google/gwt/user/client/ui/PopupPanel.java,226,0
-run_0,com.google.gwt.user.client.ui.PopupPanel$ResizeAnimation$1::run()V,com.google.gwt.user.client.ui.PopupPanel$ResizeAnimation$1,run,com/google/gwt/user/client/ui/PopupPanel.java,228,0
+run_1,com.google.gwt.user.client.ui.PopupPanel$ResizeAnimation$1::run()V,com.google.gwt.user.client.ui.PopupPanel$ResizeAnimation$1,run,com/google/gwt/user/client/ui/PopupPanel.java,228,0
 this$11,com.google.gwt.user.client.ui.PopupPanel$ResizeAnimation$1::this$11,com.google.gwt.user.client.ui.PopupPanel$ResizeAnimation$1,this$11,com/google/gwt/user/client/ui/PopupPanel.java,226,-1
 PotentialElement,,com.google.gwt.user.client.ui.PotentialElement,,com/google/gwt/user/client/ui/PotentialElement.java,40,-1
 $clinit_PotentialElement,com.google.gwt.user.client.ui.PotentialElement::$clinit()V,com.google.gwt.user.client.ui.PotentialElement,$clinit,com/google/gwt/user/client/ui/PotentialElement.java,40,0
@@ -1647,7 +1713,7 @@ $setElement,com.google.gwt.user.client.ui.UIObject::$setElement(Lcom/google/gwt/
 $setElement_0,com.google.gwt.user.client.ui.UIObject::$setElement(Lcom/google/gwt/user/client/ui/UIObject;Lcom/google/gwt/user/client/Element;)V,com.google.gwt.user.client.ui.UIObject,$setElement,com/google/gwt/user/client/ui/UIObject.java,918,0
 $setStyleName,com.google.gwt.user.client.ui.UIObject::$setStyleName(Lcom/google/gwt/user/client/ui/UIObject;Ljava/lang/String;)V,com.google.gwt.user.client.ui.UIObject,$setStyleName,com/google/gwt/user/client/ui/UIObject.java,731,0
 $setStyleName_0,com.google.gwt.user.client.ui.UIObject::$setStyleName(Lcom/google/gwt/user/client/ui/UIObject;Ljava/lang/String;Z)V,com.google.gwt.user.client.ui.UIObject,$setStyleName,com/google/gwt/user/client/ui/UIObject.java,719,0
-$sinkBitlessEvent_0,com.google.gwt.user.client.ui.UIObject::$sinkBitlessEvent(Lcom/google/gwt/user/client/ui/UIObject;Ljava/lang/String;)V,com.google.gwt.user.client.ui.UIObject,$sinkBitlessEvent,com/google/gwt/user/client/ui/UIObject.java,786,0
+$sinkBitlessEvent,com.google.gwt.user.client.ui.UIObject::$sinkBitlessEvent(Lcom/google/gwt/user/client/ui/UIObject;Ljava/lang/String;)V,com.google.gwt.user.client.ui.UIObject,$sinkBitlessEvent,com/google/gwt/user/client/ui/UIObject.java,786,0
 element,com.google.gwt.user.client.ui.UIObject::element,com.google.gwt.user.client.ui.UIObject,element,com/google/gwt/user/client/ui/UIObject.java,389,-1
 getStyleElement,com.google.gwt.user.client.ui.UIObject::getStyleElement()Lcom/google/gwt/user/client/Element;,com.google.gwt.user.client.ui.UIObject,getStyleElement,com/google/gwt/user/client/ui/UIObject.java,838,0
 getStylePrimaryName,com.google.gwt.user.client.ui.UIObject::getStylePrimaryName(Lcom/google/gwt/dom/client/Element;)Ljava/lang/String;,com.google.gwt.user.client.ui.UIObject,getStylePrimaryName,com/google/gwt/user/client/ui/UIObject.java,289,0
@@ -1658,10 +1724,10 @@ setStylePrimaryName,com.google.gwt.user.client.ui.UIObject::setStylePrimaryName(
 setVisible,com.google.gwt.user.client.ui.UIObject::setVisible(Lcom/google/gwt/dom/client/Element;Z)V,com.google.gwt.user.client.ui.UIObject,setVisible,com/google/gwt/user/client/ui/UIObject.java,251,0
 setVisible_0,com.google.gwt.user.client.ui.UIObject::setVisible(Z)V,com.google.gwt.user.client.ui.UIObject,setVisible,com/google/gwt/user/client/ui/UIObject.java,761,0
 setWidth,com.google.gwt.user.client.ui.UIObject::setWidth(Ljava/lang/String;)V,com.google.gwt.user.client.ui.UIObject,setWidth,com/google/gwt/user/client/ui/UIObject.java,771,0
-toString_5,com.google.gwt.user.client.ui.UIObject::toString()Ljava/lang/String;,com.google.gwt.user.client.ui.UIObject,toString,com/google/gwt/user/client/ui/UIObject.java,811,0
+toString_6,com.google.gwt.user.client.ui.UIObject::toString()Ljava/lang/String;,com.google.gwt.user.client.ui.UIObject,toString,com/google/gwt/user/client/ui/UIObject.java,811,0
 updatePrimaryAndDependentStyleNames,com.google.gwt.user.client.ui.UIObject::updatePrimaryAndDependentStyleNames(Lcom/google/gwt/dom/client/Element;Ljava/lang/String;)V,com.google.gwt.user.client.ui.UIObject,updatePrimaryAndDependentStyleNames,com/google/gwt/user/client/ui/UIObject.java,367,0
 ValueBoxBase,,com.google.gwt.user.client.ui.ValueBoxBase,,com/google/gwt/user/client/ui/ValueBoxBase.java,48,-1
-$setValue_1,com.google.gwt.user.client.ui.ValueBoxBase::$setValue(Lcom/google/gwt/user/client/ui/ValueBoxBase;Ljava/lang/Object;Z)V,com.google.gwt.user.client.ui.ValueBoxBase,$setValue,com/google/gwt/user/client/ui/ValueBoxBase.java,392,0
+$setValue_0,com.google.gwt.user.client.ui.ValueBoxBase::$setValue(Lcom/google/gwt/user/client/ui/ValueBoxBase;Ljava/lang/Object;Z)V,com.google.gwt.user.client.ui.ValueBoxBase,$setValue,com/google/gwt/user/client/ui/ValueBoxBase.java,392,0
 ValueBoxBase,com.google.gwt.user.client.ui.ValueBoxBase::ValueBoxBase(Lcom/google/gwt/dom/client/Element;Lcom/google/gwt/text/shared/Renderer;Lcom/google/gwt/text/shared/Parser;) <init>,com.google.gwt.user.client.ui.ValueBoxBase,ValueBoxBase,com/google/gwt/user/client/ui/ValueBoxBase.java,100,0
 onBrowserEvent_3,com.google.gwt.user.client.ui.ValueBoxBase::onBrowserEvent(Lcom/google/gwt/user/client/Event;)V,com.google.gwt.user.client.ui.ValueBoxBase,onBrowserEvent,com/google/gwt/user/client/ui/ValueBoxBase.java,240,0
 onLoad_2,com.google.gwt.user.client.ui.ValueBoxBase::onLoad()V,com.google.gwt.user.client.ui.ValueBoxBase,onLoad,com/google/gwt/user/client/ui/ValueBoxBase.java,406,0
@@ -1696,12 +1762,12 @@ $onDetach,com.google.gwt.user.client.ui.Widget::$onDetach(Lcom/google/gwt/user/c
 $removeFromParent_0,com.google.gwt.user.client.ui.Widget::$removeFromParent(Lcom/google/gwt/user/client/ui/Widget;)V,com.google.gwt.user.client.ui.Widget,$removeFromParent,com/google/gwt/user/client/ui/Widget.java,194,0
 $replaceElement,com.google.gwt.user.client.ui.Widget::$replaceElement(Lcom/google/gwt/user/client/ui/Widget;Lcom/google/gwt/dom/client/Element;)V,com.google.gwt.user.client.ui.Widget,$replaceElement,com/google/gwt/user/client/ui/Widget.java,438,0
 $setParent,com.google.gwt.user.client.ui.Widget::$setParent(Lcom/google/gwt/user/client/ui/Widget;Lcom/google/gwt/user/client/ui/Widget;)V,com.google.gwt.user.client.ui.Widget,$setParent,com/google/gwt/user/client/ui/Widget.java,464,0
-$sinkEvents_0,com.google.gwt.user.client.ui.Widget::$sinkEvents(Lcom/google/gwt/user/client/ui/Widget;I)V,com.google.gwt.user.client.ui.Widget,$sinkEvents,com/google/gwt/user/client/ui/Widget.java,239,0
+$sinkEvents,com.google.gwt.user.client.ui.Widget::$sinkEvents(Lcom/google/gwt/user/client/ui/Widget;I)V,com.google.gwt.user.client.ui.Widget,$sinkEvents,com/google/gwt/user/client/ui/Widget.java,239,0
 attached,com.google.gwt.user.client.ui.Widget::attached,com.google.gwt.user.client.ui.Widget,attached,com/google/gwt/user/client/ui/Widget.java,56,-1
 doAttachChildren,com.google.gwt.user.client.ui.Widget::doAttachChildren()V,com.google.gwt.user.client.ui.Widget,doAttachChildren,com/google/gwt/user/client/ui/Widget.java,285,0
 doDetachChildren,com.google.gwt.user.client.ui.Widget::doDetachChildren()V,com.google.gwt.user.client.ui.Widget,doDetachChildren,com/google/gwt/user/client/ui/Widget.java,296,0
 eventsToSink,com.google.gwt.user.client.ui.Widget::eventsToSink,com.google.gwt.user.client.ui.Widget,eventsToSink,com/google/gwt/user/client/ui/Widget.java,55,-1
-fireEvent_1,com.google.gwt.user.client.ui.Widget::fireEvent(Lcom/google/gwt/event/shared/GwtEvent;)V,com.google.gwt.user.client.ui.Widget,fireEvent,com/google/gwt/user/client/ui/Widget.java,127,0
+fireEvent_0,com.google.gwt.user.client.ui.Widget::fireEvent(Lcom/google/gwt/event/shared/GwtEvent;)V,com.google.gwt.user.client.ui.Widget,fireEvent,com/google/gwt/user/client/ui/Widget.java,127,0
 handlerManager,com.google.gwt.user.client.ui.Widget::handlerManager,com.google.gwt.user.client.ui.Widget,handlerManager,com/google/gwt/user/client/ui/Widget.java,57,-1
 isAttached,com.google.gwt.user.client.ui.Widget::isAttached()Z,com.google.gwt.user.client.ui.Widget,isAttached,com/google/gwt/user/client/ui/Widget.java,159,0
 layoutData,com.google.gwt.user.client.ui.Widget::layoutData,com.google.gwt.user.client.ui.Widget,layoutData,com/google/gwt/user/client/ui/Widget.java,58,-1
@@ -1738,7 +1804,11 @@ $setClip,com.google.gwt.user.client.ui.impl.PopupImpl::$setClip(Lcom/google/gwt/
 assertCompileTimeUserAgent,com.google.gwt.useragent.client.UserAgentAsserter::assertCompileTimeUserAgent()V,com.google.gwt.useragent.client.UserAgentAsserter,assertCompileTimeUserAgent,com/google/gwt/useragent/client/UserAgentAsserter.java,49,0
 UserAgentAsserter$UserAgentAssertionError,,com.google.gwt.useragent.client.UserAgentAsserter$UserAgentAssertionError,,com/google/gwt/useragent/client/UserAgentAsserter.java,65,-1
 UserAgentAsserter$UserAgentAssertionError,com.google.gwt.useragent.client.UserAgentAsserter$UserAgentAssertionError::UserAgentAsserter$UserAgentAssertionError(Ljava/lang/String;Ljava/lang/String;) <init>,com.google.gwt.useragent.client.UserAgentAsserter$UserAgentAssertionError,UserAgentAsserter$UserAgentAssertionError,com/google/gwt/useragent/client/UserAgentAsserter.java,79,0
-$getRuntimeValue,com.google.gwt.useragent.client.UserAgentImplIe9::$getRuntimeValue(Lcom/google/gwt/useragent/client/UserAgentImplIe9;)Ljava/lang/String;,com.google.gwt.useragent.client.UserAgentImplIe9,$getRuntimeValue,gen/com/google/gwt/useragent/client/UserAgentImplIe9.java,5,0
+$getRuntimeValue,com.google.gwt.useragent.client.UserAgentImplIe10::$getRuntimeValue(Lcom/google/gwt/useragent/client/UserAgentImplIe10;)Ljava/lang/String;,com.google.gwt.useragent.client.UserAgentImplIe10,$getRuntimeValue,gen/com/google/gwt/useragent/client/UserAgentImplIe10.java,5,0
+XMLHttpRequest,,com.google.gwt.xhr.client.XMLHttpRequest,,com/google/gwt/xhr/client/XMLHttpRequest.java,29,-1
+$clearOnReadyStateChange,com.google.gwt.xhr.client.XMLHttpRequest::$clearOnReadyStateChange(Lcom/google/gwt/xhr/client/XMLHttpRequest;)V,com.google.gwt.xhr.client.XMLHttpRequest,$clearOnReadyStateChange,com/google/gwt/xhr/client/XMLHttpRequest.java,145,0
+$open,com.google.gwt.xhr.client.XMLHttpRequest::$open(Lcom/google/gwt/xhr/client/XMLHttpRequest;Ljava/lang/String;Ljava/lang/String;)V,com.google.gwt.xhr.client.XMLHttpRequest,$open,com/google/gwt/xhr/client/XMLHttpRequest.java,253,0
+$setOnReadyStateChange,com.google.gwt.xhr.client.XMLHttpRequest::$setOnReadyStateChange(Lcom/google/gwt/xhr/client/XMLHttpRequest;Lcom/google/gwt/xhr/client/ReadyStateChangeHandler;)V,com.google.gwt.xhr.client.XMLHttpRequest,$setOnReadyStateChange,com/google/gwt/xhr/client/XMLHttpRequest.java,324,0
 Event,,com.google.web.bindery.event.shared.Event,,com/google/web/bindery/event/shared/Event.java,23,-1
 source,com.google.web.bindery.event.shared.Event::source,com.google.web.bindery.event.shared.Event,source,com/google/web/bindery/event/shared/Event.java,51,-1
 toString_3,com.google.web.bindery.event.shared.Event::toString()Ljava/lang/String;,com.google.web.bindery.event.shared.Event,toString,com/google/web/bindery/event/shared/Event.java,102,0
@@ -1792,7 +1862,7 @@ makeMessage,com.google.web.bindery.event.shared.UmbrellaException::makeMessage(L
 AbstractStringBuilder,,java.lang.AbstractStringBuilder,,com/google/gwt/emul/java/lang/AbstractStringBuilder.java,24,-1
 AbstractStringBuilder,java.lang.AbstractStringBuilder::AbstractStringBuilder(Ljava/lang/String;) <init>,java.lang.AbstractStringBuilder,AbstractStringBuilder,com/google/gwt/emul/java/lang/AbstractStringBuilder.java,28,0
 string,java.lang.AbstractStringBuilder::string,java.lang.AbstractStringBuilder,string,com/google/gwt/emul/java/lang/AbstractStringBuilder.java,26,-1
-toString_6,java.lang.AbstractStringBuilder::toString()Ljava/lang/String;,java.lang.AbstractStringBuilder,toString,com/google/gwt/emul/java/lang/AbstractStringBuilder.java,108,0
+toString_7,java.lang.AbstractStringBuilder::toString()Ljava/lang/String;,java.lang.AbstractStringBuilder,toString,com/google/gwt/emul/java/lang/AbstractStringBuilder.java,108,0
 ArrayStoreException,,java.lang.ArrayStoreException,,com/google/gwt/emul/java/lang/ArrayStoreException.java,23,-1
 ArrayStoreException,java.lang.ArrayStoreException::ArrayStoreException() <init>,java.lang.ArrayStoreException,ArrayStoreException,com/google/gwt/emul/java/lang/ArrayStoreException.java,25,0
 AssertionError,,java.lang.AssertionError,,com/google/gwt/emul/java/lang/AssertionError.java,21,-1
@@ -1803,7 +1873,7 @@ FALSE,java.lang.Boolean::FALSE,java.lang.Boolean,FALSE,com/google/gwt/emul/java/
 TRUE,java.lang.Boolean::TRUE,java.lang.Boolean,TRUE,com/google/gwt/emul/java/lang/Boolean.java,30,-1
 equals_2,java.lang.Boolean::equals(Ljava/lang/Object;)Z,java.lang.Boolean,equals,com/google/gwt/emul/java/lang/Boolean.java,75,0
 hashCode_4,java.lang.Boolean::hashCode()I,java.lang.Boolean,hashCode,com/google/gwt/emul/java/lang/Boolean.java,80,0
-toString_7,java.lang.Boolean::toString()Ljava/lang/String;,java.lang.Boolean,toString,com/google/gwt/emul/java/lang/Boolean.java,86,0
+toString_8,java.lang.Boolean::toString()Ljava/lang/String;,java.lang.Boolean,toString,com/google/gwt/emul/java/lang/Boolean.java,86,0
 value_0,java.lang.Boolean::value,java.lang.Boolean,value,com/google/gwt/emul/java/lang/Boolean.java,56,-1
 digit,java.lang.Character::digit(CI)I,java.lang.Character,digit,com/google/gwt/emul/java/lang/Character.java,183,0
 Class,,java.lang.Class,,com/google/gwt/emul/java/lang/Class.java,32,-1
@@ -1819,7 +1889,6 @@ createClassObject,java.lang.Class::createClassObject(Ljava/lang/String;Ljava/lan
 createForClass,java.lang.Class::createForClass(Ljava/lang/String;Ljava/lang/String;Lcom/google/gwt/core/client/JavaScriptObject;Ljava/lang/Class;)Ljava/lang/Class;,java.lang.Class,createForClass,com/google/gwt/emul/java/lang/Class.java,72,0
 createForEnum,java.lang.Class::createForEnum(Ljava/lang/String;Ljava/lang/String;Lcom/google/gwt/core/client/JavaScriptObject;Ljava/lang/Class;Lcom/google/gwt/core/client/JavaScriptObject;Lcom/google/gwt/core/client/JavaScriptObject;)Ljava/lang/Class;,java.lang.Class,createForEnum,com/google/gwt/emul/java/lang/Class.java,86,0
 createForInterface,java.lang.Class::createForInterface(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/Class;,java.lang.Class,createForInterface,com/google/gwt/emul/java/lang/Class.java,104,0
-createForPrimitive,java.lang.Class::createForPrimitive(Ljava/lang/String;Lcom/google/gwt/core/client/JavaScriptObject;)Ljava/lang/Class;,java.lang.Class,createForPrimitive,com/google/gwt/emul/java/lang/Class.java,116,0
 getCanonicalName,java.lang.Class::getCanonicalName()Ljava/lang/String;,java.lang.Class,getCanonicalName,com/google/gwt/emul/java/lang/Class.java,339,0
 getClassLiteralForArray_0,java.lang.Class::getClassLiteralForArray(Ljava/lang/Class;I)Ljava/lang/Class;,java.lang.Class,getClassLiteralForArray,com/google/gwt/emul/java/lang/Class.java,47,0
 getName,java.lang.Class::getName()Ljava/lang/String;,java.lang.Class,getName,com/google/gwt/emul/java/lang/Class.java,353,0
@@ -1834,7 +1903,7 @@ modifiers,java.lang.Class::modifiers,java.lang.Class,modifiers,com/google/gwt/em
 nextSequentialId,java.lang.Class::nextSequentialId,java.lang.Class,nextSequentialId,com/google/gwt/emul/java/lang/Class.java,308,-1
 packageName,java.lang.Class::packageName,java.lang.Class,packageName,com/google/gwt/emul/java/lang/Class.java,296,-1
 simpleName,java.lang.Class::simpleName,java.lang.Class,simpleName,com/google/gwt/emul/java/lang/Class.java,290,-1
-toString_8,java.lang.Class::toString()Ljava/lang/String;,java.lang.Class,toString,com/google/gwt/emul/java/lang/Class.java,387,0
+toString_9,java.lang.Class::toString()Ljava/lang/String;,java.lang.Class,toString,com/google/gwt/emul/java/lang/Class.java,387,0
 typeId,java.lang.Class::typeId,java.lang.Class,typeId,com/google/gwt/emul/java/lang/Class.java,300,-1
 typeName,java.lang.Class::typeName,java.lang.Class,typeName,com/google/gwt/emul/java/lang/Class.java,292,-1
 ClassCastException,,java.lang.ClassCastException,,com/google/gwt/emul/java/lang/ClassCastException.java,21,-1
@@ -1850,8 +1919,10 @@ toString_2,java.lang.Enum::toString()Ljava/lang/String;,java.lang.Enum,toString,
 Error,,java.lang.Error,,com/google/gwt/emul/java/lang/Error.java,23,-1
 Error_0,java.lang.Error::Error(Ljava/lang/String;Ljava/lang/Throwable;) <init>,java.lang.Error,Error,com/google/gwt/emul/java/lang/Error.java,29,0
 Exception,,java.lang.Exception,,com/google/gwt/emul/java/lang/Exception.java,23,-1
+Exception,java.lang.Exception::Exception(Ljava/lang/String;) <init>,java.lang.Exception,Exception,com/google/gwt/emul/java/lang/Exception.java,28,0
 IllegalArgumentException,,java.lang.IllegalArgumentException,,com/google/gwt/emul/java/lang/IllegalArgumentException.java,23,-1
-IllegalArgumentException,java.lang.IllegalArgumentException::IllegalArgumentException(Ljava/lang/String;) <init>,java.lang.IllegalArgumentException,IllegalArgumentException,com/google/gwt/emul/java/lang/IllegalArgumentException.java,28,0
+IllegalArgumentException,java.lang.IllegalArgumentException::IllegalArgumentException() <init>,java.lang.IllegalArgumentException,IllegalArgumentException,com/google/gwt/emul/java/lang/IllegalArgumentException.java,25,0
+IllegalArgumentException_0,java.lang.IllegalArgumentException::IllegalArgumentException(Ljava/lang/String;) <init>,java.lang.IllegalArgumentException,IllegalArgumentException,com/google/gwt/emul/java/lang/IllegalArgumentException.java,28,0
 IllegalStateException,,java.lang.IllegalStateException,,com/google/gwt/emul/java/lang/IllegalStateException.java,22,-1
 IllegalStateException,java.lang.IllegalStateException::IllegalStateException() <init>,java.lang.IllegalStateException,IllegalStateException,com/google/gwt/emul/java/lang/IllegalStateException.java,24,0
 IllegalStateException_0,java.lang.IllegalStateException::IllegalStateException(Ljava/lang/String;) <init>,java.lang.IllegalStateException,IllegalStateException,com/google/gwt/emul/java/lang/IllegalStateException.java,27,0
@@ -1862,7 +1933,7 @@ Integer,,java.lang.Integer,,com/google/gwt/emul/java/lang/Integer.java,21,-1
 Integer,java.lang.Integer::Integer(I) <init>,java.lang.Integer,Integer,com/google/gwt/emul/java/lang/Integer.java,255,0
 equals_3,java.lang.Integer::equals(Ljava/lang/Object;)Z,java.lang.Integer,equals,com/google/gwt/emul/java/lang/Integer.java,278,0
 hashCode_5,java.lang.Integer::hashCode()I,java.lang.Integer,hashCode,com/google/gwt/emul/java/lang/Integer.java,288,0
-toString_9,java.lang.Integer::toString()Ljava/lang/String;,java.lang.Integer,toString,com/google/gwt/emul/java/lang/Integer.java,308,0
+toString_10,java.lang.Integer::toString()Ljava/lang/String;,java.lang.Integer,toString,com/google/gwt/emul/java/lang/Integer.java,308,0
 value_0,java.lang.Integer::value,java.lang.Integer,value,com/google/gwt/emul/java/lang/Integer.java,253,-1
 valueOf,java.lang.Integer::valueOf(I)Ljava/lang/Integer;,java.lang.Integer,valueOf,com/google/gwt/emul/java/lang/Integer.java,223,0
 $clinit_Integer$BoxedValues,java.lang.Integer$BoxedValues::$clinit()V,java.lang.Integer$BoxedValues,$clinit,com/google/gwt/emul/java/lang/Integer.java,31,0
@@ -1914,7 +1985,9 @@ $append,java.lang.StringBuilder::$append(Ljava/lang/StringBuilder;Ljava/lang/Str
 StringBuilder,java.lang.StringBuilder::StringBuilder() <init>,java.lang.StringBuilder,StringBuilder,com/google/gwt/emul/java/lang/StringBuilder.java,26,0
 StringBuilder_0,java.lang.StringBuilder::StringBuilder(Ljava/lang/String;) <init>,java.lang.StringBuilder,StringBuilder,com/google/gwt/emul/java/lang/StringBuilder.java,43,0
 Throwable,,java.lang.Throwable,,com/google/gwt/emul/java/lang/Throwable.java,32,-1
+$initCause,java.lang.Throwable::$initCause(Ljava/lang/Throwable;Ljava/lang/Throwable;)Ljava/lang/Throwable;,java.lang.Throwable,$initCause,com/google/gwt/emul/java/lang/Throwable.java,155,0
 Throwable,java.lang.Throwable::Throwable(Ljava/lang/String;Ljava/lang/Throwable;) <init>,java.lang.Throwable,Throwable,com/google/gwt/emul/java/lang/Throwable.java,63,0
+cause,java.lang.Throwable::cause,java.lang.Throwable,cause,com/google/gwt/emul/java/lang/Throwable.java,48,-1
 detailMessage,java.lang.Throwable::detailMessage,java.lang.Throwable,detailMessage,com/google/gwt/emul/java/lang/Throwable.java,49,-1
 getMessage,java.lang.Throwable::getMessage()Ljava/lang/String;,java.lang.Throwable,getMessage,com/google/gwt/emul/java/lang/Throwable.java,128,0
 toString_1,java.lang.Throwable::toString()Ljava/lang/String;,java.lang.Throwable,toString,com/google/gwt/emul/java/lang/Throwable.java,188,0
@@ -1928,7 +2001,7 @@ $toString_0,java.util.AbstractCollection::$toString(Ljava/util/AbstractCollectio
 contains,java.util.AbstractCollection::contains(Ljava/lang/Object;)Z,java.util.AbstractCollection,contains,com/google/gwt/emul/java/util/AbstractCollection.java,60,0
 isEmpty,java.util.AbstractCollection::isEmpty()Z,java.util.AbstractCollection,isEmpty,com/google/gwt/emul/java/util/AbstractCollection.java,76,0
 remove_16,java.util.AbstractCollection::remove(Ljava/lang/Object;)Z,java.util.AbstractCollection,remove,com/google/gwt/emul/java/util/AbstractCollection.java,83,0
-toString_10,java.util.AbstractCollection::toString()Ljava/lang/String;,java.util.AbstractCollection,toString,com/google/gwt/emul/java/util/AbstractCollection.java,143,0
+toString_11,java.util.AbstractCollection::toString()Ljava/lang/String;,java.util.AbstractCollection,toString,com/google/gwt/emul/java/util/AbstractCollection.java,143,0
 AbstractHashMap,,java.util.AbstractHashMap,,com/google/gwt/emul/java/util/AbstractHashMap.java,37,-1
 $containsKey,java.util.AbstractHashMap::$containsKey(Ljava/util/AbstractHashMap;Ljava/lang/Object;)Z,java.util.AbstractHashMap,$containsKey,com/google/gwt/emul/java/util/AbstractHashMap.java,170,0
 $elementAdded,java.util.AbstractHashMap::$elementAdded(Ljava/util/AbstractHashMap;)V,java.util.AbstractHashMap,$elementAdded,com/google/gwt/emul/java/util/AbstractHashMap.java,212,0
@@ -1990,7 +2063,7 @@ $toString_1,java.util.AbstractMap::$toString(Ljava/util/AbstractMap;Ljava/lang/O
 equals_4,java.util.AbstractMap::equals(Ljava/lang/Object;)Z,java.util.AbstractMap,equals,com/google/gwt/emul/java/util/AbstractMap.java,161,0
 getEntryValueOrNull,java.util.AbstractMap::getEntryValueOrNull(Ljava/util/Map$Entry;)Ljava/lang/Object;,java.util.AbstractMap,getEntryValueOrNull,com/google/gwt/emul/java/util/AbstractMap.java,336,0
 hashCode_6,java.util.AbstractMap::hashCode()I,java.util.AbstractMap,hashCode,com/google/gwt/emul/java/util/AbstractMap.java,187,0
-toString_11,java.util.AbstractMap::toString()Ljava/lang/String;,java.util.AbstractMap,toString,com/google/gwt/emul/java/util/AbstractMap.java,269,0
+toString_12,java.util.AbstractMap::toString()Ljava/lang/String;,java.util.AbstractMap,toString,com/google/gwt/emul/java/util/AbstractMap.java,269,0
 AbstractMap$1,,java.util.AbstractMap$1,,com/google/gwt/emul/java/util/AbstractMap.java,198,-1
 $iterator,java.util.AbstractMap$1::$iterator(Ljava/util/AbstractMap$1;)Ljava/util/Iterator;,java.util.AbstractMap$1,$iterator,com/google/gwt/emul/java/util/AbstractMap.java,210,0
 AbstractMap$1,java.util.AbstractMap$1::AbstractMap$1(Ljava/util/AbstractMap;) <init>,java.util.AbstractMap$1,AbstractMap$1,com/google/gwt/emul/java/util/AbstractMap.java,198,0
@@ -2012,14 +2085,14 @@ getValue,java.util.AbstractMap$AbstractEntry::getValue()Ljava/lang/Object;,java.
 hashCode_9,java.util.AbstractMap$AbstractEntry::hashCode()I,java.util.AbstractMap$AbstractEntry,hashCode,com/google/gwt/emul/java/util/AbstractMap.java,105,0
 key,java.util.AbstractMap$AbstractEntry::key,java.util.AbstractMap$AbstractEntry,key,com/google/gwt/emul/java/util/AbstractMap.java,66,-1
 setValue,java.util.AbstractMap$AbstractEntry::setValue(Ljava/lang/Object;)Ljava/lang/Object;,java.util.AbstractMap$AbstractEntry,setValue,com/google/gwt/emul/java/util/AbstractMap.java,85,0
-toString_12,java.util.AbstractMap$AbstractEntry::toString()Ljava/lang/String;,java.util.AbstractMap$AbstractEntry,toString,com/google/gwt/emul/java/util/AbstractMap.java,110,0
+toString_13,java.util.AbstractMap$AbstractEntry::toString()Ljava/lang/String;,java.util.AbstractMap$AbstractEntry,toString,com/google/gwt/emul/java/util/AbstractMap.java,110,0
 value_0,java.util.AbstractMap$AbstractEntry::value,java.util.AbstractMap$AbstractEntry,value,com/google/gwt/emul/java/util/AbstractMap.java,67,-1
 AbstractMap$SimpleEntry,,java.util.AbstractMap$SimpleEntry,,com/google/gwt/emul/java/util/AbstractMap.java,33,-1
 AbstractMap$SimpleEntry,java.util.AbstractMap$SimpleEntry::AbstractMap$SimpleEntry(Ljava/lang/Object;Ljava/lang/Object;) <init>,java.util.AbstractMap$SimpleEntry,AbstractMap$SimpleEntry,com/google/gwt/emul/java/util/AbstractMap.java,34,0
 AbstractMapEntry,,java.util.AbstractMapEntry,,com/google/gwt/emul/java/util/AbstractMapEntry.java,22,-1
 equals_8,java.util.AbstractMapEntry::equals(Ljava/lang/Object;)Z,java.util.AbstractMapEntry,equals,com/google/gwt/emul/java/util/AbstractMapEntry.java,25,0
 hashCode_10,java.util.AbstractMapEntry::hashCode()I,java.util.AbstractMapEntry,hashCode,com/google/gwt/emul/java/util/AbstractMapEntry.java,38,0
-toString_13,java.util.AbstractMapEntry::toString()Ljava/lang/String;,java.util.AbstractMapEntry,toString,com/google/gwt/emul/java/util/AbstractMapEntry.java,43,0
+toString_14,java.util.AbstractMapEntry::toString()Ljava/lang/String;,java.util.AbstractMapEntry,toString,com/google/gwt/emul/java/util/AbstractMapEntry.java,43,0
 AbstractSet,,java.util.AbstractSet,,com/google/gwt/emul/java/util/AbstractSet.java,27,-1
 equals_5,java.util.AbstractSet::equals(Ljava/lang/Object;)Z,java.util.AbstractSet,equals,com/google/gwt/emul/java/util/AbstractSet.java,31,0
 hashCode_7,java.util.AbstractSet::hashCode()I,java.util.AbstractSet,hashCode,com/google/gwt/emul/java/util/AbstractSet.java,48,0
@@ -2094,7 +2167,7 @@ iterator_10,java.util.HashSet::iterator()Ljava/util/Iterator;,java.util.HashSet,
 map_0,java.util.HashSet::map,java.util.HashSet,map,com/google/gwt/emul/java/util/HashSet.java,30,-1
 remove_26,java.util.HashSet::remove(Ljava/lang/Object;)Z,java.util.HashSet,remove,com/google/gwt/emul/java/util/HashSet.java,97,0
 size_6,java.util.HashSet::size()I,java.util.HashSet,size,com/google/gwt/emul/java/util/HashSet.java,102,0
-toString_14,java.util.HashSet::toString()Ljava/lang/String;,java.util.HashSet,toString,com/google/gwt/emul/java/util/HashSet.java,107,0
+toString_15,java.util.HashSet::toString()Ljava/lang/String;,java.util.HashSet,toString,com/google/gwt/emul/java/util/HashSet.java,107,0
 InternalJsHashCodeMap,,java.util.InternalJsHashCodeMap,,com/google/gwt/emul/java/util/InternalJsHashCodeMap.java,36,-1
 $ensureChain,java.util.InternalJsHashCodeMap::$ensureChain(Ljava/util/InternalJsHashCodeMap;Ljava/lang/String;)[Ljava/util/Map$Entry;,java.util.InternalJsHashCodeMap,$ensureChain,com/google/gwt/emul/java/util/InternalJsHashCodeMap.java,226,0
 $getChain,java.util.InternalJsHashCodeMap::$getChain(Ljava/util/InternalJsHashCodeMap;Ljava/lang/String;)[Ljava/util/Map$Entry;,java.util.InternalJsHashCodeMap,$getChain,com/google/gwt/emul/java/util/InternalJsHashCodeMap.java,218,0
@@ -2199,13 +2272,17 @@ Configuration,,mhcs.client.Configuration,,mhcs/client/Configuration.java,12,-1
 Configuration,mhcs.client.Configuration::Configuration(Ljava/lang/String;) <init>,mhcs.client.Configuration,Configuration,mhcs/client/Configuration.java,73,0
 id_0,mhcs.client.Configuration::id,mhcs.client.Configuration,id,mhcs/client/Configuration.java,14,-1
 modules,mhcs.client.Configuration::modules,mhcs.client.Configuration,modules,mhcs/client/Configuration.java,13,-1
-toString_15,mhcs.client.Configuration::toString()Ljava/lang/String;,mhcs.client.Configuration,toString,mhcs/client/Configuration.java,88,0
+toString_16,mhcs.client.Configuration::toString()Ljava/lang/String;,mhcs.client.Configuration,toString,mhcs/client/Configuration.java,88,0
 $clinit_Controller,mhcs.client.Controller::$clinit()V,mhcs.client.Controller,$clinit,mhcs/client/Controller.java,20,0
 setType,mhcs.client.Controller::setType(Lcom/google/gwt/user/client/ui/TextBox;Lcom/google/gwt/user/client/ui/ListBox;)V,mhcs.client.Controller,setType,mhcs/client/Controller.java,32,0
 Controller$1,,mhcs.client.Controller$1,,mhcs/client/Controller.java,96,-1
 Controller$1,mhcs.client.Controller$1::Controller$1() <init>,mhcs.client.Controller$1,Controller$1,mhcs/client/Controller.java,96,0
 onClick_0,mhcs.client.Controller$1::onClick(Lcom/google/gwt/event/dom/client/ClickEvent;)V,mhcs.client.Controller$1,onClick,mhcs/client/Controller.java,97,0
 val$typeDialogBox1,mhcs.client.Controller$1::val$typeDialogBox1,mhcs.client.Controller$1,val$typeDialogBox1,mhcs/client/Controller.java,96,-1
+Controller$4,,mhcs.client.Controller$4,,mhcs/client/Controller.java,164,-1
+Controller$4,mhcs.client.Controller$4::Controller$4() <init>,mhcs.client.Controller$4,Controller$4,mhcs/client/Controller.java,164,0
+onChange,mhcs.client.Controller$4::onChange(Lcom/google/gwt/event/dom/client/ChangeEvent;)V,mhcs.client.Controller$4,onChange,mhcs/client/Controller.java,165,0
+val$lb1,mhcs.client.Controller$4::val$lb1,mhcs.client.Controller$4,val$lb1,mhcs/client/Controller.java,164,-1
 Map,,mhcs.client.Map,,mhcs/client/Map.java,17,-1
 $updateGrid,mhcs.client.Map::$updateGrid(Lmhcs/client/Map;)V,mhcs.client.Map,$updateGrid,mhcs/client/Map.java,67,0
 Map_0,mhcs.client.Map::Map(II) <init>,mhcs.client.Map,Map,mhcs/client/Map.java,51,0
@@ -2231,7 +2308,7 @@ inUse,mhcs.client.Module::inUse,mhcs.client.Module,inUse,mhcs/client/Module.java
 moduleStrings_0,mhcs.client.Module::moduleStrings,mhcs.client.Module,moduleStrings,mhcs/client/Module.java,222,-1
 orientation,mhcs.client.Module::orientation,mhcs.client.Module,orientation,mhcs/client/Module.java,14,-1
 status_0,mhcs.client.Module::status,mhcs.client.Module,status,mhcs/client/Module.java,17,-1
-toString_16,mhcs.client.Module::toString()Ljava/lang/String;,mhcs.client.Module,toString,mhcs/client/Module.java,41,0
+toString_17,mhcs.client.Module::toString()Ljava/lang/String;,mhcs.client.Module,toString,mhcs/client/Module.java,41,0
 type_0,mhcs.client.Module::type,mhcs.client.Module,type,mhcs/client/Module.java,15,-1
 ModuleStatus,,mhcs.client.ModuleStatus,,mhcs/client/ModuleStatus.java,9,-1
 $clinit_ModuleStatus,mhcs.client.ModuleStatus::$clinit()V,mhcs.client.ModuleStatus,$clinit,mhcs/client/ModuleStatus.java,9,0
@@ -2262,43 +2339,43 @@ Point,,mhcs.client.Point,,mhcs/client/Point.java,9,-1
 $toString_3,mhcs.client.Point::$toString(Lmhcs/client/Point;)Ljava/lang/String;,mhcs.client.Point,$toString,mhcs/client/Point.java,41,0
 Point,mhcs.client.Point::Point(II) <init>,mhcs.client.Point,Point,mhcs/client/Point.java,21,0
 Point_0,mhcs.client.Point::Point(Ljava/lang/String;) <init>,mhcs.client.Point,Point,mhcs/client/Point.java,31,0
-toString_17,mhcs.client.Point::toString()Ljava/lang/String;,mhcs.client.Point,toString,mhcs/client/Point.java,41,0
+toString_18,mhcs.client.Point::toString()Ljava/lang/String;,mhcs.client.Point,toString,mhcs/client/Point.java,41,0
 x_0,mhcs.client.Point::x,mhcs.client.Point,x,mhcs/client/Point.java,11,-1
 y_0,mhcs.client.Point::y,mhcs.client.Point,y,mhcs/client/Point.java,11,-1
-$onModuleLoad_0,mhcs.client.View::$onModuleLoad(Lmhcs/client/View;)V,mhcs.client.View,$onModuleLoad,mhcs/client/View.java,53,0
-View$1,,mhcs.client.View$1,,mhcs/client/View.java,166,-1
-View$1,mhcs.client.View$1::View$1(Lmhcs/client/View;) <init>,mhcs.client.View$1,View$1,mhcs/client/View.java,166,0
-onClick_1,mhcs.client.View$1::onClick(Lcom/google/gwt/event/dom/client/ClickEvent;)V,mhcs.client.View$1,onClick,mhcs/client/View.java,168,0
-val$passwordEntry2,mhcs.client.View$1::val$passwordEntry2,mhcs.client.View$1,val$passwordEntry2,mhcs/client/View.java,166,-1
-val$tabPanel3,mhcs.client.View$1::val$tabPanel3,mhcs.client.View$1,val$tabPanel3,mhcs/client/View.java,166,-1
-View$1$1,,mhcs.client.View$1$1,,mhcs/client/View.java,199,-1
-View$1$1,mhcs.client.View$1$1::View$1$1(Lmhcs/client/View$1;) <init>,mhcs.client.View$1$1,View$1$1,mhcs/client/View.java,199,0
-onClick_2,mhcs.client.View$1$1::onClick(Lcom/google/gwt/event/dom/client/ClickEvent;)V,mhcs.client.View$1$1,onClick,mhcs/client/View.java,200,0
-val$dialogBox2,mhcs.client.View$1$1::val$dialogBox2,mhcs.client.View$1$1,val$dialogBox2,mhcs/client/View.java,199,-1
-View$2,,mhcs.client.View$2,,mhcs/client/View.java,240,-1
-$onChange,mhcs.client.View$2::$onChange(Lmhcs/client/View$2;Lcom/google/gwt/event/dom/client/ChangeEvent;)V,mhcs.client.View$2,$onChange,mhcs/client/View.java,243,0
-View$2,mhcs.client.View$2::View$2(Lmhcs/client/View;) <init>,mhcs.client.View$2,View$2,mhcs/client/View.java,240,0
-val$modulesEastCondition5,mhcs.client.View$2::val$modulesEastCondition5,mhcs.client.View$2,val$modulesEastCondition5,mhcs/client/View.java,240,-1
-val$modulesEastId3,mhcs.client.View$2::val$modulesEastId3,mhcs.client.View$2,val$modulesEastId3,mhcs/client/View.java,240,-1
-val$modulesEastOrientation6,mhcs.client.View$2::val$modulesEastOrientation6,mhcs.client.View$2,val$modulesEastOrientation6,mhcs/client/View.java,240,-1
-val$modulesEastType4,mhcs.client.View$2::val$modulesEastType4,mhcs.client.View$2,val$modulesEastType4,mhcs/client/View.java,240,-1
-val$modulesListBox2,mhcs.client.View$2::val$modulesListBox2,mhcs.client.View$2,val$modulesListBox2,mhcs/client/View.java,240,-1
-val$xTextBox7,mhcs.client.View$2::val$xTextBox7,mhcs.client.View$2,val$xTextBox7,mhcs/client/View.java,240,-1
-val$yTextBox8,mhcs.client.View$2::val$yTextBox8,mhcs.client.View$2,val$yTextBox8,mhcs/client/View.java,240,-1
-View$3,,mhcs.client.View$3,,mhcs/client/View.java,288,-1
-View$3,mhcs.client.View$3::View$3(Lmhcs/client/View;) <init>,mhcs.client.View$3,View$3,mhcs/client/View.java,288,0
-onClick_3,mhcs.client.View$3::onClick(Lcom/google/gwt/event/dom/client/ClickEvent;)V,mhcs.client.View$3,onClick,mhcs/client/View.java,291,0
-val$modulesListBox2,mhcs.client.View$3::val$modulesListBox2,mhcs.client.View$3,val$modulesListBox2,mhcs/client/View.java,288,-1
-View$4,,mhcs.client.View$4,,mhcs/client/View.java,370,-1
-View$4,mhcs.client.View$4::View$4(Lmhcs/client/View;) <init>,mhcs.client.View$4,View$4,mhcs/client/View.java,370,0
-onClick_4,mhcs.client.View$4::onClick(Lcom/google/gwt/event/dom/client/ClickEvent;)V,mhcs.client.View$4,onClick,mhcs/client/View.java,372,0
-val$modulesEastCondition6,mhcs.client.View$4::val$modulesEastCondition6,mhcs.client.View$4,val$modulesEastCondition6,mhcs/client/View.java,370,-1
-val$modulesEastId3,mhcs.client.View$4::val$modulesEastId3,mhcs.client.View$4,val$modulesEastId3,mhcs/client/View.java,370,-1
-val$modulesEastOrientation7,mhcs.client.View$4::val$modulesEastOrientation7,mhcs.client.View$4,val$modulesEastOrientation7,mhcs/client/View.java,370,-1
-val$modulesEastType2,mhcs.client.View$4::val$modulesEastType2,mhcs.client.View$4,val$modulesEastType2,mhcs/client/View.java,370,-1
-val$modulesListBox8,mhcs.client.View$4::val$modulesListBox8,mhcs.client.View$4,val$modulesListBox8,mhcs/client/View.java,370,-1
-val$xTextBox4,mhcs.client.View$4::val$xTextBox4,mhcs.client.View$4,val$xTextBox4,mhcs/client/View.java,370,-1
-val$yTextBox5,mhcs.client.View$4::val$yTextBox5,mhcs.client.View$4,val$yTextBox5,mhcs/client/View.java,370,-1
+$onModuleLoad_0,mhcs.client.View::$onModuleLoad(Lmhcs/client/View;)V,mhcs.client.View,$onModuleLoad,mhcs/client/View.java,55,0
+View$1,,mhcs.client.View$1,,mhcs/client/View.java,168,-1
+View$1,mhcs.client.View$1::View$1(Lmhcs/client/View;) <init>,mhcs.client.View$1,View$1,mhcs/client/View.java,168,0
+onClick_1,mhcs.client.View$1::onClick(Lcom/google/gwt/event/dom/client/ClickEvent;)V,mhcs.client.View$1,onClick,mhcs/client/View.java,170,0
+val$passwordEntry2,mhcs.client.View$1::val$passwordEntry2,mhcs.client.View$1,val$passwordEntry2,mhcs/client/View.java,168,-1
+val$tabPanel3,mhcs.client.View$1::val$tabPanel3,mhcs.client.View$1,val$tabPanel3,mhcs/client/View.java,168,-1
+View$1$1,,mhcs.client.View$1$1,,mhcs/client/View.java,201,-1
+View$1$1,mhcs.client.View$1$1::View$1$1(Lmhcs/client/View$1;) <init>,mhcs.client.View$1$1,View$1$1,mhcs/client/View.java,201,0
+onClick_2,mhcs.client.View$1$1::onClick(Lcom/google/gwt/event/dom/client/ClickEvent;)V,mhcs.client.View$1$1,onClick,mhcs/client/View.java,202,0
+val$dialogBox2,mhcs.client.View$1$1::val$dialogBox2,mhcs.client.View$1$1,val$dialogBox2,mhcs/client/View.java,201,-1
+View$2,,mhcs.client.View$2,,mhcs/client/View.java,248,-1
+View$2,mhcs.client.View$2::View$2(Lmhcs/client/View;) <init>,mhcs.client.View$2,View$2,mhcs/client/View.java,248,0
+onChange_0,mhcs.client.View$2::onChange(Lcom/google/gwt/event/dom/client/ChangeEvent;)V,mhcs.client.View$2,onChange,mhcs/client/View.java,251,0
+val$modulesEastCondition5,mhcs.client.View$2::val$modulesEastCondition5,mhcs.client.View$2,val$modulesEastCondition5,mhcs/client/View.java,248,-1
+val$modulesEastId3,mhcs.client.View$2::val$modulesEastId3,mhcs.client.View$2,val$modulesEastId3,mhcs/client/View.java,248,-1
+val$modulesEastOrientation6,mhcs.client.View$2::val$modulesEastOrientation6,mhcs.client.View$2,val$modulesEastOrientation6,mhcs/client/View.java,248,-1
+val$modulesEastType4,mhcs.client.View$2::val$modulesEastType4,mhcs.client.View$2,val$modulesEastType4,mhcs/client/View.java,248,-1
+val$modulesListBox2,mhcs.client.View$2::val$modulesListBox2,mhcs.client.View$2,val$modulesListBox2,mhcs/client/View.java,248,-1
+val$xTextBox7,mhcs.client.View$2::val$xTextBox7,mhcs.client.View$2,val$xTextBox7,mhcs/client/View.java,248,-1
+val$yTextBox8,mhcs.client.View$2::val$yTextBox8,mhcs.client.View$2,val$yTextBox8,mhcs/client/View.java,248,-1
+View$3,,mhcs.client.View$3,,mhcs/client/View.java,296,-1
+View$3,mhcs.client.View$3::View$3(Lmhcs/client/View;) <init>,mhcs.client.View$3,View$3,mhcs/client/View.java,296,0
+onClick_3,mhcs.client.View$3::onClick(Lcom/google/gwt/event/dom/client/ClickEvent;)V,mhcs.client.View$3,onClick,mhcs/client/View.java,299,0
+val$modulesListBox2,mhcs.client.View$3::val$modulesListBox2,mhcs.client.View$3,val$modulesListBox2,mhcs/client/View.java,296,-1
+View$4,,mhcs.client.View$4,,mhcs/client/View.java,378,-1
+View$4,mhcs.client.View$4::View$4(Lmhcs/client/View;) <init>,mhcs.client.View$4,View$4,mhcs/client/View.java,378,0
+onClick_4,mhcs.client.View$4::onClick(Lcom/google/gwt/event/dom/client/ClickEvent;)V,mhcs.client.View$4,onClick,mhcs/client/View.java,380,0
+val$modulesEastCondition6,mhcs.client.View$4::val$modulesEastCondition6,mhcs.client.View$4,val$modulesEastCondition6,mhcs/client/View.java,378,-1
+val$modulesEastId3,mhcs.client.View$4::val$modulesEastId3,mhcs.client.View$4,val$modulesEastId3,mhcs/client/View.java,378,-1
+val$modulesEastOrientation7,mhcs.client.View$4::val$modulesEastOrientation7,mhcs.client.View$4,val$modulesEastOrientation7,mhcs/client/View.java,378,-1
+val$modulesEastType2,mhcs.client.View$4::val$modulesEastType2,mhcs.client.View$4,val$modulesEastType2,mhcs/client/View.java,378,-1
+val$modulesListBox8,mhcs.client.View$4::val$modulesListBox8,mhcs.client.View$4,val$modulesListBox8,mhcs/client/View.java,378,-1
+val$xTextBox4,mhcs.client.View$4::val$xTextBox4,mhcs.client.View$4,val$xTextBox4,mhcs/client/View.java,378,-1
+val$yTextBox5,mhcs.client.View$4::val$yTextBox5,mhcs.client.View$4,val$yTextBox5,mhcs/client/View.java,378,-1
 Load,,mhcs.storage.Load,,mhcs/storage/Load.java,14,-1
 $loadConfigurations,mhcs.storage.Load::$loadConfigurations(Lmhcs/storage/Load;)V,mhcs.storage.Load,$loadConfigurations,mhcs/storage/Load.java,45,0
 $loadModules,mhcs.storage.Load::$loadModules(Lmhcs/storage/Load;)V,mhcs.storage.Load,$loadModules,mhcs/storage/Load.java,23,0
@@ -2320,3 +2397,7 @@ $removeAllModules,mhcs.storage.Save::$removeAllModules(Lmhcs/storage/Save;)V,mhc
 $saveModules,mhcs.storage.Save::$saveModules(Lmhcs/storage/Save;Ljava/util/List;)V,mhcs.storage.Save,$saveModules,mhcs/storage/Save.java,21,0
 Save,mhcs.storage.Save::Save() <init>,mhcs.storage.Save,Save,mhcs/storage/Save.java,14,0
 stockStore,mhcs.storage.Save::stockStore,mhcs.storage.Save,stockStore,mhcs/storage/Save.java,83,-1
+TestCaseChoice,mhcs.storage.TestCases::TestCaseChoice(I)V,mhcs.storage.TestCases,TestCaseChoice,mhcs/storage/TestCases.java,28,0
+TestCases$1,,mhcs.storage.TestCases$1,,mhcs/storage/TestCases.java,36,-1
+$onResponseReceived,mhcs.storage.TestCases$1::$onResponseReceived(Lmhcs/storage/TestCases$1;Lcom/google/gwt/http/client/Request;Lcom/google/gwt/http/client/Response;)V,mhcs.storage.TestCases$1,$onResponseReceived,mhcs/storage/TestCases.java,40,0
+TestCases$1,mhcs.storage.TestCases$1::TestCases$1() <init>,mhcs.storage.TestCases$1,TestCases$1,mhcs/storage/TestCases.java,36,0
