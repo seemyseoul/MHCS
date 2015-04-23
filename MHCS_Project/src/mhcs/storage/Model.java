@@ -45,6 +45,13 @@ public class Model {
 		toSave.removeAllModules();
 		toSave.saveModules(moduleList);
 	}
+	
+	public static void removeAll(){
+		moduleList.clear();
+		configList.clear();
+		toSave.removeAllModules();
+		toSave.removeAllConfigurations();
+	}
 
 	public static void removeConfiguration(Configuration toRemove) {
 		configList.remove(findListNumber(toRemove));
