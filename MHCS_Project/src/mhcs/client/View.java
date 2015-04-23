@@ -152,6 +152,12 @@ public class View implements EntryPoint {
     final String strModulesCenterWidth = "800px";
     final String strConfigMapWidth = "1000px";
     
+    /* Create sounds */
+    Audio successSound = Audio.createIfSupported();
+    successSound.setSrc("sounds/success");
+    Audio errorSound = Audio.createIfSupported();
+    errorSound.setSrc("sounds/error");
+    
     final TestCases test = new TestCases();
 
     final Map mapDisplay = new Map(100,50);    
@@ -192,6 +198,8 @@ public class View implements EntryPoint {
 
                 // Add an image to the dialog
                 Image image = new Image("images/error");
+                image.setHeight(strSettingsButtonWidth);
+                image.setWidth(strModulesButtonWidth);
                 dialogContents.add(image);
                 dialogContents.setCellHorizontalAlignment(
                     image, HasHorizontalAlignment.ALIGN_CENTER);
@@ -216,10 +224,6 @@ public class View implements EntryPoint {
                 
                 dialogBox.center();
                 dialogBox.show();
-                
-                /* Create error sound */
-                Audio errorSound = Audio.createIfSupported();
-                errorSound.setSrc("sounds/error");
                 errorSound.play(); 
                 
             }  // else
@@ -392,14 +396,19 @@ public class View implements EntryPoint {
 		    orientation = modulesEastOrientation.getSelectedIndex();
 			inUse = false;
 			
-			Model.saveModule(new Module(type,id,coordinates,status,orientation,inUse));
+			if(Model.saveModule(new Module(type,id,coordinates,status,orientation,inUse))) {
+                successSound.play(); 
+			} // if
+			else {
+				errorSound.play();
+			} // else
 			
 			modulesListBox.clear();
 			for (Module m : Model.getModuleList())
 			{
 				modulesListBox.addItem("Module #" + m.getId());
-			}
-		}
+			} // for
+		} // onClick
     });
     
     modulesEastVerPanel.add(modulesLblId);
