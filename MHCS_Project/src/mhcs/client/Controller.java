@@ -35,7 +35,7 @@ public class Controller {
 	 * @param id
 	 * @param type
 	 */
-	public static void setType(TextBox id, ListBox type) {
+	public static void setType(final TextBox id, final ListBox type) {
 		String modId = id.getText();
 		int intModId;
 		if(!modId.equals(""))
@@ -122,7 +122,7 @@ public class Controller {
 		
 	} // setType
 	
-	public static void setRequirements(Module m) {
+	public static void setRequirements(final Module m) {
 		
 	} // setRequirements
 	
@@ -136,13 +136,11 @@ public class Controller {
 	 * @return add ClickHandler
 	 */
 	public static ClickHandler addButton() {
-		ClickHandler add = new ClickHandler() {
+		return new ClickHandler() {
 			public void onClick(ClickEvent event) {
 				varModule = new Module();
 			} // onClick
 		}; // ClickHandler
-
-		return add;
 	} // addButton
 	
 	/**
@@ -152,7 +150,7 @@ public class Controller {
 	 * @return add ClickHandler
 	 */ 
 	public static ClickHandler removeButton(final ListBox modulesListBox) {
-		ClickHandler remove = new ClickHandler() {
+		return new ClickHandler() {
 			public void onClick(ClickEvent event) { 
 				String moduleString = modulesListBox.getItemText(modulesListBox.getSelectedIndex());
 				moduleString = moduleString.substring(8);
@@ -160,14 +158,12 @@ public class Controller {
 				modulesListBox.removeItem(modulesListBox.getSelectedIndex());
 			} // onClick
 		}; // ClickHandler
-
-		return remove;
 	} // addButtom
 	
-	public static ChangeHandler changeHandler(ListBox modulesListBox, TextBox modulesEastId,
-			ListBox modulesEastType, ListBox modulesEastCondition, ListBox modulesEastOrientation,
-			TextBox xTextBox, TextBox yTextBox) {
-		ChangeHandler change = new ChangeHandler(){
+	public static ChangeHandler changeHandler(final ListBox modulesListBox, final TextBox modulesEastId,
+			final ListBox modulesEastType, final ListBox modulesEastCondition, final ListBox modulesEastOrientation,
+			final TextBox xTextBox, final TextBox yTextBox) {
+		return new ChangeHandler(){
 			public void onChange(ChangeEvent event) {
 				String moduleString = modulesListBox.getItemText(modulesListBox.getSelectedIndex());
 				moduleString = moduleString.substring(8);
@@ -204,14 +200,11 @@ public class Controller {
 			} // onChange
 			
 		};
-		
-		return change;
 	} // changeHandler
 	
-	public static ClickHandler submitHandler (PasswordTextBox passwordEntry, TabLayoutPanel tabPanel,
-			String strSettingsButtonWidth, String strModulesButtonWidth, Audio errorSound) {
-		ClickHandler submit = new ClickHandler(){
-	        @Override
+	public static ClickHandler submitHandler (final PasswordTextBox passwordEntry, final TabLayoutPanel tabPanel,
+			final String strSettingsButtonWidth, final String strModulesButtonWidth, final Audio errorSound) {
+		return new ClickHandler(){
 	        public void onClick(ClickEvent event) {
 	            if(passwordEntry.getText().equals("guest"))
 	            {
@@ -267,8 +260,6 @@ public class Controller {
 	            }  // else
 	        } // onCLick
 	    };
-	    
-	    return submit;
 	} // submitHandler
 	
 	
