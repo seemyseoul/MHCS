@@ -164,7 +164,9 @@ public class Controller {
 		return new ChangeHandler() {
 			public void onChange(ChangeEvent event) {
 				int testNum = lb.getSelectedIndex();
+				if (testNum!= 0){
 				TestCases.TestCaseChoice(testNum);
+				}
 			}
 		};
 	}
