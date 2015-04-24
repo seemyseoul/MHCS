@@ -122,6 +122,10 @@ public class Controller {
 		
 	} // setType
 	
+	/**
+	 * Sets the requirements read only text area on Modules Page.
+	 * @param m
+	 */
 	public static void setRequirements(final Module m) {
 		
 	} // setRequirements
@@ -158,8 +162,119 @@ public class Controller {
 				modulesListBox.removeItem(modulesListBox.getSelectedIndex());
 			} // onClick
 		}; // ClickHandler
-	} // addButtom
+	} // addButton
 	
+	/**
+	 * Returns click handler for Save button on Modules Page.
+	 * @param modulesEastType
+	 * @param modulesEastId
+	 * @param xTextBox
+	 * @param yTextBox
+	 * @param modulesEastCondition
+	 * @param modulesEastOrientation
+	 * @param strSettingsButtonWidth
+	 * @param strModulesButtonWidth
+	 * @param successSound
+	 * @param minConfigSound
+	 * @param errorSound
+	 * @param modulesListBox
+	 * @return ClickHandler
+	 */
+	public static ClickHandler saveButton(final ListBox modulesEastType, final TextBox modulesEastId,
+			final TextBox xTextBox, final TextBox yTextBox, final ListBox modulesEastCondition,
+			final ListBox modulesEastOrientation, final String strSettingsButtonWidth,
+			final String strModulesButtonWidth, final Audio successSound, final Audio minConfigSound,
+			final Audio errorSound, final ListBox modulesListBox) {
+		return new ClickHandler(){
+			@Override
+			public void onClick(ClickEvent event) {
+				ModuleType type;
+				int id;
+				Point coordinates;
+				ModuleStatus status;
+				int orientation;
+				boolean inUse;
+				
+				type = ModuleType.getTypeFromUserString(modulesEastType.getItemText(modulesEastType.getSelectedIndex()));
+				id = Integer.parseInt(modulesEastId.getText());
+			    coordinates = new Point(Integer.parseInt(xTextBox.getText()),Integer.parseInt(yTextBox.getText()));
+			    status = ModuleStatus.getStatusFromUserString(modulesEastCondition.getItemText(modulesEastCondition.getSelectedIndex()));
+			    orientation = modulesEastOrientation.getSelectedIndex();
+				inUse = false;
+				
+				if(Model.saveModule(new Module(type,id,coordinates,status,orientation,inUse))) {
+					successSound.play();
+					if(ConfigurationBuilder.minConfigPossible()){
+						// Create a dialog box and set the caption text
+		                final DialogBox minConfigAlert = new DialogBox();
+		                minConfigAlert.setText("Minimum Configuration Available");
+
+		                // Create a table to layout the content
+		                VerticalPanel dialogContents = new VerticalPanel();
+		                dialogContents.setSpacing(4);
+		                minConfigAlert.setWidget(dialogContents);
+
+		                // Add some text to the top of the dialog
+		                HTML details = new HTML("Go to Configurations tab to view the minimum configuration available.");
+		                dialogContents.add(details);
+		                dialogContents.setCellHorizontalAlignment(
+		                    details, HasHorizontalAlignment.ALIGN_CENTER);
+
+		                // Add an image to the dialog
+		                Image image = new Image("images/yay");
+		                image.setHeight(strSettingsButtonWidth);
+		                image.setWidth(strModulesButtonWidth);
+		                dialogContents.add(image);
+		                dialogContents.setCellHorizontalAlignment(
+		                    image, HasHorizontalAlignment.ALIGN_CENTER);
+
+		                // Add a close button at the bottom of the dialog
+		                Button closeButton = new Button(
+		                    "Close", new ClickHandler() {
+		                      public void onClick(ClickEvent event) {
+		                    	  minConfigAlert.hide();
+		                      }
+		                    });
+		                dialogContents.add(closeButton);
+		                if (LocaleInfo.getCurrentLocale().isRTL()) {
+		                  dialogContents.setCellHorizontalAlignment(
+		                      closeButton, HasHorizontalAlignment.ALIGN_LEFT);
+
+		                } // if 
+		                else {
+		                  dialogContents.setCellHorizontalAlignment(
+		                      closeButton, HasHorizontalAlignment.ALIGN_RIGHT);
+		                } // else
+		                
+		                minConfigAlert.center();
+		                minConfigAlert.show();
+		                minConfigSound.play();
+		            } // if
+				} // if
+				else {
+					errorSound.play();
+				} // else
+				
+				modulesListBox.clear();
+				for (Module m : Model.getModuleList())
+				{
+					modulesListBox.addItem("Module #" + m.getId());
+				} // for
+			} // onClick
+	    };
+	} // saveButton
+	
+	/**
+	 * Returns change handler for the Modules List Box on Modules Page.
+	 * @param modulesListBox
+	 * @param modulesEastId
+	 * @param modulesEastType
+	 * @param modulesEastCondition
+	 * @param modulesEastOrientation
+	 * @param xTextBox
+	 * @param yTextBox
+	 * @return ChangeHandler
+	 */
 	public static ChangeHandler modulesListBoxHandler(final ListBox modulesListBox, final TextBox modulesEastId,
 			final ListBox modulesEastType, final ListBox modulesEastCondition, final ListBox modulesEastOrientation,
 			final TextBox xTextBox, final TextBox yTextBox) {
@@ -202,7 +317,16 @@ public class Controller {
 		};
 	} // changeHandler
 	
-	public static ClickHandler submitHandler (final PasswordTextBox passwordEntry, final TabLayoutPanel tabPanel,
+	/**
+	 * Returns click handler for the LogIn button on Log In Page.
+	 * @param passwordEntry
+	 * @param tabPanel
+	 * @param strSettingsButtonWidth
+	 * @param strModulesButtonWidth
+	 * @param errorSound
+	 * @return ClickHandler
+	 */
+	public static ClickHandler loginHandler (final PasswordTextBox passwordEntry, final TabLayoutPanel tabPanel,
 			final String strSettingsButtonWidth, final String strModulesButtonWidth, final Audio errorSound) {
 		return new ClickHandler(){
 	        public void onClick(ClickEvent event) {
@@ -262,17 +386,40 @@ public class Controller {
 	    };
 	} // submitHandler
 	
+	/**
+	 * Populates the Condition ListBox on Modules Page.
+	 * @param moduleCondition
+	 */
+	public static void populateCondidition(final ListBox moduleCondition) {
+		moduleCondition.addItem("Usable");
+	    moduleCondition.addItem("Usable After Repair");
+	    moduleCondition.addItem("Beyond Repair");
+	} // populateCondition
 	
+	/**
+	 * Populates the Orientaion ListBox on Modules Page.
+	 * @param moduleOrientation
+	 */
+	public static void populateOrientation(final ListBox moduleOrientation) {
+		moduleOrientation.addItem("0 turns");
+	    moduleOrientation.addItem("1 turns");
+	    moduleOrientation.addItem("2 turns");
+	} // populateOrientation
+	
+	/**
+	 * Returns change handler for Test Cases
+	 * @param lb
+	 * @return ChangeHandler
+	 */
 	public static ChangeHandler testCases(final ListBox lb){
 		return new ChangeHandler() {
 			public void onChange(ChangeEvent event) {
 				int testNum = lb.getSelectedIndex();
 				if (testNum!= 0){
-				TestCases.TestCaseChoice(testNum);
-				}
-			}
+					TestCases.TestCaseChoice(testNum);
+				} // if
+			} //onChange
 		};
-	}
-	
+	} // testCases
 	
 } // Controller
