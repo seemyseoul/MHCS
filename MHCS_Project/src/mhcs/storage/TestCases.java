@@ -1,6 +1,11 @@
 package mhcs.storage;
 
+import org.eclipse.jetty.util.ajax.JSON;
+
 import mhcs.client.Module;
+import mhcs.client.ModuleStatus;
+import mhcs.client.ModuleType;
+import mhcs.client.Point;
 
 import com.google.gwt.http.client.Request;
 import com.google.gwt.http.client.RequestBuilder;
@@ -56,30 +61,99 @@ public class TestCases {
 		
 	} // Close Constructor
 		
+	public static void update(final String rt) {		 
+		Model.removeAll();
+		JSONArray jArray = (JSONArray)JSONParser.parseLenient(rt); 
+		JSONNumber jNumber; 
+		JSONString jString; 
+		double code;
+		int id;
+		int xC;
+		int yC;
+		int numTurns;
+		double turns; 
+		double x; 
+		double y;
+		String status;
+		ModuleType type;
+		Point coordinate;
+		ModuleStatus modStatus;
 		
-	public static void update(String rt){
-			Window.alert(rt);
-			Model.removeAll();
+		//Changes the JSON into datatypes
+		for (int i = 0; i < jArray.size(); ++i) { 			 
+			JSONObject jO = (JSONObject)jArray.get(i); 
+			jNumber = (JSONNumber) jO.get("id"); 
+			code = jNumber.doubleValue();
+			id = (int) code;
+			//Status
+			jString = (JSONString) jO.get("status"); 
+			status = jString.stringValue(); 		 
+			//Orientation
+			jNumber = (JSONNumber) jO.get("turns"); 
+			turns = jNumber.doubleValue();		 
+			numTurns = (int) turns;
+			//Coordinates
+			jNumber = (JSONNumber) jO.get("X"); 
+			x = jNumber.doubleValue(); 	
+			xC = (int) x;
+			jNumber = (JSONNumber) jO.get("Y"); 
+			y = jNumber.doubleValue(); 	
+			yC = (int) y;
+			coordinate = new Point (xC, yC);
+			
+			//Convert Status
+			if (status == "undamaged"){
+				modStatus = ModuleStatus.USABLE;
+			}
+			else if (status == "damaged"){
+				modStatus = ModuleStatus.BEYONDREPAIR;
+			}
+			else{
+				modStatus = ModuleStatus.USABLEAFTERREPAIR;
+			}
+			
 
-									
-			Module tempModule = new Module();
+			
+			//Convert Type
+			if (0 < code && code < 41) {
+				type = ModuleType.AIRLOCK;
+			} // if
+			else if (60 < code && code < 81) {
+				type = ModuleType.CANTEEN;
+			} // if
+			else if (90 < code && code < 101) {
+				type = ModuleType.CONTROL;
+			} // if
+			else if (110 < code && code < 121) {
+				type = ModuleType.DORMITORY;
+			} // if
+			else if (130 < code && code < 135) {
+				type = ModuleType.FOODWATERSTORAGE;
+			} // if
+			else if (140 < code && code < 145) {
+				type = ModuleType.GYMRELAXATION;
+			} // if
+			else if (150 < code && code < 155) {
+				type = ModuleType.MEDICAL;
+			} // if
+			else if (160 < code && code < 165) {
+				type = ModuleType.PLAIN;
+			} // if
+			else if (170 < code && code < 175) {
+				type = ModuleType.POWER;
+			} // if
+			else if (180 < code && code < 185) {
+				type = ModuleType.SANITATION;
+			} // if
+			else {
+				type = null;
+			}
 			
 			
-			
-			
-		}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	} 
-	
-	
-	
-	
+			Module tempModule = new Module(type, id, coordinate, modStatus, numTurns, false);			
+			Model.addModule(tempModule);
+
+		} //for
+	} //update
+
+}//TestCases 
