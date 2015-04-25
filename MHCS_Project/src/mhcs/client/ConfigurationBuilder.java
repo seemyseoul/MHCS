@@ -244,17 +244,57 @@ public class ConfigurationBuilder {
 		}
 		
 		for (int x=0;x < (numPlainModules % 6);x++)
-		{
-			// do something with leftover plain modules
-			// Module leftOverPlain = Model.getModuleClosestTo(new Point(0,0),ModuleType.PLAIN);
+		{   // do something with leftover plain modules.  Add them to the right of the center.
+			for (Module m : baseConfig.getModules())
+			{
+				if(m.getCoordinates().getX() > center.getX())
+				{
+					m.setCoordinates(new Point(m.getCoordinates().getX()+1,m.getCoordinates().getY()));
+				}
+			}
+			Module leftOverPlain = Model.getUnusedModuleClosestTo(center,ModuleType.PLAIN);
+			if (leftOverPlain != null)
+			{
+				leftOverPlain.setInUse(true);
+				leftOverPlain.setCoordinates(new Point(center.getX()+1,center.getY()));
+				baseConfig.addModule(leftOverPlain);
+			}
 		}
 		
-		Point[] placesAdjToPlain; // list of points at which other modules could be placed.
+		ArrayList<Point> placesAdjToPlain = new ArrayList<Point>(); // list of points at which other modules could be placed.
+		
+		for (Module m : baseConfig.getModules()) // populates placesAdjToPlain
+		{
+			Point p = m.getCoordinates();
+			Module above = Model.getModuleAtLocation(new Point(p.getX(),p.getY()+1));
+			Module below = Model.getModuleAtLocation(new Point(p.getX(),p.getY()-1));
+			Module left = Model.getModuleAtLocation(new Point(p.getX()-1,p.getY()));
+			Module right = Model.getModuleAtLocation(new Point(p.getX()+1,p.getY()));
+			
+			if(above == null || !baseConfig.getModules().contains(above))
+			{
+				placesAdjToPlain.add(new Point(p.getX(),p.getY()+1));
+			}
+			if(below == null || !baseConfig.getModules().contains(below))
+			{
+				placesAdjToPlain.add(new Point(p.getX(),p.getY()-1));
+			}
+			if(right == null || !baseConfig.getModules().contains(right))
+			{
+				placesAdjToPlain.add(new Point(p.getX()+1,p.getY()));
+			}
+			if(left == null || !baseConfig.getModules().contains(left))
+			{
+				placesAdjToPlain.add(new Point(p.getX()-1,p.getY()));
+			}
+		}
+		
 		
 		/**
 		 * go through the list of points and place modules there
 		 */
 		
+		// TOUGH PART STILL LEFT TO DO...
 		
 		
 		return configs;

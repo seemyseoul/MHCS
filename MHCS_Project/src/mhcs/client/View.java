@@ -1,11 +1,13 @@
 package mhcs.client;
 
 import mhcs.storage.Model;
+
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.DockPanel;
 import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.ListBox;
+import com.google.gwt.user.client.ui.PasswordTextBox;
 import com.google.gwt.user.client.ui.RootLayoutPanel;
 import com.google.gwt.user.client.ui.SimplePanel;
 import com.google.gwt.user.client.ui.TabLayoutPanel;
@@ -29,7 +31,8 @@ public class View implements EntryPoint {
   */
   public void onModuleLoad() {	    
     TabLayoutPanel tabPanel = Variables.tabPanel();
-    VerticalPanel loginPanel = Variables.loginPanel();
+    VerticalPanel loginPanel = Variables.loginPanel();    
+    
     
     /* Modules */
     final TextBox moduleID = Variables.tbModuleID();
