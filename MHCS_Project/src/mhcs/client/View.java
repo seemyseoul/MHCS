@@ -70,13 +70,13 @@ public class View implements EntryPoint {
     VerticalPanel settingsPanel = Variables.settingsVpanel();
     
     /* Weather Panel */
-    SimplePanel weatherPanel = Variables.weatherPanel();
+    //SimplePanel weatherPanel = Variables.weatherPanel();
     
     /* Add tabs to layout */
     tabPanel.add(modulesDock, "Modules");
     tabPanel.add(configDock, "Configurations");
     tabPanel.add(settingsPanel, "Settings");
-    tabPanel.add(weatherPanel, "Weather");
+    //tabPanel.add(weatherPanel, "Weather");
     tabPanel.add(new HTML("Logout"), "Logout");
     
     RootLayoutPanel.get().add(loginPanel);

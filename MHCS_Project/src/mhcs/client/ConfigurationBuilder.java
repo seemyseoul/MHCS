@@ -161,6 +161,22 @@ public class ConfigurationBuilder {
 	 */
 	public final List<Configuration> generateHConfigurations(int numPlainModules)
 	{
+		
+		/*
+		 * These generate(Something)Configurations functions will work in the following way:
+		 * 
+		 * 1.) create a bare-bones structure using "numPlainModules" plain modules 
+		 * 2.) find the adjacent empty spaces that aren't part of the configuration yet.
+		 * 3.) fill in those spaces with modules.
+		 *     (HOW?!) (Randomly in all possible ways and then sort using Configuration.getQuality()?)
+		 *     (Or perhaps by doing it intelligently to begin with so as to not have to make a bajillion configurations and 100ish*a bajillion modules)
+		 *     ...idk
+		 * 4.) move the entire configuration so it fits on the map and isn't in only the usable Points.
+		 * 5.) move modules in the way of the newly constructed configuration.
+		 * 
+		 */
+		
+		
 		ArrayList<Configuration> configs = new ArrayList<Configuration>();
 		Configuration baseConfig = new Configuration();
 		
