@@ -110,6 +110,44 @@ public final class Configuration implements Cloneable{
 		modules.add(m);
 	}
 	
+	
+	public float getQuality()
+	{
+		/**
+		 *  start with 100 points for perfect configuration.
+		 *
+		 * subtract n points for violations of layout rules.
+		 * 1.) Sanitation not next to Canteen
+		 * 2.) Sanitation not next to Food & Water Storage
+		 * 3.) Airlock not next to Dormitory
+		 * 4.) At least one part of the habitat viewable from another part of the habitat.
+		 * 5.) Wings of the habitat should not be so close together that modules are hard up against
+			   one another denying any kind of view from a window.
+		 * 6.) Airlocks should be located on all sides of the Habitat. 
+		 * 7.) Dormitory modules should be located in recognisable dormitory wings of the Habitat.
+		 * 8.) A Gym & Relaxation module should be HORIZONTALLY next to a Sanitation module.
+		 * 9.) One Medical module should be “diagonally next to” one Airlock module
+		 * 10.) Food & Water storage modules should be located <=3 modules away from Canteen modules.
+		 * 11.) Dormitory wings should have Sanitation modules in the ratio of 1 Sanitation module for
+				every 2 Dormitory modules.
+		 * 12.) Special module types (types for which there are only 4 modules e.g. Medical) should be
+				located throughout the Habitat and not located altogether in one part
+		 * 
+		 *  Yikes!    Yikes!    Yikes!    Yikes!    Yikes!    Yikes!    Yikes!    Yikes!    Yikes!    Yikes!    Yikes!
+		 */
+		
+		int configPoints = 100;
+		
+		//TODO
+		
+		return ((float) configPoints) / ((float) 100);
+	}
+	
+	
+	
+	
+	
+	
 	/**
 	 * this method returns the rover path as a Point[].
 	 *

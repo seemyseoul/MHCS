@@ -166,6 +166,24 @@ public class Model {
 		}
 		return moduleList1;
 	}
+	
+	/**
+	 * Returns the list of unused but usable modules.
+	 * 
+	 * @return the moduleList. (It should return a copy as to not allow changes
+	 *         to be made accidentally)
+	 */
+	@SuppressWarnings("unchecked")
+	public static List<Module> getUnusedUsableModuleList() {
+		ArrayList<Module> moduleList1 = new ArrayList<Module>(moduleList);
+		for (Module m : moduleList1)
+		{
+			if (m.isInUse() || m.getStatus().equals(ModuleStatus.BEYONDREPAIR)){
+				moduleList1.remove(m);
+			}
+		}
+		return moduleList1;
+	}
 
 	/**
 	 * Returns the module list.
@@ -234,6 +252,21 @@ public class Model {
 		}
 		return list;
 	}
+	
+	/**
+	 * gets a List of usable modules of type "type".
+	 * @param type
+	 * @return List<Module> a list of usable modules of type "type"
+	 */
+	public static List<Module> getUsableModulesOfType(ModuleType type) {
+		ArrayList<Module> list = new ArrayList<Module>();
+		for (Module m : Model.getModuleList()) {
+			if (m.getType().equals(type) && !m.getStatus().equals(ModuleStatus.BEYONDREPAIR)) {
+				list.add(m);
+			}
+		}
+		return list;
+	}
 
 	/**
 	 * gets a List of unused modules of type "type".
@@ -241,6 +274,21 @@ public class Model {
 	 * @return List<Module> list of unused modules of type "type"
 	 */
 	public static List<Module> getUnusedModulesOfType(ModuleType type) {
+		ArrayList<Module> list = new ArrayList<Module>();
+		for (Module m : Model.getModuleList()) {
+			if (m.getType().equals(type) && !m.isInUse()) {
+				list.add(m);
+			}
+		}
+		return list;
+	}
+	
+	/**
+	 * gets a List of unused but usable modules of type "type".
+	 * @param type
+	 * @return List<Module> list of unused but usable modules of type "type"
+	 */
+	public static List<Module> getUnusedUsableModulesOfType(ModuleType type) {
 		ArrayList<Module> list = new ArrayList<Module>();
 		for (Module m : Model.getModuleList()) {
 			if (m.getType().equals(type) && !m.isInUse()) {
@@ -278,7 +326,7 @@ public class Model {
 	 *            Type of modules to search for.
 	 * @return module closest to point p.
 	 */
-	public final static Module getModuleClosestTo(final Point p, ModuleType type) {
+	public final static Module getUnusedModuleClosestTo(final Point p, ModuleType type) {
 		List<Module> modules = getUnusedModulesOfType(type);
 		if(modules.size() == 0)
 		{
@@ -302,7 +350,7 @@ public class Model {
 	 *            Point to get closest module to.
 	 * @return module closest to point p.
 	 */
-	public final static Module getModuleClosestTo(final Point p) {
+	public final static Module getUnusedModuleClosestTo(final Point p) {
 		List<Module> modules = getUnusedModuleList();
 		if(modules.size() == 0)
 		{
@@ -318,6 +366,75 @@ public class Model {
 		}
 		return closestModule;
 	}
+	
+	/**
+	 * This method returns the closest UNUSED but at least Reparable module of type "type" to module m.
+	 *
+	 * @param p
+	 *            Point to get closest module to.
+	 * @param type
+	 *            Type of modules to search for.
+	 * @return module closest to point p.
+	 */
+	public final static Module getUnusedUsableModuleClosestTo(final Point p, ModuleType type) {
+		List<Module> modules = getUnusedUsableModulesOfType(type);
+		if(modules.size() == 0)
+		{
+			return null;
+		}
+		Module closestModule = modules.get(0);
+
+		for (Module m : modules) {
+			if (m.getCoordinates().distanceTo(p) < closestModule
+					.getCoordinates().distanceTo(p)) {
+				closestModule = m;
+			}
+		}
+		return closestModule;
+	}
+	
+	/**
+	 * This method returns the closest UNUSED but at least Reparable module of any type to module m.
+	 *
+	 * @param p
+	 *            Point to get closest module to.
+	 * @return module closest to point p.
+	 */
+	public final static Module getUnusedUsableModuleClosestTo(final Point p) {
+		List<Module> modules = getUnusedUsableModuleList();
+		if(modules.size() == 0)
+		{
+			return null;
+		}
+		Module closestModule = modules.get(0);
+
+		for (Module m : modules) {
+			if (m.getCoordinates().distanceTo(p) < closestModule
+					.getCoordinates().distanceTo(p)) {
+				closestModule = m;
+			}
+		}
+		return closestModule;
+	}
+	
+	
+	/**
+	 * gives the module at location p.  If there is none, then it returns null;
+	 * @param p - Point to find module at.
+	 * @return Module found at point p.
+	 */
+	public static Module getModuleAtLocation(Point p)
+	{
+		for (Module m :getModuleList())
+		{
+			if (m.getCoordinates().equals(p))
+			{
+				return m;
+			}
+		}
+		return null;
+	}
+	
 
 	private static Load toLoad = new Load();
 	private static Save toSave = new Save();

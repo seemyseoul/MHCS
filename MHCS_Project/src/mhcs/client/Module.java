@@ -1,6 +1,10 @@
 package mhcs.client;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import mhcs.storage.Load;
+import mhcs.storage.Model;
 
 /**
  * This class defines a Module on Mars.
@@ -92,61 +96,147 @@ public class Module implements Cloneable {
 		this.setOrientation(0);
 	} // Module
 
-	// /**
-	// * this method finds
-	// * @param p
-	// * @return
-	// */
-	// public static Module getModuleAtCoordinates(Point p) {
-	// Load loader = new Load();
-	// Module[] modules = loader.getModules();
-	// for (Module m : modules) {
-	// if (m.isInUse() && m.configCoordinates.equals(p)) {
-	// return m;
-	// }
-	// }
-	// return null;
-	// }
-
-	// public boolean isNextTo(Module m) {
-	// int x1 = m.getConfigCoordinates().getX();
-	// int x2 = getConfigCoordinates().getX();
-	// int y1 = m.getConfigCoordinates().getY();
-	// int y2 = getConfigCoordinates().getY();
-	// if (x2 - x1 == 1 || y2 - y1 == 1) // modules are "horizontally next to"
-	// // each other
-	// {
-	//
-	// }
-	// // modules are "vertically next to" each other
-	// else if ((Math.abs(x2 - x1) == 2 && y2 == y1)
-	// && getModuleAtCoordinates(new Point(Math.min(x2, x1) + 1, y1))
-	// .getType().equals("plain")) {
-	// return true;
-	// } else if ((Math.abs(y2 - y1) == 2 && x2 == x1)
-	// && getModuleAtCoordinates(new Point(Math.min(y2, y1) + 1, x1))
-	// .getType().equals("plain")) {
-	// return true;
-	// } else if ((Math.abs(x2 - x1) == 2 && Math.abs(y2 - y1) == 1)
-	// && (getModuleAtCoordinates(
-	// new Point(Math.min(x2, x1) + 1, Math.min(y2, y1)))
-	// .getType().equals("plain"))
-	// && (getModuleAtCoordinates(
-	// new Point(Math.min(x2, x1) + 1, Math.min(y2, y1) + 1))
-	// .getType().equals("plain"))) {
-	// return true;
-	// } else if ((Math.abs(y2 - y1) == 2 && Math.abs(x2 - x1) == 1)
-	// && (getModuleAtCoordinates(
-	// new Point(Math.min(y2, y1) + 1, Math.min(x2, x1)))
-	// .getType().equals("plain"))
-	// && (getModuleAtCoordinates(
-	// new Point(Math.min(y2, y1) + 1, Math.min(x2, x1) + 1))
-	// .getType().equals("plain"))) {
-	// return true;
-	// }
-	//
-	// return false;
-	// }
+	
+	/**
+	 * gets the modules that are "Horizontally next to" this module
+	 * @return a List<Module>
+	 */
+	public List<Module> getHorizontallyConnectedModules()
+	{
+		List<Module> horizontallyConnectedModules = new ArrayList<Module>();
+		for (Module m : Model.getModuleList())
+		{
+			if(this.getCoordinates().xDistanceTo(m.getCoordinates()) == 1 && this.getCoordinates().yDistanceTo(m.getCoordinates()) == 0)
+			{ // if they are literally horizontally adjacent.
+				horizontallyConnectedModules.add(m);
+			}
+			else if(this.getCoordinates().yDistanceTo(m.getCoordinates()) == 1 && this.getCoordinates().xDistanceTo(m.getCoordinates()) == 0)
+			{ // if they are figuratively horizontally adjacent... Horizontal must take on a different meaning from his lecture notes...
+				horizontallyConnectedModules.add(m);
+			}
+		}
+		return horizontallyConnectedModules;
+	}
+	
+	/**
+	 * gets the modules that are "Vertically next to" this module
+	 * @return a List<Module>
+	 */
+	public List<Module> getVerticallyConnectedModules()
+	{
+		List<Module> verticallyConnectedModules = new ArrayList<Module>();
+		for (Module m : Model.getModuleList())
+		{
+			Point p = m.getCoordinates();
+			
+			if(this.getCoordinates().yDistanceTo(p) == 2 && this.getCoordinates().xDistanceTo(p) == 0)
+			{ // if they are vertically separated by a plain module
+				Module m1;
+				if (p.getY() > getCoordinates().getY())
+				{
+					m1 = Model.getModuleAtLocation(new Point(getCoordinates().getX(),getCoordinates().getY()+1));
+				}
+				else
+				{
+					m1 = Model.getModuleAtLocation(new Point(getCoordinates().getX(),getCoordinates().getY()-1));
+				}
+				if(m1 == null)
+				{
+					continue;
+				}
+				if (m1.getType().equals(ModuleType.PLAIN))
+				{
+					verticallyConnectedModules.add(m);
+				}
+			}
+			else if(this.getCoordinates().xDistanceTo(p) == 2 && this.getCoordinates().yDistanceTo(p) == 0)
+			{ // if they are horizontally (east-west) separated by a plain module
+				Module m2;
+				if (p.getX() > getCoordinates().getX())
+				{
+					m2 = Model.getModuleAtLocation(new Point(getCoordinates().getX()+1,getCoordinates().getY()));
+				}
+				else
+				{
+					m2 = Model.getModuleAtLocation(new Point(getCoordinates().getX()-1,getCoordinates().getY()));
+				}
+				if(m2 == null)
+				{
+					continue;
+				}
+				if (m2.getType().equals(ModuleType.PLAIN))
+				{
+					verticallyConnectedModules.add(m);
+				}
+			}
+		}
+		return verticallyConnectedModules;
+	}
+	
+	/**
+	 * gets the modules that are "diagonally next to" this module
+	 * @return a List<Module>
+	 */
+	public List<Module> getDiagonallyConnectedModules()
+	{
+		List<Module> diagonallyConnectedModules = new ArrayList<Module>();
+		for (Module m : Model.getModuleList())
+		{
+			Point p = m.getCoordinates();
+			
+			if(this.getCoordinates().yDistanceTo(p) == 2 && this.getCoordinates().xDistanceTo(p) == 1)
+			{ // if they are vertically separated by a plain module
+				Module m1,m2;
+				if (p.getY() > getCoordinates().getY())
+				{
+					m1 = Model.getModuleAtLocation(new Point(getCoordinates().getX(),getCoordinates().getY()+1));
+					m2 = Model.getModuleAtLocation(new Point(p.getX(),getCoordinates().getY()+1));
+				}
+				else
+				{
+					m1 = Model.getModuleAtLocation(new Point(getCoordinates().getX(),getCoordinates().getY()-1));
+					m2 = Model.getModuleAtLocation(new Point(p.getX(),getCoordinates().getY()-1));
+				}
+				if(m1 == null || m2 == null)
+				{
+					continue;
+				}
+				if (m1.getType().equals(ModuleType.PLAIN) && m2.getType().equals(ModuleType.PLAIN))
+				{
+					diagonallyConnectedModules.add(m);
+				}
+			}
+			else if(this.getCoordinates().xDistanceTo(p) == 2 && this.getCoordinates().yDistanceTo(p) == 1)
+			{ // if they are horizontally (east-west) separated by a plain module
+				Module m3,m4;
+				if (p.getX() > getCoordinates().getX())
+				{
+					m3 = Model.getModuleAtLocation(new Point(getCoordinates().getX()+1,getCoordinates().getY()));
+					m4 = Model.getModuleAtLocation(new Point(getCoordinates().getX()+1,p.getY()));
+				}
+				else
+				{
+					m3 = Model.getModuleAtLocation(new Point(getCoordinates().getX()-1,getCoordinates().getY()));
+					m4 = Model.getModuleAtLocation(new Point(getCoordinates().getX()-1,p.getY()));
+				}
+				if(m3 == null || m4 == null)
+				{
+					continue;
+				}
+				if (m3.getType().equals(ModuleType.PLAIN) && m4.getType().equals(ModuleType.PLAIN))
+				{
+					diagonallyConnectedModules.add(m);
+				}
+			}
+		}
+		return diagonallyConnectedModules;
+	}
+	
+	
+	
+	
+	
+	
 
 	public int getId() {
 		return id;
@@ -204,25 +294,6 @@ public class Module implements Cloneable {
 		this.inUse = inUse;
 	}
 
-	// /**
-	// * Enum to use in loops for GUI.
-	// * @author Amanda
-	// *
-	// */
-	// public static enum var {
-	// radAirLock,
-	// radPlain,
-	// radDorm,
-	// radSanitation,
-	// radFoodAndWater,
-	// radGymAndRelax,
-	// radCanteen,
-	// radPower,
-	// radControl,
-	// radMedical,
-	// radNone,
-	// radAll
-	// } // moduleNames
 
 	static String[] moduleStrings = { "Air Lock", "Plain", "Dormitory",
 			"Sanitation", "Food & Water", "Gym & Relaxation", "Canteen",

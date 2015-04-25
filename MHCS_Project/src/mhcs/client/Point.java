@@ -73,8 +73,17 @@ public class Point {
 	}
 
 	public int distanceTo(Point p) {
-		return (int) Math.sqrt(Math.pow(p.getX() - getX(), 2)
-				+ Math.pow(p.getY() - getY(), 2));
+		return xDistanceTo(p) + yDistanceTo(p);
+	}
+	
+	public int xDistanceTo(Point p)
+	{
+		return Math.abs(getX() - p.getX());
+	}
+	
+	public int yDistanceTo(Point p)
+	{
+		return Math.abs(getY() - p.getY());
 	}
 
 }
