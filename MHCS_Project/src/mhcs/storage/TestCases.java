@@ -110,34 +110,34 @@ public class TestCases {
 			
 			//Convert Type
 			if (0 < code && code < 41) {
-				type = ModuleType.AIRLOCK;
-			} // if
-			else if (60 < code && code < 81) {
-				type = ModuleType.CANTEEN;
-			} // if
-			else if (90 < code && code < 101) {
-				type = ModuleType.CONTROL;
-			} // if
-			else if (110 < code && code < 121) {
-				type = ModuleType.DORMITORY;
-			} // if
-			else if (130 < code && code < 135) {
-				type = ModuleType.FOODWATERSTORAGE;
-			} // if
-			else if (140 < code && code < 145) {
-				type = ModuleType.GYMRELAXATION;
-			} // if
-			else if (150 < code && code < 155) {
-				type = ModuleType.MEDICAL;
-			} // if
-			else if (160 < code && code < 165) {
 				type = ModuleType.PLAIN;
 			} // if
-			else if (170 < code && code < 175) {
+			else if (60 < code && code < 81) {
+				type = ModuleType.DORMITORY;
+			} // if
+			else if (90 < code && code < 101) {
+				type = ModuleType.SANITATION;
+			} // if
+			else if (110 < code && code < 121) {
+				type = ModuleType.FOODWATERSTORAGE;
+			} // if
+			else if (130 < code && code < 135) {
+				type = ModuleType.GYMRELAXATION;
+			} // if
+			else if (140 < code && code < 145) {
+				type = ModuleType.CANTEEN;
+			} // if
+			else if (150 < code && code < 155) {
 				type = ModuleType.POWER;
 			} // if
+			else if (160 < code && code < 165) {
+				type = ModuleType.CONTROL;
+			} // if
+			else if (170 < code && code < 175) {
+				type = ModuleType.AIRLOCK;
+			} // if
 			else if (180 < code && code < 185) {
-				type = ModuleType.SANITATION;
+				type = ModuleType.MEDICAL;
 			} // if
 			else {
 				type = null;
