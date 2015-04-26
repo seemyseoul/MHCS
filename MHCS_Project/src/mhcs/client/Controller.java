@@ -202,7 +202,7 @@ public class Controller {
 				
 				if(Model.saveModule(new Module(type,id,coordinates,status,orientation,inUse))) {
 					successSound.play();
-					if(ConfigurationBuilder.minConfigPossible()){
+					if(ConfigurationBuilder.minConfigPossible() && !Variables.minConfigReached()){
 						// Create a dialog box and set the caption text
 		                final DialogBox minConfigAlert = new DialogBox();
 		                minConfigAlert.setText("Minimum Configuration Available");
