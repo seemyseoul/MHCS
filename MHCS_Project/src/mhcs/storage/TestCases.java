@@ -1,6 +1,8 @@
+/**
+ * @author Brent
+ *
+ */
 package mhcs.storage;
-
-import org.eclipse.jetty.util.ajax.JSON;
 
 import mhcs.client.Module;
 import mhcs.client.ModuleStatus;
@@ -19,21 +21,12 @@ import com.google.gwt.json.client.JSONObject;
 import com.google.gwt.json.client.JSONParser;
 import com.google.gwt.json.client.JSONString;
 import com.google.gwt.user.client.Window;
-import com.google.gwt.user.client.ui.HTML;
-import com.google.gwt.user.client.ui.Label;
-import com.google.gwt.user.client.ui.RootLayoutPanel;
-import com.google.gwt.user.client.ui.VerticalPanel;
+
+
 
 public class TestCases {
-
-	public TestCases(){
 		
-	}
-	
-	
-	
-	public static void TestCaseChoice(int choice){
-	
+	public static void TestCaseChoice(int choice){	
 		String proxy ="http://www.d.umn.edu/~abrooks/Proxy.php?url=";
 		String url = proxy+"http://www.d.umn.edu/~abrooks/SomeTests.php?q=" + Integer.toString(choice);		
 		url = URL.encode(url);
@@ -48,18 +41,18 @@ public class TestCases {
 					if (200 == response.getStatusCode()) {
 						String rt = response.getText();
 						update(rt); //METHOD CALL TO DO SOMETHING WITH RESPONSE TEXT
-					} 
+					} //if
 					else {
 						Window.alert("Couldn't retrieve JSON (" + response.getStatusCode()+ ")");
-					}
-				}
-			});
-		} 
+					} //else
+				} //onResponseReceived
+			}); //send request
+		} // RequestBuilder
 		catch (RequestException e) {
 			Window.alert("RequestException: Couldn't retrieve JSON");
-		}
+		} //Catch
 		
-	} // Close Constructor
+	} // TestCaseChoice
 		
 	public static void update(final String rt) {		 
 		Model.removeAll();
@@ -81,6 +74,7 @@ public class TestCases {
 		
 		//Changes the JSON into datatypes
 		for (int i = 0; i < jArray.size(); ++i) { 			 
+			//Type and ID
 			JSONObject jO = (JSONObject)jArray.get(i); 
 			jNumber = (JSONNumber) jO.get("id"); 
 			code = jNumber.doubleValue();
@@ -147,7 +141,7 @@ public class TestCases {
 			} // if
 			else {
 				type = null;
-			}
+			} //else
 			
 			
 			Module tempModule = new Module(type, id, coordinate, modStatus, numTurns, false);			
@@ -156,4 +150,4 @@ public class TestCases {
 		} //for
 	} //update
 
-}//TestCases 
+}//TestCases Class
