@@ -79,7 +79,7 @@ public class View implements EntryPoint {
     tabPanel.add(configDock, "Configurations");
     tabPanel.add(settingsPanel, "Settings");
     //tabPanel.add(weatherPanel, "Weather");
-    tabPanel.add(new HTML("Logout"), "Logout");
+    tabPanel.add(null, "Logout");
     
     RootLayoutPanel.get().add(loginPanel);
 
