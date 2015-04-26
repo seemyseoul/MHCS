@@ -33,7 +33,6 @@ public class View implements EntryPoint {
     TabLayoutPanel tabPanel = Variables.tabPanel();
     VerticalPanel loginPanel = Variables.loginPanel();    
     
-    
     /* Modules */
     final TextBox moduleID = Variables.tbModuleID();
 	final ListBox moduleType = Variables.mType();

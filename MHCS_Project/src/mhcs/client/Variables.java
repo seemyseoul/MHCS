@@ -35,7 +35,7 @@ public class Variables {
 	    loginPanel.add(Variables.htmlUsername());
 	    loginPanel.add(Variables.tbUsernameEntry());
 	    loginPanel.add(Variables.htmlPassword());
-	    loginPanel.add(Variables.ptbPasswordEntry());
+	    loginPanel.add(password);
 	    loginPanel.add(Variables.submitButton());
     	return loginPanel;
 	} // loginPanel
@@ -114,7 +114,7 @@ public class Variables {
 	public static HorizontalPanel currentPassword() {
     	HorizontalPanel current = new HorizontalPanel();
     	current.add(Variables.htmlCurrPass());
-        current.add(Variables.ptbPasswordEntry());
+        current.add(Variables.ptbPassword());
         current.setSpacing(intPanelSpacing1);
     	return current;
 	} // currentPassword
@@ -122,7 +122,7 @@ public class Variables {
 	public static HorizontalPanel newPassword() {
     	HorizontalPanel newP = new HorizontalPanel();
     	newP.add(Variables.htmlNewPass());
-        newP.add(Variables.ptbPasswordEntry());
+        newP.add(Variables.ptbPassword());
         newP.setSpacing(intPanelSpacing1);
     	return newP;
 	} // newPassword
@@ -130,7 +130,7 @@ public class Variables {
 	public static HorizontalPanel confirmPassword() {
     	HorizontalPanel confirm = new HorizontalPanel();
     	confirm.add(Variables.htmlConfirmPass());
-        confirm.add(Variables.ptbPasswordEntry());
+        confirm.add(Variables.ptbPassword());
         confirm.setSpacing(intPanelSpacing1);
     	return confirm;
 	} // confirmPassword
@@ -235,7 +235,7 @@ public class Variables {
     
 	public static Button submitButton() {
 		final Button submitButton = new Button("Log In");
-		submitButton.addClickHandler(Controller.loginHandler(Variables.ptbPasswordEntry(),
+		submitButton.addClickHandler(Controller.loginHandler(password,
 	    		Variables.tabPanel(), strWidth2, strButtonWidth, Variables.errorSound()));
     	return submitButton;
 	} // submitButton
@@ -515,20 +515,10 @@ public class Variables {
 		return testCases;
 	} // testCasesListBox
 	
-	public static PasswordTextBox cPassword() {
-		final PasswordTextBox cPassword = new PasswordTextBox();
-		return cPassword;
-	} // cPassword
-	
-	public static PasswordTextBox nPassword() {
-		final PasswordTextBox nPassword = new PasswordTextBox();
-		return nPassword;
-	} // nPassword
-	
-	public static PasswordTextBox coPassword() {
-		final PasswordTextBox coPassword = new PasswordTextBox();
-		return coPassword;
-	} // coPassword
+	public static PasswordTextBox ptbPassword() {
+		final PasswordTextBox p = new PasswordTextBox();
+		return p;
+	} // tbPasswordEntry
 	
 	public static RadioButton rbSelectAll() {
 		RadioButton radAll = new RadioButton("Select All");
@@ -564,11 +554,6 @@ public class Variables {
 		final TextBox usernameEntry = new TextBox();
 		return usernameEntry;
 	} // tbUsernameEntry
-	
-	public static PasswordTextBox ptbPasswordEntry() {
-		final PasswordTextBox passwordEntry = new PasswordTextBox();
-		return passwordEntry;
-	} // tbPasswordEntry
 	
 	public static TextBox tbModuleID() {
 		final TextBox id = new TextBox();
@@ -623,6 +608,7 @@ public class Variables {
 //    testCases.setWidth(strWidth); 
 //    testCases.addChangeHandler(Controller.testCases(testCases));
 	
+	final static PasswordTextBox password = Variables.ptbPassword();
     final static String strHeight = "600px";
     final static String strHeight1 = "20px";
     final static String strHeight2 = "200px";

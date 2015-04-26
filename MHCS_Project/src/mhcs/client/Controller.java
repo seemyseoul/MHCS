@@ -117,9 +117,7 @@ public class Controller {
             
             typeDialogBox.center();
             typeDialogBox.show();
-
 		} //else
-		
 	} // setType
 	
 	/**
