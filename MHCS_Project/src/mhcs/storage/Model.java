@@ -208,7 +208,7 @@ public class Model {
 	/**
 	 * Changes the password.
 	 * 
-	 * @param password
+	 * @param ptbPassword
 	 *            the password to set
 	 */
 	public static void setPassword(String passwordPram) {

@@ -31,7 +31,7 @@ public class View implements EntryPoint {
   */
   public void onModuleLoad() {      
     final TabLayoutPanel tabPanel = Variables.tabPanel();
-    final VerticalPanel loginPanel = Variables.loginPanel();    
+    final DockPanel login = Variables.loginDock();    
     
     /* Modules */
     Variables.mListBox().clear();
@@ -70,10 +70,9 @@ public class View implements EntryPoint {
     tabPanel.add(modulesDock, "Modules");
     tabPanel.add(configDock, "Configurations");
     tabPanel.add(settingsPanel, "Settings");
-    //tabPanel.add(weatherPanel, "Weather");
     tabPanel.add(null, "Logout");
     
-    RootLayoutPanel.get().add(loginPanel);
+    RootLayoutPanel.get().add(login);
 
   } // OnModuleLoad
 } // View
