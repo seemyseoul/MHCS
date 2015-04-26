@@ -18,58 +18,50 @@ import com.google.gwt.user.client.ui.VerticalPanel;
  * Entry point classes define <code>onModuleLoad()</code>.
  */
 public class View implements EntryPoint {
-  /**
-  * The message displayed to the user when the server cannot be reached or
-  * returns an error.
-  */
-  private static final String SERVER_ERROR = "An error occurred while "
-      + "attempting to contact the server. Please check your network "
-      + "connection and try again.";
+//  /**
+//  * The message displayed to the user when the server cannot be reached or
+//  * returns an error.
+//  */
+//  private static final String SERVER_ERROR = "An error occurred while "
+//      + "attempting to contact the server. Please check your network "
+//      + "connection and try again.";
 
   /**
   * This is the entry point method.
   */
-  public void onModuleLoad() {	    
-    TabLayoutPanel tabPanel = Variables.tabPanel();
-    VerticalPanel loginPanel = Variables.loginPanel();    
+  public void onModuleLoad() {      
+    final TabLayoutPanel tabPanel = Variables.tabPanel();
+    final VerticalPanel loginPanel = Variables.loginPanel();    
     
     /* Modules */
-    final TextBox moduleID = Variables.tbModuleID();
-	final ListBox moduleType = Variables.mType();
-	final ListBox moduleCondition = Variables.mCondition();
-	final ListBox moduleOrientation = Variables.mOrientation();
-	final TextBox moduleX = Variables.tbX();
-	final TextBox moduleY = Variables.tbY();
-    final ListBox modulesListBox = Variables.mListBox();
-
-    modulesListBox.clear();
-	for (Module m : Model.getModuleList()) {
-		modulesListBox.addItem("Module #" + m.getId()); 
-	} // for
+    Variables.mListBox().clear();
+    for (Module m : Model.getModuleList()) {
+        Variables.mListBox().addItem("Module #" + m.getId()); 
+    } // for
     
-	modulesListBox.addChangeHandler(Controller.modulesListBoxHandler(modulesListBox,
-			moduleID, moduleType, moduleCondition,
-			moduleOrientation, moduleX, moduleY));
+    Variables.mListBox().addChangeHandler(Controller.modulesListBoxHandler(Variables.mListBox(),
+            Variables.mID, Variables.mType(), Variables.mCondition(),
+            Variables.mOrientation(), Variables.mX(), Variables.mY()));
     
     for (int i = 0; i < Module.moduleStrings.length; i++) {
-      moduleType.addItem(Module.moduleStrings[i]);
+        Variables.mType().addItem(Module.moduleStrings[i]);
     } //for
     
-    Controller.setType(moduleID, moduleType);
+    Controller.setType(Variables.mID, Variables.mType());
     
     Button modulesSaveButton = Variables.mSaveButton();
-    modulesSaveButton.addClickHandler(Controller.saveButton(moduleType,
-    		moduleID, moduleX, moduleY, moduleCondition, moduleOrientation,
-    		Variables.strWidth2, Variables.strButtonWidth, Variables.successSound(),
-    		Variables.minConfigSound(), Variables.errorSound(), modulesListBox));
+    modulesSaveButton.addClickHandler(Controller.saveButton(Variables.mType(),
+            Variables.mID, Variables.mX(), Variables.mY(), Variables.mCondition(), Variables.mOrientation(),
+            Variables.strWidth2, Variables.strButtonWidth, Variables.successSound(),
+            Variables.minConfigSound(), Variables.errorSound(), Variables.mListBox()));
     
-    DockPanel modulesDock = Variables.modulesDock();
+    final DockPanel modulesDock = Variables.modulesDock();
     
     /* Configurations */
-    DockPanel configDock = Variables.configDock();
+    final DockPanel configDock = Variables.configDock();
 
     /* Settings */    
-    VerticalPanel settingsPanel = Variables.settingsVpanel();
+    final VerticalPanel settingsPanel = Variables.settingsVpanel();
     
     /* Weather Panel */
     //SimplePanel weatherPanel = Variables.weatherPanel();

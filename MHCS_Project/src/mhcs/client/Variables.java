@@ -23,17 +23,15 @@ import com.google.gwt.user.client.ui.VerticalPanel;
 public class Variables {
 	
 	public static TabLayoutPanel tabPanel() {
-		TabLayoutPanel tabPanel = new TabLayoutPanel(2.5, Unit.EM);
 		tabPanel.setAnimationDuration(1000);
 	    tabPanel.getElement().getStyle().setMarginBottom(10.0, Unit.PX);
 		return tabPanel;
 	} // tabPanel
 	
 	public static VerticalPanel loginPanel() {
-		final VerticalPanel loginPanel = new VerticalPanel();
 		loginPanel.setHeight(strHeight2);
-	    loginPanel.add(Variables.htmlUsername());
-	    loginPanel.add(Variables.tbUsernameEntry());
+	    loginPanel.add(username);
+	    loginPanel.add(Variables.tb());
 	    loginPanel.add(Variables.htmlPassword());
 	    loginPanel.add(password);
 	    loginPanel.add(Variables.submitButton());
@@ -41,7 +39,6 @@ public class Variables {
 	} // loginPanel
 	
 	public static DockPanel modulesDock() {
-		DockPanel m = new DockPanel();
 		m.setSpacing(intPanelSpacing0);
 	    m.setHorizontalAlignment(DockPanel.ALIGN_CENTER);
 	    m.setBorderWidth(intPanelBorder);
@@ -50,7 +47,7 @@ public class Variables {
 	    m.add(Variables.htmlModules(), DockPanel.NORTH);
 	    m.add(Variables.htmlSouth(), DockPanel.SOUTH);
 	    m.add(Variables.modulesEastVPanel(), DockPanel.EAST);
-	    m.add(Variables.modulesWestVpanel(), DockPanel.WEST);
+	    m.add(Variables.vertical(), DockPanel.WEST);
 	    m.add(Variables.moduleImage(), DockPanel.NORTH);
 	    m.add(Variables.modulesSouthVpanel(), DockPanel.SOUTH);
 	    m.add(Variables.modulesCenterVpanel(), DockPanel.CENTER);
@@ -58,7 +55,6 @@ public class Variables {
 	} // modulesDock
 	
 	public static DockPanel configDock() {
-    	DockPanel c = new DockPanel();
     	c.setSpacing(intPanelSpacing0);
         c.setHorizontalAlignment(DockPanel.ALIGN_CENTER);
         c.setBorderWidth(intPanelBorder);
@@ -76,67 +72,7 @@ public class Variables {
         return c;
 	} // configDock
 	
-	public static HorizontalPanel modulesWestHpanel() {
-		return new HorizontalPanel();
-	} // modulesWest
-	
-	public static HorizontalPanel moduleCoordinates() {
-		HorizontalPanel c = new HorizontalPanel();
-		c.add(Variables.xPanel());
-		c.add(Variables.yPanel());
-		return c;
-	} // moduleCoordinates
-	
-	public static HorizontalPanel configHpanel() {
-    	HorizontalPanel c = new HorizontalPanel();
-    	c.add(Variables.roverPathButton());
-        c.add(Variables.removeConfigButton());
-        c.add(Variables.buildConfigButton());
-        return c;
-	} // configHzPanel
-	
-	public static HorizontalPanel usersPanel() {
-		HorizontalPanel u = new HorizontalPanel();
-		u.add(Variables.usersListBox());
-		u.add(Variables.addUserButton());
-		u.add(Variables.removeUserButton());
-		return u;
-	} // settingsUserPanel
-	
-	public static HorizontalPanel changePass() {
-    	HorizontalPanel s = new HorizontalPanel();
-    	s.add(Variables.htmlPassEnable());
-        s.add(Variables.changePassButton());
-        s.setSpacing(intPanelSpacing1);
-        return s;
-	} // settingsPassPanel
-	
-	public static HorizontalPanel currentPassword() {
-    	HorizontalPanel current = new HorizontalPanel();
-    	current.add(Variables.htmlCurrPass());
-        current.add(Variables.ptbPassword());
-        current.setSpacing(intPanelSpacing1);
-    	return current;
-	} // currentPassword
-	
-	public static HorizontalPanel newPassword() {
-    	HorizontalPanel newP = new HorizontalPanel();
-    	newP.add(Variables.htmlNewPass());
-        newP.add(Variables.ptbPassword());
-        newP.setSpacing(intPanelSpacing1);
-    	return newP;
-	} // newPassword
-	
-	public static HorizontalPanel confirmPassword() {
-    	HorizontalPanel confirm = new HorizontalPanel();
-    	confirm.add(Variables.htmlConfirmPass());
-        confirm.add(Variables.ptbPassword());
-        confirm.setSpacing(intPanelSpacing1);
-    	return confirm;
-	} // confirmPassword
-	
-	public static SimplePanel weatherPanel() {
-    	SimplePanel w = new SimplePanel();
+	public static DockPanel weatherPanel() {
     	w.add(Variables.htmlWeather());
         Weather weather = new Weather();
         weather.requestData(weather.strURL);
@@ -145,66 +81,112 @@ public class Variables {
         return w;
 	} // weatherPanel
 	
-	public static VerticalPanel modulesWestVpanel() {
+	public static HorizontalPanel horizontal() {
+		return new HorizontalPanel();
+	} // horizontal
+	
+	public static HorizontalPanel moduleCoordinates() {
+		moduleCoordinates.add(Variables.xPanel());
+		moduleCoordinates.add(Variables.yPanel());
+		return moduleCoordinates;
+	} // moduleCoordinates
+	
+	public static HorizontalPanel configHpanel() {
+		configHpanel.add(Variables.roverPathButton());
+		configHpanel.add(Variables.removeConfigButton());
+		configHpanel.add(Variables.buildConfigButton());
+        return configHpanel;
+	} // configHzPanel
+	
+	public static HorizontalPanel usersPanel() {
+		usersPanel.add(Variables.usersListBox());
+		usersPanel.add(Variables.addUserButton());
+		usersPanel.add(Variables.removeUserButton());
+		return usersPanel;
+	} // settingsUserPanel
+	
+	public static HorizontalPanel changePass() {
+		changePass.add(Variables.htmlPassEnable());
+		changePass.add(Variables.changePassButton());
+		changePass.setSpacing(intPanelSpacing1);
+        return changePass;
+	} // settingsPassPanel
+	
+	public static HorizontalPanel currentPassword() {
+    	currentPass.add(Variables.htmlCurrPass());
+        currentPass.add(ptbCurrentPassword);
+        currentPass.setSpacing(intPanelSpacing1);
+    	return currentPass;
+	} // currentPassword
+	
+	public static HorizontalPanel newPassword() {
+		newPass.add(Variables.htmlNewPass());
+		newPass.add(ptbNewPassword);
+		newPass.setSpacing(intPanelSpacing1);
+    	return newPass;
+	} // newPassword
+	
+	public static HorizontalPanel confirmPassword() {
+    	confirmPass.add(Variables.htmlConfirmPass());
+        confirmPass.add(ptbConfirmPassword);
+        confirmPass.setSpacing(intPanelSpacing1);
+    	return confirmPass;
+	} // confirmPassword
+	
+	public static VerticalPanel vertical() {
     	return new VerticalPanel();
 	} // modulesWestVtPanel
 	
 	public static VerticalPanel modulesCenterVpanel() {
-    	VerticalPanel center =  new VerticalPanel();
-    	center.add(Variables.htmlModuleDetails());
-        center.add(Variables.taModuleDetails());
-        return center;
+    	modulesCenter.add(Variables.htmlModuleDetails());
+        modulesCenter.add(Variables.taModuleDetails());
+        return modulesCenter;
 	} // modulesCenterVpanel
 	
 	public static VerticalPanel modulesSouthVpanel() {
-    	VerticalPanel south =  new VerticalPanel();
-    	south.add(Variables.htmlModuleRequirements());
-        south.add(Variables.taModuleRequirements());
-        return south;
+    	modulesSouth.add(Variables.htmlModuleRequirements());
+        modulesSouth.add(Variables.taModuleRequirements());
+        return modulesSouth;
 	} // modulesSouthVpanel
 	
 	public static VerticalPanel modulesEastVPanel() {
-    	VerticalPanel east = new VerticalPanel();
-    	east.add(Variables.htmlModuleID());
-        east.add(Variables.tbModuleID());
-        east.add(Variables.htmlModuleType());
-        east.add(Variables.mType());
-        east.add(Variables.htmlModuleCondition());
-        east.add(Variables.mCondition());
-        east.add(Variables.htmlModuleOrientation());
-        east.add(Variables.mOrientation());
-        east.add(Variables.moduleCoordinates());
-        east.add(Variables.mSaveButton());
-        east.setSpacing(intPanelSpacing1 + 2);
-        return east;
+    	modulesEast.add(Variables.htmlModuleID());
+        modulesEast.add(Variables.mID);
+        modulesEast.add(Variables.htmlModuleType());
+        modulesEast.add(Variables.mType());
+        modulesEast.add(Variables.htmlModuleCondition());
+        modulesEast.add(Variables.mCondition());
+        modulesEast.add(Variables.htmlModuleOrientation());
+        modulesEast.add(Variables.mOrientation());
+        modulesEast.add(Variables.moduleCoordinates());
+        modulesEast.add(Variables.mSaveButton());
+        modulesEast.setSpacing(intPanelSpacing1 + 2);
+        return modulesEast;
 	} // modulesEastVPanel
 	
 	public static VerticalPanel xPanel() {
-    	VerticalPanel x =  new VerticalPanel();
-    	x.add(Variables.htmlX());
-    	x.add(Variables.tbX());
-    	return x;
+    	modulesX.add(Variables.htmlX());
+    	modulesX.add(Variables.mX());
+    	return modulesX;
 	} // xPanel
 	
 	public static VerticalPanel yPanel() {
-    	VerticalPanel y = new VerticalPanel();
-    	y.add(Variables.htmlY());
-        y.add(Variables.tbY());
-        return y;
+    	modulesY.add(Variables.htmlY());
+        modulesY.add(Variables.mY());
+        return modulesY;
 	} // yPanel
 	
 	public static VerticalPanel configVpanel() {
-    	VerticalPanel configVpanel = new VerticalPanel();
-    	configVpanel.add(Variables.cbAirLock());
-        configVpanel.add(Variables.cbPlain());
-        configVpanel.add(Variables.cbDorm());
-        configVpanel.add(Variables.cbSanitation());
-        configVpanel.add(Variables.cbFoodAndWater());
-        configVpanel.add(Variables.cbGymAndRelax());
-        configVpanel.add(Variables.cbCanteen());
-        configVpanel.add(Variables.cbPower());
-        configVpanel.add(Variables.cbControl());
-        configVpanel.add(Variables.cbMedical());
+    	configVpanel.add(Variables.cbAirLock);
+        configVpanel.add(Variables.cbPlain);
+        configVpanel.add(Variables.cbDorm);
+        configVpanel.add(Variables.cbSanitation);
+        configVpanel.add(Variables.cbFoodAndWater);
+        configVpanel.add(Variables.cbGymAndRelax);
+        configVpanel.add(Variables.cbCanteen);
+        configVpanel.add(Variables.cbPower);
+        configVpanel.add(Variables.cbControl);
+        configVpanel.add(Variables.cbMedical);
         configVpanel.add(Variables.rbSelectAll());
         configVpanel.add(Variables.rbDeselectAll());
         configVpanel.setHeight(strHeight);
@@ -212,25 +194,23 @@ public class Variables {
 	} // configVpanel
 	
 	public static VerticalPanel settingsPasswordVpanel() {
-    	VerticalPanel s = new VerticalPanel();
-    	s.add(Variables.htmlChangePass());
-        s.add(Variables.currentPassword());
-        s.add(Variables.newPassword());
-        s.add(Variables.confirmPassword());
-        s.setSpacing(intPanelSpacing0);
-        s.setBorderWidth(intPanelBorder);
-    	return s;
+    	settingsPassVpanel.add(Variables.htmlChangePass());
+        settingsPassVpanel.add(Variables.currentPassword());
+        settingsPassVpanel.add(Variables.newPassword());
+        settingsPassVpanel.add(Variables.confirmPassword());
+        settingsPassVpanel.setSpacing(intPanelSpacing0);
+        settingsPassVpanel.setBorderWidth(intPanelBorder);
+    	return settingsPassVpanel;
 	} // settingsVpanel
 	
 	public static VerticalPanel settingsVpanel () {
-    	VerticalPanel v = new VerticalPanel();
-    	v.add(Variables.testCasesListBox());
-    	v.add(Variables.usersListBox());
-        v.add(Variables.addUserButton());
-        v.add(Variables.removeUserButton());
-    	v.setSpacing(intPanelSpacing1);
-    	v.setBorderWidth(intPanelBorder);
-    	return v;
+    	settingsVpanel.add(Variables.testCasesListBox());
+    	settingsVpanel.add(Variables.usersListBox());
+        settingsVpanel.add(Variables.addUserButton());
+        settingsVpanel.add(Variables.removeUserButton());
+    	settingsVpanel.setSpacing(intPanelSpacing1);
+    	settingsVpanel.setBorderWidth(intPanelBorder);
+    	return settingsVpanel;
 	} // settingsPassVtPanel
     
 	public static Button submitButton() {
@@ -258,7 +238,6 @@ public class Variables {
 		final Button save = new Button("SAVE");
 		save.setHeight(strButtonHeight);
 	    save.setWidth(strWidth);
-	    save.setText("SAVE");
 		return save;
 	} // mSaveButton
 	
@@ -304,73 +283,6 @@ public class Variables {
 	    changePassword.setWidth(strWidth2);
 		return changePassword;
 	} // changePassButton
-	
-	public static CheckBox cbAirLock() {
-		final CheckBox cbAirLock = new CheckBox("Air Lock");
-		cbAirLock.setText("Air Lock");
-		return cbAirLock;
-	} // cbAirLock
-	
-	public static CheckBox cbPlain() {
-		final CheckBox cbPlain = new CheckBox("Plain");
-		cbPlain.setText("Plain");
-		return cbPlain;
-	} // cbPlain
-	
-	public static CheckBox cbDorm() {
-		final CheckBox cbDorm = new CheckBox("Dormitory");
-		cbDorm.setText("Dormitory");
-		return cbDorm;
-	} // cbDorm
-	
-	public static CheckBox cbSanitation() {
-		final CheckBox cbSanitation = new CheckBox("Sanitation");
-		cbSanitation.setText("Sanitation");
-		return cbSanitation;
-	} // cbSanitation
-	
-	public static CheckBox cbFoodAndWater() {
-		final CheckBox cbFoodAndWater = new CheckBox("Food & Water");
-		cbFoodAndWater.setText("Food & Water");
-		return cbFoodAndWater;
-	} // cbFoodandWater
-	
-	public static CheckBox cbGymAndRelax() {
-		final CheckBox cbGymAndRelax = new CheckBox("Gym & Relaxation");
-		cbGymAndRelax.setText("Gym & Relaxation");
-		return cbGymAndRelax;
-	} //cbGymAndRelax
-	
-	public static CheckBox cbCanteen() {
-		final CheckBox cbCanteen = new CheckBox("Canteen");
-		cbCanteen.setText("Canteen");
-		return cbCanteen;
-	} // cbCanteen
-	
-	public static CheckBox cbPower() {
-		final CheckBox cbPower = new CheckBox("Power");
-		cbPower.setText("Power");
-		return cbPower;
-	} // cbPower
-	
-	public static CheckBox cbControl() {
-		final CheckBox cbControl = new CheckBox("Control");
-		cbControl.setText("Control");
-		return cbControl;
-	} // cbControl
-	
-	public static CheckBox cbMedical() {
-		final CheckBox cbMedical = new CheckBox("Medical");
-		cbMedical.setText("Medical");
-		return cbMedical;
-	} // cbMedical
-	
-	public static CheckBox passEnable() {
-		final CheckBox cbPassEnable = new CheckBox();
-		cbPassEnable.setText("Password Enabled");
-		cbPassEnable.setHeight(strHeight1);
-		return cbPassEnable;
-	} // cbPassEnable
 	
 	public static HTML htmlSouth() {
 		return new HTML(strDockPanelSouth);
@@ -463,8 +375,11 @@ public class Variables {
 		return map;
 	} // mapImage
 	
+	public static ListBox lb() {
+		return new ListBox();
+	} // lb
+	
 	public static ListBox mListBox() {
-		final ListBox mListBox = new ListBox();
 		mListBox.setVisibleItemCount(10);
 	    mListBox.setHeight(strHeight);
 	    mListBox.setWidth(strWidth);
@@ -472,7 +387,6 @@ public class Variables {
 	} // mListBox
 	
 	public static ListBox mType() {
-		final ListBox mType = new ListBox();
 		mType.setVisibleItemCount(10);
 	    mType.setEnabled(false);
 	    mType.setWidth(strWidth);
@@ -480,7 +394,6 @@ public class Variables {
 	} // mType
 	
 	public static ListBox mCondition() {
-		final ListBox mCondition = new ListBox();
 		Controller.populateCondidition(mCondition);
 	    mCondition.setVisibleItemCount(3);
 	    mCondition.setWidth(strWidth);
@@ -488,7 +401,6 @@ public class Variables {
 	} // mCondition
 	
 	public static ListBox mOrientation() {
-		final ListBox mOrientation = new ListBox();
 		Controller.populateOrientation(mOrientation);
 	    mOrientation.setVisibleItemCount(3);
 	    mOrientation.setWidth(strWidth);
@@ -496,7 +408,6 @@ public class Variables {
 	} // mOrientation
 	
 	public static ListBox cListBox() {
-		final ListBox cListBox = new ListBox();
 		cListBox.setVisibleItemCount(10);
 	    cListBox.setHeight(strConfigListBoxHeight);
 	    cListBox.setWidth(strWidth);
@@ -505,44 +416,42 @@ public class Variables {
 	} // cListBox
 	
 	public static ListBox usersListBox() {
-		final ListBox users = new ListBox();
 		// populate
 		return users;
 	} // usersListBox
 	
 	public static ListBox testCasesListBox() {
-		final ListBox testCases = new ListBox();
 		return testCases;
 	} // testCasesListBox
 	
-	public static PasswordTextBox ptbPassword() {
+	public static PasswordTextBox ptb() {
 		final PasswordTextBox p = new PasswordTextBox();
 		return p;
 	} // tbPasswordEntry
 	
 	public static RadioButton rbSelectAll() {
-		RadioButton radAll = new RadioButton("Select All");
 		radAll.setText("Select All");
 		radAll.setName("MapModules");
 		return radAll;
 	} // selectAll
 	
 	public static RadioButton rbDeselectAll() {
-		RadioButton radNone = new RadioButton("Deselect All");
 		radNone.setText("Deselect All");
 		radNone.setName("MapModules");
 		return radNone;
 	} // deselectAll
 	
+	public static TextArea ta() {
+		return new TextArea();
+	} // ta
+	
 	public static TextArea taModuleDetails() {
-		final TextArea moduleDetails = new TextArea();
 		moduleDetails.setHeight(strModulesCenterHeight);
 	    moduleDetails.setWidth(strModulesCenterWidth);
 		return moduleDetails;
 	} // taModuleDetails
 	
 	public static TextArea taModuleRequirements() {
-		final TextArea moduleRequirements = new TextArea();
 		moduleRequirements.setText("module requirements module requirements module requirements");
 	    moduleRequirements.setReadOnly(true);
 	    moduleRequirements.setHeight(strModulesCenterHeight);
@@ -550,27 +459,19 @@ public class Variables {
 		return moduleRequirements;
 	} // taModuleRequirements
 	
-	public static TextBox tbUsernameEntry() {
-		final TextBox usernameEntry = new TextBox();
-		return usernameEntry;
-	} // tbUsernameEntry
+	public static TextBox tb() {
+		final TextBox tb = new TextBox();
+		return tb;
+	} // tb
 	
-	public static TextBox tbModuleID() {
-		final TextBox id = new TextBox();
-		id.setWidth(strWidth);
-		return id;
-	} // tbModuleID
-	
-	public static TextBox tbX() {
-		final TextBox x = new TextBox();
-		x.setWidth(strWidth2);
-		return x;
+	public static TextBox mX() {
+		mX.setWidth(strWidth2);
+		return mX;
 	} // tbX
 	
-	public static TextBox tbY() {
-		final TextBox y = new TextBox();
-		y.setWidth(strWidth2);
-		return y;
+	public static TextBox mY() {
+		mY.setWidth(strWidth2);
+		return mY;
 	} //
 	
 	public static Audio successSound() {
@@ -590,6 +491,14 @@ public class Variables {
 		minConfig.setSrc("sounds/minConfig");
 		return minConfig;
 	} // minConfigSound
+	
+	public static Boolean minConfigReached() {
+		return minConfigReached;
+	} // minConfigReached
+	
+	public static void setMinConfigReached(Boolean r) {
+		minConfigReached = r;
+	} // setMinConfigReached
     
 	final static Map mapDisplay = new Map(100,50);  
 //	final TestCases test = new TestCases();  
@@ -608,7 +517,55 @@ public class Variables {
 //    testCases.setWidth(strWidth); 
 //    testCases.addChangeHandler(Controller.testCases(testCases));
 	
-	final static PasswordTextBox password = Variables.ptbPassword();
+	final static TabLayoutPanel tabPanel = new TabLayoutPanel(2.5, Unit.EM);
+	final static VerticalPanel loginPanel = new VerticalPanel();
+	final static DockPanel m = new DockPanel();
+	final static DockPanel c = new DockPanel();
+	final static DockPanel w = new DockPanel();
+	final static HorizontalPanel moduleCoordinates = Variables.horizontal();
+	final static HorizontalPanel configHpanel = Variables.horizontal();
+	final static HorizontalPanel usersPanel = Variables.horizontal();
+	final static HorizontalPanel changePass = Variables.horizontal();
+	final static HorizontalPanel currentPass = Variables.horizontal();
+	final static HorizontalPanel newPass = Variables.horizontal();
+	final static HorizontalPanel confirmPass = Variables.horizontal();
+	final static VerticalPanel modulesCenter = Variables.vertical();
+	final static VerticalPanel modulesSouth = Variables.vertical();
+	final static VerticalPanel modulesEast = Variables.vertical();
+	final static VerticalPanel modulesX = Variables.vertical();
+	final static VerticalPanel modulesY = Variables.vertical();
+	final static VerticalPanel configVpanel = Variables.vertical();
+	final static VerticalPanel settingsPassVpanel = Variables.vertical();
+	final static VerticalPanel settingsVpanel = Variables.vertical();
+	
+	final static Boolean minConfigReached = false;
+	final static CheckBox cbAirLock = new CheckBox("Air Lock");
+	final static CheckBox cbPlain = new CheckBox("Plain");
+	final static CheckBox cbDorm = new CheckBox("Dormitory");
+	final static CheckBox cbSanitation = new CheckBox("Sanitation");
+	final static CheckBox cbFoodAndWater = new CheckBox("Food & Water");
+	final static CheckBox cbGymAndRelax = new CheckBox("Gym & Relaxation");
+	final static CheckBox cbCanteen = new CheckBox("Canteen");
+	final static CheckBox cbPower = new CheckBox("Power");
+	final static CheckBox cbControl = new CheckBox("Control");
+	final static CheckBox cbMedical = new CheckBox("Medical");
+	final static CheckBox cbPassEnable = new CheckBox();
+	final static int intPanelBorder = 2;
+    final static int intPanelSpacing0 = 5;
+    final static int intPanelSpacing1 = 10;
+    final static ListBox mType = Variables.lb();
+	final static ListBox mCondition = Variables.lb();
+	final static ListBox mOrientation = Variables.lb();
+    final static ListBox mListBox = Variables.lb();
+    final static ListBox cListBox = Variables.lb();
+    final static ListBox users = Variables.lb();
+    final static ListBox testCases = Variables.lb();
+	final static PasswordTextBox password = Variables.ptb();
+	final static PasswordTextBox ptbCurrentPassword = Variables.ptb();
+	final static PasswordTextBox ptbNewPassword = Variables.ptb();
+	final static PasswordTextBox ptbConfirmPassword = Variables.ptb();
+	final static RadioButton radAll = new RadioButton("Select All");
+	final static RadioButton radNone = new RadioButton("Deselect All");
     final static String strHeight = "600px";
     final static String strHeight1 = "20px";
     final static String strHeight2 = "200px";
@@ -616,9 +573,6 @@ public class Variables {
     final static String strWidth1 = "1500px";
     final static String strWidth2 = "140px";
     final static String strDockPanelSouth = "Naples Spring 2015";
-    final static int intPanelBorder = 2;
-    final static int intPanelSpacing0 = 5;
-    final static int intPanelSpacing1 = 10;
     final static String strButtonHeight = "50px";
     final static String strButtonWidth = "150px";
     final static String strModulesCenterHeight = "175px";
@@ -627,4 +581,10 @@ public class Variables {
     final static String strConfigListBoxHeight = "650px";
     final static String strModulesCenterWidth = "800px";
     final static String strConfigMapWidth = "1000px";
-}
+    final static TextArea moduleDetails = Variables.ta();
+    final static TextArea moduleRequirements = Variables.ta();
+    final static TextBox mID = Variables.tb();
+    final static TextBox mX = Variables.tb();
+	final static TextBox mY = Variables.tb();
+    final static TextBox username = Variables.tb();
+} // Variables
