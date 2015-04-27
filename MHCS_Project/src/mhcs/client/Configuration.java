@@ -3,6 +3,8 @@ package mhcs.client;
 import java.util.ArrayList;
 import java.util.List;
 
+import mhcs.storage.Model;
+
 /**
  * This class defines a configuration as an array of modules.
  * 
@@ -23,10 +25,28 @@ public final class Configuration implements Cloneable{
 	/**
 	 * Gets the modules that make up a configuration.
 	 * 
-	 * @return an array of Module.
+	 * @return a List of Module.
 	 */
 	public List<Module> getModules() {
 		return modules;
+	}
+	
+	/**
+	 * Gets the modules with ModuleType type
+	 * @param type
+	 * @return a list of modules
+	 */
+	public List<Module> getModules(ModuleType type)
+	{
+		List<Module> modulesOfType = new ArrayList<Module>();
+		for (Module m : getModules())
+		{
+			if(m.getType().equals(type))
+			{
+				modulesOfType.add(m);
+			}
+		}
+		return modulesOfType;
 	}
 
 	/**
@@ -143,10 +163,55 @@ public final class Configuration implements Cloneable{
 		return ((float) configPoints) / ((float) 100);
 	}
 	
+	/**
+	 * Expand the configuration in all possible ways.
+	 * (make this more intelligent to save on space and runtime)
+	 * @return a list of expanded configurations.
+	 */
+	public final List<Configuration> expand()
+	{
+		List<Configuration> expandedConfigs = new ArrayList<Configuration>();
+		
+		
+		return expandedConfigs;
+	}
 	
 	
-	
-	
+	/**
+	 * this function returns the unfilled spaces around the plain modules of a configuration.
+	 * @return List<Point> a list of unallocated spaces around plain modules in the config.
+	 */
+	public final List<Point> getOpenSpaces()
+	{
+		List<Point> placesAdjToPlain = new ArrayList<Point>(); // list of points at which other modules could be placed.
+		
+		for (Module m : this.getModules(ModuleType.PLAIN)) // populates placesAdjToPlain
+		{
+			Point p = m.getCoordinates();
+			Module above = Model.getModuleAtLocation(new Point(p.getX(),p.getY()+1));
+			Module below = Model.getModuleAtLocation(new Point(p.getX(),p.getY()-1));
+			Module left = Model.getModuleAtLocation(new Point(p.getX()-1,p.getY()));
+			Module right = Model.getModuleAtLocation(new Point(p.getX()+1,p.getY()));
+			
+			if(above == null || !this.getModules().contains(above))
+			{
+				placesAdjToPlain.add(new Point(p.getX(),p.getY()+1));
+			}
+			if(below == null || !this.getModules().contains(below))
+			{
+				placesAdjToPlain.add(new Point(p.getX(),p.getY()-1));
+			}
+			if(right == null || !this.getModules().contains(right))
+			{
+				placesAdjToPlain.add(new Point(p.getX()+1,p.getY()));
+			}
+			if(left == null || !this.getModules().contains(left))
+			{
+				placesAdjToPlain.add(new Point(p.getX()-1,p.getY()));
+			}
+		}
+		return placesAdjToPlain;
+	}
 	
 	/**
 	 * this method returns the rover path as a Point[].

@@ -261,33 +261,7 @@ public class ConfigurationBuilder {
 			}
 		}
 		
-		ArrayList<Point> placesAdjToPlain = new ArrayList<Point>(); // list of points at which other modules could be placed.
 		
-		for (Module m : baseConfig.getModules()) // populates placesAdjToPlain
-		{
-			Point p = m.getCoordinates();
-			Module above = Model.getModuleAtLocation(new Point(p.getX(),p.getY()+1));
-			Module below = Model.getModuleAtLocation(new Point(p.getX(),p.getY()-1));
-			Module left = Model.getModuleAtLocation(new Point(p.getX()-1,p.getY()));
-			Module right = Model.getModuleAtLocation(new Point(p.getX()+1,p.getY()));
-			
-			if(above == null || !baseConfig.getModules().contains(above))
-			{
-				placesAdjToPlain.add(new Point(p.getX(),p.getY()+1));
-			}
-			if(below == null || !baseConfig.getModules().contains(below))
-			{
-				placesAdjToPlain.add(new Point(p.getX(),p.getY()-1));
-			}
-			if(right == null || !baseConfig.getModules().contains(right))
-			{
-				placesAdjToPlain.add(new Point(p.getX()+1,p.getY()));
-			}
-			if(left == null || !baseConfig.getModules().contains(left))
-			{
-				placesAdjToPlain.add(new Point(p.getX()-1,p.getY()));
-			}
-		}
 		
 		
 		/**
