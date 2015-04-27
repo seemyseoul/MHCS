@@ -13,6 +13,7 @@ import com.google.gwt.i18n.client.LocaleInfo;
 import com.google.gwt.media.client.Audio;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.DialogBox;
+import com.google.gwt.user.client.ui.DockPanel;
 import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.HasHorizontalAlignment;
 import com.google.gwt.user.client.ui.Image;
@@ -319,13 +320,13 @@ public class Controller {
 	 * Returns click handler for the LogIn button on Log In Page.
 	 * @param passwordEntry
 	 * @param tabPanel
-	 * @param strSettingsButtonWidth
-	 * @param strModulesButtonWidth
+	 * @param height
+	 * @param width
 	 * @param errorSound
 	 * @return ClickHandler
 	 */
 	public static ClickHandler loginHandler (final PasswordTextBox passwordEntry, final TabLayoutPanel tabPanel,
-			final String strSettingsButtonWidth, final String strModulesButtonWidth, final Audio errorSound) {
+			final String height, final String width, final Audio errorSound) {
 		return new ClickHandler(){
 	        public void onClick(ClickEvent event) {
 	            if(passwordEntry.getText().equals("guest"))
@@ -352,8 +353,8 @@ public class Controller {
 
 	                // Add an image to the dialog
 	                Image image = new Image("images/error");
-	                image.setHeight(strSettingsButtonWidth);
-	                image.setWidth(strModulesButtonWidth);
+	                image.setHeight(height);
+	                image.setWidth(width);
 	                dialogContents.add(image);
 	                dialogContents.setCellHorizontalAlignment(
 	                    image, HasHorizontalAlignment.ALIGN_CENTER);
@@ -380,6 +381,15 @@ public class Controller {
 	                dialogBox.show();
 	                errorSound.play();
 	            }  // else
+	        } // onCLick
+	    };
+	} // loginHandler
+	
+	public static ClickHandler logoutHandler(final DockPanel login) {
+		return new ClickHandler(){
+	        public void onClick(ClickEvent event) {
+	        	RootLayoutPanel.get().clear();
+                RootLayoutPanel.get().add(login);
 	        } // onCLick
 	    };
 	} // submitHandler

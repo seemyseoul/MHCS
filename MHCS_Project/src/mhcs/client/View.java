@@ -31,10 +31,14 @@ public class View implements EntryPoint {
   */
   public void onModuleLoad() {      
     final TabLayoutPanel tabPanel = Variables.tabPanel();
-    final DockPanel login = Variables.loginDock();    
+    final DockPanel login = Variables.loginDock();
+    login.setSize(Variables.px1500, Variables.px600);
+    
     final Button loginButton = Variables.loginButton;
     loginButton.addClickHandler(Controller.loginHandler(Variables.ptbPassword,
     		tabPanel, Variables.px140, Variables.px150, Variables.errorSound()));
+    final Button logoutButton = Variables.logoutButton();
+    logoutButton.addClickHandler(Controller.logoutHandler(login));
     
     Variables.mListBox().clear();
     for (Module m : Model.getModuleList()) {

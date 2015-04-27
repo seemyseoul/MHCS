@@ -35,6 +35,7 @@ public class Variables {
         l.setVerticalAlignment(DockPanel.ALIGN_MIDDLE);
         l.setBorderWidth(intPanelBorder);
         l.setSize(px1500, px600);
+        l.add(htmlSouth, DockPanel.SOUTH);
         l.add(loginVpanel(), DockPanel.CENTER);
     	return l;
 	} // loginPanel
@@ -236,6 +237,8 @@ public class Variables {
         configVpanel.add(Variables.rbSelectAll());
         configVpanel.add(Variables.rbDeselectAll());
         configVpanel.setHeight(px600);
+        configVpanel.setWidth(px150);
+        configVpanel.setVerticalAlignment(VerticalPanel.ALIGN_MIDDLE);
         return configVpanel;
 	} // configVpanel
 	
@@ -245,6 +248,7 @@ public class Variables {
         settingsPassVpanel.add(currentPassword());
         settingsPassVpanel.add(newPassword());
         settingsPassVpanel.add(confirmPassword());
+        settingsPassVpanel.add(savePassButton());
         settingsPassVpanel.setSpacing(intPanelSpacing1);
     	return settingsPassVpanel;
 	} // settingsVpanel
@@ -259,6 +263,7 @@ public class Variables {
 		tenDayVpanel.add(tbTimeSince());
 		tenDayVpanel.add(htmlFiller);
 		tenDayVpanel.add(htmlFiller);
+		tenDayVpanel.add(htmlTestCases);
 		tenDayVpanel.add(testCases());
 		tenDayVpanel.add(htmlFiller);
 		tenDayVpanel.add(logoutButton());
@@ -291,19 +296,19 @@ public class Variables {
 	
 	public static Button roverPathButton() {
 		roverPath.setHeight(px50);
-	    roverPath.setWidth(px300);
+	    roverPath.setWidth(px340);
 		return roverPath;
 	} // roverPathButton
 	
 	public static Button removeConfigButton() {
 		removeConfig.setHeight(px50);
-	    removeConfig.setWidth(px300);
+	    removeConfig.setWidth(px340);
 		return removeConfig;
 	} // removeConfigButton
 	
 	public static Button buildConfigButton() {
 		buildConfig.setHeight(px50);
-	    buildConfig.setWidth(px300);
+	    buildConfig.setWidth(px340);
 		return buildConfig;
 	} // buildConfigButton
 	
@@ -325,6 +330,13 @@ public class Variables {
 		return changePassword;
 	} // changePassButton
 	
+	public static Button savePassButton() {
+		savePassword.setHeight(px35);
+		savePassword.setWidth(px140);
+//		savePassword.addClickHandler(Controller.savePassword());
+		return savePassword;
+	}
+	
 	public static Button dateTimeButton() {
 		dateTimeButton.setHeight(px35);
 		dateTimeButton.setWidth(px100);
@@ -342,7 +354,6 @@ public class Variables {
 	public static Button logoutButton() {
 		logoutButton.setHeight(px50);
 		logoutButton.setWidth(px300);
-//		logoutButton.addClickHandler(Controller.logoutHandler());
 		return logoutButton;
 	} // logoutButton
 	
@@ -565,6 +576,7 @@ public class Variables {
     final static String px200 = "200px";
     final static String px250 = "250px";
     final static String px300 = "300px";
+    final static String px340 = "340px";
     final static String px560 = "560px";
     final static String px600 = "600px";
     final static String px650 = "650px";
@@ -611,6 +623,7 @@ public class Variables {
 	final static Button addUser = new Button("Add User");
 	final static Button removeUser = new Button("Remove User");
 	final static Button changePassword = new Button("Change Password");
+	final static Button savePassword = new Button("Save Password");
 	final static Button dateTimeButton = new Button("Date-Time");
 	final static Button dateTimeSaveButton = new Button("Save");
 	final static Button logoutButton = new Button("Logout");
@@ -651,6 +664,7 @@ public class Variables {
 			+ "Or enter the date and time manually (mm/dd/yyyy hh:mm:ss).");
 	final static HTML htmlTimeSince = new HTML("Last changed: ");
 	final static HTML htmlFiller = new HTML("<br><br><br>");
+	final static HTML htmlTestCases = new HTML("<b><u>Test Cases.</u></b> <br> Select a test case to run.");
 	final static HTML htmlWeather = new HTML("Place holder for the weather");
     final static ListBox mType = Variables.lb();
 	final static ListBox mCondition = Variables.lb();
