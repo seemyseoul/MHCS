@@ -26,8 +26,8 @@ import com.google.gwt.user.client.Window;
 
 public class TestCases {
 		
-	public static void TestCaseChoice(int choice){	
-		String proxy ="file:///C:/Users/Brent/git/MHCS/MHCS_Project/war/Proxy.php?url=";
+	public static void TestCaseChoice(int choice){		
+		String proxy ="http://www.d.umn.edu/~mckeo044/Proxy.php?url=";
 		String url = proxy+"http://www.d.umn.edu/~abrooks/SomeTests.php?q=" + Integer.toString(choice);		
 		url = URL.encode(url);
 	
