@@ -32,8 +32,10 @@ public class View implements EntryPoint {
   public void onModuleLoad() {      
     final TabLayoutPanel tabPanel = Variables.tabPanel();
     final DockPanel login = Variables.loginDock();    
+    final Button loginButton = Variables.loginButton;
+    loginButton.addClickHandler(Controller.loginHandler(Variables.ptbPassword,
+    		tabPanel, Variables.px140, Variables.px150, Variables.errorSound()));
     
-    /* Modules */
     Variables.mListBox().clear();
     for (Module m : Model.getModuleList()) {
         Variables.mListBox().addItem("Module #" + m.getId()); 
@@ -49,19 +51,9 @@ public class View implements EntryPoint {
     
     Controller.setType(Variables.mID, Variables.mType());
     
-    Button modulesSaveButton = Variables.mSaveButton();
-    modulesSaveButton.addClickHandler(Controller.saveButton(Variables.mType(),
-            Variables.mID, Variables.mX(), Variables.mY(), Variables.mCondition(), Variables.mOrientation(),
-            Variables.strWidth2, Variables.strButtonWidth, Variables.successSound(),
-            Variables.minConfigSound(), Variables.errorSound(), Variables.mListBox()));
-    
     final DockPanel modulesDock = Variables.modulesDock();
-    
-    /* Configurations */
     final DockPanel configDock = Variables.configDock();
-
-    /* Settings */    
-    final VerticalPanel settingsPanel = Variables.settingsVpanel();
+    final DockPanel settingsDock = Variables.settingsDock();
     
     /* Weather Panel */
     //SimplePanel weatherPanel = Variables.weatherPanel();
@@ -69,8 +61,8 @@ public class View implements EntryPoint {
     /* Add tabs to layout */
     tabPanel.add(modulesDock, "Modules");
     tabPanel.add(configDock, "Configurations");
-    tabPanel.add(settingsPanel, "Settings");
-    tabPanel.add(null, "Logout");
+    tabPanel.add(settingsDock, "Settings");
+//    tabPanel.add(null, "Logout");
     
     RootLayoutPanel.get().add(login);
 
