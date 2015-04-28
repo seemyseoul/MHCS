@@ -58,7 +58,9 @@ public class TestCases {
 		//update
 		Window.alert(rt);
 		Model.removeAll();
+		Window.alert("Poop");
 		JSONArray jArray = (JSONArray)JSONParser.parseLenient(rt); 
+		Window.alert("Hello");
 		JSONNumber jNumber; 
 		JSONString jString; 
 		double code;
@@ -77,10 +79,13 @@ public class TestCases {
 		//Changes the JSON into datatypes
 		for (int i = 0; i < jArray.size(); ++i) { 			 
 			//Type and ID
+			Window.alert("for loop");
 			JSONObject jO = (JSONObject)jArray.get(i); 
-			jNumber = (JSONNumber) jO.get("id"); 
+			jNumber = (JSONNumber) jO.get("code"); 
 			code = jNumber.doubleValue();
+			Window.alert(Double.toString(code));
 			id = (int) code;
+			Window.alert(Integer.toString(id));
 			//Status
 			jString = (JSONString) jO.get("status"); 
 			status = jString.stringValue(); 		 
@@ -97,8 +102,7 @@ public class TestCases {
 			yC = (int) y;
 			coordinate = new Point (xC, yC);
 			
-			Window.alert(rt);
-			Window.alert(Integer.toString(id));
+			
 			Window.alert(status);
 			Window.alert(Integer.toString(numTurns));
 			Window.alert(Integer.toString(id));			

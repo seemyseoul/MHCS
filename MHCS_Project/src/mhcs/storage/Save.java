@@ -41,6 +41,10 @@ public class Save {
 	} // saveModules
 
 	public void removeAllModules() {
+		if (stockStore.getItem("intModCount") == null)
+		{
+			return;
+		}
 		for (int i = 0; i < Integer
 				.parseInt(stockStore.getItem("intModCount")); i++) {
 			stockStore.removeItem("C" + Integer.toString(i));
@@ -49,6 +53,10 @@ public class Save {
 	}
 
 	public void removeAllConfigurations() {
+		if (stockStore.getItem("intConfigCount") == null)
+		{
+			return;
+		}
 		for (int i = 0; i < Integer
 				.parseInt(stockStore.getItem("intConfigCount")); i++) {
 			stockStore.removeItem("C" + Integer.toString(i));
