@@ -4,10 +4,12 @@
  */
 package mhcs.storage;
 
+import mhcs.client.ConfigurationBuilder;
 import mhcs.client.Module;
 import mhcs.client.ModuleStatus;
 import mhcs.client.ModuleType;
 import mhcs.client.Point;
+import mhcs.client.Variables;
 
 import com.google.gwt.http.client.Request;
 import com.google.gwt.http.client.RequestBuilder;
@@ -21,6 +23,7 @@ import com.google.gwt.json.client.JSONObject;
 import com.google.gwt.json.client.JSONParser;
 import com.google.gwt.json.client.JSONString;
 import com.google.gwt.user.client.Window;
+import com.google.gwt.user.client.ui.ListBox;
 
 
 
@@ -72,7 +75,7 @@ public class TestCases {
 		String status;
 		ModuleType type;
 		Point coordinate;
-		ModuleStatus modStatus;
+		ModuleStatus modStatus;	
 		
 		//Changes the JSON into datatypes
 		for (int i = 0; i < jArray.size(); ++i) { 			 
@@ -148,11 +151,14 @@ public class TestCases {
 				type = null;
 			} //else
 			
-			
+			Variables.mListBox().addItem("Module #" + id);		
 			Module tempModule = new Module(type, id, coordinate, modStatus, numTurns, false);			
 			Model.addModule(tempModule);
 
 		} //for
+
+		ConfigurationBuilder.minConfigPossible();
+	
 	} //update
 
 }//TestCases Class
