@@ -442,7 +442,7 @@ public class Model {
 	}
 	
 	//sets the time
-	public static String getTiime(){
+	public static String getTime(){
 		return storedTime;
 	}
 	
