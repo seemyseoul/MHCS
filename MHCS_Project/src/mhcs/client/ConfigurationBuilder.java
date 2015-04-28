@@ -56,28 +56,28 @@ public class ConfigurationBuilder {
 		int numPlain = 0; // 3
 
 		for (Module m : modules) {
-			if (m.getType().equals(ModuleType.PLAIN)) {
+			if (m.getType().equals(ModuleType.AIRLOCK)) {
 				numAirlock++;
 			}
-			if (m.getType().equals("control")) {
+			if (m.getType().equals(ModuleType.CONTROL)) {
 				numControl++;
 			}
-			if (m.getType().equals("power")) {
+			if (m.getType().equals(ModuleType.POWER)) {
 				numPower++;
 			}
-			if (m.getType().equals("foodWater")) {
+			if (m.getType().equals(ModuleType.FOODWATERSTORAGE)) {
 				numFoodWater++;
 			}
-			if (m.getType().equals("dormitory")) {
+			if (m.getType().equals(ModuleType.DORMITORY)) {
 				numDormitory++;
 			}
-			if (m.getType().equals("canteen")) {
+			if (m.getType().equals(ModuleType.CANTEEN)) {
 				numCanteen++;
 			}
-			if (m.getType().equals("sanitation")) {
+			if (m.getType().equals(ModuleType.SANITATION)) {
 				numSanitation++;
 			}
-			if (m.getType().equals("plain")) {
+			if (m.getType().equals(ModuleType.PLAIN)) {
 				numPlain++;
 			}
 		}
@@ -86,30 +86,6 @@ public class ConfigurationBuilder {
 				&& numSanitation >= 1 && numPlain >= 3);
 	}
 
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	
 	
@@ -167,12 +143,10 @@ public class ConfigurationBuilder {
 		 * 
 		 * 1.) create a bare-bones structure using "numPlainModules" plain modules 
 		 * 2.) find the adjacent empty spaces that aren't part of the configuration yet.
-		 * 3.) fill in those spaces with modules.
-		 *     (HOW?!) (Randomly in all possible ways and then sort using Configuration.getQuality()?)
-		 *     (Or perhaps by doing it intelligently to begin with so as to not have to make a bajillion configurations and 100ish*a bajillion modules)
-		 *     ...idk
-		 * 4.) move the entire configuration so it fits on the map and isn't in only the usable Points.
-		 * 5.) move modules in the way of the newly constructed configuration.
+		 * 3.) fill in those spaces with modules randomly.
+		 * 4.) swap at random to minimize getFlawRating()
+		 * 5.) move the entire configuration so it fits on the map and isn't in only the usable Points.
+		 * 6.) move modules in the way of the newly constructed configuration.
 		 * 
 		 */
 		

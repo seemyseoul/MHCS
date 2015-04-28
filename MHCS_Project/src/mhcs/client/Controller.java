@@ -11,6 +11,7 @@ import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.i18n.client.LocaleInfo;
 import com.google.gwt.media.client.Audio;
+import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.DialogBox;
 import com.google.gwt.user.client.ui.DockPanel;
@@ -388,8 +389,7 @@ public class Controller {
 	public static ClickHandler logoutHandler(final DockPanel login) {
 		return new ClickHandler(){
 	        public void onClick(ClickEvent event) {
-	        	RootLayoutPanel.get().clear();
-                RootLayoutPanel.get().add(login);
+	        	Window.Location.reload();
 	        } // onCLick
 	    };
 	} // submitHandler
