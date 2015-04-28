@@ -55,6 +55,7 @@ public class TestCases {
 	} // TestCaseChoice
 		
 	public static void update(final String rt) {		 
+		Window.alert(rt);
 		Model.removeAll();
 		JSONArray jArray = (JSONArray)JSONParser.parseLenient(rt); 
 		JSONNumber jNumber; 
