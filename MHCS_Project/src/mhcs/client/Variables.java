@@ -341,7 +341,7 @@ public class Variables {
 	public static Button dateTimeButton() {
 		dateTimeButton.setHeight(px35);
 		dateTimeButton.setWidth(px100);
-//		dateTime.addClickHandler(Controller.dateTime());
+		dateTime.addClickHandler(Controller.dateTime());
 		return dateTimeButton;
 	} // dateTime
 	

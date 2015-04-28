@@ -41,13 +41,14 @@ public class Save {
 	} // saveModules
 
 	public void removeAllModules() {
+		//tested
 		if (stockStore.getItem("intModCount") == null)
 		{
 			return;
 		}
 		for (int i = 0; i < Integer
 				.parseInt(stockStore.getItem("intModCount")); i++) {
-			stockStore.removeItem("C" + Integer.toString(i));
+			stockStore.removeItem(Integer.toString(i));
 		} // for
 		stockStore.setItem("intModCount", Integer.toString(0));
 	}
