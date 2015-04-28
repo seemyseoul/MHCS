@@ -97,7 +97,6 @@ public class TestCases {
 			yC = (int) y;
 			coordinate = new Point (xC, yC);
 			
-			//update
 			Window.alert(rt);
 			Window.alert(Integer.toString(id));
 			Window.alert(status);
