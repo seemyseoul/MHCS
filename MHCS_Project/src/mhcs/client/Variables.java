@@ -88,6 +88,7 @@ public class Variables {
 
 	public static FlowPanel weatherPanel() {
     	w.add(htmlWeather);
+    	w.add(weatherImage());
         Weather weather = new Weather();
         weather.requestData(weather.strURL);
         w.add(new Label("Current temp: \t" + weather.strTemp + " Celsius"));
@@ -384,6 +385,13 @@ public class Variables {
 		return map;
 	} // mapImage
 	
+	public static Image weatherImage() {
+		final Image logo = new Image("images/weather/wlogo");
+		logo.setHeight(px80);
+		logo.setWidth(px130);
+		return logo;
+	} // weatherImage
+	
 	public static ListBox lb() {
 		return new ListBox();
 	} // lb
@@ -569,7 +577,9 @@ public class Variables {
     final static String px20 = "20px";
     final static String px35 = "35px";
     final static String px50 = "50px";
+    final static String px80 = "80px";
     final static String px100 = "100px";
+    final static String px130 = "130px";
     final static String px140 = "140px";
     final static String px150 = "150px";
     final static String px175 = "175px";
