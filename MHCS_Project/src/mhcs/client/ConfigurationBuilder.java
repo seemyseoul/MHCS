@@ -56,7 +56,7 @@ public class ConfigurationBuilder {
 		int numPlain = 0; // 3
 
 		for (Module m : modules) {
-			if (m.getType().equals("airlock")) {
+			if (m.getType().equals(ModuleType.PLAIN)) {
 				numAirlock++;
 			}
 			if (m.getType().equals("control")) {
@@ -260,8 +260,6 @@ public class ConfigurationBuilder {
 				baseConfig.addModule(leftOverPlain);
 			}
 		}
-		
-		
 		
 		
 		/**

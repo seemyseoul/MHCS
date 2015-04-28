@@ -234,10 +234,21 @@ public class Module implements Cloneable {
 	
 	
 	
+	public boolean isHorizontallyNextTo(Module m)
+	{
+		return getHorizontallyConnectedModules().contains(m);
+	}
 	
+	public boolean isVerticallyNextTo(Module m)
+	{
+		return getVerticallyConnectedModules().contains(m);
+	}
 	
+	public boolean isDiagonallyNextTo(Module m)
+	{
+		return getDiagonallyConnectedModules().contains(m);
+	}
 	
-
 	public int getId() {
 		return id;
 	}
