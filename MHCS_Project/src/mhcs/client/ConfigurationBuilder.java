@@ -47,7 +47,7 @@ public class ConfigurationBuilder {
 	public static boolean minConfigPossible() {
 		// Load loader = new Load();
 		// Module[] modules = loader.getModules();
-		Module[] modules = (Module[]) Model.getModuleList().toArray();
+		List<Module> modules = Model.getModuleList();
 		int numAirlock = 0; // 1
 		int numControl = 0; // 1
 		int numPower = 0; // 1
@@ -56,7 +56,7 @@ public class ConfigurationBuilder {
 		int numCanteen = 0; // 1
 		int numSanitation = 0; // 1
 		int numPlain = 0; // 3
-
+		
 		for (Module m : modules) {
 			if (m.getType().equals(ModuleType.AIRLOCK) && m.getStatus().equals(ModuleStatus.USABLE)) {
 				numAirlock++;
@@ -83,17 +83,17 @@ public class ConfigurationBuilder {
 				numPlain++;
 			}
 		}
-		Window.alert("HELLO");
-		String alertString = "";
-		alertString += "airlock: " + numAirlock + "\n";
-		alertString += "control: " + numAirlock + "\n";
-		alertString += "power: " + numAirlock + "\n";
-		alertString += "foodwaterstorage: " + numAirlock + "\n";
-		alertString += "dorm: " + numAirlock + "\n";
-		alertString += "canteen: " + numAirlock + "\n";
-		alertString += "sanitation: " + numAirlock + "\n";
-		alertString += "plain: " + numAirlock + "\n";
-		Window.alert(alertString);
+		
+//		String alertString = "";
+//		alertString += "airlock: " + numAirlock + "\n";
+//		alertString += "control: " + numAirlock + "\n";
+//		alertString += "power: " + numAirlock + "\n";
+//		alertString += "foodwaterstorage: " + numAirlock + "\n";
+//		alertString += "dorm: " + numAirlock + "\n";
+//		alertString += "canteen: " + numAirlock + "\n";
+//		alertString += "sanitation: " + numAirlock + "\n";
+//		alertString += "plain: " + numAirlock + "\n";
+//		Window.alert(alertString);
 		
 		return (numAirlock >= 1 && numControl >= 1 && numPower >= 1
 				&& numFoodWater >= 1 && numDormitory >= 1 && numCanteen >= 1
