@@ -1,6 +1,7 @@
 package mhcs.client;
 
 import java.util.Arrays;
+import java.util.Date;
 
 import mhcs.storage.Model;
 import mhcs.storage.TestCases;
@@ -9,7 +10,9 @@ import com.google.gwt.event.dom.client.ChangeEvent;
 import com.google.gwt.event.dom.client.ChangeHandler;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
+import com.google.gwt.i18n.client.DateTimeFormat;
 import com.google.gwt.i18n.client.LocaleInfo;
+import com.google.gwt.i18n.client.TimeZone;
 import com.google.gwt.media.client.Audio;
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.Button;
@@ -24,6 +27,7 @@ import com.google.gwt.user.client.ui.RootLayoutPanel;
 import com.google.gwt.user.client.ui.TabLayoutPanel;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.VerticalPanel;
+import com.google.gwt.user.datepicker.client.DateBox;
 
 public class Controller {
 	/**
@@ -413,6 +417,16 @@ public class Controller {
 	    moduleOrientation.addItem("1 turns");
 	    moduleOrientation.addItem("2 turns");
 	} // populateOrientation
+	
+	public static ClickHandler dateTime(final TextBox display) {
+		return new ClickHandler(){
+	        public void onClick(ClickEvent event) {
+	        	Date date = new Date();
+	    		DateTimeFormat dtf = DateTimeFormat.getFormat("yyyyMMddHHmmss");
+	    		display.setText(dtf.format(date, TimeZone.createTimeZone(0)));
+	        } // onCLick
+	    };
+	} // dateTime
 	
 	/**
 	 * Returns change handler for Test Cases
