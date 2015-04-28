@@ -4,10 +4,12 @@
  */
 package mhcs.storage;
 
+import mhcs.client.ConfigurationBuilder;
 import mhcs.client.Module;
 import mhcs.client.ModuleStatus;
 import mhcs.client.ModuleType;
 import mhcs.client.Point;
+import mhcs.client.Variables;
 
 import com.google.gwt.http.client.Request;
 import com.google.gwt.http.client.RequestBuilder;
@@ -21,6 +23,7 @@ import com.google.gwt.json.client.JSONObject;
 import com.google.gwt.json.client.JSONParser;
 import com.google.gwt.json.client.JSONString;
 import com.google.gwt.user.client.Window;
+import com.google.gwt.user.client.ui.ListBox;
 
 
 
@@ -56,7 +59,6 @@ public class TestCases {
 		
 	public static void update(final String rt) {		 
 		//update
-		Window.alert(rt);
 		Model.removeAll();
 		JSONArray jArray = (JSONArray)JSONParser.parseLenient(rt); 
 		JSONNumber jNumber; 
@@ -72,7 +74,7 @@ public class TestCases {
 		String status;
 		ModuleType type;
 		Point coordinate;
-		ModuleStatus modStatus;
+		ModuleStatus modStatus;	
 		
 		//Changes the JSON into datatypes
 		for (int i = 0; i < jArray.size(); ++i) { 			 
@@ -80,9 +82,7 @@ public class TestCases {
 			JSONObject jO = (JSONObject)jArray.get(i); 
 			jNumber = (JSONNumber) jO.get("code"); 
 			code = jNumber.doubleValue();
-			Window.alert(Double.toString(code));
 			id = (int) code;
-			Window.alert(Integer.toString(id));
 			//Status
 			jString = (JSONString) jO.get("status"); 
 			status = jString.stringValue(); 		 
@@ -148,11 +148,14 @@ public class TestCases {
 				type = null;
 			} //else
 			
-			
+			Variables.mListBox().addItem("Module #" + id);		
 			Module tempModule = new Module(type, id, coordinate, modStatus, numTurns, false);			
 			Model.addModule(tempModule);
 
 		} //for
+
+		ConfigurationBuilder.minConfigPossible();
+	
 	} //update
 
 }//TestCases Class
