@@ -1,35 +1,16 @@
-<<<<<<< HEAD
-44CCB2A478A25089D1E0C5A7946744DE.cache.js
-=======
-1195FEFD5A7A0006D512198355377AF4.cache.js
->>>>>>> branch 'master' of https://github.com/jackeown/MHCS.git
-user.agent ie10
-
-<<<<<<< HEAD
-57EAAB459A215D4BBE48359560E65EA8.cache.js
-user.agent gecko1_8
-
-6AC2A28C9DE9F9E84A350C600A24DCD6.cache.js
-=======
-21ECD425A1DB4FD82EE25A4E1B953E7F.cache.js
->>>>>>> branch 'master' of https://github.com/jackeown/MHCS.git
-user.agent ie8
-
-<<<<<<< HEAD
-C45B759FA11CF663F7657F06176EABF8.cache.js
-=======
-7BA7D57B82F253EA5D7E1FC89496F1B7.cache.js
->>>>>>> branch 'master' of https://github.com/jackeown/MHCS.git
+2E356E45881AA32FF8F10EE5343FCC5C.cache.js
 user.agent ie9
 
-<<<<<<< HEAD
-E1385A4C50EF278684A3243F2BCD5060.cache.js
-=======
-BEE152C1E0FFCF9E3D9ED32144D401F9.cache.js
-user.agent gecko1_8
+3A50CC896C51434C5FE11B754053E334.cache.js
+user.agent ie10
 
-F1C4148C5B66FA84D1E6080D87715D6B.cache.js
->>>>>>> branch 'master' of https://github.com/jackeown/MHCS.git
+4A0DF9B2BA59AE5F3F180FA0470633D4.cache.js
+user.agent ie8
+
+67F7C90AC78F5642909969942E8D426D.cache.js
 user.agent safari
+
+85D30DFAC566C61911CC6AEECF3DE69C.cache.js
+user.agent gecko1_8
 
 Devmode:devmode.js

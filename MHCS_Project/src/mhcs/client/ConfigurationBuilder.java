@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import com.google.gwt.user.client.Window;
+
 import mhcs.storage.Model;
 import mhcs.storage.Load;
 import mhcs.storage.Save;
@@ -56,31 +58,42 @@ public class ConfigurationBuilder {
 		int numPlain = 0; // 3
 
 		for (Module m : modules) {
-			if (m.getType().equals(ModuleType.AIRLOCK)) {
+			if (m.getType().equals(ModuleType.AIRLOCK) && m.getStatus().equals(ModuleStatus.USABLE)) {
 				numAirlock++;
 			}
-			if (m.getType().equals(ModuleType.CONTROL)) {
+			if (m.getType().equals(ModuleType.CONTROL) && m.getStatus().equals(ModuleStatus.USABLE)) {
 				numControl++;
 			}
-			if (m.getType().equals(ModuleType.POWER)) {
+			if (m.getType().equals(ModuleType.POWER) && m.getStatus().equals(ModuleStatus.USABLE)) {
 				numPower++;
 			}
-			if (m.getType().equals(ModuleType.FOODWATERSTORAGE)) {
+			if (m.getType().equals(ModuleType.FOODWATERSTORAGE) && m.getStatus().equals(ModuleStatus.USABLE)) {
 				numFoodWater++;
 			}
-			if (m.getType().equals(ModuleType.DORMITORY)) {
+			if (m.getType().equals(ModuleType.DORMITORY) && m.getStatus().equals(ModuleStatus.USABLE)) {
 				numDormitory++;
 			}
-			if (m.getType().equals(ModuleType.CANTEEN)) {
+			if (m.getType().equals(ModuleType.CANTEEN) && m.getStatus().equals(ModuleStatus.USABLE)) {
 				numCanteen++;
 			}
-			if (m.getType().equals(ModuleType.SANITATION)) {
+			if (m.getType().equals(ModuleType.SANITATION) && m.getStatus().equals(ModuleStatus.USABLE)) {
 				numSanitation++;
 			}
-			if (m.getType().equals(ModuleType.PLAIN)) {
+			if (m.getType().equals(ModuleType.PLAIN) && m.getStatus().equals(ModuleStatus.USABLE)) {
 				numPlain++;
 			}
 		}
+		String alertString = "";
+		alertString += "airlock: " + numAirlock + "\n";
+		alertString += "control: " + numAirlock + "\n";
+		alertString += "power: " + numAirlock + "\n";
+		alertString += "foodwaterstorage: " + numAirlock + "\n";
+		alertString += "dorm: " + numAirlock + "\n";
+		alertString += "canteen: " + numAirlock + "\n";
+		alertString += "sanitation: " + numAirlock + "\n";
+		alertString += "plain: " + numAirlock + "\n";
+		Window.alert(alertString);
+		
 		return (numAirlock >= 1 && numControl >= 1 && numPower >= 1
 				&& numFoodWater >= 1 && numDormitory >= 1 && numCanteen >= 1
 				&& numSanitation >= 1 && numPlain >= 3);
