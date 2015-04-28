@@ -14,9 +14,18 @@ import com.google.gwt.user.client.Window;
 public class Weather {
 
   private int intHttpOk = 200; // response code for HTTP OK
-  public String strTemp;
-  public String strVisibility;
-  public String strURL = "http://api.wunderground.com/api/1e7eb561fe2a38df/conditions/q/CA/San_Francisco.json";
+  public String strTemp = "";
+  public String strVisibility = "";
+  public String strURL = "";
+  
+  /**
+   * Class constructor
+   */
+  public Weather() {
+	  final String proxy ="http://www.d.umn.edu/~mckeo044/Proxy.php?url=";
+	  strURL = proxy+"http://api.wunderground.com/api/1e7eb561fe2a38df/conditions/q/CA/San_Francisco.json";
+	  strURL = URL.encode(strURL);
+  } // Weather
   
   /**
    * Updates weather information
@@ -35,7 +44,7 @@ public class Weather {
     
     strTemp = temp.toString();
     strVisibility = visibility.toString();
-  }
+  } // update
   
   /**
    * Send request to data server and catch errors.
@@ -49,20 +58,20 @@ public class Weather {
         
         public void onError(Request request, Throwable exception) {
           Window.alert("onError: Couldn't retrieve JSON");
-        }
+        } // onError
         
         public void onResponseReceived(Request request, Response response) {
-          if (response.getStatusCode() == intHttpOk) {
+          if (intHttpOk == response.getStatusCode()) {
             String rt = response.getText();
             update(rt);
           } else {
             Window.alert("Couldn't retrieve JSON (" + response.getStatusCode()
                       + ")");
-          }
-        }
-      });
+          } // if
+        } //onResponseReceived
+      }); //request
     } catch (RequestException e) {
         Window.alert("RequestException: Couldn't retrieve JSON");
-    }
-  }
+    } // catch
+  } // try
 }
