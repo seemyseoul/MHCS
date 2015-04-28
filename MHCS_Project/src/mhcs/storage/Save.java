@@ -18,7 +18,7 @@ public class Save {
 		}
 	}
 	
-	
+	//to save time
 	public void saveTime(String time){
 		stockStore.setItem("time", time);
 	}

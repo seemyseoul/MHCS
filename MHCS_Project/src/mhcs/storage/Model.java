@@ -441,6 +441,7 @@ public class Model {
 		toSave.saveTime(storedTime);
 	}
 	
+	//sets the time
 	public static String getTiime(){
 		return storedTime;
 	}

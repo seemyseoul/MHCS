@@ -27,7 +27,7 @@ public class Load {
 	}
 	}
 	
-	
+	//gets the time;
 	public String getTime(){
 		return time;
 	}
