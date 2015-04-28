@@ -341,7 +341,7 @@ public class Variables {
 	public static Button dateTimeButton() {
 		dateTimeButton.setHeight(px35);
 		dateTimeButton.setWidth(px100);
-		dateTime.addClickHandler(Controller.dateTime());
+		dateTimeButton.addClickHandler(Controller.dateTime(tbTenDay()));
 		return dateTimeButton;
 	} // dateTime
 	
