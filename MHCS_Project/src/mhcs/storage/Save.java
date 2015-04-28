@@ -41,6 +41,7 @@ public class Save {
 	} // saveModules
 
 	public void removeAllModules() {
+		//tested
 		if (stockStore.getItem("intModCount") == null)
 		{
 			return;
