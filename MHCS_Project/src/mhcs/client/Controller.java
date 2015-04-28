@@ -166,24 +166,24 @@ public class Controller {
 	
 	/**
 	 * Returns click handler for Save button on Modules Page.
-	 * @param modulesEastType
-	 * @param modulesEastId
+	 * @param moduleType
+	 * @param moduleID
 	 * @param xTextBox
 	 * @param yTextBox
-	 * @param modulesEastCondition
-	 * @param modulesEastOrientation
-	 * @param strSettingsButtonWidth
-	 * @param strModulesButtonWidth
+	 * @param moduleCondition
+	 * @param moduleOrientation
+	 * @param str1
+	 * @param str2
 	 * @param successSound
 	 * @param minConfigSound
 	 * @param errorSound
 	 * @param modulesListBox
 	 * @return ClickHandler
 	 */
-	public static ClickHandler saveButton(final ListBox modulesEastType, final TextBox modulesEastId,
-			final TextBox xTextBox, final TextBox yTextBox, final ListBox modulesEastCondition,
-			final ListBox modulesEastOrientation, final String strSettingsButtonWidth,
-			final String strModulesButtonWidth, final Audio successSound, final Audio minConfigSound,
+	public static ClickHandler saveButton(final ListBox moduleType, final TextBox moduleID,
+			final TextBox xTextBox, final TextBox yTextBox, final ListBox moduleCondition,
+			final ListBox moduleOrientation, final String str1,
+			final String str2, final Audio successSound, final Audio minConfigSound,
 			final Audio errorSound, final ListBox modulesListBox) {
 		return new ClickHandler(){
 			@Override
@@ -195,11 +195,11 @@ public class Controller {
 				int orientation;
 				boolean inUse;
 				
-				type = ModuleType.getTypeFromUserString(modulesEastType.getItemText(modulesEastType.getSelectedIndex()));
-				id = Integer.parseInt(modulesEastId.getText());
+				type = ModuleType.getTypeFromUserString(moduleType.getItemText(moduleType.getSelectedIndex()));
+				id = Integer.parseInt(moduleID.getText());
 			    coordinates = new Point(Integer.parseInt(xTextBox.getText()),Integer.parseInt(yTextBox.getText()));
-			    status = ModuleStatus.getStatusFromUserString(modulesEastCondition.getItemText(modulesEastCondition.getSelectedIndex()));
-			    orientation = modulesEastOrientation.getSelectedIndex();
+			    status = ModuleStatus.getStatusFromUserString(moduleCondition.getItemText(moduleCondition.getSelectedIndex()));
+			    orientation = moduleOrientation.getSelectedIndex();
 				inUse = false;
 				
 //				Window.alert("shitFuck!");
@@ -223,8 +223,8 @@ public class Controller {
 
 		                // Add an image to the dialog
 		                Image image = new Image("images/yay");
-		                image.setHeight(strSettingsButtonWidth);
-		                image.setWidth(strModulesButtonWidth);
+		                image.setHeight(str1);
+		                image.setWidth(str2);
 		                dialogContents.add(image);
 		                dialogContents.setCellHorizontalAlignment(
 		                    image, HasHorizontalAlignment.ALIGN_CENTER);
@@ -250,15 +250,14 @@ public class Controller {
 		                minConfigAlert.center();
 		                minConfigAlert.show();
 		                minConfigSound.play();
-		            } // if
+		            } // if minConfig
 				} // if
 				else {
 					errorSound.play();
 				} // else
 				
 				modulesListBox.clear();
-				for (Module m : Model.getModuleList())
-				{
+				for (Module m : Model.getModuleList()) {
 					modulesListBox.addItem("Module #" + m.getId());
 				} // for
 			} // onClick

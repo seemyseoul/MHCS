@@ -53,7 +53,7 @@ public class View implements EntryPoint {
         Variables.mType().addItem(Module.moduleStrings[i]);
     } //for
     
-    Controller.setType(Variables.mID, Variables.mType());
+//    Controller.setType(Variables.mID, Variables.mType());
     
     final DockPanel modulesDock = Variables.modulesDock();
     final DockPanel configDock = Variables.configDock();
