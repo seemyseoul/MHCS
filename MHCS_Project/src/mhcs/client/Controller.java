@@ -202,6 +202,7 @@ public class Controller {
 			    orientation = modulesEastOrientation.getSelectedIndex();
 				inUse = false;
 				
+//				Window.alert("shitFuck!");
 				if(Model.saveModule(new Module(type,id,coordinates,status,orientation,inUse))) {
 					successSound.play();
 					if(ConfigurationBuilder.minConfigPossible() && !Variables.minConfigReached()){
