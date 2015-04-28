@@ -97,6 +97,15 @@ public class TestCases {
 			yC = (int) y;
 			coordinate = new Point (xC, yC);
 			
+			//update
+			Window.alert(rt);
+			Window.alert(Integer.toString(id));
+			Window.alert(status);
+			Window.alert(Integer.toString(numTurns));
+			Window.alert(Integer.toString(id));			
+			
+			
+			
 			//Convert Status
 			if (status == "undamaged"){
 				modStatus = ModuleStatus.USABLE;
