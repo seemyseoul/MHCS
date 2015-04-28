@@ -20,42 +20,33 @@ function mhcs_project(){
   mhcs_project.__softPermutationId = 0;
   mhcs_project.__computePropValue = null;
   mhcs_project.__getPropMap = null;
-  mhcs_project.__installRunAsyncCode = function(){
+  mhcs_project.__gwtInstallCode = function(){
   }
   ;
   mhcs_project.__gwtStartLoadingFragment = function(){
     return null;
   }
   ;
-  mhcs_project.__gwt_isKnownPropertyValue = function(){
+  var __gwt_isKnownPropertyValue = function(){
     return false;
   }
   ;
-  mhcs_project.__gwt_getMetaProperty = function(){
+  var __gwt_getMetaProperty = function(){
     return null;
   }
   ;
-  var __propertyErrorFunction = null;
+  __propertyErrorFunction = null;
   var activeModules = $wnd_0.__gwt_activeModules = $wnd_0.__gwt_activeModules || {};
   activeModules['mhcs_project'] = {moduleName:'mhcs_project'};
-  mhcs_project.__moduleStartupDone = function(permProps){
-    var oldBindings = activeModules['mhcs_project'].bindings;
-    activeModules['mhcs_project'].bindings = function(){
-      var props = oldBindings?oldBindings():{};
-      var embeddedProps = permProps[mhcs_project.__softPermutationId];
-      for (var i = 0; i < embeddedProps.length; i++) {
-        var pair = embeddedProps[i];
-        props[pair[0]] = pair[1];
-      }
-      return props;
-    }
-    ;
-  }
-  ;
   var frameDoc;
   function getInstallLocationDoc(){
     setupInstallLocation();
     return frameDoc;
+  }
+
+  function getInstallLocation(){
+    setupInstallLocation();
+    return frameDoc.getElementsByTagName('body')[0];
   }
 
   function setupInstallLocation(){
@@ -117,26 +108,48 @@ function mhcs_project(){
     }
 
     function installCode(code_0){
-      var doc = getInstallLocationDoc();
-      var docbody = doc.body;
-      var script = doc.createElement('script');
-      script.language = 'javascript';
-      script.src = code_0;
-      if (mhcs_project.__errFn) {
-        script.onerror = function(){
-          mhcs_project.__errFn('mhcs_project', new Error('Failed to load ' + code_0));
-        }
-        ;
+      function removeScript(body_0, element){
       }
-      docbody.appendChild(script);
-      sendStats('moduleStartup', 'scriptTagAdded');
+
+      var docbody = getInstallLocation();
+      var doc = getInstallLocationDoc();
+      var script;
+      if (navigator.userAgent.indexOf('Chrome') > -1 && window.JSON) {
+        var scriptFrag = doc.createDocumentFragment();
+        scriptFrag.appendChild(doc.createTextNode('eval("'));
+        for (var i = 0; i < code_0.length; i++) {
+          var c = window.JSON.stringify(code_0[i]);
+          scriptFrag.appendChild(doc.createTextNode(c.substring(1, c.length - 1)));
+        }
+        scriptFrag.appendChild(doc.createTextNode('");'));
+        script = doc.createElement('script');
+        script.language = 'javascript';
+        script.appendChild(scriptFrag);
+        docbody.appendChild(script);
+        removeScript(docbody, script);
+      }
+       else {
+        for (var i = 0; i < code_0.length; i++) {
+          script = doc.createElement('script');
+          script.language = 'javascript';
+          script.text = code_0[i];
+          docbody.appendChild(script);
+          removeScript(docbody, script);
+        }
+      }
     }
 
-    sendStats('moduleStartup', 'moduleRequested');
-    setupWaitForBodyLoad(function(){
-      installCode(filename);
+    mhcs_project.onScriptDownloaded = function(code_0){
+      setupWaitForBodyLoad(function(){
+        installCode(code_0);
+      }
+      );
     }
-    );
+    ;
+    sendStats('moduleStartup', 'moduleRequested');
+    var script_0 = $doc_0.createElement('script');
+    script_0.src = filename;
+    $doc_0.getElementsByTagName('head')[0].appendChild(script_0);
   }
 
   mhcs_project.__startLoadingFragment = function(fragmentFile){
@@ -144,9 +157,8 @@ function mhcs_project(){
   }
   ;
   mhcs_project.__installRunAsyncCode = function(code_0){
-    var doc = getInstallLocationDoc();
-    var docbody = doc.body;
-    var script = doc.createElement('script');
+    var docbody = getInstallLocation();
+    var script = getInstallLocationDoc().createElement('script');
     script.language = 'javascript';
     script.text = code_0;
     docbody.appendChild(script);
@@ -294,7 +306,7 @@ function mhcs_project(){
 
   function getCompiledCodeFilename(){
     var answers = [];
-    var softPermutationId = 0;
+    var softPermutationId;
     function unflattenKeylistIntoAnswers(propValArray, value_0){
       var answer = answers;
       for (var i = 0, n = propValArray.length - 1; i < n; ++i) {
@@ -314,41 +326,44 @@ function mhcs_project(){
       for (var k in allowedValuesMap) {
         allowedValuesList[allowedValuesMap[k]] = k;
       }
-      if (__propertyErrorFunction) {
-        __propertyErrorFunction(propName, allowedValuesList, value_0);
+      if (__propertyErrorFunc) {
+        __propertyErrorFunc(propName, allowedValuesList, value_0);
       }
       throw null;
     }
 
     providers['user.agent'] = function(){
       var ua = navigator.userAgent.toLowerCase();
-      var docMode = $doc_0.documentMode;
+      var makeVersion = function(result){
+        return parseInt(result[1]) * 1000 + parseInt(result[2]);
+      }
+      ;
       if (function(){
         return ua.indexOf('webkit') != -1;
       }
       ())
         return 'safari';
       if (function(){
-        return ua.indexOf('msie') != -1 && (docMode >= 10 && docMode < 11);
+        return ua.indexOf('msie') != -1 && $doc_0.documentMode >= 10;
       }
       ())
         return 'ie10';
       if (function(){
-        return ua.indexOf('msie') != -1 && (docMode >= 9 && docMode < 11);
+        return ua.indexOf('msie') != -1 && $doc_0.documentMode >= 9;
       }
       ())
         return 'ie9';
       if (function(){
-        return ua.indexOf('msie') != -1 && (docMode >= 8 && docMode < 11);
+        return ua.indexOf('msie') != -1 && $doc_0.documentMode >= 8;
       }
       ())
         return 'ie8';
       if (function(){
-        return ua.indexOf('gecko') != -1 || docMode >= 11;
+        return ua.indexOf('gecko') != -1;
       }
       ())
         return 'gecko1_8';
-      return '';
+      return 'unknown';
     }
     ;
     values['user.agent'] = {gecko1_8:0, ie10:1, ie8:2, ie9:3, safari:4};
@@ -374,11 +389,11 @@ function mhcs_project(){
     }
     var strongName;
     try {
-      unflattenKeylistIntoAnswers(['gecko1_8'], '1DFB9458F3C961D29E42881A6161628D');
-      unflattenKeylistIntoAnswers(['safari'], '4650F4F51FC19B36DB04003E1231BB08');
-      unflattenKeylistIntoAnswers(['ie9'], 'B5DF17BD87E97A130C5004B25FBBEAF7');
-      unflattenKeylistIntoAnswers(['ie10'], 'D50CDBC98A4416CA281818BA58FF12C0');
-      unflattenKeylistIntoAnswers(['ie8'], 'DCB6443FE15C2366160D03AFE8DA15CF');
+      unflattenKeylistIntoAnswers(['safari'], '0FF4A15B3F771E6933DF57EC82B7C13E');
+      unflattenKeylistIntoAnswers(['ie8'], 'A4DC7548CFF30C372123775BB40354DF');
+      unflattenKeylistIntoAnswers(['gecko1_8'], 'ABAA4CD2CA75800AA9796040FA2B2992');
+      unflattenKeylistIntoAnswers(['ie9'], 'BA93E36BC139EB5058F0946E46D4642C');
+      unflattenKeylistIntoAnswers(['ie10'], 'F99DBF27B78077B0DEE63507E5946429');
       strongName = answers[computePropValue('user.agent')];
       var idx = strongName.indexOf(':');
       if (idx != -1) {
@@ -418,19 +433,7 @@ function mhcs_project(){
   if ($wnd_0) {
     var devModePermitted = !!($wnd_0.location.protocol == 'http:' || $wnd_0.location.protocol == 'file:');
     $wnd_0.__gwt_activeModules['mhcs_project'].canRedirect = devModePermitted;
-    function supportsSessionStorage(){
-      var key = '_gwt_dummy_';
-      try {
-        $wnd_0.sessionStorage.setItem(key, key);
-        $wnd_0.sessionStorage.removeItem(key);
-        return true;
-      }
-       catch (e) {
-        return false;
-      }
-    }
-
-    if (devModePermitted && supportsSessionStorage()) {
+    if (devModePermitted) {
       var devModeKey = '__gwtDevModeHook:mhcs_project';
       var devModeUrl = $wnd_0.sessionStorage[devModeKey];
       if (!/^http:\/\/(localhost|127\.0\.0\.1)(:\d+)?\/.*$/.test(devModeUrl)) {

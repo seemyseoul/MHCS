@@ -64,11 +64,11 @@ public class Variables {
         c.add(htmlSouth, DockPanel.SOUTH);
         c.add(configVpanel(), DockPanel.EAST);
         c.add(cListBox(), DockPanel.WEST);
-        c.add(mapImage(), DockPanel.CENTER);
-//        c.add(mapDisplay.getGrid(), DockPanel.CENTER);
+//        c.add(mapImage(), DockPanel.CENTER);
+        c.add(mapDisplay.getGrid(), DockPanel.CENTER);
         c.add(htmlMap, DockPanel.NORTH);
         c.add(configHpanel(), DockPanel.SOUTH);
-//        mapDisplay.updateGrid();
+        mapDisplay.updateGrid();
         //    configDock.add(map, DockPanel.CENTER);
         return c;
 	} // configDock
