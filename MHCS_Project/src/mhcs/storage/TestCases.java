@@ -154,7 +154,14 @@ public class TestCases {
 
 		} //for
 
-		ConfigurationBuilder.minConfigPossible();
+		if (ConfigurationBuilder.minConfigPossible()){
+			Window.alert("Mininum Config Possilbe!");
+			Variables.setMinConfigReached(true);
+		}
+		else{
+			Variables.setMinConfigReached(false);
+		}
+		
 	
 	} //update
 
