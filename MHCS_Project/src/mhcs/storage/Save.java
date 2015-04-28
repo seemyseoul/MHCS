@@ -47,7 +47,7 @@ public class Save {
 		}
 		for (int i = 0; i < Integer
 				.parseInt(stockStore.getItem("intModCount")); i++) {
-			stockStore.removeItem("C" + Integer.toString(i));
+			stockStore.removeItem(Integer.toString(i));
 		} // for
 		stockStore.setItem("intModCount", Integer.toString(0));
 	}
