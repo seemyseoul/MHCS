@@ -2180,7 +2180,7 @@ VI,mhcs.client.Configuration::Configuration(Ljava/lang/String;)V,mhcs.client.Con
 a,mhcs.client.Configuration::id,mhcs.client.Configuration,id,mhcs/client/Configuration.java,18,-1
 b,mhcs.client.Configuration::modules,mhcs.client.Configuration,modules,mhcs/client/Configuration.java,17,-1
 WI,mhcs.client.Configuration::toString()Ljava/lang/String;,mhcs.client.Configuration,toString,mhcs/client/Configuration.java,131,0
-XI,mhcs.client.ConfigurationBuilder::minConfigPossible()Z,mhcs.client.ConfigurationBuilder,minConfigPossible,mhcs/client/ConfigurationBuilder.java,45,0
+XI,mhcs.client.ConfigurationBuilder::minConfigPossible()Z,mhcs.client.ConfigurationBuilder,minConfigPossible,mhcs/client/ConfigurationBuilder.java,47,0
 ZI,mhcs.client.Controller::$clinit()V,mhcs.client.Controller,$clinit,mhcs/client/Controller.java,28,0
 $I,mhcs.client.Controller::populateCondidition(Lcom/google/gwt/user/client/ui/ListBox;)V,mhcs.client.Controller,populateCondidition,mhcs/client/Controller.java,401,0
 _I,mhcs.client.Controller::populateOrientation(Lcom/google/gwt/user/client/ui/ListBox;)V,mhcs.client.Controller,populateOrientation,mhcs/client/Controller.java,411,0

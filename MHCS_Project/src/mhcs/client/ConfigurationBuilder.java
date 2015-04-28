@@ -83,6 +83,7 @@ public class ConfigurationBuilder {
 				numPlain++;
 			}
 		}
+		Window.alert("HELLO");
 		String alertString = "";
 		alertString += "airlock: " + numAirlock + "\n";
 		alertString += "control: " + numAirlock + "\n";
