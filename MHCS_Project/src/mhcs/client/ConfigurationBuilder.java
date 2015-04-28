@@ -133,7 +133,7 @@ public class ConfigurationBuilder {
 	 *
 	 * @return an array of ALL Configurations.
 	 */
-	public final List<Configuration> generateConfigurations() {
+	public static final List<Configuration> generateConfigurations() {
 		
 		int numPlainModules = Model.getUnusedUsableModulesOfType(ModuleType.PLAIN).size();
 		
@@ -159,7 +159,7 @@ public class ConfigurationBuilder {
 	 * Generates configurations in an H-Shape
 	 * @return List<Configuration> list of configurations with an H-shape
 	 */
-	public final List<Configuration> generateHConfigurations(int numPlainModules)
+	public static final List<Configuration> generateHConfigurations(int numPlainModules)
 	{
 		
 		/*
@@ -261,13 +261,13 @@ public class ConfigurationBuilder {
 			}
 		}
 		
-		
-		/**
-		 * go through the list of points and place modules there
-		 */
-		
-		// TOUGH PART STILL LEFT TO DO...
-		
+		for(int i=0;i<5;i++) // generate 5 configurations of H-type
+		{
+			Configuration config = baseConfig.clone();
+			config.randomlyFill();
+			config.makeGood();
+			configs.add(config);
+		}
 		
 		return configs;
 	}
@@ -276,7 +276,7 @@ public class ConfigurationBuilder {
 	 * Generates configurations in a Plus shape
 	 * @return List<Configuration> list of configurations with a plus shape
 	 */
-	public final List<Configuration> generatePlusConfigurations(int numPlainModules)
+	public static final List<Configuration> generatePlusConfigurations(int numPlainModules)
 	{
 		ArrayList<Configuration> configs = new ArrayList<Configuration>();
 		
@@ -287,7 +287,7 @@ public class ConfigurationBuilder {
 	 * Generates configurations in a L-shape
 	 * @return List<Configuration> list of configurations with an L-shape
 	 */
-	public final List<Configuration> generateLConfigurations(int numPlainModules)
+	public static final List<Configuration> generateLConfigurations(int numPlainModules)
 	{
 		ArrayList<Configuration> configs = new ArrayList<Configuration>();
 		

@@ -483,6 +483,14 @@ public final class Configuration implements Cloneable{
 
 	
 	
+	public void makeGood()
+	{
+		while(getFlawRating() > 50) //...Magic Number...
+		{
+			improve();
+		}
+	}
+	
 	
 	
 	/**
@@ -504,7 +512,6 @@ public final class Configuration implements Cloneable{
 			swapCoordinates(modA,modB);
 		}
 	}
-	
 	
 	public void randomlyFill()
 	{
