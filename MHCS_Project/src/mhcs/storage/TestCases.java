@@ -59,7 +59,6 @@ public class TestCases {
 		
 	public static void update(final String rt) {		 
 		//update
-		Window.alert(rt);
 		Model.removeAll();
 		JSONArray jArray = (JSONArray)JSONParser.parseLenient(rt); 
 		JSONNumber jNumber; 
@@ -83,9 +82,7 @@ public class TestCases {
 			JSONObject jO = (JSONObject)jArray.get(i); 
 			jNumber = (JSONNumber) jO.get("code"); 
 			code = jNumber.doubleValue();
-			Window.alert(Double.toString(code));
 			id = (int) code;
-			Window.alert(Integer.toString(id));
 			//Status
 			jString = (JSONString) jO.get("status"); 
 			status = jString.stringValue(); 		 
