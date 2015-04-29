@@ -60,8 +60,7 @@ public class Weather {
     
     strTemp = temp.toString();
     strVisibility = visibility.toString();
-    strVisibility = strVisibility.substring(1);
-    strVisibility = strVisibility.substring(strVisibility.length()-1);
+    strVisibility = strVisibility.substring(1,strVisibility.length()-1);
     
     Variables.w.add(new Label("Current temp: \t" + strTemp + " Celsius"));
     Variables.w.add(new Label("Current visibility: \t" + strVisibility + " km"));
