@@ -53,31 +53,31 @@ public class Controller {
 			return;
 		}
 		if (0 < intModId && intModId < 41) {
-			type.setItemSelected(0, true);
-		} // if
-		else if (60 < intModId && intModId < 81) {
 			type.setItemSelected(1, true);
 		} // if
-		else if (90 < intModId && intModId < 101) {
+		else if (60 < intModId && intModId < 81) {
 			type.setItemSelected(2, true);
 		} // if
-		else if (110 < intModId && intModId < 121) {
+		else if (90 < intModId && intModId < 101) {
 			type.setItemSelected(3, true);
 		} // if
-		else if (130 < intModId && intModId < 135) {
+		else if (110 < intModId && intModId < 121) {
 			type.setItemSelected(4, true);
 		} // if
-		else if (140 < intModId && intModId < 145) {
+		else if (130 < intModId && intModId < 135) {
 			type.setItemSelected(5, true);
 		} // if
-		else if (150 < intModId && intModId < 155) {
+		else if (140 < intModId && intModId < 145) {
 			type.setItemSelected(6, true);
 		} // if
-		else if (160 < intModId && intModId < 165) {
+		else if (150 < intModId && intModId < 155) {
 			type.setItemSelected(7, true);
 		} // if
-		else if (170 < intModId && intModId < 175) {
+		else if (160 < intModId && intModId < 165) {
 			type.setItemSelected(8, true);
+		} // if
+		else if (170 < intModId && intModId < 175) {
+			type.setItemSelected(0, true);
 		} // if
 		else if (180 < intModId && intModId < 185) {
 			type.setItemSelected(9, true);
@@ -99,6 +99,8 @@ public class Controller {
 
             // Add an image to the dialog
             Image image = new Image("images/error");
+            image.setHeight(Variables.px130);
+            image.setWidth(Variables.px200);
             dialogContents.add(image);
             dialogContents.setCellHorizontalAlignment(
                 image, HasHorizontalAlignment.ALIGN_CENTER);
@@ -436,6 +438,7 @@ public class Controller {
 	    		String hour = changed.substring(8, 10);
 	    		String minute = changed.substring(10, 12);
 	    		String second = changed.substring(12, 14);
+	    		display.setText(date.toString());
 	    		display.setText(year + "/" + month + "/" + day + " "
 	    				+ hour + ":" + minute + ":" + second);
 	    		Variables.time1 = changed;
@@ -452,6 +455,27 @@ public class Controller {
 			} // onClick
 		};
 	} // dateTimeSave
+	
+	
+	public static void tenDayCheck(){
+		if (Model.getTime() != null){
+			String oldDate = Model.getTime();
+			Date date = new Date();
+			DateTimeFormat dtf = DateTimeFormat.getFormat("yyyyMMddHHmmss");
+			/* example: changed = 20,15-0,4-28-,06-5,2-23 */
+			String newDate = dtf.format(date, TimeZone.createTimeZone(0));
+			int startDate = Integer.parseInt(oldDate);
+			int endDate = Integer.parseInt(newDate);
+		
+			if ((endDate - startDate) >  10000000){
+				Window.alert("Rover must be recalibrated!");
+		}	
+		}
+		
+			
+		
+	}
+	
 	
 	/**
 	 * Returns change handler for Test Cases
