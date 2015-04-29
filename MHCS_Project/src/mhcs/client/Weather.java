@@ -13,19 +13,33 @@ import com.google.gwt.user.client.Window;
 
 public class Weather {
 
-  private int intHttpOk = 200; // response code for HTTP OK
-  public String strTemp = "";
-  public String strVisibility = "";
-  public String strURL = "";
+  final int intHttpOk = 200; // response code for HTTP OK
+  private String strTemp = "";
+  private String strVisibility = "";
+  private String strURL = "";
+  
+  public Weather() {
+    final String proxy ="http://www.d.umn.edu/~mckeo044/Proxy.php?url=";
+    strURL = proxy+"http://api.wunderground.com/api/1e7eb561fe2a38df/conditions/q/CA/San_Francisco.json";
+    strURL = URL.encode(strURL);
+    requestData(this.getURL());
+  }
   
   /**
-   * Class constructor
+   * Getter for URL;
+   * @return the URL
    */
-  public Weather() {
-	  final String proxy ="http://www.d.umn.edu/~mckeo044/Proxy.php?url=";
-	  strURL = proxy+"http://api.wunderground.com/api/1e7eb561fe2a38df/conditions/q/CA/San_Francisco.json";
-	  strURL = URL.encode(strURL);
-  } // Weather
+  public String getURL() {
+    return strURL;
+  }
+  
+  public String getTemp() {
+    return strTemp;
+  }
+  
+  public String getVis() {
+    return strVisibility;
+  }
   
   /**
    * Updates weather information
