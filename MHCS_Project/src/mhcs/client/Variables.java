@@ -64,11 +64,9 @@ public class Variables {
         c.add(htmlSouth, DockPanel.SOUTH);
         c.add(configVpanel(), DockPanel.EAST);
         c.add(cListBox(), DockPanel.WEST);
-//        c.add(mapImage(), DockPanel.CENTER);
-        c.add(mapDisplay.getGrid(), DockPanel.CENTER);
+        c.add(mapImage(), DockPanel.CENTER);
         c.add(htmlMap, DockPanel.NORTH);
         c.add(configHpanel(), DockPanel.SOUTH);
-        mapDisplay.updateGrid();
         //    configDock.add(map, DockPanel.CENTER);
         return c;
 	} // configDock
@@ -553,8 +551,6 @@ public class Variables {
 	public static void setMinConfigReached(Boolean r) {
 		minConfigReached = r;
 	} // setMinConfigReached
-    
-	final static Map mapDisplay = new Map(100,50); 
 	
 	public static ListBox testCases() {
 //	final TestCases test = new TestCases();  
