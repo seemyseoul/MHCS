@@ -11,6 +11,7 @@ import com.google.gwt.json.client.JSONObject;
 import com.google.gwt.json.client.JSONParser;
 import com.google.gwt.json.client.JSONValue;
 import com.google.gwt.user.client.Window;
+import com.google.gwt.user.client.ui.Label;
 
 public class Weather {
 
@@ -23,7 +24,6 @@ public class Weather {
     final String proxy ="http://www.d.umn.edu/~mckeo044/Proxy.php?url=";
     strURL = proxy+"http://api.wunderground.com/api/1e7eb561fe2a38df/conditions/q/CA/San_Francisco.json";
     strURL = URL.encode(strURL);
-    requestData(this.getURL());
   }
   
   /**
@@ -46,7 +46,8 @@ public class Weather {
    * Updates weather information
    * @param rt A response text string containing the JSON data.
    */
-  public void update(final String rt) {
+  public void update(String rt) {
+	//Window.alert(rt);
     String sAll = rt;
     JSONObject jA =
             (JSONObject)JSONParser.parseLenient(sAll);
@@ -59,13 +60,16 @@ public class Weather {
     
     strTemp = temp.toString();
     strVisibility = visibility.toString();
+    
+    Variables.w.add(new Label("Current temp: \t" + strTemp + " Celsius"));
+    Variables.w.add(new Label("Current visibility: \t" + strVisibility + " km"));
   } // update
   
   /**
    * Send request to data server and catch errors.
    * @param url The server URL to be used.
    */
-  public void requestData(final String url) {
+  public void requestData(String url) {
     RequestBuilder builder = new RequestBuilder(RequestBuilder.GET, url);
     
     try {

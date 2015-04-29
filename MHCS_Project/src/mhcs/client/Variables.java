@@ -89,8 +89,7 @@ public class Variables {
     	w.add(weatherImage());
         Weather weather = new Weather();
         weather.requestData(weather.getURL());
-        w.add(new Label("Current temp: \t" + weather.getTemp() + " Celsius"));
-        w.add(new Label("Current visibility: \t" + weather.getVis() + " km"));
+        
         return w;
 	} // weatherPanel
 	
@@ -384,7 +383,7 @@ public class Variables {
 	} // mapImage
 	
 	public static Image weatherImage() {
-		final Image logo = new Image("images/weather/wlogo");
+		final Image logo = new Image("images/weather/wlogo.png");
 		logo.setHeight(px80);
 		logo.setWidth(px130);
 		return logo;
