@@ -348,7 +348,7 @@ public class Variables {
 	public static Button dateTimeSaveButton() {
 		dateTimeSaveButton.setHeight(px35);
 		dateTimeSaveButton.setWidth(px100);
-//		dateTimeSaveButton.addClickHandler(Controller.dateTimeSave());
+		dateTimeSaveButton.addClickHandler(Controller.dateTimeSave(tbTenDay(), tbTimeSince()));
 		return dateTimeSaveButton;
 	} // dateTimeSaveButton
 
@@ -647,6 +647,7 @@ public class Variables {
 	final static CheckBox cbPower = new CheckBox("Power");
 	final static CheckBox cbControl = new CheckBox("Control");
 	final static CheckBox cbMedical = new CheckBox("Medical");
+	static String time1 = new String("");
 	final static CheckBox cbPassEnable = new CheckBox();
 	final static HTML htmlSouth = new HTML("Naples Spring 2015");
 	final static HTML htmlUsername = new HTML("Username:");
@@ -671,7 +672,7 @@ public class Variables {
 	final static HTML htmlTenDay = new HTML("Click the button to automatically enter "
 			+ "the date and time of the most recent rover something changed."
 			+ "<br>"
-			+ "Or enter the date and time manually (mm/dd/yyyy hh:mm:ss).");
+			+ "Or enter the date and time manually (yyyy/MM/dd/ HH:mm:ss).");
 	final static HTML htmlTimeSince = new HTML("Last changed: ");
 	final static HTML htmlFiller = new HTML("<br><br><br>");
 	final static HTML htmlTestCases = new HTML("<b><u>Test Cases.</u></b> <br> Select a test case to run.");

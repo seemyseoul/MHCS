@@ -418,15 +418,39 @@ public class Controller {
 	    moduleOrientation.addItem("2 turns");
 	} // populateOrientation
 	
+	/**
+	 * Populates text box giving the current time for changing the thing on the rover.
+	 * @param display
+	 * @return ClickHandler
+	 */
 	public static ClickHandler dateTime(final TextBox display) {
 		return new ClickHandler(){
 	        public void onClick(ClickEvent event) {
 	        	Date date = new Date();
 	    		DateTimeFormat dtf = DateTimeFormat.getFormat("yyyyMMddHHmmss");
-	    		display.setText(dtf.format(date, TimeZone.createTimeZone(0)));
+	    		/* example: changed = 20150428065223 */
+	    		String changed = dtf.format(date, TimeZone.createTimeZone(0));
+	    		String year = changed.substring(0, 4);
+	    		String month = changed.substring(4, 6);
+	    		String day = changed.substring(6, 8);
+	    		String hour = changed.substring(8, 10);
+	    		String minute = changed.substring(10, 12);
+	    		String second = changed.substring(12, 14);
+	    		display.setText(year + "/" + month + "/" + day + " "
+	    				+ hour + ":" + minute + ":" + second);
+	    		Variables.time1 = changed;
 	        } // onCLick
 	    };
 	} // dateTime
+	
+	public static ClickHandler dateTimeSave(final TextBox timeNow, final TextBox timeSince) {
+		return new ClickHandler() {
+			public void onClick(ClickEvent event) {
+	    		timeSince.setText(timeNow.getText());
+	    		// Add Variables.time1 into local storage
+			} // onClick
+		};
+	} // dateTimeSave
 	
 	/**
 	 * Returns change handler for Test Cases
