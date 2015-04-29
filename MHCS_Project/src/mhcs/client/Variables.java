@@ -670,7 +670,7 @@ public class Variables {
 	final static HTML htmlNewPass = new HTML("New Password");
 	final static HTML htmlConfirmPass = new HTML("Confirm Password");
 	final static HTML htmlTenDay = new HTML("Click the button to automatically enter "
-			+ "the date and time of the most recent rover something changed."
+			+ "the date and time of the most recent rover calibration."
 			+ "<br>"
 			+ "Or enter the date and time manually (yyyy/MM/dd/ HH:mm:ss).");
 	final static HTML htmlTimeSince = new HTML("Last changed: ");
