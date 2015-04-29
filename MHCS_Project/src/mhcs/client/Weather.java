@@ -62,7 +62,7 @@ public class Weather {
     strVisibility = visibility.toString();
     
     Variables.w.add(new Label("Current temp: \t" + strTemp + " Celsius"));
-    Variables.w.add(new Label("Current visibility: \t" + strVisibility + " km"));
+    Variables.w.add(new Label("Current visibility: \t" + Float.parseFloat(strVisibility) + " km"));
   } // update
   
   /**
