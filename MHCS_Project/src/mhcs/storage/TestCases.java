@@ -11,19 +11,28 @@ import mhcs.client.ModuleType;
 import mhcs.client.Point;
 import mhcs.client.Variables;
 
+import com.google.gwt.event.dom.client.ClickEvent;
+import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.http.client.Request;
 import com.google.gwt.http.client.RequestBuilder;
 import com.google.gwt.http.client.RequestCallback;
 import com.google.gwt.http.client.RequestException;
 import com.google.gwt.http.client.Response;
 import com.google.gwt.http.client.URL;
+import com.google.gwt.i18n.client.LocaleInfo;
 import com.google.gwt.json.client.JSONArray;
 import com.google.gwt.json.client.JSONNumber;
 import com.google.gwt.json.client.JSONObject;
 import com.google.gwt.json.client.JSONParser;
 import com.google.gwt.json.client.JSONString;
 import com.google.gwt.user.client.Window;
+import com.google.gwt.user.client.ui.Button;
+import com.google.gwt.user.client.ui.DialogBox;
+import com.google.gwt.user.client.ui.HTML;
+import com.google.gwt.user.client.ui.HasHorizontalAlignment;
+import com.google.gwt.user.client.ui.Image;
 import com.google.gwt.user.client.ui.ListBox;
+import com.google.gwt.user.client.ui.VerticalPanel;
 
 
 
@@ -155,7 +164,49 @@ public class TestCases {
 		} //for
 
 		if (ConfigurationBuilder.minConfigPossible()){
-			Window.alert("Mininum Config Possible!");
+			final DialogBox minConfigAlert = new DialogBox();
+            minConfigAlert.setText("Minimum Configuration Available");
+
+            // Create a table to layout the content
+            VerticalPanel dialogContents = new VerticalPanel();
+            dialogContents.setSpacing(4);
+            minConfigAlert.setWidget(dialogContents);
+
+            // Add some text to the top of the dialog
+            HTML details = new HTML("Go to Configurations tab to view the minimum configuration available.");
+            dialogContents.add(details);
+            dialogContents.setCellHorizontalAlignment(
+                details, HasHorizontalAlignment.ALIGN_CENTER);
+
+            // Add an image to the dialog
+            Image image = new Image("images/yay");
+            image.setHeight(Variables.px130);
+            image.setWidth(Variables.px200);
+            dialogContents.add(image);
+            dialogContents.setCellHorizontalAlignment(
+                image, HasHorizontalAlignment.ALIGN_CENTER);
+
+            // Add a close button at the bottom of the dialog
+            Button closeButton = new Button(
+                "Close", new ClickHandler() {
+                  public void onClick(ClickEvent event) {
+                	  minConfigAlert.hide();
+                  }
+                });
+            dialogContents.add(closeButton);
+            if (LocaleInfo.getCurrentLocale().isRTL()) {
+              dialogContents.setCellHorizontalAlignment(
+                  closeButton, HasHorizontalAlignment.ALIGN_LEFT);
+
+            } // if 
+            else {
+              dialogContents.setCellHorizontalAlignment(
+                  closeButton, HasHorizontalAlignment.ALIGN_RIGHT);
+            } // else
+            
+            minConfigAlert.center();
+            minConfigAlert.show();
+            minConfigSound.play();
 			Variables.setMinConfigReached(true);
 		}
 		else{
