@@ -90,9 +90,9 @@ public class Variables {
     	w.add(htmlWeather);
     	w.add(weatherImage());
         Weather weather = new Weather();
-        weather.requestData(weather.strURL);
-        w.add(new Label("Current temp: \t" + weather.strTemp + " Celsius"));
-        w.add(new Label("Current visibility: \t" + weather.strVisibility + " km"));
+        weather.requestData(weather.getURL());
+        w.add(new Label("Current temp: \t" + weather.getTemp() + " Celsius"));
+        w.add(new Label("Current visibility: \t" + weather.getVis() + " km"));
         return w;
 	} // weatherPanel
 	
