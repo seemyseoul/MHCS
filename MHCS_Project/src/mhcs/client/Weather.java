@@ -46,7 +46,7 @@ public class Weather {
    * Updates weather information
    * @param rt A response text string containing the JSON data.
    */
-  public void update(String rt) {
+  public void update(final String rt) {
     String sAll = rt;
     JSONObject jA =
             (JSONObject)JSONParser.parseLenient(sAll);
@@ -65,7 +65,7 @@ public class Weather {
    * Send request to data server and catch errors.
    * @param url The server URL to be used.
    */
-  public void requestData(String url) {
+  public void requestData(final String url) {
     RequestBuilder builder = new RequestBuilder(RequestBuilder.GET, url);
     
     try {
