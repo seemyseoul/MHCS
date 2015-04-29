@@ -38,9 +38,9 @@ public enum ModuleStatus {
 	public static ModuleStatus getStatusFromUserString(String str) {
 		if (str.equals("Usable")) {
 			return USABLE;
-		} else if (str.equals("Damaged")) {
+		} else if (str.equals("Usable After Repair")) {
 			return USABLEAFTERREPAIR;
-		} else if (str.equals("Unusable")) {
+		} else if (str.equals("Beyond Repair")) {
 			return BEYONDREPAIR;
 		} else {
 			return null;
