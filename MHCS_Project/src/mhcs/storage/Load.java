@@ -18,6 +18,18 @@ public class Load {
 		loadModules();
 		loadSettings();
 		loadConfigurations();
+		loadTime();
+	}
+	
+	private void loadTime(){
+		if (stockStore.getItem("time") != null){
+			time = stockStore.getItem("time");	
+	}
+	}
+	
+	//gets the time;
+	public String getTime(){
+		return time;
 	}
 
 	private void loadModules() {
@@ -75,4 +87,5 @@ public class Load {
 	private List<Module> moduleList = new ArrayList<>();
 	private List<Configuration> configurationList = new ArrayList<>();
 	private Storage stockStore = null;
+	private String time;
 }

@@ -17,6 +17,12 @@ public class Save {
 		intModCount = Integer.parseInt(stockStore.getItem("intModCount"));
 		}
 	}
+	
+	//to save time
+	public void saveTime(String time){
+		stockStore.setItem("time", time);
+	}
+	
 
 	public void saveModules(List<Module> toSave) {
 		for (int i = 0; i < toSave.size(); i++) {

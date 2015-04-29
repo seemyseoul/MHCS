@@ -435,6 +435,19 @@ public class Model {
 		return null;
 	}
 	
+	
+	public static void saveTime(String time){
+		storedTime = time;
+		toSave.saveTime(storedTime);
+	}
+	
+	//sets the time
+	public static String getTime(){
+		return storedTime;
+	}
+	
+	
+	
 
 	private static Load toLoad = new Load();
 	private static Save toSave = new Save();
@@ -443,4 +456,5 @@ public class Model {
 			.getConfigurationList();
 	private static String password = toLoad.getPassword();
 	private static boolean passwordFlag = toLoad.getPasswordFlag();
+	private static String storedTime = toLoad.getTime();
 }
