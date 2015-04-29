@@ -471,6 +471,8 @@ public class Controller {
     		String month = changed.substring(4, 6);
     		String day = changed.substring(6, 8);
     		String newDate = (year + month + day);
+    		Window.alert("newdate is " + newDate);
+    		Window.alert("old date is" + oldDate);
 			int startDate = Integer.parseInt(oldDate);
 			int endDate = Integer.parseInt(newDate);
 		
@@ -498,4 +500,3 @@ public class Controller {
 	} // testCases
 	
 } // Controller
-
