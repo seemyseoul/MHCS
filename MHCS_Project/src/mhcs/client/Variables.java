@@ -503,6 +503,10 @@ public class Variables {
 		return tb;
 	} // tb
 	
+	public static TextBox mID() {
+		return mID;
+	} // tbMid
+	
 	public static TextBox mX() {
 		mX.setWidth(px140);
 		return mX;

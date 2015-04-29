@@ -3,7 +3,12 @@ package mhcs.client;
 import mhcs.storage.Model;
 
 import com.google.gwt.core.client.EntryPoint;
+import com.google.gwt.event.dom.client.ChangeEvent;
+import com.google.gwt.event.dom.client.ClickEvent;
+import com.google.gwt.event.logical.shared.ValueChangeEvent;
+import com.google.gwt.event.logical.shared.ValueChangeHandler;
 import com.google.gwt.user.client.ui.Button;
+import com.google.gwt.user.client.ui.ChangeListener;
 import com.google.gwt.user.client.ui.DockPanel;
 import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.ListBox;
@@ -13,6 +18,7 @@ import com.google.gwt.user.client.ui.SimplePanel;
 import com.google.gwt.user.client.ui.TabLayoutPanel;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.VerticalPanel;
+import com.google.gwt.user.client.ui.Widget;
 
 /**
  * Entry point classes define <code>onModuleLoad()</code>.
@@ -29,14 +35,14 @@ public class View implements EntryPoint {
   /**
   * This is the entry point method.
   */
-  public void onModuleLoad() {      
+public void onModuleLoad() {      
     final TabLayoutPanel tabPanel = Variables.tabPanel();
     final DockPanel login = Variables.loginDock();
     login.setSize(Variables.px1500, Variables.px600);
     
     final Button loginButton = Variables.loginButton;
     loginButton.addClickHandler(Controller.loginHandler(Variables.ptbPassword,
-    		tabPanel, Variables.px140, Variables.px150, Variables.errorSound()));
+            tabPanel, Variables.px140, Variables.px150, Variables.errorSound()));
     final Button logoutButton = Variables.logoutButton();
     logoutButton.addClickHandler(Controller.logoutHandler(login));
     
@@ -46,12 +52,19 @@ public class View implements EntryPoint {
     } // for
     
     Variables.mListBox().addChangeHandler(Controller.modulesListBoxHandler(Variables.mListBox(),
-            Variables.mID, Variables.mType(), Variables.mCondition(),
+            Variables.mID(), Variables.mType(), Variables.mCondition(),
             Variables.mOrientation(), Variables.mX(), Variables.mY()));
-    
+
     for (int i = 0; i < Module.moduleStrings.length; i++) {
         Variables.mType().addItem(Module.moduleStrings[i]);
     } //for
+    
+    Variables.mID().addValueChangeHandler(new ValueChangeHandler<String>() {
+        @Override
+        public void onValueChange(ValueChangeEvent<String> event) {
+            Controller.setType(Variables.mID(), Variables.mType());
+        } // onValueChange
+    });
     
 //    Controller.setType(Variables.mID, Variables.mType());
     
@@ -59,14 +72,10 @@ public class View implements EntryPoint {
     final DockPanel configDock = Variables.configDock();
     final DockPanel settingsDock = Variables.settingsDock();
     
-    /* Weather Panel */
-    //SimplePanel weatherPanel = Variables.weatherPanel();
-    
     /* Add tabs to layout */
     tabPanel.add(modulesDock, "Modules");
     tabPanel.add(configDock, "Configurations");
     tabPanel.add(settingsDock, "Settings");
-//    tabPanel.add(null, "Logout");
     
     RootLayoutPanel.get().add(login);
 
