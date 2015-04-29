@@ -420,6 +420,28 @@ public class Controller {
 	    moduleOrientation.addItem("2 turns");
 	} // populateOrientation
 	
+	public static ClickHandler passEnable(final Button change, final PasswordTextBox current,
+			final PasswordTextBox newPass, final PasswordTextBox confirm, final Button save) {
+		return new ClickHandler() {
+				public void onClick(ClickEvent event) {
+					if (Variables.cbPassEnable.getValue()) {
+						change.setEnabled(true);
+						current.setEnabled(true);
+						newPass.setEnabled(true);
+						confirm.setEnabled(true);
+						save.setEnabled(true);
+					} // if
+					else if (!Variables.cbPassEnable.getValue()) {
+						change.setEnabled(false);
+						current.setEnabled(false);
+						newPass.setEnabled(false);
+						confirm.setEnabled(false);
+						save.setEnabled(false);
+					} // if
+				} // onClick
+		};
+	} // passEnabled
+	
 	/**
 	 * Populates text box giving the current time for changing the thing on the rover.
 	 * @param display
@@ -477,10 +499,54 @@ public class Controller {
 			int endDate = Integer.parseInt(newDate);
 		
 			if ((endDate - startDate) >=  10){
-				Window.alert("Rover must be recalibrated!");
-			}	
-		}
-	}
+				// Create a dialog box and set the caption text
+                final DialogBox dialogBox = new DialogBox();
+                dialogBox.setText("Ten Day Calibration");
+
+                // Create a table to layout the content
+                VerticalPanel dialogContents = new VerticalPanel();
+                dialogContents.setSpacing(4);
+                dialogBox.setWidget(dialogContents);
+
+                // Add some text to the top of the dialog
+                HTML details = new HTML("It has been ten days since the last "
+                		+ "rover calibrarion.");
+                dialogContents.add(details);
+                dialogContents.setCellHorizontalAlignment(
+                    details, HasHorizontalAlignment.ALIGN_CENTER);
+
+                // Add an image to the dialog
+                Image image = new Image("images/!");
+                image.setHeight(Variables.px130);
+                image.setWidth(Variables.px130);
+                dialogContents.add(image);
+                dialogContents.setCellHorizontalAlignment(
+                    image, HasHorizontalAlignment.ALIGN_CENTER);
+
+                // Add a close button at the bottom of the dialog
+                Button closeButton = new Button(
+                    "Close", new ClickHandler() {
+                      public void onClick(ClickEvent event) {
+                        dialogBox.hide();
+                      }
+                    });
+                dialogContents.add(closeButton);
+                if (LocaleInfo.getCurrentLocale().isRTL()) {
+                  dialogContents.setCellHorizontalAlignment(
+                      closeButton, HasHorizontalAlignment.ALIGN_LEFT);
+
+                } // if 
+                else {
+                  dialogContents.setCellHorizontalAlignment(
+                      closeButton, HasHorizontalAlignment.ALIGN_RIGHT);
+                } // else
+                
+                dialogBox.center();
+                dialogBox.show();
+                Variables.errorSound().play();
+			} // if
+		} // if
+	} // tenDayCheck
 	
 	
 	/**
