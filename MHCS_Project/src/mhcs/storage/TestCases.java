@@ -206,7 +206,7 @@ public class TestCases {
             
             minConfigAlert.center();
             minConfigAlert.show();
-            minConfigSound.play();
+            Variables.minConfigSound().play();
 			Variables.setMinConfigReached(true);
 		}
 		else{
