@@ -11,7 +11,6 @@ import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.Image;
-import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.ListBox;
 import com.google.gwt.user.client.ui.PasswordTextBox;
 import com.google.gwt.user.client.ui.RadioButton;
@@ -65,6 +64,7 @@ public class Variables {
         c.add(configVpanel(), DockPanel.EAST);
         c.add(cListBox(), DockPanel.WEST);
         c.add(mapImage(), DockPanel.CENTER);
+//        c.add(map, DockPanel.CENTER);
         c.add(htmlMap, DockPanel.NORTH);
         c.add(configHpanel(), DockPanel.SOUTH);
         //    configDock.add(map, DockPanel.CENTER);
@@ -389,6 +389,13 @@ public class Variables {
 		return logo;
 	} // weatherImage
 	
+	public static Image blankImage() {
+		final Image blank = new Image("images/blank");
+		blank.setHeight(px50);
+		blank.setWidth(px50);
+		return blank;
+	} // blankImage
+	
 	public static ListBox lb() {
 		return new ListBox();
 	} // lb
@@ -550,6 +557,8 @@ public class Variables {
 	public static void setMinConfigReached(Boolean r) {
 		minConfigReached = r;
 	} // setMinConfigReached
+	
+	static Map map = new Map();
 	
 	public static ListBox testCases() {
 //	final TestCases test = new TestCases();  
