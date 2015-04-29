@@ -435,12 +435,7 @@ public class Controller {
 	    		String year = changed.substring(0, 4);
 	    		String month = changed.substring(4, 6);
 	    		String day = changed.substring(6, 8);
-	    		String hour = changed.substring(8, 10);
-	    		String minute = changed.substring(10, 12);
-	    		String second = changed.substring(12, 14);
-	    		display.setText(date.toString());
-	    		display.setText(year + "/" + month + "/" + day + " "
-	    				+ hour + ":" + minute + ":" + second);
+	    		display.setText(year + "/" + month + "/" + day);
 	    		Variables.time1 = changed;
 	        } // onCLick
 	    };
@@ -450,7 +445,14 @@ public class Controller {
 		return new ClickHandler() {
 			public void onClick(ClickEvent event) {
 	    		timeSince.setText(timeNow.getText());
-	    		Model.saveTime(Variables.time1);
+	    		String dateString = Variables.tbTimeSince().getText();
+	    		String convertedDate = "";
+	    		for (int i = 0; i < dateString.length(); i++){
+	    			if (dateString.charAt(i) != '/'){
+	    			convertedDate += dateString.charAt(i);
+	    			}
+	    		}
+	    		Model.saveTime(convertedDate);
 	    		// Add Variables.time1 into local storage
 			} // onClick
 		};
@@ -460,20 +462,22 @@ public class Controller {
 	public static void tenDayCheck(){
 		if (Model.getTime() != null){
 			String oldDate = Model.getTime();
-			Date date = new Date();
-			DateTimeFormat dtf = DateTimeFormat.getFormat("yyyyMMddHHmmss");
-			/* example: changed = 20,15-0,4-28-,06-5,2-23 */
-			String newDate = dtf.format(date, TimeZone.createTimeZone(0));
+
+        	Date date = new Date();
+    		DateTimeFormat dtf = DateTimeFormat.getFormat("yyyyMMddHHmmss");
+    		/* example: changed = 20150428065223 */
+    		String changed = dtf.format(date, TimeZone.createTimeZone(0));
+    		String year = changed.substring(0, 4);
+    		String month = changed.substring(4, 6);
+    		String day = changed.substring(6, 8);
+    		String newDate = (year + month + day);
 			int startDate = Integer.parseInt(oldDate);
 			int endDate = Integer.parseInt(newDate);
 		
-			if ((endDate - startDate) >  10000000){
+			if ((endDate - startDate) >=  10){
 				Window.alert("Rover must be recalibrated!");
-		}	
+			}	
 		}
-		
-			
-		
 	}
 	
 	
@@ -494,3 +498,4 @@ public class Controller {
 	} // testCases
 	
 } // Controller
+
