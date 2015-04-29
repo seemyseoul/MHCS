@@ -447,6 +447,7 @@ public class Controller {
 		return new ClickHandler() {
 			public void onClick(ClickEvent event) {
 	    		timeSince.setText(timeNow.getText());
+	    		Model.saveTime(Variables.time1);
 	    		// Add Variables.time1 into local storage
 			} // onClick
 		};
