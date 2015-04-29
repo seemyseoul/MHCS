@@ -274,6 +274,7 @@ public final class Configuration implements Cloneable{
 	
 	/**
 	 * says whether or not their are airlock modules next to dormitory modules
+	 * (should be minimized)
 	 * @return true or false
 	 */
 	public int airlockNextToDormitory()
@@ -406,6 +407,7 @@ public final class Configuration implements Cloneable{
 	 * This method will give the number of 
 	 * Food and water storage modules that are greater
 	 * than a distance of 3 away from the nearest canteen module.
+	 * (this should be minimized)
 	 * @return number of FOODWATERSTORAGE modules >3 from nearest CANTEEN module
 	 */
 	public int foodWaterNextToCanteen()
@@ -459,6 +461,7 @@ public final class Configuration implements Cloneable{
 	
 	/**
 	 * this gets the minimum distance between modules of type mt
+	 * ( this should be maximized )
 	 * @param mt
 	 * @return int ( used for getFlawRating() )
 	 */
@@ -480,7 +483,120 @@ public final class Configuration implements Cloneable{
 	
 	
 	
-
+	public void makeInBounds()
+	{
+		while (!isInBounds())
+		{
+			if(offTop())
+			{
+				for (Module m : getModules())
+				{
+					m.setCoordinates(new Point(m.getCoordinates().getX(),m.getCoordinates().getY()-1));
+				}
+			}
+			if(offBottom())
+			{
+				for (Module m : getModules())
+				{
+					m.setCoordinates(new Point(m.getCoordinates().getX(),m.getCoordinates().getY()+1));
+				}
+			}
+			if(offRight())
+			{
+				for (Module m : getModules())
+				{
+					m.setCoordinates(new Point(m.getCoordinates().getX()-1,m.getCoordinates().getY()));
+				}
+			}
+			if(offLeft())
+			{
+				for (Module m : getModules())
+				{
+					m.setCoordinates(new Point(m.getCoordinates().getX()+1,m.getCoordinates().getY()-1));
+				}
+			}
+			if(inForbiddenZone())
+			{ // arbitrarily go right and down?...
+				for (Module m : getModules())
+				{
+					m.setCoordinates(new Point(m.getCoordinates().getX()+1,m.getCoordinates().getY()-1));
+				}
+			}
+		}
+	}
+	
+	
+	
+	public boolean offTop()
+	{
+		for (Module m : getModules())
+		{
+			if (m.getCoordinates().getY() > 50)
+			{
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	public boolean offBottom()
+	{
+		for (Module m : getModules())
+		{
+			if (m.getCoordinates().getY() < 1)
+			{
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	public boolean offRight()
+	{
+		for (Module m : getModules())
+		{
+			if (m.getCoordinates().getX() > 100)
+			{
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	public boolean offLeft()
+	{
+		for (Module m : getModules())
+		{
+			if (m.getCoordinates().getX() < 1)
+			{
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	
+	public boolean inForbiddenZone()
+	{
+		for (Module m : getModules())
+		{
+			if ((m.getCoordinates().getY() >= 40 && m.getCoordinates().getY() <=50 ) && 
+			    (m.getCoordinates().getX() >= 40 && m.getCoordinates().getX() <= 50))
+			{
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	public boolean isInBounds()
+	{
+		if (offTop() || offBottom() || offLeft() || offRight() || inForbiddenZone())
+		{
+			return false;
+		}
+		return true;
+	}
 	
 	
 	public void makeGood()

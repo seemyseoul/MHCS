@@ -254,6 +254,7 @@ public class ConfigurationBuilder {
 			Configuration config = baseConfig.clone();
 			config.randomlyFill();
 			config.makeGood();
+			config.makeInBounds();
 			configs.add(config);
 		}
 		
@@ -267,6 +268,78 @@ public class ConfigurationBuilder {
 	public static final List<Configuration> generatePlusConfigurations(int numPlainModules)
 	{
 		ArrayList<Configuration> configs = new ArrayList<Configuration>();
+		Configuration baseConfig = new Configuration();
+		
+		Module centerModule = Model.getUnusedUsableModuleClosestTo(Model.getCenterOfMass(),ModuleType.PLAIN);
+		
+		if(centerModule != null)
+		{
+			centerModule.setInUse(true);
+			centerModule.setCoordinates(Model.getCenterOfMass());
+			baseConfig.addModule(centerModule);
+		}
+		
+		Point center = centerModule.getCoordinates();
+		
+		for (int i=1;i<=(numPlainModules / 4);i++)
+		{  // this for loop places most plain modules of the + Configuration
+			Module closestNorthPlain = Model.getUnusedModuleClosestTo(new Point(center.getX(),center.getY()+i),ModuleType.PLAIN);
+			if(closestNorthPlain != null)
+			{
+				closestNorthPlain.setInUse(true);
+				closestNorthPlain.setCoordinates(new Point(center.getX(),center.getY()+i));
+				baseConfig.addModule(closestNorthPlain);
+			}
+			Module closestEastPlain = Model.getUnusedUsableModuleClosestTo(new Point(center.getX()+i,center.getY()),ModuleType.PLAIN);
+			if (closestEastPlain != null)
+			{
+				closestEastPlain.setInUse(true);
+				closestEastPlain.setCoordinates(new Point(center.getX()+i,center.getY()));
+				baseConfig.addModule(closestEastPlain);
+			}
+			Module closestSouthPlain = Model.getUnusedUsableModuleClosestTo(new Point(center.getX(),center.getY()-i),ModuleType.PLAIN);
+			if (closestSouthPlain != null)
+			{
+				closestSouthPlain.setInUse(true);
+				closestSouthPlain.setCoordinates(new Point(center.getX(),center.getY()-i));
+				baseConfig.addModule(closestSouthPlain);
+			}
+			Module closestWestPlain = Model.getUnusedUsableModuleClosestTo(new Point(center.getX()-i,center.getY()),ModuleType.PLAIN);
+			if (closestWestPlain != null)
+			{
+				closestWestPlain.setInUse(true);
+				closestWestPlain.setCoordinates(new Point(center.getX()-i,center.getY()));
+				baseConfig.addModule(closestWestPlain);
+			}
+		}
+		
+		for (int x=0;x < (numPlainModules % 4);x++)
+		{   // do something with leftover plain modules.  Add them to the right of the center.
+			for (Module m : baseConfig.getModules())
+			{
+				if(m.getCoordinates().getX() > center.getX())
+				{
+					m.setCoordinates(new Point(m.getCoordinates().getX()+1,m.getCoordinates().getY()));
+				}
+			}
+			Module leftOverPlain = Model.getUnusedModuleClosestTo(center,ModuleType.PLAIN);
+			if (leftOverPlain != null)
+			{
+				leftOverPlain.setInUse(true);
+				leftOverPlain.setCoordinates(new Point(center.getX()+1,center.getY()));
+				baseConfig.addModule(leftOverPlain);
+			}
+		}
+		
+		for(int i=0;i<5;i++) // generate 5 configurations of Plus-type
+		{
+			Configuration config = baseConfig.clone();
+			config.randomlyFill();
+			config.makeGood();
+			config.makeInBounds();
+			configs.add(config);
+		}
+		
 		
 		return configs;
 	}
@@ -278,6 +351,63 @@ public class ConfigurationBuilder {
 	public static final List<Configuration> generateLConfigurations(int numPlainModules)
 	{
 		ArrayList<Configuration> configs = new ArrayList<Configuration>();
+		Configuration baseConfig = new Configuration();
+		
+		Module centerModule = Model.getUnusedUsableModuleClosestTo(Model.getCenterOfMass(),ModuleType.PLAIN);
+		
+		if(centerModule != null)
+		{
+			centerModule.setInUse(true);
+			centerModule.setCoordinates(Model.getCenterOfMass());
+			baseConfig.addModule(centerModule);
+		}
+		
+		Point center = centerModule.getCoordinates();
+		
+		for (int i=1;i<=(numPlainModules / 2);i++)
+		{  // this for loop places most plain modules of the + Configuration
+			Module closestNorthPlain = Model.getUnusedModuleClosestTo(new Point(center.getX(),center.getY()+i),ModuleType.PLAIN);
+			if(closestNorthPlain != null)
+			{
+				closestNorthPlain.setInUse(true);
+				closestNorthPlain.setCoordinates(new Point(center.getX(),center.getY()+i));
+				baseConfig.addModule(closestNorthPlain);
+			}
+			Module closestEastPlain = Model.getUnusedUsableModuleClosestTo(new Point(center.getX()+i,center.getY()),ModuleType.PLAIN);
+			if (closestEastPlain != null)
+			{
+				closestEastPlain.setInUse(true);
+				closestEastPlain.setCoordinates(new Point(center.getX()+i,center.getY()));
+				baseConfig.addModule(closestEastPlain);
+			}
+		}
+		
+		for (int x=0;x < (numPlainModules % 2);x++)
+		{   // do something with leftover plain modules.  Add them to the right of the center.
+			for (Module m : baseConfig.getModules())
+			{
+				if(m.getCoordinates().getX() > center.getX())
+				{
+					m.setCoordinates(new Point(m.getCoordinates().getX()+1,m.getCoordinates().getY()));
+				}
+			}
+			Module leftOverPlain = Model.getUnusedModuleClosestTo(center,ModuleType.PLAIN);
+			if (leftOverPlain != null)
+			{
+				leftOverPlain.setInUse(true);
+				leftOverPlain.setCoordinates(new Point(center.getX()+1,center.getY()));
+				baseConfig.addModule(leftOverPlain);
+			}
+		}
+		
+		for(int i=0;i<5;i++) // generate 5 configurations of Plus-type
+		{
+			Configuration config = baseConfig.clone();
+			config.randomlyFill();
+			config.makeGood();
+			config.makeInBounds();
+			configs.add(config);
+		}
 		
 		return configs;
 	}
