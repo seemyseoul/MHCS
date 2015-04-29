@@ -12,14 +12,14 @@ import com.google.gwt.json.client.JSONParser;
 import com.google.gwt.json.client.JSONValue;
 import com.google.gwt.user.client.Window;
 
-public class Weather implements EntryPoint {
+public class Weather {
 
   final int intHttpOk = 200; // response code for HTTP OK
   private String strTemp = "";
   private String strVisibility = "";
   private String strURL = "";
   
-  public void onModuleLoad() {
+  public Weather() {
     final String proxy ="http://www.d.umn.edu/~mckeo044/Proxy.php?url=";
     strURL = proxy+"http://api.wunderground.com/api/1e7eb561fe2a38df/conditions/q/CA/San_Francisco.json";
     strURL = URL.encode(strURL);
