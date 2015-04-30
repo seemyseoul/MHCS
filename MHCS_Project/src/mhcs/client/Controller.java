@@ -278,12 +278,18 @@ public class Controller {
 		                    details, HasHorizontalAlignment.ALIGN_CENTER);
 
 		                // Add an image to the dialog
-		                Image image = new Image("images/yay");
-		                image.setHeight(str1);
-		                image.setWidth(str2);
-		                dialogContents.add(image);
+		                Image min1 = new Image("images/min1");
+		                min1.setHeight(str1);
+		                min1.setWidth(str2);
+		                dialogContents.add(min1);
+		                Image min2 = new Image("images/min2");
+		                min2.setHeight(str1);
+		                min2.setWidth(str2);
+		                dialogContents.add(min2);
 		                dialogContents.setCellHorizontalAlignment(
-		                    image, HasHorizontalAlignment.ALIGN_CENTER);
+		                    min1, HasHorizontalAlignment.ALIGN_LEFT);
+		                dialogContents.setCellHorizontalAlignment(
+		                	min2, HasHorizontalAlignment.ALIGN_RIGHT);
 
 		                // Add a close button at the bottom of the dialog
 		                Button closeButton = new Button(
