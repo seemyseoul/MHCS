@@ -631,10 +631,16 @@ public final class Configuration implements Cloneable{
 	
 	public void randomlyFill()
 	{
-		//TODO
-		/*
-		 * Randomly fill the configuration with modules from Model
-		 */
+		List<Point> points = this.getOpenSpaces();
+		List<Module> modules = Model.getModuleList();
+		for (Point p : points)
+		{
+			Module m;
+			do {
+				m = modules.remove((int) Math.random()*modules.size());
+			} while (getModules().contains(m));
+			
+		}
 	}
 	
 	/**
