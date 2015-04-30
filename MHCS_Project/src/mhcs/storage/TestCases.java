@@ -69,6 +69,7 @@ public class TestCases {
 	public static void update(final String rt) {		 
 		Model.removeAll();
 		Variables.mListBox().clear();
+		Variables.cListBox().clear();
 		JSONArray jArray = (JSONArray)JSONParser.parseLenient(rt); 
 		JSONNumber jNumber; 
 		JSONString jString; 

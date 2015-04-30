@@ -569,6 +569,11 @@ public class Controller {
 				if (testNum!= 0){
 					TestCases.TestCaseChoice(testNum);
 				} // if
+				else {
+					Model.removeAll();
+					Variables.mListBox().clear();
+					Variables.cListBox().clear();
+				}
 			} //onChange
 		};
 	} // testCases
