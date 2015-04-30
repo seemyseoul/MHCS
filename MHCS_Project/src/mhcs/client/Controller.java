@@ -143,12 +143,12 @@ public class Controller {
 		} // else
 		if (0 < intModId && intModId < 41) {
 			requirements.setText("Plain Module:"
-					+ "At least one part of the habitat viewable from another part of the habitat. <br>"
+					+ "At least one part of the habitat viewable from another part of the habitat. \n"
 					+ "Wings of the habitat should not be so close together that modules are hard up against"
 					+ "one another denying any kind of view from a window");
 		} // if
 		else if (60 < intModId && intModId < 81) {
-			requirements.setText("Dormitory modules should be located in recognisable dormitory wings of the Habitat. <br>"
+			requirements.setText("Dormitory modules should be located in recognisable dormitory wings of the Habitat. \n"
 					+ "Dormitory wings should have Sanitation modules in the ratio of 1 Sanitation module for every 2 Dormitory modules.");
 		} // if
 		else if (90 < intModId && intModId < 101) {
