@@ -192,7 +192,6 @@ public class Variables {
     
     public static VerticalPanel modulesCenterVpanel() {
         modulesCenter.add(Variables.htmlModuleDetails);
-        modulesCenter.add(Variables.taModuleDetails());
         return modulesCenter;
     } // modulesCenterVpanel
     
@@ -377,9 +376,9 @@ public class Variables {
     
     public static Image moduleImage() {
 //      Implement getting specific module image based on ModuleID
-        final Image moduleImage = new Image("images/image");
-        moduleImage.setHeight(px200);
-        moduleImage.setWidth(px250);
+        final Image moduleImage = Controller.setModuleImage(mID());
+        moduleImage.setHeight(px500);
+        moduleImage.setWidth(px500);
         return moduleImage;
     } // moduleImage
     
@@ -495,12 +494,6 @@ public class Variables {
     public static TextArea ta() {
         return new TextArea();
     } // ta
-    
-    public static TextArea taModuleDetails() {
-        moduleDetails.setHeight(px175);
-        moduleDetails.setWidth(px800);
-        return moduleDetails;
-    } // taModuleDetails
     
     public static TextArea taModuleRequirements() {
         moduleRequirements.setText("module requirements module requirements module requirements");
@@ -644,6 +637,7 @@ public class Variables {
     public final static String px250 = "250px";
     public final static String px300 = "300px";
     public final static String px340 = "340px";
+    public final static String px500 = "500px";
     public final static String px560 = "560px";
     public final static String px600 = "600px";
     public final static String px650 = "650px";

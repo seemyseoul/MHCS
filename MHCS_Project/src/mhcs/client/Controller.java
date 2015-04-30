@@ -179,6 +179,49 @@ public class Controller {
 		} // if
 	} // setRequirements
 	
+	public static Image setModuleImage(TextBox id) {
+		String modId = id.getText();
+		int intModId;
+		if(!modId.equals("")) {
+			intModId = Integer.parseInt(modId);
+		} // if
+		else {
+			return new Image("images/blank");
+		} // else
+		if (0 < intModId && intModId < 41) {
+			return new Image("images/modules/plain.jpg");
+		} // if
+		else if (60 < intModId && intModId < 81) {
+			return new Image("images/modules/dormitory.jpg");
+		} // if
+		else if (90 < intModId && intModId < 101) {
+			return new Image("images/modules/sanitation.jpg");
+		} // if
+		else if (110 < intModId && intModId < 121) {
+			return new Image("images/modules/fodWaterStorage.jpg");
+		} // if
+		else if (130 < intModId && intModId < 135) {
+			return new Image("images/modules/gymRelaxation.jpg");
+		} // if
+		else if (140 < intModId && intModId < 145) {
+			return new Image("images/modules/canteen.jpg");
+		} // if
+		else if (150 < intModId && intModId < 155) {
+			return new Image("images/modules/power.jpg");
+		} // if
+		else if (160 < intModId && intModId < 165) {
+			return new Image("images/modules/control.jpg");
+		} // if
+		else if (170 < intModId && intModId < 175) {
+			return new Image("images/modules/airlock.jpg");
+		} // if
+		else if (180 < intModId && intModId < 185) {
+			return new Image("images/modules/medical.jpg");
+		} // if
+		
+		return new Image("images/blank");
+	} // setModuleImage
+	
 	/**
 	 * Click handler for modules tab add button
 	 * 
