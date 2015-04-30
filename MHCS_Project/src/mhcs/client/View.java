@@ -80,6 +80,16 @@ public void onModuleLoad() {
     tabPanel.add(settingsDock, "Settings");
     
     RootLayoutPanel.get().add(login);
+    
+    Variables.mID.setEnabled(false);
+    Variables.mType.setEnabled(false);
+    Variables.mCondition.setEnabled(false);
+    Variables.mOrientation.setEnabled(false);
+    Variables.mX.setEnabled(false);
+    Variables.mY.setEnabled(false);
+    Variables.mSaveButton.setEnabled(false);
+    
+    
     Controller.tenDayCheck();
 
   } // OnModuleLoad
