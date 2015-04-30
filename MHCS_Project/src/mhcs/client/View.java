@@ -75,8 +75,6 @@ public void onModuleLoad() {
     
     Controller.tenDayCheck();
     
-    Window.alert("PAST");
-    
     /* Add tabs to layout */
     tabPanel.add(modulesDock, "Modules");
     tabPanel.add(configDock, "Configurations");
