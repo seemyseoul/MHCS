@@ -90,7 +90,12 @@ public void onModuleLoad() {
     Variables.mY.setEnabled(false);
     Variables.mSaveButton.setEnabled(false);
     
-    Variables.tbTimeSince().setText(Model.getTime());    
+    String changed = Model.getTime();
+	String year = changed.substring(0, 4);
+	String month = changed.substring(4, 6);
+	String day = changed.substring(6, 8);
+	Variables.tbTimeSince().setText(year + "/" + month + "/" + day);    
+       
     
     Controller.tenDayCheck();
 
