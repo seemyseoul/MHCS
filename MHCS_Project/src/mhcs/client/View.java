@@ -7,6 +7,7 @@ import com.google.gwt.event.dom.client.ChangeEvent;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.logical.shared.ValueChangeEvent;
 import com.google.gwt.event.logical.shared.ValueChangeHandler;
+import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.ChangeListener;
 import com.google.gwt.user.client.ui.DockPanel;
@@ -73,6 +74,8 @@ public void onModuleLoad() {
     final DockPanel settingsDock = Variables.settingsDock();
     
     Controller.tenDayCheck();
+    
+    Window.alert("PAST");
     
     /* Add tabs to layout */
     tabPanel.add(modulesDock, "Modules");
