@@ -73,7 +73,6 @@ public void onModuleLoad() {
     final DockPanel configDock = Variables.configDock();
     final DockPanel settingsDock = Variables.settingsDock();
     
-    Controller.tenDayCheck();
     
     /* Add tabs to layout */
     tabPanel.add(modulesDock, "Modules");
@@ -81,6 +80,7 @@ public void onModuleLoad() {
     tabPanel.add(settingsDock, "Settings");
     
     RootLayoutPanel.get().add(login);
+    Controller.tenDayCheck();
 
   } // OnModuleLoad
 } // View
