@@ -203,7 +203,7 @@ public class Controller {
 			Variables.moduleImage = modImage;
 		} // if
 		else if (110 < intModId && intModId < 121) {
-			modImage = new Image("images/modules/fodWaterStorage.jpg");
+			modImage = new Image("images/modules/foodWaterStorage.jpg");
 			Variables.moduleImage = modImage;
 		} // if
 		else if (130 < intModId && intModId < 135) {
