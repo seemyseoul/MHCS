@@ -376,7 +376,6 @@ public class Variables {
     
     public static Image moduleImage() {
 //      Implement getting specific module image based on ModuleID
-        final Image moduleImage = Controller.setModuleImage(mID());
         moduleImage.setHeight(px500);
         moduleImage.setWidth(px500);
         return moduleImage;
@@ -730,6 +729,7 @@ public class Variables {
     final static HTML htmlFiller = new HTML("<br><br><br>");
     final static HTML htmlTestCases = new HTML("<b><u>Test Cases.</u></b> <br> Select a test case to run.");
     final static HTML htmlWeather = new HTML("<b><u>Weather</b></u>");
+    static Image moduleImage = new Image("images/blank");
     final static ListBox mType = Variables.lb();
     final static ListBox mCondition = Variables.lb();
     final static ListBox mOrientation = Variables.lb();

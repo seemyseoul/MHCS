@@ -179,47 +179,58 @@ public class Controller {
 		} // if
 	} // setRequirements
 	
-	public static Image setModuleImage(TextBox id) {
+	public static void setModuleImage(TextBox id) {
 		String modId = id.getText();
-		int intModId;
+		int intModId = 0;
+		Image modImage = new Image("images/blank");
 		if(!modId.equals("")) {
 			intModId = Integer.parseInt(modId);
 		} // if
 		else {
-			return new Image("images/blank");
+			modImage = new Image("images/blank");
+			Variables.moduleImage = modImage;
 		} // else
 		if (0 < intModId && intModId < 41) {
-			return new Image("images/modules/plain.jpg");
+			modImage = new Image("images/modules/plain.jpg");
+			Variables.moduleImage = modImage;
 		} // if
 		else if (60 < intModId && intModId < 81) {
-			return new Image("images/modules/dormitory.jpg");
+			modImage = new Image("images/modules/dormitory.jpg");
+			Variables.moduleImage = modImage;
 		} // if
 		else if (90 < intModId && intModId < 101) {
-			return new Image("images/modules/sanitation.jpg");
+			modImage = new Image("images/modules/sanitation.jpg");
+			Variables.moduleImage = modImage;
 		} // if
 		else if (110 < intModId && intModId < 121) {
-			return new Image("images/modules/fodWaterStorage.jpg");
+			modImage = new Image("images/modules/fodWaterStorage.jpg");
+			Variables.moduleImage = modImage;
 		} // if
 		else if (130 < intModId && intModId < 135) {
-			return new Image("images/modules/gymRelaxation.jpg");
+			modImage = new Image("images/modules/gymRelaxation.jpg");
+			Variables.moduleImage = modImage;
 		} // if
 		else if (140 < intModId && intModId < 145) {
-			return new Image("images/modules/canteen.jpg");
+			modImage = new Image("images/modules/canteen.jpg");
+			Variables.moduleImage = modImage;
 		} // if
 		else if (150 < intModId && intModId < 155) {
-			return new Image("images/modules/power.jpg");
+			modImage = new Image("images/modules/power.jpg");
+			Variables.moduleImage = modImage;
 		} // if
 		else if (160 < intModId && intModId < 165) {
-			return new Image("images/modules/control.jpg");
+			modImage = new Image("images/modules/control.jpg");
+			Variables.moduleImage = modImage;
 		} // if
 		else if (170 < intModId && intModId < 175) {
-			return new Image("images/modules/airlock.jpg");
+			modImage = new Image("images/modules/airlock.jpg");
+			Variables.moduleImage = modImage;
 		} // if
 		else if (180 < intModId && intModId < 185) {
-			return new Image("images/modules/medical.jpg");
+			modImage = new Image("images/modules/medical.jpg");
+			Variables.moduleImage = modImage;
 		} // if
-		
-		return new Image("images/blank");
+
 	} // setModuleImage
 	
 	/**

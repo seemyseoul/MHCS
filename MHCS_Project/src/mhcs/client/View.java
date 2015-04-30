@@ -65,6 +65,7 @@ public void onModuleLoad() {
         public void onValueChange(ValueChangeEvent<String> event) {
             Controller.setType(Variables.mID(), Variables.mType());
             Controller.setRequirements(Variables.mID(), Variables.taModuleRequirements());
+            Controller.setModuleImage(Variables.mID());
         } // onValueChange
     });
     
