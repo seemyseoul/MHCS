@@ -494,20 +494,17 @@ public class Controller {
 	
 	public static void tenDayCheck(){
 		if (Model.getTime() != null){
-			String oldDate = Model.getTime();
-
         	Date date = new Date();
     		DateTimeFormat dtf = DateTimeFormat.getFormat("yyyyMMddHHmmss");
-    		/* example: changed = 20150428065223 */
-    		String changed = dtf.format(date, TimeZone.createTimeZone(0));
-    		String year = changed.substring(0, 4);
-    		String month = changed.substring(4, 6);
-    		String day = changed.substring(6, 8);
-    		String newDate = (year + month + day);
-    		Window.alert("newdate is " + newDate);
-    		Window.alert("old date is" + oldDate);
-			int startDate = Integer.parseInt(oldDate);
-			int endDate = Integer.parseInt(newDate);
+	   		/* example: changed = 20150428065223 */
+	   		String changed = dtf.format(date, TimeZone.createTimeZone(0));
+	   		String newYear = changed.substring(0, 4);
+	   		String newMonth = changed.substring(4, 6);
+	    	String newDay = changed.substring(6, 8);
+	    	String newDate = (newYear + newMonth + newDay);
+	   		String oldDate = Model.getTime();
+	    	int startDate = Integer.parseInt(oldDate);
+			int endDate = Integer.parseInt(newDate); 
 		
 			if ((endDate - startDate) >=  10){
 				// Create a dialog box and set the caption text
