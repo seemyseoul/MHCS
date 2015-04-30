@@ -271,7 +271,8 @@ public class Variables {
 	public static Button mAddButton() {
 		mAddButton.setHeight(px50);
 	    mAddButton.setWidth(px150);
-	    mAddButton.addClickHandler(Controller.addButton());
+	    mAddButton.addClickHandler(Controller.addButton(mID(), mType(),
+	    		mCondition(), mOrientation(), mX(), mY(), mSaveButton()));
 		return mAddButton;
 	} // mAddButton
 	

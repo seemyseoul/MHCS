@@ -136,8 +136,6 @@ public class Controller {
 		
 	} // setRequirements
 	
-	static Module varModule = new Module();
-	
 	/**
 	 * Click handler for modules tab add button
 	 * 
@@ -145,10 +143,18 @@ public class Controller {
 	 *            of type Module
 	 * @return add ClickHandler
 	 */
-	public static ClickHandler addButton() {
+	public static ClickHandler addButton(final TextBox id,
+			final ListBox type, final ListBox condition, final ListBox orientation,
+			final TextBox x, final TextBox y, final Button save) {
 		return new ClickHandler() {
 			public void onClick(ClickEvent event) {
-				varModule = new Module();
+				id.setEnabled(true);
+				type.setEnabled(true);
+				condition.setEnabled(true);
+				orientation.setEnabled(true);
+				x.setEnabled(true);
+				y.setEnabled(true);
+				save.setEnabled(true);
 			} // onClick
 		}; // ClickHandler
 	} // addButton
@@ -273,51 +279,56 @@ public class Controller {
 	/**
 	 * Returns change handler for the Modules List Box on Modules Page.
 	 * @param modulesListBox
-	 * @param modulesEastId
-	 * @param modulesEastType
-	 * @param modulesEastCondition
-	 * @param modulesEastOrientation
-	 * @param xTextBox
-	 * @param yTextBox
+	 * @param id
+	 * @param type
+	 * @param condition
+	 * @param orientation
+	 * @param x
+	 * @param y
 	 * @return ChangeHandler
 	 */
-	public static ChangeHandler modulesListBoxHandler(final ListBox modulesListBox, final TextBox modulesEastId,
-			final ListBox modulesEastType, final ListBox modulesEastCondition, final ListBox modulesEastOrientation,
-			final TextBox xTextBox, final TextBox yTextBox) {
+	public static ChangeHandler modulesListBoxHandler(final ListBox modulesListBox, final TextBox id,
+			final ListBox type, final ListBox condition, final ListBox orientation,
+			final TextBox x, final TextBox y, final Button save) {
 		return new ChangeHandler(){
 			public void onChange(ChangeEvent event) {
 				String moduleString = modulesListBox.getItemText(modulesListBox.getSelectedIndex());
 				moduleString = moduleString.substring(8);
 				Module module = null;
-				for (Module m : Model.getModuleList())
-				{
-					if (m.getId() == Integer.parseInt(moduleString))
-					{
+				for (Module m : Model.getModuleList()) {
+					if (m.getId() == Integer.parseInt(moduleString)) {
 						module = m;
-					}
-				}
-				if (module != null)
-				{
+					} // if
+				} // for
+				if (module != null) {
 					// Set id
-					modulesEastId.setValue(Integer.toString(module.getId()));
+					id.setValue(Integer.toString(module.getId()));
 					// Set type
-					modulesEastType.setSelectedIndex(
+					type.setSelectedIndex(
 						Arrays.asList(Module.moduleStrings)
 						.indexOf(module.getType().toUserString())
 					);
 					// Set Condition
-					String[] conditionStrings = { "Usable","Damaged","Unusable" };
-					modulesEastCondition.setSelectedIndex(
+					String[] conditionStrings = { "Usable","Usable After Repair","Beyond Repair" };
+					condition.setSelectedIndex(
 						Arrays.asList(conditionStrings)
 						.indexOf(module.getStatus().toUserString())
 					);
 					// Set orientation
-					modulesEastOrientation.setSelectedIndex(module.getOrientation());
+					orientation.setSelectedIndex(module.getOrientation());
 					// Set X-Coordinate
-					xTextBox.setValue(Integer.toString(module.getCoordinates().getX()));
+					x.setValue(Integer.toString(module.getCoordinates().getX()));
 					// Set Y-Coordinate
-					yTextBox.setValue(Integer.toString(module.getCoordinates().getY()));
+					y.setValue(Integer.toString(module.getCoordinates().getY()));
 				} // if
+				
+				id.setEnabled(true);
+				type.setEnabled(true);
+				condition.setEnabled(true);
+				orientation.setEnabled(true);
+				x.setEnabled(true);
+				y.setEnabled(true);
+				save.setEnabled(true);
 			} // onChange
 			
 		};

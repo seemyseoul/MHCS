@@ -53,7 +53,7 @@ public void onModuleLoad() {
     
     Variables.mListBox().addChangeHandler(Controller.modulesListBoxHandler(Variables.mListBox(),
             Variables.mID(), Variables.mType(), Variables.mCondition(),
-            Variables.mOrientation(), Variables.mX(), Variables.mY()));
+            Variables.mOrientation(), Variables.mX(), Variables.mY(), Variables.mSaveButton()));
 
     for (int i = 0; i < Module.moduleStrings.length; i++) {
         Variables.mType().addItem(Module.moduleStrings[i]);
