@@ -20,21 +20,7 @@ public class ConfigurationBuilder {
 	
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 	/**
 	 * Check whether or not a minimum configuration is possible given the stored
 	 * modules.
