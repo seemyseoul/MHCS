@@ -25,6 +25,7 @@ import com.google.gwt.user.client.ui.ListBox;
 import com.google.gwt.user.client.ui.PasswordTextBox;
 import com.google.gwt.user.client.ui.RootLayoutPanel;
 import com.google.gwt.user.client.ui.TabLayoutPanel;
+import com.google.gwt.user.client.ui.TextArea;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.VerticalPanel;
 import com.google.gwt.user.datepicker.client.DateBox;
@@ -44,14 +45,12 @@ public class Controller {
 	public static void setType(final TextBox id, final ListBox type) {
 		String modId = id.getText();
 		int intModId;
-		if(!modId.equals(""))
-		{
+		if(!modId.equals("")) {
 			intModId = Integer.parseInt(modId);
-		}
-		else
-		{
+		} // if
+		else {
 			return;
-		}
+		} // else
 		if (0 < intModId && intModId < 41) {
 			type.setItemSelected(1, true);
 		} // if
@@ -128,12 +127,56 @@ public class Controller {
 		} //else
 	} // setType
 	
+	
 	/**
 	 * Sets the requirements read only text area on Modules Page.
 	 * @param m
 	 */
-	public static void setRequirements(final Module m) {
-		
+	public static void setRequirements(final TextBox id, final TextArea requirements) {
+		String modId = id.getText();
+		int intModId;
+		if(!modId.equals("")) {
+			intModId = Integer.parseInt(modId);
+		} // if
+		else {
+			return;
+		} // else
+		if (0 < intModId && intModId < 41) {
+			requirements.setText("Plain Module:"
+					+ "At least one part of the habitat viewable from another part of the habitat. <br>"
+					+ "Wings of the habitat should not be so close together that modules are hard up against"
+					+ "one another denying any kind of view from a window");
+		} // if
+		else if (60 < intModId && intModId < 81) {
+			requirements.setText("Dormitory modules should be located in recognisable dormitory wings of the Habitat. <br>"
+					+ "Dormitory wings should have Sanitation modules in the ratio of 1 Sanitation module for every 2 Dormitory modules.");
+		} // if
+		else if (90 < intModId && intModId < 101) {
+			requirements.setText("Sanitation not next to Canteen. \n"
+					+ "Sanitation not next to Food & water storage.");
+		} // if
+		else if (110 < intModId && intModId < 121) {
+			requirements.setText("Food & Water storage modules should be located near Canteen modules.");
+		} // if
+		else if (130 < intModId && intModId < 135) {
+			requirements.setText("A Gym & Relaxation module should be next to a Sanitation module.");
+		} // if
+		else if (140 < intModId && intModId < 145) {
+			requirements.setText("Sanitation not next to Canteen. \n"
+					+ "Food & Water storage modules should be located near Canteen modules.");
+		} // if
+		else if (150 < intModId && intModId < 155) {
+			requirements.setText("No requirements specified.");
+		} // if
+		else if (160 < intModId && intModId < 165) {
+			requirements.setText("No requirements specified.");
+		} // if
+		else if (170 < intModId && intModId < 175) {
+			requirements.setText("Airlock not next to Dormitory.");
+		} // if
+		else if (180 < intModId && intModId < 185) {
+			requirements.setText("One Medical module should be next to one Airlock module.");
+		} // if
 	} // setRequirements
 	
 	/**
@@ -148,6 +191,7 @@ public class Controller {
 			final TextBox x, final TextBox y, final Button save) {
 		return new ClickHandler() {
 			public void onClick(ClickEvent event) {
+				id.setText("");
 				id.setEnabled(true);
 				type.setEnabled(true);
 				condition.setEnabled(true);
@@ -323,7 +367,6 @@ public class Controller {
 				} // if
 				
 				id.setEnabled(true);
-				type.setEnabled(true);
 				condition.setEnabled(true);
 				orientation.setEnabled(true);
 				x.setEnabled(true);

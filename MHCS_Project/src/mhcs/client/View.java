@@ -64,6 +64,7 @@ public void onModuleLoad() {
         @Override
         public void onValueChange(ValueChangeEvent<String> event) {
             Controller.setType(Variables.mID(), Variables.mType());
+            Controller.setRequirements(Variables.mID(), Variables.taModuleRequirements());
         } // onValueChange
     });
     
