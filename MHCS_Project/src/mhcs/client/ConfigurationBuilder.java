@@ -56,28 +56,28 @@ public class ConfigurationBuilder {
 		int numPlain = 0; // 3
 		
 		for (Module m : modules) {
-			if (m.getType().equals(ModuleType.AIRLOCK) && m.getStatus().equals(ModuleStatus.USABLE)) {
+			if (m.getType().equals(ModuleType.AIRLOCK) && !m.getStatus().equals(ModuleStatus.BEYONDREPAIR)) {
 				numAirlock++;
 			}
-			if (m.getType().equals(ModuleType.CONTROL) && m.getStatus().equals(ModuleStatus.USABLE)) {
+			if (m.getType().equals(ModuleType.CONTROL) && !m.getStatus().equals(ModuleStatus.BEYONDREPAIR)) {
 				numControl++;
 			}
-			if (m.getType().equals(ModuleType.POWER) && m.getStatus().equals(ModuleStatus.USABLE)) {
+			if (m.getType().equals(ModuleType.POWER) && !m.getStatus().equals(ModuleStatus.BEYONDREPAIR)) {
 				numPower++;
 			}
-			if (m.getType().equals(ModuleType.FOODWATERSTORAGE) && m.getStatus().equals(ModuleStatus.USABLE)) {
+			if (m.getType().equals(ModuleType.FOODWATERSTORAGE) && !m.getStatus().equals(ModuleStatus.BEYONDREPAIR)) {
 				numFoodWater++;
 			}
-			if (m.getType().equals(ModuleType.DORMITORY) && m.getStatus().equals(ModuleStatus.USABLE)) {
+			if (m.getType().equals(ModuleType.DORMITORY) && !m.getStatus().equals(ModuleStatus.BEYONDREPAIR)) {
 				numDormitory++;
 			}
-			if (m.getType().equals(ModuleType.CANTEEN) && m.getStatus().equals(ModuleStatus.USABLE)) {
+			if (m.getType().equals(ModuleType.CANTEEN) && !m.getStatus().equals(ModuleStatus.BEYONDREPAIR)) {
 				numCanteen++;
 			}
-			if (m.getType().equals(ModuleType.SANITATION) && m.getStatus().equals(ModuleStatus.USABLE)) {
+			if (m.getType().equals(ModuleType.SANITATION) && !m.getStatus().equals(ModuleStatus.BEYONDREPAIR)) {
 				numSanitation++;
 			}
-			if (m.getType().equals(ModuleType.PLAIN) && m.getStatus().equals(ModuleStatus.USABLE)) {
+			if (m.getType().equals(ModuleType.PLAIN) && !m.getStatus().equals(ModuleStatus.BEYONDREPAIR)) {
 				numPlain++;
 			}
 		}
