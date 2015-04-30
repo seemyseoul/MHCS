@@ -11,7 +11,6 @@ public class Map {
 	    for (int row = 0; row < 5; ++row) {
 	      for (int col = 0; col < 5; ++col) {
 	    	g.getCellFormatter().setWidth(row, col, Variables.px50);
-	        g.setText(row, col, "" + row + ", " + col);
 	        g.setWidget(row, col, Variables.blankImage());
 	      } // for
 	    } // for
