@@ -90,6 +90,7 @@ public void onModuleLoad() {
     Variables.mY.setEnabled(false);
     Variables.mSaveButton.setEnabled(false);
     
+    Variables.tbTimeSince().setText(Model.getTime());    
     
     Controller.tenDayCheck();
 
