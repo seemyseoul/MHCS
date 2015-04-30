@@ -215,15 +215,14 @@ public class Controller {
 				String moduleString = modulesListBox.getItemText(modulesListBox.getSelectedIndex());
 				moduleString = moduleString.substring(8);
 				Model.removeModuleFromId(Integer.parseInt(moduleString));
-				modulesListBox.removeItem(modulesListBox.getSelectedIndex());
+				modulesListBox.removeItem(modulesListBox.getSelectedIndex());			
 			    Variables.mID.setEnabled(false);
 			    Variables.mType.setEnabled(false);
 			    Variables.mCondition.setEnabled(false);
 			    Variables.mOrientation.setEnabled(false);
 			    Variables.mX.setEnabled(false);
 			    Variables.mY.setEnabled(false);
-			    Variables.mSaveButton.setEnabled(false);				
-				
+			    Variables.mSaveButton.setEnabled(false);					
 			} // onClick
 		}; // ClickHandler
 	} // addButton
