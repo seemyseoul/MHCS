@@ -305,6 +305,16 @@ public class Module implements Cloneable {
 		this.inUse = inUse;
 	}
 
+	public boolean equals(Object o)
+	{
+		Module m = (Module) o;
+		return (id == m.getId() && type == m.getType() &&
+				status == m.getStatus() && orientation == m.getOrientation() && 
+				getCoordinates() == m.getCoordinates() && inUse == m.isInUse());
+	}
+	
+	
+	
 
 	static String[] moduleStrings = { "Air Lock", "Plain", "Dormitory",
 			"Sanitation", "Food & Water", "Gym & Relaxation", "Canteen",

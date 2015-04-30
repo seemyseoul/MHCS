@@ -17,8 +17,6 @@ import mhcs.storage.Save;
  *
  */
 public class ConfigurationBuilder {
-
-	
 	
 	
 	
@@ -168,7 +166,7 @@ public class ConfigurationBuilder {
 		ArrayList<Configuration> configs = new ArrayList<Configuration>();
 		Configuration baseConfig = new Configuration();
 		
-		Module centerModule = Model.getUnusedUsableModuleClosestTo(Model.getCenterOfMass(),ModuleType.PLAIN);
+		Module centerModule = Model.getUnusedUsableModuleClosestTo(Model.getCenterOfMass(),ModuleType.PLAIN,baseConfig);
 		if(centerModule != null)
 		{
 			centerModule.setInUse(true);
@@ -179,14 +177,14 @@ public class ConfigurationBuilder {
 		Point center = centerModule.getCoordinates();
 		for (int i=1;i<=(numPlainModules / 6);i++)
 		{  // this for loop places the horizontal part of the H Configuration
-			Module closestRightPlain = Model.getUnusedUsableModuleClosestTo(new Point(center.getX()+i,center.getY()),ModuleType.PLAIN);
+			Module closestRightPlain = Model.getUnusedUsableModuleClosestTo(new Point(center.getX()+i,center.getY()),ModuleType.PLAIN,baseConfig);
 			if (closestRightPlain != null)
 			{
 				closestRightPlain.setInUse(true);
 				closestRightPlain.setCoordinates(new Point(center.getX()+i,center.getY()));
 				baseConfig.addModule(closestRightPlain);
 			}
-			Module closestLeftPlain = Model.getUnusedUsableModuleClosestTo(new Point(center.getX()-i,center.getY()),ModuleType.PLAIN);
+			Module closestLeftPlain = Model.getUnusedUsableModuleClosestTo(new Point(center.getX()-i,center.getY()),ModuleType.PLAIN,baseConfig);
 			if (closestLeftPlain != null)
 			{
 				closestLeftPlain.setInUse(true);
@@ -198,7 +196,7 @@ public class ConfigurationBuilder {
 		for (int j=1;j<=(numPlainModules / 6);j++)
 		{   // this loop should place the vertical parts of the H Configuration.
 			// Upper Right part of H config
-			Module closestUpRightPlain = Model.getUnusedUsableModuleClosestTo(new Point(center.getX()+(numPlainModules/6),center.getY()+j),ModuleType.PLAIN);
+			Module closestUpRightPlain = Model.getUnusedUsableModuleClosestTo(new Point(center.getX()+(numPlainModules/6),center.getY()+j),ModuleType.PLAIN,baseConfig);
 			if (closestUpRightPlain != null)
 			{
 				closestUpRightPlain.setInUse(true);
@@ -206,7 +204,7 @@ public class ConfigurationBuilder {
 				baseConfig.addModule(closestUpRightPlain);
 			}
 			// Upper Left part of H config
-			Module closestUpLeftPlain = Model.getUnusedUsableModuleClosestTo(new Point(center.getX()-(numPlainModules/6),center.getY()+j),ModuleType.PLAIN);
+			Module closestUpLeftPlain = Model.getUnusedUsableModuleClosestTo(new Point(center.getX()-(numPlainModules/6),center.getY()+j),ModuleType.PLAIN,baseConfig);
 			if (closestUpLeftPlain != null)
 			{
 				closestUpLeftPlain.setInUse(true);
@@ -214,7 +212,7 @@ public class ConfigurationBuilder {
 				baseConfig.addModule(closestUpLeftPlain);
 			}
 			// Lower Right part of H config
-			Module closestDownRightPlain = Model.getUnusedUsableModuleClosestTo(new Point(center.getX()+(numPlainModules/6),center.getY()-j),ModuleType.PLAIN);
+			Module closestDownRightPlain = Model.getUnusedUsableModuleClosestTo(new Point(center.getX()+(numPlainModules/6),center.getY()-j),ModuleType.PLAIN,baseConfig);
 			if (closestDownRightPlain != null)
 			{
 				closestDownRightPlain.setInUse(true);
@@ -222,7 +220,7 @@ public class ConfigurationBuilder {
 				baseConfig.addModule(closestDownRightPlain);
 			}
 			// Lower Left part of H config
-			Module closestDownLeftPlain = Model.getUnusedUsableModuleClosestTo(new Point(center.getX()-(numPlainModules/6),center.getY()-j),ModuleType.PLAIN);
+			Module closestDownLeftPlain = Model.getUnusedUsableModuleClosestTo(new Point(center.getX()-(numPlainModules/6),center.getY()-j),ModuleType.PLAIN,baseConfig);
 			if (closestDownLeftPlain != null)
 			{
 				closestDownLeftPlain.setInUse(true);
@@ -270,7 +268,7 @@ public class ConfigurationBuilder {
 		ArrayList<Configuration> configs = new ArrayList<Configuration>();
 		Configuration baseConfig = new Configuration();
 		
-		Module centerModule = Model.getUnusedUsableModuleClosestTo(Model.getCenterOfMass(),ModuleType.PLAIN);
+		Module centerModule = Model.getUnusedUsableModuleClosestTo(Model.getCenterOfMass(),ModuleType.PLAIN,baseConfig);
 		
 		if(centerModule != null)
 		{
@@ -283,28 +281,28 @@ public class ConfigurationBuilder {
 		
 		for (int i=1;i<=(numPlainModules / 4);i++)
 		{  // this for loop places most plain modules of the + Configuration
-			Module closestNorthPlain = Model.getUnusedModuleClosestTo(new Point(center.getX(),center.getY()+i),ModuleType.PLAIN);
+			Module closestNorthPlain = Model.getUnusedUsableModuleClosestTo(new Point(center.getX(),center.getY()+i),ModuleType.PLAIN,baseConfig);
 			if(closestNorthPlain != null)
 			{
 				closestNorthPlain.setInUse(true);
 				closestNorthPlain.setCoordinates(new Point(center.getX(),center.getY()+i));
 				baseConfig.addModule(closestNorthPlain);
 			}
-			Module closestEastPlain = Model.getUnusedUsableModuleClosestTo(new Point(center.getX()+i,center.getY()),ModuleType.PLAIN);
+			Module closestEastPlain = Model.getUnusedUsableModuleClosestTo(new Point(center.getX()+i,center.getY()),ModuleType.PLAIN,baseConfig);
 			if (closestEastPlain != null)
 			{
 				closestEastPlain.setInUse(true);
 				closestEastPlain.setCoordinates(new Point(center.getX()+i,center.getY()));
 				baseConfig.addModule(closestEastPlain);
 			}
-			Module closestSouthPlain = Model.getUnusedUsableModuleClosestTo(new Point(center.getX(),center.getY()-i),ModuleType.PLAIN);
+			Module closestSouthPlain = Model.getUnusedUsableModuleClosestTo(new Point(center.getX(),center.getY()-i),ModuleType.PLAIN,baseConfig);
 			if (closestSouthPlain != null)
 			{
 				closestSouthPlain.setInUse(true);
 				closestSouthPlain.setCoordinates(new Point(center.getX(),center.getY()-i));
 				baseConfig.addModule(closestSouthPlain);
 			}
-			Module closestWestPlain = Model.getUnusedUsableModuleClosestTo(new Point(center.getX()-i,center.getY()),ModuleType.PLAIN);
+			Module closestWestPlain = Model.getUnusedUsableModuleClosestTo(new Point(center.getX()-i,center.getY()),ModuleType.PLAIN,baseConfig);
 			if (closestWestPlain != null)
 			{
 				closestWestPlain.setInUse(true);
@@ -353,7 +351,7 @@ public class ConfigurationBuilder {
 		ArrayList<Configuration> configs = new ArrayList<Configuration>();
 		Configuration baseConfig = new Configuration();
 		
-		Module centerModule = Model.getUnusedUsableModuleClosestTo(Model.getCenterOfMass(),ModuleType.PLAIN);
+		Module centerModule = Model.getUnusedUsableModuleClosestTo(Model.getCenterOfMass(),ModuleType.PLAIN,baseConfig);
 		
 		if(centerModule != null)
 		{
@@ -373,7 +371,7 @@ public class ConfigurationBuilder {
 				closestNorthPlain.setCoordinates(new Point(center.getX(),center.getY()+i));
 				baseConfig.addModule(closestNorthPlain);
 			}
-			Module closestEastPlain = Model.getUnusedUsableModuleClosestTo(new Point(center.getX()+i,center.getY()),ModuleType.PLAIN);
+			Module closestEastPlain = Model.getUnusedUsableModuleClosestTo(new Point(center.getX()+i,center.getY()),ModuleType.PLAIN,baseConfig);
 			if (closestEastPlain != null)
 			{
 				closestEastPlain.setInUse(true);
@@ -469,7 +467,7 @@ public class ConfigurationBuilder {
 	 *
 	 * @return preset minimum configuration.
 	 */
-	public final Configuration generateMinConfiguration() {
+	public final Configuration generateMinConfiguration1() {
 		if (!minConfigPossible()) {
 			return null;
 		}
@@ -483,88 +481,183 @@ public class ConfigurationBuilder {
 		 * Airlock Plain 	Plain 	Plain 	Sanitation
 		 * 		   Canteen 			Control
 		 */
+		Configuration newConfiguration = new Configuration();
 
-		Module centerPlain = Model.getUnusedModuleClosestTo(centerOfMass,
-				ModuleType.PLAIN);
+		Module centerPlain = Model.getUnusedUsableModuleClosestTo(centerOfMass,
+				ModuleType.PLAIN,newConfiguration);
 		centerPlain.setInUse(true);
 		centerPlain.setCoordinates(centerOfMass);
-
+		newConfiguration.addModule(centerPlain);
+		
+		
 		Point rightPlainPos = new Point(centerOfMass.getX() + 1,
 				centerOfMass.getY());
-		Module rightPlain = Model.getUnusedModuleClosestTo(rightPlainPos,
-				ModuleType.PLAIN);
+		Module rightPlain = Model.getUnusedUsableModuleClosestTo(rightPlainPos,
+				ModuleType.PLAIN,newConfiguration);
 		rightPlain.setInUse(true);
 		rightPlain.setCoordinates(rightPlainPos);
-
+		newConfiguration.addModule(rightPlain);
+		
+		
 		Point leftPlainPos = new Point(centerOfMass.getX() - 1,
 				centerOfMass.getY());
-		Module leftPlain = Model.getUnusedModuleClosestTo(leftPlainPos,
-				ModuleType.PLAIN);
+		Module leftPlain = Model.getUnusedUsableModuleClosestTo(leftPlainPos,
+				ModuleType.PLAIN,newConfiguration);
 		leftPlain.setInUse(true);
 		leftPlain.setCoordinates(leftPlainPos);
+		newConfiguration.addModule(leftPlain);
 
 		Point airlockPos = new Point(leftPlainPos.getX() - 1,
 				leftPlainPos.getY());
 		Module airlock = Model
-				.getUnusedModuleClosestTo(airlockPos, ModuleType.AIRLOCK);
+				.getUnusedUsableModuleClosestTo(airlockPos, ModuleType.AIRLOCK,newConfiguration);
 		airlock.setInUse(true);
 		airlock.setCoordinates(airlockPos);
+		newConfiguration.addModule(airlock);
 
 		Point foodWaterPos = new Point(leftPlainPos.getX(),
 				leftPlainPos.getY() + 1);
-		Module foodWater = Model.getUnusedModuleClosestTo(foodWaterPos,
-				ModuleType.FOODWATERSTORAGE);
+		Module foodWater = Model.getUnusedUsableModuleClosestTo(foodWaterPos,
+				ModuleType.FOODWATERSTORAGE,newConfiguration);
 		foodWater.setInUse(true);
 		foodWater.setCoordinates(foodWaterPos);
+		newConfiguration.addModule(foodWater);
 
 		Point canteenPos = new Point(leftPlainPos.getX(),
 				leftPlainPos.getY() - 1);
 		Module canteen = Model
-				.getUnusedModuleClosestTo(canteenPos, ModuleType.CANTEEN);
+				.getUnusedUsableModuleClosestTo(canteenPos, ModuleType.CANTEEN,newConfiguration);
 		canteen.setInUse(true);
 		canteen.setCoordinates(canteenPos);
+		newConfiguration.addModule(canteen);
 
 		Point dormPos = new Point(centerOfMass.getX(), centerOfMass.getY() + 1);
-		Module dorm = Model.getUnusedModuleClosestTo(dormPos, ModuleType.DORMITORY);
+		Module dorm = Model.getUnusedUsableModuleClosestTo(dormPos, ModuleType.DORMITORY,newConfiguration);
 		dorm.setInUse(true);
 		dorm.setCoordinates(dormPos);
+		newConfiguration.addModule(dorm);
 
 		Point powerPos = new Point(rightPlainPos.getX(),
 				rightPlainPos.getY() + 1);
-		Module power = Model.getUnusedModuleClosestTo(powerPos, ModuleType.POWER);
+		Module power = Model.getUnusedUsableModuleClosestTo(powerPos, ModuleType.POWER,newConfiguration);
 		power.setInUse(true);
 		power.setCoordinates(powerPos);
+		newConfiguration.addModule(dorm);
 
 		Point controlPos = new Point(rightPlainPos.getX(),
 				rightPlainPos.getY() - 1);
 		Module control = Model
-				.getUnusedModuleClosestTo(controlPos, ModuleType.CONTROL);
+				.getUnusedUsableModuleClosestTo(controlPos, ModuleType.CONTROL,newConfiguration);
 		control.setInUse(true);
 		control.setCoordinates(controlPos);
-
+		newConfiguration.addModule(control);
+		
 		Point sanitationPos = new Point(rightPlainPos.getX() + 1,
 				rightPlainPos.getY());
-		Module sanitation = Model.getUnusedModuleClosestTo(sanitationPos,
-				ModuleType.SANITATION);
+		Module sanitation = Model.getUnusedUsableModuleClosestTo(sanitationPos,
+				ModuleType.SANITATION,newConfiguration);
 		sanitation.setInUse(true);
 		sanitation.setCoordinates(sanitationPos);
+		newConfiguration.addModule(sanitation);
 
-		Configuration newConfiguration = new Configuration();
-		List<Module> moduleList = new ArrayList<Module>();
-	
-		moduleList.add(leftPlain);
-		moduleList.add(centerPlain);
-		moduleList.add(rightPlain);
-		moduleList.add(airlock);
-		moduleList.add(foodWater);
-		moduleList.add(canteen);
-		moduleList.add(dorm);
-		moduleList.add(power);
-		moduleList.add(control);
-		moduleList.add(sanitation);
 		
-		newConfiguration.setModules(moduleList);
 		return newConfiguration;
 	}
+	
+	public final Configuration generateMinConfiguration2() {
+		if (!minConfigPossible()) {
+			return null;
+		}
 
+		Point centerOfMass = Model.getCenterOfMass();
+
+		/*
+		 * pretty good minimum config hardcoded...
+		 * 
+		 * 			Food	Dorm	Power 
+		 * Airlock Plain 	Plain 	Plain 	Sanitation
+		 * 		   Canteen 			Control
+		 */
+		Configuration newConfiguration = new Configuration();
+
+		Module centerPlain = Model.getUnusedUsableModuleClosestTo(centerOfMass,
+				ModuleType.PLAIN,newConfiguration);
+		centerPlain.setInUse(true);
+		centerPlain.setCoordinates(centerOfMass);
+		newConfiguration.addModule(centerPlain);
+		
+		
+		Point rightPlainPos = new Point(centerOfMass.getX() + 1,
+				centerOfMass.getY());
+		Module rightPlain = Model.getUnusedUsableModuleClosestTo(rightPlainPos,
+				ModuleType.PLAIN,newConfiguration);
+		rightPlain.setInUse(true);
+		rightPlain.setCoordinates(rightPlainPos);
+		newConfiguration.addModule(rightPlain);
+		
+		
+		Point leftPlainPos = new Point(centerOfMass.getX() - 1,
+				centerOfMass.getY());
+		Module leftPlain = Model.getUnusedUsableModuleClosestTo(leftPlainPos,
+				ModuleType.PLAIN,newConfiguration);
+		leftPlain.setInUse(true);
+		leftPlain.setCoordinates(leftPlainPos);
+		newConfiguration.addModule(leftPlain);
+
+		Point airlockPos = new Point(leftPlainPos.getX() - 1,
+				leftPlainPos.getY());
+		Module airlock = Model
+				.getUnusedUsableModuleClosestTo(airlockPos, ModuleType.AIRLOCK,newConfiguration);
+		airlock.setInUse(true);
+		airlock.setCoordinates(airlockPos);
+		newConfiguration.addModule(airlock);
+
+		Point foodWaterPos = new Point(leftPlainPos.getX(),
+				leftPlainPos.getY() + 1);
+		Module foodWater = Model.getUnusedUsableModuleClosestTo(foodWaterPos,
+				ModuleType.FOODWATERSTORAGE,newConfiguration);
+		foodWater.setInUse(true);
+		foodWater.setCoordinates(foodWaterPos);
+		newConfiguration.addModule(foodWater);
+
+		Point canteenPos = new Point(leftPlainPos.getX(),
+				leftPlainPos.getY() - 1);
+		Module canteen = Model
+				.getUnusedUsableModuleClosestTo(canteenPos, ModuleType.CANTEEN,newConfiguration);
+		canteen.setInUse(true);
+		canteen.setCoordinates(canteenPos);
+		newConfiguration.addModule(canteen);
+
+		Point dormPos = new Point(centerOfMass.getX(), centerOfMass.getY() + 1);
+		Module dorm = Model.getUnusedUsableModuleClosestTo(dormPos, ModuleType.DORMITORY,newConfiguration);
+		dorm.setInUse(true);
+		dorm.setCoordinates(dormPos);
+		newConfiguration.addModule(dorm);
+
+		Point powerPos = new Point(rightPlainPos.getX(),
+				rightPlainPos.getY() + 1);
+		Module power = Model.getUnusedUsableModuleClosestTo(powerPos, ModuleType.POWER,newConfiguration);
+		power.setInUse(true);
+		power.setCoordinates(powerPos);
+		newConfiguration.addModule(dorm);
+
+		Point controlPos = new Point(rightPlainPos.getX(),
+				rightPlainPos.getY() - 1);
+		Module control = Model
+				.getUnusedUsableModuleClosestTo(controlPos, ModuleType.CONTROL,newConfiguration);
+		control.setInUse(true);
+		control.setCoordinates(controlPos);
+		newConfiguration.addModule(control);
+		
+		Point sanitationPos = new Point(rightPlainPos.getX() + 1,
+				rightPlainPos.getY());
+		Module sanitation = Model.getUnusedUsableModuleClosestTo(sanitationPos,
+				ModuleType.SANITATION,newConfiguration);
+		sanitation.setInUse(true);
+		sanitation.setCoordinates(sanitationPos);
+		newConfiguration.addModule(sanitation);
+
+		
+		return newConfiguration;
+	}
 }

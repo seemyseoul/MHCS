@@ -297,6 +297,22 @@ public class Model {
 		}
 		return list;
 	}
+	
+//	/**
+//	 * gets a List of unused but usable modules of type "type" NOT in configuration c
+//	 * @param type
+//	 * @param c
+//	 * @return List<Module> list of unused but usable modules of type "type" NOT in configuration c.
+//	 */
+//	public static List<Module> getUnusedUsableModulesOfType(ModuleType type,Configuration c) {
+//		ArrayList<Module> list = new ArrayList<Module>();
+//		for (Module m : Model.getModuleList()) {
+//			if (m.getType().equals(type) && !m.isInUse()) {
+//				list.add(m);
+//			}
+//		}
+//		return list;
+//	}
 
 	/**
 	 * gets the center of mass of the modules.
@@ -366,6 +382,43 @@ public class Model {
 		}
 		return closestModule;
 	}
+	
+	
+	
+	/**
+	 * This method returns the closest UNUSED but at least Reparable module of type "type" to module m.
+	 * MUST NOT BE IN CONFIGURATION c
+	 *
+	 * @param p
+	 *            Point to get closest module to.
+	 * @param type
+	 *            Type of modules to search for.
+	 * @return module closest to point p.
+	 */
+	public final static Module getUnusedUsableModuleClosestTo(final Point p, ModuleType type, Configuration c) {
+		List<Module> modules = getUnusedUsableModulesOfType(type);
+		for (Module m : modules)
+		{
+			if(c.getModules().contains(m))
+			{
+				modules.remove(m);
+			}
+		}
+		if(modules.size() == 0)
+		{
+			return null;
+		}
+		Module closestModule = modules.get(0);
+
+		for (Module m : modules) {
+			if (m.getCoordinates().distanceTo(p) < closestModule
+					.getCoordinates().distanceTo(p)) {
+				closestModule = m;
+			}
+		}
+		return closestModule;
+	}
+	
 	
 	/**
 	 * This method returns the closest UNUSED but at least Reparable module of type "type" to module m.
