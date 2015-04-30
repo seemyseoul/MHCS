@@ -309,7 +309,6 @@ public class Controller {
 				inUse = false;
 				
 				if(Model.saveModule(new Module(type,id,coordinates,status,orientation,inUse))) {
-					Variables.moduleSavedSound().play();
 					if(ConfigurationBuilder.minConfigPossible() && !Variables.minConfigReached()){
 						// Create a dialog box and set the caption text
 		                final DialogBox minConfigAlert = new DialogBox();
@@ -362,6 +361,7 @@ public class Controller {
 		                minConfigAlert.show();
 		                Variables.minConfigSound().play();
 		            } // if minConfig
+					Variables.moduleSavedSound().play();
 				} // if
 				else {
 					Variables.errorSound().play();
