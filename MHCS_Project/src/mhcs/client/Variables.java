@@ -536,7 +536,6 @@ public class Variables {
     
     public static TextBox tbTimeSince() {
         timeSince.setEnabled(false);
-//      timeSince.setText(Controller.timeSince());
         return timeSince;
     } // timeSince
     
