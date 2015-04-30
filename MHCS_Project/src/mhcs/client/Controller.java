@@ -215,14 +215,15 @@ public class Controller {
 				String moduleString = modulesListBox.getItemText(modulesListBox.getSelectedIndex());
 				moduleString = moduleString.substring(8);
 				Model.removeModuleFromId(Integer.parseInt(moduleString));
-				modulesListBox.removeItem(modulesListBox.getSelectedIndex());			
-			    Variables.mID.setEnabled(false);
+				modulesListBox.removeItem(modulesListBox.getSelectedIndex());
+				Variables.mID.setEnabled(false);
 			    Variables.mType.setEnabled(false);
 			    Variables.mCondition.setEnabled(false);
 			    Variables.mOrientation.setEnabled(false);
 			    Variables.mX.setEnabled(false);
 			    Variables.mY.setEnabled(false);
-			    Variables.mSaveButton.setEnabled(false);					
+			    Variables.mSaveButton.setEnabled(false);	
+				Variables.moduleRemovedSound().play();
 			} // onClick
 		}; // ClickHandler
 	} // addButton
@@ -246,8 +247,7 @@ public class Controller {
 	public static ClickHandler saveButton(final ListBox moduleType, final TextBox moduleID,
 			final TextBox xTextBox, final TextBox yTextBox, final ListBox moduleCondition,
 			final ListBox moduleOrientation, final String str1,
-			final String str2, final Audio successSound, final Audio minConfigSound,
-			final Audio errorSound, final ListBox modulesListBox) {
+			final String str2, final ListBox modulesListBox) {
 		return new ClickHandler(){
 			@Override
 			public void onClick(ClickEvent event) {
@@ -265,9 +265,8 @@ public class Controller {
 			    orientation = moduleOrientation.getSelectedIndex();
 				inUse = false;
 				
-//				Window.alert("shitFuck!");
 				if(Model.saveModule(new Module(type,id,coordinates,status,orientation,inUse))) {
-					successSound.play();
+					Variables.moduleSavedSound().play();
 					if(ConfigurationBuilder.minConfigPossible() && !Variables.minConfigReached()){
 						// Create a dialog box and set the caption text
 		                final DialogBox minConfigAlert = new DialogBox();
@@ -318,11 +317,11 @@ public class Controller {
 		                
 		                minConfigAlert.center();
 		                minConfigAlert.show();
-		                minConfigSound.play();
+		                Variables.minConfigSound().play();
 		            } // if minConfig
 				} // if
 				else {
-					errorSound.play();
+					Variables.errorSound().play();
 				} // else
 				
 				modulesListBox.clear();
@@ -407,6 +406,7 @@ public class Controller {
 	            {
 	                RootLayoutPanel.get().clear();
 	                RootLayoutPanel.get().add(tabPanel);
+	                Variables.welcomeSound().play();
 	            } // if
 	            else
 	            {
@@ -453,7 +453,7 @@ public class Controller {
 	                
 	                dialogBox.center();
 	                dialogBox.show();
-	                errorSound.play();
+	                Variables.errorSound().play();
 	            }  // else
 	        } // onCLick
 	    };
@@ -462,6 +462,7 @@ public class Controller {
 	public static ClickHandler logoutHandler(final DockPanel login) {
 		return new ClickHandler(){
 	        public void onClick(ClickEvent event) {
+	        	Variables.goodbyeSound().play();
 	        	Window.Location.reload();
 	        } // onCLick
 	    };
@@ -542,7 +543,7 @@ public class Controller {
 	    			}
 	    		}
 	    		Model.saveTime(convertedDate);
-	    		// Add Variables.time1 into local storage
+	    		Variables.timeSavedSound().play();
 			} // onClick
 		};
 	} // dateTimeSave
@@ -607,7 +608,7 @@ public class Controller {
                 
                 dialogBox.center();
                 dialogBox.show();
-                Variables.errorSound().play();
+                Variables.tenDaySound().play();
 			} // if
 		} // if
 	} // tenDayCheck
@@ -624,6 +625,7 @@ public class Controller {
 				int testNum = lb.getSelectedIndex();
 				if (testNum!= 0){
 					TestCases.TestCaseChoice(testNum);
+					Variables.testCaseSound().play();
 				} // if
 				else {
 					Model.removeAll();
