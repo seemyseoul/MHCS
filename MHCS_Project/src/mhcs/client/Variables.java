@@ -14,6 +14,7 @@ import com.google.gwt.user.client.ui.Image;
 import com.google.gwt.user.client.ui.ListBox;
 import com.google.gwt.user.client.ui.PasswordTextBox;
 import com.google.gwt.user.client.ui.RadioButton;
+import com.google.gwt.user.client.ui.ScrollPanel;
 import com.google.gwt.user.client.ui.TabLayoutPanel;
 import com.google.gwt.user.client.ui.TextArea;
 import com.google.gwt.user.client.ui.TextBox;
@@ -63,7 +64,7 @@ public class Variables {
         c.add(htmlSouth, DockPanel.SOUTH);
         c.add(configVpanel(), DockPanel.EAST);
         c.add(cListBox(), DockPanel.WEST);
-        c.add(mapImage(), DockPanel.CENTER);
+        c.add(mapPanel(), DockPanel.CENTER);
 //        c.add(map, DockPanel.CENTER);
         c.add(htmlMap, DockPanel.NORTH);
         c.add(configHpanel(), DockPanel.SOUTH);
@@ -159,6 +160,13 @@ public class Variables {
         confirmPass.setSpacing(intPanelSpacing1);
     	return confirmPass;
 	} // confirmPassword
+	
+	public static ScrollPanel mapPanel() {
+		mapPanel.setHeight(px560);
+		mapPanel.setWidth(px1000);
+		mapPanel.add(mapImage());
+		return mapPanel;
+	} // mapPanel
 	
 	public static VerticalPanel vertical() {
     	return new VerticalPanel();
@@ -378,8 +386,8 @@ public class Variables {
 	
 	public static Image mapImage() {
 		final Image map = new Image("images/marsMap");
-		map.setHeight(px560);
-	    map.setWidth(ps1000);
+		map.setHeight(px1000);
+	    map.setWidth(px2000);
 		return map;
 	} // mapImage
 	
@@ -600,8 +608,9 @@ public class Variables {
     public final static String px600 = "600px";
     public final static String px650 = "650px";
     public final static String px800 = "800px";
-    public final static String ps1000 = "1000px";
+    public final static String px1000 = "1000px";
     public final static String px1500 = "1500px";
+    public final static String px2000 = "2000px";
 	
 	final static TabLayoutPanel tabPanel = new TabLayoutPanel(2.5, Unit.EM);
 	final static DockPanel l = new DockPanel();
@@ -619,6 +628,7 @@ public class Variables {
 	final static HorizontalPanel newPass = Variables.horizontal();
 	final static HorizontalPanel confirmPass = Variables.horizontal();
 	final static HorizontalPanel tenDayPanel = Variables.horizontal();
+	final static ScrollPanel mapPanel = new ScrollPanel();
 	final static VerticalPanel loginVpanel = Variables.vertical();
 	final static VerticalPanel modulesWest = Variables.vertical();
 	final static VerticalPanel modulesCenter = Variables.vertical();
