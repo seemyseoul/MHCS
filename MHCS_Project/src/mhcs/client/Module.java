@@ -3,6 +3,8 @@ package mhcs.client;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.google.gwt.user.client.ui.Image;
+
 import mhcs.storage.Load;
 import mhcs.storage.Model;
 
@@ -231,6 +233,68 @@ public class Module implements Cloneable {
 		}
 		return diagonallyConnectedModules;
 	}
+	
+	
+	public Image getImage()
+	{
+		if(getType().equals(ModuleType.AIRLOCK))
+		{
+			return new Image("http://d.umn.edu/~mckeo044/war/images/modules/airlock.jpg");
+		}
+		else if(getType().equals(ModuleType.CANTEEN))
+		{
+			return new Image("http://d.umn.edu/~mckeo044/war/images/modules/canteen.jpg");
+		}
+		else if(getType().equals(ModuleType.CONTROL))
+		{
+			return new Image("http://d.umn.edu/~mckeo044/war/images/modules/control.jpg");
+		}
+		else if(getType().equals(ModuleType.DORMITORY))
+		{
+			return new Image("http://d.umn.edu/~mckeo044/war/images/modules/dormitory.jpg");
+		}
+		else if(getType().equals(ModuleType.FOODWATERSTORAGE))
+		{
+			return new Image("http://d.umn.edu/~mckeo044/war/images/modules/foodWaterStorage.jpg");
+		}
+		else if(getType().equals(ModuleType.GYMRELAXATION))
+		{
+			return new Image("http://d.umn.edu/~mckeo044/war/images/modules/gymRelaxation.jpg");
+		}
+		else if(getType().equals(ModuleType.MEDICAL))
+		{
+			return new Image("http://d.umn.edu/~mckeo044/war/images/modules/medical.jpg");
+		}
+		else if(getType().equals(ModuleType.PLAIN))
+		{
+			return new Image("http://d.umn.edu/~mckeo044/war/images/modules/plain.jpg");
+		}
+		else if(getType().equals(ModuleType.POWER))
+		{
+			return new Image("http://d.umn.edu/~mckeo044/war/images/modules/power.jpg");
+		}
+		else if(getType().equals(ModuleType.SANITATION))
+		{
+			return new Image("http://d.umn.edu/~mckeo044/war/images/modules/sanitation.jpg");
+		}
+		else {
+			return null;
+		}
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	
