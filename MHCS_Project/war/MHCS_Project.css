@@ -38,3 +38,8 @@ h1 {
 #closeButton {
   margin: 15px 6px 6px;
 }
+#google_translate_element{
+	z-index: 1;
+	left: 1700px;
+	position: absolute;	
+}
