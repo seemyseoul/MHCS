@@ -89,7 +89,8 @@ public class Variables {
         w.add(htmlWeather);
         w.add(weatherImage());
         Weather weather = new Weather();
-        weather.requestData(weather.getURL());
+        weather.requestData(weather.getUrl(0), 0);
+        weather.requestData(weather.getUrl(1), 1);
         
         return w;
     } // weatherPanel
