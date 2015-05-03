@@ -29,7 +29,7 @@ public class Weather {
     strUrlAstro = URL.encode(strUrlAstro);
   }
   
-  public String getUrl(int option) {
+  public String getUrl(final int option) {
     if(option == 0) {
     	return strUrlCond;
     } else {
@@ -85,7 +85,7 @@ public class Weather {
    * Send request to data server and catch errors.
    * @param url The server URL to be used.
    */
-  public void requestData(String url, int option) {
+  public void requestData(final String url, final int option) {
     RequestBuilder builder = new RequestBuilder(RequestBuilder.GET, url);
     
     try {
