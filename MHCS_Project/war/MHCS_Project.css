@@ -40,6 +40,6 @@ h1 {
 }
 #google_translate_element{
 	z-index: 1;
-	left: 1700px;
+	bottom: 0px;
 	position: absolute;	
 }
