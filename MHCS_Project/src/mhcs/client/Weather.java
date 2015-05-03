@@ -1,6 +1,5 @@
 package mhcs.client;
 
-import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.http.client.Request;
 import com.google.gwt.http.client.RequestBuilder;
 import com.google.gwt.http.client.RequestCallback;
@@ -15,38 +14,34 @@ import com.google.gwt.user.client.ui.Label;
 
 public class Weather {
 
-  final int intHttpOk = 200; // response code for HTTP OK
+  final int intHttpOk = 200;           // response code for HTTP OK
   private String strTemp = "";
   private String strVisibility = "";
-  private String strURL = "";
+  private String strSunset = "";
+  private String strUrlCond = "";      // URL for weather conditions JSON
+  private String strUrlAstro = "";     // URL for sunrise JSON
   
   public Weather() {
     final String proxy ="http://www.d.umn.edu/~mckeo044/Proxy.php?url=";
-    strURL = proxy+"http://api.wunderground.com/api/1e7eb561fe2a38df/conditions/q/CA/San_Francisco.json";
-    strURL = URL.encode(strURL);
+    strUrlCond = proxy+"http://api.wunderground.com/api/1e7eb561fe2a38df/conditions/q/CA/San_Francisco.json";
+    strUrlCond = URL.encode(strUrlCond);
+    strUrlAstro = proxy+"http://api.wunderground.com/api/1e7eb561fe2a38df/astronomy/q/CA/San_Francisco.json";
+    strUrlAstro = URL.encode(strUrlAstro);
   }
   
-  /**
-   * Getter for URL;
-   * @return the URL
-   */
-  public String getURL() {
-    return strURL;
-  }
-  
-  public String getTemp() {
-    return strTemp;
-  }
-  
-  public String getVis() {
-    return strVisibility;
+  public String getUrl(int option) {
+    if(option == 0) {
+    	return strUrlCond;
+    } else {
+    	return strUrlAstro;
+    }
   }
   
   /**
    * Updates weather information
    * @param rt A response text string containing the JSON data.
    */
-  public void update(String rt) {
+  public void updateConditions(final String rt) {
 	//Window.alert(rt);
     String sAll = rt;
     JSONObject jA =
@@ -62,15 +57,35 @@ public class Weather {
     strVisibility = visibility.toString();
     strVisibility = strVisibility.substring(1,strVisibility.length()-1);
     
-    Variables.w.add(new Label("Current temp: \t" + strTemp + " Celsius"));
-    Variables.w.add(new Label("Current visibility: \t" + strVisibility + " km"));
+    Variables.w.add(new Label("Current temp:\t" + strTemp + " Celsius"));
+    Variables.w.add(new Label("Current visibility:\t" + strVisibility + " km"));
   } // update
+  
+  public void updateSunset(final String rt) {
+    String sAll = rt;
+    JSONObject jA =
+    		(JSONObject)JSONParser.parseLenient(sAll);
+    JSONValue jTry = jA.get("sun_phase");
+    
+    JSONObject jB =
+    		(JSONObject)JSONParser.parseLenient(jTry.toString());
+    JSONValue jTry2 = jB.get("sunset");
+    
+    JSONObject jC =
+    		(JSONObject)JSONParser.parseLenient(jTry2.toString());
+    JSONValue sunsetHr = jC.get("hour");
+    JSONValue sunsetMin = jC.get("minute");
+    
+    strSunset = sunsetHr.toString() + ":" + sunsetMin.toString();
+    
+    Variables.w.add(new Label("Sunset:\t" + strSunset));
+  }
   
   /**
    * Send request to data server and catch errors.
    * @param url The server URL to be used.
    */
-  public void requestData(String url) {
+  public void requestData(String url, int option) {
     RequestBuilder builder = new RequestBuilder(RequestBuilder.GET, url);
     
     try {
@@ -83,7 +98,13 @@ public class Weather {
         public void onResponseReceived(Request request, Response response) {
           if (intHttpOk == response.getStatusCode()) {
             String rt = response.getText();
-            update(rt);
+            if(option == 0) {
+              updateConditions(rt);
+            }
+            else if(option == 1) {
+              updateSunset(rt);
+            }
+            
           } else {
             Window.alert("Couldn't retrieve JSON (" + response.getStatusCode()
                       + ")");
