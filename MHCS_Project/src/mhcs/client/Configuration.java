@@ -173,18 +173,18 @@ public final class Configuration implements Cloneable{
 		 * 12.) Special module types (types for which there are only 4 modules e.g. Medical) should be
 				located throughout the Habitat and not located altogether in one part
 		 */
-		float rule1Weight = 1;
-		float rule2Weight = 1;
-		float rule3Weight = 1;
-		float rule4Weight = 1;
-		float rule5Weight = 1;
-		float rule6Weight = 1;
-		float rule7Weight = 1;
-		float rule8Weight = 1;
-		float rule9Weight = 1;
-		float rule10Weight = 1;
-		float rule11Weight = 1;
-		float rule12Weight = 1;
+		float rule1Weight = 1; // Should be minimized
+		float rule2Weight = 1; // Should be minimized
+		float rule3Weight = 1; // Should be minimized
+		float rule4Weight = 0; // Irrelevant
+		float rule5Weight = 0; // Irrelevant
+		float rule6Weight = -1; // Distance between modules should be (maximized)
+		float rule7Weight = 1; // Dorms are in wings if their max distance away is small (minimized)
+		float rule8Weight = -1; // A gym should be next to a Sanitation (Maximized) 
+		float rule9Weight = -1; // A medical should be next to an Airlock (Maximized)
+		float rule10Weight = 1; // distance between foodWater and Canteen should be (minimized)
+		float rule11Weight = 0; // dormSanitation ratio NOT CURRENTLY BEING CHECKED! 
+		float rule12Weight = -1; // specialModuleSpread should be (Maximized)
 		
 		
 		int flawRating = 0;
