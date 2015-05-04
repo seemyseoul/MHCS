@@ -3,15 +3,13 @@ package mhcs.client;
 import java.util.List;
 
 import com.google.gwt.user.client.ui.Grid;
-import com.google.gwt.user.client.ui.Image;
-import com.google.gwt.user.client.ui.TextBox;
 
 public class Map {
 	/**
 	 * Constructor
 	 * @return 
 	 */
-	public Grid Map() {
+	public Grid makeGrid() {
 	    for (int row = 0; row < 5; ++row) {
 	      for (int col = 0; col < 5; ++col) {
 	    	g.getCellFormatter().setWidth(row, col, Variables.px50);
@@ -22,7 +20,7 @@ public class Map {
 	} // ctor
 	
 	public void placeModule(Module module) {
-		Grid map = Map();
+		Grid map = makeGrid();
 		Point coordinates = module.getCoordinates();
 		int x = coordinates.getX();
 		int y = coordinates.getY();
