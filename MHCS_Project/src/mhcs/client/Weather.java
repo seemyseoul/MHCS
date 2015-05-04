@@ -18,6 +18,8 @@ public class Weather {
   private String strTemp = "";
   private String strVisibility = "";
   private String strSunset = "";
+  private String strSunsetHr = "";
+  private String strSunsetMin = "";
   private String strUrlCond = "";      // URL for weather conditions JSON
   private String strUrlAstro = "";     // URL for sunrise JSON
   
@@ -27,15 +29,15 @@ public class Weather {
     strUrlCond = URL.encode(strUrlCond);
     strUrlAstro = proxy+"http://api.wunderground.com/api/1e7eb561fe2a38df/astronomy/q/CA/San_Francisco.json";
     strUrlAstro = URL.encode(strUrlAstro);
-  }
+  } // ctor
   
   public String getUrl(final int option) {
     if(option == 0) {
     	return strUrlCond;
     } else {
     	return strUrlAstro;
-    }
-  }
+    } // else
+  } // getUrl
   
   /**
    * Updates weather information
@@ -59,7 +61,7 @@ public class Weather {
     
     Variables.w.add(new Label("Current temp:\t" + strTemp + " Celsius"));
     Variables.w.add(new Label("Current visibility:\t" + strVisibility + " km"));
-  } // update
+  } // updateConditions
   
   public void updateSunset(final String rt) {
     String sAll = rt;
@@ -76,10 +78,15 @@ public class Weather {
     JSONValue sunsetHr = jC.get("hour");
     JSONValue sunsetMin = jC.get("minute");
     
-    strSunset = sunsetHr.toString() + ":" + sunsetMin.toString();
+    strSunsetHr = sunsetHr.toString();
+    strSunsetHr = strSunsetHr.substring(1, strSunsetHr.length()-1);
+    strSunsetMin = sunsetMin.toString();
+    strSunsetMin = strSunsetMin.substring(1, strSunsetMin.length()-1);
+    
+    strSunset = strSunsetHr + ":" + strSunsetMin;
     
     Variables.w.add(new Label("Sunset:\t" + strSunset));
-  }
+  } // updateSunset
   
   /**
    * Send request to data server and catch errors.
@@ -100,10 +107,10 @@ public class Weather {
             String rt = response.getText();
             if(option == 0) {
               updateConditions(rt);
-            }
+            } // if
             else if(option == 1) {
               updateSunset(rt);
-            }
+            } // else if
             
           } else {
             Window.alert("Couldn't retrieve JSON (" + response.getStatusCode()
@@ -115,4 +122,4 @@ public class Weather {
         Window.alert("RequestException: Couldn't retrieve JSON");
     } // catch
   } // try
-}
+} // Weather
