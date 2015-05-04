@@ -20,8 +20,7 @@ public class Map {
 	    } // for
 	} // ctor
 	
-	public void placeModule(Module module) {
-		Map map = new Map();
+	public void placeModules(Map map, Module module) {
 		Point coordinates = module.getCoordinates();
 		int x = coordinates.getX();
 		int y = coordinates.getY();
@@ -35,7 +34,7 @@ public class Map {
 	public void placeConfiguration(Map map, Configuration config) {
 		List<Module> modules = config.getModules();
 		for (int i=0; i < modules.size(); i++) {
-			map.placeModule(modules.get(i));
+			map.placeModules(map, modules.get(i));
 		} // for
 	} // placeConfiguration
 	
