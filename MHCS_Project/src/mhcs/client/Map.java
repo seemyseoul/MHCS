@@ -11,18 +11,18 @@ public class Map {
 	 * Constructor
 	 * @return 
 	 */
-	public Map() {
-		Grid g = new Grid(50, 100);
+	public Grid Map() {
 	    for (int row = 0; row < 5; ++row) {
 	      for (int col = 0; col < 5; ++col) {
 	    	g.getCellFormatter().setWidth(row, col, Variables.px50);
 	        g.setWidget(row, col, Variables.blankImage());
 	      } // for
 	    } // for
+	    return g;
 	} // ctor
 	
 	public void placeModule(Module module) {
-		Map map = new Map();
+		Grid map = Map();
 		Point coordinates = module.getCoordinates();
 		int x = coordinates.getX();
 		int y = coordinates.getY();
@@ -35,5 +35,7 @@ public class Map {
 			map.placeModule(modules.get(i));
 		} // for
 	} // placeConfiguration
+	
+	static final Grid g = new Grid(50, 100);
 	
 } // Map
