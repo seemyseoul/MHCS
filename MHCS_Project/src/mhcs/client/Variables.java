@@ -20,7 +20,7 @@ import com.google.gwt.user.client.ui.VerticalPanel;
 
 public class Variables {
     
-    public static TabLayoutPanel tabPanel() {
+    public static TabLayoutPanel tabPanel() { 
         tabPanel.setAnimationDuration(1000);
         tabPanel.getElement().getStyle().setMarginBottom(10.0, Unit.PX);
         return tabPanel;

@@ -249,7 +249,7 @@ public class Controller {
 		else if (180 < intModId && intModId < 185) {
 			modImage = new Image("images/modules/medical.jpg");
 			modImage.setHeight(Variables.px150);
-			modImage.setWidth(Variables.px150);
+			modImage.setWidth(Variables.px150); 
 			Variables.mapPanel.add(modImage);
 		} // if
 
