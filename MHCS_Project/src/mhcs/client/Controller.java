@@ -372,7 +372,9 @@ public class Controller {
 		                minConfigAlert.show();
 		                Variables.minConfigSound().play();
 		            } // if minConfig
-					Variables.moduleSavedSound().play();
+					else {
+						Variables.moduleSavedSound().play();
+					} // else
 				} // if
 				else {
 					Variables.errorSound().play();
@@ -453,7 +455,7 @@ public class Controller {
 	 * @return ClickHandler
 	 */
 	public static ClickHandler loginHandler (final PasswordTextBox passwordEntry, final TabLayoutPanel tabPanel,
-			final String height, final String width, final Audio errorSound) {
+			final Audio errorSound) {
 		return new ClickHandler(){
 	        public void onClick(ClickEvent event) {
 	            if(passwordEntry.getText().equals("guest"))
@@ -481,8 +483,8 @@ public class Controller {
 
 	                // Add an image to the dialog
 	                Image image = new Image("images/error");
-	                image.setHeight(height);
-	                image.setWidth(width);
+	                image.setHeight(Variables.px130);
+	                image.setWidth(Variables.px150);
 	                dialogContents.add(image);
 	                dialogContents.setCellHorizontalAlignment(
 	                    image, HasHorizontalAlignment.ALIGN_CENTER);

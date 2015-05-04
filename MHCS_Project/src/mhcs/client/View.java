@@ -43,7 +43,7 @@ public void onModuleLoad() {
     
     final Button loginButton = Variables.loginButton;
     loginButton.addClickHandler(Controller.loginHandler(Variables.ptbPassword,
-            tabPanel, Variables.px140, Variables.px150, Variables.errorSound()));
+            tabPanel, Variables.errorSound()));
     final Button logoutButton = Variables.logoutButton();
     logoutButton.addClickHandler(Controller.logoutHandler(login));
     
