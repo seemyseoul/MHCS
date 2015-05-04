@@ -1,7 +1,5 @@
 package mhcs.client;
 
-import mhcs.storage.TestCases;
-
 import com.google.gwt.dom.client.Style.Unit;
 import com.google.gwt.media.client.Audio;
 import com.google.gwt.user.client.ui.Button;
@@ -19,7 +17,6 @@ import com.google.gwt.user.client.ui.TabLayoutPanel;
 import com.google.gwt.user.client.ui.TextArea;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.VerticalPanel;
-import com.google.gwt.user.client.ui.Widget;
 
 public class Variables {
     
@@ -296,7 +293,7 @@ public class Variables {
         mSaveButton.setWidth(px300);
         mSaveButton.addClickHandler(Controller.saveButton(Variables.mType(),
                 Variables.mID, Variables.mX(), Variables.mY(), Variables.mCondition(), Variables.mOrientation(),
-                Variables.px140, Variables.px150, Variables.mListBox()));
+                Variables.mListBox()));
         return mSaveButton;
     } // mSaveButton
     
@@ -376,7 +373,6 @@ public class Variables {
     } // keepCalm
     
     public static Image moduleImage() {
-//      Implement getting specific module image based on ModuleID
         moduleImage.setHeight(px500);
         moduleImage.setWidth(px500);
         return moduleImage;

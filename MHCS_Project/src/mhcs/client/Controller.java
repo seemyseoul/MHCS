@@ -188,47 +188,69 @@ public class Controller {
 		} // if
 		else {
 			modImage = new Image("images/blank");
-			Variables.moduleImage = modImage;
+			modImage.setHeight(Variables.px150);
+			modImage.setWidth(Variables.px150);
+			Variables.mapPanel.add(modImage);
 		} // else
 		if (0 < intModId && intModId < 41) {
 			modImage = new Image("images/modules/plain.jpg");
-			Variables.moduleImage = modImage;
+			modImage.setHeight(Variables.px150);
+			modImage.setWidth(Variables.px150);
+			Variables.mapPanel.add(modImage);
 		} // if
 		else if (60 < intModId && intModId < 81) {
 			modImage = new Image("images/modules/dormitory.jpg");
-			Variables.moduleImage = modImage;
+			modImage.setHeight(Variables.px150);
+			modImage.setWidth(Variables.px150);
+			Variables.mapPanel.add(modImage);
 		} // if
 		else if (90 < intModId && intModId < 101) {
 			modImage = new Image("images/modules/sanitation.jpg");
-			Variables.moduleImage = modImage;
+			modImage.setHeight(Variables.px150);
+			modImage.setWidth(Variables.px150);
+			Variables.mapPanel.add(modImage);
 		} // if
 		else if (110 < intModId && intModId < 121) {
 			modImage = new Image("images/modules/foodWaterStorage.jpg");
-			Variables.moduleImage = modImage;
+			modImage.setHeight(Variables.px150);
+			modImage.setWidth(Variables.px150);
+			Variables.mapPanel.add(modImage);
 		} // if
 		else if (130 < intModId && intModId < 135) {
 			modImage = new Image("images/modules/gymRelaxation.jpg");
-			Variables.moduleImage = modImage;
+			modImage.setHeight(Variables.px150);
+			modImage.setWidth(Variables.px150);
+			Variables.mapPanel.add(modImage);
 		} // if
 		else if (140 < intModId && intModId < 145) {
 			modImage = new Image("images/modules/canteen.jpg");
-			Variables.moduleImage = modImage;
+			modImage.setHeight(Variables.px150);
+			modImage.setWidth(Variables.px150);
+			Variables.mapPanel.add(modImage);
 		} // if
 		else if (150 < intModId && intModId < 155) {
 			modImage = new Image("images/modules/power.jpg");
-			Variables.moduleImage = modImage;
+			modImage.setHeight(Variables.px150);
+			modImage.setWidth(Variables.px150);
+			Variables.mapPanel.add(modImage);
 		} // if
 		else if (160 < intModId && intModId < 165) {
 			modImage = new Image("images/modules/control.jpg");
-			Variables.moduleImage = modImage;
+			modImage.setHeight(Variables.px150);
+			modImage.setWidth(Variables.px150);
+			Variables.mapPanel.add(modImage);
 		} // if
 		else if (170 < intModId && intModId < 175) {
 			modImage = new Image("images/modules/airlock.jpg");
-			Variables.moduleImage = modImage;
+			modImage.setHeight(Variables.px150);
+			modImage.setWidth(Variables.px150);
+			Variables.mapPanel.add(modImage);
 		} // if
 		else if (180 < intModId && intModId < 185) {
 			modImage = new Image("images/modules/medical.jpg");
-			Variables.moduleImage = modImage;
+			modImage.setHeight(Variables.px150);
+			modImage.setWidth(Variables.px150);
+			Variables.mapPanel.add(modImage);
 		} // if
 
 	} // setModuleImage
@@ -300,8 +322,7 @@ public class Controller {
 	 */
 	public static ClickHandler saveButton(final ListBox moduleType, final TextBox moduleID,
 			final TextBox xTextBox, final TextBox yTextBox, final ListBox moduleCondition,
-			final ListBox moduleOrientation, final String str1,
-			final String str2, final ListBox modulesListBox) {
+			final ListBox moduleOrientation, final ListBox modulesListBox) {
 		return new ClickHandler(){
 			@Override
 			public void onClick(ClickEvent event) {
@@ -318,6 +339,8 @@ public class Controller {
 			    status = ModuleStatus.getStatusFromUserString(moduleCondition.getItemText(moduleCondition.getSelectedIndex()));
 			    orientation = moduleOrientation.getSelectedIndex();
 				inUse = false;
+				
+				
 				
 				if(Model.saveModule(new Module(type,id,coordinates,status,orientation,inUse))) {
 					if(ConfigurationBuilder.minConfigPossible() && !Variables.minConfigReached()){
@@ -337,18 +360,12 @@ public class Controller {
 		                    details, HasHorizontalAlignment.ALIGN_CENTER);
 
 		                // Add an image to the dialog
-		                Image min1 = new Image("images/min1");
-		                min1.setHeight(str1);
-		                min1.setWidth(str2);
+		                Image min1 = new Image("images/yay");
+		                min1.setHeight(Variables.px130);
+		                min1.setWidth(Variables.px150);
 		                dialogContents.add(min1);
-		                Image min2 = new Image("images/min2");
-		                min2.setHeight(str1);
-		                min2.setWidth(str2);
-		                dialogContents.add(min2);
 		                dialogContents.setCellHorizontalAlignment(
 		                    min1, HasHorizontalAlignment.ALIGN_LEFT);
-		                dialogContents.setCellHorizontalAlignment(
-		                	min2, HasHorizontalAlignment.ALIGN_RIGHT);
 
 		                // Add a close button at the bottom of the dialog
 		                Button closeButton = new Button(
@@ -534,14 +551,14 @@ public class Controller {
 	    moduleCondition.addItem("Beyond Repair");
 	} // populateCondition
 	
-	public static void populateConfigListBox(final ListBox cListBox)
-	{
+	public static void populateConfigListBox(final ListBox cListBox) {
 		cListBox.clear();
-		for (Configuration c : ConfigurationBuilder.generateConfigurations())
-		{
-			cListBox.addItem(c.toString());
-		}
-	}
+		for (Configuration c : ConfigurationBuilder.generateConfigurations()) {
+			if (c != null) {
+				cListBox.addItem(c.toString());
+			} // if
+		} // for
+	} // populateConfigListBox
 	
 	/**
 	 * Populates the Orientaion ListBox on Modules Page.
