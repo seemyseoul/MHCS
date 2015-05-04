@@ -534,6 +534,15 @@ public class Controller {
 	    moduleCondition.addItem("Beyond Repair");
 	} // populateCondition
 	
+	public static void populateConfigListBox(final ListBox cListBox)
+	{
+		cListBox.clear();
+		for (Configuration c : ConfigurationBuilder.generateConfigurations())
+		{
+			cListBox.addItem(c.toString());
+		}
+	}
+	
 	/**
 	 * Populates the Orientaion ListBox on Modules Page.
 	 * @param moduleOrientation

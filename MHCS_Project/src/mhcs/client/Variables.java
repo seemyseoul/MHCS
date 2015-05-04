@@ -439,7 +439,7 @@ public class Variables {
         cListBox.setVisibleItemCount(10);
         cListBox.setHeight(px650);
         cListBox.setWidth(px300);
-        // Populate ListBox from Controller
+        Controller.populateConfigListBox(cListBox);
         return cListBox;
     } // cListBox
     
