@@ -20,7 +20,7 @@ public class Map {
 	    } // for
 	    
 	    deadZone();
-	} // ctor
+	} // ctor 
 	
 	public void deadZone() {
 		for (int row = 0; row < 40; ++row) {
