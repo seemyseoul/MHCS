@@ -149,8 +149,8 @@ public class Variables {
     } // confirmPassword
     
     public static ScrollPanel mapPanel() {
-        mapPanel.setHeight(px560); 
-        mapPanel.setWidth(px1000);
+        mapPanel.setHeight(px600); 
+        mapPanel.setWidth(px1200);
 //        mapPanel.add(mapImage());
         mapPanel.add(map.g);
         return mapPanel;
@@ -572,6 +572,7 @@ public class Variables {
     public final static String px650 = "650px";
     public final static String px800 = "800px";
     public final static String px1000 = "1000px";
+    public final static String px1200 = "1200px";
     public final static String px1500 = "1500px";
     public final static String px2000 = "2000px";
     
