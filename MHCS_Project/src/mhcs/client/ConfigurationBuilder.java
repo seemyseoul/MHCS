@@ -110,7 +110,7 @@ public class ConfigurationBuilder {
 	public static final List<Configuration> generateConfigurations() {
 		int numPlainModules = Model.getUnusedUsableModulesOfType(ModuleType.PLAIN).size();
 		
-		List<Configuration> hConfigs = generateHConfigurations(numPlainModules);
+//		List<Configuration> hConfigs = generateHConfigurations(numPlainModules);
 //		List<Configuration> plusConfigs = generatePlusConfigurations(numPlainModules);
 //		List<Configuration> lConfigs = generateLConfigurations(numPlainModules);
 		
