@@ -4,7 +4,6 @@ import java.util.List;
 
 import com.google.gwt.user.client.ui.Grid;
 import com.google.gwt.user.client.ui.Image;
-import com.google.gwt.user.client.ui.TextBox;
 
 public class Map {
 	/**
@@ -25,7 +24,7 @@ public class Map {
 		Point coordinates = module.getCoordinates();
 		int x = coordinates.getX();
 		int y = coordinates.getY();
-		map.setWidget(x, y, module.getImage());
+		map.setWidget(x+1, y+49, module.getImage());
 	} // placeModule
 
 	private void setWidget(int x, int y, Image image) {
