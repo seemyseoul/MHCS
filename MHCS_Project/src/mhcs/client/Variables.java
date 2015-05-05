@@ -227,11 +227,11 @@ public class Variables {
     
     public static VerticalPanel settingsPasswordVpanel() {
         settingsPassVpanel.add(passEnabled());
-        settingsPassVpanel.add(changePassword);
-        settingsPassVpanel.add(currentPassword());
-        settingsPassVpanel.add(newPassword());
-        settingsPassVpanel.add(confirmPassword());
-        settingsPassVpanel.add(savePassButton());
+//        settingsPassVpanel.add(changePassword);
+//        settingsPassVpanel.add(currentPassword());
+//        settingsPassVpanel.add(newPassword());
+//        settingsPassVpanel.add(confirmPassword());
+//        settingsPassVpanel.add(savePassButton());
         settingsPassVpanel.setSpacing(intPanelSpacing1);
         return settingsPassVpanel;
     } // settingsVpanel
