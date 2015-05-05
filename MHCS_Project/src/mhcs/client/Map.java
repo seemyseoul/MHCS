@@ -17,7 +17,7 @@ public class Map {
 	        g.setWidget(row, col, Variables.blankImage());
 	        g.setBorderWidth(1);
 	        g.setCellPadding(1);
-	      } // for
+	      } // for 
 	    } // for
 	    
 	    for (int row = 0; row < 40; ++row) {

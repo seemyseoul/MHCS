@@ -370,7 +370,7 @@ public class Variables {
         logo.setWidth(px130);
         return logo;
     } // weatherImage
-    
+     
     public static Image blankImage() {
         final Image blank = new Image("images/blank");
         blank.setHeight(px20);
