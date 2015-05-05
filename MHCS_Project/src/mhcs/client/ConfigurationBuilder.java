@@ -108,29 +108,27 @@ public class ConfigurationBuilder {
 	 * @return an array of ALL Configurations.
 	 */
 	public static final List<Configuration> generateConfigurations() {
+		int numPlainModules = Model.getUnusedUsableModulesOfType(ModuleType.PLAIN).size();
 		
-//		int numPlainModules = Model.getUnusedUsableModulesOfType(ModuleType.PLAIN).size();
-//		
-//		List<Configuration> hConfigs = generateHConfigurations(numPlainModules);
-//		List<Configuration> plusConfigs = generatePlusConfigurations(numPlainModules);
-//		List<Configuration> lConfigs = generateLConfigurations(numPlainModules);
-//		
-//		List<Configuration> configurations = new ArrayList<Configuration>();
-//		for (Configuration c : hConfigs) {
-//			configurations.add(c);
-//		}
-//		for (Configuration c : plusConfigs) {
-//			configurations.add(c);
-//		}
-//		for (Configuration c : lConfigs) {
-//			configurations.add(c);
-//		}
-//		
-//		return configurations;
-		List<Configuration> configs = new ArrayList<Configuration>();
-		configs.add(generateMinConfiguration1());
-		configs.add(generateMinConfiguration2());
-		return configs;
+		List<Configuration> hConfigs = generateHConfigurations(numPlainModules);
+		List<Configuration> plusConfigs = generatePlusConfigurations(numPlainModules);
+		List<Configuration> lConfigs = generateLConfigurations(numPlainModules);
+		
+		List<Configuration> configurations = new ArrayList<Configuration>();
+		for (Configuration c : hConfigs) {
+			configurations.add(c);
+		}
+		for (Configuration c : plusConfigs) {
+			configurations.add(c);
+		}
+		for (Configuration c : lConfigs) {
+			configurations.add(c);
+		}
+		
+		
+		configurations.add(generateMinConfiguration1());
+		configurations.add(generateMinConfiguration2());
+		return configurations;
 	}
 
 	/**
