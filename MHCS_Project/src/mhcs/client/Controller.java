@@ -705,7 +705,7 @@ public class Controller {
 	 * @param lb
 	 * @return ChangeHandler
 	 */
-	public static ChangeHandler testCases(final ListBox lb){
+	public static ChangeHandler testCases(final ListBox lb, final Map map){
 		return new ChangeHandler() {
 			public void onChange(ChangeEvent event) {
 				int testNum = lb.getSelectedIndex();
@@ -718,6 +718,12 @@ public class Controller {
 					Variables.mListBox().clear();
 					Variables.cListBox().clear();
 				}
+				
+				List<Module> modules = Model.getModuleList();
+				for (int i = 0; i < modules.size(); i++) {
+					map.placeModules(map, modules.get(i));
+				} // for				
+				
 			} //onChange
 		};
 	} // testCases
