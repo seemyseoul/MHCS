@@ -16,6 +16,7 @@ import mhcs.storage.Model;
 public final class Configuration implements Cloneable{
 	private List<Module> modules = new ArrayList<Module>();
 	private int id = -1;
+	private static int numConfigs = 0;
 
 	public Configuration clone()
 	{
@@ -105,6 +106,8 @@ public final class Configuration implements Cloneable{
 	 * empty constructor.
 	 */
 	public Configuration() {
+		this.id = this.numConfigs;
+		numConfigs++;
 	}
 
 	/**

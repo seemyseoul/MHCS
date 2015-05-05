@@ -23,6 +23,7 @@ import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.HasHorizontalAlignment;
 import com.google.gwt.user.client.ui.Image;
 import com.google.gwt.user.client.ui.ListBox;
+import com.google.gwt.user.client.ui.Panel;
 import com.google.gwt.user.client.ui.PasswordTextBox;
 import com.google.gwt.user.client.ui.RootLayoutPanel;
 import com.google.gwt.user.client.ui.TabLayoutPanel;
@@ -559,7 +560,12 @@ public class Controller {
 		cListBox.clear();
 		for (Configuration c : ConfigurationBuilder.generateConfigurations()) {
 			if (c != null) {
-				cListBox.addItem(c.toString());
+				
+				for (Module m : c.getModules())
+				{
+					
+				}
+				cListBox.addItem();
 			} // if
 		} // for
 	} // populateConfigListBox
