@@ -155,14 +155,17 @@ public class ConfigurationBuilder {
 		Configuration baseConfig = new Configuration();
 		
 		Module centerModule = Model.getUnusedUsableModuleClosestTo(Model.getCenterOfMass(),ModuleType.PLAIN,baseConfig);
-		if(centerModule != null)
+		Point center;
+		if(centerModule == null)
 		{
-			centerModule.setInUse(true);
-			centerModule.setCoordinates(Model.getCenterOfMass());
-			baseConfig.addModule(centerModule);
+			return null;
 		}
 		
-		Point center = centerModule.getCoordinates();
+		centerModule.setInUse(true);
+		centerModule.setCoordinates(Model.getCenterOfMass());
+		baseConfig.addModule(centerModule);
+		center = centerModule.getCoordinates();
+		
 		for (int i=1;i<=(numPlainModules / 6);i++)
 		{  // this for loop places the horizontal part of the H Configuration
 			Module closestRightPlain = Model.getUnusedUsableModuleClosestTo(new Point(center.getX()+i,center.getY()),ModuleType.PLAIN,baseConfig);
