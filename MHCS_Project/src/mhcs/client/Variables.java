@@ -378,6 +378,13 @@ public class Variables {
         return blank;
     } // blankImage
     
+    public static Image deadImage() {
+        final Image deadSpace = new Image("images/deadSpace");
+        deadSpace.setHeight(px20);
+        deadSpace.setWidth(px20);
+        return deadSpace;
+    } // blankImage
+    
     public static ListBox lb() {
         return new ListBox();
     } // lb

@@ -19,6 +19,12 @@ public class Map {
 	        g.setCellPadding(1);
 	      } // for
 	    } // for
+	    
+	    for (int row = 0; row < 40; ++row) {
+	    	for (int col = 39; col < 49; ++col) {
+	    		g.setWidget(row, col, Variables.deadImage());
+	    	} // for
+	    } // for
 	} // ctor
 	
 	public void placeModules(Map map, Module module) {
