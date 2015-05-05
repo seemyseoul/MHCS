@@ -59,11 +59,10 @@ public class Variables {
         c.setSize(px1500, px600);
         c.add(htmlConfigs, DockPanel.NORTH);
         c.add(htmlSouth, DockPanel.SOUTH);
-        c.add(cListBox(), DockPanel.WEST);
+        c.add(configWestVpanel(), DockPanel.WEST);
         c.add(mapPanel(), DockPanel.CENTER);
-//        c.add(mapImage(), DockPanel.CENTER);
+        c.add(mapImage(), DockPanel.CENTER);
         c.add(htmlMap, DockPanel.NORTH);
-        c.add(configHpanel(), DockPanel.SOUTH);
         return c;
     } // configDock
     
@@ -105,13 +104,6 @@ public class Variables {
         moduleCoordinates.add(Variables.yPanel());
         return moduleCoordinates;
     } // moduleCoordinates
-    
-    public static HorizontalPanel configHpanel() {
-        configHpanel.add(Variables.roverPathButton());
-        configHpanel.add(Variables.removeConfigButton());
-        configHpanel.add(Variables.buildConfigButton());
-        return configHpanel;
-    } // configHzPanel
     
     public static HorizontalPanel usersPanel() {
         usersPanel.add(usersListBox());
@@ -225,13 +217,19 @@ public class Variables {
         return modulesY;
     } // yPanel
     
+    public static VerticalPanel configWestVpanel() {
+    	configWestPanel.add(cListBox());
+    	configWestPanel.add(removeConfigButton());
+    	return configWestPanel;
+    } // configWestVpanel
+    
     public static VerticalPanel settingsPasswordVpanel() {
         settingsPassVpanel.add(passEnabled());
 //        settingsPassVpanel.add(changePassword);
 //        settingsPassVpanel.add(currentPassword());
 //        settingsPassVpanel.add(newPassword());
 //        settingsPassVpanel.add(confirmPassword());
-//        settingsPassVpanel.add(savePassButton());
+        settingsPassVpanel.add(savePassButton());
         settingsPassVpanel.setSpacing(intPanelSpacing1);
         return settingsPassVpanel;
     } // settingsVpanel
@@ -277,24 +275,11 @@ public class Variables {
         return mSaveButton;
     } // mSaveButton
     
-    public static Button roverPathButton() {
-        roverPath.setHeight(px50);
-        roverPath.setWidth(px340);
-        return roverPath;
-    } // roverPathButton
-    
     public static Button removeConfigButton() {
         removeConfig.setHeight(px50);
-        removeConfig.setWidth(px340);
+        removeConfig.setWidth(px300);
         return removeConfig;
     } // removeConfigButton
-    
-    public static Button buildConfigButton() {
-        buildConfig.setHeight(px50);
-        buildConfig.setWidth(px340);
-        return buildConfig;
-    } // buildConfigButton
-    
     public static Button addUserButton() {
         addUser.setHeight(px20);
         addUser.setWidth(px140);
@@ -615,6 +600,7 @@ public class Variables {
     final static VerticalPanel modulesEast = Variables.vertical();
     final static VerticalPanel modulesX = Variables.vertical();
     final static VerticalPanel modulesY = Variables.vertical();
+    final static VerticalPanel configWestPanel = Variables.vertical();
     final static VerticalPanel configVpanel = Variables.vertical();
     final static VerticalPanel settingsPassVpanel = Variables.vertical();
     final static VerticalPanel settingsVpanel = Variables.vertical();
