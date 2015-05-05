@@ -235,15 +235,16 @@ public class ConfigurationBuilder {
 			}
 		}
 		
-		for(int i=0;i<5;i++) // generate 5 configurations of H-type
-		{
-			Configuration config = baseConfig.clone();
-			config.randomlyFill();
-			config.makeGood();
-			config.makeInBounds();
-			configs.add(config);
-		}
+//		for(int i=0;i<5;i++) // generate 5 configurations of H-type
+//		{
+//			Configuration config = baseConfig.clone();
+//			config.randomlyFill();
+//			config.makeGood();
+//			config.makeInBounds();
+//			configs.add(config);
+//		}
 		
+		configs.add(baseConfig);
 		return configs;
 	}
 	
