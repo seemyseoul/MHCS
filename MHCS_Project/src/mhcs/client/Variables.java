@@ -554,7 +554,7 @@ public class Variables {
         testCases.addItem("Test Case 10");  
         testCases.setVisibleItemCount(1);
         testCases.setWidth(px300); 
-        testCases.addChangeHandler(Controller.testCases(testCases));
+        testCases.addChangeHandler(Controller.testCases(testCases, map));
         return testCases;
     } // testCases
     
