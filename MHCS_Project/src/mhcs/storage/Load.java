@@ -10,6 +10,7 @@ import mhcs.client.ModuleType;
 import mhcs.client.Point;
 
 import com.google.gwt.storage.client.Storage;
+import com.google.gwt.user.client.Window;
 
 public class Load {
 
@@ -57,11 +58,12 @@ public class Load {
 	private void loadConfigurations() {
 		Configuration newConfig = null;
 		if (stockStore.getItem("intConfigCount") != null){			
-		for (int i = 0; i <= Integer.parseInt(stockStore
+		for (int i = 0; i < Integer.parseInt(stockStore
 				.getItem("intConfigCount")); i++) {
 			newConfig = new Configuration(stockStore.getItem("C"
 					+ Integer.toString(i)));
 			configurationList.add(newConfig);
+//			Window.alert(Integer.toString(i));
 			}
 		}
 	}

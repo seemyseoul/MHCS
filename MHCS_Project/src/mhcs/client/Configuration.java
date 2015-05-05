@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.google.gwt.user.client.Random;
+import com.google.gwt.user.client.Window;
 
 import mhcs.storage.Model;
 
@@ -118,10 +119,12 @@ public final class Configuration implements Cloneable{
 	 */
 	public Configuration(String configString) {
 		String[] moduleStrings = configString.split(";");
-		this.id = Integer.parseInt(moduleStrings[0]);
-
-		for (int i = 1; i < moduleStrings.length; i++) {
-			modules.add(new Module(moduleStrings[i]));
+		if(moduleStrings != null)
+		{
+			this.id = Integer.parseInt(moduleStrings[0]);
+			for (int i = 1; i < moduleStrings.length; i++) {
+				modules.add(new Module(moduleStrings[i]));
+			}
 		}
 	}
 

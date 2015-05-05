@@ -153,6 +153,17 @@ public class Model {
 		return moduleList1;
 	}
 	
+	public static List<Configuration> getConfigList()
+	{
+		ArrayList<Configuration> configList1 = new ArrayList<Configuration>();
+		for (Configuration c : configList)
+		{
+			configList1.add(c.clone());
+		}
+		return configList1;
+	}
+	
+	
 	/**
 	 * Returns the list of unused modules.
 	 * 
@@ -200,6 +211,11 @@ public class Model {
 		toSave.saveModules(moduleList);
 	}
 
+	public static void setConfigList(List<Configuration> configListParam)
+	{
+		configList = configListParam;
+		toSave.saveConfigurations(configList);
+	}
 	/**
 	 * Returns the password.
 	 * 

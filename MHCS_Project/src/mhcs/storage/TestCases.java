@@ -7,6 +7,7 @@ package mhcs.storage;
 import java.util.List;
 
 import mhcs.client.ConfigurationBuilder;
+import mhcs.client.Controller;
 import mhcs.client.Map;
 import mhcs.client.Module;
 import mhcs.client.ModuleStatus;
@@ -223,6 +224,7 @@ public class TestCases {
 			map.placeModules(map, modules.get(i));
 		} // for
 		
+		Controller.populateConfigListBox(Variables.cListBox());
 		
 	} //update
 

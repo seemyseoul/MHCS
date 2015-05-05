@@ -97,26 +97,31 @@ public class ConfigurationBuilder {
 	 * @return an array of ALL Configurations.
 	 */
 	public static final List<Configuration> generateConfigurations() {
+		if (!minConfigPossible())
+		{
+			return new ArrayList<Configuration>();
+		}
 		int numPlainModules = Model.getUnusedUsableModulesOfType(ModuleType.PLAIN).size();
 		
-//		List<Configuration> hConfigs = generateHConfigurations(numPlainModules);
-//		List<Configuration> plusConfigs = generatePlusConfigurations(numPlainModules);
-//		List<Configuration> lConfigs = generateLConfigurations(numPlainModules);
-//		
+		List<Configuration> hConfigs = generateHConfigurations(numPlainModules);
+		List<Configuration> plusConfigs = generatePlusConfigurations(numPlainModules);
+		List<Configuration> lConfigs = generateLConfigurations(numPlainModules);
+		
 		List<Configuration> configurations = new ArrayList<Configuration>();
-//		for (Configuration c : hConfigs) {
-//			configurations.add(c);
-//		}
-//		for (Configuration c : plusConfigs) {
-//			configurations.add(c);
-//		}
-//		for (Configuration c : lConfigs) {
-//			configurations.add(c);
-//		}
-//		
-//		
-//		configurations.add(generateMinConfiguration1());
-//		configurations.add(generateMinConfiguration2());
+		for (Configuration c : hConfigs) {
+			configurations.add(c);
+		}
+		for (Configuration c : plusConfigs) {
+			configurations.add(c);
+		}
+		for (Configuration c : lConfigs) {
+			configurations.add(c);
+		}
+		
+		
+		configurations.add(generateMinConfiguration1());
+		configurations.add(generateMinConfiguration2());
+		Model.setConfigList(configurations);
 		return configurations;
 	}
 
@@ -230,9 +235,9 @@ public class ConfigurationBuilder {
 		for(int i=0;i<5;i++) // generate 5 configurations of H-type
 		{
 			Configuration config = baseConfig.clone();
-//			config.randomlyFill();
-//			config.makeGood();
-//			config.makeInBounds();
+			config.randomlyFill();
+			config.makeGood();
+			config.makeInBounds();
 			configs.add(config);
 		}
 		
@@ -250,12 +255,14 @@ public class ConfigurationBuilder {
 		
 		Module centerModule = Model.getUnusedUsableModuleClosestTo(Model.getCenterOfMass(),ModuleType.PLAIN,baseConfig);
 		
-		if(centerModule != null)
+		if(centerModule == null)
 		{
-			centerModule.setInUse(true);
-			centerModule.setCoordinates(Model.getCenterOfMass());
-			baseConfig.addModule(centerModule);
+			return null;
 		}
+		
+		centerModule.setInUse(true);
+		centerModule.setCoordinates(Model.getCenterOfMass());
+		baseConfig.addModule(centerModule);
 		
 		Point center = centerModule.getCoordinates();
 		
@@ -333,12 +340,14 @@ public class ConfigurationBuilder {
 		
 		Module centerModule = Model.getUnusedUsableModuleClosestTo(Model.getCenterOfMass(),ModuleType.PLAIN,baseConfig);
 		
-		if(centerModule != null)
+		if(centerModule == null)
 		{
-			centerModule.setInUse(true);
-			centerModule.setCoordinates(Model.getCenterOfMass());
-			baseConfig.addModule(centerModule);
+			return null;
 		}
+		
+		centerModule.setInUse(true);
+		centerModule.setCoordinates(Model.getCenterOfMass());
+		baseConfig.addModule(centerModule);
 		
 		Point center = centerModule.getCoordinates();
 		

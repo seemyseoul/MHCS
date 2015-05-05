@@ -467,6 +467,23 @@ public class Controller {
 		};
 	} // changeHandler
 	
+	public static ChangeHandler configsListBoxHandler()
+	{
+		return new ChangeHandler() {
+
+			@Override
+			public void onChange(ChangeEvent event) {
+				Variables.map.clearMap();
+				Variables.map.placeConfiguration(Variables.map,Model.getConfigList().get(Variables.cListBox.getSelectedIndex()));
+			}
+		};
+	}
+
+	
+
+	
+	
+	
 	/**
 	 * Returns click handler for the LogIn button on Log In Page.
 	 * @param passwordEntry
@@ -558,7 +575,8 @@ public class Controller {
 	
 	public static void populateConfigListBox(final ListBox cListBox) {
 		cListBox.clear();
-		for (Configuration c : ConfigurationBuilder.generateConfigurations()) {
+		ConfigurationBuilder.generateConfigurations();
+		for (Configuration c : Model.getConfigList()) {
 			if (c != null) {
 				String configString = "";
 				for (Module m : c.getModules())
