@@ -1,7 +1,12 @@
 package mhcs.client;
 
+import mhcs.storage.Model;
+
 import com.google.gwt.dom.client.Style.Unit;
+import com.google.gwt.event.dom.client.ClickEvent;
+import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.media.client.Audio;
+import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.CheckBox;
 import com.google.gwt.user.client.ui.DockPanel;
@@ -219,6 +224,32 @@ public class Variables {
     public static VerticalPanel configWestVpanel() {
     	configWestPanel.add(cListBox());
     	configWestPanel.add(removeConfigButton());
+    	final TextBox xBox = new TextBox();
+    	final TextBox yBox = new TextBox();
+    	Button sButt = new Button("Change Center Of Gravity");
+    	sButt.addClickHandler(new ClickHandler() {
+			@Override
+			public void onClick(ClickEvent event) {
+				int x = Integer.parseInt(xBox.getText());
+				int y = Integer.parseInt(yBox.getText());
+				Configuration c = Model.getConfigList().get(Variables.cListBox().getSelectedIndex());
+				Module centerModule = c.getModules().get(0);
+				int dx = x - centerModule.getCoordinates().getX();
+				int dy = y - centerModule.getCoordinates().getY();
+				for (Module m : c.getModules())
+				{
+					m.setCoordinates(new Point(m.getCoordinates().getX()+dx,m.getCoordinates().getY()+dy));
+				}
+				Variables.map.clearMap();
+//				Window.alert("STUFF");
+//				Variables.map.placeConfiguration(Variables.map, c);
+			}
+    	});
+    	configWestPanel.add(new HTML("X:"));
+    	configWestPanel.add(xBox);
+    	configWestPanel.add(new HTML("Y: "));
+    	configWestPanel.add(yBox);
+    	configWestPanel.add(sButt);
     	return configWestPanel;
     } // configWestVpanel
     
@@ -404,7 +435,7 @@ public class Variables {
     
     public static ListBox cListBox() {
         cListBox.setVisibleItemCount(10);
-        cListBox.setHeight(px650);
+        cListBox.setHeight(px500);
         cListBox.setWidth(px300);
         Controller.populateConfigListBox(cListBox);
         return cListBox;
