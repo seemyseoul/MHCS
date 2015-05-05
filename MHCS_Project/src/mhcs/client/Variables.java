@@ -61,7 +61,6 @@ public class Variables {
         c.add(htmlSouth, DockPanel.SOUTH);
         c.add(configWestVpanel(), DockPanel.WEST);
         c.add(mapPanel(), DockPanel.CENTER);
-        c.add(mapImage(), DockPanel.CENTER);
         c.add(htmlMap, DockPanel.NORTH);
         return c;
     } // configDock
