@@ -59,7 +59,6 @@ public class Variables {
         c.setSize(px1500, px600);
         c.add(htmlConfigs, DockPanel.NORTH);
         c.add(htmlSouth, DockPanel.SOUTH);
-//        c.add(configVpanel(), DockPanel.EAST);
         c.add(cListBox(), DockPanel.WEST);
         c.add(mapPanel(), DockPanel.CENTER);
 //        c.add(map, DockPanel.CENTER);
@@ -162,6 +161,7 @@ public class Variables {
     public static ScrollPanel mapPanel() {
         mapPanel.setHeight(px560);
         mapPanel.setWidth(px1000);
+        mapPanel.add(map.g);
         return mapPanel;
     } // mapPanel
     
@@ -224,25 +224,6 @@ public class Variables {
         modulesY.add(Variables.mY());
         return modulesY;
     } // yPanel
-    
-    public static VerticalPanel configVpanel() {
-        configVpanel.add(Variables.cbAirLock);
-        configVpanel.add(Variables.cbPlain);
-        configVpanel.add(Variables.cbDorm);
-        configVpanel.add(Variables.cbSanitation);
-        configVpanel.add(Variables.cbFoodAndWater);
-        configVpanel.add(Variables.cbGymAndRelax);
-        configVpanel.add(Variables.cbCanteen);
-        configVpanel.add(Variables.cbPower);
-        configVpanel.add(Variables.cbControl);
-        configVpanel.add(Variables.cbMedical);
-        configVpanel.add(Variables.rbSelectAll());
-        configVpanel.add(Variables.rbDeselectAll());
-        configVpanel.setHeight(px600);
-        configVpanel.setWidth(px150);
-        configVpanel.setVerticalAlignment(VerticalPanel.ALIGN_MIDDLE);
-        return configVpanel;
-    } // configVpanel
     
     public static VerticalPanel settingsPasswordVpanel() {
         settingsPassVpanel.add(passEnabled());
