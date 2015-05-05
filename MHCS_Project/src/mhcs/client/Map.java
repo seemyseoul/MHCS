@@ -42,14 +42,10 @@ public class Map {
 	
 	public void placeModules(Map map, Module module) {
 		Point coordinates = module.getCoordinates();
-		int x = coordinates.getX();
-		int y = coordinates.getY();
-		map.setWidget(x, y, module.getImage());
+		int x = translateX(coordinates.getX());
+		int y = translateY(coordinates.getY());
+		map.setWidget(y, x, module.getImage());
 	} // placeModule
-
-	private void setWidget(int x, int y, Image image) {
-		g.setWidget(x,y,image);
-	} // setWidget
 
 	public void placeConfiguration(Map map, Configuration config) {
 		List<Module> modules = config.getModules();
@@ -57,6 +53,18 @@ public class Map {
 			map.placeModules(map, modules.get(i));
 		} // for
 	} // placeConfiguration
+	
+	public int translateX(int x) {
+		return x-1;
+	} // translateX
+	
+	public int translateY(int y) {
+		return 50-y;
+	} // translateY
+	
+	private void setWidget(int x, int y, Image image) {
+		g.setWidget(x,y,image);
+	} // setWidget
 	
 	Grid g = new Grid(50, 100);
 	
