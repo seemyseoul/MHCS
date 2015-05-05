@@ -199,6 +199,24 @@ public class Model {
 		}
 		return moduleList1;
 	}
+	
+	/**
+	 * Returns the list of unused but usable modules.
+	 * 
+	 * @return the moduleList. (It should return a copy as to not allow changes
+	 *         to be made accidentally)
+	 */
+	@SuppressWarnings("unchecked")
+	public static List<Module> getUnusedUsableModuleList(Configuration c) {
+		List<Module> moduleList1 = getModuleList();
+		for (Module m : moduleList1)
+		{
+			if (m.isInUse() || m.getStatus().equals(ModuleStatus.BEYONDREPAIR) || c.getModules().contains(m)){
+				moduleList1.remove(m);
+			}
+		}
+		return moduleList1;
+	}
 
 	/**
 	 * Returns the module list.
