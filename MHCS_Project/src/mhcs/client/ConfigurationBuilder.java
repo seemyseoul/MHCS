@@ -102,7 +102,7 @@ public class ConfigurationBuilder {
 			return new ArrayList<Configuration>();
 		}
 		int numPlainModules = Model.getUnusedUsableModulesOfType(ModuleType.PLAIN).size();
-		
+		Window.alert(Integer.toString(numPlainModules));
 		List<Configuration> hConfigs = generateHConfigurations(numPlainModules);
 		List<Configuration> plusConfigs = generatePlusConfigurations(numPlainModules);
 		List<Configuration> lConfigs = generateLConfigurations(numPlainModules);
@@ -119,8 +119,14 @@ public class ConfigurationBuilder {
 		}
 		
 		
-		configurations.add(generateMinConfiguration1());
-		configurations.add(generateMinConfiguration2());
+		Configuration minConfig1 = generateMinConfiguration1();
+		Configuration minConfig2 = generateMinConfiguration2();
+		
+		minConfig1.makeInBounds();
+		minConfig2.makeInBounds();
+		
+		configurations.add(minConfig1);
+		configurations.add(minConfig2);
 		Model.setConfigList(configurations);
 		return configurations;
 	}
@@ -162,12 +168,14 @@ public class ConfigurationBuilder {
 		
 		for (int i=1;i<=(numPlainModules / 6);i++)
 		{  // this for loop places the horizontal part of the H Configuration
+			Window.alert("For Loop #1");
 			Module closestRightPlain = Model.getUnusedUsableModuleClosestTo(new Point(center.getX()+i,center.getY()),ModuleType.PLAIN,baseConfig);
 			if (closestRightPlain != null)
 			{
 				closestRightPlain.setInUse(true);
 				closestRightPlain.setCoordinates(new Point(center.getX()+i,center.getY()));
 				baseConfig.addModule(closestRightPlain);
+				Window.alert("closestRightPlain");
 			}
 			Module closestLeftPlain = Model.getUnusedUsableModuleClosestTo(new Point(center.getX()-i,center.getY()),ModuleType.PLAIN,baseConfig);
 			if (closestLeftPlain != null)
@@ -175,12 +183,14 @@ public class ConfigurationBuilder {
 				closestLeftPlain.setInUse(true);
 				closestLeftPlain.setCoordinates(new Point(center.getX()-i,center.getY()));
 				baseConfig.addModule(closestLeftPlain);
+				Window.alert("closestLeftPlain");
 			}
 		}
 		
 		for (int j=1;j<=(numPlainModules / 6);j++)
 		{   // this loop should place the vertical parts of the H Configuration.
 			// Upper Right part of H config
+			Window.alert("For Loop #2");
 			Module closestUpRightPlain = Model.getUnusedUsableModuleClosestTo(new Point(center.getX()+(numPlainModules/6),center.getY()+j),ModuleType.PLAIN,baseConfig);
 			if (closestUpRightPlain != null)
 			{
@@ -216,16 +226,18 @@ public class ConfigurationBuilder {
 		
 		for (int x=0;x < (numPlainModules % 6);x++)
 		{   // do something with leftover plain modules.  Add them to the right of the center.
-			for (Module m : baseConfig.getModules())
-			{
-				if(m.getCoordinates().getX() > center.getX())
-				{
-					m.setCoordinates(new Point(m.getCoordinates().getX()+1,m.getCoordinates().getY()));
-				}
-			}
-			Module leftOverPlain = Model.getUnusedModuleClosestTo(center,ModuleType.PLAIN);
+			Module leftOverPlain = null;
+			leftOverPlain = Model.getUnusedUsableModuleClosestTo(center,ModuleType.PLAIN,baseConfig);
+			Window.alert("leftOverPlain");
 			if (leftOverPlain != null)
 			{
+				for (Module m : baseConfig.getModules())
+				{
+					if(m.getCoordinates().getX() > center.getX())
+					{
+						m.setCoordinates(new Point(m.getCoordinates().getX()+1,m.getCoordinates().getY()));
+					}
+				}
 				leftOverPlain.setInUse(true);
 				leftOverPlain.setCoordinates(new Point(center.getX()+1,center.getY()));
 				baseConfig.addModule(leftOverPlain);
@@ -307,7 +319,7 @@ public class ConfigurationBuilder {
 					m.setCoordinates(new Point(m.getCoordinates().getX()+1,m.getCoordinates().getY()));
 				}
 			}
-			Module leftOverPlain = Model.getUnusedModuleClosestTo(center,ModuleType.PLAIN);
+			Module leftOverPlain = Model.getUnusedUsableModuleClosestTo(center,ModuleType.PLAIN,baseConfig);
 			if (leftOverPlain != null)
 			{
 				leftOverPlain.setInUse(true);
@@ -378,7 +390,7 @@ public class ConfigurationBuilder {
 					m.setCoordinates(new Point(m.getCoordinates().getX()+1,m.getCoordinates().getY()));
 				}
 			}
-			Module leftOverPlain = Model.getUnusedModuleClosestTo(center,ModuleType.PLAIN);
+			Module leftOverPlain = Model.getUnusedUsableModuleClosestTo(center,ModuleType.PLAIN,baseConfig);
 			if (leftOverPlain != null)
 			{
 				leftOverPlain.setInUse(true);

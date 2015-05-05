@@ -390,9 +390,10 @@ public class Module implements Cloneable {
 	public boolean equals(Object o)
 	{
 		Module m = (Module) o;
-		return (id == m.getId() && type == m.getType() &&
-				status == m.getStatus() && orientation == m.getOrientation() && 
-				getCoordinates() == m.getCoordinates() && inUse == m.isInUse());
+//		return (id == m.getId() && type == m.getType() &&
+//				status == m.getStatus() && orientation == m.getOrientation() && 
+//				getCoordinates() == m.getCoordinates() && inUse == m.isInUse());
+		return id == m.getId();
 	}
 	
 	
