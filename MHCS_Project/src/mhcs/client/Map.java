@@ -30,6 +30,16 @@ public class Map {
 	    } // for
 	} // deadZone
 	
+	public void clearMap() {
+		for (int row = 0; row < 50; ++row) {
+		      for (int col = 0; col < 100; ++col) {
+		        g.setWidget(row, col, Variables.blankImage());
+		      } // for
+		    } // for
+		    
+		    deadZone();
+	} // clearMap
+	
 	public void placeModules(Map map, Module module) {
 		Point coordinates = module.getCoordinates();
 		int x = coordinates.getX();
