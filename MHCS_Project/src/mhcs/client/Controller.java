@@ -15,6 +15,8 @@ import com.google.gwt.event.dom.client.MouseDownEvent;
 import com.google.gwt.event.dom.client.MouseDownHandler;
 import com.google.gwt.event.dom.client.MouseMoveEvent;
 import com.google.gwt.event.dom.client.MouseMoveHandler;
+import com.google.gwt.event.dom.client.MouseUpEvent;
+import com.google.gwt.event.dom.client.MouseUpHandler;
 import com.google.gwt.i18n.client.DateTimeFormat;
 import com.google.gwt.i18n.client.LocaleInfo;
 import com.google.gwt.i18n.client.TimeZone;
@@ -664,23 +666,35 @@ public class Controller {
 	 * Returns mouse down handler for drag and drop functionality.
 	 * @return MouseDownHandler
 	 */
-	public static MouseDownHandler dragDrop(Image moduleImage) {
+	public static MouseDownHandler dragDropDown(final Map map, final Module module) {
 		return new MouseDownHandler() {
 			public void onMouseDown(MouseDownEvent event) {
-				moduleImage.addMouseMoveHandler(Controller.dragDropMove(moduleImage));
+				module.getImage().addMouseMoveHandler(Controller.dragDropMove(map, module));
 			} // onMouseDown
 		};
 	} // dragDrop
 	
-	public static MouseMoveHandler dragDropMove(Image moduleImage) {
+	public static MouseMoveHandler dragDropMove(final Map map, final Module module) {
 		return new MouseMoveHandler() {
 			public void onMouseMove(MouseMoveEvent event) {
 				Point current = new Point(0, 0);
+				Module temp = module;
 				current.setX(event.getClientX());
 				current.setY(event.getClientY());
+				temp.setCoordinates(current);
+				map.placeModules(map, temp);
+				temp.getImage().addMouseUpHandler(Controller.dragDropUp(map, module));
 			} // onMouseMove
 		};
 	} // dragDropMove
+	
+	public static MouseUpHandler dragDropUp(final Map map, final Module module) {
+		return new MouseUpHandler() {
+			public void onMouseUp(MouseUpEvent event) {
+				map.placeModules(map, module);
+			} // onMouseUp
+		};
+	} // dragDropUp
 	
 	public static void tenDayCheck(){
 		if (Model.getTime() != null){
