@@ -111,20 +111,20 @@ public class ConfigurationBuilder {
 		int numPlainModules = Model.getUnusedUsableModulesOfType(ModuleType.PLAIN).size();
 		
 		List<Configuration> hConfigs = generateHConfigurations(numPlainModules);
-		List<Configuration> plusConfigs = generatePlusConfigurations(numPlainModules);
-		List<Configuration> lConfigs = generateLConfigurations(numPlainModules);
+//		List<Configuration> plusConfigs = generatePlusConfigurations(numPlainModules);
+//		List<Configuration> lConfigs = generateLConfigurations(numPlainModules);
 		
 		List<Configuration> configurations = new ArrayList<Configuration>();
 		for (Configuration c : hConfigs) {
 			configurations.add(c);
 		}
-		for (Configuration c : plusConfigs) {
-			configurations.add(c);
-		}
-		for (Configuration c : lConfigs) {
-			configurations.add(c);
-		}
-		
+//		for (Configuration c : plusConfigs) {
+//			configurations.add(c);
+//		}
+//		for (Configuration c : lConfigs) {
+//			configurations.add(c);
+//		}
+//		
 		
 		configurations.add(generateMinConfiguration1());
 		configurations.add(generateMinConfiguration2());
