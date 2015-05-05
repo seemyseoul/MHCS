@@ -128,7 +128,7 @@ public class ConfigurationBuilder {
 //		
 //		return configurations;
 		List<Configuration> configs = new ArrayList<Configuration>();
-//		configs.add(generateMinConfiguration1());
+		configs.add(generateMinConfiguration1());
 		configs.add(generateMinConfiguration2());
 		return configs;
 	}
