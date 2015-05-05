@@ -4,7 +4,10 @@
  */
 package mhcs.storage;
 
+import java.util.List;
+
 import mhcs.client.ConfigurationBuilder;
+import mhcs.client.Map;
 import mhcs.client.Module;
 import mhcs.client.ModuleStatus;
 import mhcs.client.ModuleType;
@@ -38,7 +41,7 @@ import com.google.gwt.user.client.ui.VerticalPanel;
 
 public class TestCases {
 		
-	public static void TestCaseChoice(int choice){		
+	public static void TestCaseChoice(int choice, final Map map){		
 		String proxy ="http://www.d.umn.edu/~mckeo044/Proxy.php?url=";
 		String url = proxy+"http://www.d.umn.edu/~abrooks/SomeTests.php?q=" + Integer.toString(choice);		
 		url = URL.encode(url);
@@ -52,7 +55,7 @@ public class TestCases {
 				public void onResponseReceived(Request request, Response response) {
 					if (200 == response.getStatusCode()) {
 						String rt = response.getText();
-						update(rt); //METHOD CALL TO DO SOMETHING WITH RESPONSE TEXT
+						update(rt, map); //METHOD CALL TO DO SOMETHING WITH RESPONSE TEXT
 					} //if
 					else {
 						Window.alert("Couldn't retrieve JSON (" + response.getStatusCode()+ ")");
@@ -66,7 +69,7 @@ public class TestCases {
 		
 	} // TestCaseChoice
 		
-	public static void update(final String rt) {		 
+	public static void update(final String rt, final Map map) {		 
 		Model.removeAll();
 		Variables.mListBox().clear();
 		Variables.cListBox().clear();
@@ -214,7 +217,13 @@ public class TestCases {
 			Variables.setMinConfigReached(false);
 		}
 		
-	
+		map.clearMap();
+		List<Module> modules = Model.getModuleList();
+		for (int i = 0; i < modules.size(); i++) {
+			map.placeModules(map, modules.get(i));
+		} // for
+		
+		
 	} //update
 
 }//TestCases Class

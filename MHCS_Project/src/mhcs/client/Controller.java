@@ -710,7 +710,7 @@ public class Controller {
 			public void onChange(ChangeEvent event) {
 				int testNum = lb.getSelectedIndex();
 				if (testNum!= 0){
-					TestCases.TestCaseChoice(testNum);
+					TestCases.TestCaseChoice(testNum, map);
 					Variables.testCaseSound().play();
 				} // if
 				else {
@@ -719,11 +719,6 @@ public class Controller {
 					Variables.cListBox().clear();
 				}
 				
-				map.clearMap();
-				List<Module> modules = Model.getModuleList();
-				for (int i = 0; i < modules.size(); i++) {
-					map.placeModules(map, modules.get(i));
-				} // for	
 				
 				
 			} //onChange
