@@ -104,19 +104,19 @@ public class ConfigurationBuilder {
 		int numPlainModules = Model.getUnusedUsableModulesOfType(ModuleType.PLAIN).size();
 		Window.alert(Integer.toString(numPlainModules));
 		List<Configuration> hConfigs = generateHConfigurations(numPlainModules);
-		List<Configuration> plusConfigs = generatePlusConfigurations(numPlainModules);
-		List<Configuration> lConfigs = generateLConfigurations(numPlainModules);
+//		List<Configuration> plusConfigs = generatePlusConfigurations(numPlainModules);
+//		List<Configuration> lConfigs = generateLConfigurations(numPlainModules);
 		
 		List<Configuration> configurations = new ArrayList<Configuration>();
 		for (Configuration c : hConfigs) {
 			configurations.add(c);
 		}
-		for (Configuration c : plusConfigs) {
-			configurations.add(c);
-		}
-		for (Configuration c : lConfigs) {
-			configurations.add(c);
-		}
+//		for (Configuration c : plusConfigs) {
+//			configurations.add(c);
+//		}
+//		for (Configuration c : lConfigs) {
+//			configurations.add(c);
+//		}
 		
 		
 		Configuration minConfig1 = generateMinConfiguration1();
@@ -168,14 +168,14 @@ public class ConfigurationBuilder {
 		
 		for (int i=1;i<=(numPlainModules / 6);i++)
 		{  // this for loop places the horizontal part of the H Configuration
-			Window.alert("For Loop #1");
+			//Window.alert("For Loop #1");
 			Module closestRightPlain = Model.getUnusedUsableModuleClosestTo(new Point(center.getX()+i,center.getY()),ModuleType.PLAIN,baseConfig);
 			if (closestRightPlain != null)
 			{
 				closestRightPlain.setInUse(true);
 				closestRightPlain.setCoordinates(new Point(center.getX()+i,center.getY()));
 				baseConfig.addModule(closestRightPlain);
-				Window.alert("closestRightPlain");
+				//Window.alert("closestRightPlain");
 			}
 			Module closestLeftPlain = Model.getUnusedUsableModuleClosestTo(new Point(center.getX()-i,center.getY()),ModuleType.PLAIN,baseConfig);
 			if (closestLeftPlain != null)
@@ -183,14 +183,14 @@ public class ConfigurationBuilder {
 				closestLeftPlain.setInUse(true);
 				closestLeftPlain.setCoordinates(new Point(center.getX()-i,center.getY()));
 				baseConfig.addModule(closestLeftPlain);
-				Window.alert("closestLeftPlain");
+				//Window.alert("closestLeftPlain");
 			}
 		}
 		
 		for (int j=1;j<=(numPlainModules / 6);j++)
 		{   // this loop should place the vertical parts of the H Configuration.
 			// Upper Right part of H config
-			Window.alert("For Loop #2");
+			//Window.alert("For Loop #2");
 			Module closestUpRightPlain = Model.getUnusedUsableModuleClosestTo(new Point(center.getX()+(numPlainModules/6),center.getY()+j),ModuleType.PLAIN,baseConfig);
 			if (closestUpRightPlain != null)
 			{
@@ -224,11 +224,12 @@ public class ConfigurationBuilder {
 			}
 		}
 		
-		for (int x=0;x < (numPlainModules % 6);x++)
+		int placedPlainsSoFar = baseConfig.getModules().size();
+		for (int x = 0;x < (numPlainModules - placedPlainsSoFar); x++)
 		{   // do something with leftover plain modules.  Add them to the right of the center.
 			Module leftOverPlain = null;
 			leftOverPlain = Model.getUnusedUsableModuleClosestTo(center,ModuleType.PLAIN,baseConfig);
-			Window.alert("leftOverPlain");
+			//Window.alert("leftOverPlain");
 			if (leftOverPlain != null)
 			{
 				for (Module m : baseConfig.getModules())
@@ -247,9 +248,9 @@ public class ConfigurationBuilder {
 		for(int i=0;i<5;i++) // generate 5 configurations of H-type
 		{
 			Configuration config = baseConfig.clone();
-			config.randomlyFill();
-			config.makeGood();
-			config.makeInBounds();
+//			config.randomlyFill();
+//			config.makeGood();
+//			config.makeInBounds();
 			configs.add(config);
 		}
 		
