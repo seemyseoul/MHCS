@@ -59,10 +59,71 @@ public class Map {
 		} // for
 	} // placeConfiguration
 	
-//	public Image makeOpaque(Image modImage) { 
-//		return modImage.getElement().setAttribute("style",
-//				"filter: alpha(opacity=5);opacity: 0.95");
-//	}
+	public Image makeOpaque(Module modType) { 
+		int intModId = modType.getId();
+		Image modImage = new Image("images/blank");
+		if (0 < intModId && intModId < 41) {
+			modImage = new Image("images/modules/plain_used.jpg");
+			modImage.setHeight(Variables.px150);
+			modImage.setWidth(Variables.px150);
+			Variables.m.add(modImage);
+		} // if
+		else if (60 < intModId && intModId < 81) {
+			modImage = new Image("images/modules/dormitory_used.jpg");
+			modImage.setHeight(Variables.px150);
+			modImage.setWidth(Variables.px150);
+			Variables.m.add(modImage);
+		} // if
+		else if (90 < intModId && intModId < 101) {
+			modImage = new Image("images/modules/sanitation_used.jpg");
+			modImage.setHeight(Variables.px150);
+			modImage.setWidth(Variables.px150);
+			Variables.m.add(modImage);
+		} // if
+		else if (110 < intModId && intModId < 121) {
+			modImage = new Image("images/modules/foodWaterStorage_used.jpg");
+			modImage.setHeight(Variables.px150);
+			modImage.setWidth(Variables.px150);
+			Variables.m.add(modImage);
+		} // if
+		else if (130 < intModId && intModId < 135) {
+			modImage = new Image("images/modules/gymRelaxation_used.jpg");
+			modImage.setHeight(Variables.px150);
+			modImage.setWidth(Variables.px150);
+			Variables.m.add(modImage);
+		} // if
+		else if (140 < intModId && intModId < 145) {
+			modImage = new Image("images/modules/canteen_used.jpg");
+			modImage.setHeight(Variables.px150);
+			modImage.setWidth(Variables.px150);
+			Variables.m.add(modImage);
+		} // if
+		else if (150 < intModId && intModId < 155) {
+			modImage = new Image("images/modules/power_used.jpg");
+			modImage.setHeight(Variables.px150);
+			modImage.setWidth(Variables.px150);
+			Variables.m.add(modImage);
+		} // if
+		else if (160 < intModId && intModId < 165) {
+			modImage = new Image("images/modules/control_used.jpg");
+			modImage.setHeight(Variables.px150);
+			modImage.setWidth(Variables.px150);
+			Variables.m.add(modImage);
+		} // if
+		else if (170 < intModId && intModId < 175) {
+			modImage = new Image("images/modules/airlock_used.jpg");
+			modImage.setHeight(Variables.px150);
+			modImage.setWidth(Variables.px150);
+			Variables.m.add(modImage);
+		} // if
+		else if (180 < intModId && intModId < 185) {
+			modImage = new Image("images/modules/medical_used.jpg");
+			modImage.setHeight(Variables.px150);
+			modImage.setWidth(Variables.px150); 
+			Variables.m.add(modImage);
+		} // if
+		return modImage;
+	}
 	
 	public int translateX(int x) {
 		return x-1;
