@@ -20,12 +20,16 @@ public class Map {
 	      } // for
 	    } // for
 	    
-//	    for (int row = 0; row < 40; ++row) {
-//	    	for (int col = 39; col < 49; ++col) {
-//	    		g.setWidget(row, col, Variables.deadImage());
-//	    	} // for
-//	    } // for
+	    deadZone();
 	} // ctor
+	
+	public void deadZone() {
+		for (int row = 0; row < 40; ++row) {
+	    	for (int col = 39; col < 49; ++col) {
+	    		g.setWidget(row, col, Variables.deadImage());
+	    	} // for
+	    } // for
+	} // deadZone
 	
 	public void placeModules(Map map, Module module) {
 		Point coordinates = module.getCoordinates();
