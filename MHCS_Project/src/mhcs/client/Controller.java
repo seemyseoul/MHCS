@@ -370,7 +370,7 @@ public class Controller {
 		                min1.setWidth(Variables.px150);
 		                dialogContents.add(min1);
 		                dialogContents.setCellHorizontalAlignment(
-		                    min1, HasHorizontalAlignment.ALIGN_LEFT);
+		                    min1, HasHorizontalAlignment.ALIGN_CENTER);
 
 		                // Add a close button at the bottom of the dialog
 		                Button closeButton = new Button(
