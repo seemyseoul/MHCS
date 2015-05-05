@@ -213,10 +213,11 @@ public class TestCases {
             minConfigAlert.show();
             Variables.minConfigSound().play();
 			Variables.setMinConfigReached(true);
-		}
+		} // if
 		else{
 			Variables.setMinConfigReached(false);
-		}
+			Variables.testCaseSound().play();
+		} // else
 		
 		map.clearMap();
 		List<Module> modules = Model.getModuleList();

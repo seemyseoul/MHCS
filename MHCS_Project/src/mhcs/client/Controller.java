@@ -480,10 +480,6 @@ public class Controller {
 	}
 
 	
-
-	
-	
-	
 	/**
 	 * Returns click handler for the LogIn button on Log In Page.
 	 * @param passwordEntry
@@ -737,15 +733,12 @@ public class Controller {
 				int testNum = lb.getSelectedIndex();
 				if (testNum!= 0){
 					TestCases.TestCaseChoice(testNum, map);
-					Variables.testCaseSound().play();
 				} // if
 				else {
 					Model.removeAll();
 					Variables.mListBox().clear();
 					Variables.cListBox().clear();
-				}
-				
-				
+				} // else				
 				
 			} //onChange
 		};
