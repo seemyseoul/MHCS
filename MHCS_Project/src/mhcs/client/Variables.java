@@ -46,7 +46,7 @@ public class Variables {
         m.add(htmlSouth, DockPanel.SOUTH);
         m.add(modulesEastVpanel(), DockPanel.EAST);
         m.add(modulesWestVpanel(), DockPanel.WEST);
-        m.add(moduleImage(), DockPanel.NORTH);
+        m.add(moduleImage, DockPanel.NORTH);
         m.add(modulesSouthVpanel(), DockPanel.SOUTH);
         m.add(modulesCenterVpanel(), DockPanel.CENTER);
         return m;
