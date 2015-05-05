@@ -145,8 +145,12 @@ public class Model {
 	 */
 	@SuppressWarnings("unchecked")
 	public static List<Module> getModuleList() {
-		ArrayList<Module> moduleList1 = new ArrayList<Module>(moduleList);
-		return (List<Module>) moduleList1.clone();
+		ArrayList<Module> moduleList1 = new ArrayList<Module>();
+		for (Module m : moduleList)
+		{
+			moduleList1.add(m.clone());
+		}
+		return moduleList1;
 	}
 	
 	/**
