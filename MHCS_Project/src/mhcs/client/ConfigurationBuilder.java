@@ -102,7 +102,7 @@ public class ConfigurationBuilder {
 			return new ArrayList<Configuration>();
 		}
 		int numPlainModules = Model.getUnusedUsableModulesOfType(ModuleType.PLAIN).size();
-		Window.alert(Integer.toString(numPlainModules));
+		//Window.alert(Integer.toString(numPlainModules));
 		List<Configuration> hConfigs = generateHConfigurations(numPlainModules);
 //		List<Configuration> plusConfigs = generatePlusConfigurations(numPlainModules);
 //		List<Configuration> lConfigs = generateLConfigurations(numPlainModules);
