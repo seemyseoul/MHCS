@@ -191,67 +191,67 @@ public class Controller {
 			modImage = new Image("images/blank");
 			modImage.setHeight(Variables.px150);
 			modImage.setWidth(Variables.px150);
-			Variables.mapPanel.add(modImage);
+			Variables.moduleImage = modImage;
 		} // else
 		if (0 < intModId && intModId < 41) {
 			modImage = new Image("images/modules/plain.jpg");
 			modImage.setHeight(Variables.px150);
 			modImage.setWidth(Variables.px150);
-			Variables.mapPanel.add(modImage);
+			Variables.moduleImage = modImage;
 		} // if
 		else if (60 < intModId && intModId < 81) {
 			modImage = new Image("images/modules/dormitory.jpg");
 			modImage.setHeight(Variables.px150);
 			modImage.setWidth(Variables.px150);
-			Variables.mapPanel.add(modImage);
+			Variables.moduleImage = modImage;
 		} // if
 		else if (90 < intModId && intModId < 101) {
 			modImage = new Image("images/modules/sanitation.jpg");
 			modImage.setHeight(Variables.px150);
 			modImage.setWidth(Variables.px150);
-			Variables.mapPanel.add(modImage);
+			Variables.moduleImage = modImage;
 		} // if
 		else if (110 < intModId && intModId < 121) {
 			modImage = new Image("images/modules/foodWaterStorage.jpg");
 			modImage.setHeight(Variables.px150);
 			modImage.setWidth(Variables.px150);
-			Variables.mapPanel.add(modImage);
+			Variables.moduleImage = modImage;
 		} // if
 		else if (130 < intModId && intModId < 135) {
 			modImage = new Image("images/modules/gymRelaxation.jpg");
 			modImage.setHeight(Variables.px150);
 			modImage.setWidth(Variables.px150);
-			Variables.mapPanel.add(modImage);
+			Variables.moduleImage = modImage;
 		} // if
 		else if (140 < intModId && intModId < 145) {
 			modImage = new Image("images/modules/canteen.jpg");
 			modImage.setHeight(Variables.px150);
 			modImage.setWidth(Variables.px150);
-			Variables.mapPanel.add(modImage);
+			Variables.moduleImage = modImage;
 		} // if
 		else if (150 < intModId && intModId < 155) {
 			modImage = new Image("images/modules/power.jpg");
 			modImage.setHeight(Variables.px150);
 			modImage.setWidth(Variables.px150);
-			Variables.mapPanel.add(modImage);
+			Variables.moduleImage = modImage;
 		} // if
 		else if (160 < intModId && intModId < 165) {
 			modImage = new Image("images/modules/control.jpg");
 			modImage.setHeight(Variables.px150);
 			modImage.setWidth(Variables.px150);
-			Variables.mapPanel.add(modImage);
+			Variables.moduleImage = modImage;
 		} // if
 		else if (170 < intModId && intModId < 175) {
 			modImage = new Image("images/modules/airlock.jpg");
 			modImage.setHeight(Variables.px150);
 			modImage.setWidth(Variables.px150);
-			Variables.mapPanel.add(modImage);
+			Variables.moduleImage = modImage;
 		} // if
 		else if (180 < intModId && intModId < 185) {
 			modImage = new Image("images/modules/medical.jpg");
 			modImage.setHeight(Variables.px150);
 			modImage.setWidth(Variables.px150); 
-			Variables.mapPanel.add(modImage);
+			Variables.moduleImage = modImage;
 		} // if
 
 	} // setModuleImage

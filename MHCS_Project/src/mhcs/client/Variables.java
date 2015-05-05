@@ -59,7 +59,7 @@ public class Variables {
         c.setSize(px1500, px600);
         c.add(htmlConfigs, DockPanel.NORTH);
         c.add(htmlSouth, DockPanel.SOUTH);
-        c.add(configVpanel(), DockPanel.EAST);
+//        c.add(configVpanel(), DockPanel.EAST);
         c.add(cListBox(), DockPanel.WEST);
         c.add(mapPanel(), DockPanel.CENTER);
 //        c.add(map, DockPanel.CENTER);
@@ -162,7 +162,6 @@ public class Variables {
     public static ScrollPanel mapPanel() {
         mapPanel.setHeight(px560);
         mapPanel.setWidth(px1000);
-        mapPanel.add(mapImage());
         return mapPanel;
     } // mapPanel
     
