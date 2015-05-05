@@ -12,8 +12,8 @@ public class Map {
 	 * @return 
 	 */
 	public Map() {
-	    for (int row = 0; row < 5; ++row) {
-	      for (int col = 0; col < 5; ++col) {
+	    for (int row = 0; row < 50; ++row) {
+	      for (int col = 0; col < 100; ++col) {
 	    	g.getCellFormatter().setWidth(row, col, Variables.px50);
 	        g.setWidget(row, col, Variables.blankImage());
 	        g.setBorderWidth(1);
