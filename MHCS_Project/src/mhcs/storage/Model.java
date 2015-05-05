@@ -161,7 +161,7 @@ public class Model {
 	 */
 	@SuppressWarnings("unchecked")
 	public static List<Module> getUnusedModuleList() {
-		ArrayList<Module> moduleList1 = new ArrayList<Module>(moduleList);
+		List<Module> moduleList1 = getModuleList();
 		for (Module m : moduleList1)
 		{
 			if (m.isInUse()){
