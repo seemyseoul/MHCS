@@ -374,8 +374,8 @@ public class Variables {
     
     public static Image blankImage() {
         final Image blank = new Image("images/blank");
-        blank.setHeight(px50);
-        blank.setWidth(px50);
+        blank.setHeight(px20);
+        blank.setWidth(px20);
         return blank;
     } // blankImage
     
@@ -428,44 +428,6 @@ public class Variables {
         final PasswordTextBox p = new PasswordTextBox();
         return p;
     } // tbPasswordEntry
-    
-    @SuppressWarnings("deprecation")
-    public static RadioButton rbSelectAll() {
-        radAll.setText("Select All");
-        radAll.setName("MapModules");
-        if (radAll.isChecked()) {
-            cbAirLock.setChecked(true);
-            cbPlain.setChecked(true);
-            cbDorm.setChecked(true);
-            cbSanitation.setChecked(true);
-            cbFoodAndWater.setChecked(true);
-            cbGymAndRelax.setChecked(true);
-            cbCanteen.setChecked(true);
-            cbPower.setChecked(true);
-            cbControl.setChecked(true);
-            cbMedical.setChecked(true);
-        } // if
-        return radAll;
-    } // selectAll
-    
-    @SuppressWarnings("deprecation")
-    public static RadioButton rbDeselectAll() {
-        radNone.setText("Deselect All");
-        radNone.setName("MapModules");
-        if (radNone.isChecked()) {
-            cbAirLock.setChecked(false);
-            cbPlain.setChecked(false);
-            cbDorm.setChecked(false);
-            cbSanitation.setChecked(false);
-            cbFoodAndWater.setChecked(false);
-            cbGymAndRelax.setChecked(false);
-            cbCanteen.setChecked(false);
-            cbPower.setChecked(false);
-            cbControl.setChecked(false);
-            cbMedical.setChecked(false);
-        } // if
-        return radNone;
-    } // deselectAll
     
     public static TextArea ta() {
         return new TextArea();
