@@ -115,9 +115,9 @@ public class ConfigurationBuilder {
 //		List<Configuration> lConfigs = generateLConfigurations(numPlainModules);
 		
 		List<Configuration> configurations = new ArrayList<Configuration>();
-		for (Configuration c : hConfigs) {
-			configurations.add(c);
-		}
+//		for (Configuration c : hConfigs) {
+//			configurations.add(c);
+//		}
 //		for (Configuration c : plusConfigs) {
 //			configurations.add(c);
 //		}
@@ -126,8 +126,8 @@ public class ConfigurationBuilder {
 //		}
 //		
 		
-		configurations.add(generateMinConfiguration1());
-		configurations.add(generateMinConfiguration2());
+//		configurations.add(generateMinConfiguration1());
+//		configurations.add(generateMinConfiguration2());
 		return configurations;
 	}
 
