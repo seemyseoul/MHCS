@@ -666,7 +666,7 @@ public class Controller {
 	 * Returns mouse down handler for drag and drop functionality.
 	 * @return MouseDownHandler
 	 */
-	public static MouseDownHandler dragDropDown(Map map, Module module) {
+	public static MouseDownHandler dragDropDown(final Map map, final Module module) {
 		return new MouseDownHandler() {
 			public void onMouseDown(MouseDownEvent event) {
 				module.getImage().addMouseMoveHandler(Controller.dragDropMove(map, module));
@@ -674,7 +674,7 @@ public class Controller {
 		};
 	} // dragDrop
 	
-	public static MouseMoveHandler dragDropMove(Map map, Module module) {
+	public static MouseMoveHandler dragDropMove(final Map map, final Module module) {
 		return new MouseMoveHandler() {
 			public void onMouseMove(MouseMoveEvent event) {
 				Point current = new Point(0, 0);
@@ -688,7 +688,7 @@ public class Controller {
 		};
 	} // dragDropMove
 	
-	public static MouseUpHandler dragDropUp(Map map, Module module) {
+	public static MouseUpHandler dragDropUp(final Map map, final Module module) {
 		return new MouseUpHandler() {
 			public void onMouseUp(MouseUpEvent event) {
 				map.placeModules(map, module);
