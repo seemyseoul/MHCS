@@ -531,7 +531,7 @@ public class ConfigurationBuilder {
 		Module power = Model.getUnusedUsableModuleClosestTo(powerPos, ModuleType.POWER,newConfiguration);
 		power.setInUse(true);
 		power.setCoordinates(powerPos);
-		newConfiguration.addModule(dorm);
+		newConfiguration.addModule(power);
 
 		Point controlPos = new Point(rightPlainPos.getX(),
 				rightPlainPos.getY() - 1);
@@ -563,9 +563,9 @@ public class ConfigurationBuilder {
 		/*
 		 * pretty good minimum config hardcoded...
 		 * 
-		 * 			Food	Dorm	Power 
+		 * 			Food	Dorm	Control 
 		 * Airlock Plain 	Plain 	Plain 	Sanitation
-		 * 		   Canteen 			Control
+		 * 		   Canteen 			Power
 		 */
 		Configuration newConfiguration = new Configuration();
 
@@ -624,14 +624,14 @@ public class ConfigurationBuilder {
 		newConfiguration.addModule(dorm);
 
 		Point powerPos = new Point(rightPlainPos.getX(),
-				rightPlainPos.getY() + 1);
+				rightPlainPos.getY() - 1);
 		Module power = Model.getUnusedUsableModuleClosestTo(powerPos, ModuleType.POWER,newConfiguration);
 		power.setInUse(true);
 		power.setCoordinates(powerPos);
-		newConfiguration.addModule(dorm);
+		newConfiguration.addModule(power);
 
 		Point controlPos = new Point(rightPlainPos.getX(),
-				rightPlainPos.getY() - 1);
+				rightPlainPos.getY() + 1);
 		Module control = Model
 				.getUnusedUsableModuleClosestTo(controlPos, ModuleType.CONTROL,newConfiguration);
 		control.setInUse(true);

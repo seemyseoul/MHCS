@@ -253,7 +253,7 @@ public class Module implements Cloneable {
 		}
 		else if(getType().equals(ModuleType.CONTROL))
 		{
-			Image image = new Image("http://d.umn.edu/~mckeo044/war/images/modules/airlock.jpg");
+			Image image = new Image("http://d.umn.edu/~mckeo044/war/images/modules/control.jpg");
 			image.setHeight(Variables.px20);
 			image.setWidth(Variables.px20);
 			return image;
