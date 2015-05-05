@@ -46,7 +46,7 @@ public class Variables {
         m.add(htmlSouth, DockPanel.SOUTH);
         m.add(modulesEastVpanel(), DockPanel.EAST);
         m.add(modulesWestVpanel(), DockPanel.WEST);
-        m.add(mapPanel(), DockPanel.NORTH);
+        m.add(moduleImage(), DockPanel.NORTH);
         m.add(modulesSouthVpanel(), DockPanel.SOUTH);
         m.add(modulesCenterVpanel(), DockPanel.CENTER);
         return m;
@@ -59,7 +59,7 @@ public class Variables {
         c.setSize(px1500, px600);
         c.add(htmlConfigs, DockPanel.NORTH);
         c.add(htmlSouth, DockPanel.SOUTH);
-//        c.add(configVpanel(), DockPanel.EAST);
+        c.add(configVpanel(), DockPanel.EAST);
         c.add(cListBox(), DockPanel.WEST);
         c.add(mapPanel(), DockPanel.CENTER);
 //        c.add(map, DockPanel.CENTER);

@@ -109,24 +109,28 @@ public class ConfigurationBuilder {
 	 */
 	public static final List<Configuration> generateConfigurations() {
 		
-		int numPlainModules = Model.getUnusedUsableModulesOfType(ModuleType.PLAIN).size();
-		
-		List<Configuration> hConfigs = generateHConfigurations(numPlainModules);
-		List<Configuration> plusConfigs = generatePlusConfigurations(numPlainModules);
-		List<Configuration> lConfigs = generateLConfigurations(numPlainModules);
-		
-		List<Configuration> configurations = new ArrayList<Configuration>();
-		for (Configuration c : hConfigs) {
-			configurations.add(c);
-		}
-		for (Configuration c : plusConfigs) {
-			configurations.add(c);
-		}
-		for (Configuration c : lConfigs) {
-			configurations.add(c);
-		}
-		
-		return configurations;
+//		int numPlainModules = Model.getUnusedUsableModulesOfType(ModuleType.PLAIN).size();
+//		
+//		List<Configuration> hConfigs = generateHConfigurations(numPlainModules);
+//		List<Configuration> plusConfigs = generatePlusConfigurations(numPlainModules);
+//		List<Configuration> lConfigs = generateLConfigurations(numPlainModules);
+//		
+//		List<Configuration> configurations = new ArrayList<Configuration>();
+//		for (Configuration c : hConfigs) {
+//			configurations.add(c);
+//		}
+//		for (Configuration c : plusConfigs) {
+//			configurations.add(c);
+//		}
+//		for (Configuration c : lConfigs) {
+//			configurations.add(c);
+//		}
+//		
+//		return configurations;
+		List<Configuration> configs = new ArrayList<Configuration>();
+//		configs.add(generateMinConfiguration1());
+		configs.add(generateMinConfiguration2());
+		return configs;
 	}
 
 	/**
@@ -453,7 +457,7 @@ public class ConfigurationBuilder {
 	 *
 	 * @return preset minimum configuration.
 	 */
-	public final Configuration generateMinConfiguration1() {
+	public final static Configuration generateMinConfiguration1() {
 		if (!minConfigPossible()) {
 			return null;
 		}
@@ -550,7 +554,7 @@ public class ConfigurationBuilder {
 		return newConfiguration;
 	}
 	
-	public final Configuration generateMinConfiguration2() {
+	public static final Configuration generateMinConfiguration2() {
 		if (!minConfigPossible()) {
 			return null;
 		}
