@@ -560,12 +560,12 @@ public class Controller {
 		cListBox.clear();
 		for (Configuration c : ConfigurationBuilder.generateConfigurations()) {
 			if (c != null) {
-				
+				String configString = "";
 				for (Module m : c.getModules())
 				{
-					
+					configString += m.getCoordinates().toString() + ",";
 				}
-				cListBox.addItem();
+				cListBox.addItem(configString);
 			} // if
 		} // for
 	} // populateConfigListBox

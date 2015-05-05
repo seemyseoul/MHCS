@@ -640,6 +640,10 @@ public final class Configuration implements Cloneable{
 		{
 			Module m;
 			do {
+				if ( modules.size() == 0)
+				{
+					return;
+				}
 				m = modules.remove((int) Math.random()*modules.size());
 				m.setCoordinates(p);
 				this.addModule(m);
