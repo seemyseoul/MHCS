@@ -245,11 +245,12 @@ public class Variables {
 //				Variables.map.placeConfiguration(Variables.map, c);
 			}
     	});
-    	configWestPanel.add(new HTML("X:"));
+    	configWestPanel.add(new HTML("X: "));
     	configWestPanel.add(xBox);
     	configWestPanel.add(new HTML("Y: "));
     	configWestPanel.add(yBox);
     	configWestPanel.add(sButt);
+    	configWestPanel.setSpacing(intPanelSpacing1);
     	return configWestPanel;
     } // configWestVpanel
     
@@ -389,15 +390,15 @@ public class Variables {
      
     public static Image blankImage() {
         final Image blank = new Image("images/blank");
-        blank.setHeight(px20);
-        blank.setWidth(px20);
+        blank.setHeight(px35);
+        blank.setWidth(px35);
         return blank;
     } // blankImage
     
     public static Image deadImage() {
         final Image deadSpace = new Image("images/deadSpace");
-        deadSpace.setHeight(px20);
-        deadSpace.setWidth(px20);
+        deadSpace.setHeight(px35);
+        deadSpace.setWidth(px35);
         return deadSpace;
     } // blankImage
     
