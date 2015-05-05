@@ -293,7 +293,7 @@ public class Variables {
         mSaveButton.setWidth(px300);
         mSaveButton.addClickHandler(Controller.saveButton(Variables.mType(),
                 Variables.mID, Variables.mX(), Variables.mY(), Variables.mCondition(), Variables.mOrientation(),
-                Variables.mListBox()));
+                Variables.mListBox(), map));
         return mSaveButton;
     } // mSaveButton
     

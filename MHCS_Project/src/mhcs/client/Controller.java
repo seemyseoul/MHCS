@@ -2,6 +2,7 @@ package mhcs.client;
 
 import java.util.Arrays;
 import java.util.Date;
+import java.util.List;
 
 import mhcs.storage.Model;
 import mhcs.storage.TestCases;
@@ -322,7 +323,7 @@ public class Controller {
 	 */
 	public static ClickHandler saveButton(final ListBox moduleType, final TextBox moduleID,
 			final TextBox xTextBox, final TextBox yTextBox, final ListBox moduleCondition,
-			final ListBox moduleOrientation, final ListBox modulesListBox) {
+			final ListBox moduleOrientation, final ListBox modulesListBox, final Map map) {
 		return new ClickHandler(){
 			@Override
 			public void onClick(ClickEvent event) {
@@ -340,7 +341,10 @@ public class Controller {
 			    orientation = moduleOrientation.getSelectedIndex();
 				inUse = false;
 				
-				
+				List<Module> modules = Model.getModuleList();
+				for (int i = 0; i < modules.size(); i++) {
+					map.placeModules(map, modules.get(i));
+				} // for
 				
 				if(Model.saveModule(new Module(type,id,coordinates,status,orientation,inUse))) {
 					if(ConfigurationBuilder.minConfigPossible() && !Variables.minConfigReached()){
