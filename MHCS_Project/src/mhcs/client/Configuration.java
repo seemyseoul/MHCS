@@ -637,13 +637,17 @@ public final class Configuration implements Cloneable{
 	
 	public void randomlyFill()
 	{
+		Window.alert("RandomlyFill");
 		List<Point> points = this.getOpenSpaces();
-		List<Module> modules = Model.getUnusedUsableModuleList();
+		Window.alert(Integer.toString(points.size()));
+		List<Module> modules = Model.getUnusedUsableModuleList(this);
+		Window.alert(Integer.toString(modules.size()));
 		for (Point p : points)
 		{
+			Window.alert("point");
 			Module m;
 			do {
-				if ( modules.size() == 0)
+				if (modules.size() == 0)
 				{
 					return;
 				}
@@ -651,7 +655,6 @@ public final class Configuration implements Cloneable{
 				m.setCoordinates(p);
 				this.addModule(m);
 			} while (getModules().contains(m));
-			
 		}
 	}
 	
@@ -703,19 +706,19 @@ public final class Configuration implements Cloneable{
 			Module west = Model.getModuleAtLocation(new Point(p.getX()-1,p.getY()));
 			Module east = Model.getModuleAtLocation(new Point(p.getX()+1,p.getY()));
 			
-			if(north == null || !this.getModules().contains(north))
+			if(north == null && !this.getModules().contains(north))
 			{
 				placesAdjToPlain.add(new Point(p.getX(),p.getY()+1));
 			}
-			if(south == null || !this.getModules().contains(south))
+			if(south == null && !this.getModules().contains(south))
 			{
 				placesAdjToPlain.add(new Point(p.getX(),p.getY()-1));
 			}
-			if(east == null || !this.getModules().contains(east))
+			if(east == null && !this.getModules().contains(east))
 			{
 				placesAdjToPlain.add(new Point(p.getX()+1,p.getY()));
 			}
-			if(west == null || !this.getModules().contains(west))
+			if(west == null && !this.getModules().contains(west))
 			{
 				placesAdjToPlain.add(new Point(p.getX()-1,p.getY()));
 			}
