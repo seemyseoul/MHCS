@@ -122,37 +122,6 @@ public class Variables {
         return passEnabled;
     } // passEnabled
     
-    public static HorizontalPanel changePass() {
-        changePass.add(htmlPassEnable);
-        changePass.add(changePassButton());
-        changePass.setSpacing(intPanelSpacing1);
-        return changePass;
-    } // settingsPassPanel
-    
-    public static HorizontalPanel currentPassword() {
-        htmlCurrPass.setHeight(px20);
-        currentPass.add(ptbCurrentPassword);
-        currentPass.add(htmlCurrPass);
-        currentPass.setSpacing(intPanelSpacing1);
-        return currentPass;
-    } // currentPassword
-    
-    public static HorizontalPanel newPassword() {
-        htmlNewPass.setHeight(px20);
-        newPass.add(ptbNewPassword);
-        newPass.add(htmlNewPass);
-        newPass.setSpacing(intPanelSpacing1);
-        return newPass;
-    } // newPassword
-    
-    public static HorizontalPanel confirmPassword() {
-        htmlConfirmPass.setHeight(px20);
-        confirmPass.add(ptbConfirmPassword);
-        confirmPass.add(htmlConfirmPass);
-        confirmPass.setSpacing(intPanelSpacing1);
-        return confirmPass;
-    } // confirmPassword
-    
     public static ScrollPanel mapPanel() {
         mapPanel.setHeight(px800); 
         mapPanel.setWidth(px1200);
@@ -322,12 +291,6 @@ public class Variables {
         removeUser.setWidth(px140);
         return removeUser;
     } // removeUserButton
-    
-    public static Button changePassButton() {
-        changePassword.setHeight(px20);
-        changePassword.setWidth(px140);
-        return changePassword;
-    } // changePassButton
     
     public static Button savePassButton() {
         savePassword.setHeight(px35);
@@ -581,7 +544,7 @@ public class Variables {
         testCases.addChangeHandler(Controller.testCases(testCases, map));
         return testCases;
     } // testCases
-    //DIE GITHUB
+    
     final static int intPanelBorder = 2;
     final static int intPanelSpacing0 = 5;
     final static int intPanelSpacing1 = 10;

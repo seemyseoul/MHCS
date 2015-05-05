@@ -240,71 +240,71 @@ public class Module implements Cloneable {
 		if(getType().equals(ModuleType.AIRLOCK))
 		{
 			Image image = new Image("http://d.umn.edu/~mckeo044/war/images/modules/airlock.jpg");
-			image.setHeight(Variables.px20);
-			image.setWidth(Variables.px20);
+			image.setHeight(Variables.px35);
+			image.setWidth(Variables.px35);
 			return image;
 		}
 		else if(getType().equals(ModuleType.CANTEEN))
 		{
 			Image image = new Image("http://d.umn.edu/~mckeo044/war/images/modules/canteen.jpg");
-			image.setHeight(Variables.px20);
-			image.setWidth(Variables.px20);
+			image.setHeight(Variables.px35);
+			image.setWidth(Variables.px35);
 			return image;
 		}
 		else if(getType().equals(ModuleType.CONTROL))
 		{
 			Image image = new Image("http://d.umn.edu/~mckeo044/war/images/modules/control.jpg");
-			image.setHeight(Variables.px20);
-			image.setWidth(Variables.px20);
+			image.setHeight(Variables.px35);
+			image.setWidth(Variables.px35);
 			return image;
 		}
 		else if(getType().equals(ModuleType.DORMITORY))
 		{
 			Image image = new Image("http://d.umn.edu/~mckeo044/war/images/modules/dormitory.jpg");
-			image.setHeight(Variables.px20);
-			image.setWidth(Variables.px20);
+			image.setHeight(Variables.px35);
+			image.setWidth(Variables.px35);
 			return image;
 		}
 		else if(getType().equals(ModuleType.FOODWATERSTORAGE))
 		{
 			Image image = new Image("http://d.umn.edu/~mckeo044/war/images/modules/foodWaterStorage.jpg");
-			image.setHeight(Variables.px20);
-			image.setWidth(Variables.px20);
+			image.setHeight(Variables.px35);
+			image.setWidth(Variables.px35);
 			return image;
 		}
 		else if(getType().equals(ModuleType.GYMRELAXATION))
 		{
 			Image image = new Image("http://d.umn.edu/~mckeo044/war/images/modules/gymRelaxation.jpg");
-			image.setHeight(Variables.px20);
-			image.setWidth(Variables.px20);
+			image.setHeight(Variables.px35);
+			image.setWidth(Variables.px35);
 			return image;
 		}
 		else if(getType().equals(ModuleType.MEDICAL))
 		{
 			Image image = new Image("http://d.umn.edu/~mckeo044/war/images/modules/medical.jpg");
-			image.setHeight(Variables.px20);
-			image.setWidth(Variables.px20);
+			image.setHeight(Variables.px35);
+			image.setWidth(Variables.px35);
 			return image;
 		}
 		else if(getType().equals(ModuleType.PLAIN))
 		{
 			Image image = new Image("http://d.umn.edu/~mckeo044/war/images/modules/plain.jpg");
-			image.setHeight(Variables.px20);
-			image.setWidth(Variables.px20);
+			image.setHeight(Variables.px35);
+			image.setWidth(Variables.px35);
 			return image;
 		}
 		else if(getType().equals(ModuleType.POWER))
 		{
 			Image image = new Image("http://d.umn.edu/~mckeo044/war/images/modules/power.jpg");
-			image.setHeight(Variables.px20);
-			image.setWidth(Variables.px20);
+			image.setHeight(Variables.px35);
+			image.setWidth(Variables.px35);
 			return image;
 		}
 		else if(getType().equals(ModuleType.SANITATION))
 		{
 			Image image = new Image("http://d.umn.edu/~mckeo044/war/images/modules/sanitation.jpg");
-			image.setHeight(Variables.px20);
-			image.setWidth(Variables.px20);
+			image.setHeight(Variables.px35);
+			image.setWidth(Variables.px35);
 			return image;
 		}
 		else {
