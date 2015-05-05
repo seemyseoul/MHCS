@@ -16,6 +16,7 @@ public class Map {
 	    	g.getCellFormatter().setWidth(row, col, Variables.px20);
 	        g.setWidget(row, col, Variables.blankImage());
 	        g.setBorderWidth(1);
+	        g.setCellPadding(1);
 	      } // for
 	    } // for
 	    
