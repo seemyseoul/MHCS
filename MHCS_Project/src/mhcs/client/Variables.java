@@ -158,10 +158,10 @@ public class Variables {
     } // confirmPassword
     
     public static ScrollPanel mapPanel() {
-        mapPanel.setHeight(px560);
+        mapPanel.setHeight(px560); 
         mapPanel.setWidth(px1000);
         mapPanel.add(mapImage());
-        mapPanel.add(map.g);
+//        mapPanel.add(map.g);
         return mapPanel;
     } // mapPanel
     
