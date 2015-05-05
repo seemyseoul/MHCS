@@ -564,7 +564,7 @@ public class Variables {
         testCases.addChangeHandler(Controller.testCases(testCases));
         return testCases;
     } // testCases
-    
+    //DIE GITHUB
     final static int intPanelBorder = 2;
     final static int intPanelSpacing0 = 5;
     final static int intPanelSpacing1 = 10;

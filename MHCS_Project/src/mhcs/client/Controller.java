@@ -719,7 +719,7 @@ public class Controller {
 					Variables.cListBox().clear();
 				}
 				
-			
+			//DIEGETHUB
 				
 			} //onChange
 		};
