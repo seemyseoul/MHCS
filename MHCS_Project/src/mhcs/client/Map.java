@@ -23,8 +23,8 @@ public class Map {
 	} // ctor 
 	
 	public void deadZone() {
-		for (int row = 0; row < 40; ++row) {
-	    	for (int col = 39; col < 49; ++col) {
+		for (int row = 0; row <=10; ++row) {
+	    	for (int col = 39; col <= 49; ++col) {
 	    		g.setWidget(row, col, Variables.deadImage());
 	    	} // for
 	    } // for
