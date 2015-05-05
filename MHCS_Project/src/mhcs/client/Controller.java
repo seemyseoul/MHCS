@@ -11,6 +11,10 @@ import com.google.gwt.event.dom.client.ChangeEvent;
 import com.google.gwt.event.dom.client.ChangeHandler;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
+import com.google.gwt.event.dom.client.MouseDownEvent;
+import com.google.gwt.event.dom.client.MouseDownHandler;
+import com.google.gwt.event.dom.client.MouseMoveEvent;
+import com.google.gwt.event.dom.client.MouseMoveHandler;
 import com.google.gwt.i18n.client.DateTimeFormat;
 import com.google.gwt.i18n.client.LocaleInfo;
 import com.google.gwt.i18n.client.TimeZone;
@@ -656,6 +660,27 @@ public class Controller {
 		};
 	} // dateTimeSave
 	
+	/**
+	 * Returns mouse down handler for drag and drop functionality.
+	 * @return MouseDownHandler
+	 */
+	public static MouseDownHandler dragDrop(Image moduleImage) {
+		return new MouseDownHandler() {
+			public void onMouseDown(MouseDownEvent event) {
+				moduleImage.addMouseMoveHandler(Controller.dragDropMove(moduleImage));
+			} // onMouseDown
+		};
+	} // dragDrop
+	
+	public static MouseMoveHandler dragDropMove(Image moduleImage) {
+		return new MouseMoveHandler() {
+			public void onMouseMove(MouseMoveEvent event) {
+				Point current = new Point(0, 0);
+				current.setX(event.getClientX());
+				current.setY(event.getClientY());
+			} // onMouseMove
+		};
+	} // dragDropMove
 	
 	public static void tenDayCheck(){
 		if (Model.getTime() != null){

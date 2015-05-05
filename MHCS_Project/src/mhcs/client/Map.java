@@ -46,19 +46,23 @@ public class Map {
 		int x = translateX(coordinates.getX());
 		int y = translateY(coordinates.getY());
 		map.setWidget(y, x, module.getImage());
+		module.getImage().addMouseDownHandler(Controller.dragDrop(module.getImage()));
 	} // placeModule
 
 	public void placeConfiguration(Map map, Configuration config) {
 		List<Module> modules = config.getModules();
 		for (int i=0; i < modules.size(); i++) {
-			map.placeModules(map, modules.get(i));
+			Point coordinates = modules.get(i).getCoordinates();
+			int x = translateX(coordinates.getX());
+			int y = translateY(coordinates.getY());
+			map.setWidget(y, x, modules.get(i).getImage());
 		} // for
 	} // placeConfiguration
 	
-	public Image makeOpaque(Image modImage) { 
+//	public Image makeOpaque(Image modImage) { 
 //		return modImage.getElement().setAttribute("style",
 //				"filter: alpha(opacity=5);opacity: 0.95");
-	}
+//	}
 	
 	public int translateX(int x) {
 		return x-1;
