@@ -568,6 +568,7 @@ public class Controller {
 	 * @param moduleCondition
 	 */
 	public static void populateCondidition(final ListBox moduleCondition) {
+		moduleCondition.clear();
 		moduleCondition.addItem("Usable");
 	    moduleCondition.addItem("Usable After Repair");
 	    moduleCondition.addItem("Beyond Repair");
@@ -593,6 +594,7 @@ public class Controller {
 	 * @param moduleOrientation
 	 */
 	public static void populateOrientation(final ListBox moduleOrientation) {
+		moduleOrientation.clear();
 		moduleOrientation.addItem("0 turns");
 	    moduleOrientation.addItem("1 turns");
 	    moduleOrientation.addItem("2 turns");
