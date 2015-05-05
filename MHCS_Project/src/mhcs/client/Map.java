@@ -35,7 +35,7 @@ public class Map {
 		Point coordinates = module.getCoordinates();
 		int x = coordinates.getX();
 		int y = coordinates.getY();
-		map.setWidget(x+1, y+49, module.getImage());
+		map.setWidget(x, y, module.getImage());
 	} // placeModule
 
 	private void setWidget(int x, int y, Image image) {
