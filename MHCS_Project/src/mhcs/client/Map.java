@@ -55,7 +55,7 @@ public class Map {
 		} // for
 	} // placeConfiguration
 	
-	public Image makeOpaque(Image modImage) {
+	public Image makeOpaque(Image modImage) { 
 //		return modImage.getElement().setAttribute("style",
 //				"filter: alpha(opacity=5);opacity: 0.95");
 	}
