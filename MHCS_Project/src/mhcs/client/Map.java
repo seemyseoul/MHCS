@@ -2,6 +2,8 @@ package mhcs.client;
 
 import java.util.List;
 
+import mhcs.storage.Model;
+
 import com.google.gwt.user.client.ui.Grid;
 import com.google.gwt.user.client.ui.Image;
 
@@ -49,6 +51,31 @@ public class Map {
 		module.getImage().addMouseDownHandler(Controller.dragDropDown(Variables.map, module));
 	} // placeModule
 
+	public void changePic(Configuration config, Map map){
+		List<Module> configModules = config.getModules();
+		List<Module> freeModules = Model.getModuleList();
+		
+		for (int i = 0; i < configModules.size(); i++){
+			for (int j = 0; j < freeModules.size(); j++){
+				Module configMod, freeMod;
+				configMod = configModules.get(i);
+				freeMod = freeModules.get(j);
+				if (configMod.getId() == freeMod.getId()){
+					Point coordinates = freeMod.getCoordinates();
+					int x = translateX(coordinates.getX());
+					int y = translateY(coordinates.getY());
+					map.setWidget(y, x, makeOpaque(freeMod));					
+				}//if
+			}//for
+		}//for
+		
+		
+	//update to appease git	
+		
+		
+	}//changePic	
+	
+	
 	public void placeConfiguration(Map map, Configuration config) {
 		List<Module> modules = config.getModules();
 		for (int i=0; i < modules.size(); i++) {

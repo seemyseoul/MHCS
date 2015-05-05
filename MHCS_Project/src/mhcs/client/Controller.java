@@ -774,6 +774,7 @@ public class Controller {
 					TestCases.TestCaseChoice(testNum, map);
 				} // if
 				else {
+					map.clearMap();
 					Model.removeAll();
 					Variables.mListBox().clear();
 					Variables.cListBox().clear();
