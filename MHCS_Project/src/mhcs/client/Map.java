@@ -17,14 +17,14 @@ public class Map {
 	        g.setWidget(row, col, Variables.blankImage());
 	        g.setBorderWidth(1);
 	        g.setCellPadding(1);
-	      } // for 
+	      } // for
 	    } // for
 	    
-	    for (int row = 0; row < 40; ++row) {
-	    	for (int col = 39; col < 49; ++col) {
-	    		g.setWidget(row, col, Variables.deadImage());
-	    	} // for
-	    } // for
+//	    for (int row = 0; row < 40; ++row) {
+//	    	for (int col = 39; col < 49; ++col) {
+//	    		g.setWidget(row, col, Variables.deadImage());
+//	    	} // for
+//	    } // for
 	} // ctor
 	
 	public void placeModules(Map map, Module module) {
