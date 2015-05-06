@@ -4,7 +4,6 @@ import java.util.List;
 
 import mhcs.storage.Model;
 
-import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.Grid;
 import com.google.gwt.user.client.ui.Image;
 
@@ -49,7 +48,7 @@ public class Map {
 		int x = translateX(coordinates.getX());
 		int y = translateY(coordinates.getY());
 		map.setWidget(y, x, module.getImage());
-//		map.g.getWidget(y, x).addAttachHandler(Controller.dragDropDown(Variables.map, module));
+		module.getImage().addMouseDownHandler(Controller.dragDropDown(Variables.map, module));
 		if (Variables.boolMouseDown) {
 			module.getImage().addMouseMoveHandler(Controller.dragDropMove(Variables.map, module));
 			module.getImage().addMouseUpHandler(Controller.dragDropUp(map, module));
@@ -67,7 +66,6 @@ public class Map {
 				configMod = configModules.get(i);
 				freeMod = freeModules.get(j);
 				if (configMod.getId() == freeMod.getId()){
-					Window.alert("FOUND A MATCH!");
 					Point coordinates = freeMod.getCoordinates();
 					int x = translateX(coordinates.getX());
 					int y = translateY(coordinates.getY());
