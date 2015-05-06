@@ -602,6 +602,7 @@ public class Variables {
     final static VerticalPanel tenDayVpanel = Variables.vertical();
     
     static Boolean minConfigReached = false;
+    static Boolean boolMouseDown = false;
     final static Button loginButton = new Button("Login");
     final static Button mAddButton = new Button("Add");
     final static Button mRemoveButton = new Button("Remove");

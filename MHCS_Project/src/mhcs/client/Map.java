@@ -49,6 +49,11 @@ public class Map {
 		int y = translateY(coordinates.getY());
 		map.setWidget(y, x, module.getImage());
 		module.getImage().addMouseDownHandler(Controller.dragDropDown(Variables.map, module));
+		if (Variables.boolMouseDown) {
+			module.getImage().addMouseMoveHandler(Controller.dragDropMove(Variables.map, module));
+			module.getImage().addMouseUpHandler(Controller.dragDropUp(map, module));
+		} // if
+		
 	} // placeModule
 
 	public void changePic(Configuration config, Map map){

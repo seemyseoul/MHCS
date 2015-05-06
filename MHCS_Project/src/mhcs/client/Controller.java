@@ -670,7 +670,7 @@ public class Controller {
 	public static MouseDownHandler dragDropDown(final Map map, final Module module) {
 		return new MouseDownHandler() {
 			public void onMouseDown(MouseDownEvent event) {
-				module.getImage().addMouseMoveHandler(Controller.dragDropMove(map, module));
+				Variables.boolMouseDown = true;
 			} // onMouseDown
 		};
 	} // dragDrop
@@ -684,7 +684,6 @@ public class Controller {
 				current.setY(event.getClientY());
 				temp.setCoordinates(current);
 				map.placeModules(map, temp);
-				temp.getImage().addMouseUpHandler(Controller.dragDropUp(map, module));
 			} // onMouseMove
 		};
 	} // dragDropMove
@@ -693,6 +692,7 @@ public class Controller {
 		return new MouseUpHandler() {
 			public void onMouseUp(MouseUpEvent event) {
 				map.placeModules(map, module);
+				Variables.boolMouseDown = false;
 			} // onMouseUp
 		};
 	} // dragDropUp
