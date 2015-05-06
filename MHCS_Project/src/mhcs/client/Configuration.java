@@ -639,9 +639,9 @@ public final class Configuration implements Cloneable{
 	{
 		Window.alert("RandomlyFill");
 		List<Point> points = this.getOpenSpaces();
-		Window.alert(Integer.toString(points.size()));
+		Window.alert("number of Points: " + Integer.toString(points.size()));
 		List<Module> modules = Model.getUnusedUsableModuleList(this);
-		Window.alert(Integer.toString(modules.size()));
+		Window.alert("number of Modules: " + Integer.toString(modules.size()));
 		for (Point p : points)
 		{
 			Window.alert("point");

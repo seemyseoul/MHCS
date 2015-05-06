@@ -231,6 +231,7 @@ public class TestCases {
 			map.placeModules(map, modules.get(i));
 		} // for
 		
+		ConfigurationBuilder.generateConfigurations();
 		Controller.populateConfigListBox(Variables.cListBox());
 		
 	} //update

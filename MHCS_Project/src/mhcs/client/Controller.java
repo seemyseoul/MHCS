@@ -687,7 +687,6 @@ public class Controller {
 	
 	public static void populateConfigListBox(final ListBox cListBox) {
 		cListBox.clear();
-		ConfigurationBuilder.generateConfigurations();
 		for (Configuration c : Model.getConfigList()) {
 			if (c != null) {
 				String configString = "";

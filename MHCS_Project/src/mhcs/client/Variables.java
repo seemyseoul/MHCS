@@ -191,6 +191,7 @@ public class Variables {
     } // yPanel
     
     public static VerticalPanel configWestVpanel() {
+		ConfigurationBuilder.generateConfigurations();
     	configWestPanel.add(cListBox());
     	configWestPanel.add(removeConfigButton());
     	final TextBox xBox = new TextBox();
@@ -201,7 +202,7 @@ public class Variables {
 			public void onClick(ClickEvent event) {
 				int x = Integer.parseInt(xBox.getText());
 				int y = Integer.parseInt(yBox.getText());
-				Configuration c = Model.getConfigList().get(Variables.cListBox().getSelectedIndex());
+				Configuration c = Model.getConfigList().get(Variables.cListBox.getSelectedIndex());
 				Module centerModule = c.getModules().get(0);
 				int dx = x - centerModule.getCoordinates().getX();
 				int dy = y - centerModule.getCoordinates().getY();
@@ -212,8 +213,8 @@ public class Variables {
 				Variables.map.clearMap();
 				Window.alert("STUFF");
 				List<Configuration> configLista = Model.getConfigList();
-				configLista.remove(Variables.cListBox().getSelectedIndex());
-				configLista.add(Variables.cListBox().getSelectedIndex(),c);
+				configLista.remove(Variables.cListBox.getSelectedIndex());
+				configLista.add(Variables.cListBox.getSelectedIndex(),c);
 				Model.setConfigList(configLista);
 				Controller.populateConfigListBox(cListBox);
 				Variables.map.placeConfiguration(Variables.map, c);
