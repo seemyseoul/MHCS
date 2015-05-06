@@ -72,6 +72,9 @@ public void onModuleLoad() {
         } // onValueChange
     });
     
+    Variables.mX().addValueChangeHandler(Controller.mXhandler());
+    Variables.mY().addValueChangeHandler(Controller.mYhandler());
+    
 //    Controller.setType(Variables.mID, Variables.mType());
     
     final DockPanel modulesDock = Variables.modulesDock();

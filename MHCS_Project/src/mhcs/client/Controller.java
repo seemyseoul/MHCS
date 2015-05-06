@@ -17,6 +17,8 @@ import com.google.gwt.event.dom.client.MouseMoveEvent;
 import com.google.gwt.event.dom.client.MouseMoveHandler;
 import com.google.gwt.event.dom.client.MouseUpEvent;
 import com.google.gwt.event.dom.client.MouseUpHandler;
+import com.google.gwt.event.logical.shared.ValueChangeEvent;
+import com.google.gwt.event.logical.shared.ValueChangeHandler;
 import com.google.gwt.i18n.client.DateTimeFormat;
 import com.google.gwt.i18n.client.LocaleInfo;
 import com.google.gwt.i18n.client.TimeZone;
@@ -29,14 +31,12 @@ import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.HasHorizontalAlignment;
 import com.google.gwt.user.client.ui.Image;
 import com.google.gwt.user.client.ui.ListBox;
-import com.google.gwt.user.client.ui.Panel;
 import com.google.gwt.user.client.ui.PasswordTextBox;
 import com.google.gwt.user.client.ui.RootLayoutPanel;
 import com.google.gwt.user.client.ui.TabLayoutPanel;
 import com.google.gwt.user.client.ui.TextArea;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.VerticalPanel;
-import com.google.gwt.user.datepicker.client.DateBox;
 
 public class Controller {
 	/**
@@ -106,7 +106,7 @@ public class Controller {
 
             // Add an image to the dialog
             Image image = new Image("images/error");
-            image.setHeight(Variables.px130);
+            image.setHeight(Variables.px140);
             image.setWidth(Variables.px200);
             dialogContents.add(image);
             dialogContents.setCellHorizontalAlignment(
@@ -132,6 +132,7 @@ public class Controller {
             
             typeDialogBox.center();
             typeDialogBox.show();
+            Variables.errorSound().play();
 		} //else
 	} // setType
 	
@@ -473,6 +474,112 @@ public class Controller {
 			
 		};
 	} // changeHandler
+	
+	public static ValueChangeHandler<String> mXhandler() {
+		return new ValueChangeHandler<String>() {
+	    	public void onValueChange(ValueChangeEvent<String> event) {
+	    		int x = Integer.parseInt(Variables.mX().getText());
+	    		if (x < 1 || x > 100) {
+	    			final DialogBox typeDialogBox = new DialogBox();
+	                typeDialogBox.setText("Coordinate Error");
+
+	                // Create a table to layout the content
+	                VerticalPanel dialogContents = new VerticalPanel();
+	                dialogContents.setSpacing(4);
+	                typeDialogBox.setWidget(dialogContents);
+
+	                // Add some text to the top of the dialog
+	                HTML details = new HTML("You have entered an incorrect Module Coordinate.");
+	                dialogContents.add(details);
+	                dialogContents.setCellHorizontalAlignment(
+	                    details, HasHorizontalAlignment.ALIGN_CENTER);
+
+	                // Add an image to the dialog
+	                Image image = new Image("images/error");
+	                image.setHeight(Variables.px140);
+	                image.setWidth(Variables.px200);
+	                dialogContents.add(image);
+	                dialogContents.setCellHorizontalAlignment(
+	                    image, HasHorizontalAlignment.ALIGN_CENTER);
+
+	                // Add a close button at the bottom of the dialog
+	                Button closeButton = new Button(
+	                    "Close", new ClickHandler() {
+	                      public void onClick(ClickEvent event) {
+	                        typeDialogBox.hide();
+	                      }
+	                    });
+	                dialogContents.add(closeButton);
+	                if (LocaleInfo.getCurrentLocale().isRTL()) {
+	                  dialogContents.setCellHorizontalAlignment(
+	                      closeButton, HasHorizontalAlignment.ALIGN_LEFT);
+
+	                } // if 
+	                else {
+	                  dialogContents.setCellHorizontalAlignment(
+	                      closeButton, HasHorizontalAlignment.ALIGN_RIGHT);
+	                } // else
+	                
+	                typeDialogBox.center();
+	                typeDialogBox.show();
+	                Variables.errorSound().play();
+	    		} // if
+	    	} // onValueChange
+	    };
+	} // mXhandler
+	
+	public static ValueChangeHandler<String> mYhandler() {
+		return new ValueChangeHandler<String>() {
+	    	public void onValueChange(ValueChangeEvent<String> event) {
+	    		int y = Integer.parseInt(Variables.mY().getText());
+	    		if (y < 1 || y > 100) {
+	    			final DialogBox typeDialogBox = new DialogBox();
+	                typeDialogBox.setText("Coordinate Error");
+
+	                // Create a table to layout the content
+	                VerticalPanel dialogContents = new VerticalPanel();
+	                dialogContents.setSpacing(4);
+	                typeDialogBox.setWidget(dialogContents);
+
+	                // Add some text to the top of the dialog
+	                HTML details = new HTML("You have entered an incorrect Module Coordinate.");
+	                dialogContents.add(details);
+	                dialogContents.setCellHorizontalAlignment(
+	                    details, HasHorizontalAlignment.ALIGN_CENTER);
+
+	                // Add an image to the dialog
+	                Image image = new Image("images/error");
+	                image.setHeight(Variables.px140);
+	                image.setWidth(Variables.px200);
+	                dialogContents.add(image);
+	                dialogContents.setCellHorizontalAlignment(
+	                    image, HasHorizontalAlignment.ALIGN_CENTER);
+
+	                // Add a close button at the bottom of the dialog
+	                Button closeButton = new Button(
+	                    "Close", new ClickHandler() {
+	                      public void onClick(ClickEvent event) {
+	                        typeDialogBox.hide();
+	                      }
+	                    });
+	                dialogContents.add(closeButton);
+	                if (LocaleInfo.getCurrentLocale().isRTL()) {
+	                  dialogContents.setCellHorizontalAlignment(
+	                      closeButton, HasHorizontalAlignment.ALIGN_LEFT);
+
+	                } // if 
+	                else {
+	                  dialogContents.setCellHorizontalAlignment(
+	                      closeButton, HasHorizontalAlignment.ALIGN_RIGHT);
+	                } // else
+	                
+	                typeDialogBox.center();
+	                typeDialogBox.show();
+	                Variables.errorSound().play();
+	    		} // if
+	    	} // onValueChange
+	    };
+	} // mXhandler
 	
 	public static ChangeHandler configsListBoxHandler()
 	{
