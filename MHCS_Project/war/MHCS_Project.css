@@ -1,5 +1,9 @@
 /** Add css rules here for your application. */
 
+body {
+	font-family: Verdana, sans-serif;
+}
+
 .tableCell img
 {
 	width: 50px;
@@ -9,6 +13,16 @@
 .mappy table{
 	background-image: url('images/marsMap');
 	background-size: 100% 100%;
+}
+
+button.gwt-Button {
+	border-radius: 7px;
+	font-size: 18px;
+}
+
+.gwt-HTML {
+	font-size: 18px;
+	line-height: 1.4;
 }
 
 
