@@ -481,7 +481,7 @@ public class Controller {
 			public void onChange(ChangeEvent event) {
 				Variables.map.clearMap();
 				Window.alert("HERE BRENT!");				
-//				Variables.map.changePic(Model.getConfigList().get(Variables.cListBox.getSelectedIndex()), Variables.map);				
+				Variables.map.changePic(Model.getConfigList().get(Variables.cListBox.getSelectedIndex()), Variables.map);				
 				Variables.map.placeConfiguration(Variables.map,Model.getConfigList().get(Variables.cListBox.getSelectedIndex()));
 			}
 		};
