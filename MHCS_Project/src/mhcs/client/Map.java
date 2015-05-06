@@ -48,12 +48,9 @@ public class Map {
 		if (module.isInDeadZone()){
 			module.setStatus(ModuleStatus.BEYONDREPAIR);
 		} // if
-		else {
-			int x = translateX(coordinates.getX());
-			int y = translateY(coordinates.getY());
-			map.setWidget(y, x, module.getImage());
-		} // else
-		
+		int x = translateX(coordinates.getX());
+		int y = translateY(coordinates.getY());
+		map.setWidget(y, x, module.getImage());				
 	} // placeModule
 
 	public void changePic(Configuration config, Map map){
