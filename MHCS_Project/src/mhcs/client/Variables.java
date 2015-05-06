@@ -123,9 +123,8 @@ public class Variables {
     } // passEnabled
     
     public static ScrollPanel mapPanel() {
-        mapPanel.setHeight(px800); 
+        mapPanel.setHeight(px700); 
         mapPanel.setWidth(px1200);
-//        mapPanel.add(mapImage());
         mapPanel.add(map.g);
         return mapPanel;
     } // mapPanel
@@ -225,10 +224,6 @@ public class Variables {
     
     public static VerticalPanel settingsPasswordVpanel() {
         settingsPassVpanel.add(passEnabled());
-//        settingsPassVpanel.add(changePassword);
-//        settingsPassVpanel.add(currentPassword());
-//        settingsPassVpanel.add(newPassword());
-//        settingsPassVpanel.add(confirmPassword());
         settingsPassVpanel.add(savePassButton());
         settingsPassVpanel.setSpacing(intPanelSpacing1);
         return settingsPassVpanel;
@@ -565,6 +560,7 @@ public class Variables {
     public final static String px560 = "560px";
     public final static String px600 = "600px";
     public final static String px650 = "650px";
+    public final static String px700 = "700px";
     public final static String px800 = "800px";
     public final static String px1000 = "1000px";
     public final static String px1200 = "1200px";
