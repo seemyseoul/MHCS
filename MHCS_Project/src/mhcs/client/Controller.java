@@ -480,7 +480,8 @@ public class Controller {
 			@Override
 			public void onChange(ChangeEvent event) {
 				Variables.map.clearMap();
-//				Variables.map.changePic(Model.getConfigList().get(Variables.cListBox.getSelectedIndex()), Variables.map);				
+				Window.alert("HERE BRENT!");				
+				Variables.map.changePic(Model.getConfigList().get(Variables.cListBox.getSelectedIndex()), Variables.map);				
 				Variables.map.placeConfiguration(Variables.map,Model.getConfigList().get(Variables.cListBox.getSelectedIndex()));
 			}
 		};
