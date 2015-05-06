@@ -730,13 +730,7 @@ public class Controller {
 	public static ClickHandler passEnable() {
 		return new ClickHandler() {
 			public void onClick(ClickEvent event) {
-//				save.setEnabled(true);
-//				if (Variables.cbPassEnable.getValue()) {
-//					Variables.loginVpanel.add(Variables.ptb());
-//				} // if
-//				else if (!Variables.cbPassEnable.getValue()) {
-//					Variables.loginVpanel.remove(Variables.ptb());
-//				} // if
+
 				Model.setPasswordFlag(Variables.cbPassEnable.getValue());
 			} // onClick
 		};

@@ -270,6 +270,7 @@ public class Model {
 	 */
 	public static void setPasswordFlag(boolean passwordFlagParam) {
 		passwordFlag = passwordFlagParam;
+		toSave.saveSettings(passwordFlag, password);
 	}
 
 	// THE NEXT FEW FUNCTIONS ARE
