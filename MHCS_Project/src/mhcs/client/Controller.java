@@ -726,25 +726,17 @@ public class Controller {
 	    moduleOrientation.addItem("2 turns");
 	} // populateOrientation
 	
-	public static ClickHandler passEnable(final Button change, final PasswordTextBox current,
-			final PasswordTextBox newPass, final PasswordTextBox confirm, final Button save) {
+	public static ClickHandler passEnable(final Button change, final Button save) {
 		return new ClickHandler() {
-				public void onClick(ClickEvent event) {
-					if (Variables.cbPassEnable.getValue()) {
-						change.setEnabled(true);
-						current.setEnabled(true);
-						newPass.setEnabled(true);
-						confirm.setEnabled(true);
-						save.setEnabled(true);
-					} // if
-					else if (!Variables.cbPassEnable.getValue()) {
-						change.setEnabled(false);
-						current.setEnabled(false);
-						newPass.setEnabled(false);
-						confirm.setEnabled(false);
-						save.setEnabled(false);
-					} // if
-				} // onClick
+			public void onClick(ClickEvent event) {
+				save.setEnabled(true);
+				if (Variables.cbPassEnable.getValue()) {
+					Variables.loginVpanel.add(Variables.ptb());
+				} // if
+				else if (!Variables.cbPassEnable.getValue()) {
+					Variables.loginVpanel.remove(Variables.ptb());
+				} // if
+			} // onClick
 		};
 	} // passEnabled
 	
@@ -785,41 +777,7 @@ public class Controller {
 			} // onClick
 		};
 	} // dateTimeSave
-	
-	/**
-	 * Returns mouse down handler for drag and drop functionality.
-	 * @return MouseDownHandler
-	 */
-	public static MouseDownHandler dragDropDown(final Map map, final Module module) {
-		return new MouseDownHandler() {
-			public void onMouseDown(MouseDownEvent event) {
-				Variables.boolMouseDown = true;
-			} // onMouseDown
-		};
-	} // dragDrop
-	
-	public static MouseMoveHandler dragDropMove(final Map map, final Module module) {
-		return new MouseMoveHandler() {
-			public void onMouseMove(MouseMoveEvent event) {
-				Point current = new Point(0, 0);
-				Module temp = module;
-				current.setX(event.getClientX());
-				current.setY(event.getClientY());
-				temp.setCoordinates(current);
-				map.placeModules(map, temp);
-			} // onMouseMove
-		};
-	} // dragDropMove
-	
-	public static MouseUpHandler dragDropUp(final Map map, final Module module) {
-		return new MouseUpHandler() {
-			public void onMouseUp(MouseUpEvent event) {
-				map.placeModules(map, module);
-				Variables.boolMouseDown = false;
-			} // onMouseUp
-		};
-	} // dragDropUp
-	
+
 	public static void tenDayCheck(){
 		if (Model.getTime() != null){
         	Date date = new Date();

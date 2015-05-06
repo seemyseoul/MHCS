@@ -38,7 +38,7 @@ public class View implements EntryPoint {
   */
 public void onModuleLoad() {      
     final TabLayoutPanel tabPanel = Variables.tabPanel();
-    final DockPanel login = Variables.loginDock();
+    static DockPanel login = Variables.loginDock();
     login.setSize(Variables.px1500, Variables.px600);
     
     final Button loginButton = Variables.loginButton;
@@ -57,7 +57,6 @@ public void onModuleLoad() {
             Variables.mOrientation(), Variables.mX(), Variables.mY(), Variables.mSaveButton()));
 
     Variables.cListBox().addChangeHandler(Controller.configsListBoxHandler());
-    
     
     for (int i = 0; i < Module.moduleStrings.length; i++) {
         Variables.mType().addItem(Module.moduleStrings[i]);
@@ -96,6 +95,8 @@ public void onModuleLoad() {
     Variables.mX.setEnabled(false);
     Variables.mY.setEnabled(false);
     Variables.mSaveButton.setEnabled(false);
+    
+    Variables.cbPassEnable().setValue(true);
     
     String changed = Model.getTime();
 	String year = changed.substring(0, 4);

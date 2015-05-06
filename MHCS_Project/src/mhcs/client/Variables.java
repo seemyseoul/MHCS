@@ -632,17 +632,6 @@ public class Variables {
     final static Button dateTimeButton = new Button("Date-Time");
     final static Button dateTimeSaveButton = new Button("Save");
     final static Button logoutButton = new Button("Logout");
-    final static CheckBox cbAirLock = new CheckBox("Air Lock");
-    final static CheckBox cbPlain = new CheckBox("Plain");
-    final static CheckBox cbDorm = new CheckBox("Dormitory");
-    final static CheckBox cbSanitation = new CheckBox("Sanitation");
-    final static CheckBox cbFoodAndWater = new CheckBox("Food & Water");
-    final static CheckBox cbGymAndRelax = new CheckBox("Gym & Relaxation");
-    final static CheckBox cbCanteen = new CheckBox("Canteen");
-    final static CheckBox cbPower = new CheckBox("Power");
-    final static CheckBox cbControl = new CheckBox("Control");
-    final static CheckBox cbMedical = new CheckBox("Medical");
-    static String time1 = new String("");
     final static CheckBox cbPassEnable = new CheckBox();
     final static HTML configQuality = new HTML("Config Quality: " );
     final static HTML htmlSouth = new HTML("Naples Spring 2015");
@@ -660,10 +649,6 @@ public class Variables {
     final static HTML htmlMap = new HTML("Map");
     final static HTML htmlSettings = new HTML("Settings");
     final static HTML htmlPassEnable = new HTML("Enable Password");
-    final static HTML htmlChangePass = new HTML("Change Password");
-    final static HTML htmlCurrPass = new HTML("Current Password");
-    final static HTML htmlNewPass = new HTML("New Password");
-    final static HTML htmlConfirmPass = new HTML("Confirm Password");
     final static HTML htmlTenDay = new HTML("Click the button to automatically enter "
             + "the date and time of the most recent rover calibration."
             + "<br>"
@@ -681,11 +666,9 @@ public class Variables {
     final static ListBox users = Variables.lb();
     final static ListBox testCases = Variables.lb();
     final static PasswordTextBox ptbPassword = Variables.ptb();
-    final static PasswordTextBox ptbCurrentPassword = Variables.ptb();
-    final static PasswordTextBox ptbNewPassword = Variables.ptb();
-    final static PasswordTextBox ptbConfirmPassword = Variables.ptb();
     final static RadioButton radAll = new RadioButton("Select All");
     final static RadioButton radNone = new RadioButton("Deselect All");
+    static String time1 = "";
     final static TextArea moduleDetails = Variables.ta();
     final static TextArea moduleRequirements = Variables.ta();
     final static TextBox mID = Variables.tb();
