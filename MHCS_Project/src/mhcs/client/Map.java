@@ -52,11 +52,6 @@ public class Map {
 			int x = translateX(coordinates.getX());
 			int y = translateY(coordinates.getY());
 			map.setWidget(y, x, module.getImage());
-			module.getImage().addMouseDownHandler(Controller.dragDropDown(Variables.map, module));
-			if (Variables.boolMouseDown) {
-				module.getImage().addMouseMoveHandler(Controller.dragDropMove(Variables.map, module));
-				module.getImage().addMouseUpHandler(Controller.dragDropUp(map, module));
-			} // if
 		} // else
 		
 	} // placeModule
@@ -84,10 +79,7 @@ public class Map {
 	public void placeConfiguration(Map map, Configuration config) {
 		List<Module> modules = config.getModules();
 		for (int i=0; i < modules.size(); i++) {
-			Point coordinates = modules.get(i).getCoordinates();
-			int x = translateX(coordinates.getX());
-			int y = translateY(coordinates.getY());
-			map.setWidget(y, x, modules.get(i).getImage());
+			map.placeModules(map, modules.get(i));
 		} // for
 	} // placeConfiguration
 	
