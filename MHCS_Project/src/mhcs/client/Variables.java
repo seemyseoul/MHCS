@@ -6,7 +6,6 @@ import com.google.gwt.dom.client.Style.Unit;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.media.client.Audio;
-import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.CheckBox;
 import com.google.gwt.user.client.ui.DockPanel;
@@ -123,7 +122,7 @@ public class Variables {
     } // passEnabled
     
     public static ScrollPanel mapPanel() {
-        mapPanel.setHeight(px700); 
+        mapPanel.setHeight(px600); 
         mapPanel.setWidth(px1200);
         mapPanel.add(map.g);
         return mapPanel;

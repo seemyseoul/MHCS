@@ -4,7 +4,6 @@ import java.util.List;
 
 import mhcs.storage.Model;
 
-import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.Grid;
 import com.google.gwt.user.client.ui.Image;
 
@@ -46,14 +45,19 @@ public class Map {
 	
 	public void placeModules(Map map, Module module) {
 		Point coordinates = module.getCoordinates();
-		int x = translateX(coordinates.getX());
-		int y = translateY(coordinates.getY());
-		map.setWidget(y, x, module.getImage());
-		module.getImage().addMouseDownHandler(Controller.dragDropDown(Variables.map, module));
-		if (Variables.boolMouseDown) {
-			module.getImage().addMouseMoveHandler(Controller.dragDropMove(Variables.map, module));
-			module.getImage().addMouseUpHandler(Controller.dragDropUp(map, module));
+		if (module.isInDeadZone()){
+			module.setStatus(ModuleStatus.BEYONDREPAIR);
 		} // if
+		else {
+			int x = translateX(coordinates.getX());
+			int y = translateY(coordinates.getY());
+			map.setWidget(y, x, module.getImage());
+			module.getImage().addMouseDownHandler(Controller.dragDropDown(Variables.map, module));
+			if (Variables.boolMouseDown) {
+				module.getImage().addMouseMoveHandler(Controller.dragDropMove(Variables.map, module));
+				module.getImage().addMouseUpHandler(Controller.dragDropUp(map, module));
+			} // if
+		} // else
 		
 	} // placeModule
 
