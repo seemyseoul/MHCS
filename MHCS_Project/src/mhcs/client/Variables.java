@@ -211,11 +211,12 @@ public class Variables {
 					m.setCoordinates(new Point(m.getCoordinates().getX()+dx,m.getCoordinates().getY()+dy));
 				}
 				Variables.map.clearMap();
-				Window.alert("STUFF");
+				//Window.alert("STUFF");
 				List<Configuration> configLista = Model.getConfigList();
 				configLista.remove(Variables.cListBox().getSelectedIndex());
 				configLista.add(Variables.cListBox().getSelectedIndex(),c);
-				
+				Model.setConfigList(configLista);
+				Controller.populateConfigListBox(cListBox);
 				Variables.map.placeConfiguration(Variables.map, c);
 			}
     	});
