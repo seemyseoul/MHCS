@@ -121,7 +121,7 @@ public class TestCases {
 			else if (status == "damaged"){
 				modStatus = ModuleStatus.BEYONDREPAIR;
 			}
-			else{
+			else {
 				modStatus = ModuleStatus.USABLEAFTERREPAIR;
 			}
 			
@@ -163,8 +163,14 @@ public class TestCases {
 			} //else
 			
 			Variables.mListBox().addItem("Module #" + id);		
+			
+			if(type == null){
+				Window.alert("Invalid GPS Retrieval: Module " + id + "not added.");
+			}
+			else{
 			Module tempModule = new Module(type, id, coordinate, modStatus, numTurns, false);			
 			Model.addModule(tempModule);
+			}
 
 		} //for
 
