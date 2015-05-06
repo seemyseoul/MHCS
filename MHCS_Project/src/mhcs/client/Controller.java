@@ -730,8 +730,8 @@ public class Controller {
 	public static ClickHandler passEnable() {
 		return new ClickHandler() {
 			public void onClick(ClickEvent event) {
-
 				Model.setPasswordFlag(Variables.cbPassEnable.getValue());
+				Variables.passInfoSavedSound().play();
 			} // onClick
 		};
 	} // passEnabled

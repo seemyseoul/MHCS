@@ -119,13 +119,6 @@ public class Variables {
         return moduleCoordinates;
     } // moduleCoordinates
     
-    public static HorizontalPanel usersPanel() {
-        usersPanel.add(usersListBox());
-        usersPanel.add(addUserButton());
-        usersPanel.add(removeUserButton());
-        return usersPanel;
-    } // settingsUserPanel
-    
     public static HorizontalPanel passEnabled() {
         passEnabled.add(cbPassEnable());
         passEnabled.add(htmlPassEnable);
@@ -246,7 +239,6 @@ public class Variables {
     
     public static VerticalPanel settingsPasswordVpanel() {
         settingsPassVpanel.add(passEnabled());
-        settingsPassVpanel.add(savePassButton());
         settingsPassVpanel.setSpacing(intPanelSpacing1);
         return settingsPassVpanel;
     } // settingsVpanel
@@ -297,24 +289,6 @@ public class Variables {
         removeConfig.setWidth(px300);
         return removeConfig;
     } // removeConfigButton
-    public static Button addUserButton() {
-        addUser.setHeight(px35);
-        addUser.setWidth(px140);
-        return addUser;
-    } // addUserButton
-    
-    public static Button removeUserButton() {
-        removeUser.setHeight(px35);
-        removeUser.setWidth(px140);
-        return removeUser;
-    } // removeUserButton
-    
-    public static Button savePassButton() {
-        savePassword.setHeight(px35);
-        savePassword.setWidth(px140);
-//      savePassword.addClickHandler(Controller.savePassword());
-        return savePassword;
-    }
     
     public static Button dateTimeButton() {
         dateTimeButton.setHeight(px35);
@@ -527,6 +501,12 @@ public class Variables {
         return tenDay;
     } // tenDaySound
     
+    public static Audio passInfoSavedSound() {
+    	final Audio passInfoSaved = Audio.createIfSupported();
+    	passInfoSaved.setSrc("sounds/passwordInformationSaved");
+    	return passInfoSaved;
+    } // passInfoSavedSound
+    
     public static Audio testCaseSound() {
         final Audio test = Audio.createIfSupported();
         test.setSrc("sounds/testCase");
@@ -626,13 +606,7 @@ public class Variables {
     final static Button mAddButton = new Button("Add");
     final static Button mRemoveButton = new Button("Remove");
     final static Button mSaveButton = new Button("Save");
-    final static Button roverPath = new Button("Rover Path");
     final static Button removeConfig = new Button("Remove");
-    final static Button buildConfig = new Button("Build Configuration");
-    final static Button addUser = new Button("Add User");
-    final static Button removeUser = new Button("Remove User");
-    final static Button changePassword = new Button("Change Password");
-    final static Button savePassword = new Button("Save Password");
     final static Button dateTimeButton = new Button("Date-Time");
     final static Button dateTimeSaveButton = new Button("Save");
     final static Button logoutButton = new Button("Logout");
