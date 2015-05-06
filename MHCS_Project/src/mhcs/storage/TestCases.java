@@ -59,7 +59,7 @@ public class TestCases {
 						update(rt, map); //METHOD CALL TO DO SOMETHING WITH RESPONSE TEXT
 					} //if
 					else {
-						Window.alert("Couldn't retrieve JSON (" + response.getStatusCode()+ ")");
+						Window.alert("GPS Offline!");
 					} //else
 				} //onResponseReceived
 			}); //send request
