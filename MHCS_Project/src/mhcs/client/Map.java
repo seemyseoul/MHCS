@@ -47,6 +47,7 @@ public class Map {
 		Point coordinates = module.getCoordinates();
 		if (module.isInDeadZone()){
 			module.setStatus(ModuleStatus.BEYONDREPAIR);
+			Model.saveModule(module);
 		} // if
 		int x = translateX(coordinates.getX());
 		int y = translateY(coordinates.getY());

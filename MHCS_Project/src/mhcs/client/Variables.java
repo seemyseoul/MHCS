@@ -151,6 +151,10 @@ public class Variables {
         loginVpanel.add(htmlUsername);
         loginVpanel.add(tbUsername);
         loginVpanel.add(Variables.htmlPassword);
+        if(!Model.isPasswordFlag())
+        {
+        	Variables.htmlPassword.setVisible(false);
+        }
         loginVpanel.add(ptbPassword);
         loginVpanel.add(Variables.loginButton);
         return loginVpanel;

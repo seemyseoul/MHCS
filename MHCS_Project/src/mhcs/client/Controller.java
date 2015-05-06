@@ -624,7 +624,8 @@ public class Controller {
 			final Audio errorSound) {
 		return new ClickHandler(){
 	        public void onClick(ClickEvent event) {
-	            if(passwordEntry.getText().equals("guest"))
+	        	boolean passwordBoolean = (Model.isPasswordFlag()) ? passwordEntry.getText().equals("guest") : true;
+	            if(passwordBoolean && Variables.tbUsername.getText().equals("Naples"))
 	            {
 	                RootLayoutPanel.get().clear();
 	                RootLayoutPanel.get().add(tabPanel);
@@ -729,13 +730,14 @@ public class Controller {
 	public static ClickHandler passEnable(final Button change, final Button save) {
 		return new ClickHandler() {
 			public void onClick(ClickEvent event) {
-				save.setEnabled(true);
-				if (Variables.cbPassEnable.getValue()) {
-					Variables.loginVpanel.add(Variables.ptb());
-				} // if
-				else if (!Variables.cbPassEnable.getValue()) {
-					Variables.loginVpanel.remove(Variables.ptb());
-				} // if
+//				save.setEnabled(true);
+//				if (Variables.cbPassEnable.getValue()) {
+//					Variables.loginVpanel.add(Variables.ptb());
+//				} // if
+//				else if (!Variables.cbPassEnable.getValue()) {
+//					Variables.loginVpanel.remove(Variables.ptb());
+//				} // if
+				Model.setPasswordFlag(Variables.cbPassEnable.getValue());
 			} // onClick
 		};
 	} // passEnabled
