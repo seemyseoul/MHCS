@@ -225,7 +225,7 @@ public class Variables {
     	configWestPanel.add(new HTML("Y: "));
     	configWestPanel.add(yBox);
     	configWestPanel.add(sButt);
-    	configWestPanel.setSpacing(intPanelSpacing1);
+    	configWestPanel.setSpacing(intPanelSpacing0);
     	return configWestPanel;
     } // configWestVpanel
     
