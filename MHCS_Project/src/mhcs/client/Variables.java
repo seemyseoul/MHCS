@@ -154,7 +154,6 @@ public class Variables {
     } // modulesWestVpanel
     
     public static VerticalPanel modulesCenterVpanel() {
-        modulesCenter.add(Variables.htmlModuleDetails);
         return modulesCenter;
     } // modulesCenterVpanel
     
@@ -636,7 +635,6 @@ public class Variables {
     final static HTML htmlUsername = new HTML("Username:");
     final static HTML htmlPassword = new HTML("Password: ");
     final static HTML htmlModules = new HTML("Modules");
-    final static HTML htmlModuleDetails = new HTML("Module Details");
     final static HTML htmlModuleRequirements = new HTML("Module Requirements");
     final static HTML htmlModuleID = new HTML("ID Number");
     final static HTML htmlModuleType = new HTML("Type");
