@@ -161,13 +161,13 @@ public class TestCases {
 			else {
 				type = null;
 			} //else
-			
-			Variables.mListBox().addItem("Module #" + id);		
+				
 			
 			if(type == null){
-				Window.alert("Invalid GPS Retrieval: Module " + id + "not added.");
+				Window.alert("Invalid GPS Retrieval: Module " + id + " not added.");
 			}
 			else{
+			Variables.mListBox().addItem("Module #" + id);					
 			Module tempModule = new Module(type, id, coordinate, modStatus, numTurns, false);			
 			Model.addModule(tempModule);
 			}
