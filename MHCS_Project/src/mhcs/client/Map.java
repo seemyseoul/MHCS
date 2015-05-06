@@ -67,7 +67,6 @@ public class Map {
 				configMod = configModules.get(i);
 				freeMod = freeModules.get(j);
 				if (configMod.getId() == freeMod.getId()){
-					Window.alert("MATCH FOUND");
 					Point coordinates = freeMod.getCoordinates();
 					int x = translateX(coordinates.getX());
 					int y = translateY(coordinates.getY());
