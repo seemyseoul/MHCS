@@ -6,6 +6,10 @@
 	height: 50px;
 }
 
+.mappy {
+	background-image: 'marsMap';
+}
+
 
 /** Example rules used by the template application (remove for your app) */
 h1 {
