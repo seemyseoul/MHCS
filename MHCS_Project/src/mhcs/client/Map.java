@@ -48,7 +48,7 @@ public class Map {
 		int x = translateX(coordinates.getX());
 		int y = translateY(coordinates.getY());
 		map.setWidget(y, x, module.getImage());
-		module.getImage().addMouseDownHandler(Controller.dragDropDown(Variables.map, module));
+//		map.g.getWidget(y, x).addAttachHandler(Controller.dragDropDown(Variables.map, module));
 		if (Variables.boolMouseDown) {
 			module.getImage().addMouseMoveHandler(Controller.dragDropMove(Variables.map, module));
 			module.getImage().addMouseUpHandler(Controller.dragDropUp(map, module));
