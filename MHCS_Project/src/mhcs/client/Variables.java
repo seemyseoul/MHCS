@@ -47,13 +47,15 @@ public class Variables {
     public static DockPanel modulesDock() {
         m.setSpacing(intPanelSpacing0);
         m.setHorizontalAlignment(DockPanel.ALIGN_CENTER);
+        m.setVerticalAlignment(DockPanel.ALIGN_MIDDLE);
         m.setBorderWidth(intPanelBorder);
         m.setSize(px1500, px600);
         m.add(htmlModules, DockPanel.NORTH);
         m.add(htmlSouth, DockPanel.SOUTH);
         m.add(modulesEastVpanel(), DockPanel.EAST);
         m.add(modulesWestVpanel(), DockPanel.WEST);
-//        m.add(moduleImage, DockPanel.NORTH);
+        //m.add(moduleImage(), DockPanel.NORTH);
+        m.add(modulesNorthH(), DockPanel.NORTH);
         m.add(modulesSouthVpanel(), DockPanel.SOUTH);
         m.add(modulesCenterVpanel(), DockPanel.CENTER);
         return m;
@@ -95,6 +97,12 @@ public class Variables {
         return w;
     } // weatherPanel
     
+    public static HorizontalPanel modulesNorthH() {
+    	modulesNorthH.add(moduleImage());
+    	modulesNorthH.setVerticalAlignment(HorizontalPanel.ALIGN_MIDDLE);
+    	return modulesNorthH;
+    }
+    
     public static HorizontalPanel horizontal() {
         return new HorizontalPanel();
     } // horizontal
@@ -127,6 +135,7 @@ public class Variables {
     public static ScrollPanel mapPanel() {
         mapPanel.setHeight(px700); 
         mapPanel.setWidth(px1200);
+        mapPanel.addStyleName("mappy");
         mapPanel.add(map.g);
         return mapPanel;
     } // mapPanel
@@ -580,6 +589,7 @@ public class Variables {
     final static DockPanel c = new DockPanel();
     final static DockPanel s = new DockPanel();
     final static FlowPanel w = new FlowPanel();
+    final static HorizontalPanel modulesNorthH = Variables.horizontal();
     final static HorizontalPanel modulesWestH = Variables.horizontal();
     final static HorizontalPanel moduleCoordinates = Variables.horizontal();
     final static HorizontalPanel configHpanel = Variables.horizontal();
