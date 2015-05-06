@@ -637,14 +637,14 @@ public final class Configuration implements Cloneable{
 	
 	public void randomlyFill()
 	{
-		Window.alert("RandomlyFill");
+//		Window.alert("RandomlyFill");
 		List<Point> points = this.getOpenSpaces();
-		Window.alert("number of Points: " + Integer.toString(points.size()));
+//		Window.alert("number of Points: " + Integer.toString(points.size()));
 		List<Module> modules = Model.getUnusedUsableModuleList(this);
-		Window.alert("number of Modules: " + Integer.toString(modules.size()));
+//		Window.alert("number of Modules: " + Integer.toString(modules.size()));
 		for (Point p : points)
 		{
-			Window.alert("point");
+//			Window.alert("point");
 			Module m;
 			do {
 				if (modules.size() == 0)

@@ -153,7 +153,7 @@ public class Variables {
         loginVpanel.add(Variables.htmlPassword);
         if(!Model.isPasswordFlag())
         {
-        	Variables.htmlPassword.setVisible(false);
+        	Variables.ptbPassword.setVisible(false);
         }
         loginVpanel.add(ptbPassword);
         loginVpanel.add(Variables.loginButton);
@@ -337,7 +337,7 @@ public class Variables {
     } // logoutButton
     
     public static CheckBox cbPassEnable() {
-//      cbPassEnable.addClickHandler(Controller.passEnable());
+        cbPassEnable.addClickHandler(Controller.passEnable());
         return cbPassEnable;
     } // passEnable
     

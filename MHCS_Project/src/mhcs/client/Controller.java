@@ -727,7 +727,7 @@ public class Controller {
 	    moduleOrientation.addItem("2 turns");
 	} // populateOrientation
 	
-	public static ClickHandler passEnable(final Button change, final Button save) {
+	public static ClickHandler passEnable() {
 		return new ClickHandler() {
 			public void onClick(ClickEvent event) {
 //				save.setEnabled(true);
