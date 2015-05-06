@@ -396,7 +396,14 @@ public class Module implements Cloneable {
 		return id == m.getId();
 	}
 	
-	
+	public boolean isInDeadZone()
+	{
+		if ((getCoordinates().getY() >= 40 && getCoordinates().getY() <=50 ) && 
+			    (getCoordinates().getX() >= 40 && getCoordinates().getX() <= 50)){
+			return true;
+		}
+		return false;
+	}
 	
 
 	static String[] moduleStrings = { "Air Lock", "Plain", "Dormitory",

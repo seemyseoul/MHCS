@@ -358,17 +358,18 @@ public class Model {
 	 * @return the center of mass.
 	 */
 	public final static Point getCenterOfMass() {
-		List<Module> modules = Model.getModuleList();
-		if (modules.isEmpty()) {
-			return null;
-		}
-		int sumX = 0;
-		int sumY = 0;
-		for (Module m : modules) {
-			sumX += m.getCoordinates().getX();
-			sumY += m.getCoordinates().getY();
-		}
-		return new Point(sumX / modules.size(), sumY / modules.size());
+//		List<Module> modules = Model.getModuleList();
+//		if (modules.isEmpty()) {
+//			return null;
+//		}
+//		int sumX = 0;
+//		int sumY = 0;
+//		for (Module m : modules) {
+//			sumX += m.getCoordinates().getX();
+//			sumY += m.getCoordinates().getY();
+//		}
+//		return new Point(sumX / modules.size(), sumY / modules.size());
+		return new Point(60,17);
 	}
 
 	/**
