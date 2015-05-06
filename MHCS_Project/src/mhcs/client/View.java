@@ -96,7 +96,7 @@ public void onModuleLoad() {
     Variables.mY.setEnabled(false);
     Variables.mSaveButton.setEnabled(false);
     
-    Variables.cbPassEnable().setValue(true);
+    Variables.cbPassEnable().setValue(Model.isPasswordFlag());
     
     String changed = Model.getTime();
 	String year = changed.substring(0, 4);
