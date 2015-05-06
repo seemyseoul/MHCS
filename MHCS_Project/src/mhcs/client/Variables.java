@@ -548,7 +548,7 @@ public class Variables {
     final static int intPanelBorder = 2;
     final static int intPanelSpacing0 = 5;
     final static int intPanelSpacing1 = 10;
-    public final static String px35 = "20px";
+    public final static String px20 = "20px";
     public final static String px35 = "35px";
     public final static String px50 = "50px";
     public final static String px80 = "80px";
