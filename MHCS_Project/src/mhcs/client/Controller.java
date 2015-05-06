@@ -532,7 +532,7 @@ public class Controller {
 		return new ValueChangeHandler<String>() {
 	    	public void onValueChange(ValueChangeEvent<String> event) {
 	    		int y = Integer.parseInt(Variables.mY().getText());
-	    		if (y < 1 || y > 100) {
+	    		if (y < 1 || y > 50) {
 	    			final DialogBox typeDialogBox = new DialogBox();
 	                typeDialogBox.setText("Coordinate Error");
 
