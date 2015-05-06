@@ -38,7 +38,7 @@ public class View implements EntryPoint {
   */
 public void onModuleLoad() {      
     final TabLayoutPanel tabPanel = Variables.tabPanel();
-    static DockPanel login = Variables.loginDock();
+    DockPanel login = Variables.loginDock();
     login.setSize(Variables.px1500, Variables.px600);
     
     final Button loginButton = Variables.loginButton;
