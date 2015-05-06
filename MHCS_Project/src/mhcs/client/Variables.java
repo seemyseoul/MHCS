@@ -147,6 +147,7 @@ public class Variables {
         if(!Model.isPasswordFlag())
         {
         	Variables.ptbPassword.setVisible(false);
+        	Variables.htmlPassword.setVisible(false);
         }
         loginVpanel.add(ptbPassword);
         loginVpanel.add(Variables.loginButton);
