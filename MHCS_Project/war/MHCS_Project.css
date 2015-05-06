@@ -6,8 +6,9 @@
 	height: 50px;
 }
 
-.mappy {
-	background-image: 'marsMap';
+.mappy table{
+	background-image: url('images/marsMap');
+	background-size: 100% 100%;
 }
 
 

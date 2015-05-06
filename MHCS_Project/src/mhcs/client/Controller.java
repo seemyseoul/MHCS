@@ -604,6 +604,8 @@ public class Controller {
 				Variables.map.clearMap();		
 				Variables.map.changePic(Model.getConfigList().get(Variables.cListBox.getSelectedIndex()), Variables.map);				
 				Variables.map.placeConfiguration(Variables.map,Model.getConfigList().get(Variables.cListBox.getSelectedIndex()));
+				double currentConfigQuality = 50.0 - Model.getConfigList().get(Variables.cListBox.getSelectedIndex()).getFlawRating();
+				Variables.configQuality.setHTML("Config Quality: " + currentConfigQuality);
 			}
 		};
 	}

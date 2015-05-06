@@ -65,7 +65,7 @@ public class TestCases {
 			}); //send request
 		} // RequestBuilder
 		catch (RequestException e) {
-			Window.alert("RequestException: Couldn't retrieve JSON");
+			Window.alert("GPS Offline!!!");
 		} //Catch
 		
 	} // TestCaseChoice

@@ -203,6 +203,7 @@ public class Variables {
 		ConfigurationBuilder.generateConfigurations();
     	configWestPanel.add(cListBox());
     	configWestPanel.add(removeConfigButton());
+    	
     	final TextBox xBox = new TextBox();
     	final TextBox yBox = new TextBox();
     	Button sButt = new Button("Change Center Of Gravity");
@@ -229,6 +230,7 @@ public class Variables {
 				Variables.map.placeConfiguration(Variables.map, c);
 			}
     	});
+    	configWestPanel.add(configQuality);
     	configWestPanel.add(new HTML("X: "));
     	configWestPanel.add(xBox);
     	configWestPanel.add(new HTML("Y: "));
@@ -642,6 +644,7 @@ public class Variables {
     final static CheckBox cbMedical = new CheckBox("Medical");
     static String time1 = new String("");
     final static CheckBox cbPassEnable = new CheckBox();
+    final static HTML configQuality = new HTML("Config Quality: " );
     final static HTML htmlSouth = new HTML("Naples Spring 2015");
     final static HTML htmlUsername = new HTML("Username:");
     final static HTML htmlPassword = new HTML("Password: ");
