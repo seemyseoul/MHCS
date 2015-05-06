@@ -350,7 +350,7 @@ public class Controller {
 				
 				List<Module> modules = Model.getModuleList();
 				for (int i = 0; i < modules.size(); i++) {
-					map.clearMap();
+//					map.clearMap();
 					map.placeModules(map, modules.get(i));
 				} // for
 				
