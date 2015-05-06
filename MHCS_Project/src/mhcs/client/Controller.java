@@ -278,7 +278,7 @@ public class Controller {
 			public void onClick(ClickEvent event) {
 				id.setText("");
 				id.setEnabled(true);
-				type.setEnabled(true);
+				//type.setEnabled(true);
 				condition.setEnabled(true);
 				orientation.setEnabled(true);
 				x.setEnabled(true);
