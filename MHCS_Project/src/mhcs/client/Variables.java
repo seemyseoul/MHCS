@@ -1,11 +1,14 @@
 package mhcs.client;
 
+import java.util.List;
+
 import mhcs.storage.Model;
 
 import com.google.gwt.dom.client.Style.Unit;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.media.client.Audio;
+import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.CheckBox;
 import com.google.gwt.user.client.ui.DockPanel;
@@ -122,7 +125,7 @@ public class Variables {
     } // passEnabled
     
     public static ScrollPanel mapPanel() {
-        mapPanel.setHeight(px600); 
+        mapPanel.setHeight(px700); 
         mapPanel.setWidth(px1200);
         mapPanel.add(map.g);
         return mapPanel;
@@ -208,8 +211,12 @@ public class Variables {
 					m.setCoordinates(new Point(m.getCoordinates().getX()+dx,m.getCoordinates().getY()+dy));
 				}
 				Variables.map.clearMap();
-//				Window.alert("STUFF");
-//				Variables.map.placeConfiguration(Variables.map, c);
+				Window.alert("STUFF");
+				List<Configuration> configLista = Model.getConfigList();
+				configLista.remove(Variables.cListBox().getSelectedIndex());
+				configLista.add(Variables.cListBox().getSelectedIndex(),c);
+				
+				Variables.map.placeConfiguration(Variables.map, c);
 			}
     	});
     	configWestPanel.add(new HTML("X: "));
