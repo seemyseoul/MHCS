@@ -718,7 +718,7 @@ public class Controller {
 	
 	/**
 	 * Populates the Orientaion ListBox on Modules Page.
-	 * @param moduleOrientation
+	 * @param moduleOrientation 
 	 */
 	public static void populateOrientation(final ListBox moduleOrientation) {
 		moduleOrientation.clear();

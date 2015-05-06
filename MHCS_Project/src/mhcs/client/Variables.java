@@ -120,7 +120,7 @@ public class Variables {
     } // moduleCoordinates
     
     public static HorizontalPanel passEnabled() {
-        passEnabled.add(cbPassEnable());
+        passEnabled.add(cbPassEnable()); 
         passEnabled.add(htmlPassEnable);
         return passEnabled;
     } // passEnabled
