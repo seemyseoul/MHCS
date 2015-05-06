@@ -4,6 +4,7 @@ import java.util.List;
 
 import mhcs.storage.Model;
 
+import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.Grid;
 import com.google.gwt.user.client.ui.Image;
 
@@ -66,6 +67,7 @@ public class Map {
 				configMod = configModules.get(i);
 				freeMod = freeModules.get(j);
 				if (configMod.getId() == freeMod.getId()){
+					Window.alert("FOUND A MATCH!");
 					Point coordinates = freeMod.getCoordinates();
 					int x = translateX(coordinates.getX());
 					int y = translateY(coordinates.getY());
