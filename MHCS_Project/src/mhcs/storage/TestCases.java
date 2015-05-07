@@ -168,7 +168,11 @@ public class TestCases {
 			}
 			else{
 			Variables.mListBox().addItem("Module #" + id);					
-			Module tempModule = new Module(type, id, coordinate, modStatus, numTurns, false);			
+			Module tempModule = new Module(type, id, coordinate, modStatus, numTurns, false);	
+			if(tempModule.isInDeadZone())
+			{
+				tempModule.setStatus(ModuleStatus.BEYONDREPAIR);
+			}
 			Model.addModule(tempModule);
 			}
 
