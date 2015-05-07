@@ -205,13 +205,10 @@ public class Variables {
     	configWestPanel.add(cListBox());
     	configWestPanel.add(removeConfigButton());
     	
-    	final TextBox xBox = new TextBox();
-    	final TextBox yBox = new TextBox();
-    	Button sButt = new Button("Change Center Of Gravity");
     	xBox.setEnabled(false);
     	yBox.setEnabled(false);
     	sButt.setEnabled(false);
-    	sButt.addClickHandler(Controller.sButtHandler(xBox, yBox, sButt));
+    	sButt.addClickHandler(Controller.sButtHandler());
     	configWestPanel.add(configQuality);
     	configWestPanel.add(new HTML("X: "));
     	configWestPanel.add(xBox);
@@ -588,6 +585,7 @@ public class Variables {
     static Boolean minConfigReached = false;
     static Boolean boolMouseDown = false;
     final static Button loginButton = new Button("Login");
+    final static Button sButt = new Button("Change Center Of Gravity");
     final static Button mAddButton = new Button("Add");
     final static Button mRemoveButton = new Button("Remove");
     final static Button mSaveButton = new Button("Save");
@@ -637,6 +635,8 @@ public class Variables {
     final static TextBox mID = Variables.tb();
     final static TextBox mX = Variables.tb();
     final static TextBox mY = Variables.tb();
+    final static TextBox xBox = new TextBox();
+    final static TextBox yBox = new TextBox();
     final static TextBox tbUsername = Variables.tb();
     final static TextBox tenDay = Variables.tb();
     final static TextBox timeSince = Variables.tb();

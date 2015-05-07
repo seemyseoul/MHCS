@@ -325,14 +325,12 @@ public class Controller {
 		}; // ClickHandler
 	} // addButton
 	
-	public static ClickHandler sButtHandler(final TextBox xBox, final TextBox yBox, final Button sButt) {
+	public static ClickHandler sButtHandler() {
 		return new ClickHandler() {
 			public void onClick(ClickEvent event) {
-				xBox.setEnabled(true);
-				yBox.setEnabled(true);
-				sButt.setEnabled(true);
-				int x = Integer.parseInt(xBox.getText());
-				int y = Integer.parseInt(yBox.getText());
+
+				int x = Integer.parseInt(Variables.xBox.getText());
+				int y = Integer.parseInt(Variables.yBox.getText());
 				Configuration c = Model.getConfigList().get(Variables.cListBox.getSelectedIndex());
 				Module centerModule = c.getModules().get(0);
 				int dx = x - centerModule.getCoordinates().getX();
@@ -680,6 +678,9 @@ public class Controller {
 
 			@Override
 			public void onChange(ChangeEvent event) {
+				Variables.xBox.setEnabled(true);
+				Variables.yBox.setEnabled(true);
+				Variables.sButt.setEnabled(true);
 				Variables.map.clearMap();		
 				Variables.map.changePic(Model.getConfigList().get(Variables.cListBox.getSelectedIndex()), Variables.map);				
 				Variables.map.placeConfiguration(Variables.map,Model.getConfigList().get(Variables.cListBox.getSelectedIndex()));
