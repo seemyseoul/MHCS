@@ -44,7 +44,7 @@ public class TestCases {
 		
 	public static void TestCaseChoice(int choice, final Map map){		
 		String proxy ="http://www.d.umn.edu/~mckeo044/Proxy.php?url=";
-		String url = proxy+"http://www.d.umn.edu/~mckeo044/tests.php?q=" + Integer.toString(choice);		
+		String url = proxy+"http://www.d.umn.edu/~abrooks/SomeTests.php?q=" + Integer.toString(choice);		
 		url = URL.encode(url);
 	
 		RequestBuilder builder = new RequestBuilder(RequestBuilder.GET, url);
