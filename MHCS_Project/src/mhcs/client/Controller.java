@@ -321,6 +321,15 @@ public class Controller {
 			    Variables.mY.setEnabled(false);
 			    Variables.mSaveButton.setEnabled(false);	
 				Variables.moduleRemovedSound().play();
+				
+				ConfigurationBuilder.generateConfigurations();
+				
+				Variables.map.clearMap();
+				for (Module m : Model.getModuleList()){
+					Variables.map.placeModules(Variables.map, m);
+				}
+
+				Controller.populateConfigListBox(Variables.cListBox());
 			} // onClick
 		}; // ClickHandler
 	} // addButton
@@ -504,6 +513,15 @@ public class Controller {
 				for (Module m : Model.getModuleList()) {
 					modulesListBox.addItem("Module #" + m.getId());
 				} // for
+				ConfigurationBuilder.generateConfigurations();
+				
+				Variables.map.clearMap();
+				for (Module m : Model.getModuleList()){
+					Variables.map.placeModules(Variables.map, m);
+				}
+
+				Controller.populateConfigListBox(Variables.cListBox());
+				
 			} // onClick
 	    };
 	} // saveButton
