@@ -396,6 +396,7 @@ public class Controller {
 					Model.setConfigList(configLista);
 					Controller.populateConfigListBox(Variables.cListBox);
 					Variables.map.placeConfiguration(Variables.map, c);
+					Variables.map.changePic(c, Variables.map);
 				} // else
 			} // onClick
     	};
