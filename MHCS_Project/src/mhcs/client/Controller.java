@@ -325,6 +325,84 @@ public class Controller {
 		}; // ClickHandler
 	} // addButton
 	
+	public static ClickHandler sButtHandler(final TextBox xBox, final TextBox yBox, final Button sButt) {
+		return new ClickHandler() {
+			public void onClick(ClickEvent event) {
+				xBox.setEnabled(true);
+				yBox.setEnabled(true);
+				sButt.setEnabled(true);
+				int x = Integer.parseInt(xBox.getText());
+				int y = Integer.parseInt(yBox.getText());
+				Configuration c = Model.getConfigList().get(Variables.cListBox.getSelectedIndex());
+				Module centerModule = c.getModules().get(0);
+				int dx = x - centerModule.getCoordinates().getX();
+				int dy = y - centerModule.getCoordinates().getY();
+				boolean problem = false;
+				for (Module m : c.getModules()) {
+					m.setCoordinates(new Point(m.getCoordinates().getX()+dx,m.getCoordinates().getY()+dy));
+					if(m.isInDeadZone() || m.getCoordinates().getX() < 1 || m.getCoordinates().getX() > 100 || m.getCoordinates().getY() < 0 || m.getCoordinates().getY() > 50) {
+						problem = true;
+					} // if
+				} // for
+				if (problem) {
+					final DialogBox typeDialogBox = new DialogBox();
+	                typeDialogBox.setText("Coordinate Error");
+
+	                // Create a table to layout the content
+	                VerticalPanel dialogContents = new VerticalPanel();
+	                dialogContents.setSpacing(4);
+	                typeDialogBox.setWidget(dialogContents);
+
+	                // Add some text to the top of the dialog
+	                HTML details = new HTML("You have entered an incorrect Configuration Coordinate.");
+	                dialogContents.add(details);
+	                dialogContents.setCellHorizontalAlignment(
+	                    details, HasHorizontalAlignment.ALIGN_CENTER);
+
+	                // Add an image to the dialog
+	                Image image = new Image("images/error");
+	                image.setHeight(Variables.px140);
+	                image.setWidth(Variables.px200);
+	                dialogContents.add(image);
+	                dialogContents.setCellHorizontalAlignment(
+	                    image, HasHorizontalAlignment.ALIGN_CENTER);
+
+	                // Add a close button at the bottom of the dialog
+	                Button closeButton = new Button(
+	                    "Close", new ClickHandler() {
+	                      public void onClick(ClickEvent event) {
+	                        typeDialogBox.hide();
+	                      } // onClick
+	                    });
+	                dialogContents.add(closeButton);
+	                if (LocaleInfo.getCurrentLocale().isRTL()) {
+	                  dialogContents.setCellHorizontalAlignment(
+	                      closeButton, HasHorizontalAlignment.ALIGN_LEFT);
+
+	                } // if 
+	                else {
+	                  dialogContents.setCellHorizontalAlignment(
+	                      closeButton, HasHorizontalAlignment.ALIGN_RIGHT);
+	                } // else
+	                
+	                typeDialogBox.center();
+	                typeDialogBox.show();
+	                Variables.errorSound().play();
+				} // if(problem)
+				else {
+					Variables.map.clearMap();
+					//Window.alert("STUFF");
+					List<Configuration> configLista = Model.getConfigList();
+					configLista.remove(Variables.cListBox.getSelectedIndex());
+					configLista.add(Variables.cListBox.getSelectedIndex(),c);
+					Model.setConfigList(configLista);
+					Controller.populateConfigListBox(Variables.cListBox);
+					Variables.map.placeConfiguration(Variables.map, c);
+				} // else
+			} // onClick
+    	};
+	} // sButtHandler
+	
 	/**
 	 * Returns click handler for Save button on Modules Page.
 	 * @param moduleType
@@ -541,6 +619,7 @@ public class Controller {
 	    	} // onValueChange
 	    };
 	} // mXhandler
+	
 	
 	public static ValueChangeHandler<String> mYhandler() {
 		return new ValueChangeHandler<String>() {

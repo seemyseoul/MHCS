@@ -7,13 +7,16 @@ import mhcs.storage.Model;
 import com.google.gwt.dom.client.Style.Unit;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
+import com.google.gwt.i18n.client.LocaleInfo;
 import com.google.gwt.media.client.Audio;
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.CheckBox;
+import com.google.gwt.user.client.ui.DialogBox;
 import com.google.gwt.user.client.ui.DockPanel;
 import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.HTML;
+import com.google.gwt.user.client.ui.HasHorizontalAlignment;
 import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.Image;
 import com.google.gwt.user.client.ui.ListBox;
@@ -205,29 +208,10 @@ public class Variables {
     	final TextBox xBox = new TextBox();
     	final TextBox yBox = new TextBox();
     	Button sButt = new Button("Change Center Of Gravity");
-    	sButt.addClickHandler(new ClickHandler() {
-			@Override
-			public void onClick(ClickEvent event) {
-				int x = Integer.parseInt(xBox.getText());
-				int y = Integer.parseInt(yBox.getText());
-				Configuration c = Model.getConfigList().get(Variables.cListBox.getSelectedIndex());
-				Module centerModule = c.getModules().get(0);
-				int dx = x - centerModule.getCoordinates().getX();
-				int dy = y - centerModule.getCoordinates().getY();
-				for (Module m : c.getModules())
-				{
-					m.setCoordinates(new Point(m.getCoordinates().getX()+dx,m.getCoordinates().getY()+dy));
-				}
-				Variables.map.clearMap();
-				Window.alert("STUFF");
-				List<Configuration> configLista = Model.getConfigList();
-				configLista.remove(Variables.cListBox.getSelectedIndex());
-				configLista.add(Variables.cListBox.getSelectedIndex(),c);
-				Model.setConfigList(configLista);
-				Controller.populateConfigListBox(cListBox);
-				Variables.map.placeConfiguration(Variables.map, c);
-			}
-    	});
+    	xBox.setEnabled(false);
+    	yBox.setEnabled(false);
+    	sButt.setEnabled(false);
+    	sButt.addClickHandler(Controller.sButtHandler(xBox, yBox, sButt));
     	configWestPanel.add(configQuality);
     	configWestPanel.add(new HTML("X: "));
     	configWestPanel.add(xBox);
