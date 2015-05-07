@@ -203,8 +203,8 @@ public class Variables {
     public static VerticalPanel configWestVpanel() {
 		ConfigurationBuilder.generateConfigurations();
     	configWestPanel.add(cListBox());
+    	configWestPanel.add(cModulesListBox());
     	configWestPanel.add(removeConfigButton());
-    	
     	xBox.setEnabled(false);
     	yBox.setEnabled(false);
     	sButt.setEnabled(false);
@@ -372,11 +372,18 @@ public class Variables {
     
     public static ListBox cListBox() {
         cListBox.setVisibleItemCount(10);
-        cListBox.setHeight(px500);
+        cListBox.setHeight(px250);
         cListBox.setWidth(px300);
         Controller.populateConfigListBox(cListBox);
         return cListBox;
     } // cListBox
+    
+    public static ListBox cModulesListBox() {
+    	cModulesListBox.setVisibleItemCount(10);
+    	cModulesListBox.setHeight(px250);
+    	cModulesListBox.setWidth(px300);
+    	return cModulesListBox;
+    } // cModulesListBox
     
     public static ListBox usersListBox() {
         // Controller.PoplulateUsers(users);
@@ -624,6 +631,7 @@ public class Variables {
     final static ListBox mOrientation = Variables.lb();
     final static ListBox mListBox = Variables.lb();
     final static ListBox cListBox = Variables.lb();
+    final static ListBox cModulesListBox = Variables.lb();
     final static ListBox users = Variables.lb();
     final static ListBox testCases = Variables.lb();
     final static PasswordTextBox ptbPassword = Variables.ptb();

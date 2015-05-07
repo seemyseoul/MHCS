@@ -534,6 +534,7 @@ public class Controller {
 					// Set id
 					id.setValue(Integer.toString(module.getId()));
 		            Controller.setModuleImage(id);
+		            Controller.setRequirements(id, Variables.moduleRequirements);
 
 					// Set type
 					type.setSelectedIndex(
@@ -686,6 +687,7 @@ public class Controller {
 				Variables.map.placeConfiguration(Variables.map,Model.getConfigList().get(Variables.cListBox.getSelectedIndex()));
 				double currentConfigQuality = 50.0 - Model.getConfigList().get(Variables.cListBox.getSelectedIndex()).getFlawRating();
 				Variables.configQuality.setHTML("Config Quality: " + currentConfigQuality);
+				populateConfigModulesListBox(Model.getConfigList().get(Variables.cListBox.getSelectedIndex()),Variables.cModulesListBox());
 			}
 		};
 	}
@@ -784,17 +786,30 @@ public class Controller {
 	
 	public static void populateConfigListBox(final ListBox cListBox) {
 		cListBox.clear();
-		for (Configuration c : Model.getConfigList()) {
-			if (c != null) {
-				String configString = "";
-				for (Module m : c.getModules())
-				{
-					configString += m.getCoordinates().toString() + ",";
-				}
-				cListBox.addItem(configString);
+		for (int i=0; i < Model.getConfigList().size()-2; i++) {
+			Configuration c = Model.getConfigList().get(i);
+			if (c!=null) {
+				cListBox.addItem("Configuration: " + i);
 			} // if
 		} // for
+		if (Model.getConfigList().size() >= 2)
+		{
+			Configuration minConfig1 = Model.getConfigList().get(Model.getConfigList().size()-2);
+			Configuration minConfig2 = Model.getConfigList().get(Model.getConfigList().size()-1);
+			
+			cListBox.addItem("Minimum Configuration: 1");
+			
+			cListBox.addItem("Minimum Configuration: 2");
+		}
+		
 	} // populateConfigListBox
+	
+	public static void populateConfigModulesListBox(Configuration c, ListBox lb) {
+		lb.clear();
+		for (Module m : c.getModules()) {
+			lb.addItem("Module #"+ m.getId() + " ("+m.getCoordinates().getX()+","+m.getCoordinates().getY()+")");
+		} 
+	} // populateConfigModulesListBox
 	
 	/**
 	 * Populates the Orientaion ListBox on Modules Page.
