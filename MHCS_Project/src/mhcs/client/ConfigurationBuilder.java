@@ -99,6 +99,7 @@ public class ConfigurationBuilder {
 	public static final List<Configuration> generateConfigurations() {
 		if (!minConfigPossible())
 		{
+			Model.setConfigList(new ArrayList<Configuration>());
 			return new ArrayList<Configuration>();
 		}
 		int numPlainModules = Model.getUnusedUsableModulesOfType(ModuleType.PLAIN).size();

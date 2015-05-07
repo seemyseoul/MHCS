@@ -821,7 +821,7 @@ public class Controller {
 			
 			cListBox.addItem("Minimum Configuration: 2");
 		}
-		
+		Variables.cModulesListBox().clear();
 	} // populateConfigListBox
 	
 	public static void populateConfigModulesListBox(Configuration c, ListBox lb) {
